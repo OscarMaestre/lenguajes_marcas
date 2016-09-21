@@ -5,8 +5,9 @@ Introducción
 Historia
 ========
 
-Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada
-de Internet. Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)
+Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet. 
+
+Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)
 
 El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
 independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el `World Wide Web Consortium (W3C) <http://www.w3c.org>`_ . 
