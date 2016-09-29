@@ -3,12 +3,13 @@
 \contentsline {section}{\numberline {1.1}Historia}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Servidores web}{1}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Como configurar un servidor en casa}{2}{subsection.1.2.1}
-\contentsline {section}{\numberline {1.3}Los sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Tipos de lenguajes}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Organismos de regulaci\IeC {\'o}n}{2}{section.1.5}
-\contentsline {section}{\numberline {1.6}Gram\IeC {\'a}ticas y DTD\IeC {\textquoteright }s}{2}{section.1.6}
-\contentsline {section}{\numberline {1.7}XML Schemas}{4}{section.1.7}
-\contentsline {section}{\numberline {1.8}Definiciones}{4}{section.1.8}
+\contentsline {section}{\numberline {1.3}Los nombres de dominio}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Los sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}Tipos de lenguajes}{2}{section.1.5}
+\contentsline {section}{\numberline {1.6}Organismos de regulaci\IeC {\'o}n}{2}{section.1.6}
+\contentsline {section}{\numberline {1.7}Gram\IeC {\'a}ticas y DTD\IeC {\textquoteright }s}{3}{section.1.7}
+\contentsline {section}{\numberline {1.8}XML Schemas}{4}{section.1.8}
+\contentsline {section}{\numberline {1.9}Definiciones}{4}{section.1.9}
 \contentsline {chapter}{\numberline {2}HTML5}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Etiquetas estructurales}{5}{section.2.2}

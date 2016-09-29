@@ -50,6 +50,25 @@ Como configurar un servidor en casa
 
 6. (Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.
 
+Los nombres de dominio
+==================================
+
+El servicio de nombres de dominio es un sistema que convierte de direcciones tipo www.loquesea.com a direcciones IP. Esto permite que sea más fácil recordar direcciones de páginas. Sin embargo, DNS esun sistema muy complejo que funciona de forma distribuida entre distintos países.
+
+
+Los nombres de dominio se resuelven de final a principio. La última parte se llama TLD o Top Level Domain o dominio de primer nivel.. Estos dominios son administrados por países ocupándose cada uno de ellos de los nombres o marcas que hay dentro de dichos países.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Los sistemas de gestión de información
