@@ -74,6 +74,18 @@ Los nombres de dominio se resuelven de final a principio. La última parte se ll
 Los sistemas de gestión de información
 ======================================
 
+Definamos primero algunos términos:
+
+* Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.
+
+* Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.
+
+* Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.
+
+Un SGI no tiene por qué estar informatizado.
+
+
+
 Son programas que se pueden adaptar las necesidades de la empresa y que a veces necesitan
 importar (o exportar) datos e información.
 
@@ -110,7 +122,7 @@ A modo de ejemplo, esto es una página válida
 	<!DOCTYPE html>
 	<html>
 		<head>
-			title>Page Title</title>
+			<title>Page Title</title>
 		</head>
 		<body>
 			Mi primera página
