@@ -102,7 +102,7 @@ Programas como LateX tienen la desventaja de obligar a aprender “marcas”. Si
 Dentro de los tipos de formatos, RTF es un mecanismo público que permite describir el aspecto de documentos. Al ser público, muchos procesadores pueden implementarlo si necesidad de pagar “royalties”.
 
 Adobe lidera la especificación de documentos PDF (Portable Document Format). Antes de
-PDF, existía un lenguaje abierto denominado PostScript. Por otr olado RTF o Latex, son lenguajes descriptivos, mientras que PostScript es un lenguaje completo
+PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Latex, son lenguajes descriptivos, mientras que PostScript es un lenguaje completo
 
 Organismos de regulación
 ========================
