@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {1.3}Los nombres de dominio}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Los sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{2}{section.1.4}
 \contentsline {section}{\numberline {1.5}Tipos de lenguajes}{2}{section.1.5}
-\contentsline {section}{\numberline {1.6}Organismos de regulaci\IeC {\'o}n}{2}{section.1.6}
+\contentsline {section}{\numberline {1.6}Organismos de regulaci\IeC {\'o}n}{3}{section.1.6}
 \contentsline {section}{\numberline {1.7}Gram\IeC {\'a}ticas y DTD\IeC {\textquoteright }s}{3}{section.1.7}
 \contentsline {section}{\numberline {1.8}XML Schemas}{4}{section.1.8}
 \contentsline {section}{\numberline {1.9}Definiciones}{4}{section.1.9}
