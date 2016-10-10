@@ -18,7 +18,9 @@ Crean la estructura para el resto de la página:,
 * Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:
 
 	** ``<section>`` permite marcar contenido de una página relacionado con un tema concreto.
+	
 	** ``<article>`` es una unidad de contenido sobre un tema específico el cual puede ser independiente de otros "artículos".
+	
 	** ``<header>`` se utiliza para indicar cual es la cabecera de un artículo o sección.
 	** ``<footer>`` permite definir un "pie de página", normalmente con indicación de derechos de autor, fecha o datos similares.
 	** ``<address>`` se usa para marcar información de contacto.
