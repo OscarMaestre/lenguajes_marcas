@@ -33,9 +33,10 @@ Crean la estructura para el resto de la página:,
 
 * ``<h1>``, ``<h2>``, ``<h3>``, ``<h4>``, ``<h5>`` y ``<h6>`` establecen encabezados: trozos de texto que identifican la importancia del siguiente trozo de texto.
 * Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con ``<!--`` y se cierra con ``-->``
-* La etiqueta <nav> se utilizará para crear barras de navegación.
-* La etiqueta <footer> se reserva para los piés de página. Son de utilidad para que los buscadores obtengan información como fechas y nombres de los autores.
-* La etiqueta <aside> se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo "artículos relacionados con este".
+
+* La etiqueta ``<nav>`` se utilizará para crear barras de navegación.
+
+* La etiqueta ``<aside>`` se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo "artículos relacionados con este".
 
 
 Etiquetas de formato
