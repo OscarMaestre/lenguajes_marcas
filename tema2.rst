@@ -18,9 +18,12 @@ Crean la estructura para el resto de la página:,
 * Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:
 
 	** ``<section>`` permite marcar contenido de una página relacionado con un tema concreto.
-	** ``<article>`` es una unidad de contenido sobre un tema específico que irá dentro de una sección.
-	** ``<header>`` se utiliza para indicar cual es la cabecera de un artículo o texto.
-	**  <hgroup> permite agrupar un conjunto de encabezados y marcarlos como pertenecientes al mismo contenido.
+	** ``<article>`` es una unidad de contenido sobre un tema específico el cual puede ser independiente de otros "artículos".
+	** ``<header>`` se utiliza para indicar cual es la cabecera de un artículo o sección.
+	** ``<footer>`` permite definir un "pie de página", normalmente con indicación de derechos de autor, fecha o datos similares.
+	** ``<address>`` se usa para marcar información de contacto.
+	** ``<aside>`` se usa para definir contenido con "una relación vaga con el resto de la página" (definición tomada del estándar).
+	**  ``<hgroup>`` permite agrupar un conjunto de encabezados y marcarlos como pertenecientes al mismo contenido.
 
 * <h1>, <h2>, <h3>, <h4>, <h5> y <h6> establecen encabezados: trozos de texto que identifican la importancia del siguiente trozo de texto.
 * Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con ``<!--`` y se cierra con ``-->``
