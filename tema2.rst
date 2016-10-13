@@ -38,6 +38,15 @@ Crean la estructura para el resto de la página:,
 
 * La etiqueta ``<aside>`` se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo "artículos relacionados con este".
 
+* La etiqueta ``<base>`` define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
+
+
+* Las etiquetas ``<script>`` y ``<noscript>`` se utilizan para marcar pequeños programas o la ausencia de ellos.
+
+* El elemento ``<main>`` indica **el contenido principal de una página**
+
+
+
 
 Etiquetas de formato
 ====================
