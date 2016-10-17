@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  17 OCT 2016 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  17 OCT 2016 12:55
 entering extended mode
 **./ApuntesDeLenguajesDeMarcas.tex
 (ApuntesDeLenguajesDeMarcas.tex
@@ -1661,11 +1661,6 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 556.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 556.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1.
-
-("C:\Users\ogomez\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
 LaTeX Info: Redefining \. on input line 604.
 LaTeX Info: Redefining \% on input line 604.
 Package babel Info: Redefining spanish shorthand <<
@@ -1733,13 +1728,14 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 663.
  [8] <tabla1.png, id=500, 139.27031pt x 213.79875pt>
 File: tabla1.png Graphic file (type png)
- <use tabla1.png>
+
+<use tabla1.png>
 Package pdftex.def Info: tabla1.png used on input line 697.
 (pdftex.def)             Requested size: 139.26996pt x 213.79822pt.
-
-<tabla2.png, id=501, 139.27031pt x 158.09062pt>
+ <tabla2.png, id=501, 139.27031pt x 158.09062pt>
 File: tabla2.png Graphic file (type png)
- <use tabla2.png>
+
+<use tabla2.png>
 Package pdftex.def Info: tabla2.png used on input line 709.
 (pdftex.def)             Requested size: 139.26996pt x 158.09023pt.
 LaTeX Info: Redefining \. on input line 712.
@@ -1768,7 +1764,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 712.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 712.
- [9 <./tabla1.png>] <tabla3.png, id=511, 346.29375pt x 294.34969pt>
+ [9 <./tabla1.png>]
+<tabla3.png, id=511, 346.29375pt x 294.34969pt>
 File: tabla3.png Graphic file (type png)
  <use tabla3.png>
 Package pdftex.def Info: tabla3.png used on input line 721.
@@ -1920,6 +1917,12 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 899.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 899.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 933.
+
+
+("C:\Users\ogomez\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
 LaTeX Info: Redefining \. on input line 939.
 LaTeX Info: Redefining \% on input line 939.
 Package babel Info: Redefining spanish shorthand <<
@@ -1988,8 +1991,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1003.
  <tabla5.png, id=554, 377.15906pt x 156.585pt>
 File: tabla5.png Graphic file (type png)
-
-<use tabla5.png>
+ <use tabla5.png>
 Package pdftex.def Info: tabla5.png used on input line 1010.
 (pdftex.def)             Requested size: 377.15814pt x 156.58461pt.
 LaTeX Info: Redefining \. on input line 1048.
@@ -2018,10 +2020,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1048.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1048.
- [16 <./tabla5.png>]
-<tabla6.png, id=562, 143.78719pt x 134.00063pt>
+
+[16 <./tabla5.png>] <tabla6.png, id=562, 143.78719pt x 134.00063pt>
 File: tabla6.png Graphic file (type png)
- <use tabla6.png>
+
+<use tabla6.png>
 Package pdftex.def Info: tabla6.png used on input line 1058.
 (pdftex.def)             Requested size: 143.78683pt x 134.00027pt.
 LaTeX Info: Redefining \. on input line 1122.
@@ -2050,7 +2053,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1122.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1122.
- [17 <./tabla6.png>] <maqueta1.png, id=570, 362.10281pt x 338.01282pt>
+ [17 <./tabla6.png>]
+<maqueta1.png, id=570, 362.10281pt x 338.01282pt>
 File: maqueta1.png Graphic file (type png)
  <use maqueta1.png>
 Package pdftex.def Info: maqueta1.png used on input line 1129.
@@ -2081,8 +2085,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1139.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1139.
-
-[18 <./maqueta1.png>] <maqueta2.png, id=576, 365.86688pt x 363.60844pt>
+ [18 <./maqueta1.png>] <maqueta2.png, id=576, 365.86688pt x 363.60844pt>
 File: maqueta2.png Graphic file (type png)
 
 <use maqueta2.png>
@@ -6090,7 +6093,7 @@ a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/
 utmb8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (133 pages, 1563409 bytes).
+Output written on ApuntesDeLenguajesDeMarcas.pdf (133 pages, 1563403 bytes).
 PDF statistics:
  1337 PDF objects out of 1440 (max. 8388607)
  407 named destinations out of 1000 (max. 500000)

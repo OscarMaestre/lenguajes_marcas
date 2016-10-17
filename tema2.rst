@@ -110,9 +110,9 @@ En un plano distinto se pueden encontrar las **listas de definiciones**. Con est
 
 * ``<dl>`` y ``</dl>`` marcan el inicio y el final de la lista de definiciones. Dentro de estas etiquetas pondremos las dos siguientes.
 
-* ``<dt>``y ``</dt>`` especifican el *término* que vamos a definir.
+* ``<dt>`` y ``</dt>`` especifican el *término* que vamos a definir.
 
-* ``<dd>``y ``</dd>`` indican la definición asociada al término anterior.
+* ``<dd>`` y ``</dd>`` indican la definición asociada al término anterior.
 
 Ejemplo:
 
