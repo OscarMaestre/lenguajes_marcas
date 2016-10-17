@@ -68,7 +68,7 @@ Gestión de espacios
 Los navegadores web manejan el espacio de una forma un poco especial:
 
 * Si se pone uno o varios espacios en blanco o si se pulsa la tecla ENTER muchas veces el navegador mostrará *un solo espacio en blanco*
-* Para poner un espacio en blanco horizontal se puede usar la entidad ``&nbsp``.
+* Para poner un espacio en blanco horizontal se puede usar la entidad ``&nbsp;`.
 * Para hacer un salto de línea se puede usar la etiqueta ``<br/>`` (esta etiqueta no lleva asociada una etiqueta de cierra, es *autocerrada*)
 * Se puede indicar el comienzo y el final de un párrafo con ``<p>`` y ``</p>``.
 
@@ -106,6 +106,29 @@ Es una secuencia de elementos relacionados en torno a un mismo concepto Para abr
 
 Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta <li>
 
+En un plano distinto se pueden encontrar las **listas de definiciones**. Con estos elementos se puede especificar una secuencia de términos para los cuales proporcionamos una definición. Su estructura es la siguiente:
+
+* ``<dl>`` y ``</dl>`` marcan el inicio y el final de la lista de definiciones. Dentro de estas etiquetas pondremos las dos siguientes.
+
+* ``<dt>``y ``</dt>`` especifican el *término* que vamos a definir.
+
+* ``<dd>``y ``</dd>`` indican la definición asociada al término anterior.
+
+Ejemplo:
+
+.. code-block:: html
+
+	<dl>
+		<dt>Etiqueta</dt>
+		<dd>Todo lo contenido...</dd>
+		<dt>Elemento</dt>
+		<dd>
+			Se define así a todo el árbol
+			de nodos comprendido
+			entre dos etiquetas
+			de apertura y cierre.
+		</dd>
+	</dl>
 
 Ejercicio
 ----------------
