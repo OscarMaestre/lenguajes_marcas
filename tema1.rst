@@ -107,7 +107,7 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 Organismos de regulación
 ========================
 1. La Internation Standards Organization emite estándares para la documentación.
-2. El W3C (o WorldWideWeb Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. `Su web es muy útil <http://www.w3c.org>`_ 
+2. El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. `Su web es muy útil <http://www.w3c.org>`_ 
 
 Gramáticas y DTD’s
 ==================
