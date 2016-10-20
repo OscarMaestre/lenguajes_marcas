@@ -242,26 +242,27 @@ Solución
 Un posible HTML que resuelve esto sería:
 
 .. code-block:: html
-<table border="1">
-    <tbody>
-        <tr>
-            <td>A</td><td>B</td>
-        </tr>
-        <tr>
-            <td>C</td>
-            <td>
-                <table>
-                    <tbody>
-                        <tr><td>D1</td></tr>
-                        <tr><td>D2</td></tr>
-                        <tr><td>D3</td></tr>
-                        <tr><td>D4</td></tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+	<table border="1">
+		<tbody>
+			<tr>
+				<td>A</td><td>B</td>
+			</tr>
+			<tr>
+				<td>C</td>
+				<td>
+					<table>
+						<tbody>
+							<tr><td>D1</td></tr>
+							<tr><td>D2</td></tr>
+							<tr><td>D3</td></tr>
+							<tr><td>D4</td></tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 	
 Ejercicio sobre tablas (II)
