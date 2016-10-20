@@ -22,23 +22,23 @@
 \contentsline {section}{\numberline {2.8}Tablas}{8}{section.2.8}
 \contentsline {subsection}{\numberline {2.8.1}Un ejemplo de tabla}{9}{subsection.2.8.1}
 \contentsline {subsection}{\numberline {2.8.2}Ejercicio sobre tablas}{9}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Soluci\IeC {\'o}n}{9}{subsection.2.8.3}
-\contentsline {subsection}{\numberline {2.8.4}Ejercicio sobre tablas (II)}{9}{subsection.2.8.4}
+\contentsline {subsection}{\numberline {2.8.3}Soluci\IeC {\'o}n}{10}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.4}Ejercicio sobre tablas (II)}{10}{subsection.2.8.4}
 \contentsline {subsection}{\numberline {2.8.5}Soluci\IeC {\'o}n}{10}{subsection.2.8.5}
 \contentsline {subsection}{\numberline {2.8.6}Ejercicio sobre tablas (III)}{10}{subsection.2.8.6}
 \contentsline {subsection}{\numberline {2.8.7}Soluci\IeC {\'o}n}{10}{subsection.2.8.7}
 \contentsline {subsection}{\numberline {2.8.8}Ejercicio sobre tablas (IV)}{10}{subsection.2.8.8}
 \contentsline {subsection}{\numberline {2.8.9}Soluci\IeC {\'o}n}{11}{subsection.2.8.9}
 \contentsline {subsection}{\numberline {2.8.10}Ejercicio sobre tablas (V)}{11}{subsection.2.8.10}
-\contentsline {subsection}{\numberline {2.8.11}Soluci\IeC {\'o}n}{11}{subsection.2.8.11}
-\contentsline {subsection}{\numberline {2.8.12}Ejercicio sobre tablas (VI)}{12}{subsection.2.8.12}
-\contentsline {subsection}{\numberline {2.8.13}Soluci\IeC {\'o}n}{12}{subsection.2.8.13}
+\contentsline {subsection}{\numberline {2.8.11}Soluci\IeC {\'o}n}{12}{subsection.2.8.11}
+\contentsline {subsection}{\numberline {2.8.12}Ejercicio sobre tablas (VI)}{13}{subsection.2.8.12}
+\contentsline {subsection}{\numberline {2.8.13}Soluci\IeC {\'o}n}{13}{subsection.2.8.13}
 \contentsline {section}{\numberline {2.9}Formularios}{14}{section.2.9}
 \contentsline {subsection}{\numberline {2.9.1}Campo de texto}{14}{subsection.2.9.1}
 \contentsline {subsection}{\numberline {2.9.2}Selector \IeC {\'u}nico (radio-button)}{15}{subsection.2.9.2}
 \contentsline {subsection}{\numberline {2.9.3}Selector m\IeC {\'u}ltiple (checkbox)}{15}{subsection.2.9.3}
 \contentsline {subsection}{\numberline {2.9.4}Lista desplegable}{15}{subsection.2.9.4}
-\contentsline {subsection}{\numberline {2.9.5}Textareas}{15}{subsection.2.9.5}
+\contentsline {subsection}{\numberline {2.9.5}Textareas}{16}{subsection.2.9.5}
 \contentsline {subsection}{\numberline {2.9.6}Ejercicio}{16}{subsection.2.9.6}
 \contentsline {section}{\numberline {2.10}Ejercicios tipo examen}{16}{section.2.10}
 \contentsline {subsection}{\numberline {2.10.1}Enunciado}{16}{subsection.2.10.1}
@@ -50,7 +50,7 @@
 \contentsline {subsection}{\numberline {2.10.7}Enunciado}{19}{subsection.2.10.7}
 \contentsline {subsection}{\numberline {2.10.8}Soluci\IeC {\'o}n}{19}{subsection.2.10.8}
 \contentsline {subsection}{\numberline {2.10.9}Enunciado}{19}{subsection.2.10.9}
-\contentsline {subsection}{\numberline {2.10.10}Enunciado}{19}{subsection.2.10.10}
+\contentsline {subsection}{\numberline {2.10.10}Enunciado}{20}{subsection.2.10.10}
 \contentsline {subsection}{\numberline {2.10.11}Soluci\IeC {\'o}n}{20}{subsection.2.10.11}
 \contentsline {chapter}{\numberline {3}CSS}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{23}{section.3.1}

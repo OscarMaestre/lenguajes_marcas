@@ -356,7 +356,7 @@ se comentará a continuación. Aún está completándose.</p>
                             Ejecutar como
                             admin
                         <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Comprobarli&gt;
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Comprobar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
                     <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
                 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
@@ -382,13 +382,15 @@ se comentará a continuación. Aún está completándose.</p>
 <p>Una tabla puede tener una cabecera, un cuerpo y un pie, especificados por <code class="docutils literal"><span class="pre">&lt;thead&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;tbody&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;tfoot&gt;</span></code>. La primera etiqueta dentro de <code class="docutils literal"><span class="pre">&lt;tbody&gt;</span></code>, solo puede ser &lt;tr&gt;. <strong>Cuidado al crear tablas, todo dato, o subtablas debe ir dentro de &lt;td&gt;, es absolutamente obligatorio</strong></p>
 <p>Para ser exactos una tabla puede llevar estas tres etiquetas:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">thead</span></code>: dentro de ella a su vez pondremos una fila (<code class="docutils literal"><span class="pre">&lt;td&gt;</span></code>) con celdas en las que la etiqueta es <code class="docutils literal"><span class="pre">&lt;th&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">thead</span></code>: dentro de ella a su vez pondremos una fila (<code class="docutils literal"><span class="pre">&lt;tr&gt;</span></code>) con celdas en las que la etiqueta es <code class="docutils literal"><span class="pre">&lt;th&gt;</span></code></li>
 <li><code class="docutils literal"><span class="pre">tbody</span></code>: utiliza las filas y columnas normales.</li>
 <li><code class="docutils literal"><span class="pre">tfooter</span></code>: también usa <code class="docutils literal"><span class="pre">&lt;tr&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;td&gt;</span></code> de la forma habitual, sin embargo permite describir mejor el contenido de la tabla. Se utiliza para celdas con los valores acumulados o similares.</li>
 </ul>
 <div class="section" id="un-ejemplo-de-tabla">
 <h4>Un ejemplo de tabla<a class="headerlink" href="#un-ejemplo-de-tabla" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<p>Se desea crear una tabla que represente los datos del medallero de unas olimpiadas y que se muestre de forma parecida a lo que muestra la figura:</p>
+<a class="reference internal image-reference" href="_images/tablamedallero.png"><img alt="_images/tablamedallero.png" class="align-center" src="_images/tablamedallero.png" style="width: 285.0px; height: 140.5px;" /></a>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>País<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>

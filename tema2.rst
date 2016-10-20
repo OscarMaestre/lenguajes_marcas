@@ -154,7 +154,7 @@ Comprueba que el siguiente código HTML crea unas listas dentro de otras. Prueba
                                 Ejecutar como
                                 admin
                             </li>
-                            <li>Comprobarli>
+                            <li>Comprobar</li>
                         </ol>
                     </li>
                 </ol>
@@ -180,7 +180,7 @@ Una tabla puede tener una cabecera, un cuerpo y un pie, especificados por ``<the
 
 Para ser exactos una tabla puede llevar estas tres etiquetas:
 
-* ``thead``: dentro de ella a su vez pondremos una fila (``<td>``) con celdas en las que la etiqueta es ``<th>``
+* ``thead``: dentro de ella a su vez pondremos una fila (``<tr>``) con celdas en las que la etiqueta es ``<th>``
 * ``tbody``: utiliza las filas y columnas normales.
 * ``tfooter``: también usa ``<tr>`` y ``<td>`` de la forma habitual, sin embargo permite describir mejor el contenido de la tabla. Se utiliza para celdas con los valores acumulados o similares.
 
@@ -188,9 +188,16 @@ Para ser exactos una tabla puede llevar estas tres etiquetas:
 Un ejemplo de tabla
 ---------------------------
 
+Se desea crear una tabla que represente los datos del medallero de unas olimpiadas y que se muestre de forma parecida a lo que muestra la figura:
+
+.. image:: tablamedallero.png
+	:align: center
+	:scale: 50%
+
+
 .. code-block:: html
 
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>País</th>
