@@ -315,7 +315,7 @@ se comentará a continuación. Aún está completándose.</p>
 <li><code class="docutils literal"><span class="pre">&lt;ol&gt;</span></code> Para crear una lista ordenada (numerada)</li>
 <li><code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code> Para crear una lista desordenada (no numerada)</li>
 </ul>
-<p>Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta &lt;li&gt;</p>
+<p>Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta <code class="docutils literal"><span class="pre">&lt;li&gt;</span></code>.</p>
 <p>En un plano distinto se pueden encontrar las <strong>listas de definiciones</strong>. Con estos elementos se puede especificar una secuencia de términos para los cuales proporcionamos una definición. Su estructura es la siguiente:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">&lt;dl&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;/dl&gt;</span></code> marcan el inicio y el final de la lista de definiciones. Dentro de estas etiquetas pondremos las dos siguientes.</li>
@@ -427,6 +427,46 @@ se comentará a continuación. Aún está completándose.</p>
 <div class="section" id="solucion">
 <h4>Solución<a class="headerlink" href="#solucion" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Un posible HTML que resuelve esto sería:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>&lt;table border=&#8221;1&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;tbody&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;tr&gt;</dt>
+<dd>&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;</dd>
+</dl>
+<p>&lt;/tr&gt;
+&lt;tr&gt;</p>
+<blockquote>
+<div><p>&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;table&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;tbody&gt;</dt>
+<dd>&lt;tr&gt;&lt;td&gt;D1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;D2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;D3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;D4&lt;/td&gt;&lt;/tr&gt;</dd>
+</dl>
+<p class="last">&lt;/tbody&gt;</p>
+</dd>
+</dl>
+<p>&lt;/table&gt;</p>
+</div></blockquote>
+<p>&lt;/td&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/tr&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/tbody&gt;</p>
+</dd>
+</dl>
+<p>&lt;/table&gt;</p>
 </div>
 <div class="section" id="ejercicio-sobre-tablas-ii">
 <h4>Ejercicio sobre tablas (II)<a class="headerlink" href="#ejercicio-sobre-tablas-ii" title="Enlazar permanentemente con este título">¶</a></h4>

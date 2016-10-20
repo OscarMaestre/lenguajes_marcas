@@ -104,7 +104,7 @@ Es una secuencia de elementos relacionados en torno a un mismo concepto Para abr
 * ``<ol>`` Para crear una lista ordenada (numerada)
 * ``<ul>`` Para crear una lista desordenada (no numerada)
 
-Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta <li>
+Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta ``<li>``.
 
 En un plano distinto se pueden encontrar las **listas de definiciones**. Con estos elementos se puede especificar una secuencia de términos para los cuales proporcionamos una definición. Su estructura es la siguiente:
 
@@ -241,9 +241,28 @@ Solución
 
 Un posible HTML que resuelve esto sería:
 
-.. literalinclude:: ejercicio2/ejtabla1.html
-	:language: html
-	
+.. code-block:: html
+<table border="1">
+    <tbody>
+        <tr>
+            <td>A</td><td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>
+                <table>
+                    <tbody>
+                        <tr><td>D1</td></tr>
+                        <tr><td>D2</td></tr>
+                        <tr><td>D3</td></tr>
+                        <tr><td>D4</td></tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 	
 Ejercicio sobre tablas (II)
 ----------------------------
