@@ -88,13 +88,13 @@ Las entidades HTML permiten escribir determinados símbolos especiales que podr�
 
 Texto preformateado
 ===================
-Algunas marcas, como <pre> permiten obligar al navegador a que respete los espacios en blanco tal y como aparecen en la página original.
+Algunas marcas, como ``<pre>`` permiten obligar al navegador a que respete los espacios en blanco tal y como aparecen en la página original.
 
-Si se desea indicar que algo debe ser teclado por el usuario se usa la marca <kbd>  
+Si se desea indicar que algo debe ser teclado por el usuario se usa la marca ``<kbd>``.  
 
-Si se desea indicar que algo es una variable se puede usar la marca <var>.
+Si se desea indicar que algo es una variable se puede usar la marca ``<var>``.
 
-La etiqueta <code> permite indicar que un determinado es código en un lenguaje de programación. 
+La etiqueta ``<code>`` permite indicar que un determinado es código en un lenguaje de programación. 
 
 Listas
 ======
