@@ -516,6 +516,63 @@ Solución
 	</table>	
 
 		
+Ejercicio sobre tablas (VII)
+------------------------------
+
+Crea una tabla con la estructura siguiente
+
+.. figure:: tabla7.png
+   :figwidth: 50%
+   :align: center
+   	
+	
+Solución
+------------------------------------------------------
+
+.. code-block:: html
+
+	<table border="1">
+	  <tbody>
+		<tr>
+		  <td>A</td>
+		</tr>
+		<tr>
+		  <td>
+			<table border="1">
+			  <tbody>
+				<tr>
+				  <td>
+					<table border="1">
+					  <tbody>
+						<tr>
+						  <td>B1</td>
+						</tr>
+						<tr>
+						  <td>B2</td>
+						</tr>
+						<tr>
+						  <td>B3</td>
+						</tr>
+						</tbody>
+					</table>
+				  </td>
+				  <td>
+					<table border="1">
+					  <tbody>
+						<tr>
+						  <td>C1</td>
+						  <td>C2</td>
+						</tr>
+					  </tbody>
+					</table>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+		  </td>
+		</tr>
+	  </tbody>
+	</table>
 	
 Formularios
 ===========
