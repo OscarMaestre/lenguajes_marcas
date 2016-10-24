@@ -573,7 +573,55 @@ Solución
 		</tr>
 	  </tbody>
 	</table>
+
+
+
+Ejercicio sobre tablas (VIII)
+------------------------------
+
+Crea una tabla con la estructura siguiente
+
+.. figure:: tabla8.png
+   :figwidth: 50%
+   :align: center
+   	
 	
+Solución
+------------------------------------------------------
+
+.. code-block:: html
+	
+  <table border="1">
+    <tr>
+      <td>
+        <table border="1">
+          <tbody>
+            <tr>
+                <td>A1</td>
+                <td>A2</td>
+                <td>A3</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>B1</td>
+            </tr>
+            <tr>
+              <td>B2</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+	
+
 Formularios
 ===========
 
