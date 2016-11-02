@@ -985,4 +985,7 @@ Solución
 		</fieldset>
 	</form>
 
-	
+Examen
+======
+
+Se realizará el Jueves 10 de noviembre de 2016
