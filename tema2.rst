@@ -68,7 +68,7 @@ Gestión de espacios
 Los navegadores web manejan el espacio de una forma un poco especial:
 
 * Si se pone uno o varios espacios en blanco o si se pulsa la tecla ENTER muchas veces el navegador mostrará *un solo espacio en blanco*
-* Para poner un espacio en blanco horizontal se puede usar la entidad ``&nbsp;`.
+* Para poner un espacio en blanco horizontal se puede usar la entidad ``&nbsp;``.
 * Para hacer un salto de línea se puede usar la etiqueta ``<br/>`` (esta etiqueta no lleva asociada una etiqueta de cierra, es *autocerrada*)
 * Se puede indicar el comienzo y el final de un párrafo con ``<p>`` y ``</p>``.
 
@@ -879,11 +879,12 @@ Enunciado
 Solución
 --------
 
-El HTML siguiente produce el resultado pedido
+El HTML siguiente produce el resultado que nos piden
 
 
-.. literalinclude:: ejemplos/tema2_htm/formulario_1.html
-	:language: html
+
+.. literalinclude:: ejemplos/tema2_html/formulario_1.html
+   :language: html
 
 
 
@@ -898,8 +899,8 @@ Enunciado
 	:align: center
 	:scale: 50%
 
-.. literalinclude:: ejercicio2/maqueta4.html
-	:language: html
+.. literalinclude:: ejemplos/tema2_html/formulario_2.html
+   :language: html
 	
 	
 Enunciado

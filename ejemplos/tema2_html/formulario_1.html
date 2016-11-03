@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulario fiscal</title>
+</head>
+<body>
+
+<form>
+   <fieldset>
+    <legend>
+        Datos fiscales
+    </legend>
+    <input type="checkbox" id="enparo"
+        name="sit_laboral">
+    <label for="enparo">En paro</label>
+    <br/>
+    <input type="checkbox" id="autonomo"
+        name="sit_laboral">
+    <label for="autonomo">Autónomo</label>
+    <br/>
+    <input type="checkbox" id="c_ajena"
+        name="sit_laboral">
+    <label for="c_ajena">Por c.ajena</label>
+    <br/>
+   </fieldset>
+   <fieldset>
+     <legend>Datos personales</legend>
+     <label for="nombre">Nombre</label>
+     <input type="text" id="nombre">
+     <br/>
+     <label for="apellidos">Apellidos</label>
+     <input type="text" id="apellidos">
+     <br/>
+     <label for="sueldo">Sueldo</label>
+     <select id="sueldo"
+       <option>Más de 400 euros</option>
+       <option>Menos de 400 euros</option>
+       <option>Variable</option>
+     </select>
+     <br/>
+     <input type="checkbox" id="con_ep">
+     <label for="con_ep">
+         Con enfermedad profesional
+     </label> <br/>
+     <input type="checkbox" id="con_padres">
+     <label for="con_padres">
+         Con padres a cargo
+     </label> <br/>
+     <input type="checkbox" id="con_hijos">
+     <label for="con_hijos">
+         Con hijos a cargo
+     </label> <br/>
+   </fieldset>   
+</form>
+</body>
+</html>
