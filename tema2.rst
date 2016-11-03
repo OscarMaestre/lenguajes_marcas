@@ -882,6 +882,8 @@ Solución
 El HTML siguiente produce el resultado pedido
 
 
+.. literalinclude:: ejemplos/tema2_htm/formulario_1.html
+	:language: html
 
 
 
