@@ -24,6 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="top" title="None" href="index.html#document-index" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -968,63 +970,63 @@ Bici
 <div class="section" id="id15">
 <h4>Solución<a class="headerlink" href="#id15" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>El HTML siguiente produce el resultado que nos piden</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Formulario fiscal&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Formulario fiscal<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;form&gt;
-   &lt;fieldset&gt;
-    &lt;legend&gt;
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>
         Datos fiscales
-    &lt;/legend&gt;
-    &lt;input type=&quot;checkbox&quot; id=&quot;enparo&quot;
-        name=&quot;sit_laboral&quot;&gt;
-    &lt;label for=&quot;enparo&quot;&gt;En paro&lt;/label&gt;
-    &lt;br/&gt;
-    &lt;input type=&quot;checkbox&quot; id=&quot;autonomo&quot;
-        name=&quot;sit_laboral&quot;&gt;
-    &lt;label for=&quot;autonomo&quot;&gt;Autónomo&lt;/label&gt;
-    &lt;br/&gt;
-    &lt;input type=&quot;checkbox&quot; id=&quot;c_ajena&quot;
-        name=&quot;sit_laboral&quot;&gt;
-    &lt;label for=&quot;c_ajena&quot;&gt;Por c.ajena&lt;/label&gt;
-    &lt;br/&gt;
-   &lt;/fieldset&gt;
-   &lt;fieldset&gt;
-     &lt;legend&gt;Datos personales&lt;/legend&gt;
-     &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
-     &lt;input type=&quot;text&quot; id=&quot;nombre&quot;&gt;
-     &lt;br/&gt;
-     &lt;label for=&quot;apellidos&quot;&gt;Apellidos&lt;/label&gt;
-     &lt;input type=&quot;text&quot; id=&quot;apellidos&quot;&gt;
-     &lt;br/&gt;
-     &lt;label for=&quot;sueldo&quot;&gt;Sueldo&lt;/label&gt;
-     &lt;select id=&quot;sueldo&quot;
-       &lt;option&gt;Más de 400 euros&lt;/option&gt;
-       &lt;option&gt;Menos de 400 euros&lt;/option&gt;
-       &lt;option&gt;Variable&lt;/option&gt;
-     &lt;/select&gt;
-     &lt;br/&gt;
-     &lt;input type=&quot;checkbox&quot; id=&quot;con_ep&quot;&gt;
-     &lt;label for=&quot;con_ep&quot;&gt;
+    <span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enparo&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;sit_laboral&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;enparo&quot;</span><span class="p">&gt;</span>En paro<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;autonomo&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;sit_laboral&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;autonomo&quot;</span><span class="p">&gt;</span>Autónomo<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;c_ajena&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;sit_laboral&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;c_ajena&quot;</span><span class="p">&gt;</span>Por c.ajena<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Datos personales<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;apellidos&quot;</span><span class="p">&gt;</span>Apellidos<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;apellidos&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;sueldo&quot;</span><span class="p">&gt;</span>Sueldo<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sueldo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Más de 400 euros<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Menos de 400 euros<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>Variable<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;con_ep&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;con_ep&quot;</span><span class="p">&gt;</span>
          Con enfermedad profesional
-     &lt;/label&gt; &lt;br/&gt;
-     &lt;input type=&quot;checkbox&quot; id=&quot;con_padres&quot;&gt;
-     &lt;label for=&quot;con_padres&quot;&gt;
+     <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;con_padres&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;con_padres&quot;</span><span class="p">&gt;</span>
          Con padres a cargo
-     &lt;/label&gt; &lt;br/&gt;
-     &lt;input type=&quot;checkbox&quot; id=&quot;con_hijos&quot;&gt;
-     &lt;label for=&quot;con_hijos&quot;&gt;
+     <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;con_hijos&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;con_hijos&quot;</span><span class="p">&gt;</span>
          Con hijos a cargo
-     &lt;/label&gt; &lt;br/&gt;
-   &lt;/fieldset&gt;   
-&lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+     <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>   
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -6439,7 +6441,7 @@ esta</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>
