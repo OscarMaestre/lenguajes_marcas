@@ -703,6 +703,8 @@ Permite elegir valores de una lista.
 	
 Se debe recordar que el texto que ven los usuarios es lo que va entre las etiquetas option. El valor que comprobarán los programadores es lo que va en value En una lista desplegable se pueden elegir muchos valores usando el atributo ``multiple``.
 
+Si se desea que una opción (o varias si usamos el selector múltiple) aparezca marcada se debe usar ``selected="selected"``.
+
 Textareas
 ---------
 

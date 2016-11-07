@@ -47,7 +47,7 @@
 \contentsline {section}{\numberline {2.10}Ejercicios tipo examen}{20}{section.2.10}
 \contentsline {subsection}{\numberline {2.10.1}Enunciado}{20}{subsection.2.10.1}
 \contentsline {subsection}{\numberline {2.10.2}Soluci\IeC {\'o}n}{20}{subsection.2.10.2}
-\contentsline {subsection}{\numberline {2.10.3}Enunciado}{20}{subsection.2.10.3}
+\contentsline {subsection}{\numberline {2.10.3}Enunciado}{21}{subsection.2.10.3}
 \contentsline {subsection}{\numberline {2.10.4}Soluci\IeC {\'o}n}{21}{subsection.2.10.4}
 \contentsline {subsection}{\numberline {2.10.5}Enunciado}{22}{subsection.2.10.5}
 \contentsline {subsection}{\numberline {2.10.6}Soluci\IeC {\'o}n}{22}{subsection.2.10.6}
