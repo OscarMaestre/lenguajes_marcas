@@ -18,3 +18,4 @@ Apuntes de Lenguajes de marcas
    tema6
    tema7
    tema8
+   ejercicios/html/anexo_tablas.rst

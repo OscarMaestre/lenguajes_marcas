@@ -60,7 +60,9 @@ class GeneradorHTML(object):
         return resultado
         
 g=GeneradorHTML()
+
 with open(sys.argv[1], "w") as fich:
-    html=g.get_pagina(GeneradorHTML.CON_TABLA)
-    fich.write(html)
-    fich.close()
+    if sys.argv[2]=="tabla":
+        html=g.get_pagina(GeneradorHTML.CON_TABLA)
+        fich.write(html)
+        fich.close()

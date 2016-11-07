@@ -230,3 +230,23 @@
 \contentsline {subsection}{\numberline {8.4.2}Administrador}{135}{subsection.8.4.2}
 \contentsline {subsection}{\numberline {8.4.3}Usuario}{135}{subsection.8.4.3}
 \contentsline {subsection}{\numberline {8.4.4}Ejercicio}{135}{subsection.8.4.4}
+\contentsline {chapter}{\numberline {9}Anexo: ejercicios sobre tablas}{137}{chapter.9}
+\contentsline {section}{\numberline {9.1}Tabla 1}{137}{section.9.1}
+\contentsline {section}{\numberline {9.2}Tabla 2}{139}{section.9.2}
+\contentsline {section}{\numberline {9.3}Tabla 3}{140}{section.9.3}
+\contentsline {section}{\numberline {9.4}Tabla 4}{141}{section.9.4}
+\contentsline {section}{\numberline {9.5}Tabla 5}{144}{section.9.5}
+\contentsline {section}{\numberline {9.6}Tabla 6}{146}{section.9.6}
+\contentsline {section}{\numberline {9.7}Tabla 7}{147}{section.9.7}
+\contentsline {section}{\numberline {9.8}Tabla 8}{148}{section.9.8}
+\contentsline {section}{\numberline {9.9}Tabla 9}{150}{section.9.9}
+\contentsline {section}{\numberline {9.10}Tabla 10}{151}{section.9.10}
+\contentsline {section}{\numberline {9.11}Tabla 11}{153}{section.9.11}
+\contentsline {section}{\numberline {9.12}Tabla 12}{155}{section.9.12}
+\contentsline {section}{\numberline {9.13}Tabla 13}{156}{section.9.13}
+\contentsline {section}{\numberline {9.14}Tabla 14}{157}{section.9.14}
+\contentsline {section}{\numberline {9.15}Tabla 15}{159}{section.9.15}
+\contentsline {section}{\numberline {9.16}Tabla 16}{159}{section.9.16}
+\contentsline {section}{\numberline {9.17}Tabla 17}{161}{section.9.17}
+\contentsline {section}{\numberline {9.18}Tabla 18}{162}{section.9.18}
+\contentsline {section}{\numberline {9.19}Tabla 19}{163}{section.9.19}
