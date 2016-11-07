@@ -995,4 +995,5 @@ Solución
 Examen
 ======
 
-Se realizará el Jueves 10 de noviembre de 2016
+* El grupo DAM-1 realizará el Jueves 10 de noviembre de 2016
+* El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
