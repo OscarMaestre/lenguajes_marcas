@@ -668,6 +668,8 @@ Permite elegir una sola opción de entre muchas, se necesita usar un ``input`` d
 	<br/>
 	<input type="radio" name="sexo">Femenino
 	
+Si se desea que un control de tipo ``checkbox`` o ``radio`` aparezca marcado por defecto se debe añadir el atributo ``multiple="multiple"``.
+	
 Selector múltiple (checkbox)
 -----------------------------
 
