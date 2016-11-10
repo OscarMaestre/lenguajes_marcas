@@ -60,32 +60,33 @@
 \contentsline {chapter}{\numberline {3}CSS}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{29}{section.3.1}
 \contentsline {section}{\numberline {3.2}Posicionamiento}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Ejercicio de maquetaci\IeC {\'o}n}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Ejercicio propuesto}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Ejercicio de maquetaci\IeC {\'o}n}{30}{subsection.3.2.2}
 \contentsline {subsubsection}{HTML}{30}{subsubsection*.3}
 \contentsline {subsubsection}{CSS}{31}{subsubsection*.4}
-\contentsline {subsection}{\numberline {3.2.2}Ejercicio 2 de maquetaci\IeC {\'o}n}{31}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}HTML}{32}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}CSS}{33}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Ejercicio: barra de herramientas}{34}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Ejercicio: ampliaci\IeC {\'o}n}{34}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Ejercicio}{35}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Posicionamiento float}{36}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}Ejercicio}{36}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.3}Ejercicio 2 de maquetaci\IeC {\'o}n}{32}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}HTML}{32}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}CSS}{33}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Ejercicio: barra de herramientas}{34}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Ejercicio: ampliaci\IeC {\'o}n}{35}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Ejercicio}{35}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}Posicionamiento float}{36}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}Ejercicio}{36}{subsection.3.2.10}
 \contentsline {section}{\numberline {3.3}Gesti\IeC {\'o}n de espacios}{36}{section.3.3}
 \contentsline {section}{\numberline {3.4}Colores}{36}{section.3.4}
-\contentsline {section}{\numberline {3.5}Tipograf\IeC {\'\i }as}{36}{section.3.5}
+\contentsline {section}{\numberline {3.5}Tipograf\IeC {\'\i }as}{37}{section.3.5}
 \contentsline {section}{\numberline {3.6}Alineaci\IeC {\'o}n del texto}{37}{section.3.6}
 \contentsline {section}{\numberline {3.7}Decoraci\IeC {\'o}n del texto}{37}{section.3.7}
 \contentsline {section}{\numberline {3.8}Medidas}{37}{section.3.8}
-\contentsline {section}{\numberline {3.9}Selectores}{37}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{38}{subsection.3.9.1}
+\contentsline {section}{\numberline {3.9}Selectores}{38}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{39}{subsection.3.9.1}
 \contentsline {subsection}{\numberline {3.9.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{39}{subsection.3.9.2}
 \contentsline {subsection}{\numberline {3.9.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{39}{subsection.3.9.3}
-\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{39}{subsection.3.9.4}
-\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{41}{subsection.3.9.5}
-\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{41}{subsection.3.9.6}
-\contentsline {section}{\numberline {3.10}Bootstrap}{41}{section.3.10}
-\contentsline {subsection}{\numberline {3.10.1}Estructura b\IeC {\'a}sica}{41}{subsection.3.10.1}
+\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{40}{subsection.3.9.4}
+\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{40}{subsection.3.9.5}
+\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{40}{subsection.3.9.6}
+\contentsline {section}{\numberline {3.10}Bootstrap}{40}{section.3.10}
+\contentsline {subsection}{\numberline {3.10.1}Estructura b\IeC {\'a}sica}{42}{subsection.3.10.1}
 \contentsline {subsection}{\numberline {3.10.2}Rejilla o \emph {grid}}{42}{subsection.3.10.2}
 \contentsline {subsection}{\numberline {3.10.3}Tipograf\IeC {\'\i }a}{43}{subsection.3.10.3}
 \contentsline {chapter}{\numberline {4}Javascript}{45}{chapter.4}
