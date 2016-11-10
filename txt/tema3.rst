@@ -31,6 +31,16 @@ varias cosas:
 	* static: dar permiso al navegador para que coloque la caja donde corresponda 
 	* float: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
 	
+Ejercicio propuesto
+----------------------
+
+Crea una página con la siguiente estructura.
+* En la parte superior debe haber dos cajas. Una de ellas, a la izquierda, ocupa el 33% y contiene el lema. La otra, a la derecha, contiene enlaces y ocupa el 66%.
+
+* En la parte central 3 cajas. La de la izquierda contiene publicidad y ocupa el 25%. La central tiene el contenido y ocupa el 50%, la de la derecha tiene más publicidad y ocupa el 25%.
+* En la parte de abajo hay una barra **que no se mueve nunca** y que ocupa el 100%. Contiene el mensaje de copyright de la empresa.
+
+
 Ejercicio de maquetación
 ------------------------------------------------------
 
