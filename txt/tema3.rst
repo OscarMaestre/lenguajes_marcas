@@ -28,16 +28,18 @@ varias cosas:
 	* ``fixed``: la caja va en cierta posición y no se mueve de allí
 	* ``absolute``: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.
 	* ``relative``: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador
-	* static: dar permiso al navegador para que coloque la caja donde corresponda 
-	* float: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
+	* static: dar permiso al navegador para que coloque la caja donde corresponda.
+	* float: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor.
 	
 Ejercicio propuesto
-----------------------
+-----------------------------
 
 Crea una página con la siguiente estructura.
+
 * En la parte superior debe haber dos cajas. Una de ellas, a la izquierda, ocupa el 33% y contiene el lema. La otra, a la derecha, contiene enlaces y ocupa el 66%.
 
 * En la parte central 3 cajas. La de la izquierda contiene publicidad y ocupa el 25%. La central tiene el contenido y ocupa el 50%, la de la derecha tiene más publicidad y ocupa el 25%.
+
 * En la parte de abajo hay una barra **que no se mueve nunca** y que ocupa el 100%. Contiene el mensaje de copyright de la empresa.
 
 
@@ -689,7 +691,7 @@ En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dis
 
 
 * col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "muy pequeña/extrasmall" (menos de 768)
-* col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "pequeña/*sm*all" (más de 768 y menos de 992)
+* col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "pequeña/small" (más de 768 y menos de 992)
 * col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "media" (unos 992 px)
 * col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "grande/large" (unos 992 px)
 

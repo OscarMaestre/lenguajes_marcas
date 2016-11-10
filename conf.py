@@ -136,7 +136,7 @@ html_theme = 'alabaster'
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'Apuntes de Lenguajes de Marcas v1.3'
+html_title = 'Apuntes de Lenguajes de Marcas v1.3'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
