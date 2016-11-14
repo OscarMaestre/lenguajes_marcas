@@ -45,8 +45,6 @@ Crea una página con la siguiente estructura.
 
 Un posible HTML sería este:
 
-.. literalinclude:: ejercicio2/ejtabla3.html
-	:language: html
     
     
 Y un posible CSS sería este
@@ -712,7 +710,7 @@ En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dis
 
 
 * col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "muy pequeña/extrasmall" (menos de 768)
-* col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "pequeña/*sm*all" (más de 768 y menos de 992)
+* col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "pequeña/small" (más de 768 y menos de 992)
 * col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "media" (unos 992 px)
 * col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura "grande/large" (unos 992 px)
 
