@@ -45,10 +45,24 @@ Crea una página con la siguiente estructura.
 
 Un posible HTML sería este:
 
-.. literalinclude:: ejemplos/tema3_html/ej_2/cajas.html
-   language:html
+.. literalinclude:: ejercicio2/ejtabla3.html
+	:language: html
+    
+    
 Y un posible CSS sería este
 
+Ejercicio propuesto (II)
+---------------------------
+
+Crear una página con la siguiente estructura:
+
+* En la parte izquierda hay una barra de enlaces. Ocupa el 50% y está **fija**.
+
+* En la zona superior hay una capa con el lema de la empresa. Ocupa el 75% y no se debe ver tapada por los enlaces.
+
+* En la zona central hay dos capas. Una de ellas es el contenido y ocupa aproximadamente el 50%. A su lado hay una capa con publicidad que ocupa el 20%.
+
+* En la zona inferior hay una capa con el copyright de la empresa. Ocupa el 50% y se ve junto al margen derecho de la página.
 	
 Ejercicio de maquetación
 ------------------------------------------------------
