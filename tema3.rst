@@ -45,6 +45,8 @@ Crea una página con la siguiente estructura.
 
 Un posible HTML sería este:
 
+.. literalinclude:: ejemplos/tema3_html/ej_2/cajas.html
+   language:html
 Y un posible CSS sería este
 
 	
