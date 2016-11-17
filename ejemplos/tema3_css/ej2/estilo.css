@@ -1,26 +1,29 @@
 div#enlaces{
-  background-color: yellow;
   position: fixed;
   top:0px;
   left:0px;
   width:20%;
 }
 div#lema{
-  background-color: grey;
-  position: absolute;
-  top:0px;
-  right: 0px;
+ float:right;
   width:70%;
 }
-
-div#contenido,div#publi{
+div#contenedor_central{
   float:right;
+  width:75%;
+  margin-right: 0px;
 }
-
+div#contenido{
+  font-family: Helvetica; 
+  float:left;
+  width: 62%;
+}
+div#publi{
+  margin-right: 0px;
+  float:right;
+  width:32%;
+}
 div#copyright{
-  background-color: rgb(220,240,210);
-  position: absolute;
-  bottom: 0px;
-  right:0px;
+  float:right;
   width: 50%;
 }

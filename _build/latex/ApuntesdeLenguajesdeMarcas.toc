@@ -62,13 +62,13 @@
 \contentsline {section}{\numberline {3.2}Posicionamiento}{29}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Ejercicio propuesto}{30}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Ejercicio propuesto (II)}{31}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Ejercicio de maquetaci\IeC {\'o}n}{33}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Ejercicio de maquetaci\IeC {\'o}n}{32}{subsection.3.2.3}
 \contentsline {subsubsection}{HTML}{33}{subsubsection*.3}
 \contentsline {subsubsection}{CSS}{34}{subsubsection*.4}
 \contentsline {subsection}{\numberline {3.2.4}Ejercicio 2 de maquetaci\IeC {\'o}n}{34}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}HTML}{35}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}HTML}{34}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}CSS}{36}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Ejercicio: barra de herramientas}{37}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Ejercicio: barra de herramientas}{36}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Ejercicio: ampliaci\IeC {\'o}n}{37}{subsection.3.2.8}
 \contentsline {subsection}{\numberline {3.2.9}Ejercicio}{38}{subsection.3.2.9}
 \contentsline {subsection}{\numberline {3.2.10}Posicionamiento float}{39}{subsection.3.2.10}
@@ -76,20 +76,20 @@
 \contentsline {section}{\numberline {3.3}Gesti\IeC {\'o}n de espacios}{39}{section.3.3}
 \contentsline {section}{\numberline {3.4}Colores}{39}{section.3.4}
 \contentsline {section}{\numberline {3.5}Tipograf\IeC {\'\i }as}{39}{section.3.5}
-\contentsline {section}{\numberline {3.6}Alineaci\IeC {\'o}n del texto}{40}{section.3.6}
+\contentsline {section}{\numberline {3.6}Alineaci\IeC {\'o}n del texto}{39}{section.3.6}
 \contentsline {section}{\numberline {3.7}Decoraci\IeC {\'o}n del texto}{40}{section.3.7}
 \contentsline {section}{\numberline {3.8}Medidas}{40}{section.3.8}
 \contentsline {section}{\numberline {3.9}Selectores}{40}{section.3.9}
 \contentsline {subsection}{\numberline {3.9.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{41}{subsection.3.9.1}
-\contentsline {subsection}{\numberline {3.9.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{42}{subsection.3.9.2}
-\contentsline {subsection}{\numberline {3.9.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{42}{subsection.3.9.3}
-\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{42}{subsection.3.9.4}
-\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{44}{subsection.3.9.5}
-\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{44}{subsection.3.9.6}
+\contentsline {subsection}{\numberline {3.9.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{41}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{43}{subsection.3.9.3}
+\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{43}{subsection.3.9.4}
+\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{43}{subsection.3.9.5}
+\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{43}{subsection.3.9.6}
 \contentsline {section}{\numberline {3.10}Bootstrap}{44}{section.3.10}
 \contentsline {subsection}{\numberline {3.10.1}Estructura b\IeC {\'a}sica}{44}{subsection.3.10.1}
 \contentsline {subsection}{\numberline {3.10.2}Rejilla o \emph {grid}}{45}{subsection.3.10.2}
-\contentsline {subsection}{\numberline {3.10.3}Tipograf\IeC {\'\i }a}{46}{subsection.3.10.3}
+\contentsline {subsection}{\numberline {3.10.3}Tipograf\IeC {\'\i }a}{45}{subsection.3.10.3}
 \contentsline {chapter}{\numberline {4}Javascript}{47}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tipos de datos}{47}{section.4.2}

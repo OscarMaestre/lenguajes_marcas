@@ -1302,21 +1302,7 @@ varias cosas:</p>
 
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
-Enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces enlaces enlaces
-enlaces enlaces 
+Enlaces enlaces 
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lema&quot;</span><span class="p">&gt;</span>
@@ -1324,12 +1310,15 @@ Progresando con el tiempo,
 mejorando con la experiencia
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor_central&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
 Texto principal de la página
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi&quot;</span><span class="p">&gt;</span>
-Publicidad
-<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+Publicidad publicidad
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
 
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;copyright&quot;</span><span class="p">&gt;</span>
 <span class="ni">&amp;copy;</span> IES Maestre 2016
@@ -1340,29 +1329,32 @@ Publicidad
 </div>
 <p>Y un posible CSS sería este:</p>
 <div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span>
   <span class="nb">position</span><span class="o">:</span> <span class="nb">fixed</span><span class="p">;</span>
   <span class="nb">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
   <span class="nb">left</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
   <span class="nb">width</span><span class="o">:</span><span class="m">20%</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">div</span><span class="nn">#lema</span><span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="n">grey</span><span class="p">;</span>
-  <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
-  <span class="nb">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-  <span class="nb">right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+ <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
   <span class="nb">width</span><span class="o">:</span><span class="m">70%</span><span class="p">;</span>
 <span class="p">}</span>
-
-<span class="nt">div</span><span class="nn">#contenido</span><span class="o">,</span><span class="nt">div</span><span class="nn">#publi</span><span class="p">{</span>
+<span class="nt">div</span><span class="nn">#contenedor_central</span><span class="p">{</span>
   <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
+  <span class="nb">width</span><span class="o">:</span><span class="m">75%</span><span class="p">;</span>
+  <span class="nb">margin-right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="nt">div</span><span class="nn">#contenido</span><span class="p">{</span>
+  <span class="nb">font-family</span><span class="o">:</span> <span class="n">Helvetica</span><span class="p">;</span> 
+  <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
+  <span class="nb">width</span><span class="o">:</span> <span class="m">62%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="nn">#publi</span><span class="p">{</span>
+  <span class="nb">margin-right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
+  <span class="nb">width</span><span class="o">:</span><span class="m">32%</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="nt">div</span><span class="nn">#copyright</span><span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span><span class="m">240</span><span class="o">,</span><span class="m">210</span><span class="p">);</span>
-  <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
-  <span class="nb">bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="nb">right</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
   <span class="nb">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
