@@ -9,7 +9,7 @@ lenguaje:Java:Python:HTML:Visual Basic
 lenguaje:Python:HTML:Visual Basic:Java
 lenguaje:Java:Python:HTML:Visual Basic:CSS
 procesador:Intel:AMD
-procesador:AMD:Intel i5: Intel i7
+procesador:AMD:Intel i5:Intel i7
 hardware:Con tarjeta aceleradora:Con monitor LED:Con SSD
 hardware:Con monitor LED:Con SSD
 hardware:Con monitor LED:Con SSD:Con tarjeta aceleradora:Extra RAM
