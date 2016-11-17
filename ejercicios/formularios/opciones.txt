@@ -1,0 +1,15 @@
+sexo:Hombre:Mujer
+sexo:Mujer:Hombre
+asignatura:Historia:Geografía:Lengua:Matemáticas
+asignatura:Geografía:Lengua:Matemáticas:Historia
+asignatura:Lengua:Matemáticas:Historia:Geografía
+asignatura:Matemáticas:Historia:Geografía:Lengua
+medio_transporte:Automóvil:Moto:Autobús
+lenguaje:Java:Python:HTML:Visual Basic
+lenguaje:Python:HTML:Visual Basic:Java
+lenguaje:Java:Python:HTML:Visual Basic:CSS
+procesador:Intel:AMD
+procesador:AMD:Intel i5: Intel i7
+hardware:Con tarjeta aceleradora:Con monitor LED:Con SSD
+hardware:Con monitor LED:Con SSD
+hardware:Con monitor LED:Con SSD:Con tarjeta aceleradora:Extra RAM
