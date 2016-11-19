@@ -108,19 +108,23 @@ class GeneradorFormularios(object):
         html+="</select>\n"
         return html
     
-def convertir_codificacion(cadena, encoding="iso-8859-1"):
-    bytes_cadena=bytes(cadena, "UTF-8")
+
+def convertir_cad_unicode_a_codificacion(cad, nueva_codificacion):
+    bytes_cad=bytes(cad, nueva_codificacion)
+    cad_nueva=bytes_cad.decode(nueva_codificacion)
+    return cad_nueva
     
-    return bytes_cadena.decode("iso-8859-1")
 
 g=GeneradorFormularios()
 nombre=sys.argv[1]
 
-fichero=open(nombre, "w", encoding="utf-8")
+codificacion_a_usar="latin-1"
+fichero=open(nombre, "w", encoding=codificacion_a_usar)
 
 html=g.generar_formulario()
-html=convertir_codificacion(html)
+html=convertir_cad_unicode_a_codificacion(html, codificacion_a_usar)
 fichero.write ( html )
+
 fichero.close()
 #print(html)
 
