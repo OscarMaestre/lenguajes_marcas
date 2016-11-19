@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 #encoding=utf-8
 from random import randint
-
+import sys
 FICHERO_OPCIONES = "opciones.txt"
 FICHERO_LEYENDAS = "legends.txt"
 
@@ -109,7 +109,12 @@ class GeneradorFormularios(object):
 
     
 g=GeneradorFormularios()
+print(g)
+nombre=sys.argv[1]
+print(nombre)
+fichero=open(nombre, "w", encoding="utf-8")
+print(fichero)
+html=g.generar_formulario()
+fichero.write ( html )
+fichero.close()
 
-with open(sys.argv[1], "w") as fichero:
-    fichero.write ( g.generar_formulario())
-    fichero.close()
