@@ -2,6 +2,8 @@
 #encoding=utf-8
 from random import randint
 import sys
+import codecs
+
 FICHERO_OPCIONES = "opciones.txt"
 FICHERO_LEYENDAS = "legends.txt"
 
@@ -106,15 +108,19 @@ class GeneradorFormularios(object):
         html+="</select>\n"
         return html
     
-
+def convertir_codificacion(cadena, encoding="iso-8859-1"):
+    bytes_cadena=bytes(cadena, "UTF-8")
     
+    return bytes_cadena.decode("iso-8859-1")
+
 g=GeneradorFormularios()
-print(g)
 nombre=sys.argv[1]
-print(nombre)
+
 fichero=open(nombre, "w", encoding="utf-8")
-print(fichero)
+
 html=g.generar_formulario()
+html=convertir_codificacion(html)
 fichero.write ( html )
 fichero.close()
+#print(html)
 
