@@ -1,0 +1,3 @@
+nombre:Nombre-apellidos:Apellidos
+nombre:Nombre-apellidos:Apellidos-direccion:Direccion
+instituto:Instituto-estudios:Estudios elegidos
