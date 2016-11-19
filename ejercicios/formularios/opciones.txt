@@ -10,6 +10,17 @@ lenguaje:Python:HTML:Visual Basic:Java
 lenguaje:Java:Python:HTML:Visual Basic:CSS
 procesador:Intel:AMD
 procesador:AMD:Intel i5:Intel i7
-hardware:Con tarjeta aceleradora:Con monitor LED:Con SSD
-hardware:Con monitor LED:Con SSD
-hardware:Con monitor LED:Con SSD:Con tarjeta aceleradora:Extra RAM
+hardware:Tarjeta aceleradora:Monitor LED:SSD
+hardware:Monitor LED:SSD
+idioma:Español:Inglés:Alemán:Francés
+idioma:Inglés:Alemán:Francés
+ciclo:SMIR:ASIR:DAM:DAW
+ciclo:ASIR:DAM:DAW
+provincia:Albacete:Ciudad Real:Cuenca:Guadalajara:Toledo
+dia:Lunes:Martes:Miércoles:Jueves:Sabado
+preferencia:Ciencias:Letras
+sistema:Windows:Mac:Linux
+conexion:Wifi:Cable:Fibra
+editor:Notepad:Emacs:Otro
+aula:A01:A02:A03
+velocidad:100 Mbits:1000 Mbits
