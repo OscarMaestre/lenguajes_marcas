@@ -7,7 +7,7 @@ X_INICIAL=8
 Y_INICIAL=130
 
 X_FINAL=420
-Y_FINAL=390
+Y_FINAL=550
 
 ANCHO=X_FINAL - X_INICIAL
 ALTO =Y_FINAL - Y_INICIAL
@@ -54,7 +54,7 @@ def capturar_pantalla(nombre_fichero_imagen):
 
 
 def generar_ejercicio(archivo_html, archivo_png, foto_png):
-    subprocess.call(["./generador_ejercicios.py", archivo_html])
+    subprocess.call(["./generador_formularios.py", archivo_html])
     subprocess.call(["abrowser", archivo_html])
     time.sleep(2)
     capturar_pantalla(archivo_png)
@@ -66,7 +66,7 @@ def recortar_imagen(archivo, archivo_cortado):
 def generar_tablas():
     secciones=""
     for i in range(1, 3):
-        
+        print("Generando "+str(i))
         cad_numero=str(i)
         sufijo=cad_numero.zfill(2)
         archivo_html="formulario_"+sufijo+".html"
@@ -84,6 +84,6 @@ def generar_tablas():
     return secciones
     
 
-with open("anexo_tablas.rst", "w") as fich:
+with open("anexo_formularios.rst", "w") as fich:
     secciones=generar_tablas()
     fich.write(TEXTO.format(secciones) )
