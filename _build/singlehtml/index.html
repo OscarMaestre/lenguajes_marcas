@@ -1368,7 +1368,7 @@ Publicidad publicidad
 <li>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</li>
 <li>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</li>
 </ul>
-<div class="figure align-center" id="id6" style="width: 50%">
+<div class="figure align-center" id="id8" style="width: 50%">
 <img alt="_images/maquetacion1.png" src="_images/maquetacion1.png" />
 <p class="caption"><span class="caption-text">Resultado final</span></p>
 </div>
@@ -1678,6 +1678,7 @@ Publicidad publicidad
 <li>Por nombre: <code class="docutils literal"><span class="pre">red</span></code>, <code class="docutils literal"><span class="pre">yellow</span></code>, <code class="docutils literal"><span class="pre">green</span></code></li>
 <li>Mediante <code class="docutils literal"><span class="pre">rgb(rojo,</span> <span class="pre">verde,</span> <span class="pre">azul</span></code>, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, <code class="docutils literal"><span class="pre">rgb(0,0,0)</span></code> es negro y <code class="docutils literal"><span class="pre">rgb(255,255,255)</span></code> es blanco.</li>
 <li>Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.</li>
+<li>Desde hace poco se pueden indicar también con <a href="#id5"><span class="problematic" id="id6">``</span></a>hsl(num, num, num)&#8217;&#8216;</li>
 </ul>
 <p>Se pueden encontrar en Internet listas de colores denominados &#8220;seguros&#8221; (buscando por &#8220;web safe colors&#8221;) que indican nombres de color que se ven igual en los distintos navegadores.</p>
 </div>
@@ -1692,9 +1693,8 @@ Publicidad publicidad
 <p>Lo más relevante, es que cuando usamos <code class="docutils literal"><span class="pre">font-family:</span> <span class="pre">&quot;Arial&quot;;</span></code>, el navegador puede decidir poner otro tipo de letra de la misma familia.</p>
 <p>Se pueden indicar varios tipos de letra por orden de preferencia.</p>
 <p>Google Fonts permite el &#8220;embebido&#8221; de fuentes de manera muy segura.</p>
-</div>
-<div class="section" id="alineacion-del-texto">
-<h3>Alineación del texto<a class="headerlink" href="#alineacion-del-texto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Alineación del texto
+===========     =========</p>
 <p>Se puede usar la propiedad <code class="docutils literal"><span class="pre">text-align:</span> <span class="pre">left</span></code> para modificar la alineación del texto, usando <code class="docutils literal"><span class="pre">left</span></code>, <code class="docutils literal"><span class="pre">center</span></code>, <code class="docutils literal"><span class="pre">right</span></code> o <code class="docutils literal"><span class="pre">justify</span></code></p>
 </div>
 <div class="section" id="decoracion-del-texto">
@@ -1720,7 +1720,6 @@ el aspecto del texto como estas:</p>
 </div>
 <div class="section" id="selectores">
 <h3>Selectores<a class="headerlink" href="#selectores" title="Enlazar permanentemente con este título">¶</a></h3>
-<p><a class="reference external" href="http://10.9.0.252:8000">http://10.9.0.252:8000</a></p>
 <p>Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas</p>
 <ul class="simple">
 <li>p#destacado</li>
@@ -1792,15 +1791,15 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
-<div class="figure align-center" id="id7" style="width: 50%">
+<div class="figure align-center" id="id9" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
 </div>
-<div class="section" id="id5">
-<h4>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="section" id="id7">
+<h4>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
-<div class="figure align-center" id="id8" style="width: 50%">
+<div class="figure align-center" id="id10" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -1812,7 +1811,7 @@ el aspecto del texto como estas:</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<div class="figure align-center" id="id9" style="width: 50%">
+<div class="figure align-center" id="id11" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -1829,7 +1828,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-destacado-id1">
 <h4>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Ahora el resultado es este</p>
-<div class="figure align-center" id="id10" style="width: 50%">
+<div class="figure align-center" id="id12" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -1890,7 +1889,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id11" style="width: 50%">
+<div class="figure align-center" id="id13" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
 </div>
@@ -1911,7 +1910,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id12" style="width: 50%">
+<div class="figure align-center" id="id14" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <p class="caption"><span class="caption-text">Párrafo destacado</span></p>
 </div>
@@ -8488,7 +8487,6 @@ ejercicios no se muestran con ningún orden de dificultad.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#gestion-de-espacios">Gestión de espacios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#colores">Colores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tipografias">Tipografías</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#alineacion-del-texto">Alineación del texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#decoracion-del-texto">Decoración del texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#medidas">Medidas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#selectores">Selectores</a></li>
