@@ -1,0 +1,39 @@
+div#copyright{
+    position: fixed;
+    bottom:0px;
+    left:0px;
+    width: 100%;
+    background-color: rgb(200, 220,220);
+}
+div#lema{
+    float:left;
+    margin-bottom: 10px;
+    width:33%;
+    background-color: rgb(254, 0, 26);
+    color:rgb(255,255,255);
+}
+div#enlaces{
+    margin-bottom:10px;
+    margin-left: 0px;
+    background-color: blue;
+    float: right;
+    width:66%;
+}
+div#contenido{
+    float:left;
+    width:49%;
+    margin-left:1.5%;
+    margin-right:1.5%;
+    background-color:#fe001a;
+}
+
+div#publi1{
+    float:left;
+    width:24%;
+    background-color: yellow;
+}
+div#publi2{
+    background-color: yellow;
+    float:right;
+    width: 24%;
+}

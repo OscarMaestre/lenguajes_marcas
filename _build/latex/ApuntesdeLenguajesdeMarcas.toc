@@ -76,20 +76,19 @@
 \contentsline {section}{\numberline {3.3}Gesti\IeC {\'o}n de espacios}{39}{section.3.3}
 \contentsline {section}{\numberline {3.4}Colores}{39}{section.3.4}
 \contentsline {section}{\numberline {3.5}Tipograf\IeC {\'\i }as}{39}{section.3.5}
-\contentsline {section}{\numberline {3.6}Alineaci\IeC {\'o}n del texto}{39}{section.3.6}
-\contentsline {section}{\numberline {3.7}Decoraci\IeC {\'o}n del texto}{40}{section.3.7}
-\contentsline {section}{\numberline {3.8}Medidas}{40}{section.3.8}
-\contentsline {section}{\numberline {3.9}Selectores}{40}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{41}{subsection.3.9.1}
-\contentsline {subsection}{\numberline {3.9.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{41}{subsection.3.9.2}
-\contentsline {subsection}{\numberline {3.9.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{43}{subsection.3.9.3}
-\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{43}{subsection.3.9.4}
-\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{43}{subsection.3.9.5}
-\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{43}{subsection.3.9.6}
-\contentsline {section}{\numberline {3.10}Bootstrap}{44}{section.3.10}
-\contentsline {subsection}{\numberline {3.10.1}Estructura b\IeC {\'a}sica}{44}{subsection.3.10.1}
-\contentsline {subsection}{\numberline {3.10.2}Rejilla o \emph {grid}}{45}{subsection.3.10.2}
-\contentsline {subsection}{\numberline {3.10.3}Tipograf\IeC {\'\i }a}{45}{subsection.3.10.3}
+\contentsline {section}{\numberline {3.6}Decoraci\IeC {\'o}n del texto}{40}{section.3.6}
+\contentsline {section}{\numberline {3.7}Medidas}{40}{section.3.7}
+\contentsline {section}{\numberline {3.8}Selectores}{40}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{41}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{41}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{41}{subsection.3.8.3}
+\contentsline {subsection}{\numberline {3.8.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{43}{subsection.3.8.4}
+\contentsline {subsection}{\numberline {3.8.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{43}{subsection.3.8.5}
+\contentsline {subsection}{\numberline {3.8.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{43}{subsection.3.8.6}
+\contentsline {section}{\numberline {3.9}Bootstrap}{43}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Estructura b\IeC {\'a}sica}{44}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}Rejilla o \emph {grid}}{45}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Tipograf\IeC {\'\i }a}{45}{subsection.3.9.3}
 \contentsline {chapter}{\numberline {4}Javascript}{47}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tipos de datos}{47}{section.4.2}

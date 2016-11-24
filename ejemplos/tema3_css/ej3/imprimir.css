@@ -1,0 +1,9 @@
+div#caja1{
+  border: none;
+  display: none;
+}
+div#caja2{
+  margin-top: 1cm;
+  padding:1cm;
+  border: double red 4px;
+}
