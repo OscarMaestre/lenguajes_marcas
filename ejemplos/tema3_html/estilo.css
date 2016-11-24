@@ -1,0 +1,13 @@
+body {
+    font-family: Helvetica;
+}
+/* Esto solo afecta a los
+ * que llevan class="acme"
+ */
+span.acme{
+    font-style: italic;
+}
+
+span.cocacola{
+    font-weight: bold;
+}
