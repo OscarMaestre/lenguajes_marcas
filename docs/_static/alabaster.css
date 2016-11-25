@@ -15,44 +15,6 @@
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 @import url("basic.css");
 
 /* -- page layout ----------------------------------------------------------- */
@@ -60,20 +22,12 @@
 body {
     font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
     font-size: 17px;
-<<<<<<< HEAD
     background-color: white;
-=======
-    background-color: #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     color: #000;
     margin: 0;
     padding: 0;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 div.document {
     width: 940px;
     margin: 30px auto 0 auto;
@@ -90,11 +44,6 @@ div.bodywrapper {
 
 div.sphinxsidebar {
     width: 220px;
-<<<<<<< HEAD
-=======
-    font-size: 14px;
-    line-height: 1.5;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 hr {
@@ -102,11 +51,7 @@ hr {
 }
 
 div.body {
-<<<<<<< HEAD
     background-color: #ffffff;
-=======
-    background-color: #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     color: #3E4349;
     padding: 0 30px 0 30px;
 }
@@ -127,14 +72,6 @@ div.footer a {
     color: #888;
 }
 
-<<<<<<< HEAD
-=======
-p.caption {
-    font-family: inherit;
-    font-size: inherit;
-}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 
 div.relations {
     display: none;
@@ -151,14 +88,11 @@ div.sphinxsidebar a:hover {
     border-bottom: 1px solid #999;
 }
 
-<<<<<<< HEAD
 div.sphinxsidebar {
     font-size: 14px;
     line-height: 1.5;
 }
 
-=======
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 div.sphinxsidebarwrapper {
     padding: 18px 10px;
 }
@@ -295,20 +229,11 @@ div.body p, div.body dd, div.body li {
 div.admonition {
     margin: 20px 0px;
     padding: 10px 30px;
-<<<<<<< HEAD
     background-color: #FCC;
     border: 1px solid #FAA;
 }
 
 div.admonition tt.xref, div.admonition a tt {
-=======
-    background-color: #EEE;
-    border: 1px solid #CCC;
-}
-
-div.admonition tt.xref, div.admonition code.xref, div.admonition a tt {
-    background-color: ;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     border-bottom: 1px solid #fafafa;
 }
 
@@ -331,85 +256,25 @@ div.admonition p.last {
 }
 
 div.highlight {
-<<<<<<< HEAD
     background-color: white;
-=======
-    background-color: #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 dt:target, .highlight {
     background: #FAF3E8;
 }
 
-<<<<<<< HEAD
-=======
-div.warning {
-    background-color: #FCC;
-    border: 1px solid #FAA;
-}
-
-div.danger {
-    background-color: #FCC;
-    border: 1px solid #FAA;
-    -moz-box-shadow: 2px 2px 4px #D52C2C;
-    -webkit-box-shadow: 2px 2px 4px #D52C2C;
-    box-shadow: 2px 2px 4px #D52C2C;
-}
-
-div.error {
-    background-color: #FCC;
-    border: 1px solid #FAA;
-    -moz-box-shadow: 2px 2px 4px #D52C2C;
-    -webkit-box-shadow: 2px 2px 4px #D52C2C;
-    box-shadow: 2px 2px 4px #D52C2C;
-}
-
-div.caution {
-    background-color: #FCC;
-    border: 1px solid #FAA;
-}
-
-div.attention {
-    background-color: #FCC;
-    border: 1px solid #FAA;
-}
-
-div.important {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 div.note {
     background-color: #EEE;
     border: 1px solid #CCC;
 }
 
-<<<<<<< HEAD
-=======
-div.tip {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-}
-
-div.hint {
-    background-color: #EEE;
-    border: 1px solid #CCC;
-}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 div.seealso {
     background-color: #EEE;
     border: 1px solid #CCC;
 }
 
 div.topic {
-<<<<<<< HEAD
     background-color: #eee;
-=======
-    background-color: #EEE;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 p.admonition-title {
@@ -444,28 +309,16 @@ tt.descname, code.descname {
 }
 
 img.screenshot {
-<<<<<<< HEAD
     -moz-box-shadow: 2px 2px 4px #eee;
     -webkit-box-shadow: 2px 2px 4px #eee;
     box-shadow: 2px 2px 4px #eee;
-=======
-    -moz-box-shadow: 2px 2px 4px #EEE;
-    -webkit-box-shadow: 2px 2px 4px #EEE;
-    box-shadow: 2px 2px 4px #EEE;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 table.docutils {
     border: 1px solid #888;
-<<<<<<< HEAD
     -moz-box-shadow: 2px 2px 4px #eee;
     -webkit-box-shadow: 2px 2px 4px #eee;
     box-shadow: 2px 2px 4px #eee;
-=======
-    -moz-box-shadow: 2px 2px 4px #EEE;
-    -webkit-box-shadow: 2px 2px 4px #EEE;
-    box-shadow: 2px 2px 4px #EEE;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 table.docutils td, table.docutils th {
@@ -506,11 +359,7 @@ table.field-list p {
 }
 
 table.footnote td.label {
-<<<<<<< HEAD
     width: 0px;
-=======
-    width: .1px;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     padding: 0.3em 0 0.3em 0.5em;
 }
 
@@ -533,10 +382,6 @@ blockquote {
 }
 
 ul, ol {
-<<<<<<< HEAD
-=======
-    /* Matches the 30px from the narrow-screen "li > ul" selector below */
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     margin: 10px 0 10px 30px;
     padding: 0;
 }
@@ -548,13 +393,6 @@ pre {
     line-height: 1.3em;
 }
 
-<<<<<<< HEAD
-=======
-div.viewcode-block:target {
-    background: #ffd;
-}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 dl pre, blockquote pre, li pre {
     margin-left: 0;
     padding-left: 30px;
@@ -573,11 +411,7 @@ tt, code {
 
 tt.xref, code.xref, a tt {
     background-color: #FBFBFB;
-<<<<<<< HEAD
     border-bottom: 1px solid white;
-=======
-    border-bottom: 1px solid #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 }
 
 a.reference {
@@ -585,14 +419,6 @@ a.reference {
     border-bottom: 1px dotted #004B6B;
 }
 
-<<<<<<< HEAD
-=======
-/* Don't put an underline on images */
-a.image-reference, a.image-reference:hover {
-    border-bottom: none;
-}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
 a.reference:hover {
     border-bottom: 1px solid #6D4100;
 }
@@ -642,14 +468,6 @@ a:hover tt, a:hover code {
     	margin-left: 0;
     }
 
-<<<<<<< HEAD
-=======
-	li > ul {
-        /* Matches the 30px from the "ul, ol" selector above */
-		margin-left: 30px;
-	}
-
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     .document {
     	width: auto;
     }
@@ -685,11 +503,7 @@ a:hover tt, a:hover code {
 
     div.documentwrapper {
         float: none;
-<<<<<<< HEAD
         background: white;
-=======
-        background: #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     }
 
     div.sphinxsidebar {
@@ -704,11 +518,7 @@ a:hover tt, a:hover code {
 
     div.sphinxsidebar h3, div.sphinxsidebar h4, div.sphinxsidebar p,
     div.sphinxsidebar h3 a {
-<<<<<<< HEAD
         color: white;
-=======
-        color: #fff;
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
     }
 
     div.sphinxsidebar a {

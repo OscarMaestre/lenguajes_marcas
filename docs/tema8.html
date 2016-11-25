@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sistemas de gestión de información &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+    <title>Sistemas de gestión de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -28,11 +28,14 @@
     <link rel="next" title="Anexo: ejercicios sobre tablas" href="ejercicios/html/anexo_tablas.html" />
     <link rel="prev" title="Sindicación y transformación de contenidos" href="tema7.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -94,19 +97,19 @@
 </pre></div>
 </div>
 <p>obtenemos un resultado como este:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>+----+--------+-------------+
-| id | nombre | ap          |
-+----+--------+-------------+
-|  1 | Juan   | Lopez Lopez |
-|  2 | Andres | Ruiz Gomez  |
-|  3 | Tomas  | Perez Diaz  |
-+----+--------+-------------+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+----+--------+-------------+</span>
+<span class="o">|</span> <span class="nb">id</span> <span class="o">|</span> <span class="n">nombre</span> <span class="o">|</span> <span class="n">ap</span>          <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Juan</span>   <span class="o">|</span> <span class="n">Lopez</span> <span class="n">Lopez</span> <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span> <span class="n">Andres</span> <span class="o">|</span> <span class="n">Ruiz</span> <span class="n">Gomez</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">3</span> <span class="o">|</span> <span class="n">Tomas</span>  <span class="o">|</span> <span class="n">Perez</span> <span class="n">Diaz</span>  <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
 
-3 rows in set (0.00 sec)
+<span class="mi">3</span> <span class="n">rows</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Sin embargo, podemos ejecutar el siguiente comando que se conecta a MySQL ejecuta la consulta dada y devuelve un fichero XML:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>mysql -uroot -Ddatos -e&quot;select * from usuarios&quot; --xml
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">Ddatos</span> <span class="o">-</span><span class="n">e</span><span class="s2">&quot;select * from usuarios&quot;</span> <span class="o">--</span><span class="n">xml</span>
 </pre></div>
 </div>
 <p>El resultado será algo como esto:</p>
@@ -211,14 +214,11 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Ir a" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Introduzca los términos de búsqueda o un nombre de módulo, clase o función.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -229,8 +229,8 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/tema8.txt"

@@ -2,11 +2,7 @@
  * searchtools.js_t
  * ~~~~~~~~~~~~~~~~
  *
-<<<<<<< HEAD
  * Sphinx JavaScript utilties for the full-text search.
-=======
- * Sphinx JavaScript utilities for the full-text search.
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
  *
  * :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
  * :license: BSD, see LICENSE for details.
@@ -448,11 +444,7 @@ var Search = {
    * helper function to return a node containing the
    * search summary for a given text. keywords is a list
    * of stemmed words, hlwords is the list of normal, unstemmed
-<<<<<<< HEAD
    * words. the first one is used to find the occurance, the
-=======
-   * words. the first one is used to find the occurrence, the
->>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
    * latter for highlighting it.
    */
   makeSearchSummary : function(text, keywords, hlwords) {
