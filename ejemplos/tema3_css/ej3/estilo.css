@@ -1,0 +1,15 @@
+body{
+  background-color:rgb(200,230, 230);
+}
+
+div.caja_destacada, div#otra_cosa{
+  border:solid black 1px;
+  text-align: justify;
+  background: rgb(220, 230, 235);
+  padding:5px;
+  margin-top:10px;
+}
+
+div#otra_cosa >ol > li.elemento{
+  text-decoration: underline;
+}

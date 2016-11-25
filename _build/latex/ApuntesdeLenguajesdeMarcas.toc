@@ -76,20 +76,19 @@
 \contentsline {section}{\numberline {3.3}Gesti\IeC {\'o}n de espacios}{39}{section.3.3}
 \contentsline {section}{\numberline {3.4}Colores}{39}{section.3.4}
 \contentsline {section}{\numberline {3.5}Tipograf\IeC {\'\i }as}{39}{section.3.5}
-\contentsline {section}{\numberline {3.6}Alineaci\IeC {\'o}n del texto}{39}{section.3.6}
-\contentsline {section}{\numberline {3.7}Decoraci\IeC {\'o}n del texto}{40}{section.3.7}
-\contentsline {section}{\numberline {3.8}Medidas}{40}{section.3.8}
-\contentsline {section}{\numberline {3.9}Selectores}{40}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{41}{subsection.3.9.1}
-\contentsline {subsection}{\numberline {3.9.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{41}{subsection.3.9.2}
-\contentsline {subsection}{\numberline {3.9.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{43}{subsection.3.9.3}
-\contentsline {subsection}{\numberline {3.9.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{43}{subsection.3.9.4}
-\contentsline {subsection}{\numberline {3.9.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{43}{subsection.3.9.5}
-\contentsline {subsection}{\numberline {3.9.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{43}{subsection.3.9.6}
-\contentsline {section}{\numberline {3.10}Bootstrap}{44}{section.3.10}
-\contentsline {subsection}{\numberline {3.10.1}Estructura b\IeC {\'a}sica}{44}{subsection.3.10.1}
-\contentsline {subsection}{\numberline {3.10.2}Rejilla o \emph {grid}}{45}{subsection.3.10.2}
-\contentsline {subsection}{\numberline {3.10.3}Tipograf\IeC {\'\i }a}{45}{subsection.3.10.3}
+\contentsline {section}{\numberline {3.6}Decoraci\IeC {\'o}n del texto}{40}{section.3.6}
+\contentsline {section}{\numberline {3.7}Medidas}{40}{section.3.7}
+\contentsline {section}{\numberline {3.8}Selectores}{40}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Soluci\IeC {\'o}n \texttt {p\#destacado}}{41}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Soluci\IeC {\'o}n \texttt {p.destacado}}{41}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.3}Soluci\IeC {\'o}n \texttt {p.destacado, span\#id1}}{41}{subsection.3.8.3}
+\contentsline {subsection}{\numberline {3.8.4}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} li.elemento\_enumeracion}}{43}{subsection.3.8.4}
+\contentsline {subsection}{\numberline {3.8.5}Soluci\IeC {\'o}n \texttt {p.destacado \textgreater {} .elemento\_numeracion}}{43}{subsection.3.8.5}
+\contentsline {subsection}{\numberline {3.8.6}Soluci\IeC {\'o}n \texttt {.destacado \textgreater {} \#id1}}{43}{subsection.3.8.6}
+\contentsline {section}{\numberline {3.9}Bootstrap}{43}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Estructura b\IeC {\'a}sica}{44}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}Rejilla o \emph {grid}}{45}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Tipograf\IeC {\'\i }a}{45}{subsection.3.9.3}
 \contentsline {chapter}{\numberline {4}Javascript}{47}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tipos de datos}{47}{section.4.2}
@@ -252,3 +251,24 @@
 \contentsline {section}{\numberline {9.17}Tabla 17}{163}{section.9.17}
 \contentsline {section}{\numberline {9.18}Tabla 18}{164}{section.9.18}
 \contentsline {section}{\numberline {9.19}Tabla 19}{165}{section.9.19}
+\contentsline {chapter}{\numberline {10}Anexo: ejercicios sobre formularios}{167}{chapter.10}
+\contentsline {section}{\numberline {10.1}Formulario 1}{167}{section.10.1}
+\contentsline {section}{\numberline {10.2}Formulario 2}{168}{section.10.2}
+\contentsline {section}{\numberline {10.3}Formulario 3}{169}{section.10.3}
+\contentsline {section}{\numberline {10.4}Formulario 4}{170}{section.10.4}
+\contentsline {section}{\numberline {10.5}Formulario 5}{171}{section.10.5}
+\contentsline {section}{\numberline {10.6}Formulario 6}{173}{section.10.6}
+\contentsline {section}{\numberline {10.7}Formulario 7}{175}{section.10.7}
+\contentsline {section}{\numberline {10.8}Formulario 8}{177}{section.10.8}
+\contentsline {section}{\numberline {10.9}Formulario 9}{179}{section.10.9}
+\contentsline {section}{\numberline {10.10}Formulario 10}{180}{section.10.10}
+\contentsline {section}{\numberline {10.11}Formulario 11}{182}{section.10.11}
+\contentsline {section}{\numberline {10.12}Formulario 12}{184}{section.10.12}
+\contentsline {section}{\numberline {10.13}Formulario 13}{186}{section.10.13}
+\contentsline {section}{\numberline {10.14}Formulario 14}{188}{section.10.14}
+\contentsline {section}{\numberline {10.15}Formulario 15}{190}{section.10.15}
+\contentsline {section}{\numberline {10.16}Formulario 16}{192}{section.10.16}
+\contentsline {section}{\numberline {10.17}Formulario 17}{193}{section.10.17}
+\contentsline {section}{\numberline {10.18}Formulario 18}{194}{section.10.18}
+\contentsline {section}{\numberline {10.19}Formulario 19}{196}{section.10.19}
+\contentsline {section}{\numberline {10.20}Formulario 20}{198}{section.10.20}

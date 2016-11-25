@@ -124,6 +124,10 @@ var Documentation = {
     this.fixFirefoxAnchorBug();
     this.highlightSearchWords();
     this.initIndexTable();
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
   },
 
   /**
@@ -252,6 +256,32 @@ var Documentation = {
     });
     var url = parts.join('/');
     return path.substring(url.lastIndexOf('/') + 1, path.length - 1);
+<<<<<<< HEAD
+=======
+  },
+
+  initOnKeyListeners: function() {
+    $(document).keyup(function(event) {
+      var activeElementType = document.activeElement.tagName;
+      // don't navigate when in search box or textarea
+      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT') {
+        switch (event.keyCode) {
+          case 37: // left
+            var prevHref = $('link[rel="prev"]').prop('href');
+            if (prevHref) {
+              window.location.href = prevHref;
+              return false;
+            }
+          case 39: // right
+            var nextHref = $('link[rel="next"]').prop('href');
+            if (nextHref) {
+              window.location.href = nextHref;
+              return false;
+            }
+        }
+      }
+    });
+>>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5
   }
 };
 
@@ -260,4 +290,8 @@ _ = Documentation.gettext;
 
 $(document).ready(function() {
   Documentation.init();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 30ca8fbb1ef84d894ffc3074d2f111f603f7f8f5

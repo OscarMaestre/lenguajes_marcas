@@ -24,3 +24,9 @@ conexion:Wifi:Cable:Fibra
 editor:Notepad:Emacs:Otro
 aula:A01:A02:A03
 velocidad:100 Mbits:1000 Mbits
+red:2G:3G:4G
+conector:USB:Paralelo:PS2
+escritorio:KDE:GNOME:Unity
+formato:JPG:PNG
+navegador:Firefox:Chrome:Opera:IE
+ide:Eclipse:Netbeans:Notepad:IDEA
