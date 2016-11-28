@@ -9,6 +9,3 @@ cd ..
 call git commit -a --allow-empty-message -m ''
 call git push
 cd ..
-cd oscarmaestre.github.io
-call git commit -a --allow-empty-message -m ''
-call git push
