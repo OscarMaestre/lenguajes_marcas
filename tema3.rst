@@ -628,7 +628,7 @@ Los cambios solo se aplican a **los li cuyo class sea elemento_numeración y que
 Solución ``p.destacado > .elemento_numeracion``
 ------------------------------------------------------
 
-Ocurre lo mismo de antes, ¿por qué?
+Ahora sí veremos que algo cambia, en concreto los ultimos ``<span>`` que llevan el ``class=elemento_numeracion``, ya que *sí son hijos directos* de un elemento que lleva un ``class=destacado``.
 
 
 Solución ``.destacado > #id1``
