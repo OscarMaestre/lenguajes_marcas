@@ -481,7 +481,7 @@ Supongamos que tenemos un archivo HTML como este:
 	</p>
 	<p class="cita" id="destacado">
 		Párrafo con el class 'cita' 
-		y el id 'p_destacado'
+		y el id 'destacado'
 	</p>
 	<p class="p_destacado">Párrafo con el class
 		destacado que no 
