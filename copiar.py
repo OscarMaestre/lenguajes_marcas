@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import os, shutil
 
-RUTA_DIRECTORIO_DESTINO = ".." + os.sep + "oscarmaestre.github.io" + os.sep + "marcas"
-RUTA_APUNTES = "_build" + os.sep + "singlehtml"
+
+RUTA_DIRECTORIO_DESTINO ="docs"
+RUTA_APUNTES = "_build" + os.sep + "html"
 print ("Borrando " + RUTA_DIRECTORIO_DESTINO)
 shutil.rmtree ( RUTA_DIRECTORIO_DESTINO , ignore_errors=True)
 

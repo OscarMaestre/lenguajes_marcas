@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introducción &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
+    <link rel="next" title="HTML5" href="tema2.html" />
+    <link rel="prev" title="Apuntes de Lenguajes de marcas" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduccion">
+<h1>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="historia">
+<h2>Historia<a class="headerlink" href="#historia" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.</p>
+<p>Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)</p>
+<p>El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
+independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el <a class="reference external" href="http://www.w3c.org">World Wide Web Consortium (W3C)</a> .</p>
+<p>El futuro de todas estas tecnologías sigue estando en sistemas abiertos (Firefox OS). Ahora mismo las tres grandes plataformas por orden de supremacía en el mercado son:</p>
+<ol class="arabic simple">
+<li>Android.</li>
+<li>iPhone</li>
+<li>Windows Phone.</li>
+</ol>
+</div>
+<div class="section" id="servidores-web">
+<h2>Servidores web<a class="headerlink" href="#servidores-web" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores
+sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio.</p>
+<p>Cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en
+el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado). Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
+<ul class="simple">
+<li>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</li>
+<li>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</li>
+</ul>
+<div class="section" id="como-configurar-un-servidor-en-casa">
+<h3>Como configurar un servidor en casa<a class="headerlink" href="#como-configurar-un-servidor-en-casa" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</li>
+<li>Apuntar la IP del equipo en el que se instala Apache.</li>
+<li>Entrar en el router y <strong>abrir el puerto 80</strong> indicando que se debe reenviar el tráfico a la IP que se apuntó.</li>
+<li>Se debe averiguar la IP pública del router (por ejemplo podemos visitar <a class="reference external" href="http://whatsmyip.org">WhatsMyIp</a> ,</li>
+<li>La IP que aparece es la que se puede dar a clientes o amigos para que naveguen por nuestro sitio web.</li>
+<li>(Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="los-nombres-de-dominio">
+<h2>Los nombres de dominio<a class="headerlink" href="#los-nombres-de-dominio" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El servicio de nombres de dominio es un sistema que convierte de direcciones tipo www.loquesea.com a direcciones IP. Esto permite que sea más fácil recordar direcciones de páginas. Sin embargo, DNS esun sistema muy complejo que funciona de forma distribuida entre distintos países.</p>
+<p>Los nombres de dominio se resuelven de final a principio. La última parte se llama TLD o Top Level Domain o dominio de primer nivel.. Estos dominios son administrados por países ocupándose cada uno de ellos de los nombres o marcas que hay dentro de dichos países.</p>
+</div>
+<div class="section" id="los-sistemas-de-gestion-de-informacion">
+<h2>Los sistemas de gestión de información<a class="headerlink" href="#los-sistemas-de-gestion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Definamos primero algunos términos:</p>
+<ul class="simple">
+<li>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</li>
+<li>Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.</li>
+<li>Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.</li>
+</ul>
+<p>Un SGI no tiene por qué estar informatizado.</p>
+<p>Son programas que se pueden adaptar las necesidades de la empresa y que a veces necesitan
+importar (o exportar) datos e información.</p>
+<p>El uso de un formato unificado (normalmente basado en marcas) facilita enormemente los
+trasvases de datos.</p>
+</div>
+<div class="section" id="tipos-de-lenguajes">
+<h2>Tipos de lenguajes<a class="headerlink" href="#tipos-de-lenguajes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Aparte de los lenguajes de marcas típicos, existen otros de uso bastante común. Siendo el caso más conocido LaTeX.</p>
+<p>Programas como LateX tienen la desventaja de obligar a aprender “marcas”. Sin embargo, los algoritmos de colocación del texto suelen ser más sofisticados que otros programas. Los programas de redacción de documentos más utilizados suelen ser los del tipo MS-Word o LibreOffice que son del tipo WYSIWYG (What You See Is What You Get).</p>
+<p>Dentro de los tipos de formatos, RTF es un mecanismo público que permite describir el aspecto de documentos. Al ser público, muchos procesadores pueden implementarlo si necesidad de pagar “royalties”.</p>
+<p>Adobe lidera la especificación de documentos PDF (Portable Document Format). Antes de
+PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Latex, son lenguajes descriptivos, mientras que PostScript es un lenguaje completo</p>
+</div>
+<div class="section" id="organismos-de-regulacion">
+<h2>Organismos de regulación<a class="headerlink" href="#organismos-de-regulacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>La Internation Standards Organization emite estándares para la documentación.</li>
+<li>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></li>
+</ol>
+</div>
+<div class="section" id="gramaticas-y-dtds">
+<h2>Gramáticas y DTD’s<a class="headerlink" href="#gramaticas-y-dtds" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las gramáticas HTML indican el conjunto de reglas para determinar lo que se acepta o no
+se acepta. Si se elige una gramática (como por ejemplo la de HTML5) es muy recomendable
+respetar las reglas de esa gramática.
+A modo de ejemplo, esto es una página válida</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+                Mi primera página
+        <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>y esto no lo es.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Esto es el título de la página
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>A lo largo del tiempo ha habido diversas versiones de HTML (con sus correspondientes gramáticas)
+y tales documentos deben llevar en la cabecera algo que diga a qué estándar se ciñen.</p>
+<p>Las tres últimas familias de estándares han sido</p>
+<ul class="simple">
+<li>HTML4: muy permisivo, lo que dificulta a los navegadores el procesar el HTML dando lugar a que fuera bastante difícil para ellos el mostrar correctamente y de igual forma todos los HTML</li>
+<li>XHTML: es HTML con las estrictas reglas que impuso XML. Esto simplificó el desarrollo de navegadores y se avanzó en facilidad para mostrar páginas en distintos navegadores.</li>
+<li>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</li>
+</ul>
+<p>Un ejemplo de DTD, sería esto:</p>
+<div class="highlight-dtd"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">lista_de_personas</span> <span class="o">(</span><span class="nt">persona</span><span class="o">*)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">persona</span> <span class="o">(</span><span class="nt">nombre</span><span class="o">,</span> <span class="nt">fechanacimiento</span><span class="o">?,</span> <span class="nt">sexo</span><span class="o">?,</span> <span class="nt">numeroseguridadsocial</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">nombre</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span> <span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">fechanacimiento</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span> <span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">sexo</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span> <span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">numeroseguridadsocial</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Y un ejemplo de archivo aceptado por esa DTD sería este</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;lista_de_personas&gt;</span>
+        <span class="nt">&lt;persona&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span> Pepe Pérez <span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;sexo&gt;</span> Varón <span class="nt">&lt;/sexo&gt;</span>
+                <span class="nt">&lt;numeroseguridadsocial&gt;</span>555<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
+        <span class="nt">&lt;/persona&gt;</span>
+        <span class="nt">&lt;persona&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span> Angela Lopez <span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;fechanacimiento&gt;</span>13-2-1995<span class="nt">&lt;/fechanacimiento&gt;</span>
+                <span class="nt">&lt;sexo&gt;</span> Mujer <span class="nt">&lt;/sexo&gt;</span>
+                <span class="nt">&lt;numeroseguridadsocial&gt;</span>355<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
+        <span class="nt">&lt;/persona&gt;</span>
+<span class="nt">&lt;/lista_de_personas&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xml-schemas">
+<h2>XML Schemas<a class="headerlink" href="#xml-schemas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los XML Schemas surgen para mejorar las faltas de precisión que tenían las DTD. Sin embargo,
+la mejora en la precisión de la definición ha implicado que escribir XML Schemas sea
+mucho más complicado.</p>
+<p>Un ejemplo de XML Schema (tomado de Wikipedia):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+        <span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Libro&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsd:complexType&gt;</span>
+                                <span class="nt">&lt;xsd:sequence&gt;</span>
+                                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Título&quot;</span>
+                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Autores&quot;</span>
+                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
+                                        <span class="na">maxOccurs=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;xsd:element</span>    <span class="na">name=</span><span class="s">&quot;Editorial&quot;</span>
+                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/xsd:sequence&gt;</span>
+                                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;precio&quot;</span>
+                                <span class="na">type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:complexType&gt;</span>
+                <span class="nt">&lt;/xsd:element&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="definiciones">
+<h2>Definiciones<a class="headerlink" href="#definiciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><strong>Etiqueta:</strong> Es una secuencia de texto encerrada entre &lt; y &gt;</p>
+<p><strong>Elemento:</strong> Es todo lo que va entre una cierta etiqueta de apertura y cierre. En el ejemplo siguiente
+si nos hablan de la etiqueta libro se refieren simplemente a la etiqueta entre los
+paréntesis angulares. Si hay que procesar el elemento libro esto significa procesar los
+sub-elementos o “elementos hijo”.</p>
+<p><strong>Atributo:</strong> Es un texto junto a la etiqueta que amplía información sobre la misma. En el ejemplo
+anterior podemos ver un atributo precio en la etiqueta titulo</p>
+<p><strong>Árbol del documento:</strong> Todo documento XML y HTML5 puede representarse como un árbol
+que se puede recorrer desde distintos lenguajes. Este árbol a veces se llama el árbol DOM
+o simplemente el DOM (Document Object Model).</p>
+<p><strong>Relaciones de parentesco:</strong> En un árbol DOM, los distintos elementos (o nodos). Se dice que
+un nodo es hijo de otro si aparece más abajo en el árbol DOM. Se dice que dos nodos
+son hermanos si están en el mismo nivel del árbol DOM. Se dice que un nodo es padre
+de otro si está en un nivel más arriba en el árbol DOM.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introducción</a><ul>
+<li><a class="reference internal" href="#historia">Historia</a></li>
+<li><a class="reference internal" href="#servidores-web">Servidores web</a><ul>
+<li><a class="reference internal" href="#como-configurar-un-servidor-en-casa">Como configurar un servidor en casa</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#los-nombres-de-dominio">Los nombres de dominio</a></li>
+<li><a class="reference internal" href="#los-sistemas-de-gestion-de-informacion">Los sistemas de gestión de información</a></li>
+<li><a class="reference internal" href="#tipos-de-lenguajes">Tipos de lenguajes</a></li>
+<li><a class="reference internal" href="#organismos-de-regulacion">Organismos de regulación</a></li>
+<li><a class="reference internal" href="#gramaticas-y-dtds">Gramáticas y DTD’s</a></li>
+<li><a class="reference internal" href="#xml-schemas">XML Schemas</a></li>
+<li><a class="reference internal" href="#definiciones">Definiciones</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="capítulo anterior">Apuntes de Lenguajes de marcas</a></li>
+      <li>Next: <a href="tema2.html" title="próximo capítulo">HTML5</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tema1.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/tema1.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
