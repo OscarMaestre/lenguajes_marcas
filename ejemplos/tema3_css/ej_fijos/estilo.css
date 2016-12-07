@@ -1,8 +1,10 @@
 body{
   background-color: rgb(100, 100, 100);
+  
 }
 div{
   background-color: rgb(230, 220, 235);
+  
 }
 div#cabecera{
   padding: 5px;
@@ -34,7 +36,7 @@ div#publi{
   height:100%;
 }
 
-div#noticias{
+div#titulares{
   position: fixed;
   top: 60px;
   left: 10%;
@@ -62,6 +64,16 @@ div#titular_inf{
 }
 div#noticias_dep{
   width:30%;
+}
+div#textos{
+  position: fixed;
+  top: 90px;
+  left: 10%;
+  width:90%;
+}
+div#noticias_dep{
+  width:30%;
+  overflow: scroll;
 }
 
 
