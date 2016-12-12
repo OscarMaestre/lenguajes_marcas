@@ -5,11 +5,11 @@ class PropiedadCSS(object):
     def __init__(self, posibilidades):
         self.posibilidades=posibilidades
     def get_css(self):
-        print (self.posibilidades)
+        #print (self.posibilidades)
         css=""
         cantidad=randint(0, len(self.posibilidades)-1)
-        print (cantidad)
-        css+="\t{0}\n".format(self.posibilidades[cantidad])
+        #print (cantidad)
+        css+="\t{0};\n".format(self.posibilidades[cantidad])
         return css
 
 class PropiedadBorder(PropiedadCSS):
@@ -29,24 +29,38 @@ class PropiedadFuente(PropiedadCSS):
             "font-family: courier",
             "font-family: script",
             ]
-        super(PropiedadBorder, self).__init__(POSIBILIDADES)
+        super(PropiedadFuente, self).__init__(POSIBILIDADES)
+        
+class PropiedadAlineacion(PropiedadCSS):
+    def __init__(self):
+        POSIBILIDADES=[
+            "text-align:right",
+            "text-align: justify",
+            ]
+        super(PropiedadAlineacion, self).__init__(POSIBILIDADES)
     
 class GeneradorCSS(object):
-    CLASES=[PropiedadBorder, PropiedadFuente]
+    CLASES=[PropiedadBorder, PropiedadFuente, PropiedadAlineacion]
     def get_valor_booleano_aleatorio(self):
-        num=randint(0, 1)
-        if num==0:
+        MAX=7
+        num=randint(0, MAX)
+        if num<MAX:
             return True
         else:
             return False
     def generar(self):
-        
+        css=""
+        for CLASE in self.CLASES:
+            c=CLASE()
+            if self.get_valor_booleano_aleatorio():
+                css+=c.get_css()
+        return css
         
 class GeneradorParrafos(object):
     
     def generar_parrafos(self):
-        border=PropiedadBorder()
-        css=border.get_css()
+        g=GeneradorCSS()
+        css=g.generar()
         print (css)
         
 g=GeneradorParrafos()
