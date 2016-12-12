@@ -5,7 +5,11 @@
 'ES' indica la variante del español usada en España-->
 <html lang="es-ES"> 
 <head>
-    
+    <style>
+        div{
+            border: solid black 1px;
+        }
+    </style>
     <meta charset="utf-8">
     <!--El viewport (la vista o tamaño inicial de pantalla)
     se ajustará a la anchura del dispositivo ("width=device-width")
@@ -18,18 +22,38 @@
     <script src="js/jquery.min.js" language="javascript"></script>
     
     <!--Descomenta las lineas siguientes para usar Bootstrap-->
-    <!--
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js" language="javascript"></script>
-    -->
+    
     
     <script src="js/main.js" language="javascript"></script>
     <title>Plantilla de proyecto</title>
 </head>
 
 <body>
+<button class="btn btn-primary">
+    Ejemplo de boton cambiado
+</button>
+<div class="container">
+<div class="row">
+    <div class="col-xs-3">
+        Ocupo 3/12
+    </div>
+    <div class="col-xs-9">
+        <div class="row">
+            <div class="col-xs-6">
+                La mitad
+            </div>
+            <div class="col-xs-6">
+                La otra mitad
+            </div>
+        </div>
+    </div>
+</div>
 
 
+</div>
 </body>
 </html>
 
