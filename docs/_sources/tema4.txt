@@ -27,6 +27,8 @@ Javascript acepta los siguientes tipos de datos:
 * null: se utiliza habitualmente para indicar algo vacío.
 
 
+
+
 Incrustando Javascript
 ======================
 
