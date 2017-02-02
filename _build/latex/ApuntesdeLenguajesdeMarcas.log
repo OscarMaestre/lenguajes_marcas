@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.21)  2 FEB 2017 11:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.21)  2 FEB 2017 12:14
 entering extended mode
 **ApuntesDeLenguajesDeMarcas.tex
 (C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.tex
@@ -1286,81 +1286,89 @@ Overfull \vbox (0.82736pt too high) detected at line 2812
 Overfull \vbox (0.54211pt too high) detected at line 3450
  []
 
-[62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72
+[62] [63] [64] [65] [66] [67] [68] [69] [70]
+Underfull \vbox (badness 10000) detected at line 3982
+ []
 
-]
+
+Underfull \vbox (badness 10000) detected at line 3982
+ []
+
+[71] [72]
 Cap\'{\i }tulo 5.
-[73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
+[73
+
+] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
 [88]
-Overfull \vbox (1.82735pt too high) detected at line 5043
+Overfull \vbox (1.82735pt too high) detected at line 5083
  []
 
 [89] [90] [91] [92]
 Cap\'{\i }tulo 6.
 
-Overfull \vbox (0.58023pt too high) detected at line 5267
+Overfull \vbox (0.58023pt too high) detected at line 5307
  []
 
 [93
 
 ] [94] [95] [96] [97] [98] [99] [100] [101] [102]
-Overfull \vbox (1.56998pt too high) detected at line 5888
+Overfull \vbox (1.56998pt too high) detected at line 5928
  []
 
 [103] [104] [105] [106] [107] [108]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [109]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [110]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [111]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [112]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [113]
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6522
+Underfull \vbox (badness 10000) detected at line 6562
  []
 
 [114] [115]
-Underfull \vbox (badness 10000) detected at line 6634
+Underfull \vbox (badness 10000) detected at line 6674
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6634
+Underfull \vbox (badness 10000) detected at line 6674
  []
 
 [116] [117] [118
@@ -1368,28 +1376,28 @@ Underfull \vbox (badness 10000) detected at line 6634
 ]
 Cap\'{\i }tulo 7.
 
-Overfull \vbox (1.06052pt too high) detected at line 6712
+Overfull \vbox (1.06052pt too high) detected at line 6752
  []
 
 [119] [120]
-Overfull \vbox (1.32767pt too high) detected at line 6846
+Overfull \vbox (1.32767pt too high) detected at line 6886
  []
 
 [121] [122] [123] <estilo-xml.png, id=1372, 453.19313pt x 195.73125pt>
 File: estilo-xml.png Graphic file (type png)
 
 <use estilo-xml.png>
-Package pdftex.def Info: estilo-xml.png used on input line 6986.
+Package pdftex.def Info: estilo-xml.png used on input line 7026.
 (pdftex.def)             Requested size: 453.19202pt x 195.73076pt.
  <estilo-xml2.png, id=1373, 748.29562pt x 101.62968pt>
 File: estilo-xml2.png Graphic file (type png)
 
 <use estilo-xml2.png>
-Package pdftex.def Info: estilo-xml2.png used on input line 6993.
+Package pdftex.def Info: estilo-xml2.png used on input line 7033.
 (pdftex.def)             Requested size: 748.2938pt x 101.62943pt.
 File: estilo-xml2.png Graphic file (type png)
  <use estilo-xml2.png>
-Package pdftex.def Info: estilo-xml2.png used on input line 6993.
+Package pdftex.def Info: estilo-xml2.png used on input line 7033.
 (pdftex.def)             Requested size: 469.755pt x 63.80061pt.
  [124 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/estilo-xml.png> <C:/xampp/
 htdocs/lenguajes_marcas/_build/latex/estilo-xml2.png>] [125] [126] [127] [128] 
@@ -1398,14 +1406,14 @@ htdocs/lenguajes_marcas/_build/latex/estilo-xml2.png>] [125] [126] [127] [128]
 File: ejercicio1xslpaso1.png Graphic file (type png)
 
 <use ejercicio1xslpaso1.png>
-Package pdftex.def Info: ejercicio1xslpaso1.png used on input line 7390.
+Package pdftex.def Info: ejercicio1xslpaso1.png used on input line 7430.
 (pdftex.def)             Requested size: 209.28134pt x 35.3821pt.
  [130]
 <ejercicio1xslpaso2.png, id=1413, 216.81pt x 201.00093pt>
 File: ejercicio1xslpaso2.png Graphic file (type png)
 
 <use ejercicio1xslpaso2.png>
-Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 7421.
+Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 7461.
 (pdftex.def)             Requested size: 216.80946pt x 201.00043pt.
  [131 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso1.png> <C
 :/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso2.png>]
@@ -1413,21 +1421,21 @@ Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 7421.
 File: ejercicio1xslpaso3.png Graphic file (type png)
 
 <use ejercicio1xslpaso3.png>
-Package pdftex.def Info: ejercicio1xslpaso3.png used on input line 7457.
+Package pdftex.def Info: ejercicio1xslpaso3.png used on input line 7497.
 (pdftex.def)             Requested size: 224.33757pt x 155.07898pt.
  [132 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso3.png>]
 <ejercicio1xslpaso4.png, id=1426, 228.855pt x 188.20313pt>
 File: ejercicio1xslpaso4.png Graphic file (type png)
 
 <use ejercicio1xslpaso4.png>
-Package pdftex.def Info: ejercicio1xslpaso4.png used on input line 7504.
+Package pdftex.def Info: ejercicio1xslpaso4.png used on input line 7544.
 (pdftex.def)             Requested size: 228.85443pt x 188.20265pt.
  [133 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso4.png>] <
 xsl1.png, id=1434, 158.84344pt x 158.09062pt>
 File: xsl1.png Graphic file (type png)
 
 <use xsl1.png>
-Package pdftex.def Info: xsl1.png used on input line 7562.
+Package pdftex.def Info: xsl1.png used on input line 7602.
 (pdftex.def)             Requested size: 158.84305pt x 158.09023pt.
  [134 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/xsl1.png>]
 [135] [136]
@@ -1441,192 +1449,192 @@ Cap\'{\i }tulo 9.
 <foto_01.png, id=1482, 413.545pt x 260.975pt>
 File: foto_01.png Graphic file (type png)
  <use foto_01.png>
-Package pdftex.def Info: foto_01.png used on input line 7888.
+Package pdftex.def Info: foto_01.png used on input line 7928.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [141 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_01.png>] [142]
 <foto_02.png, id=1492, 413.545pt x 260.975pt>
 File: foto_02.png Graphic file (type png)
  <use foto_02.png>
-Package pdftex.def Info: foto_02.png used on input line 7972.
+Package pdftex.def Info: foto_02.png used on input line 8012.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [143 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_02.png>]
 <foto_03.png, id=1498, 413.545pt x 260.975pt>
 File: foto_03.png Graphic file (type png)
  <use foto_03.png>
-Package pdftex.def Info: foto_03.png used on input line 8046.
+Package pdftex.def Info: foto_03.png used on input line 8086.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8102
+Overfull \vbox (0.57848pt too high) detected at line 8142
  []
 
 [144 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_03.png>]
 <foto_04.png, id=1504, 413.545pt x 260.975pt>
 File: foto_04.png Graphic file (type png)
  <use foto_04.png>
-Package pdftex.def Info: foto_04.png used on input line 8109.
+Package pdftex.def Info: foto_04.png used on input line 8149.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [145]
-Overfull \vbox (1.15619pt too high) detected at line 8226
+Overfull \vbox (1.15619pt too high) detected at line 8266
  []
 
 [146 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_04.png>]
-Underfull \vbox (badness 10000) detected at line 8226
+Underfull \vbox (badness 10000) detected at line 8266
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8226
+Underfull \vbox (badness 10000) detected at line 8266
  []
 
 [147] <foto_05.png, id=1519, 413.545pt x 260.975pt>
 File: foto_05.png Graphic file (type png)
  <use foto_05.png>
-Package pdftex.def Info: foto_05.png used on input line 8233.
+Package pdftex.def Info: foto_05.png used on input line 8273.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8323
+Overfull \vbox (0.57848pt too high) detected at line 8363
  []
 
 [148 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_05.png>]
-Underfull \vbox (badness 10000) detected at line 8323
+Underfull \vbox (badness 10000) detected at line 8363
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8323
+Underfull \vbox (badness 10000) detected at line 8363
  []
 
 [149] <foto_06.png, id=1529, 413.545pt x 260.975pt>
 File: foto_06.png Graphic file (type png)
  <use foto_06.png>
-Package pdftex.def Info: foto_06.png used on input line 8330.
+Package pdftex.def Info: foto_06.png used on input line 8370.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8390
+Overfull \vbox (0.57848pt too high) detected at line 8430
  []
 
 [150 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_06.png>]
 <foto_07.png, id=1535, 413.545pt x 260.975pt>
 File: foto_07.png Graphic file (type png)
  <use foto_07.png>
-Package pdftex.def Info: foto_07.png used on input line 8397.
+Package pdftex.def Info: foto_07.png used on input line 8437.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8460
+Overfull \vbox (0.57848pt too high) detected at line 8500
  []
 
 [151 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_07.png>]
 <foto_08.png, id=1542, 413.545pt x 260.975pt>
 File: foto_08.png Graphic file (type png)
  <use foto_08.png>
-Package pdftex.def Info: foto_08.png used on input line 8467.
+Package pdftex.def Info: foto_08.png used on input line 8507.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [152]
-Overfull \vbox (1.15619pt too high) detected at line 8546
+Overfull \vbox (1.15619pt too high) detected at line 8586
  []
 
 [153 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_08.png>]
 <foto_09.png, id=1552, 413.545pt x 260.975pt>
 File: foto_09.png Graphic file (type png)
  <use foto_09.png>
-Package pdftex.def Info: foto_09.png used on input line 8553.
+Package pdftex.def Info: foto_09.png used on input line 8593.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8593
+Overfull \vbox (0.57848pt too high) detected at line 8633
  []
 
 [154 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_09.png>]
 <foto_10.png, id=1558, 413.545pt x 260.975pt>
 File: foto_10.png Graphic file (type png)
  <use foto_10.png>
-Package pdftex.def Info: foto_10.png used on input line 8600.
+Package pdftex.def Info: foto_10.png used on input line 8640.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [155 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_10.png>]
-Underfull \vbox (badness 10000) detected at line 8707
+Underfull \vbox (badness 10000) detected at line 8747
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8707
+Underfull \vbox (badness 10000) detected at line 8747
  []
 
 [156] <foto_11.png, id=1568, 413.545pt x 260.975pt>
 File: foto_11.png Graphic file (type png)
  <use foto_11.png>
-Package pdftex.def Info: foto_11.png used on input line 8714.
+Package pdftex.def Info: foto_11.png used on input line 8754.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [157]
-Overfull \vbox (1.15619pt too high) detected at line 8789
+Overfull \vbox (1.15619pt too high) detected at line 8829
  []
 
 [158 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_11.png>]
 <foto_12.png, id=1579, 413.545pt x 260.975pt>
 File: foto_12.png Graphic file (type png)
  <use foto_12.png>
-Package pdftex.def Info: foto_12.png used on input line 8796.
+Package pdftex.def Info: foto_12.png used on input line 8836.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8825
+Overfull \vbox (0.57848pt too high) detected at line 8865
  []
 
 [159 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_12.png>]
 <foto_13.png, id=1585, 413.545pt x 260.975pt>
 File: foto_13.png Graphic file (type png)
  <use foto_13.png>
-Package pdftex.def Info: foto_13.png used on input line 8832.
+Package pdftex.def Info: foto_13.png used on input line 8872.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 8896
+Overfull \vbox (0.57848pt too high) detected at line 8936
  []
 
 [160 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_13.png>]
 <foto_14.png, id=1591, 413.545pt x 260.975pt>
 File: foto_14.png Graphic file (type png)
  <use foto_14.png>
-Package pdftex.def Info: foto_14.png used on input line 8903.
+Package pdftex.def Info: foto_14.png used on input line 8943.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [161]
-Overfull \vbox (1.15619pt too high) detected at line 8951
+Overfull \vbox (1.15619pt too high) detected at line 8991
  []
 
 [162 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_14.png>]
 <foto_15.png, id=1601, 413.545pt x 260.975pt>
 File: foto_15.png Graphic file (type png)
  <use foto_15.png>
-Package pdftex.def Info: foto_15.png used on input line 8958.
+Package pdftex.def Info: foto_15.png used on input line 8998.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
 <foto_16.png, id=1602, 413.545pt x 260.975pt>
 File: foto_16.png Graphic file (type png)
  <use foto_16.png>
-Package pdftex.def Info: foto_16.png used on input line 8992.
+Package pdftex.def Info: foto_16.png used on input line 9032.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [163 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_15.png>]
-Overfull \vbox (1.15619pt too high) detected at line 9046
+Overfull \vbox (1.15619pt too high) detected at line 9086
  []
 
 [164 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_16.png>]
 <foto_17.png, id=1614, 413.545pt x 260.975pt>
 File: foto_17.png Graphic file (type png)
  <use foto_17.png>
-Package pdftex.def Info: foto_17.png used on input line 9053.
+Package pdftex.def Info: foto_17.png used on input line 9093.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 9095
+Overfull \vbox (0.57848pt too high) detected at line 9135
  []
 
 [165 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_17.png>]
 <foto_18.png, id=1620, 413.545pt x 260.975pt>
 File: foto_18.png Graphic file (type png)
  <use foto_18.png>
-Package pdftex.def Info: foto_18.png used on input line 9102.
+Package pdftex.def Info: foto_18.png used on input line 9142.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-Overfull \vbox (0.57848pt too high) detected at line 9134
+Overfull \vbox (0.57848pt too high) detected at line 9174
  []
 
 [166 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_18.png>]
 <foto_19.png, id=1626, 413.545pt x 260.975pt>
 File: foto_19.png Graphic file (type png)
  <use foto_19.png>
-Package pdftex.def Info: foto_19.png used on input line 9141.
+Package pdftex.def Info: foto_19.png used on input line 9181.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
  [167 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_19.png>] [168
 
@@ -1636,44 +1644,44 @@ Cap\'{\i }tulo 10.
 File: foto_formulario_01.png Graphic file (type png)
 
 <use foto_formulario_01.png>
-Package pdftex.def Info: foto_formulario_01.png used on input line 9187.
+Package pdftex.def Info: foto_formulario_01.png used on input line 9227.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_01.png Graphic file (type png)
  <use foto_formulario_01.png>
-Package pdftex.def Info: foto_formulario_01.png used on input line 9187.
+Package pdftex.def Info: foto_formulario_01.png used on input line 9227.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [169]
 <foto_formulario_02.png, id=1642, 473.77pt x 622.325pt>
 File: foto_formulario_02.png Graphic file (type png)
 
 <use foto_formulario_02.png>
-Package pdftex.def Info: foto_formulario_02.png used on input line 9216.
+Package pdftex.def Info: foto_formulario_02.png used on input line 9256.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_02.png Graphic file (type png)
  <use foto_formulario_02.png>
-Package pdftex.def Info: foto_formulario_02.png used on input line 9216.
+Package pdftex.def Info: foto_formulario_02.png used on input line 9256.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [170 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_01.png>]
 <foto_formulario_03.png, id=1647, 473.77pt x 622.325pt>
 File: foto_formulario_03.png Graphic file (type png)
 
 <use foto_formulario_03.png>
-Package pdftex.def Info: foto_formulario_03.png used on input line 9246.
+Package pdftex.def Info: foto_formulario_03.png used on input line 9286.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_03.png Graphic file (type png)
  <use foto_formulario_03.png>
-Package pdftex.def Info: foto_formulario_03.png used on input line 9246.
+Package pdftex.def Info: foto_formulario_03.png used on input line 9286.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [171 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_02.png>]
 <foto_formulario_04.png, id=1652, 473.77pt x 622.325pt>
 File: foto_formulario_04.png Graphic file (type png)
 
 <use foto_formulario_04.png>
-Package pdftex.def Info: foto_formulario_04.png used on input line 9271.
+Package pdftex.def Info: foto_formulario_04.png used on input line 9311.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_04.png Graphic file (type png)
  <use foto_formulario_04.png>
-Package pdftex.def Info: foto_formulario_04.png used on input line 9271.
+Package pdftex.def Info: foto_formulario_04.png used on input line 9311.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [172 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_03.png>] [
 173 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_04.png>]
@@ -1681,14 +1689,14 @@ Package pdftex.def Info: foto_formulario_04.png used on input line 9271.
 File: foto_formulario_05.png Graphic file (type png)
 
 <use foto_formulario_05.png>
-Package pdftex.def Info: foto_formulario_05.png used on input line 9308.
+Package pdftex.def Info: foto_formulario_05.png used on input line 9348.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_05.png Graphic file (type png)
  <use foto_formulario_05.png>
-Package pdftex.def Info: foto_formulario_05.png used on input line 9308.
+Package pdftex.def Info: foto_formulario_05.png used on input line 9348.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
 
-Overfull \vbox (1.98201pt too high) detected at line 9341
+Overfull \vbox (1.98201pt too high) detected at line 9381
  []
 
 [174 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_05.png>]
@@ -1696,14 +1704,14 @@ Overfull \vbox (1.98201pt too high) detected at line 9341
 File: foto_formulario_06.png Graphic file (type png)
 
 <use foto_formulario_06.png>
-Package pdftex.def Info: foto_formulario_06.png used on input line 9362.
+Package pdftex.def Info: foto_formulario_06.png used on input line 9402.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_06.png Graphic file (type png)
  <use foto_formulario_06.png>
-Package pdftex.def Info: foto_formulario_06.png used on input line 9362.
+Package pdftex.def Info: foto_formulario_06.png used on input line 9402.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [175]
-Underfull \vbox (badness 1675) detected at line 9391
+Underfull \vbox (badness 1675) detected at line 9431
  []
 
 [176 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_06.png>]
@@ -1711,14 +1719,14 @@ Underfull \vbox (badness 1675) detected at line 9391
 File: foto_formulario_07.png Graphic file (type png)
 
 <use foto_formulario_07.png>
-Package pdftex.def Info: foto_formulario_07.png used on input line 9415.
+Package pdftex.def Info: foto_formulario_07.png used on input line 9455.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_07.png Graphic file (type png)
  <use foto_formulario_07.png>
-Package pdftex.def Info: foto_formulario_07.png used on input line 9415.
+Package pdftex.def Info: foto_formulario_07.png used on input line 9455.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [177]
-Underfull \vbox (badness 1675) detected at line 9452
+Underfull \vbox (badness 1675) detected at line 9492
  []
 
 [178 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_07.png>]
@@ -1726,11 +1734,11 @@ Underfull \vbox (badness 1675) detected at line 9452
 File: foto_formulario_08.png Graphic file (type png)
 
 <use foto_formulario_08.png>
-Package pdftex.def Info: foto_formulario_08.png used on input line 9470.
+Package pdftex.def Info: foto_formulario_08.png used on input line 9510.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_08.png Graphic file (type png)
  <use foto_formulario_08.png>
-Package pdftex.def Info: foto_formulario_08.png used on input line 9470.
+Package pdftex.def Info: foto_formulario_08.png used on input line 9510.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [179] [180 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_08.p
 ng>]
@@ -1738,25 +1746,25 @@ ng>]
 File: foto_formulario_09.png Graphic file (type png)
 
 <use foto_formulario_09.png>
-Package pdftex.def Info: foto_formulario_09.png used on input line 9511.
+Package pdftex.def Info: foto_formulario_09.png used on input line 9551.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_09.png Graphic file (type png)
  <use foto_formulario_09.png>
-Package pdftex.def Info: foto_formulario_09.png used on input line 9511.
+Package pdftex.def Info: foto_formulario_09.png used on input line 9551.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [181 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_09.png>]
 <foto_formulario_10.png, id=1700, 473.77pt x 622.325pt>
 File: foto_formulario_10.png Graphic file (type png)
 
 <use foto_formulario_10.png>
-Package pdftex.def Info: foto_formulario_10.png used on input line 9563.
+Package pdftex.def Info: foto_formulario_10.png used on input line 9603.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_10.png Graphic file (type png)
  <use foto_formulario_10.png>
-Package pdftex.def Info: foto_formulario_10.png used on input line 9563.
+Package pdftex.def Info: foto_formulario_10.png used on input line 9603.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [182]
-Underfull \vbox (badness 1675) detected at line 9608
+Underfull \vbox (badness 1675) detected at line 9648
  []
 
 [183 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_10.png>]
@@ -1764,14 +1772,14 @@ Underfull \vbox (badness 1675) detected at line 9608
 File: foto_formulario_11.png Graphic file (type png)
 
 <use foto_formulario_11.png>
-Package pdftex.def Info: foto_formulario_11.png used on input line 9632.
+Package pdftex.def Info: foto_formulario_11.png used on input line 9672.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_11.png Graphic file (type png)
  <use foto_formulario_11.png>
-Package pdftex.def Info: foto_formulario_11.png used on input line 9632.
+Package pdftex.def Info: foto_formulario_11.png used on input line 9672.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [184]
-Underfull \vbox (badness 1675) detected at line 9669
+Underfull \vbox (badness 1675) detected at line 9709
  []
 
 [185 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_11.png>]
@@ -1779,14 +1787,14 @@ Underfull \vbox (badness 1675) detected at line 9669
 File: foto_formulario_12.png Graphic file (type png)
 
 <use foto_formulario_12.png>
-Package pdftex.def Info: foto_formulario_12.png used on input line 9702.
+Package pdftex.def Info: foto_formulario_12.png used on input line 9742.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_12.png Graphic file (type png)
  <use foto_formulario_12.png>
-Package pdftex.def Info: foto_formulario_12.png used on input line 9702.
+Package pdftex.def Info: foto_formulario_12.png used on input line 9742.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [186]
-Underfull \vbox (badness 1675) detected at line 9753
+Underfull \vbox (badness 1675) detected at line 9793
  []
 
 [187 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_12.png>]
@@ -1794,18 +1802,18 @@ Underfull \vbox (badness 1675) detected at line 9753
 File: foto_formulario_13.png Graphic file (type png)
 
 <use foto_formulario_13.png>
-Package pdftex.def Info: foto_formulario_13.png used on input line 9783.
+Package pdftex.def Info: foto_formulario_13.png used on input line 9823.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_13.png Graphic file (type png)
  <use foto_formulario_13.png>
-Package pdftex.def Info: foto_formulario_13.png used on input line 9783.
+Package pdftex.def Info: foto_formulario_13.png used on input line 9823.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [188]
-Underfull \vbox (badness 1675) detected at line 9825
+Underfull \vbox (badness 1675) detected at line 9865
  []
 
 [189 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_13.png>]
-Underfull \hbox (badness 6268) in paragraph at lines 9833--9834
+Underfull \hbox (badness 6268) in paragraph at lines 9873--9874
 []\T1/ptm/m/n/10 Contiene los si-guien-tes \T1/pcr/m/n/10 radiobuttons\T1/ptm/m
 /n/10 :radio con el \T1/pcr/m/n/10 name \T1/ptm/m/n/10 ``me-dio_transporte'' , 
 \T1/pcr/m/n/10 value \T1/ptm/m/n/10 ``me-
@@ -1815,14 +1823,14 @@ Underfull \hbox (badness 6268) in paragraph at lines 9833--9834
 File: foto_formulario_14.png Graphic file (type png)
 
 <use foto_formulario_14.png>
-Package pdftex.def Info: foto_formulario_14.png used on input line 9846.
+Package pdftex.def Info: foto_formulario_14.png used on input line 9886.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_14.png Graphic file (type png)
  <use foto_formulario_14.png>
-Package pdftex.def Info: foto_formulario_14.png used on input line 9846.
+Package pdftex.def Info: foto_formulario_14.png used on input line 9886.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [190]
-Underfull \vbox (badness 1675) detected at line 9871
+Underfull \vbox (badness 1675) detected at line 9911
  []
 
 [191 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_14.png>]
@@ -1830,14 +1838,14 @@ Underfull \vbox (badness 1675) detected at line 9871
 File: foto_formulario_15.png Graphic file (type png)
 
 <use foto_formulario_15.png>
-Package pdftex.def Info: foto_formulario_15.png used on input line 9898.
+Package pdftex.def Info: foto_formulario_15.png used on input line 9938.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_15.png Graphic file (type png)
  <use foto_formulario_15.png>
-Package pdftex.def Info: foto_formulario_15.png used on input line 9898.
+Package pdftex.def Info: foto_formulario_15.png used on input line 9938.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [192]
-Underfull \vbox (badness 1675) detected at line 9938
+Underfull \vbox (badness 1675) detected at line 9978
  []
 
 [193 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_15.png>]
@@ -1845,22 +1853,22 @@ Underfull \vbox (badness 1675) detected at line 9938
 File: foto_formulario_16.png Graphic file (type png)
 
 <use foto_formulario_16.png>
-Package pdftex.def Info: foto_formulario_16.png used on input line 9953.
+Package pdftex.def Info: foto_formulario_16.png used on input line 9993.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_16.png Graphic file (type png)
  <use foto_formulario_16.png>
-Package pdftex.def Info: foto_formulario_16.png used on input line 9953.
+Package pdftex.def Info: foto_formulario_16.png used on input line 9993.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [194]
 <foto_formulario_17.png, id=1761, 473.77pt x 622.325pt>
 File: foto_formulario_17.png Graphic file (type png)
 
 <use foto_formulario_17.png>
-Package pdftex.def Info: foto_formulario_17.png used on input line 9985.
+Package pdftex.def Info: foto_formulario_17.png used on input line 10025.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_17.png Graphic file (type png)
  <use foto_formulario_17.png>
-Package pdftex.def Info: foto_formulario_17.png used on input line 9985.
+Package pdftex.def Info: foto_formulario_17.png used on input line 10025.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [195 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_16.png>] [
 196 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_17.png>]
@@ -1868,25 +1876,25 @@ Package pdftex.def Info: foto_formulario_17.png used on input line 9985.
 File: foto_formulario_18.png Graphic file (type png)
 
 <use foto_formulario_18.png>
-Package pdftex.def Info: foto_formulario_18.png used on input line 10025.
+Package pdftex.def Info: foto_formulario_18.png used on input line 10065.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_18.png Graphic file (type png)
  <use foto_formulario_18.png>
-Package pdftex.def Info: foto_formulario_18.png used on input line 10025.
+Package pdftex.def Info: foto_formulario_18.png used on input line 10065.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [197 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_18.png>]
 <foto_formulario_19.png, id=1775, 473.77pt x 622.325pt>
 File: foto_formulario_19.png Graphic file (type png)
 
 <use foto_formulario_19.png>
-Package pdftex.def Info: foto_formulario_19.png used on input line 10089.
+Package pdftex.def Info: foto_formulario_19.png used on input line 10129.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_19.png Graphic file (type png)
  <use foto_formulario_19.png>
-Package pdftex.def Info: foto_formulario_19.png used on input line 10089.
+Package pdftex.def Info: foto_formulario_19.png used on input line 10129.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [198]
-Underfull \vbox (badness 1675) detected at line 10134
+Underfull \vbox (badness 1675) detected at line 10174
  []
 
 [199 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_19.png>]
@@ -1894,27 +1902,27 @@ Underfull \vbox (badness 1675) detected at line 10134
 File: foto_formulario_20.png Graphic file (type png)
 
 <use foto_formulario_20.png>
-Package pdftex.def Info: foto_formulario_20.png used on input line 10146.
+Package pdftex.def Info: foto_formulario_20.png used on input line 10186.
 (pdftex.def)             Requested size: 473.76884pt x 622.32347pt.
 File: foto_formulario_20.png Graphic file (type png)
  <use foto_formulario_20.png>
-Package pdftex.def Info: foto_formulario_20.png used on input line 10146.
+Package pdftex.def Info: foto_formulario_20.png used on input line 10186.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
  [200]
 No file ApuntesDeLenguajesDeMarcas.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10166.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10206.
 [201 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_20.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 10166.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 10206.
 
 (C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 10166.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 10206.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 10166
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 10206
 .
 Package rerunfilecheck Info: File `ApuntesDeLenguajesDeMarcas.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: 63360A487B7023EB322EE83D371AF437;16703.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 10166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 10206.
  ) 
 Here is how much of TeX's memory you used:
  14700 strings out of 493921
@@ -1935,7 +1943,7 @@ elvetic/uhvb8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/type1/urw/helvetic/u
 hvbo8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/type1/urw/times/utmb8a.pfb><
 C:/Users/ogomez/Documents/miktex/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ogo
 mez/Documents/miktex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (207 pages, 2093601 bytes).
+Output written on ApuntesDeLenguajesDeMarcas.pdf (207 pages, 2094637 bytes).
 PDF statistics:
  1946 PDF objects out of 2073 (max. 8388607)
  531 named destinations out of 1000 (max. 500000)

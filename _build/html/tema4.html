@@ -1282,53 +1282,93 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </div>
 <div class="section" id="js-del-comparador">
 <h4>JS del comparador<a class="headerlink" href="#js-del-comparador" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">extraer_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
         <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
-                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">valor</span><span class="o">=</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">numero</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">numero</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">precio_mes_empresa_a</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
+        <span class="c1">//Primero vemos si se pasa</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">){</span>
+                <span class="c1">//Si no se pasa, el precio es 20</span>
+                <span class="k">return</span> <span class="mi">20</span><span class="p">;</span>
         <span class="p">}</span>
+        <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
+
+        <span class="c1">//Calculamos cuantos minutos se pasa</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="c1">//Y ese exceso es a 8 centimos/minutos</span>
+        <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.08</span><span class="p">;</span>
+        <span class="c1">//El precio de ese mes es</span>
+        <span class="c1">//20 euros más lo que cueste el exceso</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">20</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
+        <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">precio_mes_empresa_b</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
+        <span class="c1">//Primero vemos si se pasa</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">500</span><span class="p">){</span>
+                <span class="c1">//Si no se pasa, el precio es 10</span>
+                <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
+
+        <span class="c1">//Calculamos cuantos minutos se pasa</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">500</span><span class="p">;</span>
+        <span class="c1">//Y ese exceso es a 12 centimos/minutos</span>
+        <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.12</span><span class="p">;</span>
+        <span class="c1">//El precio de ese mes es</span>
+        <span class="c1">//10 euros más lo que cueste el exceso</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">10</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
+        <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">preciototal</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">preciomodelo</span>  <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">preciomotor</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">precioextras</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">))</span>
-                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">){</span>
-                <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Debe marcar un modelo&quot;</span><span class="p">);</span>
-                <span class="k">return</span> <span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">7000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">9000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">2000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">4000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="mi">1000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;sonido&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">500</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;seguridad&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">1000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="nx">preciototal</span><span class="o">=</span><span class="nx">preciomodelo</span><span class="o">+</span><span class="nx">preciomotor</span><span class="o">+</span><span class="nx">precioextras</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes1</span><span class="p">;</span>
+        <span class="nx">minutos_mes1</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes1&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes2</span><span class="p">;</span>
+        <span class="nx">minutos_mes2</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes2&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes3</span><span class="p">;</span>
+        <span class="nx">minutos_mes3</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes3&quot;</span><span class="p">);</span>
 
+        <span class="kd">var</span> <span class="nx">coste_mes1_empresa_a</span><span class="p">;</span>
+        <span class="nx">coste_mes1_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes1</span><span class="p">);</span>
+
+        <span class="nx">coste_mes2_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes2</span><span class="p">);</span>
+        <span class="nx">coste_mes3_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes3</span><span class="p">);</span>
+
+        <span class="c1">//Calculamos el precio que costaria</span>
+        <span class="c1">//esos minutos en la empresa A</span>
+        <span class="kd">var</span> <span class="nx">coste_total_a</span><span class="p">;</span>
+        <span class="nx">coste_total_a</span><span class="o">=</span><span class="nx">coste_mes1_empresa_a</span><span class="o">+</span><span class="nx">coste_mes2_empresa_a</span><span class="o">+</span><span class="nx">coste_mes3_empresa_a</span><span class="p">;</span>
+
+        <span class="c1">//Repetimos el proceso para la empresa B</span>
+        <span class="kd">var</span> <span class="nx">coste_mes1_empresa_b</span><span class="p">;</span>
+        <span class="nx">coste_mes1_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes1</span><span class="p">);</span>
+        <span class="nx">coste_mes2_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes2</span><span class="p">);</span>
+        <span class="nx">coste_mes3_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes3</span><span class="p">);</span>
+        <span class="c1">//Calculamos ahora el precio que costaria</span>
+        <span class="c1">//esos minutos en la empresa B</span>
+        <span class="kd">var</span> <span class="nx">coste_total_b</span><span class="p">;</span>
+        <span class="nx">coste_total_b</span><span class="o">=</span><span class="nx">coste_mes1_empresa_b</span><span class="o">+</span><span class="nx">coste_mes2_empresa_b</span><span class="o">+</span><span class="nx">coste_mes3_empresa_b</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">zonaresultados</span><span class="p">;</span>
-        <span class="nx">zonaresultados</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
-                <span class="s2">&quot;zonaresultados&quot;</span><span class="p">);</span>
-        <span class="nx">zonaresultados</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">preciototal</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;zonaresultados&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">texto</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="s2">&quot;Con la A el precio es:&quot;</span> <span class="o">+</span> <span class="nx">coste_total_a</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="nx">texto</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="nx">texto</span><span class="o">+</span><span class="s2">&quot;Con la B el precio es:&quot;</span> <span class="o">+</span> <span class="nx">coste_total_b</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">texto</span>
 <span class="p">}</span>
 </pre></div>
 </div>
