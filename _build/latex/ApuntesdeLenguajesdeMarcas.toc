@@ -136,6 +136,8 @@
 \contentsline {subsection}{\numberline {4.15.5}Ampliaci\IeC {\'o}n}{67}{subsection.4.15.5}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n HTML}{68}{subsubsection*.13}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n JS}{69}{subsubsection*.14}
+\contentsline {subsection}{\numberline {4.15.6}Comparador de telefon\IeC {\'\i }a}{70}{subsection.4.15.6}
+\contentsline {subsubsection}{HTML del comparador}{70}{subsubsection*.15}
 \contentsline {chapter}{\numberline {5}XML}{71}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{71}{section.5.1}
 \contentsline {section}{\numberline {5.2}Un ejemplo sencillo}{71}{section.5.2}
@@ -183,21 +185,21 @@
 \contentsline {subsection}{\numberline {6.5.6}Ejercicio}{97}{subsection.6.5.6}
 \contentsline {subsection}{\numberline {6.5.7}Ejercicio}{98}{subsection.6.5.7}
 \contentsline {subsection}{\numberline {6.5.8}Ejercicio}{98}{subsection.6.5.8}
-\contentsline {subsubsection}{An\IeC {\'a}lisis del problema}{98}{subsubsection*.15}
-\contentsline {subsubsection}{Soluci\IeC {\'o}n}{99}{subsubsection*.16}
+\contentsline {subsubsection}{An\IeC {\'a}lisis del problema}{98}{subsubsection*.16}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n}{99}{subsubsection*.17}
 \contentsline {subsection}{\numberline {6.5.9}Ejercicio}{99}{subsection.6.5.9}
-\contentsline {subsubsection}{An\IeC {\'a}lisis}{99}{subsubsection*.17}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{99}{subsubsection*.18}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{99}{subsubsection*.18}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{99}{subsubsection*.19}
 \contentsline {subsection}{\numberline {6.5.10}Ejercicio}{100}{subsection.6.5.10}
 \contentsline {subsection}{\numberline {6.5.11}Ejercicio}{102}{subsection.6.5.11}
-\contentsline {subsubsection}{An\IeC {\'a}lisis}{102}{subsubsection*.19}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{102}{subsubsection*.20}
-\contentsline {subsubsection}{Implementaci\IeC {\'o}n}{102}{subsubsection*.21}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{102}{subsubsection*.20}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{102}{subsubsection*.21}
+\contentsline {subsubsection}{Implementaci\IeC {\'o}n}{102}{subsubsection*.22}
 \contentsline {subsection}{\numberline {6.5.12}Ejercicio}{104}{subsection.6.5.12}
-\contentsline {subsubsection}{An\IeC {\'a}lisis}{104}{subsubsection*.22}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{104}{subsubsection*.23}
-\contentsline {subsubsection}{Soluci\IeC {\'o}n 1}{104}{subsubsection*.24}
-\contentsline {subsubsection}{Soluci\IeC {\'o}n 2}{105}{subsubsection*.25}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{104}{subsubsection*.23}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{104}{subsubsection*.24}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n 1}{104}{subsubsection*.25}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n 2}{105}{subsubsection*.26}
 \contentsline {section}{\numberline {6.6}Anexo}{106}{section.6.6}
 \contentsline {subsection}{\numberline {6.6.1}C\IeC {\'o}digo Java}{106}{subsection.6.6.1}
 \contentsline {subsection}{\numberline {6.6.2}Archivo XML}{113}{subsection.6.6.2}
@@ -209,7 +211,7 @@
 \contentsline {subsection}{\numberline {7.2.2}Ejercicio}{119}{subsection.7.2.2}
 \contentsline {section}{\numberline {7.3}Adaptaci\IeC {\'o}n y transformaci\IeC {\'o}n de XML}{120}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}CSS con XML}{121}{subsection.7.3.1}
-\contentsline {subsubsection}{Ejercicio}{122}{subsubsection*.26}
+\contentsline {subsubsection}{Ejercicio}{122}{subsubsection*.27}
 \contentsline {subsection}{\numberline {7.3.2}Transformaci\IeC {\'o}n de XML}{123}{subsection.7.3.2}
 \contentsline {subsection}{\numberline {7.3.3}Ejercicio}{123}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Ejercicio}{124}{subsection.7.3.4}

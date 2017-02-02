@@ -1368,3 +1368,19 @@ Añadiremos este código a nuestro programa anterior.
 		$("#muestra").addClass ("muestrablanco")
 	}
 
+Comparador de telefonía
+-------------------------
+
+Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos
+
+* La empresa A ofrece una tarifa que cuesta 20 euros al mes con los 1000 primeros minutos gratis y despues cada minuto cuesta 8 céntimos.
+
+* La empresa B ofrece una tarifa que cuesta 10 euros al mes con los 500 primeros minutos gratis y despues cada llamada cuesta 12 céntimos.
+
+Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos "Mes 1", "Mes 2" y "Mes 3"  y que le diga qué compañía le interesa más.
+
+HTML del comparador
+~~~~~~~~~~~~~~~~~~~~~ 
+
+.. code-block:: html
+
