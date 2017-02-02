@@ -44,6 +44,5 @@ function calcular(){
     var zonaresultados;
     zonaresultados=document.getElementById(
         "zonaresultados");
-    zonaresultados.innerHTML="Precio:"+preciototal;
-    
+    zonaresultados.innerHTML="Precio:"+preciototal;   
 }

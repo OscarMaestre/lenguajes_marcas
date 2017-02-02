@@ -1368,6 +1368,98 @@ Añadiremos este código a nuestro programa anterior.
 		$("#muestra").addClass ("muestrablanco")
 	}
 
+	
+Otro configurador de coches
+==============================
+Sin utilizar JQuery se desea crear un configurador de coches en JS que responda a las siguientes premisas:
+
+* Hay dos modelos a elegir: el modelo A cuesta 7000 euros y el modelo B cuesta 9000.
+* Se pueden elegir dos tipos de motor. El motor de gasolina cuesta 2000 y el diésel 5000 euros.
+
+* Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada por 1000 euros más, pack de sonido por 500 euros más y pack de seguridad por 1000 euros más
+
+Configurador en HTML
+--------------------
+
+.. code-block:: html
+
+	<form>
+		<h3>Elija un modelo</h3>
+		<input type="radio" name="modelo"
+			   id="modelo_a">Modelo A<br/>
+		<input type="radio" name="modelo"
+			   id="modelo_b">Modelo B<br/>
+		<h3>Elija un tipo de motor</h3>
+		<input type="radio" name="motor"
+			   id="gasolina">Gasolina<br/>
+		<input type="radio" name="motor"
+			   id="diesel">Diésel<br/>
+		<h3>Elija extras</h3>
+		<input type="checkbox" name="extras"
+			   id="metalizada">Pintura metalizada<br/>
+		<input type="checkbox" name="extras"
+			   id="sonido">Extra sonido<br/>
+		<input type="checkbox" name="extras"
+			   id="seguridad">Extra seguridad<br/>
+		<input type="submit" value="Calcular"
+			   onclick="calcular();return false;">
+	</form>
+	<div id="zonaresultados"></div>
+
+Configurador en JS
+--------------------
+
+.. code-block:: javascript
+
+	function esta_checked(id){
+		var control;
+		control=document.getElementById(id);
+		if (control.checked){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function calcular(){
+		var preciototal   =0;
+		var preciomodelo  =0;
+		var preciomotor   =0;
+		var precioextras  = 0;
+		if ( (!esta_checked("modelo_a"))
+			&& (!esta_checked("modelo_b") ) ){
+			alert("Debe marcar un modelo");
+			return ;
+		}
+		if (esta_checked("modelo_a")){
+			preciomodelo=7000;
+		}
+		if (esta_checked("modelo_b")){
+			preciomodelo=9000;
+		}
+		if (esta_checked("gasolina")){
+			preciomotor=2000;
+		}
+		if (esta_checked("diesel")){
+			preciomotor=4000;
+		}
+		if (esta_checked("metalizada")){
+			precioextras=1000;
+		}
+		if (esta_checked("sonido")){
+			precioextras=precioextras+500;
+		}
+		if (esta_checked("seguridad")){
+			precioextras=precioextras+1000;
+		}
+		preciototal=preciomodelo+preciomotor+precioextras;
+		
+		var zonaresultados;
+		zonaresultados=document.getElementById(
+			"zonaresultados");
+		zonaresultados.innerHTML="Precio:"+preciototal;   
+	}
+
 Comparador de telefonía
 ===========================
 

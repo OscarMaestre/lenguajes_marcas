@@ -1258,6 +1258,95 @@
 </div>
 </div>
 </div>
+<div class="section" id="otro-configurador-de-coches">
+<h2>Otro configurador de coches<a class="headerlink" href="#otro-configurador-de-coches" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Sin utilizar JQuery se desea crear un configurador de coches en JS que responda a las siguientes premisas:</p>
+<ul class="simple">
+<li>Hay dos modelos a elegir: el modelo A cuesta 7000 euros y el modelo B cuesta 9000.</li>
+<li>Se pueden elegir dos tipos de motor. El motor de gasolina cuesta 2000 y el diésel 5000 euros.</li>
+<li>Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada por 1000 euros más, pack de sonido por 500 euros más y pack de seguridad por 1000 euros más</li>
+</ul>
+<div class="section" id="configurador-en-html">
+<h3>Configurador en HTML<a class="headerlink" href="#configurador-en-html" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija un modelo<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modelo&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;modelo_a&quot;</span><span class="p">&gt;</span>Modelo A<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modelo&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;modelo_b&quot;</span><span class="p">&gt;</span>Modelo B<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija un tipo de motor<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;gasolina&quot;</span><span class="p">&gt;</span>Gasolina<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;diesel&quot;</span><span class="p">&gt;</span>Diésel<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija extras<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;metalizada&quot;</span><span class="p">&gt;</span>Pintura metalizada<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;sonido&quot;</span><span class="p">&gt;</span>Extra sonido<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;seguridad&quot;</span><span class="p">&gt;</span>Extra seguridad<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Calcular&quot;</span>
+                   <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false;&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zonaresultados&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurador-en-js">
+<h3>Configurador en JS<a class="headerlink" href="#configurador-en-js" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
+        <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">preciototal</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomodelo</span>  <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomotor</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">precioextras</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">))</span>
+                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Debe marcar un modelo&quot;</span><span class="p">);</span>
+                <span class="k">return</span> <span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">7000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">9000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">2000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">4000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;sonido&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">500</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;seguridad&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">preciototal</span><span class="o">=</span><span class="nx">preciomodelo</span><span class="o">+</span><span class="nx">preciomotor</span><span class="o">+</span><span class="nx">precioextras</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">zonaresultados</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                <span class="s2">&quot;zonaresultados&quot;</span><span class="p">);</span>
+        <span class="nx">zonaresultados</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">preciototal</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="comparador-de-telefonia">
 <h2>Comparador de telefonía<a class="headerlink" href="#comparador-de-telefonia" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos</p>
@@ -1452,6 +1541,11 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 <li><a class="reference internal" href="#solucion-js">Solución JS</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#otro-configurador-de-coches">Otro configurador de coches</a><ul>
+<li><a class="reference internal" href="#configurador-en-html">Configurador en HTML</a></li>
+<li><a class="reference internal" href="#configurador-en-js">Configurador en JS</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
