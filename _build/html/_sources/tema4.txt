@@ -1369,7 +1369,7 @@ Añadiremos este código a nuestro programa anterior.
 	}
 
 Comparador de telefonía
--------------------------
+===========================
 
 Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos
 
@@ -1380,7 +1380,7 @@ Se desea crear una aplicación que permita al usuario saber qué compañía de t
 Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos "Mes 1", "Mes 2" y "Mes 3"  y que le diga qué compañía le interesa más.
 
 HTML del comparador
-~~~~~~~~~~~~~~~~~~~~~ 
+-----------------------
 
 .. code-block:: html
 
@@ -1396,7 +1396,7 @@ HTML del comparador
 	</form>
 	
 JS del comparador
-~~~~~~~~~~~~~~~~~~
+--------------------
 
 .. code-block:: javascript
 
