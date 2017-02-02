@@ -1267,7 +1267,22 @@
 <p>Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos &#8220;Mes 1&#8221;, &#8220;Mes 2&#8221; y &#8220;Mes 3&#8221;  y que le diga qué compañía le interesa más.</p>
 <div class="section" id="html-del-comparador">
 <h4>HTML del comparador<a class="headerlink" href="#html-del-comparador" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-html"><div class="highlight"><pre><span></span>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+Mes 1<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;800&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes1&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+Mes 2<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2000&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes2&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;600&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes3&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;¿Qué me conviene?&quot;</span>
+                         <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-del-comparador">
+<h4>JS del comparador<a class="headerlink" href="#js-del-comparador" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">obj_documento</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1352,6 +1367,7 @@
 </li>
 <li><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
 <li><a class="reference internal" href="#html-del-comparador">HTML del comparador</a></li>
+<li><a class="reference internal" href="#js-del-comparador">JS del comparador</a></li>
 </ul>
 </li>
 </ul>

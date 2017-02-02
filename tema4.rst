@@ -1384,3 +1384,20 @@ HTML del comparador
 
 .. code-block:: html
 
+	<form>
+	Mes 1<input type="number" value="800"
+				 min="0" max="5000" id="mes1"> <br/>
+	Mes 2<input type="number" value="2000"
+				 min="0" max="5000" id="mes2"> <br/>
+	Mes 3<input type="number" value="600"
+				 min="0" max="5000" id="mes3"> <br/>
+	<input type="submit" value="¿Qué me conviene?"
+				 onclick="calcular();return false">
+	</form>
+	
+JS del comparador
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: javascript
+
+	var obj_documento = $(document)
