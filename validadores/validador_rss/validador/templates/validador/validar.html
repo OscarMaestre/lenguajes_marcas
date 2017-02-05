@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Validación</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<form action="/validar/" method="POST">
+    <table>
+    {{ fo.as_table }}
+    
+    {%csrf_token%}
+    </table>
+    
+    
+    <input type="submit" value="Validar">
+</form>
+
+
+</body>
+</html>

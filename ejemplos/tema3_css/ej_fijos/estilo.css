@@ -24,58 +24,41 @@ div#pie{
   text-align: right;
 }
 div#contenedor{
-  position:fixed;
-  left:0px;
-  top: 60px;
+
+}
+div#titulares{
+  width:90%;
+  position: fixed;
+  left:10%;
+  top:60px;
+  height:80px;
+}
+div.titular{
+  width:30%;
+  float:left;
+  
+}
+div#noticias{
+  width: 90%;
+  position:relative;
+  top:140px;
+  left:10%;
+  /* Permite meter una capa más abajo de lo que le corresponde
+   * Algo así como "enviar al fondo" una posición de más (lo que
+   * se indica con -1)*/
+  z-index:-1;
+}
+div.columna_noticias{
+  float:left;
+  width:33.3%;
 }
 div#publi{
-  position:fixed;
+  height: 100%;
+  position: fixed;
   top:60px;
   left:0px;
   width:10%;
-  height:100%;
 }
-
-div#titulares{
-  position: fixed;
-  top: 60px;
-  left: 10%;
-  width:90%;
-}
-div#titular_dep, div#titular_tec,div#titular_inf{
-  width:30%;
-  background-color:rgb(240, 245, 250);
-}
-
-div#titular_dep{
-  position: fixed;
-  top:60px;
-  left:10%;
-}
-div#titular_tec{
-  position: fixed;
-  top:60px;
-  left:40%;
-}
-div#titular_inf{
-  position:fixed;
-  top:60px;
-  left:70%;
-}
-div#noticias_dep{
-  width:30%;
-}
-div#textos{
-  position: fixed;
-  top: 90px;
-  left: 10%;
-  width:90%;
-}
-div#noticias_dep{
-  width:30%;
-  overflow: scroll;
-}
-
 
 
 
