@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Calculadora</title>
+    <script language="Javascript" src="calculadora.js">
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="num1">
+        <select id="operacion">
+            <option value="sumar">+</option>
+            <option value="restar">-</option>
+        </select>
+        <input type="text" id="num2">
+        <br/>
+        <input type="submit" value="Calcular"
+               onclick="calcular();return false">
+    </form>
+    <div id="zonaresultados"></div>
+
+</body>
+</html>

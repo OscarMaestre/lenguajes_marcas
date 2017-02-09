@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listaclientes [
+  <!ELEMENT listaclientes (cliente+)>
+  <!ELEMENT cliente
+    (cif, nombre, dias?, direccion)>
+  <!ELEMENT cif (#PCDATA)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT dias (#PCDATA)>
+  <!ELEMENT direccion (#PCDATA)>
+]>
+<listaclientes>
+  <cliente>
+    <cif>3</cif>
+    <nombre>Juan Díaz</nombre>
+    <direccion>C, Rio 12</direccion>
+  </cliente>
+  <cliente>
+    <cif>4</cif>
+    <nombre>Tomas Rodríguez</nombre>
+    
+    <dias>21</dias>
+    <direccion>Guadiana, 38</direccion>
+  </cliente>
+</listaclientes>
+

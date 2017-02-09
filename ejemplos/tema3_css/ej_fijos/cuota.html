@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cuota mensual</title>
+    <script language="Javascript" src="auxiliares.js">
+        
+    </script>
+    <script language="Javascript" src="cuotas.js">
+        
+    </script>
+</head>
+
+<body>
+
+<form>
+    Capital:<input type="number"
+        min="0" max="100000" id="capital">
+    <br/>
+    Redito:<input type="number"
+        min="0" max="20" id="redito">
+    <br/>
+    Tiempo(años)<input type="number"
+        min="0" max="10" id="tiempo">
+    <br/>
+    <input type="submit" value="Calcular cuota"
+            onclick="calcular_cuota();return false">
+    
+</form>
+
+
+</body>
+</html>

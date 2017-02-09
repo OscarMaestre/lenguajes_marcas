@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>IRPF</title>
+    <meta charset="utf-8">
+    <script language="Javascript">
+        function extraer_numero(id){
+            var control;
+            control=document.getElementById(id);
+            var contenido=control.value;
+            var numero=parseInt(contenido);
+            return numero;
+        }
+        function calcular(){
+            var sueldoanual=extraer_numero("sueldoanual")
+            
+            //Calculamos los descuentos
+            var descuento=0;
+            var discapacidad;
+            discapacidad=document.getElementById(
+                "discapacidad");
+            if (discapacidad.checked){
+                descuento=0.45;
+            }
+            var padres_cargo;
+            padres_cargo=document.getElementById(
+                "padres_cargo" );
+            if (padres_cargo.checked){
+                descuento=descuento + 1.5;
+            }
+            //Calculamos el irpf en funcion del sueldo
+            var irpf;
+            if (sueldoanual<20000){
+                irpf=0;
+            }
+            if ((sueldoanual>=20000)&&(sueldoanual<=24999))
+            {
+                irpf=11;
+            }
+            if ((sueldoanual>=25000)&&(sueldoanual<=34999)){
+                irpf=20.5;
+            }
+            if ((sueldoanual>=35000)&&(sueldoanual<=59999)){
+                irpf=32;
+            }
+            if ((sueldoanual>=60000) && (sueldoanual<=119999))
+            {
+                irpf=41;
+            }
+            if (sueldoanual>=120000){
+                irpf=52
+            }
+            //Ya tenemos todos los datos
+            //Calculamos el pago anual
+            var porcentaje=irpf-descuento
+            var euros_pagar=sueldoanual*(porcentaje/100)
+            var zonaresultados;
+            zonaresultados=document.getElementById("zonaresultados")
+            zonaresultados.innerHTML="Pago:"+euros_pagar
+        }
+    </script>
+</head>
+
+<body>
+<form>
+    <input type="checkbox" id="discapacidad">Discap.
+    <input type="checkbox" id="padres_cargo">Con padres
+    <br/>
+    <input type="number" min="0"
+           value="50000" id="sueldoanual">
+    <input type="submit" value="Calcular IRPF"
+           onclick="calcular();return false;">
+</form>
+<div id="zonaresultados"></div>
+
+
+</body>
+</html>

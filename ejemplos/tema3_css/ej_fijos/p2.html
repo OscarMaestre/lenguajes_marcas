@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+    <script language="Javascript">
+        function es_primo(num){
+            for (contador=2;contador<=num-1;contador++){
+                if (num%contador==0){
+                    return false
+                }
+            }//Si se llega aquí es que no es primo
+            return true
+        }
+        var numero=1
+        var contador_primos=0
+        var contador_filas=1
+        document.write("<table border='1'>")
+        document.write("<tr>")
+        while (contador_primos<=24){
+            if (es_primo(numero)){
+                document.write("<td>"+numero+"</td>")
+                contador_primos++
+                if (contador_primos%5==0){
+                    document.write("</tr>")
+                    contador_filas++
+                    if (contador_filas<=4){
+                        document.write("<tr>")
+                    }
+                }
+            }
+            numero++
+        }
+        document.write("</table>")
+    </script>    
+</head>
+<body>
+
+</body>
+</html>
