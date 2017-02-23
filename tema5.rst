@@ -1198,8 +1198,8 @@ Tipos simples y complejos
 
 Todo elemento de un esquema debe ser de uno de estos dos tipos.
 
-* Un elemento es simple si no permite dentro ni elementos hijo ni atributos.
-* Un elemento es complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:
+* Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.
+* Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:
 
     ** Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.
     ** Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.
