@@ -24,6 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
     <link rel="next" title="Recuperación de información" href="tema6.html" />
     <link rel="prev" title="Javascript" href="tema4.html" />
@@ -916,8 +918,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicio-multinacional">
+<h2>Ejercicio: multinacional<a class="headerlink" href="#ejercicio-multinacional" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Una multinacional que opera en bolsa necesita un formato de intercambio de datos para que sus programas intercambien información sobre los mercados de acciones.</p>
 <p>En general todo archivo constará de un listado de cosas como se detalla a continuación</p>
 <ul class="simple">
@@ -1007,8 +1009,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="id3">
+<h2>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La Seguridad Social necesita un formato de intercambio unificado para distribuir la información personal de los afiliados.</p>
 <ul>
 <li><p class="first">Todo archivo XML contiene un listado de uno o mas afiliados</p>
@@ -1039,6 +1041,77 @@
 </div></blockquote>
 </li>
 </ul>
+</div>
+<div class="section" id="esquemas-xml">
+<h2>Esquemas XML<a class="headerlink" href="#esquemas-xml" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los esquemas XML son un mecanismo radicalmente distinto de crear reglas para validar ficheros XML. Se caracterizan por:</p>
+<ul class="simple">
+<li>Estar escritos en XML. Por lo tanto, las mismas bibliotecas que permiten procesar ficheros XML de datos permitirían procesar ficheros XML de reglas.</li>
+<li>Son mucho más potentes: ofrecen soporte a tipos de datos con comprobación de si el contenido de una etiqueta es de tipo <code class="docutils literal"><span class="pre">integer</span></code>, <code class="docutils literal"><span class="pre">date</span></code> o de otros tipos. También se permite añadir restricciones como indicar valores mínimo y máximo para un número o determinar el patrón que debe seguir una cadena válida</li>
+<li>Ofrecen la posibilidad de usar <em>espacios de nombres</em>. Los espacios de nombres son similares a los paquetes Java: permiten a personas distintas el definir etiquetas con el mismo nombre pudiendo luego distinguir etiquetas iguales en función del espacio de nombres que importemos.</li>
+</ul>
+<div class="section" id="un-ejemplo">
+<h3>Un ejemplo<a class="headerlink" href="#un-ejemplo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos que deseamos tener ficheros XML con un solo elemento llamado <code class="docutils literal"><span class="pre">&lt;cantidad&gt;</span></code> que debe tener dentro un número.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<p>Un posible esquema sería el siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>¿Qué contiene este fichero?</p>
+<ol class="arabic simple">
+<li>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí <code class="docutils literal"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal"><span class="pre">xsd</span></code>.</li>
+<li>Se indica que habrá un solo elemento y que el tipo de ese elemento es <code class="docutils literal"><span class="pre">&lt;xsd:integer&gt;</span></code>. Es decir, un entero básico.</li>
+</ol>
+<p>Si probamos el fichero de esquema con el fichero de datos que hemos indicado veremos que efectivamente el fichero XML de datos es válido. Sin embargo, si en lugar de una cantidad incluyésemos una cadena, veríamos que el fichero <strong>no se validaría</strong></p>
+</div>
+<div class="section" id="tipos-de-datos-basicos">
+<h3>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Podemos usar los siguientes tipos de datos:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">xsd:byte</span></code>: entero de 8 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:short</span></code>: entero de 16 bits</li>
+<li><code class="docutils literal"><span class="pre">xsd:int</span></code>: número entero de 32 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:long</span></code>: entero de 64 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:integer</span></code>: número entero sin límite de capacidad.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedByte</span></code>: entero de 8 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedShort</span></code>: entero de 16 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedInt</span></code>: entero de 32 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedLong</span></code>: entero de 64 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:string</span></code>: cadena de caracteres en la que los espacios en blanco se respetan.</li>
+<li><code class="docutils literal"><span class="pre">xsd:normalizedString</span></code>: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.</li>
+<li><code class="docutils literal"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</li>
+<li><code class="docutils literal"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</li>
+<li><code class="docutils literal"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <a href="#id4"><span class="problematic" id="id5">``</span></a>2020-09-22T10:40:22.6&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con &#8220;P&#8221; y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo &#8220;P1Y4M21DT8H&#8221; indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
+<li><code class="docutils literal"><span class="pre">xsd:boolean</span></code>: acepta solo valores &#8220;true&#8221; y &#8220;false&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</li>
+<li><code class="docutils literal"><span class="pre">xsd:</span></code></li>
+<li><code class="docutils literal"><span class="pre">xsd:</span></code></li>
+</ul>
+</div>
+<div class="section" id="tipos-simples-y-complejos">
+<h3>Tipos simples y complejos<a class="headerlink" href="#tipos-simples-y-complejos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Todo elemento de un esquema debe ser de uno de estos dos tipos. Si un elemento cualquiera tiene subelementos se dice que es de un tipo simple. Si un elemento puede tener otros elementos dentro se dice que es de tipo complejo.</p>
+<p>Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo <code class="docutils literal"><span class="pre">type</span></code> de un <code class="docutils literal"><span class="pre">element</span></code> como hacíamos antes:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Sin embargo, si queremos indicar alguna restricción adicional ya no podremos usar el atributo <code class="docutils literal"><span class="pre">type</span></code>. Deberemos reescribir nuestro esquema así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:simpleType&gt;</span>
+    Aquí irán las restricciones, que hemos omitido por ahora.
+   <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1098,8 +1171,14 @@
 </li>
 <li><a class="reference internal" href="#ejercicio-fabricante-de-tractores">Ejercicio: fabricante de tractores</a></li>
 <li><a class="reference internal" href="#ejercicio-repeticiones-de-opciones">Ejercicio: repeticiones de opciones</a></li>
+<li><a class="reference internal" href="#ejercicio-multinacional">Ejercicio: multinacional</a></li>
 <li><a class="reference internal" href="#id3">Ejercicio</a></li>
-<li><a class="reference internal" href="#id4">Ejercicio</a></li>
+<li><a class="reference internal" href="#esquemas-xml">Esquemas XML</a><ul>
+<li><a class="reference internal" href="#un-ejemplo">Un ejemplo</a></li>
+<li><a class="reference internal" href="#tipos-de-datos-basicos">Tipos de datos básicos</a></li>
+<li><a class="reference internal" href="#tipos-simples-y-complejos">Tipos simples y complejos</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#examen">Examen</a></li>
 </ul>
 </li>
@@ -1138,7 +1217,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |

@@ -1008,8 +1008,9 @@ La solución a la DTD:
 		<numero>1HB</numero>
 	  </lapiz>
 	</pedido>   
-Ejercicio
-=========
+
+Ejercicio: multinacional
+===========================
 
 Una multinacional que opera en bolsa necesita un formato de intercambio de datos para que sus programas intercambien información sobre los mercados de acciones.
 
@@ -1125,6 +1126,100 @@ La Seguridad Social necesita un formato de intercambio unificado para distribuir
 		* Una baja consta de tres elementos: causa (obligatoria), fecha de inicio (obligatorio) y fecha de final (optativa),
 		
 	* Listado de prestaciones cobradas: consta de 0 o más elementos prestación, donde se indicará la cantidad percibida (obligatorio), la fecha de inicio (obligatorio) y la fecha de final (obligatorio)
+
+
+
+Esquemas XML
+===========================================
+
+Los esquemas XML son un mecanismo radicalmente distinto de crear reglas para validar ficheros XML. Se caracterizan por:
+
+* Estar escritos en XML. Por lo tanto, las mismas bibliotecas que permiten procesar ficheros XML de datos permitirían procesar ficheros XML de reglas.
+
+* Son mucho más potentes: ofrecen soporte a tipos de datos con comprobación de si el contenido de una etiqueta es de tipo ``integer``, ``date`` o de otros tipos. También se permite añadir restricciones como indicar valores mínimo y máximo para un número o determinar el patrón que debe seguir una cadena válida
+
+* Ofrecen la posibilidad de usar *espacios de nombres*. Los espacios de nombres son similares a los paquetes Java: permiten a personas distintas el definir etiquetas con el mismo nombre pudiendo luego distinguir etiquetas iguales en función del espacio de nombres que importemos.
+
+Un ejemplo
+----------------
+
+Supongamos que deseamos tener ficheros XML con un solo elemento llamado ``<cantidad>`` que debe tener dentro un número.
+
+.. code-block:: xml
+
+    <cantidad>20</cantidad>
+
+Un posible esquema sería el siguiente:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <xsd:element name="cantidad" type="xsd:integer"/>
+    </xsd:schema>
+    
+¿Qué contiene este fichero?
+
+1. En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí ``xmlns``). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será ``xsd``.
+
+2. Se indica que habrá un solo elemento y que el tipo de ese elemento es ``<xsd:integer>``. Es decir, un entero básico.
+
+Si probamos el fichero de esquema con el fichero de datos que hemos indicado veremos que efectivamente el fichero XML de datos es válido. Sin embargo, si en lugar de una cantidad incluyésemos una cadena, veríamos que el fichero **no se validaría**
+
+
+Tipos de datos básicos
+------------------------------
+
+Podemos usar los siguientes tipos de datos:
+
+
+* ``xsd:byte``: entero de 8 bits.
+* ``xsd:short``: entero de 16 bits
+* ``xsd:int``: número entero de 32 bits.
+* ``xsd:long``: entero de 64 bits.
+* ``xsd:integer``: número entero sin límite de capacidad.
+* ``xsd:unsignedByte``: entero de 8 bits sin signo.
+* ``xsd:unsignedShort``: entero de 16 bits sin signo.
+* ``xsd:unsignedInt``: entero de 32 bits sin signo.
+* ``xsd:unsignedLong``: entero de 64 bits sin signo.
+* ``xsd:string``: cadena de caracteres en la que los espacios en blanco se respetan.
+* ``xsd:normalizedString``: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.
+* ``xsd:date``: permite almacenar fechas que deben ir **obligatoriamente** en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)
+* ``xsd:time``: para almacenar horas en formato HH:MM:SS.C
+* ``xsd:datetime``: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar ``2020-09-22T10:40:22.6".
+* ``xsd:duration``. Para indicar períodos. Se debe empezar con "P" y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo "P1Y4M21DT8H" indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.
+* ``xsd:boolean``: acepta solo valores "true" y "false".
+* ``xsd:anyURI``: acepta URIs.
+* ``xsd:``
+* ``xsd:``
+
+
+Tipos simples y complejos
+----------------------------
+
+Todo elemento de un esquema debe ser de uno de estos dos tipos. Si un elemento cualquiera tiene subelementos se dice que es de un tipo simple. Si un elemento puede tener otros elementos dentro se dice que es de tipo complejo.
+
+Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo ``type`` de un ``element`` como hacíamos antes:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <xsd:element name="cantidad" type="xsd:integer"/>
+    </xsd:schema>
+
+
+Sin embargo, si queremos indicar alguna restricción adicional ya no podremos usar el atributo ``type``. Deberemos reescribir nuestro esquema así:
+
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <xsd:simpleType>
+        Aquí irán las restricciones, que hemos omitido por ahora.
+       </xsd:simpleType>
+    </xsd:schema>
+
+
+
 
 Examen
 ===========================================
