@@ -1189,8 +1189,29 @@ Podemos usar los siguientes tipos de datos:
 * ``xsd:duration``. Para indicar períodos. Se debe empezar con "P" y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo "P1Y4M21DT8H" indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.
 * ``xsd:boolean``: acepta solo valores "true" y "false".
 * ``xsd:anyURI``: acepta URIs.
-* ``xsd:``
-* ``xsd:``
+* ``xsd:anyType``: es como la clase ``Object`` en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.
+
+
+
+La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como sus relaciones de herencia:
+
+.. figure:: tipos_xml_schema.png
+   :figwidth: 50%
+   :align: center	
+
+   Tipos en los XML Schemas
+
+
+Derivaciones
+-----------------
+
+Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de "heredar" tenemos más posibilidades que en Java (dondo solo tenemos el "extends"). En concreto podemos heredar de 4 formas:
+
+1. Poniendo restricciones (``restriction``). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.
+2. Extendiendo un tipo (``extension``). Se toma un tipo y se crea uno nuevo añadiendo cosas a los posibles valores que pueda tomar el tipo inicial.
+3. Haciendo listas (``lists``). Es como crear vectores en Java.
+4. Juntando otros tipos para crear tipos complejos (``union``). Es como crear clases Java en las que añadimos atributos de tipo ``int``, ``String``, etc...
+
 
 
 Tipos simples y complejos
@@ -1218,8 +1239,72 @@ Sin embargo, si queremos indicar alguna restricción adicional ya no podremos us
        </xsd:simpleType>
     </xsd:schema>
 
+Uniendo la herencia y el sistema de tipos
+--------------------------------------------
 
 
+Llegados a este punto ocurre lo siguiente:
+
+* Por un lado tenemos que especificar si nuestros tipos serán simples o complejos (los cuales a su vez pueden ser complejos con contenido simple o complejos con contenido complejo).
+* Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo cosas (restricciones a los valores).
+
+Se deduce por tanto que no podemos aplicar todas las "herencias" a todos los tipos:
+
+1. Los tipos simples no pueden tener atributos ni subelementos, por lo tanto **les podremos aplicar restricciones pero nunca la extensión**.
+
+2. Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que **les podremos aplicar tanto restricciones como extensiones**.
+
+
+Ejemplos de XML Schemas
+======================================
+
+Cantidades limitades
+------------------------
+
+Crear un esquema que permita verificar algo como lo siguiente:
+
+.. code-block:: xml
+
+    <cantidad>20</cantidad>
+    
+Se necesita que la cantidad tenga solo valores aceptables entre -30 y +30.
+
+Solución a las cantidades limitadas
+-------------------------------------
+
+La primera pregunta que debemos hacernos es ¿necesitamos crear un tipo simple o uno complejo?. Dado que nuestro único elemento no tiene subelementos ni atributos dentro podemos afirmar que solo necesitamos un tipo simple.
+
+Como aparentemente nuestro tipo necesita usar solo valores numéricos y además son muy pequeños nos vamos a limitar a usar un ``short``. Sobre ese ``short`` pondremos una restriccion que permita indicar los valores mínimo y máximo.
+
+.. code-block:: xml
+
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="cantidad">
+            <xs:simpleType>
+                <xs:restriction base="xs:short">
+                    <xs:minInclusive value="-30"/>
+                    <xs:maxInclusive value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:schema>
+
+Este esquema dice que el elemento raíz debe ser ``cantidad``. Luego indica que es un tipo simple y dentro de él indica que se va a establecer una restricción teniendo en mente que se va a "heredar" del tipo ``short``. En concreto se van a poner dos restricciones, una que el valor mínimo debe ser -30 y otra que el valor máximo debe ser 30.
+
+Existe una alternativa más recomendable, que es separar los elementos de los tipos. De esa manera, se pueden "reutilizar" las definiciones de tipos.
+
+.. code-block:: xml
+
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="cantidad" type="tipoCantidades">            
+        </xs:element>
+        <xs:simpleType name="tipoCantidades">
+                <xs:restriction base="xs:short">
+                    <xs:minInclusive value="-30"/>
+                    <xs:maxInclusive value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+    </xs:schema>
 
 Examen
 ===========================================
