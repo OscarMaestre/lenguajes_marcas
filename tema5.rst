@@ -1217,8 +1217,14 @@ Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer u
 Tipos simples y complejos
 ----------------------------
 
-Todo elemento de un esquema debe ser de uno de estos dos tipos. Si un elemento cualquiera tiene subelementos se dice que es de un tipo simple. Si un elemento puede tener otros elementos dentro se dice que es de tipo complejo.
+Todo elemento de un esquema debe ser de uno de estos dos tipos.
 
+* Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.
+* Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:
+
+    ** Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.
+    ** Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.
+    
 Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo ``type`` de un ``element`` como hacíamos antes:
 
 .. code-block:: xml
@@ -1307,13 +1313,28 @@ Existe una alternativa más recomendable, que es separar los elementos de los ti
     </xs:schema>
 
 
+
 Obsérvese que hemos puesto el tipo por separado y le hemos dado el nombre ``tipoCantidades``. El elemento raíz tiene su nombre y su tipo en la misma línea.
 
+
+
+Atributos
+-----------------------
+En primer lugar es muy importante recordar que **si queremos que un elemento tenga atributos entonces ya no
+se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType**. Por otro lado en los XML Schema todos los atributos **son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un "required".**
+
+Un atributo se define de la siguiente manera:
+
+.. code-block:: xml
+
+    <xsd:attribute name="fechanacimiento" type="xsd:date"/>
+    
+Esto define un atributo llamado ``nombre`` que aceptará solo fechas como valores válidos.
 
 Examen
 ===========================================
 
-El examen de este tema tendrá lugar el viernes 7 de marzo de 2014.
+El examen de este tema tendrá lugar el viernes 14 de marzo de 2017.
 
 
 
