@@ -24,8 +24,6 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="top" title="None" href="index.html#document-index" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -1188,12 +1186,11 @@ Bici
 </ul>
 <p>Para posicionar correctamente un span o un div, se deben tener en cuenta
 varias cosas:</p>
-<ul>
-<li><p class="first">Todos deberían llevar un id o un class (o las dos cosas)</p>
-</li>
+<ul class="simple">
+<li>Todos deberían llevar un id o un class (o las dos cosas)</li>
 <li><dl class="first docutils">
 <dt>El posicionamiento tiene varias posibilidades:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">fixed</span></code>: la caja va en cierta posición y no se mueve de allí</li>
 <li><code class="docutils literal"><span class="pre">absolute</span></code>: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.</li>
 <li><code class="docutils literal"><span class="pre">relative</span></code>: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador</li>
@@ -3139,6 +3136,212 @@ el aspecto del texto como estas:</p>
 </div>
 </div>
 </div>
+<div class="section" id="otro-configurador-de-coches">
+<h3>Otro configurador de coches<a class="headerlink" href="#otro-configurador-de-coches" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Sin utilizar JQuery se desea crear un configurador de coches en JS que responda a las siguientes premisas:</p>
+<ul class="simple">
+<li>Hay dos modelos a elegir: el modelo A cuesta 7000 euros y el modelo B cuesta 9000.</li>
+<li>Se pueden elegir dos tipos de motor. El motor de gasolina cuesta 2000 y el diésel 5000 euros.</li>
+<li>Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada por 1000 euros más, pack de sonido por 500 euros más y pack de seguridad por 1000 euros más</li>
+</ul>
+<div class="section" id="configurador-en-html">
+<h4>Configurador en HTML<a class="headerlink" href="#configurador-en-html" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija un modelo<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modelo&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;modelo_a&quot;</span><span class="p">&gt;</span>Modelo A<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modelo&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;modelo_b&quot;</span><span class="p">&gt;</span>Modelo B<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija un tipo de motor<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;gasolina&quot;</span><span class="p">&gt;</span>Gasolina<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;diesel&quot;</span><span class="p">&gt;</span>Diésel<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija extras<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;metalizada&quot;</span><span class="p">&gt;</span>Pintura metalizada<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;sonido&quot;</span><span class="p">&gt;</span>Extra sonido<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;extras&quot;</span>
+                   <span class="na">id</span><span class="o">=</span><span class="s">&quot;seguridad&quot;</span><span class="p">&gt;</span>Extra seguridad<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Calcular&quot;</span>
+                   <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false;&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zonaresultados&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurador-en-js">
+<h4>Configurador en JS<a class="headerlink" href="#configurador-en-js" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
+        <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">preciototal</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomodelo</span>  <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomotor</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">precioextras</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">))</span>
+                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Debe marcar un modelo&quot;</span><span class="p">);</span>
+                <span class="k">return</span> <span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">7000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">9000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">2000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">4000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;sonido&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">500</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;seguridad&quot;</span><span class="p">)){</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">preciototal</span><span class="o">=</span><span class="nx">preciomodelo</span><span class="o">+</span><span class="nx">preciomotor</span><span class="o">+</span><span class="nx">precioextras</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">zonaresultados</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                <span class="s2">&quot;zonaresultados&quot;</span><span class="p">);</span>
+        <span class="nx">zonaresultados</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">preciototal</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="comparador-de-telefonia">
+<h3>Comparador de telefonía<a class="headerlink" href="#comparador-de-telefonia" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos</p>
+<ul class="simple">
+<li>La empresa A ofrece una tarifa que cuesta 20 euros al mes con los 1000 primeros minutos gratis y despues cada minuto cuesta 8 céntimos.</li>
+<li>La empresa B ofrece una tarifa que cuesta 10 euros al mes con los 500 primeros minutos gratis y despues cada llamada cuesta 12 céntimos.</li>
+</ul>
+<p>Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos &#8220;Mes 1&#8221;, &#8220;Mes 2&#8221; y &#8220;Mes 3&#8221;  y que le diga qué compañía le interesa más.</p>
+<div class="section" id="html-del-comparador">
+<h4>HTML del comparador<a class="headerlink" href="#html-del-comparador" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+Mes 1<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;800&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes1&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+Mes 2<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2000&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes2&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;600&quot;</span>
+                         <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes3&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;¿Qué me conviene?&quot;</span>
+                         <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-del-comparador">
+<h4>JS del comparador<a class="headerlink" href="#js-del-comparador" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">extraer_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
+        <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">valor</span><span class="o">=</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">numero</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">numero</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">precio_mes_empresa_a</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
+        <span class="c1">//Primero vemos si se pasa</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">){</span>
+                <span class="c1">//Si no se pasa, el precio es 20</span>
+                <span class="k">return</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
+
+        <span class="c1">//Calculamos cuantos minutos se pasa</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="c1">//Y ese exceso es a 8 centimos/minutos</span>
+        <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.08</span><span class="p">;</span>
+        <span class="c1">//El precio de ese mes es</span>
+        <span class="c1">//20 euros más lo que cueste el exceso</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">20</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
+        <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">precio_mes_empresa_b</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
+        <span class="c1">//Primero vemos si se pasa</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">500</span><span class="p">){</span>
+                <span class="c1">//Si no se pasa, el precio es 10</span>
+                <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
+
+        <span class="c1">//Calculamos cuantos minutos se pasa</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">500</span><span class="p">;</span>
+        <span class="c1">//Y ese exceso es a 12 centimos/minutos</span>
+        <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.12</span><span class="p">;</span>
+        <span class="c1">//El precio de ese mes es</span>
+        <span class="c1">//10 euros más lo que cueste el exceso</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">10</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
+        <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes1</span><span class="p">;</span>
+        <span class="nx">minutos_mes1</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes1&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes2</span><span class="p">;</span>
+        <span class="nx">minutos_mes2</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes2&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">minutos_mes3</span><span class="p">;</span>
+        <span class="nx">minutos_mes3</span><span class="o">=</span><span class="nx">extraer_numero</span><span class="p">(</span><span class="s2">&quot;mes3&quot;</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">coste_mes1_empresa_a</span><span class="p">;</span>
+        <span class="nx">coste_mes1_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes1</span><span class="p">);</span>
+
+        <span class="nx">coste_mes2_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes2</span><span class="p">);</span>
+        <span class="nx">coste_mes3_empresa_a</span><span class="o">=</span><span class="nx">precio_mes_empresa_a</span><span class="p">(</span>
+                <span class="nx">minutos_mes3</span><span class="p">);</span>
+
+        <span class="c1">//Calculamos el precio que costaria</span>
+        <span class="c1">//esos minutos en la empresa A</span>
+        <span class="kd">var</span> <span class="nx">coste_total_a</span><span class="p">;</span>
+        <span class="nx">coste_total_a</span><span class="o">=</span><span class="nx">coste_mes1_empresa_a</span><span class="o">+</span><span class="nx">coste_mes2_empresa_a</span><span class="o">+</span><span class="nx">coste_mes3_empresa_a</span><span class="p">;</span>
+
+        <span class="c1">//Repetimos el proceso para la empresa B</span>
+        <span class="kd">var</span> <span class="nx">coste_mes1_empresa_b</span><span class="p">;</span>
+        <span class="nx">coste_mes1_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes1</span><span class="p">);</span>
+        <span class="nx">coste_mes2_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes2</span><span class="p">);</span>
+        <span class="nx">coste_mes3_empresa_b</span><span class="o">=</span><span class="nx">precio_mes_empresa_b</span><span class="p">(</span>
+                <span class="nx">minutos_mes3</span><span class="p">);</span>
+        <span class="c1">//Calculamos ahora el precio que costaria</span>
+        <span class="c1">//esos minutos en la empresa B</span>
+        <span class="kd">var</span> <span class="nx">coste_total_b</span><span class="p">;</span>
+        <span class="nx">coste_total_b</span><span class="o">=</span><span class="nx">coste_mes1_empresa_b</span><span class="o">+</span><span class="nx">coste_mes2_empresa_b</span><span class="o">+</span><span class="nx">coste_mes3_empresa_b</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">zonaresultados</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;zonaresultados&quot;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">texto</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="s2">&quot;Con la A el precio es:&quot;</span> <span class="o">+</span> <span class="nx">coste_total_a</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="nx">texto</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+        <span class="nx">texto</span><span class="o">=</span><span class="nx">texto</span><span class="o">+</span><span class="s2">&quot;Con la B el precio es:&quot;</span> <span class="o">+</span> <span class="nx">coste_total_b</span><span class="p">;</span>
+        <span class="nx">zonaresultados</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">texto</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <span id="document-tema5"></span><div class="section" id="xml">
 <h2>XML<a class="headerlink" href="#xml" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -4014,8 +4217,8 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="ejercicio-multinacional">
+<h3>Ejercicio: multinacional<a class="headerlink" href="#ejercicio-multinacional" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Una multinacional que opera en bolsa necesita un formato de intercambio de datos para que sus programas intercambien información sobre los mercados de acciones.</p>
 <p>En general todo archivo constará de un listado de cosas como se detalla a continuación</p>
 <ul class="simple">
@@ -4105,8 +4308,8 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id3">
+<h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>La Seguridad Social necesita un formato de intercambio unificado para distribuir la información personal de los afiliados.</p>
 <ul>
 <li><p class="first">Todo archivo XML contiene un listado de uno o mas afiliados</p>
@@ -4138,9 +4341,226 @@ el aspecto del texto como estas:</p>
 </li>
 </ul>
 </div>
+<div class="section" id="esquemas-xml">
+<h3>Esquemas XML<a class="headerlink" href="#esquemas-xml" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los esquemas XML son un mecanismo radicalmente distinto de crear reglas para validar ficheros XML. Se caracterizan por:</p>
+<ul class="simple">
+<li>Estar escritos en XML. Por lo tanto, las mismas bibliotecas que permiten procesar ficheros XML de datos permitirían procesar ficheros XML de reglas.</li>
+<li>Son mucho más potentes: ofrecen soporte a tipos de datos con comprobación de si el contenido de una etiqueta es de tipo <code class="docutils literal"><span class="pre">integer</span></code>, <code class="docutils literal"><span class="pre">date</span></code> o de otros tipos. También se permite añadir restricciones como indicar valores mínimo y máximo para un número o determinar el patrón que debe seguir una cadena válida</li>
+<li>Ofrecen la posibilidad de usar <em>espacios de nombres</em>. Los espacios de nombres son similares a los paquetes Java: permiten a personas distintas el definir etiquetas con el mismo nombre pudiendo luego distinguir etiquetas iguales en función del espacio de nombres que importemos.</li>
+</ul>
+<div class="section" id="un-ejemplo">
+<h4>Un ejemplo<a class="headerlink" href="#un-ejemplo" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Supongamos que deseamos tener ficheros XML con un solo elemento llamado <code class="docutils literal"><span class="pre">&lt;cantidad&gt;</span></code> que debe tener dentro un número.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<p>Un posible esquema sería el siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>¿Qué contiene este fichero?</p>
+<ol class="arabic simple">
+<li>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí <code class="docutils literal"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal"><span class="pre">xsd</span></code>.</li>
+<li>Se indica que habrá un solo elemento y que el tipo de ese elemento es <code class="docutils literal"><span class="pre">&lt;xsd:integer&gt;</span></code>. Es decir, un entero básico.</li>
+</ol>
+<p>Si probamos el fichero de esquema con el fichero de datos que hemos indicado veremos que efectivamente el fichero XML de datos es válido. Sin embargo, si en lugar de una cantidad incluyésemos una cadena, veríamos que el fichero <strong>no se validaría</strong></p>
+</div>
+<div class="section" id="tipos-de-datos-basicos">
+<h4>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Podemos usar los siguientes tipos de datos:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">xsd:byte</span></code>: entero de 8 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:short</span></code>: entero de 16 bits</li>
+<li><code class="docutils literal"><span class="pre">xsd:int</span></code>: número entero de 32 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:long</span></code>: entero de 64 bits.</li>
+<li><code class="docutils literal"><span class="pre">xsd:integer</span></code>: número entero sin límite de capacidad.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedByte</span></code>: entero de 8 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedShort</span></code>: entero de 16 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedInt</span></code>: entero de 32 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:unsignedLong</span></code>: entero de 64 bits sin signo.</li>
+<li><code class="docutils literal"><span class="pre">xsd:string</span></code>: cadena de caracteres en la que los espacios en blanco se respetan.</li>
+<li><code class="docutils literal"><span class="pre">xsd:normalizedString</span></code>: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.</li>
+<li><code class="docutils literal"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</li>
+<li><code class="docutils literal"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</li>
+<li><code class="docutils literal"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <a href="#id4"><span class="problematic" id="id5">``</span></a>2020-09-22T10:40:22.6&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con &#8220;P&#8221; y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo &#8220;P1Y4M21DT8H&#8221; indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
+<li><code class="docutils literal"><span class="pre">xsd:boolean</span></code>: acepta solo valores &#8220;true&#8221; y &#8220;false&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</li>
+<li><code class="docutils literal"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</li>
+</ul>
+<p>La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como sus relaciones de herencia:</p>
+<div class="figure align-center" id="id7" style="width: 50%">
+<img alt="_images/tipos_xml_schema.png" src="_images/tipos_xml_schema.png" />
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span></p>
+</div>
+</div>
+<div class="section" id="derivaciones">
+<h4>Derivaciones<a class="headerlink" href="#derivaciones" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de &#8220;heredar&#8221; tenemos más posibilidades que en Java (dondo solo tenemos el &#8220;extends&#8221;). En concreto podemos heredar de 4 formas:</p>
+<ol class="arabic simple">
+<li>Poniendo restricciones (<code class="docutils literal"><span class="pre">restriction</span></code>). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.</li>
+<li>Extendiendo un tipo (<code class="docutils literal"><span class="pre">extension</span></code>). Se toma un tipo y se crea uno nuevo añadiendo cosas a los posibles valores que pueda tomar el tipo inicial.</li>
+<li>Haciendo listas (<code class="docutils literal"><span class="pre">lists</span></code>). Es como crear vectores en Java.</li>
+<li>Juntando otros tipos para crear tipos complejos (<code class="docutils literal"><span class="pre">union</span></code>). Es como crear clases Java en las que añadimos atributos de tipo <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">String</span></code>, etc...</li>
+</ol>
+<p>En general, las dos derivaciones más usadas con diferencia son las restricciones y las extensiones, que se comentan por separado en los puntos siguientes.</p>
+</div>
+<div class="section" id="tipos-simples-y-complejos">
+<h4>Tipos simples y complejos<a class="headerlink" href="#tipos-simples-y-complejos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Todo elemento de un esquema debe ser de uno de estos dos tipos.</p>
+<ul>
+<li><p class="first">Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.</p>
+</li>
+<li><p class="first">Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.</li>
+<li>Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo <code class="docutils literal"><span class="pre">type</span></code> de un <code class="docutils literal"><span class="pre">element</span></code> como hacíamos antes:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Sin embargo, si queremos indicar alguna restricción adicional ya no podremos usar el atributo <code class="docutils literal"><span class="pre">type</span></code>. Deberemos reescribir nuestro esquema así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xsd:simpleType&gt;</span>
+    Aquí irán las restricciones, que hemos omitido por ahora.
+   <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uniendo-la-herencia-y-el-sistema-de-tipos">
+<h4>Uniendo la herencia y el sistema de tipos<a class="headerlink" href="#uniendo-la-herencia-y-el-sistema-de-tipos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Llegados a este punto ocurre lo siguiente:</p>
+<ul class="simple">
+<li>Por un lado tenemos que especificar si nuestros tipos serán simples o complejos (los cuales a su vez pueden ser complejos con contenido simple o complejos con contenido complejo).</li>
+<li>Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo cosas (restricciones a los valores).</li>
+</ul>
+<p>Se deduce por tanto que no podemos aplicar todas las &#8220;herencias&#8221; a todos los tipos:</p>
+<ol class="arabic simple">
+<li>Los tipos simples no pueden tener atributos ni subelementos, por lo tanto <strong>les podremos aplicar restricciones pero nunca la extensión</strong>.</li>
+<li>Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que <strong>les podremos aplicar tanto restricciones como extensiones</strong>.</li>
+</ol>
+</div>
+<div class="section" id="restricciones">
+<h4>Restricciones<a class="headerlink" href="#restricciones" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Como se ha dicho anteriormente la forma más común de trabajar es crear tipos que en unos casos aplicarán modificaciones en los tipos ya sea añadiendo cosas o restringiendo posibilidades. En este apartado se verá como aplicar restricciones.</p>
+<p><strong>Si queremos aplicar restricciones para un tipo simple las posibles restricciones son:</strong></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">minInclusive</span></code> para indicar el menor valor numérico permitido.</li>
+<li><code class="docutils literal"><span class="pre">maxInclusive</span></code> para indicar el mayor valor numérico permitido.</li>
+<li><code class="docutils literal"><span class="pre">minExclusive</span></code> para indicar el menor valor numérico que ya no estaría permitido.</li>
+<li><code class="docutils literal"><span class="pre">maxExclusive</span></code> para indicar el mayor valor numérico que ya no estaría permitido.</li>
+<li><code class="docutils literal"><span class="pre">totalDigits</span></code> para indicar cuantas posibles cifras se permiten.</li>
+<li><code class="docutils literal"><span class="pre">fractionDigits</span></code> para indicar cuantas posibles cifras decimales se permiten.</li>
+<li><code class="docutils literal"><span class="pre">length</span></code> para indicar la longitud exacta de una cadena.</li>
+<li><code class="docutils literal"><span class="pre">minLength</span></code> para indicar la longitud mínima de una cadena.</li>
+<li><code class="docutils literal"><span class="pre">maxLength</span></code> para indicar la longitud máxima de una cadena.</li>
+<li><code class="docutils literal"><span class="pre">enumeration</span></code> para indicar los valores aceptados por una cadena.</li>
+<li><code class="docutils literal"><span class="pre">pattern</span></code> para indicar la estructura aceptada por una cadena.</li>
+</ul>
+<p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento ``&lt;attribute&gt;``.</strong></p>
+</div>
+<div class="section" id="id6">
+<h4>Atributos<a class="headerlink" href="#id6" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>En primer lugar es muy importante recordar que <strong>si queremos que un elemento tenga atributos entonces ya no
+se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType</strong>. Por otro lado en los XML Schema todos los atributos <strong>son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un &#8220;required&#8221;.</strong></p>
+<p>Un atributo se define de la siguiente manera:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;fechanacimiento&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:date&quot;</span> <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Esto define un atributo llamado <code class="docutils literal"><span class="pre">nombre</span></code> que aceptará solo fechas como valores válidos y que además es obligatorio poner siempre.</p>
+</div>
+</div>
+<div class="section" id="ejercicios-de-xml-schemas">
+<h3>Ejercicios de XML Schemas<a class="headerlink" href="#ejercicios-de-xml-schemas" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="cantidades-limitades">
+<h4>Cantidades limitades<a class="headerlink" href="#cantidades-limitades" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Crear un esquema que permita verificar algo como lo siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<p>Se necesita que la cantidad tenga solo valores aceptables entre -30 y +30.</p>
+</div>
+<div class="section" id="solucion-a-las-cantidades-limitadas">
+<h4>Solución a las cantidades limitadas<a class="headerlink" href="#solucion-a-las-cantidades-limitadas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>La primera pregunta que debemos hacernos es ¿necesitamos crear un tipo simple o uno complejo?. Dado que nuestro único elemento no tiene subelementos ni atributos dentro podemos afirmar que solo necesitamos un tipo simple.</p>
+<p>Como aparentemente nuestro tipo necesita usar solo valores numéricos y además son muy pequeños nos vamos a limitar a usar un <code class="docutils literal"><span class="pre">short</span></code>. Sobre ese <code class="docutils literal"><span class="pre">short</span></code> pondremos una restriccion que permita indicar los valores mínimo y máximo.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:simpleType&gt;</span>
+            <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">&quot;xs:short&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:minInclusive</span> <span class="na">value=</span><span class="s">&quot;-30&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xs:maxInclusive</span> <span class="na">value=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xs:restriction&gt;</span>
+        <span class="nt">&lt;/xs:simpleType&gt;</span>
+    <span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>Este esquema dice que el elemento raíz debe ser <code class="docutils literal"><span class="pre">cantidad</span></code>. Luego indica que es un tipo simple y dentro de él indica que se va a establecer una restricción teniendo en mente que se va a &#8220;heredar&#8221; del tipo <code class="docutils literal"><span class="pre">short</span></code>. En concreto se van a poner dos restricciones, una que el valor mínimo debe ser -30 y otra que el valor máximo debe ser 30.</p>
+<p>Existe una alternativa más recomendable, que es separar los elementos de los tipos. De esa manera, se pueden &#8220;reutilizar&#8221; las definiciones de tipos.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidades&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/xs:element&gt;</span>
+    <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoCantidades&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">&quot;xs:short&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:minInclusive</span> <span class="na">value=</span><span class="s">&quot;-30&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xs:maxInclusive</span> <span class="na">value=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xs:restriction&gt;</span>
+        <span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p>Obsérvese que hemos puesto el tipo por separado y le hemos dado el nombre <code class="docutils literal"><span class="pre">tipoCantidades</span></code>. El elemento raíz tiene su nombre y su tipo en la misma línea.</p>
+</div>
+<div class="section" id="cantidades-limitadas-con-atributo-divisa">
+<h4>Cantidades limitadas con atributo divisa<a class="headerlink" href="#cantidades-limitadas-con-atributo-divisa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Se desea crear un esquema para validar XML en los que haya un solo elemento raíz llamado cantidad en el que se debe poner siempre un atributo &#8220;divisa&#8221; que indique en qué moneda está una cierta cantidad. El atributo divisa siempre será una cadena y la cantidad siempre será un tipo numérico que acepte decimales (por ejemplo <code class="docutils literal"><span class="pre">float</span></code>). El esquema debe validar los archivos siguientes:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;euro&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;dolar&quot;</span><span class="nt">&gt;</span>18.32<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<p>Pero no debe validar ninguno de los siguientes:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;dolar&quot;</span><span class="nt">&gt;</span>abc<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="solucion-a-las-cantidades-limitadas-con-atributo-divisa">
+<h4>Solución a las cantidades limitadas con atributo divisa<a class="headerlink" href="#solucion-a-las-cantidades-limitadas-con-atributo-divisa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Crearemos un tipo llamado &#8220;tipoCantidad&#8221;. Dicho tipo <em>ya no puede ser un ``simpleType`` ya que necesitamos que haya atributos*</em>. Como no necesitamos que tenga subelementos dentro este <code class="docutils literal"><span class="pre">complexType</span></code> llevará dentro un <code class="docutils literal"><span class="pre">simpleContent</span></code> (y no un <code class="docutils literal"><span class="pre">complexContent</span></code>).</p>
+<p>Aparte de eso, como queremos &#8220;ampliar&#8221; un elemento para que acepte tener dentro un atributo obligatorio &#8220;cantidad&#8221; usaremos una <code class="docutils literal"><span class="pre">&lt;extension&gt;</span></code>. Así, el posible esquema sería este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:float&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;divisa&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span> <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="examen">
 <h3>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>El examen de este tema tendrá lugar el viernes 7 de marzo de 2014.</p>
+<p>El examen de este tema tendrá lugar el viernes 14 de marzo de 2017.</p>
 </div>
 </div>
 <span id="document-tema6"></span><div class="section" id="recuperacion-de-informacion">
@@ -8511,6 +8931,8 @@ ejercicios no se muestran con ningún orden de dificultad.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#procesado-de-atributos">Procesado de atributos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#configurador-de-coches">Configurador de coches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#dinamismo-con-google-maps">Dinamismo con Google Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#otro-configurador-de-coches">Otro configurador de coches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#comparador-de-telefonia">Comparador de telefonía</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-tema5">XML</a><ul>
@@ -8528,8 +8950,10 @@ ejercicios no se muestran con ningún orden de dificultad.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#ejercicio-mayorista-de-libros">Ejercicio: mayorista de libros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#ejercicio-fabricante-de-tractores">Ejercicio: fabricante de tractores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#ejercicio-repeticiones-de-opciones">Ejercicio: repeticiones de opciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ejercicio-multinacional">Ejercicio: multinacional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#id3">Ejercicio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Ejercicio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esquemas-xml">Esquemas XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ejercicios-de-xml-schemas">Ejercicios de XML Schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#examen">Examen</a></li>
 </ul>
 </li>
@@ -8617,7 +9041,7 @@ ejercicios no se muestran con ningún orden de dificultad.</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

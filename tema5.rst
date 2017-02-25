@@ -1212,7 +1212,7 @@ Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer u
 3. Haciendo listas (``lists``). Es como crear vectores en Java.
 4. Juntando otros tipos para crear tipos complejos (``union``). Es como crear clases Java en las que añadimos atributos de tipo ``int``, ``String``, etc...
 
-
+En general, las dos derivaciones más usadas con diferencia son las restricciones y las extensiones, que se comentan por separado en los puntos siguientes.
 
 Tipos simples y complejos
 ----------------------------
@@ -1222,8 +1222,8 @@ Todo elemento de un esquema debe ser de uno de estos dos tipos.
 * Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.
 * Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:
 
-    ** Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.
-    ** Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.
+    * Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.
+    * Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.
     
 Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo ``type`` de un ``element`` como hacíamos antes:
 
@@ -1245,6 +1245,7 @@ Sin embargo, si queremos indicar alguna restricción adicional ya no podremos us
        </xsd:simpleType>
     </xsd:schema>
 
+
 Uniendo la herencia y el sistema de tipos
 --------------------------------------------
 
@@ -1259,6 +1260,41 @@ Se deduce por tanto que no podemos aplicar todas las "herencias" a todos los tip
 1. Los tipos simples no pueden tener atributos ni subelementos, por lo tanto **les podremos aplicar restricciones pero nunca la extensión**.
 
 2. Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que **les podremos aplicar tanto restricciones como extensiones**.
+
+
+Restricciones
+------------------
+Como se ha dicho anteriormente la forma más común de trabajar es crear tipos que en unos casos aplicarán modificaciones en los tipos ya sea añadiendo cosas o restringiendo posibilidades. En este apartado se verá como aplicar restricciones.
+
+**Si queremos aplicar restricciones para un tipo simple las posibles restricciones son:**
+
+* ``minInclusive`` para indicar el menor valor numérico permitido.
+* ``maxInclusive`` para indicar el mayor valor numérico permitido.
+* ``minExclusive`` para indicar el menor valor numérico que ya no estaría permitido.
+* ``maxExclusive`` para indicar el mayor valor numérico que ya no estaría permitido.
+* ``totalDigits`` para indicar cuantas posibles cifras se permiten.
+* ``fractionDigits`` para indicar cuantas posibles cifras decimales se permiten.
+* ``length`` para indicar la longitud exacta de una cadena.
+* ``minLength`` para indicar la longitud mínima de una cadena.
+* ``maxLength`` para indicar la longitud máxima de una cadena.
+* ``enumeration`` para indicar los valores aceptados por una cadena.
+* ``pattern`` para indicar la estructura aceptada por una cadena.
+
+**Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento ``<attribute>``.**
+
+
+Atributos
+-----------------------
+En primer lugar es muy importante recordar que **si queremos que un elemento tenga atributos entonces ya no
+se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType**. Por otro lado en los XML Schema todos los atributos **son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un "required".**
+
+Un atributo se define de la siguiente manera:
+
+.. code-block:: xml
+
+    <xsd:attribute name="fechanacimiento" type="xsd:date" use="required"/>
+    
+Esto define un atributo llamado ``nombre`` que aceptará solo fechas como valores válidos y que además es obligatorio poner siempre.
 
 
 Ejercicios de XML Schemas
@@ -1316,20 +1352,53 @@ Existe una alternativa más recomendable, que es separar los elementos de los ti
 
 Obsérvese que hemos puesto el tipo por separado y le hemos dado el nombre ``tipoCantidades``. El elemento raíz tiene su nombre y su tipo en la misma línea.
 
+Cantidades limitadas con atributo divisa
+------------------------------------------
 
+Se desea crear un esquema para validar XML en los que haya un solo elemento raíz llamado cantidad en el que se debe poner siempre un atributo "divisa" que indique en qué moneda está una cierta cantidad. El atributo divisa siempre será una cadena y la cantidad siempre será un tipo numérico que acepte decimales (por ejemplo ``float``). El esquema debe validar los archivos siguientes:
 
-Atributos
------------------------
-En primer lugar es muy importante recordar que **si queremos que un elemento tenga atributos entonces ya no
-se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType**. Por otro lado en los XML Schema todos los atributos **son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un "required".**
-
-Un atributo se define de la siguiente manera:
 
 .. code-block:: xml
 
-    <xsd:attribute name="fechanacimiento" type="xsd:date"/>
+    <cantidad divisa="euro">20</cantidad>
     
-Esto define un atributo llamado ``nombre`` que aceptará solo fechas como valores válidos.
+.. code-block:: xml
+
+    <cantidad divisa="dolar">18.32</cantidad>
+    
+Pero no debe validar ninguno de los siguientes:
+
+.. code-block:: xml
+
+    <cantidad>20</cantidad>
+    
+.. code-block:: xml
+
+    <cantidad divisa="dolar">abc</cantidad>
+    
+Solución a las cantidades limitadas con atributo divisa
+---------------------------------------------------------
+
+Crearemos un tipo llamado "tipoCantidad". Dicho tipo *ya no puede ser un ``simpleType`` ya que necesitamos que haya atributos**. Como no necesitamos que tenga subelementos dentro este ``complexType`` llevará dentro un ``simpleContent`` (y no un ``complexContent``).
+
+Aparte de eso, como queremos "ampliar" un elemento para que acepte tener dentro un atributo obligatorio "cantidad" usaremos una ``<extension>``. Así, el posible esquema sería este:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="cantidad" type="tipoCantidad"/>
+        <xsd:complexType name="tipoCantidad">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:float">
+                    <xsd:attribute name="divisa" type="xsd:string" use="required"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:schema>
+
+
+
+
 
 Examen
 ===========================================
