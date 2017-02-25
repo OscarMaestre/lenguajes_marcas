@@ -1324,52 +1324,66 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <span class="nt">&lt;/xsd:schema&gt;</span>
 </pre></div>
 </div>
-<p>Ahora queda definir el tipo <code class="docutils literal"><span class="pre">tipoListaClientes</span></code>. Este tipo es bastante sencillo ya que se va a limitar a ser una lista de clientes. Es decir algo como lo siguiente:</p>
+<p>Ahora queda definir el tipo <code class="docutils literal"><span class="pre">tipoListaClientes</span></code>. Este tipo va a contener un elemento (por lo que ya sabemos que es un <code class="docutils literal"><span class="pre">complexType</span></code> con <code class="docutils literal"><span class="pre">complexContent</span></code> dentro), y en concreto queremos que sea un solo elemento llamado <code class="docutils literal"><span class="pre">cliente</span></code>, es decir <strong>queremos imponer una restricción</strong>. Aunque queramos un solo elemento tendremos que indicar una restricción. Como queremos permitir que el elemento pueda aparecer muchas veces utilizaremos un <code class="docutils literal"><span class="pre">maxOccurs</span></code> con el valor <code class="docutils literal"><span class="pre">unbounded</span></code>.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaclientes&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;xsd:list</span> <span class="na">itemType=</span><span class="s">&quot;tipoCliente&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cliente&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCliente&quot;</span>
+                <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
 <span class="nt">&lt;/xsd:schema&gt;</span>
 </pre></div>
 </div>
-<p>Definamos ahora el tipo <code class="docutils literal"><span class="pre">tipoCliente</span></code>. Dicho tipo <strong>necesita tener subelementos dentro</strong> así que evidentemente va a ser de tipo complejo. La pregunta es ¿es &#8220;tipo complejo con contenido simple&#8221; o &#8220;tipo complejo con contenido complejo&#8221;?. Si lo hiciéramos de &#8220;tipo complejo con contenido simple&#8221; podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un &#8220;tipo complejo con contenido complejo&#8221;.</p>
-<p>El esquema siguiente ilustra como creamos el tipo cliente indicando que el plazo puede aparecer entre 0 y 1 veces. Si deseamos poner que un elemento puede aparecer infinitas veces se puede usar <code class="docutils literal"><span class="pre">maxOccurs=&quot;unbounded&quot;</span></code>.
-.. code-block:: xml</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;xsd:schema xmlns:xsd=&#8221;http://www.w3.org/2001/XMLSchema&#8221;&gt;</dt>
-<dd><p class="first">&lt;xsd:element name=&#8221;listaclientes&#8221; type=&#8221;tipoListaClientes&#8221;/&gt;
-&lt;xsd:simpleType name=&#8221;tipoListaClientes&#8221;&gt;</p>
-<blockquote>
-<div>&lt;xsd:list itemType=&#8221;tipoCliente&#8221;/&gt;</div></blockquote>
-<p>&lt;/xsd:simpleType&gt;
-&lt;xsd:complexType name=&#8221;tipoCliente&#8221;&gt;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;xsd:complexContent&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;xsd:extension base=&#8221;anyType&#8221;&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;xsd:sequence&gt;</dt>
-<dd>&lt;xsd:element name=&#8221;cif&#8221; type=&#8221;xsd:string&#8221;/&gt;
-&lt;xsd:element name=&#8221;nombre&#8221; type=&#8221;xsd:string&#8221;/&gt;
-&lt;xsd:element name=&#8221;nombre&#8221;
-type=&#8221;xsd:unsignedInt&#8221; minOccurs=&#8221;0&#8221; maxOccurs=&#8221;1&#8221;/&gt;</dd>
-</dl>
-<p class="last">&lt;/xsd:sequence&gt;</p>
-</dd>
-</dl>
-<p class="last">&lt;/xsd:extension&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsd:complexContent&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/xsd:complexType&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsd:schema&gt;</p>
-</div></blockquote>
+<p>Definamos ahora el tipo <code class="docutils literal"><span class="pre">tipoCliente</span></code>. Dicho tipo <strong>necesita tener subelementos dentro</strong> así que evidentemente va a ser de tipo complejo. La pregunta es ¿es &#8220;tipo complejo con contenido simple&#8221; o &#8220;tipo complejo con contenido complejo&#8221;?. Si lo hiciéramos de &#8220;tipo complejo con contenido simple&#8221; podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un &#8220;tipo complejo con contenido complejo&#8221;. Igual que antes impondremos una restricciones que es permitir solo que aparezcan ciertos elementos en cierto orden. El elemento <code class="docutils literal"><span class="pre">plazo</span></code> lo haremos optativo.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaclientes&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cliente&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCliente&quot;</span>
+                    <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoCliente&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cif&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;plazo&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
+                    <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Si ahora probamos este XML veremos que el fichero se valida perfectamente a pesar de que es evidente que tiene errores. Es lógico, dado que no hemos aprovechado a fondo el sistema de tipos de XML para evitar que nadie suministre datos incorrectos en un XML. Dicha mejora la dejaremos para el siguiente ejercicio.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listaclientes&gt;</span>
+    <span class="nt">&lt;cliente&gt;</span>
+        <span class="nt">&lt;cif&gt;</span>dd<span class="nt">&lt;/cif&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>20<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/cliente&gt;</span>
+    <span class="nt">&lt;cliente&gt;</span>
+        <span class="nt">&lt;cif&gt;</span>dd<span class="nt">&lt;/cif&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>20<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;plazo&gt;</span>ABCD<span class="nt">&lt;/plazo&gt;</span>
+    <span class="nt">&lt;/cliente&gt;</span>
+<span class="nt">&lt;/listaclientes&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ampliacion-del-esquema-para-clientes">
+<h3>Ampliación del esquema para clientes<a class="headerlink" href="#ampliacion-del-esquema-para-clientes" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre información incorrecta.</p>
 </div>
 </div>
 <div class="section" id="examen">
@@ -1450,6 +1464,7 @@ type=&#8221;xsd:unsignedInt&#8221; minOccurs=&#8221;0&#8221; maxOccurs=&#8221;1&
 <li><a class="reference internal" href="#cantidades-limitadas-con-atributo-divisa-con-solo-ciertos-valores">Cantidades limitadas con atributo divisa con solo ciertos valores</a></li>
 <li><a class="reference internal" href="#solucion-al-atributo-con-solo-ciertos-valores">Solución al atributo con solo ciertos valores</a></li>
 <li><a class="reference internal" href="#lista-de-clientes-como-xml-schemas">Lista de clientes como XML Schemas</a></li>
+<li><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#examen">Examen</a></li>

@@ -1476,42 +1476,78 @@ Vayamos paso a paso. Primero decimos como se llama el elemento raíz y de qué t
         <xsd:element name="listaclientes" type="tipoListaClientes"/>
     </xsd:schema>
     
-Ahora queda definir el tipo ``tipoListaClientes``. Este tipo es bastante sencillo ya que se va a limitar a ser una lista de clientes. Es decir algo como lo siguiente:
+Ahora queda definir el tipo ``tipoListaClientes``. Este tipo va a contener un elemento (por lo que ya sabemos que es un ``complexType`` con ``complexContent`` dentro), y en concreto queremos que sea un solo elemento llamado ``cliente``, es decir **queremos imponer una restricción**. Aunque queramos un solo elemento tendremos que indicar una restricción. Como queremos permitir que el elemento pueda aparecer muchas veces utilizaremos un ``maxOccurs`` con el valor ``unbounded``.
 
 .. code-block:: xml
 
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <xsd:element name="listaclientes" type="tipoListaClientes"/>
-        <xsd:simpleType name="tipoListaClientes">
-            <xsd:list itemType="tipoCliente"/>
-        </xsd:simpleType>
+        <xsd:complexType name="tipoListaClientes">
+            <xsd:complexContent>
+                <xsd:restriction>
+                    <xsd:element name="cliente" type="tipoCliente"
+                    maxOccurs="unbounded"/>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
     </xsd:schema>
+    
 
 
-Definamos ahora el tipo ``tipoCliente``. Dicho tipo **necesita tener subelementos dentro** así que evidentemente va a ser de tipo complejo. La pregunta es ¿es "tipo complejo con contenido simple" o "tipo complejo con contenido complejo"?. Si lo hiciéramos de "tipo complejo con contenido simple" podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un "tipo complejo con contenido complejo".
+Definamos ahora el tipo ``tipoCliente``. Dicho tipo **necesita tener subelementos dentro** así que evidentemente va a ser de tipo complejo. La pregunta es ¿es "tipo complejo con contenido simple" o "tipo complejo con contenido complejo"?. Si lo hiciéramos de "tipo complejo con contenido simple" podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un "tipo complejo con contenido complejo". Igual que antes impondremos una restricciones que es permitir solo que aparezcan ciertos elementos en cierto orden. El elemento ``plazo`` lo haremos optativo.
 
-El esquema siguiente ilustra como creamos el tipo cliente indicando que el plazo puede aparecer entre 0 y 1 veces. Si deseamos poner que un elemento puede aparecer infinitas veces se puede usar ``maxOccurs="unbounded"``.
+
 .. code-block:: xml
 
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <xsd:element name="listaclientes" type="tipoListaClientes"/>
-        <xsd:simpleType name="tipoListaClientes">
-            <xsd:list itemType="tipoCliente"/>
-        </xsd:simpleType>
+        <xsd:complexType name="tipoListaClientes">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="cliente" type="tipoCliente"
+                        maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
         <xsd:complexType name="tipoCliente">
             <xsd:complexContent>
-                <xsd:extension base="anyType">
+                <xsd:restriction base="xsd:anyType">
                     <xsd:sequence>
                         <xsd:element name="cif" type="xsd:string"/>
                         <xsd:element name="nombre" type="xsd:string"/>
-                        <xsd:element name="nombre"
-                        type="xsd:unsignedInt" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="plazo" type="xsd:string"
+                        minOccurs="0"/>
                     </xsd:sequence>
-                </xsd:extension>
+                </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
     </xsd:schema>
 
+
+
+Si ahora probamos este XML veremos que el fichero se valida perfectamente a pesar de que es evidente que tiene errores. Es lógico, dado que no hemos aprovechado a fondo el sistema de tipos de XML para evitar que nadie suministre datos incorrectos en un XML. Dicha mejora la dejaremos para el siguiente ejercicio.
+
+.. code-block:: xml
+
+    <listaclientes>
+        <cliente>
+            <cif>dd</cif>
+            <nombre>20</nombre>
+        </cliente>    
+        <cliente>
+            <cif>dd</cif>
+            <nombre>20</nombre>
+            <plazo>ABCD</plazo>
+        </cliente>  
+    </listaclientes>
+
+
+Ampliación del esquema para clientes
+-------------------------------------
+
+Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre información incorrecta.
 
 Examen
 ===========================================
