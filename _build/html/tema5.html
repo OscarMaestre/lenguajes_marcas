@@ -1084,14 +1084,14 @@
 <li><code class="docutils literal"><span class="pre">xsd:normalizedString</span></code>: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.</li>
 <li><code class="docutils literal"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</li>
 <li><code class="docutils literal"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</li>
-<li><code class="docutils literal"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <a href="#id4"><span class="problematic" id="id5">``</span></a>2020-09-22T10:40:22.6&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <code class="docutils literal"><span class="pre">2020-09-22T10:40:22.6</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con &#8220;P&#8221; y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo &#8220;P1Y4M21DT8H&#8221; indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
 <li><code class="docutils literal"><span class="pre">xsd:boolean</span></code>: acepta solo valores &#8220;true&#8221; y &#8220;false&#8221;.</li>
 <li><code class="docutils literal"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</li>
 <li><code class="docutils literal"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</li>
 </ul>
 <p>La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como sus relaciones de herencia:</p>
-<div class="figure align-center" id="id7" style="width: 50%">
+<div class="figure align-center" id="id5" style="width: 50%">
 <img alt="_images/tipos_xml_schema.png" src="_images/tipos_xml_schema.png" />
 <p class="caption"><span class="caption-text">Tipos en los XML Schemas</span></p>
 </div>
@@ -1167,10 +1167,10 @@
 <li><code class="docutils literal"><span class="pre">enumeration</span></code> para indicar los valores aceptados por una cadena.</li>
 <li><code class="docutils literal"><span class="pre">pattern</span></code> para indicar la estructura aceptada por una cadena.</li>
 </ul>
-<p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento ``&lt;attribute&gt;``.</strong></p>
+<p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento &lt;attribute&gt; .</strong></p>
 </div>
-<div class="section" id="id6">
-<h3>Atributos<a class="headerlink" href="#id6" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id4">
+<h3>Atributos<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En primer lugar es muy importante recordar que <strong>si queremos que un elemento tenga atributos entonces ya no
 se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType</strong>. Por otro lado en los XML Schema todos los atributos <strong>son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un &#8220;required&#8221;.</strong></p>
 <p>Un atributo se define de la siguiente manera:</p>
@@ -1241,7 +1241,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <div class="section" id="solucion-a-las-cantidades-limitadas-con-atributo-divisa">
 <h3>Solución a las cantidades limitadas con atributo divisa<a class="headerlink" href="#solucion-a-las-cantidades-limitadas-con-atributo-divisa" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Crearemos un tipo llamado &#8220;tipoCantidad&#8221;. Dicho tipo <em>ya no puede ser un ``simpleType`` ya que necesitamos que haya atributos*</em>. Como no necesitamos que tenga subelementos dentro este <code class="docutils literal"><span class="pre">complexType</span></code> llevará dentro un <code class="docutils literal"><span class="pre">simpleContent</span></code> (y no un <code class="docutils literal"><span class="pre">complexContent</span></code>).</p>
+<p>Crearemos un tipo llamado &#8220;tipoCantidad&#8221;. Dicho tipo <em>ya no puede ser un simpleType ya que necesitamos que haya atributos*</em>. Como no necesitamos que tenga subelementos dentro este <code class="docutils literal"><span class="pre">complexType</span></code> llevará dentro un <code class="docutils literal"><span class="pre">simpleContent</span></code> (y no un <code class="docutils literal"><span class="pre">complexContent</span></code>).</p>
 <p>Aparte de eso, como queremos &#8220;ampliar&#8221; un elemento para que acepte tener dentro un atributo obligatorio &#8220;cantidad&#8221; usaremos una <code class="docutils literal"><span class="pre">&lt;extension&gt;</span></code>. Así, el posible esquema sería este:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">/&gt;</span>
@@ -1255,6 +1255,121 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <span class="nt">&lt;/xsd:schema&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="cantidades-limitadas-con-atributo-divisa-con-solo-ciertos-valores">
+<h3>Cantidades limitadas con atributo divisa con solo ciertos valores<a class="headerlink" href="#cantidades-limitadas-con-atributo-divisa-con-solo-ciertos-valores" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Queremos ampliar el ejercicio anterior para evitar que ocurran errores como el siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;aaaa&quot;</span><span class="nt">&gt;</span>18.32<span class="nt">&lt;/cantidad&gt;</span>
+</pre></div>
+</div>
+<p>Vamos a indicar que el atributo solo puede tomar tres posibles valores: &#8220;euros&#8221;, &#8220;dolares&#8221; y &#8220;yenes&#8221;.</p>
+</div>
+<div class="section" id="solucion-al-atributo-con-solo-ciertos-valores">
+<h3>Solución al atributo con solo ciertos valores<a class="headerlink" href="#solucion-al-atributo-con-solo-ciertos-valores" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora tendremos que crear dos tipos. Uno para el elemento <code class="docutils literal"><span class="pre">cantidad</span></code> y otro para el atributo <code class="docutils literal"><span class="pre">divisa</span></code>. Llamaremos a estos tipos <code class="docutils literal"><span class="pre">tipoCantidad</span></code> y <code class="docutils literal"><span class="pre">tipoDivisa</span></code>.</p>
+<p>La solución comentada puede encontrarse a continuación. Como puede verse, hemos includo comentarios. Pueden insertarse etiquetas <code class="docutils literal"><span class="pre">annotation</span></code> que permiten incluir anotaciones de diversos tipos, siendo la más interesante la etiqueta <code class="docutils literal"><span class="pre">documentation</span></code> que nos permite incluir comentarios.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:documentation&gt;</span>
+        A continuación creamos el tipo cantidad
+        <span class="nt">&lt;/xsd:documentation&gt;</span>
+    <span class="nt">&lt;/xsd:annotation&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+            Como solo va a llevar atributos debemos
+            usar un simpleContent
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:annotation&gt;</span>
+                <span class="nt">&lt;xsd:documentation&gt;</span>
+                Como queremos &quot;ampliar&quot; un tipo/clase
+                para que lleve atributos usaremos
+                una extension
+                <span class="nt">&lt;/xsd:documentation&gt;</span>
+            <span class="nt">&lt;/xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:float&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;divisa&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoDivisa&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:documentation&gt;</span>
+        Ahora tenemos que fabricar el &quot;tipoDivisa&quot; que indica
+        los posibles valores válidos para una divisa. Estas
+        posibilidades se crean con una &quot;enumeration&quot;. Nuestro
+        tipo es un &quot;string&quot; y como vamos a restringir los posibles
+        valores usaremos &quot;restriction&quot;
+        <span class="nt">&lt;/xsd:documentation&gt;</span>
+    <span class="nt">&lt;/xsd:annotation&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoDivisa&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;euros&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;dolares&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;yenes&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lista-de-clientes-como-xml-schemas">
+<h3>Lista de clientes como XML Schemas<a class="headerlink" href="#lista-de-clientes-como-xml-schemas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En este apartado volveremos a ver un problema que ya resolvíamos con DTD: supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code> deseamos permitir uno o más elementos <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> todos deberán tener <code class="docutils literal"><span class="pre">&lt;cif&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;nombre&gt;</span></code> y en ese orden. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> puede aparecer o no un elemento <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> para indicar que ese cliente exige un máximo de plazo. Como no todo el mundo usa plazos el <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> es optativo.</p>
+<p>Vayamos paso a paso. Primero decimos como se llama el elemento raíz y de qué tipo es:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaclientes&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Ahora queda definir el tipo <code class="docutils literal"><span class="pre">tipoListaClientes</span></code>. Este tipo es bastante sencillo ya que se va a limitar a ser una lista de clientes. Es decir algo como lo siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaclientes&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:list</span> <span class="na">itemType=</span><span class="s">&quot;tipoCliente&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Definamos ahora el tipo <code class="docutils literal"><span class="pre">tipoCliente</span></code>. Dicho tipo <strong>necesita tener subelementos dentro</strong> así que evidentemente va a ser de tipo complejo. La pregunta es ¿es &#8220;tipo complejo con contenido simple&#8221; o &#8220;tipo complejo con contenido complejo&#8221;?. Si lo hiciéramos de &#8220;tipo complejo con contenido simple&#8221; podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un &#8220;tipo complejo con contenido complejo&#8221;.</p>
+<p>El esquema siguiente ilustra como creamos el tipo cliente indicando que el plazo puede aparecer entre 0 y 1 veces. Si deseamos poner que un elemento puede aparecer infinitas veces se puede usar <code class="docutils literal"><span class="pre">maxOccurs=&quot;unbounded&quot;</span></code>.
+.. code-block:: xml</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;xsd:schema xmlns:xsd=&#8221;http://www.w3.org/2001/XMLSchema&#8221;&gt;</dt>
+<dd><p class="first">&lt;xsd:element name=&#8221;listaclientes&#8221; type=&#8221;tipoListaClientes&#8221;/&gt;
+&lt;xsd:simpleType name=&#8221;tipoListaClientes&#8221;&gt;</p>
+<blockquote>
+<div>&lt;xsd:list itemType=&#8221;tipoCliente&#8221;/&gt;</div></blockquote>
+<p>&lt;/xsd:simpleType&gt;
+&lt;xsd:complexType name=&#8221;tipoCliente&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;xsd:complexContent&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;xsd:extension base=&#8221;anyType&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;xsd:sequence&gt;</dt>
+<dd>&lt;xsd:element name=&#8221;cif&#8221; type=&#8221;xsd:string&#8221;/&gt;
+&lt;xsd:element name=&#8221;nombre&#8221; type=&#8221;xsd:string&#8221;/&gt;
+&lt;xsd:element name=&#8221;nombre&#8221;
+type=&#8221;xsd:unsignedInt&#8221; minOccurs=&#8221;0&#8221; maxOccurs=&#8221;1&#8221;/&gt;</dd>
+</dl>
+<p class="last">&lt;/xsd:sequence&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/xsd:extension&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xsd:complexContent&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/xsd:complexType&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xsd:schema&gt;</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="examen">
@@ -1324,7 +1439,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#tipos-simples-y-complejos">Tipos simples y complejos</a></li>
 <li><a class="reference internal" href="#uniendo-la-herencia-y-el-sistema-de-tipos">Uniendo la herencia y el sistema de tipos</a></li>
 <li><a class="reference internal" href="#restricciones">Restricciones</a></li>
-<li><a class="reference internal" href="#id6">Atributos</a></li>
+<li><a class="reference internal" href="#id4">Atributos</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicios-de-xml-schemas">Ejercicios de XML Schemas</a><ul>
@@ -1332,6 +1447,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#solucion-a-las-cantidades-limitadas">Solución a las cantidades limitadas</a></li>
 <li><a class="reference internal" href="#cantidades-limitadas-con-atributo-divisa">Cantidades limitadas con atributo divisa</a></li>
 <li><a class="reference internal" href="#solucion-a-las-cantidades-limitadas-con-atributo-divisa">Solución a las cantidades limitadas con atributo divisa</a></li>
+<li><a class="reference internal" href="#cantidades-limitadas-con-atributo-divisa-con-solo-ciertos-valores">Cantidades limitadas con atributo divisa con solo ciertos valores</a></li>
+<li><a class="reference internal" href="#solucion-al-atributo-con-solo-ciertos-valores">Solución al atributo con solo ciertos valores</a></li>
+<li><a class="reference internal" href="#lista-de-clientes-como-xml-schemas">Lista de clientes como XML Schemas</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#examen">Examen</a></li>

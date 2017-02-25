@@ -1185,7 +1185,7 @@ Podemos usar los siguientes tipos de datos:
 * ``xsd:normalizedString``: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.
 * ``xsd:date``: permite almacenar fechas que deben ir **obligatoriamente** en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)
 * ``xsd:time``: para almacenar horas en formato HH:MM:SS.C
-* ``xsd:datetime``: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar ``2020-09-22T10:40:22.6".
+* ``xsd:datetime``: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar ``2020-09-22T10:40:22.6``.
 * ``xsd:duration``. Para indicar períodos. Se debe empezar con "P" y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo "P1Y4M21DT8H" indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.
 * ``xsd:boolean``: acepta solo valores "true" y "false".
 * ``xsd:anyURI``: acepta URIs.
@@ -1280,7 +1280,7 @@ Como se ha dicho anteriormente la forma más común de trabajar es crear tipos q
 * ``enumeration`` para indicar los valores aceptados por una cadena.
 * ``pattern`` para indicar la estructura aceptada por una cadena.
 
-**Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento ``<attribute>``.**
+**Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento <attribute> .**
 
 
 Atributos
@@ -1379,7 +1379,7 @@ Pero no debe validar ninguno de los siguientes:
 Solución a las cantidades limitadas con atributo divisa
 ---------------------------------------------------------
 
-Crearemos un tipo llamado "tipoCantidad". Dicho tipo *ya no puede ser un ``simpleType`` ya que necesitamos que haya atributos**. Como no necesitamos que tenga subelementos dentro este ``complexType`` llevará dentro un ``simpleContent`` (y no un ``complexContent``).
+Crearemos un tipo llamado "tipoCantidad". Dicho tipo *ya no puede ser un simpleType ya que necesitamos que haya atributos**. Como no necesitamos que tenga subelementos dentro este ``complexType`` llevará dentro un ``simpleContent`` (y no un ``complexContent``).
 
 Aparte de eso, como queremos "ampliar" un elemento para que acepte tener dentro un atributo obligatorio "cantidad" usaremos una ``<extension>``. Así, el posible esquema sería este:
 
@@ -1397,7 +1397,121 @@ Aparte de eso, como queremos "ampliar" un elemento para que acepte tener dentro 
     </xsd:schema>
 
 
+Cantidades limitadas con atributo divisa con solo ciertos valores
+-------------------------------------------------------------------
 
+Queremos ampliar el ejercicio anterior para evitar que ocurran errores como el siguiente:
+
+.. code-block:: xml
+
+    <cantidad divisa="aaaa">18.32</cantidad>
+    
+Vamos a indicar que el atributo solo puede tomar tres posibles valores: "euros", "dolares" y "yenes".
+
+Solución al atributo con solo ciertos valores
+-------------------------------------------------
+
+Ahora tendremos que crear dos tipos. Uno para el elemento ``cantidad`` y otro para el atributo ``divisa``. Llamaremos a estos tipos ``tipoCantidad`` y ``tipoDivisa``.
+
+La solución comentada puede encontrarse a continuación. Como puede verse, hemos includo comentarios. Pueden insertarse etiquetas ``annotation`` que permiten incluir anotaciones de diversos tipos, siendo la más interesante la etiqueta ``documentation`` que nos permite incluir comentarios.
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="cantidad" type="tipoCantidad"/>
+        <xsd:annotation>
+            <xsd:documentation>
+            A continuación creamos el tipo cantidad
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType name="tipoCantidad">
+            <xsd:annotation>
+                <xsd:documentation>
+                Como solo va a llevar atributos debemos
+                usar un simpleContent
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleContent>
+                <xsd:annotation>
+                    <xsd:documentation>
+                    Como queremos "ampliar" un tipo/clase
+                    para que lleve atributos usaremos
+                    una extension
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:extension base="xsd:float">
+                    <xsd:attribute name="divisa" type="tipoDivisa"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:annotation>
+            <xsd:documentation>
+            Ahora tenemos que fabricar el "tipoDivisa" que indica
+            los posibles valores válidos para una divisa. Estas
+            posibilidades se crean con una "enumeration". Nuestro
+            tipo es un "string" y como vamos a restringir los posibles
+            valores usaremos "restriction"
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType name="tipoDivisa">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="euros"/>
+                <xsd:enumeration value="dolares"/>
+                <xsd:enumeration value="yenes"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:schema>
+
+
+Lista de clientes como XML Schemas
+------------------------------------
+
+En este apartado volveremos a ver un problema que ya resolvíamos con DTD: supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es ``<listaclientes>``. Dentro de ``<listaclientes>`` deseamos permitir uno o más elementos ``<cliente>``. Dentro de ``<cliente>`` todos deberán tener ``<cif>`` y ``<nombre>`` y en ese orden. Dentro de ``<cliente>`` puede aparecer o no un elemento ``<diasentrega>`` para indicar que ese cliente exige un máximo de plazo. Como no todo el mundo usa plazos el ``<diasentrega>`` es optativo.
+
+Vayamos paso a paso. Primero decimos como se llama el elemento raíz y de qué tipo es:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaclientes" type="tipoListaClientes"/>
+    </xsd:schema>
+    
+Ahora queda definir el tipo ``tipoListaClientes``. Este tipo es bastante sencillo ya que se va a limitar a ser una lista de clientes. Es decir algo como lo siguiente:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaclientes" type="tipoListaClientes"/>
+        <xsd:simpleType name="tipoListaClientes">
+            <xsd:list itemType="tipoCliente"/>
+        </xsd:simpleType>
+    </xsd:schema>
+
+
+Definamos ahora el tipo ``tipoCliente``. Dicho tipo **necesita tener subelementos dentro** así que evidentemente va a ser de tipo complejo. La pregunta es ¿es "tipo complejo con contenido simple" o "tipo complejo con contenido complejo"?. Si lo hiciéramos de "tipo complejo con contenido simple" podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un "tipo complejo con contenido complejo".
+
+El esquema siguiente ilustra como creamos el tipo cliente indicando que el plazo puede aparecer entre 0 y 1 veces. Si deseamos poner que un elemento puede aparecer infinitas veces se puede usar ``maxOccurs="unbounded"``.
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaclientes" type="tipoListaClientes"/>
+        <xsd:simpleType name="tipoListaClientes">
+            <xsd:list itemType="tipoCliente"/>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoCliente">
+            <xsd:complexContent>
+                <xsd:extension base="anyType">
+                    <xsd:sequence>
+                        <xsd:element name="cif" type="xsd:string"/>
+                        <xsd:element name="nombre" type="xsd:string"/>
+                        <xsd:element name="nombre"
+                        type="xsd:unsignedInt" minOccurs="0" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:schema>
 
 
 Examen
