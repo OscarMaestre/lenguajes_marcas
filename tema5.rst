@@ -1280,7 +1280,10 @@ Como se ha dicho anteriormente la forma más común de trabajar es crear tipos q
 * ``enumeration`` para indicar los valores aceptados por una cadena.
 * ``pattern`` para indicar la estructura aceptada por una cadena.
 
-**Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento <attribute> .**
+**Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento <attribute> así como las siguientes.**
+
+* ``sequence`` para indicar una secuencia de elementos
+* ``choice`` para indicar que se debe elegir un elemento de entre los que aparecen.
 
 
 Atributos
