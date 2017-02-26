@@ -1549,6 +1549,73 @@ Ampliación del esquema para clientes
 
 Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre información incorrecta.
 
+En concreto tenemos tres datos:
+
+1. El CIF, que vamos a presuponer que siempre tiene 8 cifras y al final una letra mayúsculas. Si alguna empresa tiene 7 cifras deberá incluir un 0 extra.
+2. El nombre, que puede ser una cadena cualquiera.
+3. El plazo, que debería ser un número positivo válido.
+
+Ahora, el fichero anterior no debería ser validado por el validador, pero sí debería serlo un fichero como este.
+
+.. code-block:: xml
+
+    <listaclientes>
+        <cliente>
+            <cif>01234567D</cif>
+            <nombre>Juan Sanchez</nombre>
+        </cliente>    
+        <cliente>
+            <cif>05676554A</cif>
+            <nombre>Pedro Diaz</nombre>
+            <plazo>45</plazo>
+        </cliente>  
+    </listaclientes>
+
+La solución a los tres problemas indicados antes sería la siguiente:
+
+1. El nombre puede ser una cadena cualquiera, por lo que tendrá que seguir siendo de tipo ``xsd:string``. Eso significa que si alguien introdujese un número en el nombre el fichero seguiría validándose. Por desgracia dicho problema no se puede resolver.
+2. El plazo debería ser un número. Le asignaremos un tipo ``xsd:unsignedInt``.
+3. El CIF es más complejo. Deberemos crear un tipo nuevo y establecer una restricción a los posibles valores que puede tomar.
+
+Así, una posible solución sería esta:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaclientes" type="tipoListaClientes"/>
+        <xsd:complexType name="tipoListaClientes">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="cliente" type="tipoCliente"
+                            maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        
+        <xsd:complexType name="tipoCliente">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="cif" type="tipoCif"/>
+                    <xsd:element name="nombre" type="xsd:string"/>
+                    <xsd:element name="plazo" type="xsd:unsignedInt" minOccurs="0"/>
+                </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoCif">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[0-9]{8}[A-Z]"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:simpleType name="tipoPlazo">
+            <xsd:restriction base="xsd:unsignedInt"/>
+        </xsd:simpleType>
+    </xsd:schema>
+
+
 Examen
 ===========================================
 
