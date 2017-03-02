@@ -1287,6 +1287,17 @@ Se desea crear un esquema que permita validar un elemento peso, que puede tener 
 
 Una posible solución sería:
 
+.. code-block:: xml
+
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="peso" type="tipoPeso"/>
+    <xsd:simpleType name="tipoPeso">
+      <xsd:restriction base="xsd:decimal">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="1000"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
 
 Ejercicio: pagos validados
 ---------------------------

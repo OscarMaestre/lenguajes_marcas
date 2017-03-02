@@ -183,17 +183,17 @@
 \contentsline {subsection}{\numberline {5.17.6}Ejercicio: peso de productos}{98}{subsection.5.17.6}
 \contentsline {subsection}{\numberline {5.17.7}Ejercicio: pagos validados}{98}{subsection.5.17.7}
 \contentsline {subsection}{\numberline {5.17.8}Uniendo la herencia y el sistema de tipos}{98}{subsection.5.17.8}
-\contentsline {subsection}{\numberline {5.17.9}Restricciones}{98}{subsection.5.17.9}
+\contentsline {subsection}{\numberline {5.17.9}Restricciones}{99}{subsection.5.17.9}
 \contentsline {subsection}{\numberline {5.17.10}Atributos}{99}{subsection.5.17.10}
 \contentsline {section}{\numberline {5.18}Ejercicios de XML Schemas}{99}{section.5.18}
 \contentsline {subsection}{\numberline {5.18.1}Cantidades limitades}{99}{subsection.5.18.1}
-\contentsline {subsection}{\numberline {5.18.2}Soluci\IeC {\'o}n a las cantidades limitadas}{99}{subsection.5.18.2}
+\contentsline {subsection}{\numberline {5.18.2}Soluci\IeC {\'o}n a las cantidades limitadas}{100}{subsection.5.18.2}
 \contentsline {subsection}{\numberline {5.18.3}Cantidades limitadas con atributo divisa}{100}{subsection.5.18.3}
-\contentsline {subsection}{\numberline {5.18.4}Soluci\IeC {\'o}n a las cantidades limitadas con atributo divisa}{100}{subsection.5.18.4}
+\contentsline {subsection}{\numberline {5.18.4}Soluci\IeC {\'o}n a las cantidades limitadas con atributo divisa}{101}{subsection.5.18.4}
 \contentsline {subsection}{\numberline {5.18.5}Cantidades limitadas con atributo divisa con solo ciertos valores}{101}{subsection.5.18.5}
 \contentsline {subsection}{\numberline {5.18.6}Soluci\IeC {\'o}n al atributo con solo ciertos valores}{101}{subsection.5.18.6}
 \contentsline {subsection}{\numberline {5.18.7}Lista de clientes como XML Schemas}{102}{subsection.5.18.7}
-\contentsline {subsection}{\numberline {5.18.8}Ampliaci\IeC {\'o}n del esquema para clientes}{103}{subsection.5.18.8}
+\contentsline {subsection}{\numberline {5.18.8}Ampliaci\IeC {\'o}n del esquema para clientes}{104}{subsection.5.18.8}
 \contentsline {section}{\numberline {5.19}Examen}{105}{section.5.19}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{107}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{107}{section.6.1}
