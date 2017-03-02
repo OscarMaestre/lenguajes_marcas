@@ -1,0 +1,13 @@
+<listapedidos>
+    <pedido>
+        <nombrearticulo>PC</nombrearticulo>
+        <codigo>IAN-1</codigo>
+        <precio>1000</precio>
+        <descripcion>i5 a 2.3GHz</descripcion>
+    </pedido>
+    <pedido>
+        <Nombrearticulo>PC</Nombrearticulo>
+        <codigo>IAN-1</codigo>
+        <precio>1000</precio>
+    </pedido>
+</listapedidos>

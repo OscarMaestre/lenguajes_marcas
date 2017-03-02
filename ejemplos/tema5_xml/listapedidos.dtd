@@ -1,0 +1,7 @@
+<!ELEMENT listapedidos (pedido+)>
+<!ELEMENT pedido (nombrearticulo, codigo,
+                    precio, descripcion?)>
+<!ELEMENT nombrearticulo (#PCDATA)>
+<!ELEMENT codigo         (#PCDATA)>
+<!ELEMENT precio         (#PCDATA)>
+<!ELEMENT descripcion    (#PCDATA)>

@@ -1137,6 +1137,41 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-edad-de-los-trabajadores">
+<h3>Ejercicio:edad de los trabajadores<a class="headerlink" href="#ejercicio-edad-de-los-trabajadores" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea crear un esquema que permita validar la edad de un trabajador, que debe tener un valor entero de entre 16 y 65.</p>
+<p>Por ejemplo, este XML debería validarse:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;edad&gt;</span>28<span class="nt">&lt;/edad&gt;</span>
+</pre></div>
+</div>
+<p>Pero este no debería validarse:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;edad&gt;</span>-3<span class="nt">&lt;/edad&gt;</span>
+</pre></div>
+</div>
+<p>La solución podría ser algo así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
+ <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;edad&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoEdad&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoEdad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minInclusive</span> <span class="na">value=</span><span class="s">&quot;16&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:maxInclusive</span> <span class="na">value=</span><span class="s">&quot;65&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-peso-de-productos">
+<h3>Ejercicio: peso de productos<a class="headerlink" href="#ejercicio-peso-de-productos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea crear un esquema que permita validar un elemento peso, que puede tener un valor de entre 0 y 1000 pero aceptando valores con decimales, como por ejemplo 28.88</p>
+<p>Una posible solución sería:</p>
+</div>
+<div class="section" id="ejercicio-pagos-validados">
+<h3>Ejercicio: pagos validados<a class="headerlink" href="#ejercicio-pagos-validados" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear un esquema que permita validar un elemento <code class="docutils literal"><span class="pre">pago</span></code> en el cual puede haber cantidades enteras de entre 0 y 3000 euros.</p>
+</div>
 <div class="section" id="uniendo-la-herencia-y-el-sistema-de-tipos">
 <h3>Uniendo la herencia y el sistema de tipos<a class="headerlink" href="#uniendo-la-herencia-y-el-sistema-de-tipos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Llegados a este punto ocurre lo siguiente:</p>
@@ -1167,7 +1202,11 @@
 <li><code class="docutils literal"><span class="pre">enumeration</span></code> para indicar los valores aceptados por una cadena.</li>
 <li><code class="docutils literal"><span class="pre">pattern</span></code> para indicar la estructura aceptada por una cadena.</li>
 </ul>
-<p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento &lt;attribute&gt; .</strong></p>
+<p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento &lt;attribute&gt; así como las siguientes.</strong></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sequence</span></code> para indicar una secuencia de elementos</li>
+<li><code class="docutils literal"><span class="pre">choice</span></code> para indicar que se debe elegir un elemento de entre los que aparecen.</li>
+</ul>
 </div>
 <div class="section" id="id4">
 <h3>Atributos<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1513,6 +1552,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#tipos-de-datos-basicos">Tipos de datos básicos</a></li>
 <li><a class="reference internal" href="#derivaciones">Derivaciones</a></li>
 <li><a class="reference internal" href="#tipos-simples-y-complejos">Tipos simples y complejos</a></li>
+<li><a class="reference internal" href="#ejercicio-edad-de-los-trabajadores">Ejercicio:edad de los trabajadores</a></li>
+<li><a class="reference internal" href="#ejercicio-peso-de-productos">Ejercicio: peso de productos</a></li>
+<li><a class="reference internal" href="#ejercicio-pagos-validados">Ejercicio: pagos validados</a></li>
 <li><a class="reference internal" href="#uniendo-la-herencia-y-el-sistema-de-tipos">Uniendo la herencia y el sistema de tipos</a></li>
 <li><a class="reference internal" href="#restricciones">Restricciones</a></li>
 <li><a class="reference internal" href="#id4">Atributos</a></li>

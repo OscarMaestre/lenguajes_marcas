@@ -1246,6 +1246,54 @@ Sin embargo, si queremos indicar alguna restricción adicional ya no podremos us
     </xsd:schema>
 
 
+Ejercicio:edad de los trabajadores
+-----------------------------------
+
+Se desea crear un esquema que permita validar la edad de un trabajador, que debe tener un valor entero de entre 16 y 65.
+
+Por ejemplo, este XML debería validarse:
+
+.. code-block:: xml
+
+    <edad>28</edad>
+    
+Pero este no debería validarse:
+
+.. code-block:: xml
+
+    <edad>-3</edad>
+    
+La solución podría ser algo así:
+
+.. code-block:: xml
+
+    <xsd:schema
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="edad"
+                     type="tipoEdad"/>
+        <xsd:simpleType name="tipoEdad">
+            <xsd:restriction base="xsd:integer">
+                <xsd:minInclusive value="16"/>
+                <xsd:maxInclusive value="65"/>
+            </xsd:restriction>
+        </xsd:simpleType>    
+    </xsd:schema>
+
+
+Ejercicio: peso de productos
+------------------------------
+
+Se desea crear un esquema que permita validar un elemento peso, que puede tener un valor de entre 0 y 1000 pero aceptando valores con decimales, como por ejemplo 28.88
+
+Una posible solución sería:
+
+
+Ejercicio: pagos validados
+---------------------------
+
+Crear un esquema que permita validar un elemento ``pago`` en el cual puede haber cantidades enteras de entre 0 y 3000 euros.
+
+
 Uniendo la herencia y el sistema de tipos
 --------------------------------------------
 
