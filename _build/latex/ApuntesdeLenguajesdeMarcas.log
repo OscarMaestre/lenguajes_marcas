@@ -1,23 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.21)  2 MAR 2017 11:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.19)  3 MAR 2017 11:21
 entering extended mode
 **ApuntesDeLenguajesDeMarcas.tex
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.tex
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\sphinxmanual.cls
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\sphinxmanual.cls
 Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\report.cls
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\size10.clo
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,23 +33,23 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 ))
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\iftex.sty
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\iftex.sty
 Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
 and LuaTeX
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\inputenc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\utf8.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\t1enc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -199,7 +199,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\ot1enc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -230,7 +230,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\omsenc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -256,51 +256,51 @@ Now handling font encoding U ...
 ))
    defining Unicode char U+00A0 (decimal 160)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\cmap\cmap.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\cmap\cmap.sty
 Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\fontenc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\t1enc.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )<<t1.cmap>>)
-(C:\Users\ogomez\Documents\miktex\tex\latex\ams\math\amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\ogomez\Documents\miktex\tex\latex\ams\math\amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\ams\math\amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen103
 ))
-(C:\Users\ogomez\Documents\miktex\tex\latex\ams\math\amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\ams\math\amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -321,32 +321,32 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\ogomez\Documents\miktex\tex\generic\babel\babel.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\ogomez\Documents\miktex\tex\latex\00miktex\bblopts.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-(C:\Users\ogomez\Documents\miktex\tex\generic\babel\spanish.ldf
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
 Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
-(C:\Users\ogomez\Documents\miktex\tex\generic\babel\babel.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count100
 \U@D=\dimen112
@@ -359,10 +359,10 @@ Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 ))
-(C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\times.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\fncychap.sty
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip46
 \mylen=\skip47
@@ -372,7 +372,7 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pyy=\skip51
 \pxx=\skip52
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\tools\longtable.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip53
 \LTright=\skip54
@@ -390,10 +390,10 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count107
 \LT@p@ftn=\toks22
 )
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\sphinx.sty
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\sphinx.sty
 Package: sphinx 2010/01/15 LaTeX package (Sphinx markup)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\fancyhdr\fancyhdr.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
 Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \fancy@headwidth=\skip57
 \f@ncyO@elh=\skip58
@@ -405,7 +405,7 @@ Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \f@ncyO@olf=\skip64
 \f@ncyO@orf=\skip65
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\textcomp.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -420,12 +420,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\ts1enc.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\ts1enc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
 File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -560,7 +560,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\fancybox\fancybox.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\fancybox\fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
@@ -573,7 +573,7 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \EndVerbatimTokens=\toks26
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read1
-) (C:\Users\ogomez\Documents\miktex\tex\latex\titlesec\titlesec.sty
+) (C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box34
 \beforetitleunit=\skip66
@@ -584,11 +584,10 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidth=\dimen117
 \titlewidthlast=\dimen118
 \titlewidthfirst=\dimen119
-)
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\tabulary.sty
+) (F:\Oscar\repos\lenguajes_marcas\_build\latex\tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\tools\array.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen120
 \extrarowheight=\dimen121
@@ -602,10 +601,10 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \tymax=\dimen124
 \TY@tablewidth=\dimen125
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\makeidx.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\makeidx.sty"
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\framed\framed.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip70
 \fb@frw=\dimen126
@@ -613,24 +612,24 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen128
 \FrameSep=\dimen129
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\ifthen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\xcolor\xcolor.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\00miktex\color.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\pdftex-def\pdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\Users\ogomez\Documents\miktex\tex\generic\oberdiek\infwarerr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(C:\Users\ogomez\Documents\miktex\tex\generic\oberdiek\ltxcmds.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count109
@@ -645,12 +644,12 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\fancyvrb\fancyvrb.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyvrb\fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-(C:\Users\ogomez\Documents\miktex\tex\latex\graphics\keyval.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks29
 )
@@ -661,16 +660,17 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \FV@StepNumber=\count112
 \FV@OutFile=\write4
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\threeparttable\threeparttable.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\threeparttable\threepar
+ttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box36
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\mdwtools\footnote.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\mdwtools\footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box37
 \fn@width=\dimen130
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\wrapfig\wrapfig.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
 \wrapoverhang=\dimen131
 \WF@size=\dimen132
 \c@WF@wrappedlines=\count113
@@ -678,17 +678,17 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \WF@everypar=\toks30
 Package: wrapfig 2003/01/31  v 3.6
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\ltxmisc\parskip.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\parskip.sty"
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\alltt.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\upquote\upquote.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\float\float.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count114
 \float@exts=\toks31
@@ -696,16 +696,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks32
 \@floatcapt=\box40
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\graphics\graphicx.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\graphics\graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\graphics\trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\00miktex\graphics.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -713,7 +713,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen133
 \Gin@req@width=\dimen134
 )
-(C:\Users\ogomez\Documents\miktex\tex\plain\misc\pdfcolor.tex)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\plain\misc\pdfcolor.tex")
 \sphinxcontinuationbox=\box41
 \sphinxvisiblespacebox=\box42
 \sphinxshadowsep=\skip71
@@ -723,14 +723,14 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \lineblockindentation=\skip75
 \spx@image@box=\box43
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\hyperref\hyperref.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\Users\ogomez\Documents\miktex\tex\generic\oberdiek\hobsub-hyperref.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\Users\ogomez\Documents\miktex\tex\generic\oberdiek\hobsub-generic.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -771,32 +771,32 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\ogomez\Documents\miktex\tex\generic\ifxetex\ifxetex.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\oberdiek\auxhook.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\oberdiek\kvoptions.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen135
 \Hy@linkcounter=\count115
 \Hy@pagecounter=\count116
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\hyperref\pd1enc.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count117
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\00miktex\hyperref.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\hyperref\puenc.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -812,9 +812,9 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count118
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\ltxmisc\url.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen136
@@ -837,24 +837,24 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\hyperref\hpdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count123
 \c@bookmark@seq@number=\count124
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\oberdiek\rerunfilecheck.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip76
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\oberdiek\hypcap.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\hypcap.sty"
 Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
 )
 \DUlineblockindent=\skip77
 
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\newfloat.sty
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\newfloat.sty
 Package: newfloat 2015/09/17 v1.1-109 Defining new floating environments (AR)
 )
 Package newfloat Info: New float `literal-block' with options `' on input line 
@@ -862,18 +862,18 @@ Package newfloat Info: New float `literal-block' with options `' on input line
 \c@literal-block=\count125
 Package newfloat Info: float type `literal-block'=4 on input line 871.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\capt-of\capt-of.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\capt-of\capt-of.sty
 Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
 )
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\needspace.sty
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 ** (sphinx) defining (legacy) text style macros without \sphinx prefix
 ** if clashes with packages, set latex_keep_old_macro_names=False in conf.py
-) (C:\Users\ogomez\Documents\miktex\tex\latex\multirow\multirow.sty
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen139
 )
-(C:\Users\ogomez\Documents\miktex\tex\latex\eqparbox\eqparbox.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\eqparbox\eqparbox.sty
 Package: eqparbox 2013/03/15 v4.0 Create equal-widthed boxes
 \eqp@tempdima=\skip78
 \eqp@tempdimb=\skip79
@@ -881,16 +881,17 @@ Package: eqparbox 2013/03/15 v4.0 Create equal-widthed boxes
 \eqp@list@box=\box45
 \eqp@list@indent=\skip80
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\environ\environ.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\trimspaces\trimspaces.sty
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\latex\trimspaces\trimspaces.s
+ty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )))
 \@indexfile=\write5
 
 Writing index file ApuntesDeLenguajesDeMarcas.idx
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
 LaTeX Font Info:    ... okay on input line 140.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
@@ -907,7 +908,7 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 140.
 
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\base\ts1cmr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 140.
@@ -917,10 +918,10 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
 LaTeX Font Info:    ... okay on input line 140.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 140.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\t1ptm.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(C:\Users\ogomez\Documents\miktex\tex\context\base\supp-pdf.mkii
+(C:\Users\Profesor\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count126
 \scratchdimen=\dimen140
@@ -936,10 +937,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \AtBeginShipoutBox=\box47
 Package hyperref Info: Link coloring ON on input line 140.
- (C:\Users\ogomez\Documents\miktex\tex\latex\hyperref\nameref.sty
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\Users\ogomez\Documents\miktex\tex\generic\oberdiek\gettitlestring.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count132
@@ -948,12 +949,12 @@ LaTeX Info: Redefining \ref on input line 140.
 LaTeX Info: Redefining \pageref on input line 140.
 LaTeX Info: Redefining \nameref on input line 140.
 
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.out)
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.out)
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.out)
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.out)
 \@outlinefile=\write6
 LaTeX Font Info:    Try loading font information for T1+phv on input line 143.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\t1phv.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
@@ -973,22 +974,22 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    Try loading font information for U+msa on input line 143.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 143.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 143.
  [1
 
-{C:/Users/ogomez/Documents/miktex/pdftex/config/pdftex.map}] [2
+{C:/Users/Profesor/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ]
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.toc
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `T1/phv/bx/sc' in size <10> not available
@@ -1012,24 +1013,24 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 
 ] [2]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 275.
- (C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\t1pcr.fd
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 276.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 277.
- [3]
-[4]
+
+[3] [4]
 Cap\'{\i }tulo 2.
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 421.
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\ts1ptm.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [5
 
-] [6] [7]
-[8] <tablamedallero.png, id=734, 429.10312pt x 211.54031pt>
+] [6]
+[7] [8] <tablamedallero.png, id=734, 429.10312pt x 211.54031pt>
 File: tablamedallero.png Graphic file (type png)
 
 <use tablamedallero.png>
@@ -1041,20 +1042,20 @@ File: tabla1.png Graphic file (type png)
 <use tabla1.png>
 Package pdftex.def Info: tabla1.png used on input line 701.
 (pdftex.def)             Requested size: 139.26996pt x 213.79822pt.
- [9 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tablamedallero.png (PNG copy
-)> <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla1.png>]
+ [9 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tablamedallero.png (PNG copy)
+> <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla1.png>]
 <tabla2.png, id=742, 139.27031pt x 158.09062pt>
 File: tabla2.png Graphic file (type png)
  <use tabla2.png>
 Package pdftex.def Info: tabla2.png used on input line 736.
 (pdftex.def)             Requested size: 139.26996pt x 158.09023pt.
- [10 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla2.png>]
+ [10 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla2.png>]
 <tabla3.png, id=752, 346.29375pt x 294.34969pt>
 File: tabla3.png Graphic file (type png)
  <use tabla3.png>
 Package pdftex.def Info: tabla3.png used on input line 789.
 (pdftex.def)             Requested size: 346.2929pt x 294.34895pt.
- [11 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla3.png>]
+ [11 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla3.png>]
 <tabla4.png, id=759, 292.09125pt x 299.61937pt>
 File: tabla4.png Graphic file (type png)
  <use tabla4.png>
@@ -1066,8 +1067,8 @@ File: tablaeco1.png Graphic file (type png)
  <use tablaeco1.png>
 Package pdftex.def Info: tablaeco1.png used on input line 815.
 (pdftex.def)             Requested size: 231.86568pt x 313.92203pt.
- [12 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla4.png> <C:/xampp/htdoc
-s/lenguajes_marcas/_build/latex/tablaeco1.png>]
+ [12 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla4.png> <F:/Oscar/repos/
+lenguajes_marcas/_build/latex/tablaeco1.png>]
 Underfull \vbox (badness 2538) detected at line 879
  []
 
@@ -1077,7 +1078,7 @@ File: tablaeco2.png Graphic file (type png)
 Package pdftex.def Info: tablaeco2.png used on input line 888.
 (pdftex.def)             Requested size: 429.85489pt x 216.05664pt.
 
-[14 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tablaeco2.png>]
+[14 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tablaeco2.png>]
 <tabla7.png, id=781, 271.76532pt x 290.58563pt>
 File: tabla7.png Graphic file (type png)
  <use tabla7.png>
@@ -1095,17 +1096,17 @@ Underfull \vbox (badness 10000) detected at line 1022
 Overfull \vbox (0.95491pt too high) detected at line 1022
  []
 
-[16 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla7.png (PNG copy)>]
+[16 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla7.png (PNG copy)>]
 <tabla8.png, id=792, 219.82124pt x 243.15843pt>
 File: tabla8.png Graphic file (type png)
  <use tabla8.png>
 Package pdftex.def Info: tabla8.png used on input line 1031.
 (pdftex.def)             Requested size: 219.8207pt x 243.15784pt.
- [17 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla8.png (PNG copy)>]
+ [17 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla8.png (PNG copy)>]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1104
 .
 
-(C:\Users\ogomez\Documents\miktex\tex\latex\psnfss\ts1pcr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ) [18] [19]
 <tabla5.png, id=814, 377.15906pt x 156.585pt>
@@ -1119,8 +1120,8 @@ File: tabla6.png Graphic file (type png)
  <use tabla6.png>
 Package pdftex.def Info: tabla6.png used on input line 1233.
 (pdftex.def)             Requested size: 143.78683pt x 134.00027pt.
- [20 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tabla5.png>] [21 <C:/xampp/
-htdocs/lenguajes_marcas/_build/latex/tabla6.png>]
+ [20 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla5.png>] [21 <F:/Oscar/r
+epos/lenguajes_marcas/_build/latex/tabla6.png>]
 <maqueta1.png, id=829, 362.10281pt x 338.01282pt>
 File: maqueta1.png Graphic file (type png)
  <use maqueta1.png>
@@ -1132,8 +1133,8 @@ File: maqueta2.png Graphic file (type png)
  <use maqueta2.png>
 Package pdftex.def Info: maqueta2.png used on input line 1314.
 (pdftex.def)             Requested size: 365.86598pt x 363.60754pt.
- [22 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/maqueta1.png>] [23 <C:/xamp
-p/htdocs/lenguajes_marcas/_build/latex/maqueta2.png>]
+ [22 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maqueta1.png>] [23 <F:/Oscar
+/repos/lenguajes_marcas/_build/latex/maqueta2.png>]
 <maqueta4.png, id=843, 495.35063pt x 359.09157pt>
 File: maqueta4.png Graphic file (type png)
  <use maqueta4.png>
@@ -1144,8 +1145,8 @@ File: maqueta4.png Graphic file (type png)
 <use maqueta4.png>
 Package pdftex.def Info: maqueta4.png used on input line 1386.
 (pdftex.def)             Requested size: 469.755pt x 340.5378pt.
- [24 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/maqueta4.png>] <formu3.png,
- id=849, 288.3272pt x 223.58531pt>
+ [24 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maqueta4.png>] <formu3.png, 
+id=849, 288.3272pt x 223.58531pt>
 File: formu3.png Graphic file (type png)
  <use formu3.png>
 Package pdftex.def Info: formu3.png used on input line 1437.
@@ -1154,7 +1155,7 @@ Package pdftex.def Info: formu3.png used on input line 1437.
 Overfull \vbox (0.72272pt too high) detected at line 1512
  []
 
-[25 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/formu3.png>]
+[25 <F:/Oscar/repos/lenguajes_marcas/_build/latex/formu3.png>]
 Underfull \vbox (badness 10000) detected at line 1512
  []
 
@@ -1188,7 +1189,7 @@ Underfull \vbox (badness 5533) detected at line 1820
 Overfull \vbox (7.22495pt too high) detected at line 1820
  []
 
-[33 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/maquetacion1.png>]
+[33 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maquetacion1.png>]
 <maquetaacme.png, id=896, 761.09344pt x 365.11406pt>
 File: maquetaacme.png Graphic file (type png)
  <use maquetaacme.png>
@@ -1199,8 +1200,8 @@ File: maquetaacme.png Graphic file (type png)
 <use maquetaacme.png>
 Package pdftex.def Info: maquetaacme.png used on input line 1870.
 (pdftex.def)             Requested size: 469.755pt x 225.35999pt.
- [34] [35 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/maquetaacme.png>] [36]
- [37] [38] [39] [40]
+ [34] [35 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maquetaacme.png>] [36] 
+[37] [38] [39] [40]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 2276.
 
@@ -1224,9 +1225,9 @@ File: selectores2.png Graphic file (type png)
  <use selectores2.png>
 Package pdftex.def Info: selectores2.png used on input line 2302.
 (pdftex.def)             Requested size: 469.755pt x 231.8582pt.
- [41] [42 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/selectores1.png> <C:/x
-ampp/htdocs/lenguajes_marcas/_build/latex/selectores2.png>] <selectores3.png, i
-d=950, 760.34062pt x 386.19281pt>
+ [41] [42 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores1.png> <F:/Os
+car/repos/lenguajes_marcas/_build/latex/selectores2.png>] <selectores3.png, id=
+950, 760.34062pt x 386.19281pt>
 File: selectores3.png Graphic file (type png)
 
 <use selectores3.png>
@@ -1252,13 +1253,13 @@ File: selectores4.png Graphic file (type png)
 <use selectores4.png>
 Package pdftex.def Info: selectores4.png used on input line 2340.
 (pdftex.def)             Requested size: 469.755pt x 238.68546pt.
- [43 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/selectores3.png>]
+ [43 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores3.png>]
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 2386.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 2386.
- [44 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/selectores4.png>] <bs1.png,
- id=967, 710.655pt x 76.03406pt>
+ [44 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores4.png>]
+<bs1.png, id=967, 710.655pt x 76.03406pt>
 File: bs1.png Graphic file (type png)
  <use bs1.png>
 Package pdftex.def Info: bs1.png used on input line 2411.
@@ -1273,8 +1274,8 @@ File: bs2.png Graphic file (type png)
  <use bs2.png>
 Package pdftex.def Info: bs2.png used on input line 2445.
 (pdftex.def)             Requested size: 284.56242pt x 125.71936pt.
- [45 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/bs1.png>] [46 <C:/xampp/htd
-ocs/lenguajes_marcas/_build/latex/bs2.png>]
+ [45 <F:/Oscar/repos/lenguajes_marcas/_build/latex/bs1.png>] [46 <F:/Oscar/repo
+s/lenguajes_marcas/_build/latex/bs2.png>]
 Cap\'{\i }tulo 4.
 [47
 
@@ -1295,31 +1296,53 @@ Cap\'{\i }tulo 5.
 Overfull \vbox (1.82735pt too high) detected at line 5181
  []
 
-[91] [92] [93] [94] <tipos_xml_schema.png, id=1238, 649.42625pt x 730.73pt>
-File: tipos_xml_schema.png Graphic file (type png)
+[91] [92] [93] [94]
 
-<use tipos_xml_schema.png>
-Package pdftex.def Info: tipos_xml_schema.png used on input line 5445.
-(pdftex.def)             Requested size: 649.42467pt x 730.72821pt.
-File: tipos_xml_schema.png Graphic file (type png)
- <use tipos_xml_schema.png>
-Package pdftex.def Info: tipos_xml_schema.png used on input line 5445.
-(pdftex.def)             Requested size: 469.755pt x 528.5782pt.
- [95] [96 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/tipos_xml_schema.png>]
- [97] [98] [99] [100]
-[101] [102] [103] [104] [105] [106
+LaTeX Warning: File `{tipos_xml_schema}.png' not found on input line 5445.
 
-]
+
+! Package pdftex.def Error: File `tipos_xml_schema.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5445 ...xincludegraphics{{tipos_xml_schema}.png}
+                                                  
+? 
+[95] [96] [97] [98] [99] [100] [101]
+Overfull \vbox (1.56996pt too high) detected at line 5888
+ []
+
+[102] [103] [104]
 Cap\'{\i }tulo 6.
 
 Overfull \vbox (0.58023pt too high) detected at line 6046
  []
 
-[107] [108] [109] [110] [111] [112] [113] [114] [115] [116]
+[105
+
+] [106] [107] [108] [109] [110] [111] [112] [113] [114]
 Overfull \vbox (1.56998pt too high) detected at line 6667
  []
 
-[117] [118] [119] [120] [121] [122]
+[115] [116] [117] [118] [119] [120]
+Underfull \vbox (badness 10000) detected at line 7301
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7301
+ []
+
+[121]
+Underfull \vbox (badness 10000) detected at line 7301
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7301
+ []
+
+[122]
 Underfull \vbox (badness 10000) detected at line 7301
  []
 
@@ -1351,23 +1374,7 @@ Underfull \vbox (badness 10000) detected at line 7301
 Underfull \vbox (badness 10000) detected at line 7301
  []
 
-[126]
-Underfull \vbox (badness 10000) detected at line 7301
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7301
- []
-
-[127]
-Underfull \vbox (badness 10000) detected at line 7301
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7301
- []
-
-[128] [129]
+[126] [127]
 Underfull \vbox (badness 10000) detected at line 7413
  []
 
@@ -1375,7 +1382,7 @@ Underfull \vbox (badness 10000) detected at line 7413
 Underfull \vbox (badness 10000) detected at line 7413
  []
 
-[130] [131] [132
+[128] [129] [130
 
 ]
 Cap\'{\i }tulo 7.
@@ -1383,17 +1390,17 @@ Cap\'{\i }tulo 7.
 Overfull \vbox (1.06052pt too high) detected at line 7491
  []
 
-[133] [134]
+[131] [132]
 Overfull \vbox (1.32767pt too high) detected at line 7625
  []
 
-[135] [136] [137] <estilo-xml.png, id=1487, 453.19313pt x 195.73125pt>
+[133] [134] [135] <estilo-xml.png, id=1476, 453.19313pt x 195.73125pt>
 File: estilo-xml.png Graphic file (type png)
 
 <use estilo-xml.png>
 Package pdftex.def Info: estilo-xml.png used on input line 7765.
 (pdftex.def)             Requested size: 453.19202pt x 195.73076pt.
- <estilo-xml2.png, id=1488, 748.29562pt x 101.62968pt>
+ <estilo-xml2.png, id=1477, 748.29562pt x 101.62968pt>
 File: estilo-xml2.png Graphic file (type png)
 
 <use estilo-xml2.png>
@@ -1403,66 +1410,66 @@ File: estilo-xml2.png Graphic file (type png)
  <use estilo-xml2.png>
 Package pdftex.def Info: estilo-xml2.png used on input line 7772.
 (pdftex.def)             Requested size: 469.755pt x 63.80061pt.
- [138 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/estilo-xml.png> <C:/xampp/
-htdocs/lenguajes_marcas/_build/latex/estilo-xml2.png>] [139] [140] [141] [142] 
-[143]
-<ejercicio1xslpaso1.png, id=1522, 209.28188pt x 35.38219pt>
+ [136 <F:/Oscar/repos/lenguajes_marcas/_build/latex/estilo-xml.png> <F:/Oscar/r
+epos/lenguajes_marcas/_build/latex/estilo-xml2.png>] [137] [138] [139] [140] [1
+41]
+<ejercicio1xslpaso1.png, id=1511, 209.28188pt x 35.38219pt>
 File: ejercicio1xslpaso1.png Graphic file (type png)
 
 <use ejercicio1xslpaso1.png>
 Package pdftex.def Info: ejercicio1xslpaso1.png used on input line 8169.
 (pdftex.def)             Requested size: 209.28134pt x 35.3821pt.
- [144]
-<ejercicio1xslpaso2.png, id=1528, 216.81pt x 201.00093pt>
+ [142]
+<ejercicio1xslpaso2.png, id=1517, 216.81pt x 201.00093pt>
 File: ejercicio1xslpaso2.png Graphic file (type png)
 
 <use ejercicio1xslpaso2.png>
 Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 8200.
 (pdftex.def)             Requested size: 216.80946pt x 201.00043pt.
- [145 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso1.png> <C
-:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso2.png>]
-<ejercicio1xslpaso3.png, id=1536, 224.33812pt x 155.07938pt>
+ [143 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso1.png> <F:
+/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso2.png>] <ejercicio1
+xslpaso3.png, id=1524, 224.33812pt x 155.07938pt>
 File: ejercicio1xslpaso3.png Graphic file (type png)
 
 <use ejercicio1xslpaso3.png>
 Package pdftex.def Info: ejercicio1xslpaso3.png used on input line 8236.
 (pdftex.def)             Requested size: 224.33757pt x 155.07898pt.
- [146 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso3.png>]
-<ejercicio1xslpaso4.png, id=1542, 228.855pt x 188.20313pt>
+ [144 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso3.png>]
+<ejercicio1xslpaso4.png, id=1530, 228.855pt x 188.20313pt>
 File: ejercicio1xslpaso4.png Graphic file (type png)
 
 <use ejercicio1xslpaso4.png>
 Package pdftex.def Info: ejercicio1xslpaso4.png used on input line 8283.
 (pdftex.def)             Requested size: 228.85443pt x 188.20265pt.
- [147 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/ejercicio1xslpaso4.png>] <
-xsl1.png, id=1549, 158.84344pt x 158.09062pt>
+ [145 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso4.png>] <x
+sl1.png, id=1538, 158.84344pt x 158.09062pt>
 File: xsl1.png Graphic file (type png)
 
 <use xsl1.png>
 Package pdftex.def Info: xsl1.png used on input line 8341.
 (pdftex.def)             Requested size: 158.84305pt x 158.09023pt.
- [148 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/xsl1.png>]
-[149] [150]
+ [146 <F:/Oscar/repos/lenguajes_marcas/_build/latex/xsl1.png>]
+[147] [148]
 Cap\'{\i }tulo 8.
-[151
+[149
 
-] [152] [153] [154
+] [150] [151] [152
 
 ]
 Cap\'{\i }tulo 9.
-<foto_01.png, id=1597, 413.545pt x 260.975pt>
+<foto_01.png, id=1586, 413.545pt x 260.975pt>
 File: foto_01.png Graphic file (type png)
  <use foto_01.png>
 Package pdftex.def Info: foto_01.png used on input line 8667.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [155 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_01.png>] [156]
-<foto_02.png, id=1607, 413.545pt x 260.975pt>
+ [153 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_01.png>] [154]
+<foto_02.png, id=1596, 413.545pt x 260.975pt>
 File: foto_02.png Graphic file (type png)
  <use foto_02.png>
 Package pdftex.def Info: foto_02.png used on input line 8751.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [157 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_02.png>]
-<foto_03.png, id=1614, 413.545pt x 260.975pt>
+ [155 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_02.png>]
+<foto_03.png, id=1602, 413.545pt x 260.975pt>
 File: foto_03.png Graphic file (type png)
  <use foto_03.png>
 Package pdftex.def Info: foto_03.png used on input line 8825.
@@ -1471,17 +1478,17 @@ Package pdftex.def Info: foto_03.png used on input line 8825.
 Overfull \vbox (0.57848pt too high) detected at line 8881
  []
 
-[158 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_03.png>]
-<foto_04.png, id=1620, 413.545pt x 260.975pt>
+[156 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_03.png>]
+<foto_04.png, id=1608, 413.545pt x 260.975pt>
 File: foto_04.png Graphic file (type png)
  <use foto_04.png>
 Package pdftex.def Info: foto_04.png used on input line 8888.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [159]
+ [157]
 Overfull \vbox (1.15619pt too high) detected at line 9005
  []
 
-[160 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_04.png>]
+[158 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_04.png>]
 Underfull \vbox (badness 10000) detected at line 9005
  []
 
@@ -1489,7 +1496,7 @@ Underfull \vbox (badness 10000) detected at line 9005
 Underfull \vbox (badness 10000) detected at line 9005
  []
 
-[161] <foto_05.png, id=1634, 413.545pt x 260.975pt>
+[159] <foto_05.png, id=1623, 413.545pt x 260.975pt>
 File: foto_05.png Graphic file (type png)
  <use foto_05.png>
 Package pdftex.def Info: foto_05.png used on input line 9012.
@@ -1498,7 +1505,7 @@ Package pdftex.def Info: foto_05.png used on input line 9012.
 Overfull \vbox (0.57848pt too high) detected at line 9102
  []
 
-[162 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_05.png>]
+[160 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_05.png>]
 Underfull \vbox (badness 10000) detected at line 9102
  []
 
@@ -1506,7 +1513,7 @@ Underfull \vbox (badness 10000) detected at line 9102
 Underfull \vbox (badness 10000) detected at line 9102
  []
 
-[163] <foto_06.png, id=1645, 413.545pt x 260.975pt>
+[161] <foto_06.png, id=1633, 413.545pt x 260.975pt>
 File: foto_06.png Graphic file (type png)
  <use foto_06.png>
 Package pdftex.def Info: foto_06.png used on input line 9109.
@@ -1515,8 +1522,8 @@ Package pdftex.def Info: foto_06.png used on input line 9109.
 Overfull \vbox (0.57848pt too high) detected at line 9169
  []
 
-[164 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_06.png>]
-<foto_07.png, id=1651, 413.545pt x 260.975pt>
+[162 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_06.png>]
+<foto_07.png, id=1639, 413.545pt x 260.975pt>
 File: foto_07.png Graphic file (type png)
  <use foto_07.png>
 Package pdftex.def Info: foto_07.png used on input line 9176.
@@ -1525,18 +1532,18 @@ Package pdftex.def Info: foto_07.png used on input line 9176.
 Overfull \vbox (0.57848pt too high) detected at line 9239
  []
 
-[165 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_07.png>]
-<foto_08.png, id=1657, 413.545pt x 260.975pt>
+[163 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_07.png>]
+<foto_08.png, id=1646, 413.545pt x 260.975pt>
 File: foto_08.png Graphic file (type png)
  <use foto_08.png>
 Package pdftex.def Info: foto_08.png used on input line 9246.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [166]
+ [164]
 Overfull \vbox (1.15619pt too high) detected at line 9325
  []
 
-[167 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_08.png>]
-<foto_09.png, id=1667, 413.545pt x 260.975pt>
+[165 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_08.png>]
+<foto_09.png, id=1656, 413.545pt x 260.975pt>
 File: foto_09.png Graphic file (type png)
  <use foto_09.png>
 Package pdftex.def Info: foto_09.png used on input line 9332.
@@ -1545,13 +1552,13 @@ Package pdftex.def Info: foto_09.png used on input line 9332.
 Overfull \vbox (0.57848pt too high) detected at line 9372
  []
 
-[168 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_09.png>]
-<foto_10.png, id=1673, 413.545pt x 260.975pt>
+[166 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_09.png>]
+<foto_10.png, id=1662, 413.545pt x 260.975pt>
 File: foto_10.png Graphic file (type png)
  <use foto_10.png>
 Package pdftex.def Info: foto_10.png used on input line 9379.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [169 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_10.png>]
+ [167 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_10.png>]
 Underfull \vbox (badness 10000) detected at line 9486
  []
 
@@ -1559,17 +1566,17 @@ Underfull \vbox (badness 10000) detected at line 9486
 Underfull \vbox (badness 10000) detected at line 9486
  []
 
-[170] <foto_11.png, id=1684, 413.545pt x 260.975pt>
+[168] <foto_11.png, id=1672, 413.545pt x 260.975pt>
 File: foto_11.png Graphic file (type png)
  <use foto_11.png>
 Package pdftex.def Info: foto_11.png used on input line 9493.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [171]
+ [169]
 Overfull \vbox (1.15619pt too high) detected at line 9568
  []
 
-[172 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_11.png>]
-<foto_12.png, id=1694, 413.545pt x 260.975pt>
+[170 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_11.png>]
+<foto_12.png, id=1683, 413.545pt x 260.975pt>
 File: foto_12.png Graphic file (type png)
  <use foto_12.png>
 Package pdftex.def Info: foto_12.png used on input line 9575.
@@ -1578,8 +1585,8 @@ Package pdftex.def Info: foto_12.png used on input line 9575.
 Overfull \vbox (0.57848pt too high) detected at line 9604
  []
 
-[173 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_12.png>]
-<foto_13.png, id=1700, 413.545pt x 260.975pt>
+[171 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_12.png>]
+<foto_13.png, id=1689, 413.545pt x 260.975pt>
 File: foto_13.png Graphic file (type png)
  <use foto_13.png>
 Package pdftex.def Info: foto_13.png used on input line 9611.
@@ -1588,34 +1595,34 @@ Package pdftex.def Info: foto_13.png used on input line 9611.
 Overfull \vbox (0.57848pt too high) detected at line 9675
  []
 
-[174 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_13.png>]
-<foto_14.png, id=1706, 413.545pt x 260.975pt>
+[172 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_13.png>]
+<foto_14.png, id=1695, 413.545pt x 260.975pt>
 File: foto_14.png Graphic file (type png)
  <use foto_14.png>
 Package pdftex.def Info: foto_14.png used on input line 9682.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [175]
+ [173]
 Overfull \vbox (1.15619pt too high) detected at line 9730
  []
 
-[176 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_14.png>]
-<foto_15.png, id=1717, 413.545pt x 260.975pt>
+[174 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_14.png>]
+<foto_15.png, id=1705, 413.545pt x 260.975pt>
 File: foto_15.png Graphic file (type png)
  <use foto_15.png>
 Package pdftex.def Info: foto_15.png used on input line 9737.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
 
-<foto_16.png, id=1718, 413.545pt x 260.975pt>
+<foto_16.png, id=1706, 413.545pt x 260.975pt>
 File: foto_16.png Graphic file (type png)
  <use foto_16.png>
 Package pdftex.def Info: foto_16.png used on input line 9771.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [177 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_15.png>]
+ [175 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_15.png>]
 Overfull \vbox (1.15619pt too high) detected at line 9825
  []
 
-[178 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_16.png>]
-<foto_17.png, id=1729, 413.545pt x 260.975pt>
+[176 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_16.png>]
+<foto_17.png, id=1718, 413.545pt x 260.975pt>
 File: foto_17.png Graphic file (type png)
  <use foto_17.png>
 Package pdftex.def Info: foto_17.png used on input line 9832.
@@ -1624,8 +1631,8 @@ Package pdftex.def Info: foto_17.png used on input line 9832.
 Overfull \vbox (0.57848pt too high) detected at line 9874
  []
 
-[179 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_17.png>]
-<foto_18.png, id=1735, 413.545pt x 260.975pt>
+[177 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_17.png>]
+<foto_18.png, id=1724, 413.545pt x 260.975pt>
 File: foto_18.png Graphic file (type png)
  <use foto_18.png>
 Package pdftex.def Info: foto_18.png used on input line 9881.
@@ -1634,17 +1641,17 @@ Package pdftex.def Info: foto_18.png used on input line 9881.
 Overfull \vbox (0.57848pt too high) detected at line 9913
  []
 
-[180 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_18.png>]
-<foto_19.png, id=1741, 413.545pt x 260.975pt>
+[178 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_18.png>]
+<foto_19.png, id=1730, 413.545pt x 260.975pt>
 File: foto_19.png Graphic file (type png)
  <use foto_19.png>
 Package pdftex.def Info: foto_19.png used on input line 9920.
 (pdftex.def)             Requested size: 413.54398pt x 260.97437pt.
- [181 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_19.png>] [182
+ [179 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_19.png>] [180
 
 ]
 Cap\'{\i }tulo 10.
-<foto_formulario_01.png, id=1752, 473.77pt x 622.325pt>
+<foto_formulario_01.png, id=1740, 473.77pt x 622.325pt>
 File: foto_formulario_01.png Graphic file (type png)
 
 <use foto_formulario_01.png>
@@ -1654,8 +1661,8 @@ File: foto_formulario_01.png Graphic file (type png)
  <use foto_formulario_01.png>
 Package pdftex.def Info: foto_formulario_01.png used on input line 9966.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [183]
-<foto_formulario_02.png, id=1757, 473.77pt x 622.325pt>
+ [181]
+<foto_formulario_02.png, id=1746, 473.77pt x 622.325pt>
 File: foto_formulario_02.png Graphic file (type png)
 
 <use foto_formulario_02.png>
@@ -1665,8 +1672,8 @@ File: foto_formulario_02.png Graphic file (type png)
  <use foto_formulario_02.png>
 Package pdftex.def Info: foto_formulario_02.png used on input line 9995.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [184 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_01.png>]
-<foto_formulario_03.png, id=1762, 473.77pt x 622.325pt>
+ [182 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_01.png>]
+<foto_formulario_03.png, id=1751, 473.77pt x 622.325pt>
 File: foto_formulario_03.png Graphic file (type png)
 
 <use foto_formulario_03.png>
@@ -1676,8 +1683,8 @@ File: foto_formulario_03.png Graphic file (type png)
  <use foto_formulario_03.png>
 Package pdftex.def Info: foto_formulario_03.png used on input line 10025.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [185 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_02.png>]
-<foto_formulario_04.png, id=1767, 473.77pt x 622.325pt>
+ [183 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_02.png>]
+<foto_formulario_04.png, id=1756, 473.77pt x 622.325pt>
 File: foto_formulario_04.png Graphic file (type png)
 
 <use foto_formulario_04.png>
@@ -1687,9 +1694,9 @@ File: foto_formulario_04.png Graphic file (type png)
  <use foto_formulario_04.png>
 Package pdftex.def Info: foto_formulario_04.png used on input line 10050.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [186 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_03.png>] [
-187 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_04.png>]
-<foto_formulario_05.png, id=1777, 473.77pt x 622.325pt>
+ [184 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_03.png>] [1
+85 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_04.png>]
+<foto_formulario_05.png, id=1765, 473.77pt x 622.325pt>
 File: foto_formulario_05.png Graphic file (type png)
 
 <use foto_formulario_05.png>
@@ -1703,8 +1710,8 @@ Package pdftex.def Info: foto_formulario_05.png used on input line 10087.
 Overfull \vbox (1.98201pt too high) detected at line 10120
  []
 
-[188 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_05.png>]
-<foto_formulario_06.png, id=1782, 473.77pt x 622.325pt>
+[186 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_05.png>]
+<foto_formulario_06.png, id=1770, 473.77pt x 622.325pt>
 File: foto_formulario_06.png Graphic file (type png)
 
 <use foto_formulario_06.png>
@@ -1714,12 +1721,12 @@ File: foto_formulario_06.png Graphic file (type png)
  <use foto_formulario_06.png>
 Package pdftex.def Info: foto_formulario_06.png used on input line 10141.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [189]
+ [187]
 Underfull \vbox (badness 1675) detected at line 10170
  []
 
-[190 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_06.png>]
-<foto_formulario_07.png, id=1791, 473.77pt x 622.325pt>
+[188 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_06.png>]
+<foto_formulario_07.png, id=1780, 473.77pt x 622.325pt>
 File: foto_formulario_07.png Graphic file (type png)
 
 <use foto_formulario_07.png>
@@ -1729,12 +1736,12 @@ File: foto_formulario_07.png Graphic file (type png)
  <use foto_formulario_07.png>
 Package pdftex.def Info: foto_formulario_07.png used on input line 10194.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [191]
+ [189]
 Underfull \vbox (badness 1675) detected at line 10231
  []
 
-[192 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_07.png>]
-<foto_formulario_08.png, id=1800, 473.77pt x 622.325pt>
+[190 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_07.png>]
+<foto_formulario_08.png, id=1789, 473.77pt x 622.325pt>
 File: foto_formulario_08.png Graphic file (type png)
 
 <use foto_formulario_08.png>
@@ -1744,9 +1751,9 @@ File: foto_formulario_08.png Graphic file (type png)
  <use foto_formulario_08.png>
 Package pdftex.def Info: foto_formulario_08.png used on input line 10249.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [193] [194 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_08.p
-ng>]
-<foto_formulario_09.png, id=1810, 473.77pt x 622.325pt>
+ [191] [192 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_08.pn
+g>]
+<foto_formulario_09.png, id=1798, 473.77pt x 622.325pt>
 File: foto_formulario_09.png Graphic file (type png)
 
 <use foto_formulario_09.png>
@@ -1756,8 +1763,8 @@ File: foto_formulario_09.png Graphic file (type png)
  <use foto_formulario_09.png>
 Package pdftex.def Info: foto_formulario_09.png used on input line 10290.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [195 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_09.png>]
-<foto_formulario_10.png, id=1815, 473.77pt x 622.325pt>
+ [193 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_09.png>]
+<foto_formulario_10.png, id=1804, 473.77pt x 622.325pt>
 File: foto_formulario_10.png Graphic file (type png)
 
 <use foto_formulario_10.png>
@@ -1767,12 +1774,12 @@ File: foto_formulario_10.png Graphic file (type png)
  <use foto_formulario_10.png>
 Package pdftex.def Info: foto_formulario_10.png used on input line 10342.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [196]
+ [194]
 Underfull \vbox (badness 1675) detected at line 10387
  []
 
-[197 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_10.png>]
-<foto_formulario_11.png, id=1824, 473.77pt x 622.325pt>
+[195 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_10.png>]
+<foto_formulario_11.png, id=1813, 473.77pt x 622.325pt>
 File: foto_formulario_11.png Graphic file (type png)
 
 <use foto_formulario_11.png>
@@ -1782,12 +1789,12 @@ File: foto_formulario_11.png Graphic file (type png)
  <use foto_formulario_11.png>
 Package pdftex.def Info: foto_formulario_11.png used on input line 10411.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [198]
+ [196]
 Underfull \vbox (badness 1675) detected at line 10448
  []
 
-[199 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_11.png>]
-<foto_formulario_12.png, id=1834, 473.77pt x 622.325pt>
+[197 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_11.png>]
+<foto_formulario_12.png, id=1822, 473.77pt x 622.325pt>
 File: foto_formulario_12.png Graphic file (type png)
 
 <use foto_formulario_12.png>
@@ -1797,12 +1804,12 @@ File: foto_formulario_12.png Graphic file (type png)
  <use foto_formulario_12.png>
 Package pdftex.def Info: foto_formulario_12.png used on input line 10481.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [200]
+ [198]
 Underfull \vbox (badness 1675) detected at line 10532
  []
 
-[201 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_12.png>]
-<foto_formulario_13.png, id=1843, 473.77pt x 622.325pt>
+[199 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_12.png>]
+<foto_formulario_13.png, id=1832, 473.77pt x 622.325pt>
 File: foto_formulario_13.png Graphic file (type png)
 
 <use foto_formulario_13.png>
@@ -1812,18 +1819,18 @@ File: foto_formulario_13.png Graphic file (type png)
  <use foto_formulario_13.png>
 Package pdftex.def Info: foto_formulario_13.png used on input line 10562.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [202]
+ [200]
 Underfull \vbox (badness 1675) detected at line 10604
  []
 
-[203 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_13.png>]
+[201 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_13.png>]
 Underfull \hbox (badness 6268) in paragraph at lines 10612--10613
 []\T1/ptm/m/n/10 Contiene los si-guien-tes \T1/pcr/m/n/10 radiobuttons\T1/ptm/m
 /n/10 :radio con el \T1/pcr/m/n/10 name \T1/ptm/m/n/10 ``me-dio_transporte'' , 
 \T1/pcr/m/n/10 value \T1/ptm/m/n/10 ``me-
  []
 
-<foto_formulario_14.png, id=1852, 473.77pt x 622.325pt>
+<foto_formulario_14.png, id=1841, 473.77pt x 622.325pt>
 File: foto_formulario_14.png Graphic file (type png)
 
 <use foto_formulario_14.png>
@@ -1833,12 +1840,12 @@ File: foto_formulario_14.png Graphic file (type png)
  <use foto_formulario_14.png>
 Package pdftex.def Info: foto_formulario_14.png used on input line 10625.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [204]
+ [202]
 Underfull \vbox (badness 1675) detected at line 10650
  []
 
-[205 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_14.png>]
-<foto_formulario_15.png, id=1862, 473.77pt x 622.325pt>
+[203 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_14.png>]
+<foto_formulario_15.png, id=1850, 473.77pt x 622.325pt>
 File: foto_formulario_15.png Graphic file (type png)
 
 <use foto_formulario_15.png>
@@ -1848,12 +1855,12 @@ File: foto_formulario_15.png Graphic file (type png)
  <use foto_formulario_15.png>
 Package pdftex.def Info: foto_formulario_15.png used on input line 10677.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [206]
+ [204]
 Underfull \vbox (badness 1675) detected at line 10717
  []
 
-[207 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_15.png>]
-<foto_formulario_16.png, id=1871, 473.77pt x 622.325pt>
+[205 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_15.png>]
+<foto_formulario_16.png, id=1860, 473.77pt x 622.325pt>
 File: foto_formulario_16.png Graphic file (type png)
 
 <use foto_formulario_16.png>
@@ -1863,8 +1870,8 @@ File: foto_formulario_16.png Graphic file (type png)
  <use foto_formulario_16.png>
 Package pdftex.def Info: foto_formulario_16.png used on input line 10732.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [208]
-<foto_formulario_17.png, id=1876, 473.77pt x 622.325pt>
+ [206]
+<foto_formulario_17.png, id=1865, 473.77pt x 622.325pt>
 File: foto_formulario_17.png Graphic file (type png)
 
 <use foto_formulario_17.png>
@@ -1874,9 +1881,9 @@ File: foto_formulario_17.png Graphic file (type png)
  <use foto_formulario_17.png>
 Package pdftex.def Info: foto_formulario_17.png used on input line 10764.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [209 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_16.png>] [
-210 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_17.png>]
-<foto_formulario_18.png, id=1885, 473.77pt x 622.325pt>
+ [207 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_16.png>] [2
+08 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_17.png>]
+<foto_formulario_18.png, id=1874, 473.77pt x 622.325pt>
 File: foto_formulario_18.png Graphic file (type png)
 
 <use foto_formulario_18.png>
@@ -1886,8 +1893,8 @@ File: foto_formulario_18.png Graphic file (type png)
  <use foto_formulario_18.png>
 Package pdftex.def Info: foto_formulario_18.png used on input line 10804.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [211 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_18.png>]
-<foto_formulario_19.png, id=1891, 473.77pt x 622.325pt>
+ [209 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_18.png>]
+<foto_formulario_19.png, id=1879, 473.77pt x 622.325pt>
 File: foto_formulario_19.png Graphic file (type png)
 
 <use foto_formulario_19.png>
@@ -1897,12 +1904,12 @@ File: foto_formulario_19.png Graphic file (type png)
  <use foto_formulario_19.png>
 Package pdftex.def Info: foto_formulario_19.png used on input line 10868.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [212]
+ [210]
 Underfull \vbox (badness 1675) detected at line 10913
  []
 
-[213 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_19.png>]
-<foto_formulario_20.png, id=1900, 473.77pt x 622.325pt>
+[211 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_19.png>]
+<foto_formulario_20.png, id=1889, 473.77pt x 622.325pt>
 File: foto_formulario_20.png Graphic file (type png)
 
 <use foto_formulario_20.png>
@@ -1912,13 +1919,13 @@ File: foto_formulario_20.png Graphic file (type png)
  <use foto_formulario_20.png>
 Package pdftex.def Info: foto_formulario_20.png used on input line 10925.
 (pdftex.def)             Requested size: 469.755pt x 617.07224pt.
- [214]
+ [212]
 No file ApuntesDeLenguajesDeMarcas.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10945.
-[215 <C:/xampp/htdocs/lenguajes_marcas/_build/latex/foto_formulario_20.png>]
+[213 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_20.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 10945.
 
-(C:\xampp\htdocs\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
+(F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 10945.
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 10945
@@ -1929,27 +1936,27 @@ ged.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 10945.
  ) 
 Here is how much of TeX's memory you used:
- 14785 strings out of 493921
- 206244 string characters out of 3145304
- 1294463 words of memory out of 3000000
- 17122 multiletter control sequences out of 15000+200000
+ 14786 strings out of 493921
+ 206988 string characters out of 3144867
+ 1294466 words of memory out of 3000000
+ 17124 multiletter control sequences out of 15000+200000
  66375 words of font info for 82 fonts, out of 3000000 for 9000
  842 hyphenation exceptions out of 8191
  39i,12n,51p,933b,637s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/ogomez/Documents/miktex/fonts/enc/dvips/fontname/8r.enc}<C:/Users/o
-gomez/Documents/miktex/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/ogome
-z/Documents/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ogomez/D
-ocuments/miktex/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/ogomez/Docum
-ents/miktex/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/ogomez/Documents/mikte
-x/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/ty
-pe1/urw/courier/ucrro8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/type1/urw/h
-elvetic/uhvb8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/type1/urw/helvetic/u
-hvbo8a.pfb><C:/Users/ogomez/Documents/miktex/fonts/type1/urw/times/utmb8a.pfb><
-C:/Users/ogomez/Documents/miktex/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ogo
-mez/Documents/miktex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (221 pages, 2174267 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/urw/courier/ucrro8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/h
+elvetic/uhvbo8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/ut
+mb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ApuntesDeLenguajesDeMarcas.pdf (219 pages, 2134597 bytes).
 PDF statistics:
- 2075 PDF objects out of 2487 (max. 8388607)
- 583 named destinations out of 1000 (max. 500000)
- 1395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2063 PDF objects out of 2073 (max. 8388607)
+ 581 named destinations out of 1000 (max. 500000)
+ 1390 words of extra memory for PDF output out of 10000 (max. 10000000)
 
