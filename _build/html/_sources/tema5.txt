@@ -1588,6 +1588,16 @@ Se desea crear un esquema que permita validar un elemento raíz llamado ``produc
     </xsd:simpleType>
   </xsd:schema>
 
+Ejercicio: clientes con información adicional
+------------------------------------------------
+
+Se desea crear un esquema XML que permita validar un elemento llamado ``cliente`` que puede almacenar un ``xsd:string``. El cliente contiene:
+
+* Un atributo obligatorio llamado ``codigo`` que contiene el código del cliente, que siempre consta de tres letras mayúsculas de tres números.
+
+* Un atributo optativo llamado ``habitual`` que se usará para saber si es un cliente habitual o no. Acepta valores "true" y "false".
+
+* Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000.
 
 Lista de clientes como XML Schemas
 ------------------------------------
