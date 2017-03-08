@@ -1565,6 +1565,30 @@ Se desea crear un esquema que permita validar un elemento raíz llamado ``produc
 * También habrá un atributo llamado ``unidad`` que solo acepta los ``xsd:string`` "cajas" y "pales".
 
 
+.. code-block:: xml
+
+  <xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="producto" type="tipoProducto"/>
+    <xsd:complexType name="tipoProducto">
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="cantidad"
+                type="xsd:unsignedInt" use="required"/>
+          <xsd:attribute name="unidad"
+                type="tipoUnidad"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="tipoUnidad">
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="caja"/>
+        <xsd:enumeration value="pale"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
+
+
 Lista de clientes como XML Schemas
 ------------------------------------
 

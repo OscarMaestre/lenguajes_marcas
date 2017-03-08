@@ -195,8 +195,8 @@
 \contentsline {subsection}{\numberline {5.18.6}Soluci\IeC {\'o}n al atributo con solo ciertos valores}{102}{subsection.5.18.6}
 \contentsline {subsection}{\numberline {5.18.7}Ejercicio: productos con atributos}{103}{subsection.5.18.7}
 \contentsline {subsection}{\numberline {5.18.8}Lista de clientes como XML Schemas}{103}{subsection.5.18.8}
-\contentsline {subsection}{\numberline {5.18.9}Ampliaci\IeC {\'o}n del esquema para clientes}{104}{subsection.5.18.9}
-\contentsline {section}{\numberline {5.19}Examen}{105}{section.5.19}
+\contentsline {subsection}{\numberline {5.18.9}Ampliaci\IeC {\'o}n del esquema para clientes}{105}{subsection.5.18.9}
+\contentsline {section}{\numberline {5.19}Examen}{106}{section.5.19}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{107}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{107}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fundamentos de DOM con Java}{107}{section.6.2}
