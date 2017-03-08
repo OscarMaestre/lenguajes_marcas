@@ -1305,6 +1305,37 @@ Ejercicio: pagos validados
 Crear un esquema que permita validar un elemento ``pago`` en el cual puede haber cantidades enteras de entre 0 y 3000 euros.
 
 
+.. code-block:: xml
+
+  <xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">    
+    <xsd:element name="pago" type="tipoPago"/>
+    <xsd:simpleType name="tipoPago">
+      <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="0"/>
+        <xsd:maxInclusive value="3000"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
+  
+Ejercicio: validación de DNIs
+--------------------------------
+
+Crear un esquema que permita validar un único elemento ``dni`` que valide el patrón de 7-8 cifras + letra que suelen tener los DNI en España:
+
+.. code-block:: xml
+
+  <xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+    <xsd:element name="dni" type="tipoDNI"/>
+    <xsd:simpleType name="tipoDNI">
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]{7,8}[A-Z]"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
+
+
 Uniendo la herencia y el sistema de tipos
 --------------------------------------------
 
@@ -1523,6 +1554,15 @@ La solución comentada puede encontrarse a continuación. Como puede verse, hemo
             </xsd:restriction>
         </xsd:simpleType>
     </xsd:schema>
+
+Ejercicio: productos con atributos
+-----------------------------------
+
+Se desea crear un esquema que permita validar un elemento raíz llamado ``producto`` de tipo ``xsd:string``. El producto tiene dos atributos:
+
+* Un atributo se llamará ``cantidad`` y es obligatorio. Debe aceptar solo enteros positivos.
+
+* También habrá un atributo llamado ``unidad`` que solo acepta los ``xsd:string`` "cajas" y "pales".
 
 
 Lista de clientes como XML Schemas
