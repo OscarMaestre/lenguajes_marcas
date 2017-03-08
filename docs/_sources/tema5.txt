@@ -1597,7 +1597,7 @@ Se desea crear un esquema XML que permita validar un elemento llamado ``cliente`
 
 * Un atributo optativo llamado ``habitual`` que se usará para saber si es un cliente habitual o no. Acepta valores "true" y "false".
 
-* Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000.
+* Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000. 
 
 Lista de clientes como XML Schemas
 ------------------------------------
