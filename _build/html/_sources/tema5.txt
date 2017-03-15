@@ -1814,6 +1814,40 @@ Ahora se nos pide crear un esquema que permita validar un fichero como el siguie
     </cliente>
   </listaclientes>
   
+La solución puede ser algo así:
+
+.. code-block:: xml
+
+  <xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="listaclientes"
+                 type="tipoLista"/>
+    <xsd:complexType name="tipoLista">
+      <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+          <xsd:sequence>
+            <xsd:element name="cliente"
+                         type="tipoCliente"
+                         maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="tipoCliente">
+      <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+          <xsd:sequence>
+            <xsd:element name="nombre"
+                         type="xsd:string"
+                         minOccurs="0"/>
+            <xsd:element name="apellidos"
+                         type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:restriction>
+    </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:schema>
 
 Examen
 ===========================================
