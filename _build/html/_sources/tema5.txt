@@ -1751,6 +1751,69 @@ Así, una posible solución sería esta:
         </xsd:simpleType>
     </xsd:schema>
 
+Ejercicio: lista de códigos
+-----------------------------
+Se nos pide crear un esquema que permita validar un fichero como el siguiente:
+
+.. code-block:: xml
+
+  <listacodigos>
+    <codigo>AAA2DD</codigo>
+    <codigo>BBB2EE</codigo>
+    <codigo>BBB2EE</codigo>
+  </listacodigos>
+
+En concreto, todo código tiene la estructura siguiente:
+
+1. Primero van tres mayúsculas
+2. Despues va exactamente un digito.
+3. Por último hay exactamente dos mayúsculas.
+
+Un posible esquema XML sería el siguiente (obsérvese como usamos ``maxOccurs`` para indicar que el elemento puede repetirse un máximo de "infitas veces":
+
+.. code-block:: xml
+
+  <xsd:schema
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="listacodigos"
+                 type="tipoLista"/>
+    <xsd:complexType name="tipoLista">
+      <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+          <xsd:sequence>
+            <xsd:element name="codigo"
+                         type="tipoCodigo"
+                         maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="tipoCodigo">
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-Z]{3}[0-9][A-Z]{2}"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
+
+
+Ejercicio: otra lista de clientes
+------------------------------------
+
+Ahora se nos pide crear un esquema que permita validar un fichero como el siguiente, en el que hay una lista de clientes y el nombre es optativo, aunque los apellidos son obligatorios:
+
+.. code-block:: xml
+  
+  <listaclientes>
+    <cliente>
+      <nombre>Juan</nombre>
+      <apellidos>Sanchez</apellidos>
+    </cliente>
+    <cliente>
+      <nombre>Jose</nombre>
+      <apellidos>Diaz</apellidos>
+    </cliente>
+  </listaclientes>
+  
 
 Examen
 ===========================================
