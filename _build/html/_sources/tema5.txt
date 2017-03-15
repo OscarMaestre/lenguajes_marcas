@@ -1849,6 +1849,31 @@ La solución puede ser algo así:
     </xsd:complexType>
   </xsd:schema>
 
+
+Ejercicio: listas de productos
+--------------------------------
+
+Se pide validar correctamente algo como esto:
+
+.. code-block:: xml
+
+  <listaproductos>
+    <producto codigo="DX-22"><!--Codigo obligatorio-->
+      <descripcion>Ordenador</descripcion><!--Optativa-->
+      <peso>23.44</peso><!--Positivo con decimales-->
+    </producto>
+    <producto codigo="CX-124">
+      <peso>17.50</peso>
+    </producto>
+  </listaproductos>
+  
+Las reglas son:
+
+1. Una lista de productos puede tener dentro muchos productos.
+2. Todo producto tiene un "codigo" cuya estructura *dos mayúsculas seguidas de un guión seguido de dos o tres cifras*
+3. Todo producto *puede tener (optativo)* un elemento descripción que es de tipo texto.
+4. Todo producto **debe tener** un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0
+
 Examen
 ===========================================
 

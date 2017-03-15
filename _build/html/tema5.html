@@ -1653,6 +1653,28 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-listas-de-productos">
+<h3>Ejercicio: listas de productos<a class="headerlink" href="#ejercicio-listas-de-productos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se pide validar correctamente algo como esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listaproductos&gt;</span>
+  <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DX-22&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!--Codigo obligatorio--&gt;</span>
+    <span class="nt">&lt;descripcion&gt;</span>Ordenador<span class="nt">&lt;/descripcion&gt;</span><span class="c">&lt;!--Optativa--&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>23.44<span class="nt">&lt;/peso&gt;</span><span class="c">&lt;!--Positivo con decimales--&gt;</span>
+  <span class="nt">&lt;/producto&gt;</span>
+  <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;CX-124&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>17.50<span class="nt">&lt;/peso&gt;</span>
+  <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/listaproductos&gt;</span>
+</pre></div>
+</div>
+<p>Las reglas son:</p>
+<ol class="arabic simple">
+<li>Una lista de productos puede tener dentro muchos productos.</li>
+<li>Todo producto tiene un &#8220;codigo&#8221; cuya estructura <em>dos mayúsculas seguidas de un guión seguido de dos o tres cifras</em></li>
+<li>Todo producto <em>puede tener (optativo)</em> un elemento descripción que es de tipo texto.</li>
+<li>Todo producto <strong>debe tener</strong> un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0</li>
+</ol>
+</div>
 </div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1741,6 +1763,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
+<li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#examen">Examen</a></li>

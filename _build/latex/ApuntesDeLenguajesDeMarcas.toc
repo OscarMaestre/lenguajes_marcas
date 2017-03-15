@@ -199,6 +199,7 @@
 \contentsline {subsection}{\numberline {5.18.10}Ampliaci\IeC {\'o}n del esquema para clientes}{105}{subsection.5.18.10}
 \contentsline {subsection}{\numberline {5.18.11}Ejercicio: lista de c\IeC {\'o}digos}{106}{subsection.5.18.11}
 \contentsline {subsection}{\numberline {5.18.12}Ejercicio: otra lista de clientes}{107}{subsection.5.18.12}
+\contentsline {subsection}{\numberline {5.18.13}Ejercicio: listas de productos}{108}{subsection.5.18.13}
 \contentsline {section}{\numberline {5.19}Examen}{108}{section.5.19}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{109}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{109}{section.6.1}
