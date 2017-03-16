@@ -1945,6 +1945,17 @@ Validar un fichero como este:
       <monitor>
   </listacomponentes>
 
+Las reglas son las siguientes:
+
+1. El elemento raíz se llama ``listacomponentes``.
+2. Dentro de él puede haber uno o más elementos ``componente``
+3. Un componente puede ser una ``tarjetagrafica`` o un ``monitor``.
+4. Un componente puede tener un atributo llamado ``codigo`` cuya estructura es siempre un dígito de 6 cifras.
+5. Una tarjeta gráfica siempre tiene dos elementos llamados ``memoria`` y ``precio``.
+6. La memoria siempre es una cifra seguido de GB o TB.
+7. El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo ``moneda`` que solo puede valer "euros" o "dolares" y que se utiliza para saber en qué moneda está el precio.
+
+
 Examen
 ===========================================
 

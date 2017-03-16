@@ -1741,6 +1741,16 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <span class="nt">&lt;/listacomponentes&gt;</span>
 </pre></div>
 </div>
+<p>Las reglas son las siguientes:</p>
+<ol class="arabic simple">
+<li>El elemento raíz se llama <code class="docutils literal"><span class="pre">listacomponentes</span></code>.</li>
+<li>Dentro de él puede haber uno o más elementos <code class="docutils literal"><span class="pre">componente</span></code></li>
+<li>Un componente puede ser una <code class="docutils literal"><span class="pre">tarjetagrafica</span></code> o un <code class="docutils literal"><span class="pre">monitor</span></code>.</li>
+<li>Un componente puede tener un atributo llamado <code class="docutils literal"><span class="pre">codigo</span></code> cuya estructura es siempre un dígito de 6 cifras.</li>
+<li>Una tarjeta gráfica siempre tiene dos elementos llamados <code class="docutils literal"><span class="pre">memoria</span></code> y <code class="docutils literal"><span class="pre">precio</span></code>.</li>
+<li>La memoria siempre es una cifra seguido de GB o TB.</li>
+<li>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal"><span class="pre">moneda</span></code> que solo puede valer &#8220;euros&#8221; o &#8220;dolares&#8221; y que se utiliza para saber en qué moneda está el precio.</li>
+</ol>
 </div>
 </div>
 <div class="section" id="examen">
