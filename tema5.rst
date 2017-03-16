@@ -1959,7 +1959,7 @@ Las reglas son las siguientes:
 Examen
 ===========================================
 
-El examen de este tema tendrá lugar el viernes 14 de marzo de 2017.
+El examen de este tema tendrá lugar el miércoles 23  marzo de 2017.
 
 
 
