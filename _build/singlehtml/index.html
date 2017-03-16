@@ -4965,6 +4965,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
   <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;CX-124&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;peso&gt;</span>17.50<span class="nt">&lt;/peso&gt;</span>
   <span class="nt">&lt;/producto&gt;</span>
+  <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;CX-124&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>17.50<span class="nt">&lt;/peso&gt;</span>
+  <span class="nt">&lt;/producto&gt;</span>
 <span class="nt">&lt;/listaproductos&gt;</span>
 </pre></div>
 </div>
@@ -4975,11 +4978,87 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Todo producto <em>puede tener (optativo)</em> un elemento descripción que es de tipo texto.</li>
 <li>Todo producto <strong>debe tener</strong> un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0</li>
 </ol>
+<p>La solución se muestra a continuación:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
+  <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaproductos&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoLista&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoLista&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:complexContent&gt;</span>
+      <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+          <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;producto&quot;</span>
+                       <span class="na">type=</span><span class="s">&quot;tipoProducto&quot;</span>
+                       <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+      <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:complexContent&gt;</span>
+  <span class="nt">&lt;/xsd:complexType&gt;</span>
+  <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoProducto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:complexContent&gt;</span>
+      <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+          <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;descripcion&quot;</span>
+                       <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
+                       <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                       <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;codigo&quot;</span>
+                       <span class="na">type=</span><span class="s">&quot;tipoCodigo&quot;</span>
+                       <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:complexContent&gt;</span>
+  <span class="nt">&lt;/xsd:complexType&gt;</span>
+  <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:decimal&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsd:minInclusive</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:restriction&gt;</span>
+  <span class="nt">&lt;/xsd:simpleType&gt;</span>
+  <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoCodigo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsd:pattern</span> <span class="na">value=</span><span class="s">&quot;[A-Z]{2}-[0-9]{2,3}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:restriction&gt;</span>
+  <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-validacion-de-componentes">
+<h4>Ejercicio: validación de componentes<a class="headerlink" href="#ejercicio-validacion-de-componentes" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Validar un fichero como este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listacomponentes&gt;</span>
+  <span class="nt">&lt;componente&gt;</span>
+    <span class="nt">&lt;tarjetagrafica&gt;</span>
+      <span class="nt">&lt;memoria&gt;</span>2GB<span class="nt">&lt;/memoria&gt;</span>
+      <span class="nt">&lt;precio</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>190<span class="nt">&lt;/precio&gt;</span>
+    <span class="nt">&lt;/tarjetagrafica&gt;</span>
+  <span class="nt">&lt;/componente&gt;</span>
+  <span class="nt">&lt;componente</span> <span class="na">codigo=</span><span class="s">&quot;123456&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;monitor&gt;</span>
+      <span class="nt">&lt;tamanio&gt;</span>14<span class="nt">&lt;/tamanio&gt;</span>
+      <span class="nt">&lt;precio</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>99.49<span class="nt">&lt;/precio&gt;</span>
+    <span class="nt">&lt;/monitor&gt;</span>
+  <span class="nt">&lt;/componente&gt;</span>
+<span class="nt">&lt;/listacomponentes&gt;</span>
+</pre></div>
+</div>
+<p>Las reglas son las siguientes:</p>
+<ol class="arabic simple">
+<li>El elemento raíz se llama <code class="docutils literal"><span class="pre">listacomponentes</span></code>.</li>
+<li>Dentro de él puede haber uno o más elementos <code class="docutils literal"><span class="pre">componente</span></code></li>
+<li>Un componente puede ser una <code class="docutils literal"><span class="pre">tarjetagrafica</span></code> o un <code class="docutils literal"><span class="pre">monitor</span></code>.</li>
+<li>Un componente puede tener un atributo llamado <code class="docutils literal"><span class="pre">codigo</span></code> cuya estructura es siempre un dígito de 6 cifras.</li>
+<li>Una tarjeta gráfica siempre tiene dos elementos llamados <code class="docutils literal"><span class="pre">memoria</span></code> y <code class="docutils literal"><span class="pre">precio</span></code>.</li>
+<li>La memoria siempre es una cifra seguido de GB o TB.</li>
+<li>El tamaño del monitor siempre es un entero positivo.</li>
+<li>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal"><span class="pre">moneda</span></code> que solo puede valer &#8220;euros&#8221; o &#8220;dolares&#8221; y que se utiliza para saber en qué moneda está el precio.</li>
+</ol>
 </div>
 </div>
 <div class="section" id="examen">
 <h3>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>El examen de este tema tendrá lugar el viernes 14 de marzo de 2017.</p>
+<p>El examen de este tema tendrá lugar el miércoles 23  marzo de 2017.</p>
 </div>
 </div>
 <span id="document-tema6"></span><div class="section" id="recuperacion-de-informacion">

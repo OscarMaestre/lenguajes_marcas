@@ -1942,7 +1942,8 @@ Validar un fichero como este:
       <monitor>
         <tamanio>14</tamanio>
         <precio moneda="euros">99.49</precio>
-      <monitor>
+      </monitor>
+    </componente>
   </listacomponentes>
 
 Las reglas son las siguientes:
@@ -1954,12 +1955,92 @@ Las reglas son las siguientes:
 5. Una tarjeta gráfica siempre tiene dos elementos llamados ``memoria`` y ``precio``.
 6. La memoria siempre es una cifra seguido de GB o TB.
 7. El tamaño del monitor siempre es un entero positivo.
+8. El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo ``moneda`` que solo puede valer "euros" o "dolares" y que se utiliza para saber en qué moneda está el precio.
 
+La solución se muestra a continuación:
 
+.. code-block:: xml
 
-
-. El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo ``moneda`` que solo puede valer "euros" o "dolares" y que se utiliza para saber en qué moneda está el precio.
-
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listacomponentes" type="tipoLista"/>
+        <xsd:complexType name="tipoLista">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="componente"
+                                     type="tipoComponente"
+                                     maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoComponente">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:choice>
+                        <xsd:element name="tarjetagrafica" type="tipoTarjeta"/>
+                        <xsd:element name="monitor" type="tipoMonitor"/>
+                    </xsd:choice>
+                    <xsd:attribute name="codigo" type="tipoCodigo"/>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoCodigo">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[1-9][0-9]{5}"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoTarjeta">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="memoria" type="tipoMemoria"/>
+                        <xsd:element name="precio" type="tipoPrecio"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoMemoria">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[0-9]+[GT]B"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <!--Aqui definimos un precio con restriccion del cual
+        heredaremos despues para añadir el atributo a
+        la cantidad-->
+        <xsd:simpleType name="tipoPrecioRestringido">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive value="0"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <!--Aqui heredamos del tipo anterior y añadimos
+        el atributo-->
+        <xsd:complexType name="tipoPrecio">
+            <xsd:simpleContent>
+                <xsd:extension base="tipoPrecioRestringido">
+                    <xsd:attribute name="moneda" type="tipoMoneda"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        
+    
+        <xsd:simpleType name="tipoMoneda">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="euros"/>
+                <xsd:enumeration value="dolares"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoMonitor">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="tamanio" type="xsd:integer"/>
+                        <xsd:element name="precio"  type="tipoPrecio"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:schema>
 
 Examen
 ===========================================
