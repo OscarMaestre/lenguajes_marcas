@@ -103,3 +103,38 @@ class GeneradorTiposSimplesNumericos(object):
         esquema=GeneradorTiposSimples.get_elemento_simple(
             self.nombre_elemento, self.tipo, otros)
         return esquema
+    
+    
+class Elemento(object):
+    def __init__(self, nombre, tipo, minOccurs=None, maxOccurs=None):
+        self.nombre     =       nombre
+        self.tipo       =       tipo
+        self.minOccurs  =       minOccurs
+        self.maxOccurs  =       maxOccurs
+        
+    def __str__(self):
+        plantilla="<xsd:element name=\"{0}\" type=\"{1}\" {2} />"
+        apariciones=[]
+        if self.minOccurs!=None:
+            apariciones.append ( "minOccurs="+str(self.minOccurs) )
+        if self.maxOccurs!=None:
+            apariciones.append ( "maxOccurs="+str(self.maxOccurs) )
+        resto=" ".join ( apariciones )
+        cadena = plantilla.format (self.nombre, self.tipo, resto)
+        return cadena
+            
+class TipoSimpleCadenaConPatron(object):
+    def __init__(self, nombre_tipo, patron):
+        self.nombre_tipo    =   nombre_tipo
+        self.patron         =   patron
+        
+    def __str__(self):
+        plantilla="""
+        <xsd:simpleType name="{0}">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="{1}"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        """
+        cadena=plantilla.format(self.nombre_tipo, self.patron)
+        return cadena
