@@ -1924,6 +1924,26 @@ La solución se muestra a continuación:
     </xsd:simpleType>
   </xsd:schema>
 
+Ejercicio: validación de componentes
+--------------------------------------
+
+Validar un fichero como este:
+
+.. code-block:: xml
+
+  <listacomponentes>
+    <componente>
+      <tarjetagrafica>
+        <memoria>2GB</memoria>
+        <precio moneda="euros">190</precio>
+      </tarjetagrafica>
+    </componente>
+    <componente codigo="123456">
+      <monitor>
+        <tamanio>14</tamanio>
+        <precio moneda="euros">99.49</precio>
+      <monitor>
+  </listacomponentes>
 
 Examen
 ===========================================
