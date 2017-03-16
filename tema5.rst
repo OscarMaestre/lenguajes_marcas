@@ -1953,7 +1953,12 @@ Las reglas son las siguientes:
 4. Un componente puede tener un atributo llamado ``codigo`` cuya estructura es siempre un dígito de 6 cifras.
 5. Una tarjeta gráfica siempre tiene dos elementos llamados ``memoria`` y ``precio``.
 6. La memoria siempre es una cifra seguido de GB o TB.
-7. El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo ``moneda`` que solo puede valer "euros" o "dolares" y que se utiliza para saber en qué moneda está el precio.
+7. El tamaño del monitor siempre es un entero positivo.
+
+
+
+
+. El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo ``moneda`` que solo puede valer "euros" o "dolares" y que se utiliza para saber en qué moneda está el precio.
 
 
 Examen
