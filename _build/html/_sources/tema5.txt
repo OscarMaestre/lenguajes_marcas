@@ -1865,6 +1865,9 @@ Se pide validar correctamente algo como esto:
     <producto codigo="CX-124">
       <peso>17.50</peso>
     </producto>
+    <producto codigo="CX-124">
+      <peso>17.50</peso>
+    </producto>
   </listaproductos>
   
 Las reglas son:
@@ -1873,6 +1876,54 @@ Las reglas son:
 2. Todo producto tiene un "codigo" cuya estructura *dos mayúsculas seguidas de un guión seguido de dos o tres cifras*
 3. Todo producto *puede tener (optativo)* un elemento descripción que es de tipo texto.
 4. Todo producto **debe tener** un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0
+
+La solución se muestra a continuación:
+
+.. code-block:: xml
+
+  <xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="listaproductos" type="tipoLista"/>
+    <xsd:complexType name="tipoLista">
+      <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+          <xsd:sequence>
+            <xsd:element name="producto"
+                         type="tipoProducto"
+                         maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoProducto">
+      <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+          <xsd:sequence>
+            <xsd:element name="descripcion"
+                         type="xsd:string"
+                         minOccurs="0"/>
+            <xsd:element name="peso"
+                         type="tipoPeso"/>
+  
+          </xsd:sequence>
+          <xsd:attribute name="codigo"
+                         type="tipoCodigo"
+                         use="required"/>
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="tipoPeso">
+      <xsd:restriction base="xsd:decimal">
+        <xsd:minInclusive value="0"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoCodigo">
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-Z]{2}-[0-9]{2,3}"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:schema>
+
 
 Examen
 ===========================================
