@@ -1838,6 +1838,42 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 </div>
 </div>
+<div class="section" id="ejercicio-tipo-examen">
+<h2>Ejercicio tipo examen<a class="headerlink" href="#ejercicio-tipo-examen" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se necesita crear un esquema que controle la correcta sintaxis de ficheros con este estilo:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;productosfinancieros&gt;</span>
+    <span class="nt">&lt;producto&gt;</span>
+        <span class="nt">&lt;bono&gt;</span>
+            <span class="nt">&lt;valoractual</span> <span class="na">moneda=</span><span class="s">&quot;yenes&quot;</span><span class="nt">&gt;</span>2.212<span class="nt">&lt;/valoractual&gt;</span>
+            <span class="nt">&lt;beneficio&gt;</span>-2.83<span class="nt">&lt;/beneficio&gt;</span>
+        <span class="nt">&lt;/bono&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto&gt;</span>
+        <span class="nt">&lt;futuro&gt;</span>
+            <span class="nt">&lt;elemento</span> <span class="na">idioma=</span><span class="s">&quot;espanol&quot;</span><span class="nt">&gt;</span>Petroleo<span class="nt">&lt;/elemento&gt;</span>
+            <span class="nt">&lt;beneficio&gt;</span>-3.83<span class="nt">&lt;/beneficio&gt;</span>
+        <span class="nt">&lt;/futuro&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto&gt;</span>
+        <span class="nt">&lt;acciones&gt;</span>
+            <span class="nt">&lt;empresa</span> <span class="na">pais=</span><span class="s">&quot;usa&quot;</span><span class="nt">&gt;</span>ENRON<span class="nt">&lt;/empresa&gt;</span>
+            <span class="nt">&lt;beneficio&gt;</span>2.91<span class="nt">&lt;/beneficio&gt;</span>
+        <span class="nt">&lt;/acciones&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/productosfinancieros&gt;</span>
+</pre></div>
+</div>
+<p>Las reglas concretas son las siguientes:</p>
+<ol class="arabic simple">
+<li>El elemento raíz es <code class="docutils literal"><span class="pre">&lt;productosfinancieros&gt;</span></code>. Dentro de él debe haber uno o más elementos <code class="docutils literal"><span class="pre">&lt;producto&gt;</span></code>.</li>
+<li>Un <code class="docutils literal"><span class="pre">&lt;producto&gt;</span></code> puede ser de tres tipos: <code class="docutils literal"><span class="pre">&lt;bono&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;futuro&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;acciones&gt;</span></code>.</li>
+<li>Todos los productos tienen siempre un elemento hijo llamado <code class="docutils literal"><span class="pre">&lt;beneficio&gt;</span></code> que puede ser un número con dos decimales (puede ser positivo o negativo).</li>
+<li>Todo <code class="docutils literal"><span class="pre">&lt;bono&gt;</span></code> puede tener dentro un elemento llamado <code class="docutils literal"><span class="pre">&lt;valoractual&gt;</span></code> que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales.</li>
+<li>Todo <code class="docutils literal"><span class="pre">&lt;futuro&gt;</span></code> tiene un hijo llamado <code class="docutils literal"><span class="pre">&lt;elemento&gt;</span></code> que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado <code class="docutils literal"><span class="pre">idioma</span></code> que indica el idioma en el que está escrita la cadena.</li>
+<li>Las acciones siempre tienen un elemento <code class="docutils literal"><span class="pre">&lt;empresa&gt;</span></code> que indica el nombre de la empresa y un atributo llamado <code class="docutils literal"><span class="pre">país</span></code> que indica de donde es la empresa. De momento queremos limitarnos a los países <code class="docutils literal"><span class="pre">usa</span></code>, <code class="docutils literal"><span class="pre">alemania</span></code>, <code class="docutils literal"><span class="pre">japon</span></code> y <code class="docutils literal"><span class="pre">espana</span></code>.</li>
+</ol>
+<p>Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es <strong>obligatorio</strong>. Si algo es optativo nos dirán &#8220;puede tener dentro&#8221;, &#8220;puede contener&#8221;, &#8220;puede aparecer&#8221;, etc...</p>
+</div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El examen de este tema tendrá lugar el miércoles 23  marzo de 2017.</p>
@@ -1929,6 +1965,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>
 <li><a class="reference internal" href="#examen">Examen</a></li>
 </ul>
 </li>

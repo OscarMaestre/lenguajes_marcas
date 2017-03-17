@@ -2042,6 +2042,46 @@ La solución se muestra a continuación:
         </xsd:complexType>
     </xsd:schema>
 
+
+Ejercicio tipo examen
+===============================
+
+Se necesita crear un esquema que controle la correcta sintaxis de ficheros con este estilo:
+
+.. code-block:: xml
+
+    <productosfinancieros>
+        <producto>
+            <bono>
+                <valoractual moneda="yenes">2.212</valoractual>
+                <beneficio>-2.83</beneficio>
+            </bono>
+        </producto>
+        <producto>
+            <futuro>
+                <elemento idioma="espanol">Petroleo</elemento>
+                <beneficio>-3.83</beneficio>
+            </futuro>
+        </producto>
+        <producto>
+            <acciones>
+                <empresa pais="usa">ENRON</empresa>
+                <beneficio>2.91</beneficio>
+            </acciones>
+        </producto>
+    </productosfinancieros>
+
+Las reglas concretas son las siguientes:
+
+1. El elemento raíz es ``<productosfinancieros>``. Dentro de él debe haber uno o más elementos ``<producto>``.
+2. Un ``<producto>`` puede ser de tres tipos: ``<bono>``, ``<futuro>`` y ``<acciones>``.
+3. Todos los productos tienen siempre un elemento hijo llamado ``<beneficio>`` que puede ser un número con dos decimales (puede ser positivo o negativo).
+4. Todo ``<bono>`` puede tener dentro un elemento llamado ``<valoractual>`` que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales.
+5. Todo ``<futuro>`` tiene un hijo llamado ``<elemento>`` que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado ``idioma`` que indica el idioma en el que está escrita la cadena.
+6. Las acciones siempre tienen un elemento ``<empresa>`` que indica el nombre de la empresa y un atributo llamado ``país`` que indica de donde es la empresa. De momento queremos limitarnos a los países ``usa``, ``alemania``, ``japon`` y ``espana``.
+
+Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es **obligatorio**. Si algo es optativo nos dirán "puede tener dentro", "puede contener", "puede aparecer", etc...
+
 Examen
 ===========================================
 
