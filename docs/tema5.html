@@ -1431,33 +1431,6 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Un atributo optativo llamado <code class="docutils literal"><span class="pre">cantidad</span></code> que indica su compra. Es un entero con valores de entre 0 y 1000.</li>
 </ul>
 </div>
-<div class="section" id="ejercicio-inventario">
-<h3>Ejercicio: inventario<a class="headerlink" href="#ejercicio-inventario" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Varios administradores necesitan intercambiar información sobre inventario de material de oficina. Para ello, han llegado a un acuerdo sobre lo que se permite en un fichero XML de inventario. La idea básica es permitir ficheros como este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
-    <span class="nt">&lt;objeto</span> <span class="na">codigo=</span><span class="s">&quot;545333&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;mesa&gt;</span>
-            <span class="nt">&lt;peso&gt;</span>4.55<span class="nt">&lt;/peso&gt;</span>
-            <span class="nt">&lt;superficie</span> <span class="na">unidad=</span><span class="s">&quot;cm2&quot;</span><span class="nt">&gt;</span>100<span class="nt">&lt;/superficie&gt;</span>
-        <span class="nt">&lt;/mesa&gt;</span>
-    <span class="nt">&lt;/objeto&gt;</span>
-    <span class="nt">&lt;objeto</span> <span class="na">codigo=</span><span class="s">&quot;343987&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;silla&gt;</span>
-            <span class="nt">&lt;peso&gt;</span>3.50<span class="nt">&lt;/peso&gt;</span>
-        <span class="nt">&lt;/silla&gt;</span>
-    <span class="nt">&lt;/objeto&gt;</span>
-<span class="nt">&lt;/inventario&gt;</span>
-</pre></div>
-</div>
-<p>Las reglas concretas son estas:</p>
-<ol class="arabic simple">
-<li>Todo objeto tiene un atributo código de 6 cifras.</li>
-<li>Dentro de <code class="docutils literal"><span class="pre">&lt;objeto&gt;</span></code> puede haber uno de estos dos elementos hijo: un elemento <code class="docutils literal"><span class="pre">&lt;mesa&gt;</span></code> o un elemento <code class="docutils literal"><span class="pre">&lt;silla&gt;</span></code>.</li>
-<li>Toda mesa tiene un elemento hijo <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code>. El peso siempre es un decimal positivo con dos cifras decimales.</li>
-<li>Toda mesa tiene una <code class="docutils literal"><span class="pre">&lt;superficie&gt;</span></code>. La superficie es un <code class="docutils literal"><span class="pre">unsignedInt</span></code>. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: <code class="docutils literal"><span class="pre">m2</span></code> o <code class="docutils literal"><span class="pre">cm2</span></code>.</li>
-<li>Toda silla tiene siempre un <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code> y las reglas de ese peso son exactamente las mismas que las reglas de <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code> del elemento <code class="docutils literal"><span class="pre">&lt;mesa&gt;</span></code></li>
-</ol>
-</div>
 <div class="section" id="lista-de-clientes-como-xml-schemas">
 <h3>Lista de clientes como XML Schemas<a class="headerlink" href="#lista-de-clientes-como-xml-schemas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En este apartado volveremos a ver un problema que ya resolvíamos con DTD: supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code> deseamos permitir uno o más elementos <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> todos deberán tener <code class="docutils literal"><span class="pre">&lt;cif&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;nombre&gt;</span></code> y en ese orden. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> puede aparecer o no un elemento <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> para indicar que ese cliente exige un máximo de plazo. Como no todo el mundo usa plazos el <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> es optativo.</p>
@@ -1864,6 +1837,159 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-inventario">
+<h3>Ejercicio: inventario<a class="headerlink" href="#ejercicio-inventario" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Varios administradores necesitan intercambiar información sobre inventario de material de oficina. Para ello, han llegado a un acuerdo sobre lo que se permite en un fichero XML de inventario. La idea básica es permitir ficheros como este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;objeto</span> <span class="na">codigo=</span><span class="s">&quot;545333&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mesa&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>4.55<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;superficie</span> <span class="na">unidad=</span><span class="s">&quot;cm2&quot;</span><span class="nt">&gt;</span>100<span class="nt">&lt;/superficie&gt;</span>
+        <span class="nt">&lt;/mesa&gt;</span>
+    <span class="nt">&lt;/objeto&gt;</span>
+    <span class="nt">&lt;objeto</span> <span class="na">codigo=</span><span class="s">&quot;343987&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;silla&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>3.50<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;/silla&gt;</span>
+    <span class="nt">&lt;/objeto&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<p>Las reglas concretas son estas:</p>
+<ol class="arabic simple">
+<li>Todo objeto tiene un atributo código de 6 cifras.</li>
+<li>Dentro de <code class="docutils literal"><span class="pre">&lt;objeto&gt;</span></code> puede haber uno de estos dos elementos hijo: un elemento <code class="docutils literal"><span class="pre">&lt;mesa&gt;</span></code> o un elemento <code class="docutils literal"><span class="pre">&lt;silla&gt;</span></code>.</li>
+<li>Toda mesa tiene un elemento hijo <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code>. El peso siempre es un decimal positivo con dos cifras decimales.</li>
+<li>Toda mesa tiene una <code class="docutils literal"><span class="pre">&lt;superficie&gt;</span></code>. La superficie es un <code class="docutils literal"><span class="pre">unsignedInt</span></code>. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: <code class="docutils literal"><span class="pre">m2</span></code> o <code class="docutils literal"><span class="pre">cm2</span></code>.</li>
+<li>Toda silla tiene siempre un <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code> y las reglas de ese peso son exactamente las mismas que las reglas de <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code> del elemento <code class="docutils literal"><span class="pre">&lt;mesa&gt;</span></code></li>
+</ol>
+<p>La solución podría descomponerse de la forma siguiente:</p>
+<p>Resolvamos primero el problema de crear un tipo para el elemento <code class="docutils literal"><span class="pre">&lt;peso&gt;</span></code>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;&lt;/xsd:element&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:decimal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minInclusive</span>  <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:fractionDigits</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Ahora resolvamos el problema del elemento <code class="docutils literal"><span class="pre">&lt;silla&gt;</span></code>. Para resolverlo, podemos aprovechar el tipo <code class="docutils literal"><span class="pre">tipoPeso</span></code> que acabamos de crear:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;silla&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoSilla&quot;</span><span class="nt">&gt;&lt;/xsd:element&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:decimal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minInclusive</span>  <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:fractionDigits</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoSilla&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                             <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Ahora resolveremos el problema de la superficie:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;superficie&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoSuperficie&quot;</span><span class="nt">&gt;&lt;/xsd:element&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:decimal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minInclusive</span>  <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:fractionDigits</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoSilla&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                             <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoSuperficie&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:unsignedInt&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;unidad&quot;</span>
+                           <span class="na">type=</span><span class="s">&quot;tipoUnidad&quot;</span>
+                           <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoUnidad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;m2&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;cm2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Y apoyándonos en eso haremos la mesa:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;mesa&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoMesa&quot;</span><span class="nt">&gt;&lt;/xsd:element&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:decimal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minInclusive</span>  <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:fractionDigits</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoSilla&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                             <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoSuperficie&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:unsignedInt&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;unidad&quot;</span>
+                           <span class="na">type=</span><span class="s">&quot;tipoUnidad&quot;</span>
+                           <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoUnidad&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;m2&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;cm2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoMesa&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;superficie&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;tipoSuperficie&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+<p>Y ya solo queda indicar que un inventario es una lista de objetos.</p>
+</div>
 </div>
 <div class="section" id="ejercicio-tipo-examen">
 <h2>Ejercicio tipo examen<a class="headerlink" href="#ejercicio-tipo-examen" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1903,7 +2029,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El examen de este tema tendrá lugar el miércoles 23  marzo de 2017.</p>
+<p>El examen de este tema tendrá lugar el miércoles 22  marzo de 2017.</p>
 </div>
 </div>
 
@@ -1984,13 +2110,13 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#solucion-al-atributo-con-solo-ciertos-valores">Solución al atributo con solo ciertos valores</a></li>
 <li><a class="reference internal" href="#ejercicio-productos-con-atributos">Ejercicio: productos con atributos</a></li>
 <li><a class="reference internal" href="#ejercicio-clientes-con-informacion-adicional">Ejercicio: clientes con información adicional</a></li>
-<li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
 <li><a class="reference internal" href="#lista-de-clientes-como-xml-schemas">Lista de clientes como XML Schemas</a></li>
 <li><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
+<li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>

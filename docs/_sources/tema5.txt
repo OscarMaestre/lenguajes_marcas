@@ -1600,42 +1600,6 @@ Se desea crear un esquema XML que permita validar un elemento llamado ``cliente`
 * Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000. 
 
 
-Ejercicio: inventario
-------------------------
-Varios administradores necesitan intercambiar información sobre inventario de material de oficina. Para ello, han llegado a un acuerdo sobre lo que se permite en un fichero XML de inventario. La idea básica es permitir ficheros como este:
-
-.. code-block:: xml
-
-    <inventario>
-        <objeto codigo="545333">
-            <mesa>
-                <peso>4.55</peso>
-                <superficie unidad="cm2">100</superficie>
-            </mesa>
-        </objeto>
-        <objeto codigo="343987">
-            <silla>
-                <peso>3.50</peso>
-            </silla>
-        </objeto>
-    </inventario>
-
-Las reglas concretas son estas:
-
-1. Todo objeto tiene un atributo código de 6 cifras.
-2. Dentro de ``<objeto>`` puede haber uno de estos dos elementos hijo: un elemento ``<mesa>`` o un elemento ``<silla>``.
-3. Toda mesa tiene un elemento hijo ``<peso>``. El peso siempre es un decimal positivo con dos cifras decimales.
-4. Toda mesa tiene una ``<superficie>``. La superficie es un ``unsignedInt``. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: ``m2`` o ``cm2``.
-5. Toda silla tiene siempre un ``<peso>`` y las reglas de ese peso son exactamente las mismas que las reglas de ``<peso>`` del elemento ``<mesa>``
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2083,6 +2047,175 @@ La solución se muestra a continuación:
     </xsd:schema>
 
 
+Ejercicio: inventario
+------------------------
+Varios administradores necesitan intercambiar información sobre inventario de material de oficina. Para ello, han llegado a un acuerdo sobre lo que se permite en un fichero XML de inventario. La idea básica es permitir ficheros como este:
+
+.. code-block:: xml
+
+    <inventario>
+        <objeto codigo="545333">
+            <mesa>
+                <peso>4.55</peso>
+                <superficie unidad="cm2">100</superficie>
+            </mesa>
+        </objeto>
+        <objeto codigo="343987">
+            <silla>
+                <peso>3.50</peso>
+            </silla>
+        </objeto>
+    </inventario>
+
+Las reglas concretas son estas:
+
+1. Todo objeto tiene un atributo código de 6 cifras.
+2. Dentro de ``<objeto>`` puede haber uno de estos dos elementos hijo: un elemento ``<mesa>`` o un elemento ``<silla>``.
+3. Toda mesa tiene un elemento hijo ``<peso>``. El peso siempre es un decimal positivo con dos cifras decimales.
+4. Toda mesa tiene una ``<superficie>``. La superficie es un ``unsignedInt``. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: ``m2`` o ``cm2``.
+5. Toda silla tiene siempre un ``<peso>`` y las reglas de ese peso son exactamente las mismas que las reglas de ``<peso>`` del elemento ``<mesa>``
+
+La solución podría descomponerse de la forma siguiente:
+
+Resolvamos primero el problema de crear un tipo para el elemento ``<peso>``.
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="peso"
+                     type="tipoPeso"></xsd:element>
+        <xsd:simpleType name="tipoPeso">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive  value="0"/>
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:schema>
+
+Ahora resolvamos el problema del elemento ``<silla>``. Para resolverlo, podemos aprovechar el tipo ``tipoPeso`` que acabamos de crear:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="silla"
+                     type="tipoSilla"></xsd:element>
+        <xsd:simpleType name="tipoPeso">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive  value="0"/>
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoSilla">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="peso"
+                                 type="tipoPeso"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:schema>
+
+Ahora resolveremos el problema de la superficie:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="superficie"
+                     type="tipoSuperficie"></xsd:element>
+        <xsd:simpleType name="tipoPeso">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive  value="0"/>
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoSilla">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="peso"
+                                 type="tipoPeso"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoSuperficie">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:unsignedInt">
+                    <xsd:attribute name="unidad"
+                               type="tipoUnidad"
+                               use="required"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoUnidad">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="m2"/>
+                <xsd:enumeration value="cm2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:schema>
+
+
+Y apoyándonos en eso haremos la mesa:
+
+.. code-block:: xml
+    
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="mesa"
+                     type="tipoMesa"></xsd:element>
+        <xsd:simpleType name="tipoPeso">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive  value="0"/>
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoSilla">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="peso"
+                                 type="tipoPeso"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoSuperficie">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:unsignedInt">
+                    <xsd:attribute name="unidad"
+                               type="tipoUnidad"
+                               use="required"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoUnidad">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="m2"/>
+                <xsd:enumeration value="cm2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoMesa">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="peso"
+                                     type="tipoPeso"/>
+                        <xsd:element name="superficie"
+                                     type="tipoSuperficie"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:schema>
+
+Y ya solo queda indicar que un inventario es una lista de objetos.
+
+
+
+
+
 Ejercicio tipo examen
 ===============================
 
@@ -2125,7 +2258,7 @@ Recuérdese que siempre que no nos digan nada, se supone que un elemento o atrib
 Examen
 ===========================================
 
-El examen de este tema tendrá lugar el miércoles 23  marzo de 2017.
+El examen de este tema tendrá lugar el miércoles 22  marzo de 2017.
 
 
 
