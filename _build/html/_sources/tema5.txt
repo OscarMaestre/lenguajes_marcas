@@ -1472,7 +1472,7 @@ Pero no debe validar ninguno de los siguientes:
 Solución a las cantidades limitadas con atributo divisa
 ---------------------------------------------------------
 
-Crearemos un tipo llamado "tipoCantidad". Dicho tipo *ya no puede ser un simpleType ya que necesitamos que haya atributos**. Como no necesitamos que tenga subelementos dentro este ``complexType`` llevará dentro un ``simpleContent`` (y no un ``complexContent``).
+Crearemos un tipo llamado "tipoCantidad". Dicho tipo *ya no puede ser un simpleType ya que necesitamos que haya atributos*. Como no necesitamos que tenga dentro subelementos entonces este ``complexType`` llevará dentro un ``simpleContent`` (y no un ``complexContent``).
 
 Aparte de eso, como queremos "ampliar" un elemento para que acepte tener dentro un atributo obligatorio "cantidad" usaremos una ``<extension>``. Así, el posible esquema sería este:
 
