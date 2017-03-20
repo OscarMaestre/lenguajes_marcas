@@ -1599,6 +1599,46 @@ Se desea crear un esquema XML que permita validar un elemento llamado ``cliente`
 
 * Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000. 
 
+
+Ejercicio: inventario
+------------------------
+Varios administradores necesitan intercambiar información sobre inventario de material de oficina. Para ello, han llegado a un acuerdo sobre lo que se permite en un fichero XML de inventario. La idea básica es permitir ficheros como este:
+
+.. code-block:: xml
+
+    <inventario>
+        <objeto codigo="545333">
+            <mesa>
+                <peso>4.55</peso>
+                <superficie unidad="cm2">100</superficie>
+            </mesa>
+        </objeto>
+        <objeto codigo="343987">
+            <silla>
+                <peso>3.50</peso>
+            </silla>
+        </objeto>
+    </inventario>
+
+Las reglas concretas son estas:
+
+1. Todo objeto tiene un atributo código de 6 cifras.
+2. Dentro de ``<objeto>`` puede haber uno de estos dos elementos hijo: un elemento ``<mesa>`` o un elemento ``<silla>``.
+3. Toda mesa tiene un elemento hijo ``<peso>``. El peso siempre es un decimal positivo con dos cifras decimales.
+4. Toda mesa tiene una ``<superficie>``. La superficie es un ``unsignedInt``. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: ``m2`` o ``cm2``.
+5. Toda silla tiene siempre un ``<peso>`` y las reglas de ese peso son exactamente las mismas que las reglas de ``<peso>`` del elemento ``<mesa>``
+
+
+
+
+
+
+
+
+
+
+
+
 Lista de clientes como XML Schemas
 ------------------------------------
 
