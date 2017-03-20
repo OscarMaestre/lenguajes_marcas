@@ -2319,16 +2319,133 @@ Las reglas concretas son las siguientes:
 1. El elemento raíz es ``<productosfinancieros>``. Dentro de él debe haber uno o más elementos ``<producto>``.
 2. Un ``<producto>`` puede ser de tres tipos: ``<bono>``, ``<futuro>`` y ``<acciones>``.
 3. Todos los productos tienen siempre un elemento hijo llamado ``<beneficio>`` que puede ser un número con dos decimales (puede ser positivo o negativo).
-4. Todo ``<bono>`` puede tener dentro un elemento llamado ``<valoractual>`` que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales.
+4. Todo ``<bono>`` puede tener dentro un elemento llamado ``<valoractual>`` que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales. El elemento ``<valoractual>`` deberá llevar dentro un atributo llamado ``moneda`` que solo puede tomar los valores ``dolares``, ``euros`` o ``yenes``.
 5. Todo ``<futuro>`` tiene un hijo llamado ``<elemento>`` que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado ``idioma`` que indica el idioma en el que está escrita la cadena.
 6. Las acciones siempre tienen un elemento ``<empresa>`` que indica el nombre de la empresa y un atributo llamado ``país`` que indica de donde es la empresa. De momento queremos limitarnos a los países ``usa``, ``alemania``, ``japon`` y ``espana``.
 
 Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es **obligatorio**. Si algo es optativo nos dirán "puede tener dentro", "puede contener", "puede aparecer", etc...
 
+
+Una posible solución sería esta:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="productosfinancieros"
+                     type="tipoProductosFinancieros"/>
+        <xsd:complexType name="tipoProductosFinancieros">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="producto"
+                                     type="tipoProducto"
+                                     maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoProducto">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:choice>
+                        <xsd:element name="bono"
+                                     type="tipoBono"/>
+                        <xsd:element name="futuro"
+                                     type="tipoFuturo"/>
+                        <xsd:element name="acciones"
+                                     type="tipoAcciones"/>
+                    </xsd:choice>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoBono">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="valoractual"
+                                     type="tipoValorActual"/>
+                        <xsd:element name="beneficio"
+                                     type="tipoBeneficio"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoValorActual">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:decimal">
+                    <xsd:attribute name="moneda" type="tipoMoneda"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoMoneda">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="dolares"/>
+                <xsd:enumeration value="euros"/>
+                <xsd:enumeration value="yenes"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:simpleType name="tipoBeneficio">
+            <xsd:restriction base="xsd:decimal">
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:complexType name="tipoFuturo">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="elemento"
+                                     type="tipoElemento"/>
+                        <xsd:element name="beneficio"
+                                     type="tipoBeneficio"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <!--No nos dicen nada sobre los posibles idiomas,
+        así que podemos asumir que el idioma será una cadena cualquiera-->
+        <xsd:complexType name="tipoElemento">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="idioma"
+                                   type="xsd:string"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoAcciones">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="empresa"
+                                     type="tipoEmpresa"/>
+                        <xsd:element name="beneficio"
+                                     type="tipoBeneficio"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoEmpresa">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="pais"
+                                   type="tipoPais"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoPais">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="alemania"/>
+                <xsd:enumeration value="japon"/>
+                <xsd:enumeration value="espania"/>
+                <xsd:enumeration value="usa"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:schema>
+
+
 Examen
 ===========================================
 
-El examen de este tema tendrá lugar el miércoles 22  marzo de 2017.
+El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 
