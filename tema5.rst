@@ -2054,13 +2054,13 @@ Varios administradores necesitan intercambiar información sobre inventario de m
 .. code-block:: xml
 
     <inventario>
-        <objeto codigo="545333">
+        <objeto>
             <mesa>
                 <peso>4.55</peso>
                 <superficie unidad="cm2">100</superficie>
             </mesa>
         </objeto>
-        <objeto codigo="343987">
+        <objeto>
             <silla>
                 <peso>3.50</peso>
             </silla>
@@ -2069,11 +2069,10 @@ Varios administradores necesitan intercambiar información sobre inventario de m
 
 Las reglas concretas son estas:
 
-1. Todo objeto tiene un atributo código de 6 cifras.
-2. Dentro de ``<objeto>`` puede haber uno de estos dos elementos hijo: un elemento ``<mesa>`` o un elemento ``<silla>``.
-3. Toda mesa tiene un elemento hijo ``<peso>``. El peso siempre es un decimal positivo con dos cifras decimales.
-4. Toda mesa tiene una ``<superficie>``. La superficie es un ``unsignedInt``. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: ``m2`` o ``cm2``.
-5. Toda silla tiene siempre un ``<peso>`` y las reglas de ese peso son exactamente las mismas que las reglas de ``<peso>`` del elemento ``<mesa>``
+1. Dentro de ``<objeto>`` puede haber uno de estos dos elementos hijo: un elemento ``<mesa>`` o un elemento ``<silla>``.
+2. Toda mesa tiene un elemento hijo ``<peso>``. El peso siempre es un decimal positivo con dos cifras decimales.
+3. Toda mesa tiene una ``<superficie>``. La superficie es un ``unsignedInt``. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: ``m2`` o ``cm2``.
+4. Toda silla tiene siempre un ``<peso>`` y las reglas de ese peso son exactamente las mismas que las reglas de ``<peso>`` del elemento ``<mesa>``
 
 La solución podría descomponerse de la forma siguiente:
 
@@ -2210,7 +2209,78 @@ Y apoyándonos en eso haremos la mesa:
         </xsd:complexType>
     </xsd:schema>
 
-Y ya solo queda indicar que un inventario es una lista de objetos.
+Y ya solo queda indicar que un inventario es una lista de objetos (pondremos el ``maxOccurs`` a ``unbounded``) e indicaremos que un objeto puede ser una elección (``<xsd:choice>``) entre dos tipos de objetos.
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="inventario"
+                 type="tipoInventario"/>
+    <xsd:simpleType name="tipoPeso">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive  value="0"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="tipoSilla">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="peso"
+                             type="tipoPeso"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoSuperficie">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:unsignedInt">
+                <xsd:attribute name="unidad"
+                           type="tipoUnidad"
+                           use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="tipoUnidad">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="m2"/>
+            <xsd:enumeration value="cm2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="tipoMesa">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="peso"
+                                 type="tipoPeso"/>
+                    <xsd:element name="superficie"
+                                 type="tipoSuperficie"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoInventario">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="objeto"
+                                 type="tipoObjeto"
+                                 maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoObjeto">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:choice>
+                    <xsd:element name="mesa" type="tipoMesa"/>
+                    <xsd:element name="silla" type="tipoSilla"/>
+                </xsd:choice>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    </xsd:schema>
 
 
 
