@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
-    <link rel="next" title="Transformación de información" href="tema_xslt.html" />
+    <link rel="next" title="Recuperación de información" href="tema6.html" />
     <link rel="prev" title="Javascript" href="tema4.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -2209,6 +2209,38 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-tipo-examen-ii">
+<h2>Ejercicio tipo examen (II)<a class="headerlink" href="#ejercicio-tipo-examen-ii" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Crear una DTD que permita validar un fichero como el siguiente:</p>
+<p>Las reglas son las siguientes:</p>
+<ul class="simple">
+<li>El elemento raíz es <code class="docutils literal"><span class="pre">&lt;inventario&gt;</span></code>.</li>
+<li>Dentro de <code class="docutils literal"><span class="pre">&lt;inventario&gt;</span></code> debe haber una <code class="docutils literal"><span class="pre">&lt;mesa&gt;</span></code> o un <code class="docutils literal"><span class="pre">&lt;ordenador&gt;</span></code>.</li>
+<li>Dentro de mesa puede haber (o no) un primer elemento <code class="docutils literal"><span class="pre">&lt;tipo&gt;</span></code>. Despues debe haber un elemento <code class="docutils literal"><span class="pre">&lt;localizacion&gt;</span></code>.</li>
+<li>Dentro de ordenador puede haber 3 elementos optativos pero que de aparecer lo hacen en el siguiente orden.</li>
+<li>Primero un elemento <code class="docutils literal"><span class="pre">&lt;procesador&gt;</span></code> que puede llevar un atributo <code class="docutils literal"><span class="pre">fabricante</span></code>.</li>
+<li>Despues un elemento <code class="docutils literal"><span class="pre">&lt;memoria&gt;</span></code> que debe llevar obligatoriamente un atributo <code class="docutils literal"><span class="pre">unidad</span></code>.</li>
+<li>Despues un elemento <code class="docutils literal"><span class="pre">&lt;discoduro&gt;</span></code>.</li>
+</ul>
+<p>Una posible solución sería la siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;!ELEMENT inventario (objeto+)&gt;</span>
+<span class="cp">&lt;!ELEMENT objeto (mesa|ordenador)&gt;</span>
+<span class="cp">&lt;!ATTLIST objeto codigo CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ELEMENT mesa (tipo?, localizacion)&gt;</span>
+<span class="cp">&lt;!ELEMENT tipo (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT localizacion (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT ordenador</span>
+<span class="cp">    (procesador?, memoria?, discoduro?)&gt;</span>
+<span class="cp">&lt;!ELEMENT procesador (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ATTLIST procesador fabricante</span>
+<span class="cp">        CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ELEMENT memoria (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ATTLIST memoria unidad</span>
+<span class="cp">        CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ELEMENT discoduro (#PCDATA)&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.</p>
@@ -2302,6 +2334,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>
+<li><a class="reference internal" href="#ejercicio-tipo-examen-ii">Ejercicio tipo examen (II)</a></li>
 <li><a class="reference internal" href="#examen">Examen</a></li>
 </ul>
 </li>
@@ -2311,7 +2344,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="tema4.html" title="capítulo anterior">Javascript</a></li>
-      <li>Next: <a href="tema_xslt.html" title="próximo capítulo">Transformación de información</a></li>
+      <li>Next: <a href="tema6.html" title="próximo capítulo">Recuperación de información</a></li>
   </ul></li>
 </ul>
 </div>

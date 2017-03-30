@@ -2441,6 +2441,61 @@ Una posible solución sería esta:
         </xsd:simpleType>
     </xsd:schema>
 
+Ejercicio tipo examen (II)
+===============================
+Crear una DTD que permita validar un fichero como el siguiente:
+
+.. code-block::
+
+    <inventario>
+        <objeto codigo="MM2809">
+            <mesa>
+                <tipo>Oficina</tipo>
+                <localizacion>B09</localizacion>
+            </mesa>
+        </objeto>
+        <objeto>
+            <ordenador>
+                <procesador fabricante="Intel">
+                    i3
+                </procesador>
+                <memoria unidad="GB">2</memoria>
+                <discoduro>520</discoduro>
+            </ordenador>
+        </objeto>
+    </inventario>
+
+Las reglas son las siguientes:
+
+* El elemento raíz es ``<inventario>``.
+* Dentro de ``<inventario>`` debe haber una ``<mesa>`` o un ``<ordenador>``.
+* Dentro de mesa puede haber (o no) un primer elemento ``<tipo>``. Despues debe haber un elemento ``<localizacion>``.
+* Dentro de ordenador puede haber 3 elementos optativos pero que de aparecer lo hacen en el siguiente orden.
+* Primero un elemento ``<procesador>`` que puede llevar un atributo ``fabricante``.
+* Despues un elemento ``<memoria>`` que debe llevar obligatoriamente un atributo ``unidad``.
+* Despues un elemento ``<discoduro>``.
+
+Una posible solución sería la siguiente:
+
+.. code-block:: xml
+
+    <!ELEMENT inventario (objeto+)>
+    <!ELEMENT objeto (mesa|ordenador)>
+    <!ATTLIST objeto codigo CDATA #IMPLIED>
+    <!ELEMENT mesa (tipo?, localizacion)>
+    <!ELEMENT tipo (#PCDATA)>
+    <!ELEMENT localizacion (#PCDATA)>
+    <!ELEMENT ordenador
+        (procesador?, memoria?, discoduro?)>
+    <!ELEMENT procesador (#PCDATA)>
+    <!ATTLIST procesador fabricante
+            CDATA #IMPLIED>
+    <!ELEMENT memoria (#PCDATA)>
+    <!ATTLIST memoria unidad
+            CDATA #REQUIRED>
+    <!ELEMENT discoduro (#PCDATA)>
+    
+
 
 Examen
 ===========================================
