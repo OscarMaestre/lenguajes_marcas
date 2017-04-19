@@ -404,7 +404,7 @@ Algunos navegadores no ejecutan XSL por seguridad. Los detalles de como “abrir
 
 Cabe destacar que esta hoja simplemente genera HTML básico pero no recoge ningún dato del XML original.	
 
-Ejercicio
+Ejercicio (carga de estilos)
 ----------------------------------------------
 
 Hacer que el archivo XML de libros cargue esta hoja de estilos.
@@ -420,9 +420,75 @@ Solución: consiste en añadir una línea al archivo que referencie el archivo d
 		... (El resto es igual)
 	</catalogo>
 		
-	
+Ejercicio (conversion entre XMLs)
+-------------------------------------
 
-Ejercicio
+Dado el fichero de información del catálogo, transformar dicho XML en otro fichero en el que la etiqueta ``title`` vaya en español, es decir, que el resultado quede así:
+
+.. code-block:: xml
+
+  <catalogo>
+    <libro>
+      <title>Don Quijote</title>
+      <autor>Cervantes</autor>
+    </libro>
+    <libro>
+      <title>
+      Poeta en Nueva York
+      </title>
+      <autor>Lorca</autor>
+    </libro>
+  </catalogo>	
+
+
+La solución podría ser algo así:
+
+.. code-block:: xml
+
+  
+Ejercicio (generación de atributos)
+------------------------------------------
+Dado el archivo XML del catálogo generar un XML en el que el autor vaya como un atributo del título, es decir, que quede algo así:
+
+.. code-block:: xml
+
+  <catalogo>
+    <libro>
+      <titulo escritor="Cervantes">Don Quijote</titulo>
+    </libro>
+    <libro>
+      <titulo escritor="Lorca">
+      Poeta en Nueva York
+      </titulo>
+    </libro>
+  </catalogo>
+
+La solución:
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <xsl:template match="/">
+      <catalogo>
+        <xsl:for-each select="/catalogo/libro">
+          <libro>
+            <titulo>
+              <xsl:attribute name="escritor">
+                <xsl:value-of select="autor"/>
+              </xsl:attribute>
+              <xsl:value-of select="title"/>
+            </titulo>
+          </libro>
+        </xsl:for-each>
+      </catalogo>
+    </xsl:template>    
+  </xsl:stylesheet>
+                  
+
+Ejercicio (generacion)
 ----------------------------------------------
 Hacer que el XSL genere un HTML con información del archivo XML de libro.
 

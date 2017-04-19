@@ -396,8 +396,8 @@ esta</p>
 <p>Algunos navegadores no ejecutan XSL por seguridad. Los detalles de como “abrir” la seguridad de cada uno de estos navegadores deben investigarse en el manual de cada uno de ellos.</p>
 <p>Cabe destacar que esta hoja simplemente genera HTML básico pero no recoge ningún dato del XML original.</p>
 </div>
-<div class="section" id="id2">
-<h3>Ejercicio<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="ejercicio-carga-de-estilos">
+<h3>Ejercicio (carga de estilos)<a class="headerlink" href="#ejercicio-carga-de-estilos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Hacer que el archivo XML de libros cargue esta hoja de estilos.</p>
 <p>Solución: consiste en añadir una línea al archivo que referencie el archivo de transformación y el tipo de lenguaje usado para transformar.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -409,8 +409,68 @@ esta</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="ejercicio-conversion-entre-xmls">
+<h3>Ejercicio (conversion entre XMLs)<a class="headerlink" href="#ejercicio-conversion-entre-xmls" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el fichero de información del catálogo, transformar dicho XML en otro fichero en el que la etiqueta <code class="docutils literal"><span class="pre">title</span></code> vaya en español, es decir, que el resultado quede así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;title&gt;</span>
+    Poeta en Nueva York
+    <span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;autor&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>La solución podría ser algo así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-generacion-de-atributos">
+<h3>Ejercicio (generación de atributos)<a class="headerlink" href="#ejercicio-generacion-de-atributos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el archivo XML del catálogo generar un XML en el que el autor vaya como un atributo del título, es decir, que quede algo así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;titulo</span> <span class="na">escritor=</span><span class="s">&quot;Cervantes&quot;</span><span class="nt">&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;titulo</span> <span class="na">escritor=</span><span class="s">&quot;Lorca&quot;</span><span class="nt">&gt;</span>
+    Poeta en Nueva York
+    <span class="nt">&lt;/titulo&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>La solución:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+    <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;catalogo&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/catalogo/libro&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+          <span class="nt">&lt;titulo&gt;</span>
+            <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;escritor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:attribute&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/catalogo&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-generacion">
+<h3>Ejercicio (generacion)<a class="headerlink" href="#ejercicio-generacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Hacer que el XSL genere un HTML con información del archivo XML de libro.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
@@ -434,8 +494,8 @@ esta</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id2">
+<h3>Ejercicio<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Extraer los títulos de los libros pero consiguiendo encerrarlos en una lista ordenada HTML para que aparezcan numerados.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
@@ -461,8 +521,8 @@ esta</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id3">
+<h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Supongamos que ahora un libro tiene varios autores y el XML es algo así:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;?xml-stylesheet href=&quot;hoja1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
@@ -517,8 +577,8 @@ esta</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>Ejercicio<a class="headerlink" href="#id6" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id4">
+<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea hacer lo mismo que en el ejercicio anterior pero haciendo que los autores aparezcan de forma ordenada.</p>
 <p>La solución está fundamentada en el uso de la etiqueta siguiente:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;xsl:for-each ...&gt;
@@ -561,8 +621,8 @@ esta</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>Ejercicio<a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id5">
+<h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Suponiendo que además todos los libros tienen además un elemento <code class="docutils literal"><span class="pre">&lt;fechaedicion&gt;</span></code> mostrar los libros editados despues del 2000.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;?xml-stylesheet href=&quot;hoja1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
@@ -676,7 +736,7 @@ esta</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id8" style="width: 50%">
+<div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso1.png" src="_images/ejercicio1xslpaso1.png" />
 <p class="caption"><span class="caption-text">Paso inicial del XSL</span></p>
 </div>
@@ -703,7 +763,7 @@ esta</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id9" style="width: 50%">
+<div class="figure align-center" id="id7" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso2.png" src="_images/ejercicio1xslpaso2.png" />
 <p class="caption"><span class="caption-text">Extrayendo los titulos con XSL</span></p>
 </div>
@@ -735,7 +795,7 @@ esta</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id10" style="width: 50%">
+<div class="figure align-center" id="id8" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso3.png" src="_images/ejercicio1xslpaso3.png" />
 <p class="caption"><span class="caption-text">Procesando los que son &gt; 2000</span></p>
 </div>
@@ -777,7 +837,7 @@ esta</p>
 </pre></div>
 </div>
 <p>Y el navegador muestra lo siguiente</p>
-<div class="figure align-center" id="id11" style="width: 50%">
+<div class="figure align-center" id="id9" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso4.png" src="_images/ejercicio1xslpaso4.png" />
 <p class="caption"><span class="caption-text">Mostrando también los autores</span></p>
 </div>
@@ -830,7 +890,7 @@ esta</p>
 </pre></div>
 </div>
 <p>Crear un fichero de estilos que permita mostrar la información de los portátiles en forma de tabla.</p>
-<div class="figure align-center" id="id12" style="width: 50%">
+<div class="figure align-center" id="id10" style="width: 50%">
 <img alt="_images/xsl1.png" src="_images/xsl1.png" />
 <p class="caption"><span class="caption-text">Transformacion XSL</span></p>
 </div>
@@ -964,12 +1024,14 @@ esta</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#transformacion-de-xml">Transformación de XML</a></li>
+<li><a class="reference internal" href="#ejercicio-carga-de-estilos">Ejercicio (carga de estilos)</a></li>
+<li><a class="reference internal" href="#ejercicio-conversion-entre-xmls">Ejercicio (conversion entre XMLs)</a></li>
+<li><a class="reference internal" href="#ejercicio-generacion-de-atributos">Ejercicio (generación de atributos)</a></li>
+<li><a class="reference internal" href="#ejercicio-generacion">Ejercicio (generacion)</a></li>
 <li><a class="reference internal" href="#id2">Ejercicio</a></li>
 <li><a class="reference internal" href="#id3">Ejercicio</a></li>
 <li><a class="reference internal" href="#id4">Ejercicio</a></li>
 <li><a class="reference internal" href="#id5">Ejercicio</a></li>
-<li><a class="reference internal" href="#id6">Ejercicio</a></li>
-<li><a class="reference internal" href="#id7">Ejercicio</a></li>
 <li><a class="reference internal" href="#ejercicio-xsl-paso-a-paso">Ejercicio XSL, paso a paso</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
