@@ -427,7 +427,24 @@ esta</p>
 </pre></div>
 </div>
 <p>La solución podría ser algo así:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+    <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;catalogo&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/catalogo/libro&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+          <span class="nt">&lt;titulo&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/titulo&gt;</span>
+          <span class="nt">&lt;autor&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/catalogo&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
 </div>
