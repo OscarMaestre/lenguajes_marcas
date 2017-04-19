@@ -486,6 +486,37 @@ esta</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-tabla-html">
+<h3>Ejercicio (tabla HTML)<a class="headerlink" href="#ejercicio-tabla-html" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Convertir el catalogo XML en una tabla HTML</p>
+<p>Solución:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Catalogo de libros<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Listado de libros<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;td&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;/td&gt;</span>
+              <span class="nt">&lt;td&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+          <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="ejercicio-generacion">
 <h3>Ejercicio (generacion)<a class="headerlink" href="#ejercicio-generacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Hacer que el XSL genere un HTML con información del archivo XML de libro.</p>
@@ -1044,6 +1075,7 @@ esta</p>
 <li><a class="reference internal" href="#ejercicio-carga-de-estilos">Ejercicio (carga de estilos)</a></li>
 <li><a class="reference internal" href="#ejercicio-conversion-entre-xmls">Ejercicio (conversion entre XMLs)</a></li>
 <li><a class="reference internal" href="#ejercicio-generacion-de-atributos">Ejercicio (generación de atributos)</a></li>
+<li><a class="reference internal" href="#ejercicio-tabla-html">Ejercicio (tabla HTML)</a></li>
 <li><a class="reference internal" href="#ejercicio-generacion">Ejercicio (generacion)</a></li>
 <li><a class="reference internal" href="#id2">Ejercicio</a></li>
 <li><a class="reference internal" href="#id3">Ejercicio</a></li>

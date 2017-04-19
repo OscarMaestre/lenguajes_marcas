@@ -250,15 +250,16 @@
 \contentsline {subsection}{\numberline {7.3.3}Ejercicio (carga de estilos)}{151}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Ejercicio (conversion entre XMLs)}{152}{subsection.7.3.4}
 \contentsline {subsection}{\numberline {7.3.5}Ejercicio (generaci\IeC {\'o}n de atributos)}{152}{subsection.7.3.5}
-\contentsline {subsection}{\numberline {7.3.6}Ejercicio (generacion)}{153}{subsection.7.3.6}
-\contentsline {subsection}{\numberline {7.3.7}Ejercicio}{153}{subsection.7.3.7}
+\contentsline {subsection}{\numberline {7.3.6}Ejercicio (tabla HTML)}{153}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}Ejercicio (generacion)}{153}{subsection.7.3.7}
 \contentsline {subsection}{\numberline {7.3.8}Ejercicio}{154}{subsection.7.3.8}
-\contentsline {subsection}{\numberline {7.3.9}Ejercicio}{155}{subsection.7.3.9}
-\contentsline {subsection}{\numberline {7.3.10}Ejercicio}{156}{subsection.7.3.10}
-\contentsline {subsection}{\numberline {7.3.11}Ejercicio XSL, paso a paso}{157}{subsection.7.3.11}
-\contentsline {subsection}{\numberline {7.3.12}Transformacion de pedidos}{161}{subsection.7.3.12}
-\contentsline {subsection}{\numberline {7.3.13}Transformaci\IeC {\'o}n de pedidos (II)}{162}{subsection.7.3.13}
-\contentsline {subsection}{\numberline {7.3.14}Ejercicio (no se da la soluci\IeC {\'o}n)}{164}{subsection.7.3.14}
+\contentsline {subsection}{\numberline {7.3.9}Ejercicio}{154}{subsection.7.3.9}
+\contentsline {subsection}{\numberline {7.3.10}Ejercicio}{155}{subsection.7.3.10}
+\contentsline {subsection}{\numberline {7.3.11}Ejercicio}{156}{subsection.7.3.11}
+\contentsline {subsection}{\numberline {7.3.12}Ejercicio XSL, paso a paso}{158}{subsection.7.3.12}
+\contentsline {subsection}{\numberline {7.3.13}Transformacion de pedidos}{161}{subsection.7.3.13}
+\contentsline {subsection}{\numberline {7.3.14}Transformaci\IeC {\'o}n de pedidos (II)}{163}{subsection.7.3.14}
+\contentsline {subsection}{\numberline {7.3.15}Ejercicio (no se da la soluci\IeC {\'o}n)}{164}{subsection.7.3.15}
 \contentsline {chapter}{\numberline {8}Sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{165}{chapter.8}
 \contentsline {section}{\numberline {8.1}Introducci\IeC {\'o}n}{165}{section.8.1}
 \contentsline {section}{\numberline {8.2}Niveles en la empresa}{165}{section.8.2}
