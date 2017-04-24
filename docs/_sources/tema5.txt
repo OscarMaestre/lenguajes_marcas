@@ -2475,26 +2475,6 @@ Las reglas son las siguientes:
 * Despues un elemento ``<memoria>`` que debe llevar obligatoriamente un atributo ``unidad``.
 * Despues un elemento ``<discoduro>``.
 
-Una posible solución sería la siguiente:
-
-.. code-block:: xml
-
-    <!ELEMENT inventario (objeto+)>
-    <!ELEMENT objeto (mesa|ordenador)>
-    <!ATTLIST objeto codigo CDATA #IMPLIED>
-    <!ELEMENT mesa (tipo?, localizacion)>
-    <!ELEMENT tipo (#PCDATA)>
-    <!ELEMENT localizacion (#PCDATA)>
-    <!ELEMENT ordenador
-        (procesador?, memoria?, discoduro?)>
-    <!ELEMENT procesador (#PCDATA)>
-    <!ATTLIST procesador fabricante
-            CDATA #IMPLIED>
-    <!ELEMENT memoria (#PCDATA)>
-    <!ATTLIST memoria unidad
-            CDATA #REQUIRED>
-    <!ELEMENT discoduro (#PCDATA)>
-    
 
 
 Examen

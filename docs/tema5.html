@@ -2222,24 +2222,6 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Despues un elemento <code class="docutils literal"><span class="pre">&lt;memoria&gt;</span></code> que debe llevar obligatoriamente un atributo <code class="docutils literal"><span class="pre">unidad</span></code>.</li>
 <li>Despues un elemento <code class="docutils literal"><span class="pre">&lt;discoduro&gt;</span></code>.</li>
 </ul>
-<p>Una posible solución sería la siguiente:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;!ELEMENT inventario (objeto+)&gt;</span>
-<span class="cp">&lt;!ELEMENT objeto (mesa|ordenador)&gt;</span>
-<span class="cp">&lt;!ATTLIST objeto codigo CDATA #IMPLIED&gt;</span>
-<span class="cp">&lt;!ELEMENT mesa (tipo?, localizacion)&gt;</span>
-<span class="cp">&lt;!ELEMENT tipo (#PCDATA)&gt;</span>
-<span class="cp">&lt;!ELEMENT localizacion (#PCDATA)&gt;</span>
-<span class="cp">&lt;!ELEMENT ordenador</span>
-<span class="cp">    (procesador?, memoria?, discoduro?)&gt;</span>
-<span class="cp">&lt;!ELEMENT procesador (#PCDATA)&gt;</span>
-<span class="cp">&lt;!ATTLIST procesador fabricante</span>
-<span class="cp">        CDATA #IMPLIED&gt;</span>
-<span class="cp">&lt;!ELEMENT memoria (#PCDATA)&gt;</span>
-<span class="cp">&lt;!ATTLIST memoria unidad</span>
-<span class="cp">        CDATA #REQUIRED&gt;</span>
-<span class="cp">&lt;!ELEMENT discoduro (#PCDATA)&gt;</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
