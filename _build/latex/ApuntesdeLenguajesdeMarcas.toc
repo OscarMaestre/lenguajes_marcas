@@ -257,57 +257,58 @@
 \contentsline {subsection}{\numberline {7.3.10}Ejercicio}{155}{subsection.7.3.10}
 \contentsline {subsection}{\numberline {7.3.11}Ejercicio}{156}{subsection.7.3.11}
 \contentsline {subsection}{\numberline {7.3.12}Ejercicio XSL, paso a paso}{158}{subsection.7.3.12}
-\contentsline {subsection}{\numberline {7.3.13}Transformacion de pedidos}{161}{subsection.7.3.13}
-\contentsline {subsection}{\numberline {7.3.14}Transformaci\IeC {\'o}n de pedidos (II)}{163}{subsection.7.3.14}
-\contentsline {subsection}{\numberline {7.3.15}Ejercicio (no se da la soluci\IeC {\'o}n)}{164}{subsection.7.3.15}
-\contentsline {chapter}{\numberline {8}Sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{165}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introducci\IeC {\'o}n}{165}{section.8.1}
-\contentsline {section}{\numberline {8.2}Niveles en la empresa}{165}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Tipos de SGI inform\IeC {\'a}ticos}{165}{subsection.8.2.1}
-\contentsline {section}{\numberline {8.3}Almacenamiento en los SGI}{166}{section.8.3}
-\contentsline {section}{\numberline {8.4}Puntos de vista en los SGI}{167}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Desarrollador}{167}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}Administrador}{167}{subsection.8.4.2}
-\contentsline {subsection}{\numberline {8.4.3}Usuario}{167}{subsection.8.4.3}
-\contentsline {subsection}{\numberline {8.4.4}Ejercicio}{167}{subsection.8.4.4}
-\contentsline {chapter}{\numberline {9}Anexo: ejercicios sobre tablas}{169}{chapter.9}
-\contentsline {section}{\numberline {9.1}Tabla 1}{169}{section.9.1}
-\contentsline {section}{\numberline {9.2}Tabla 2}{171}{section.9.2}
-\contentsline {section}{\numberline {9.3}Tabla 3}{172}{section.9.3}
-\contentsline {section}{\numberline {9.4}Tabla 4}{173}{section.9.4}
-\contentsline {section}{\numberline {9.5}Tabla 5}{176}{section.9.5}
-\contentsline {section}{\numberline {9.6}Tabla 6}{178}{section.9.6}
-\contentsline {section}{\numberline {9.7}Tabla 7}{179}{section.9.7}
-\contentsline {section}{\numberline {9.8}Tabla 8}{180}{section.9.8}
-\contentsline {section}{\numberline {9.9}Tabla 9}{182}{section.9.9}
-\contentsline {section}{\numberline {9.10}Tabla 10}{183}{section.9.10}
-\contentsline {section}{\numberline {9.11}Tabla 11}{185}{section.9.11}
-\contentsline {section}{\numberline {9.12}Tabla 12}{187}{section.9.12}
-\contentsline {section}{\numberline {9.13}Tabla 13}{188}{section.9.13}
-\contentsline {section}{\numberline {9.14}Tabla 14}{189}{section.9.14}
-\contentsline {section}{\numberline {9.15}Tabla 15}{191}{section.9.15}
-\contentsline {section}{\numberline {9.16}Tabla 16}{191}{section.9.16}
-\contentsline {section}{\numberline {9.17}Tabla 17}{193}{section.9.17}
-\contentsline {section}{\numberline {9.18}Tabla 18}{194}{section.9.18}
-\contentsline {section}{\numberline {9.19}Tabla 19}{195}{section.9.19}
-\contentsline {chapter}{\numberline {10}Anexo: ejercicios sobre formularios}{197}{chapter.10}
-\contentsline {section}{\numberline {10.1}Formulario 1}{197}{section.10.1}
-\contentsline {section}{\numberline {10.2}Formulario 2}{198}{section.10.2}
-\contentsline {section}{\numberline {10.3}Formulario 3}{199}{section.10.3}
-\contentsline {section}{\numberline {10.4}Formulario 4}{200}{section.10.4}
-\contentsline {section}{\numberline {10.5}Formulario 5}{201}{section.10.5}
-\contentsline {section}{\numberline {10.6}Formulario 6}{203}{section.10.6}
-\contentsline {section}{\numberline {10.7}Formulario 7}{205}{section.10.7}
-\contentsline {section}{\numberline {10.8}Formulario 8}{207}{section.10.8}
-\contentsline {section}{\numberline {10.9}Formulario 9}{209}{section.10.9}
-\contentsline {section}{\numberline {10.10}Formulario 10}{210}{section.10.10}
-\contentsline {section}{\numberline {10.11}Formulario 11}{212}{section.10.11}
-\contentsline {section}{\numberline {10.12}Formulario 12}{214}{section.10.12}
-\contentsline {section}{\numberline {10.13}Formulario 13}{216}{section.10.13}
-\contentsline {section}{\numberline {10.14}Formulario 14}{218}{section.10.14}
-\contentsline {section}{\numberline {10.15}Formulario 15}{220}{section.10.15}
-\contentsline {section}{\numberline {10.16}Formulario 16}{222}{section.10.16}
-\contentsline {section}{\numberline {10.17}Formulario 17}{223}{section.10.17}
-\contentsline {section}{\numberline {10.18}Formulario 18}{224}{section.10.18}
-\contentsline {section}{\numberline {10.19}Formulario 19}{226}{section.10.19}
-\contentsline {section}{\numberline {10.20}Formulario 20}{228}{section.10.20}
+\contentsline {subsection}{\numberline {7.3.13}Ejercicio: condiciones complejas}{161}{subsection.7.3.13}
+\contentsline {subsection}{\numberline {7.3.14}Transformacion de pedidos}{162}{subsection.7.3.14}
+\contentsline {subsection}{\numberline {7.3.15}Transformaci\IeC {\'o}n de pedidos (II)}{164}{subsection.7.3.15}
+\contentsline {subsection}{\numberline {7.3.16}Ejercicio (no se da la soluci\IeC {\'o}n)}{165}{subsection.7.3.16}
+\contentsline {chapter}{\numberline {8}Sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{167}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introducci\IeC {\'o}n}{167}{section.8.1}
+\contentsline {section}{\numberline {8.2}Niveles en la empresa}{167}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Tipos de SGI inform\IeC {\'a}ticos}{167}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}Almacenamiento en los SGI}{168}{section.8.3}
+\contentsline {section}{\numberline {8.4}Puntos de vista en los SGI}{169}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Desarrollador}{169}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Administrador}{169}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}Usuario}{169}{subsection.8.4.3}
+\contentsline {subsection}{\numberline {8.4.4}Ejercicio}{169}{subsection.8.4.4}
+\contentsline {chapter}{\numberline {9}Anexo: ejercicios sobre tablas}{171}{chapter.9}
+\contentsline {section}{\numberline {9.1}Tabla 1}{171}{section.9.1}
+\contentsline {section}{\numberline {9.2}Tabla 2}{173}{section.9.2}
+\contentsline {section}{\numberline {9.3}Tabla 3}{174}{section.9.3}
+\contentsline {section}{\numberline {9.4}Tabla 4}{175}{section.9.4}
+\contentsline {section}{\numberline {9.5}Tabla 5}{178}{section.9.5}
+\contentsline {section}{\numberline {9.6}Tabla 6}{180}{section.9.6}
+\contentsline {section}{\numberline {9.7}Tabla 7}{181}{section.9.7}
+\contentsline {section}{\numberline {9.8}Tabla 8}{182}{section.9.8}
+\contentsline {section}{\numberline {9.9}Tabla 9}{184}{section.9.9}
+\contentsline {section}{\numberline {9.10}Tabla 10}{185}{section.9.10}
+\contentsline {section}{\numberline {9.11}Tabla 11}{187}{section.9.11}
+\contentsline {section}{\numberline {9.12}Tabla 12}{189}{section.9.12}
+\contentsline {section}{\numberline {9.13}Tabla 13}{190}{section.9.13}
+\contentsline {section}{\numberline {9.14}Tabla 14}{191}{section.9.14}
+\contentsline {section}{\numberline {9.15}Tabla 15}{193}{section.9.15}
+\contentsline {section}{\numberline {9.16}Tabla 16}{193}{section.9.16}
+\contentsline {section}{\numberline {9.17}Tabla 17}{195}{section.9.17}
+\contentsline {section}{\numberline {9.18}Tabla 18}{196}{section.9.18}
+\contentsline {section}{\numberline {9.19}Tabla 19}{197}{section.9.19}
+\contentsline {chapter}{\numberline {10}Anexo: ejercicios sobre formularios}{199}{chapter.10}
+\contentsline {section}{\numberline {10.1}Formulario 1}{199}{section.10.1}
+\contentsline {section}{\numberline {10.2}Formulario 2}{200}{section.10.2}
+\contentsline {section}{\numberline {10.3}Formulario 3}{201}{section.10.3}
+\contentsline {section}{\numberline {10.4}Formulario 4}{202}{section.10.4}
+\contentsline {section}{\numberline {10.5}Formulario 5}{203}{section.10.5}
+\contentsline {section}{\numberline {10.6}Formulario 6}{205}{section.10.6}
+\contentsline {section}{\numberline {10.7}Formulario 7}{207}{section.10.7}
+\contentsline {section}{\numberline {10.8}Formulario 8}{209}{section.10.8}
+\contentsline {section}{\numberline {10.9}Formulario 9}{211}{section.10.9}
+\contentsline {section}{\numberline {10.10}Formulario 10}{212}{section.10.10}
+\contentsline {section}{\numberline {10.11}Formulario 11}{214}{section.10.11}
+\contentsline {section}{\numberline {10.12}Formulario 12}{216}{section.10.12}
+\contentsline {section}{\numberline {10.13}Formulario 13}{218}{section.10.13}
+\contentsline {section}{\numberline {10.14}Formulario 14}{220}{section.10.14}
+\contentsline {section}{\numberline {10.15}Formulario 15}{222}{section.10.15}
+\contentsline {section}{\numberline {10.16}Formulario 16}{224}{section.10.16}
+\contentsline {section}{\numberline {10.17}Formulario 17}{225}{section.10.17}
+\contentsline {section}{\numberline {10.18}Formulario 18}{226}{section.10.18}
+\contentsline {section}{\numberline {10.19}Formulario 19}{228}{section.10.19}
+\contentsline {section}{\numberline {10.20}Formulario 20}{230}{section.10.20}

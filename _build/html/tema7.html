@@ -890,6 +890,50 @@ esta</p>
 <p class="caption"><span class="caption-text">Mostrando también los autores</span></p>
 </div>
 </div>
+<div class="section" id="ejercicio-condiciones-complejas">
+<h3>Ejercicio: condiciones complejas<a class="headerlink" href="#ejercicio-condiciones-complejas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos que nos dan el siguiente fichero de inventario:</p>
+<p>Y supongamos que nos dicen que se necesita extraer la información relativa a los productos que pesan más de 5. Una primera aproximación equivocada sería esta:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>
+          <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/nombre&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Esta solución está equivocada porque de entrada <em>la pregunta está mal</em> Si se refieren a 5kg solo debería mostrarse el ordenador y si se refieren a 5g solo debería mostrarse el altavoz.</p>
+<p>Una solución correcta sería esta. Obsérvese como se meten unos if dentro de otros para extraer la información deseada.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;./peso/@unidad = &#39;kg&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;nombre&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5000&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;nombre&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="transformacion-de-pedidos">
 <h3>Transformacion de pedidos<a class="headerlink" href="#transformacion-de-pedidos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Dado el siguiente archivo XML:</p>
@@ -1082,6 +1126,7 @@ esta</p>
 <li><a class="reference internal" href="#id4">Ejercicio</a></li>
 <li><a class="reference internal" href="#id5">Ejercicio</a></li>
 <li><a class="reference internal" href="#ejercicio-xsl-paso-a-paso">Ejercicio XSL, paso a paso</a></li>
+<li><a class="reference internal" href="#ejercicio-condiciones-complejas">Ejercicio: condiciones complejas</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
 <li><a class="reference internal" href="#ejercicio-no-se-da-la-solucion">Ejercicio (no se da la solución)</a></li>

@@ -955,6 +955,71 @@ Y el navegador muestra lo siguiente
    Mostrando también los autores
    
    
+Ejercicio: condiciones complejas
+-----------------------------------
+
+Supongamos que nos dan el siguiente fichero de inventario:
+
+.. code-block: xml
+
+  <inventario>
+    <elemento codigo="C1">
+      <peso unidad="kg">10</peso>
+      <nombre>Ordenador</nombre>
+    </elemento>
+    <elemento codigo="C2">
+      <peso unidad="g">450</peso>
+      <nombre>Altavoz</nombre>
+    </elemento>
+  </inventario>
+
+Y supongamos que nos dicen que se necesita extraer la información relativa a los productos que pesan más de 5. Una primera aproximación equivocada sería esta:
+
+.. code-block:: xml
+
+  
+  <xsl:template match="/">
+    <inventario>
+      <xsl:for-each select="inventario/elemento">
+        <xsl:if test="peso &gt; 5">
+          <nombre>
+            <xsl:value-of select="nombre"/>
+          </nombre>
+        </xsl:if>
+      </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+  
+Esta solución está equivocada porque de entrada *la pregunta está mal* Si se refieren a 5kg solo debería mostrarse el ordenador y si se refieren a 5g solo debería mostrarse el altavoz.
+
+
+Una solución correcta sería esta. Obsérvese como se meten unos if dentro de otros para extraer la información deseada.
+
+.. code-block:: xml
+
+  <xsl:template match="/">
+    <inventario>
+      <xsl:for-each select="inventario/elemento">
+        <xsl:if test="./peso/@unidad = 'kg'">
+          <xsl:if test="peso &gt; 5">
+            <nombre>
+              <xsl:value-of select="nombre"/>
+            </nombre>
+          </xsl:if>
+        </xsl:if>
+        <xsl:if test="peso/@unidad = 'g'">
+          <xsl:if test="peso &gt; 5000">
+            <nombre>
+              <xsl:value-of select="nombre"/>
+            </nombre>
+          </xsl:if>
+        </xsl:if>
+      </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+   
 Transformacion de pedidos
 ---------------------------
 
