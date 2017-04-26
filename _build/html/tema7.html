@@ -934,6 +934,39 @@ esta</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="transformacion-en-tabla">
+<h3>Transformación en tabla<a class="headerlink" href="#transformacion-en-tabla" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se nos pide convertir el inventario de antes en la tabla siguiente donde el peso debe estar normalizado y aparecer siempre en gramos:</p>
+<a class="reference internal image-reference" href="_images/tabla_tras_xslt1.png"><img alt="_images/tabla_tras_xslt1.png" class="align-center" src="_images/tabla_tras_xslt1.png" style="width: 204.5px; height: 102.0px;" /></a>
+<p>Una posible solución sería:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;&lt;title&gt;</span>Tabla de inventario<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad=&#39;kg&#39;&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso * 1000&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad=&#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+          <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="transformacion-de-pedidos">
 <h3>Transformacion de pedidos<a class="headerlink" href="#transformacion-de-pedidos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Dado el siguiente archivo XML:</p>
@@ -1127,6 +1160,7 @@ esta</p>
 <li><a class="reference internal" href="#id5">Ejercicio</a></li>
 <li><a class="reference internal" href="#ejercicio-xsl-paso-a-paso">Ejercicio XSL, paso a paso</a></li>
 <li><a class="reference internal" href="#ejercicio-condiciones-complejas">Ejercicio: condiciones complejas</a></li>
+<li><a class="reference internal" href="#transformacion-en-tabla">Transformación en tabla</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
 <li><a class="reference internal" href="#ejercicio-no-se-da-la-solucion">Ejercicio (no se da la solución)</a></li>

@@ -258,9 +258,10 @@
 \contentsline {subsection}{\numberline {7.3.11}Ejercicio}{156}{subsection.7.3.11}
 \contentsline {subsection}{\numberline {7.3.12}Ejercicio XSL, paso a paso}{158}{subsection.7.3.12}
 \contentsline {subsection}{\numberline {7.3.13}Ejercicio: condiciones complejas}{161}{subsection.7.3.13}
-\contentsline {subsection}{\numberline {7.3.14}Transformacion de pedidos}{162}{subsection.7.3.14}
-\contentsline {subsection}{\numberline {7.3.15}Transformaci\IeC {\'o}n de pedidos (II)}{164}{subsection.7.3.15}
-\contentsline {subsection}{\numberline {7.3.16}Ejercicio (no se da la soluci\IeC {\'o}n)}{165}{subsection.7.3.16}
+\contentsline {subsection}{\numberline {7.3.14}Transformaci\IeC {\'o}n en tabla}{162}{subsection.7.3.14}
+\contentsline {subsection}{\numberline {7.3.15}Transformacion de pedidos}{163}{subsection.7.3.15}
+\contentsline {subsection}{\numberline {7.3.16}Transformaci\IeC {\'o}n de pedidos (II)}{165}{subsection.7.3.16}
+\contentsline {subsection}{\numberline {7.3.17}Ejercicio (no se da la soluci\IeC {\'o}n)}{166}{subsection.7.3.17}
 \contentsline {chapter}{\numberline {8}Sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{167}{chapter.8}
 \contentsline {section}{\numberline {8.1}Introducci\IeC {\'o}n}{167}{section.8.1}
 \contentsline {section}{\numberline {8.2}Niveles en la empresa}{167}{section.8.2}

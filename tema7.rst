@@ -1019,6 +1019,46 @@ Una solución correcta sería esta. Obsérvese como se meten unos if dentro de o
     </inventario>
   </xsl:template>
   </xsl:stylesheet>
+
+Transformación en tabla
+---------------------------
+Se nos pide convertir el inventario de antes en la tabla siguiente donde el peso debe estar normalizado y aparecer siempre en gramos:
+
+
+.. image:: tabla_tras_xslt1.png
+	:align: center
+	:scale: 50%
+
+
+Una posible solución sería:
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  
+  <xsl:template match="/">
+  <html>
+    <head><title>Tabla de inventario</title></head>
+    <body>
+      <table border='1'>
+        <xsl:for-each select="inventario/elemento">
+          <tr>
+            <td><xsl:value-of select="nombre"/></td>
+            <td>
+              <xsl:if test="peso/@unidad='kg'">
+                <xsl:value-of select="peso * 1000"/>
+              </xsl:if>
+              <xsl:if test="peso/@unidad='g'">
+                <xsl:value-of select="peso"/>
+              </xsl:if>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </table>
+    </body>
+  </html>    
+  </xsl:template>
+  </xsl:stylesheet>
    
 Transformacion de pedidos
 ---------------------------
