@@ -1,0 +1,1342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anexo: ejercicios sobre tablas &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="../../index.html" />
+    <link rel="next" title="Anexo: ejercicios sobre formularios" href="../formularios/anexo_formularios.html" />
+    <link rel="prev" title="Sistemas de gestión de información" href="../../tema8.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anexo-ejercicios-sobre-tablas">
+<h1>Anexo: ejercicios sobre tablas<a class="headerlink" href="#anexo-ejercicios-sobre-tablas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
+siguientes se muestran algunas tablas junto con su resolución en HTML. Los
+ejercicios no se muestran con ningún orden de dificultad.</p>
+<div class="section" id="tabla-1">
+<h2>Tabla 1<a class="headerlink" href="#tabla-1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_01.png"><img alt="../../_images/foto_01.png" class="align-center" src="../../_images/foto_01.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-2">
+<h2>Tabla 2<a class="headerlink" href="#tabla-2" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_02.png"><img alt="../../_images/foto_02.png" class="align-center" src="../../_images/foto_02.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-3">
+<h2>Tabla 3<a class="headerlink" href="#tabla-3" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_03.png"><img alt="../../_images/foto_03.png" class="align-center" src="../../_images/foto_03.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-4">
+<h2>Tabla 4<a class="headerlink" href="#tabla-4" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_04.png"><img alt="../../_images/foto_04.png" class="align-center" src="../../_images/foto_04.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-5">
+<h2>Tabla 5<a class="headerlink" href="#tabla-5" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_05.png"><img alt="../../_images/foto_05.png" class="align-center" src="../../_images/foto_05.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-6">
+<h2>Tabla 6<a class="headerlink" href="#tabla-6" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_06.png"><img alt="../../_images/foto_06.png" class="align-center" src="../../_images/foto_06.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-7">
+<h2>Tabla 7<a class="headerlink" href="#tabla-7" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_07.png"><img alt="../../_images/foto_07.png" class="align-center" src="../../_images/foto_07.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-8">
+<h2>Tabla 8<a class="headerlink" href="#tabla-8" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_08.png"><img alt="../../_images/foto_08.png" class="align-center" src="../../_images/foto_08.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-9">
+<h2>Tabla 9<a class="headerlink" href="#tabla-9" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_09.png"><img alt="../../_images/foto_09.png" class="align-center" src="../../_images/foto_09.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-10">
+<h2>Tabla 10<a class="headerlink" href="#tabla-10" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_10.png"><img alt="../../_images/foto_10.png" class="align-center" src="../../_images/foto_10.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-11">
+<h2>Tabla 11<a class="headerlink" href="#tabla-11" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_11.png"><img alt="../../_images/foto_11.png" class="align-center" src="../../_images/foto_11.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-12">
+<h2>Tabla 12<a class="headerlink" href="#tabla-12" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_12.png"><img alt="../../_images/foto_12.png" class="align-center" src="../../_images/foto_12.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-13">
+<h2>Tabla 13<a class="headerlink" href="#tabla-13" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_13.png"><img alt="../../_images/foto_13.png" class="align-center" src="../../_images/foto_13.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-14">
+<h2>Tabla 14<a class="headerlink" href="#tabla-14" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_14.png"><img alt="../../_images/foto_14.png" class="align-center" src="../../_images/foto_14.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-15">
+<h2>Tabla 15<a class="headerlink" href="#tabla-15" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_15.png"><img alt="../../_images/foto_15.png" class="align-center" src="../../_images/foto_15.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-16">
+<h2>Tabla 16<a class="headerlink" href="#tabla-16" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_16.png"><img alt="../../_images/foto_16.png" class="align-center" src="../../_images/foto_16.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-17">
+<h2>Tabla 17<a class="headerlink" href="#tabla-17" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_17.png"><img alt="../../_images/foto_17.png" class="align-center" src="../../_images/foto_17.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+					<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+				<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-18">
+<h2>Tabla 18<a class="headerlink" href="#tabla-18" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_18.png"><img alt="../../_images/foto_18.png" class="align-center" src="../../_images/foto_18.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-19">
+<h2>Tabla 19<a class="headerlink" href="#tabla-19" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar la tabla siguiente</p>
+<a class="reference internal image-reference" href="../../_images/foto_19.png"><img alt="../../_images/foto_19.png" class="align-center" src="../../_images/foto_19.png" style="width: 247.2px; height: 156.0px;" /></a>
+<p>Solución:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Celda <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Anexo: ejercicios sobre tablas</a><ul>
+<li><a class="reference internal" href="#tabla-1">Tabla 1</a></li>
+<li><a class="reference internal" href="#tabla-2">Tabla 2</a></li>
+<li><a class="reference internal" href="#tabla-3">Tabla 3</a></li>
+<li><a class="reference internal" href="#tabla-4">Tabla 4</a></li>
+<li><a class="reference internal" href="#tabla-5">Tabla 5</a></li>
+<li><a class="reference internal" href="#tabla-6">Tabla 6</a></li>
+<li><a class="reference internal" href="#tabla-7">Tabla 7</a></li>
+<li><a class="reference internal" href="#tabla-8">Tabla 8</a></li>
+<li><a class="reference internal" href="#tabla-9">Tabla 9</a></li>
+<li><a class="reference internal" href="#tabla-10">Tabla 10</a></li>
+<li><a class="reference internal" href="#tabla-11">Tabla 11</a></li>
+<li><a class="reference internal" href="#tabla-12">Tabla 12</a></li>
+<li><a class="reference internal" href="#tabla-13">Tabla 13</a></li>
+<li><a class="reference internal" href="#tabla-14">Tabla 14</a></li>
+<li><a class="reference internal" href="#tabla-15">Tabla 15</a></li>
+<li><a class="reference internal" href="#tabla-16">Tabla 16</a></li>
+<li><a class="reference internal" href="#tabla-17">Tabla 17</a></li>
+<li><a class="reference internal" href="#tabla-18">Tabla 18</a></li>
+<li><a class="reference internal" href="#tabla-19">Tabla 19</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../../tema8.html" title="capítulo anterior">Sistemas de gestión de información</a></li>
+      <li>Next: <a href="../formularios/anexo_formularios.html" title="próximo capítulo">Anexo: ejercicios sobre formularios</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/ejercicios/html/anexo_tablas.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/ejercicios/html/anexo_tablas.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
