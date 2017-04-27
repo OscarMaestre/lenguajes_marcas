@@ -404,7 +404,7 @@ Algunos navegadores no ejecutan XSL por seguridad. Los detalles de como “abrir
 
 Cabe destacar que esta hoja simplemente genera HTML básico pero no recoge ningún dato del XML original.	
 
-Ejercicio
+Ejercicio (carga de estilos)
 ----------------------------------------------
 
 Hacer que el archivo XML de libros cargue esta hoja de estilos.
@@ -420,9 +420,126 @@ Solución: consiste en añadir una línea al archivo que referencie el archivo d
 		... (El resto es igual)
 	</catalogo>
 		
-	
+Ejercicio (conversion entre XMLs)
+-------------------------------------
 
-Ejercicio
+Dado el fichero de información del catálogo, transformar dicho XML en otro fichero en el que la etiqueta ``title`` vaya en español, es decir, que el resultado quede así:
+
+.. code-block:: xml
+
+  <catalogo>
+    <libro>
+      <title>Don Quijote</title>
+      <autor>Cervantes</autor>
+    </libro>
+    <libro>
+      <title>
+      Poeta en Nueva York
+      </title>
+      <autor>Lorca</autor>
+    </libro>
+  </catalogo>	
+
+
+La solución podría ser algo así:
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+      <catalogo>
+        <xsl:for-each select="/catalogo/libro">
+          <libro>
+            <titulo>
+              <xsl:value-of select="title"/>
+            </titulo>
+            <autor>
+              <xsl:value-of select="autor"/>
+            </autor>
+          </libro>
+        </xsl:for-each>
+      </catalogo>
+    </xsl:template>
+  </xsl:stylesheet>
+                  
+  
+Ejercicio (generación de atributos)
+------------------------------------------
+Dado el archivo XML del catálogo generar un XML en el que el autor vaya como un atributo del título, es decir, que quede algo así:
+
+.. code-block:: xml
+
+  <catalogo>
+    <libro>
+      <titulo escritor="Cervantes">Don Quijote</titulo>
+    </libro>
+    <libro>
+      <titulo escritor="Lorca">
+      Poeta en Nueva York
+      </titulo>
+    </libro>
+  </catalogo>
+
+La solución:
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <xsl:template match="/">
+      <catalogo>
+        <xsl:for-each select="/catalogo/libro">
+          <libro>
+            <titulo>
+              <xsl:attribute name="escritor">
+                <xsl:value-of select="autor"/>
+              </xsl:attribute>
+              <xsl:value-of select="title"/>
+            </titulo>
+          </libro>
+        </xsl:for-each>
+      </catalogo>
+    </xsl:template>    
+  </xsl:stylesheet>
+                  
+Ejercicio (tabla HTML)
+------------------------
+Convertir el catalogo XML en una tabla HTML
+
+Solución:
+
+.. code-block:: xml
+  
+  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+      <html>
+        <head>
+          <title>Catalogo de libros</title>
+        </head>
+        <body>
+          <h1>Listado de libros</h1>
+          <table border="1">
+            <xsl:for-each select="catalogo/libro">
+              <tr>
+                <td>
+                  <xsl:value-of select="title"/>
+                </td>
+                <td>
+                  <xsl:value-of select="autor"/>
+                </td>
+              </tr>
+            </xsl:for-each>
+          </table>
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
+
+Ejercicio (generacion)
 ----------------------------------------------
 Hacer que el XSL genere un HTML con información del archivo XML de libro.
 
@@ -837,6 +954,111 @@ Y el navegador muestra lo siguiente
 
    Mostrando también los autores
    
+   
+Ejercicio: condiciones complejas
+-----------------------------------
+
+Supongamos que nos dan el siguiente fichero de inventario:
+
+.. code-block: xml
+
+  <inventario>
+    <elemento codigo="C1">
+      <peso unidad="kg">10</peso>
+      <nombre>Ordenador</nombre>
+    </elemento>
+    <elemento codigo="C2">
+      <peso unidad="g">450</peso>
+      <nombre>Altavoz</nombre>
+    </elemento>
+  </inventario>
+
+Y supongamos que nos dicen que se necesita extraer la información relativa a los productos que pesan más de 5. Una primera aproximación equivocada sería esta:
+
+.. code-block:: xml
+
+  
+  <xsl:template match="/">
+    <inventario>
+      <xsl:for-each select="inventario/elemento">
+        <xsl:if test="peso &gt; 5">
+          <nombre>
+            <xsl:value-of select="nombre"/>
+          </nombre>
+        </xsl:if>
+      </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+  
+Esta solución está equivocada porque de entrada *la pregunta está mal* Si se refieren a 5kg solo debería mostrarse el ordenador y si se refieren a 5g solo debería mostrarse el altavoz.
+
+
+Una solución correcta sería esta. Obsérvese como se meten unos if dentro de otros para extraer la información deseada.
+
+.. code-block:: xml
+
+  <xsl:template match="/">
+    <inventario>
+      <xsl:for-each select="inventario/elemento">
+        <xsl:if test="./peso/@unidad = 'kg'">
+          <xsl:if test="peso &gt; 5">
+            <nombre>
+              <xsl:value-of select="nombre"/>
+            </nombre>
+          </xsl:if>
+        </xsl:if>
+        <xsl:if test="peso/@unidad = 'g'">
+          <xsl:if test="peso &gt; 5000">
+            <nombre>
+              <xsl:value-of select="nombre"/>
+            </nombre>
+          </xsl:if>
+        </xsl:if>
+      </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+
+Transformación en tabla
+---------------------------
+Se nos pide convertir el inventario de antes en la tabla siguiente donde el peso debe estar normalizado y aparecer siempre en gramos:
+
+
+.. image:: tabla_tras_xslt1.png
+	:align: center
+	:scale: 50%
+
+
+Una posible solución sería:
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  
+  <xsl:template match="/">
+  <html>
+    <head><title>Tabla de inventario</title></head>
+    <body>
+      <table border='1'>
+        <xsl:for-each select="inventario/elemento">
+          <tr>
+            <td><xsl:value-of select="nombre"/></td>
+            <td>
+              <xsl:if test="peso/@unidad='kg'">
+                <xsl:value-of select="peso * 1000"/>
+              </xsl:if>
+              <xsl:if test="peso/@unidad='g'">
+                <xsl:value-of select="peso"/>
+              </xsl:if>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </table>
+    </body>
+  </html>    
+  </xsl:template>
+  </xsl:stylesheet>
    
 Transformacion de pedidos
 ---------------------------
