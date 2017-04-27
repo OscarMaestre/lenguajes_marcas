@@ -1,0 +1,18 @@
+libro, title, autor{
+  display: block;
+}
+
+libro{
+  border: solid 1px black;
+  margin:10px;
+  padding:10px;
+}
+
+title{
+  background-color: rgb(220, 220, 220);
+  font-size: large;
+}
+autor{
+  font-family: Helvetica;
+}
+
