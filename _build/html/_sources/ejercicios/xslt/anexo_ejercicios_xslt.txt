@@ -9,14 +9,14 @@ Para los ejercicios siguiente supondremos que se va a trabajar con el fichero qu
     
     <inventario>
         <producto codigo="P1">
-            <peso>10</peso>
+            <peso unidad="kg">10</peso>
             <nombre>Ordenador</nombre>
             <lugar edificio="B">
                 <aula>10</aula>
             </lugar>
         </producto>
         <producto codigo="P2">
-            <peso>5</peso>
+            <peso unidad='g'>500</peso>
             <nombre>Switch</nombre>
             <lugar edificio="A">
                 <aula>6</aula>
@@ -24,6 +24,16 @@ Para los ejercicios siguiente supondremos que se va a trabajar con el fichero qu
         </producto>
     </inventario>
     
+    
+Generación de lista con puntos
+--------------------------------
+
+Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:
+
+.. image:: lista_punteada.png
+	:align: center
+	:scale: 50%
+
 Recuperación de elementos pesados
 ----------------------------------
 
@@ -217,6 +227,49 @@ Una posible solución sería esta:
         </html>
     </xsl:template>
     </xsl:stylesheet>
+
+Productos del aula 6
+-------------------------
+
+Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.
+
+  .. code-block:: xml
+  
+  <xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <inventario>
+    <xsl:for-each select="/inventario/producto">
+      <xsl:if test=" lugar/aula= '6' ">
+        <nombre>
+          <xsl:value-of select="nombre"/>
+        </nombre>
+      </xsl:if>
+    </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+
+Productos del edificio B
+----------------------------
+
+El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.
+
+.. code-block:: xml
+
+  <inventario>
+    <xsl:for-each select="/inventario/producto">
+      <xsl:if test=" lugar/@edificio = 'B' ">
+        <nombre>
+          <xsl:value-of select="nombre"/>
+        </nombre>
+      </xsl:if>
+    </xsl:for-each>
+    </inventario>
+  </xsl:template>
+  </xsl:stylesheet>
+
+
     
 Condiciones múltiples: peso ligero y edificio A
 -------------------------------------------------

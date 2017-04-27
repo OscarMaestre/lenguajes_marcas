@@ -48,14 +48,14 @@
 <p>Para los ejercicios siguiente supondremos que se va a trabajar con el fichero que se muestra a continuación:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
     <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;peso&gt;</span>10<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/peso&gt;</span>
         <span class="nt">&lt;nombre&gt;</span>Ordenador<span class="nt">&lt;/nombre&gt;</span>
         <span class="nt">&lt;lugar</span> <span class="na">edificio=</span><span class="s">&quot;B&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;aula&gt;</span>10<span class="nt">&lt;/aula&gt;</span>
         <span class="nt">&lt;/lugar&gt;</span>
     <span class="nt">&lt;/producto&gt;</span>
     <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P2&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;peso&gt;</span>5<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&#39;g&#39;</span><span class="nt">&gt;</span>500<span class="nt">&lt;/peso&gt;</span>
         <span class="nt">&lt;nombre&gt;</span>Switch<span class="nt">&lt;/nombre&gt;</span>
         <span class="nt">&lt;lugar</span> <span class="na">edificio=</span><span class="s">&quot;A&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;aula&gt;</span>6<span class="nt">&lt;/aula&gt;</span>
@@ -64,6 +64,11 @@
 <span class="nt">&lt;/inventario&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="generacion-de-lista-con-puntos">
+<h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:</p>
+<a class="reference internal image-reference" href="../../_images/lista_punteada.png"><img alt="../../_images/lista_punteada.png" class="align-center" src="../../_images/lista_punteada.png" style="width: 308.5px; height: 198.5px;" /></a>
 </div>
 <div class="section" id="recuperacion-de-elementos-pesados">
 <h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -239,6 +244,56 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="productos-del-aula-6">
+<h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
+<blockquote>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>&lt;xsl:stylesheet</dt>
+<dd>xmlns:xsl=&#8221;http://www.w3.org/1999/XSL/Transform&#8221;&gt;</dd>
+<dt>&lt;xsl:template match=&#8221;/&#8221;&gt;</dt>
+<dd><p class="first">&lt;inventario&gt;
+&lt;xsl:for-each select=&#8221;/inventario/producto&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;xsl:if test=&#8221; lugar/aula= &#8216;6&#8217; &#8220;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;nombre&gt;</dt>
+<dd>&lt;xsl:value-of select=&#8221;nombre&#8221;/&gt;</dd>
+</dl>
+<p class="last">&lt;/nombre&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xsl:if&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/xsl:for-each&gt;
+&lt;/inventario&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/@edificio = &#39;B&#39; &quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nombre&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/xsl:if&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
 <h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide ahora generar un fichero de inventario igual que el original pero en el que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7.</p>
@@ -255,10 +310,13 @@ y otra tabla separada para los productos del edificio B</p>
   <ul>
 <li><a class="reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
 <li><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
+<li><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
 <li><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
 <li><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
 <li><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
 <li><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
+<li><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
+<li><a class="reference internal" href="#id1">Productos del edificio B</a></li>
 <li><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
 </ul>
 </li>

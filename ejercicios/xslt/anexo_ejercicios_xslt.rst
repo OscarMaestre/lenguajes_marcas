@@ -24,6 +24,16 @@ Para los ejercicios siguiente supondremos que se va a trabajar con el fichero qu
         </producto>
     </inventario>
     
+    
+Generación de lista con puntos
+--------------------------------
+
+Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:
+
+.. image:: lista_punteada.png
+	:align: center
+	:scale: 50%
+
 Recuperación de elementos pesados
 ----------------------------------
 
@@ -245,8 +255,8 @@ Productos del edificio B
 
 El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.
 
-  .. code-block:: xml
-  
+.. code-block:: xml
+
   <inventario>
     <xsl:for-each select="/inventario/producto">
       <xsl:if test=" lugar/@edificio = 'B' ">
@@ -258,6 +268,8 @@ El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora
     </inventario>
   </xsl:template>
   </xsl:stylesheet>
+
+
     
 Condiciones múltiples: peso ligero y edificio A
 -------------------------------------------------

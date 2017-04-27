@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet
+  href="estilo.css"
+  type="text/css"?>
+<catalogo>
+  <libro>
+    <title>Don Quijote</title>
+    <autor>Cervantes</autor>
+  </libro>
+  <libro>
+    <title>
+    Poeta en Nueva York
+    </title>
+    <autor>Lorca</autor>
+  </libro>
+</catalogo>	
