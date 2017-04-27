@@ -1224,6 +1224,8 @@ El fichero siguiente ilustra una posible forma de hacerlo:
 			</html>
 		</xsl:template>
 	</xsl:stylesheet>   
+
+
 	
 Ejercicio (no se da la solución)
 ------------------------------------------------------
