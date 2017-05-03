@@ -277,6 +277,9 @@ Condiciones múltiples: peso ligero y edificio A
 Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A **y además** pesen menos de 7kg.
 
 
+
+
+
 Ejercicio de examen XSLT
 ----------------------------
 
