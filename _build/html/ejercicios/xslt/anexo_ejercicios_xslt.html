@@ -296,7 +296,33 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 <div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
 <h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Se pide ahora generar un fichero de inventario igual que el original pero en el que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7.</p>
+<p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
+</div>
+<div class="section" id="ejercicio-de-examen-xslt">
+<h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dado el siguiente fichero XML</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+      <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1547&quot;</span><span class="nt">&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Antologia<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1898&quot;</span><span class="nt">&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1910&quot;</span><span class="nt">&gt;</span>Miguel Hernandez<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Conseguir lo siguiente:</p>
+<ol class="arabic simple">
+<li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
+<li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
+</ol>
 </div>
 </div>
 
@@ -318,6 +344,7 @@ y otra tabla separada para los productos del edificio B</p>
 <li><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
 <li><a class="reference internal" href="#id1">Productos del edificio B</a></li>
 <li><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
 </ul>
 </li>
 </ul>

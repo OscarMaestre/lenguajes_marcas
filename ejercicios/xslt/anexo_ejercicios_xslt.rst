@@ -274,5 +274,35 @@ El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora
 Condiciones múltiples: peso ligero y edificio A
 -------------------------------------------------
 
-Se pide ahora generar un fichero de inventario igual que el original pero en el que solo aparezcan los productos cuyo edificio sea el A **y además** pesen menos de 7.
+Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A **y además** pesen menos de 7kg.
+
+
+Ejercicio de examen XSLT
+----------------------------
+
+Dado el siguiente fichero XML
+
+.. code-block:: xml
+
+  <catalogo>
+    <libro isbn="i1">
+      <titulo>Don Quijote</titulo>
+      <autores>
+        <autor nacimiento="1547">Cervantes</autor>
+      </autores>
+    </libro>
+    <libro isbn="i2">
+      <titulo>Antologia</titulo>
+      <autores>
+          <autor nacimiento="1898">Lorca</autor>
+          <autor nacimiento="1910">Miguel Hernandez</autor>
+      </autores>
+    </libro>
+  </catalogo>
+  
+Conseguir lo siguiente:
+
+1. Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.
+
+2. Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
 
