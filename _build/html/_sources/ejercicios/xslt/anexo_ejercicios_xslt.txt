@@ -309,3 +309,25 @@ Conseguir lo siguiente:
 
 2. Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
 
+
+.. code-block:: xml
+
+  <xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <xsl:template match="/">
+      <html>
+        <head><title>Resultado</title></head>
+        <body>
+          <xsl:for-each select="catalogo/libro">
+            <xsl:variable name="contador" select='0'/>
+            <xsl:for-each select="autores/autor">
+              <xsl:if test="@nacimiento &gt; 1900">
+              </xsl:if>
+            </xsl:for-each>
+            
+          </xsl:for-each>
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>

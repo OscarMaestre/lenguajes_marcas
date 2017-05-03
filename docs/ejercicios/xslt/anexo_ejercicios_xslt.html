@@ -323,6 +323,27 @@ y otra tabla separada para los productos del edificio B</p>
 <li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
 <li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
 </ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;contador&quot;</span> <span class="na">select=</span><span class="s">&#39;0&#39;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &amp;gt; 1900&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+          <span class="nt">&lt;/xsl:for-each&gt;</span>
+
+        <span class="nt">&lt;/xsl:for-each&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
