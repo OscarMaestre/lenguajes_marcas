@@ -323,4 +323,4 @@
 \contentsline {section}{\numberline {11.7}Productos del aula 6}{237}{section.11.7}
 \contentsline {section}{\numberline {11.8}Productos del edificio B}{238}{section.11.8}
 \contentsline {section}{\numberline {11.9}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{238}{section.11.9}
-\contentsline {section}{\numberline {11.10}Ejercicio de examen XSLT}{238}{section.11.10}
+\contentsline {section}{\numberline {11.10}Ejercicio de examen XSLT}{239}{section.11.10}

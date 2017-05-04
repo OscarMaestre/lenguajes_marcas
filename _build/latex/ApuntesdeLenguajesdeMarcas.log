@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  4 MAY 2017 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  4 MAY 2017 10:00
 entering extended mode
 **./ApuntesDeLenguajesDeMarcas.tex
 (ApuntesDeLenguajesDeMarcas.tex
@@ -10234,87 +10234,88 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 12260.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 12260.
+LaTeX Info: Redefining \. on input line 12299.
+LaTeX Info: Redefining \% on input line 12299.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12265.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12265.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12265.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12265.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12265.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12265.
-LaTeX Info: Redefining \. on input line 12317.
-LaTeX Info: Redefining \% on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12299.
+ [238]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12317.
+(babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12317.
- [238] (ApuntesDeLenguajesDeMarcas.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12323.
-LaTeX Info: Redefining \. on input line 12323.
-LaTeX Info: Redefining \% on input line 12323.
+(babel)             in language  on input line 12302.
+ (ApuntesDeLenguajesDeMarcas.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12360.
+LaTeX Info: Redefining \. on input line 12360.
+LaTeX Info: Redefining \% on input line 12360.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12323.
+(babel)             in language  on input line 12360.
  [239]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12323.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12360.
 
 (ApuntesDeLenguajesDeMarcas.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12323.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12360.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12323
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12360
 .
 Package rerunfilecheck Info: File `ApuntesDeLenguajesDeMarcas.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: 26213D4CC05FDE0F91D15370B09C5126;20084.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12323.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12360.
  ) 
 Here is how much of TeX's memory you used:
  15323 strings out of 493334
@@ -10338,7 +10339,7 @@ a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/
 utmb8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (245 pages, 2322298 bytes).
+Output written on ApuntesDeLenguajesDeMarcas.pdf (245 pages, 2322801 bytes).
 PDF statistics:
  2299 PDF objects out of 2487 (max. 8388607)
  660 named destinations out of 1000 (max. 500000)

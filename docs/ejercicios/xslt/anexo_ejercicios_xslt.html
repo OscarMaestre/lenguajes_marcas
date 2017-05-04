@@ -284,6 +284,42 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
 <h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultados<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio = &#39;A&#39;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7000&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;Kg&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ejercicio-de-examen-xslt">
 <h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlazar permanentemente con este título">¶</a></h2>
