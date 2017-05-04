@@ -247,35 +247,22 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="productos-del-aula-6">
 <h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/aula= &#39;6&#39; &quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nombre&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/xsl:if&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>&lt;xsl:stylesheet</dt>
-<dd>xmlns:xsl=&#8221;http://www.w3.org/1999/XSL/Transform&#8221;&gt;</dd>
-<dt>&lt;xsl:template match=&#8221;/&#8221;&gt;</dt>
-<dd><p class="first">&lt;inventario&gt;
-&lt;xsl:for-each select=&#8221;/inventario/producto&#8221;&gt;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;xsl:if test=&#8221; lugar/aula= &#8216;6&#8217; &#8220;&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;nombre&gt;</dt>
-<dd>&lt;xsl:value-of select=&#8221;nombre&#8221;/&gt;</dd>
-</dl>
-<p class="last">&lt;/nombre&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsl:if&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/xsl:for-each&gt;
-&lt;/inventario&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</p>
-</div></blockquote>
 </div>
 <div class="section" id="id1">
 <h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>

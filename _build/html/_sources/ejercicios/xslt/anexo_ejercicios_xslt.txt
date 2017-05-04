@@ -233,7 +233,7 @@ Productos del aula 6
 
 Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.
 
-  .. code-block:: xml
+.. code-block:: xml
   
   <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
