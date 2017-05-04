@@ -202,6 +202,7 @@
 \contentsline {subsection}{\numberline {5.18.13}Ejercicio: listas de productos}{108}{subsection.5.18.13}
 \contentsline {subsection}{\numberline {5.18.14}Ejercicio: validaci\IeC {\'o}n de componentes}{109}{subsection.5.18.14}
 \contentsline {subsection}{\numberline {5.18.15}Ejercicio: inventario}{111}{subsection.5.18.15}
+<<<<<<< HEAD
 \contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{114}{section.5.19}
 \contentsline {section}{\numberline {5.20}Examen}{115}{section.5.20}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{117}{chapter.6}
@@ -307,3 +308,127 @@
 \contentsline {section}{\numberline {10.18}Formulario 18}{220}{section.10.18}
 \contentsline {section}{\numberline {10.19}Formulario 19}{222}{section.10.19}
 \contentsline {section}{\numberline {10.20}Formulario 20}{224}{section.10.20}
+=======
+\contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{115}{section.5.19}
+\contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{118}{section.5.20}
+\contentsline {section}{\numberline {5.21}Examen}{118}{section.5.21}
+\contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{119}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{119}{section.6.1}
+\contentsline {section}{\numberline {6.2}Fundamentos de DOM con Java}{119}{section.6.2}
+\contentsline {section}{\numberline {6.3}Ejemplo de base}{119}{section.6.3}
+\contentsline {section}{\numberline {6.4}La clase Document}{120}{section.6.4}
+\contentsline {section}{\numberline {6.5}Ejercicios}{121}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Ejercicio}{121}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Ejercicio}{123}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}Ejercicio}{124}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.4}Ejercicio}{124}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.5}Ejercicio}{125}{subsection.6.5.5}
+\contentsline {subsection}{\numberline {6.5.6}Ejercicio}{125}{subsection.6.5.6}
+\contentsline {subsection}{\numberline {6.5.7}Ejercicio}{126}{subsection.6.5.7}
+\contentsline {subsection}{\numberline {6.5.8}Ejercicio}{126}{subsection.6.5.8}
+\contentsline {subsubsection}{An\IeC {\'a}lisis del problema}{126}{subsubsection*.15}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n}{127}{subsubsection*.16}
+\contentsline {subsection}{\numberline {6.5.9}Ejercicio}{127}{subsection.6.5.9}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{127}{subsubsection*.17}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{127}{subsubsection*.18}
+\contentsline {subsection}{\numberline {6.5.10}Ejercicio}{128}{subsection.6.5.10}
+\contentsline {subsection}{\numberline {6.5.11}Ejercicio}{130}{subsection.6.5.11}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{130}{subsubsection*.19}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{130}{subsubsection*.20}
+\contentsline {subsubsection}{Implementaci\IeC {\'o}n}{130}{subsubsection*.21}
+\contentsline {subsection}{\numberline {6.5.12}Ejercicio}{132}{subsection.6.5.12}
+\contentsline {subsubsection}{An\IeC {\'a}lisis}{132}{subsubsection*.22}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{132}{subsubsection*.23}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n 1}{132}{subsubsection*.24}
+\contentsline {subsubsection}{Soluci\IeC {\'o}n 2}{133}{subsubsection*.25}
+\contentsline {section}{\numberline {6.6}Anexo}{134}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}C\IeC {\'o}digo Java}{134}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Archivo XML}{141}{subsection.6.6.2}
+\contentsline {section}{\numberline {6.7}Ejercicios para preparar examen}{143}{section.6.7}
+\contentsline {chapter}{\numberline {7}Sindicaci\IeC {\'o}n y transformaci\IeC {\'o}n de contenidos}{145}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introducci\IeC {\'o}n}{145}{section.7.1}
+\contentsline {section}{\numberline {7.2}RSS}{145}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Formato de archivo RSS}{145}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Ejercicio}{147}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Adaptaci\IeC {\'o}n y transformaci\IeC {\'o}n de XML}{148}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}CSS con XML}{149}{subsection.7.3.1}
+\contentsline {subsubsection}{Ejercicio}{150}{subsubsection*.26}
+\contentsline {subsection}{\numberline {7.3.2}Transformaci\IeC {\'o}n de XML}{151}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Ejercicio (carga de estilos)}{151}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Ejercicio (conversion entre XMLs)}{152}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}Ejercicio (generaci\IeC {\'o}n de atributos)}{152}{subsection.7.3.5}
+\contentsline {subsection}{\numberline {7.3.6}Ejercicio (tabla HTML)}{153}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}Ejercicio (generacion)}{153}{subsection.7.3.7}
+\contentsline {subsection}{\numberline {7.3.8}Ejercicio}{154}{subsection.7.3.8}
+\contentsline {subsection}{\numberline {7.3.9}Ejercicio}{154}{subsection.7.3.9}
+\contentsline {subsection}{\numberline {7.3.10}Ejercicio}{155}{subsection.7.3.10}
+\contentsline {subsection}{\numberline {7.3.11}Ejercicio}{156}{subsection.7.3.11}
+\contentsline {subsection}{\numberline {7.3.12}Ejercicio XSL, paso a paso}{158}{subsection.7.3.12}
+\contentsline {subsection}{\numberline {7.3.13}Ejercicio: condiciones complejas}{161}{subsection.7.3.13}
+\contentsline {subsection}{\numberline {7.3.14}Transformaci\IeC {\'o}n en tabla}{162}{subsection.7.3.14}
+\contentsline {subsection}{\numberline {7.3.15}Transformacion de pedidos}{163}{subsection.7.3.15}
+\contentsline {subsection}{\numberline {7.3.16}Transformaci\IeC {\'o}n de pedidos (II)}{165}{subsection.7.3.16}
+\contentsline {subsection}{\numberline {7.3.17}Ejercicio (no se da la soluci\IeC {\'o}n)}{166}{subsection.7.3.17}
+\contentsline {chapter}{\numberline {8}Sistemas de gesti\IeC {\'o}n de informaci\IeC {\'o}n}{167}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introducci\IeC {\'o}n}{167}{section.8.1}
+\contentsline {section}{\numberline {8.2}Niveles en la empresa}{167}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Tipos de SGI inform\IeC {\'a}ticos}{167}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}Almacenamiento en los SGI}{168}{section.8.3}
+\contentsline {section}{\numberline {8.4}Puntos de vista en los SGI}{169}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Desarrollador}{169}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Administrador}{169}{subsection.8.4.2}
+\contentsline {subsection}{\numberline {8.4.3}Usuario}{169}{subsection.8.4.3}
+\contentsline {subsection}{\numberline {8.4.4}Ejercicio}{169}{subsection.8.4.4}
+\contentsline {chapter}{\numberline {9}Anexo: ejercicios sobre tablas}{171}{chapter.9}
+\contentsline {section}{\numberline {9.1}Tabla 1}{171}{section.9.1}
+\contentsline {section}{\numberline {9.2}Tabla 2}{173}{section.9.2}
+\contentsline {section}{\numberline {9.3}Tabla 3}{174}{section.9.3}
+\contentsline {section}{\numberline {9.4}Tabla 4}{175}{section.9.4}
+\contentsline {section}{\numberline {9.5}Tabla 5}{178}{section.9.5}
+\contentsline {section}{\numberline {9.6}Tabla 6}{180}{section.9.6}
+\contentsline {section}{\numberline {9.7}Tabla 7}{181}{section.9.7}
+\contentsline {section}{\numberline {9.8}Tabla 8}{182}{section.9.8}
+\contentsline {section}{\numberline {9.9}Tabla 9}{184}{section.9.9}
+\contentsline {section}{\numberline {9.10}Tabla 10}{185}{section.9.10}
+\contentsline {section}{\numberline {9.11}Tabla 11}{187}{section.9.11}
+\contentsline {section}{\numberline {9.12}Tabla 12}{189}{section.9.12}
+\contentsline {section}{\numberline {9.13}Tabla 13}{190}{section.9.13}
+\contentsline {section}{\numberline {9.14}Tabla 14}{191}{section.9.14}
+\contentsline {section}{\numberline {9.15}Tabla 15}{193}{section.9.15}
+\contentsline {section}{\numberline {9.16}Tabla 16}{193}{section.9.16}
+\contentsline {section}{\numberline {9.17}Tabla 17}{195}{section.9.17}
+\contentsline {section}{\numberline {9.18}Tabla 18}{196}{section.9.18}
+\contentsline {section}{\numberline {9.19}Tabla 19}{197}{section.9.19}
+\contentsline {chapter}{\numberline {10}Anexo: ejercicios sobre formularios}{199}{chapter.10}
+\contentsline {section}{\numberline {10.1}Formulario 1}{199}{section.10.1}
+\contentsline {section}{\numberline {10.2}Formulario 2}{200}{section.10.2}
+\contentsline {section}{\numberline {10.3}Formulario 3}{201}{section.10.3}
+\contentsline {section}{\numberline {10.4}Formulario 4}{202}{section.10.4}
+\contentsline {section}{\numberline {10.5}Formulario 5}{203}{section.10.5}
+\contentsline {section}{\numberline {10.6}Formulario 6}{205}{section.10.6}
+\contentsline {section}{\numberline {10.7}Formulario 7}{207}{section.10.7}
+\contentsline {section}{\numberline {10.8}Formulario 8}{209}{section.10.8}
+\contentsline {section}{\numberline {10.9}Formulario 9}{211}{section.10.9}
+\contentsline {section}{\numberline {10.10}Formulario 10}{212}{section.10.10}
+\contentsline {section}{\numberline {10.11}Formulario 11}{214}{section.10.11}
+\contentsline {section}{\numberline {10.12}Formulario 12}{216}{section.10.12}
+\contentsline {section}{\numberline {10.13}Formulario 13}{218}{section.10.13}
+\contentsline {section}{\numberline {10.14}Formulario 14}{220}{section.10.14}
+\contentsline {section}{\numberline {10.15}Formulario 15}{222}{section.10.15}
+\contentsline {section}{\numberline {10.16}Formulario 16}{224}{section.10.16}
+\contentsline {section}{\numberline {10.17}Formulario 17}{225}{section.10.17}
+\contentsline {section}{\numberline {10.18}Formulario 18}{226}{section.10.18}
+\contentsline {section}{\numberline {10.19}Formulario 19}{228}{section.10.19}
+\contentsline {section}{\numberline {10.20}Formulario 20}{230}{section.10.20}
+\contentsline {chapter}{\numberline {11}Anexo: ejercicios sobre XSLT}{233}{chapter.11}
+\contentsline {section}{\numberline {11.1}Fichero origen}{233}{section.11.1}
+\contentsline {section}{\numberline {11.2}Generaci\IeC {\'o}n de lista con puntos}{233}{section.11.2}
+\contentsline {section}{\numberline {11.3}Recuperaci\IeC {\'o}n de elementos pesados}{234}{section.11.3}
+\contentsline {section}{\numberline {11.4}Productos del edificio B}{234}{section.11.4}
+\contentsline {section}{\numberline {11.5}Tabla de localizaciones}{235}{section.11.5}
+\contentsline {section}{\numberline {11.6}Tablas con edificios separados}{236}{section.11.6}
+\contentsline {section}{\numberline {11.7}Productos del aula 6}{237}{section.11.7}
+\contentsline {section}{\numberline {11.8}Productos del edificio B}{238}{section.11.8}
+\contentsline {section}{\numberline {11.9}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{238}{section.11.9}
+\contentsline {section}{\numberline {11.10}Ejercicio de examen XSLT}{239}{section.11.10}
+>>>>>>> d15df699d7533390d78d36d13dd4154a04b5dc11
