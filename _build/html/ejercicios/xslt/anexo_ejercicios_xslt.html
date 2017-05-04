@@ -344,26 +344,51 @@ y otra tabla separada para los productos del edificio B</p>
 <p>Conseguir lo siguiente:</p>
 <ol class="arabic simple">
 <li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
 <li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
 </ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Mostrar el nombre de los autores nacidos despues del año 1700.</li>
+</ol>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
-  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
-
-  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
-      <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
-      <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;contador&quot;</span> <span class="na">select=</span><span class="s">&#39;0&#39;</span><span class="nt">/&gt;</span>
-          <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &amp;gt; 1900&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;/xsl:if&gt;</span>
-          <span class="nt">&lt;/xsl:for-each&gt;</span>
-
-        <span class="nt">&lt;/xsl:for-each&gt;</span>
-      <span class="nt">&lt;/body&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Nombre<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Año nacimiento<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;xsl:for-each</span>
+                <span class="na">select=</span><span class="s">&quot;catalogo/libro/autores/autor&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &amp;gt; 1700&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;@nacimiento&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
     <span class="nt">&lt;/html&gt;</span>
-  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>

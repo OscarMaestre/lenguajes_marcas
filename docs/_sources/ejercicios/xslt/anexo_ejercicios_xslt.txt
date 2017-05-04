@@ -343,27 +343,53 @@ Conseguir lo siguiente:
 
 1. Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.
 
-2. Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
+.. code-block:: xml
 
+    <xsl:stylesheet>
+        No se da la solución de este
+        ejercicio
+    </xsl:stylesheet>
+
+2. Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
 
 .. code-block:: xml
 
-  <xsl:stylesheet
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:stylesheet>
+        No se da la solución de este
+        ejercicio
+    </xsl:stylesheet>
+
+
+3. Mostrar el nombre de los autores nacidos despues del año 1700.
+
+
+
+.. code-block:: xml
     
+    <xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/">
-      <html>
-        <head><title>Resultado</title></head>
-        <body>
-          <xsl:for-each select="catalogo/libro">
-            <xsl:variable name="contador" select='0'/>
-            <xsl:for-each select="autores/autor">
-              <xsl:if test="@nacimiento &gt; 1900">
-              </xsl:if>
-            </xsl:for-each>
-            
-          </xsl:for-each>
-        </body>
-      </html>
+        <html>
+            <head><title>Resultado</title></head>
+            <body>
+                <table border='1'>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Año nacimiento</td>
+                    </tr>
+                    <xsl:for-each
+                    select="catalogo/libro/autores/autor">
+                    <xsl:if test="@nacimiento &gt; 1700">
+                        <td>
+                            <xsl:value-of select="."/>
+                        </td>
+                        <td>
+                            <xsl:value-of select="@nacimiento"/>
+                        </td>
+                    </xsl:if>
+                    </xsl:for-each>
+                </table>
+            </body>
+        </html>
     </xsl:template>
-  </xsl:stylesheet>
+    </xsl:stylesheet>

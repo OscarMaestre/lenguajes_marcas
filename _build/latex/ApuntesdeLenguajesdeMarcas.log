@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  4 MAY 2017 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.17)  4 MAY 2017 10:19
 entering extended mode
 **./ApuntesDeLenguajesDeMarcas.tex
 (ApuntesDeLenguajesDeMarcas.tex
@@ -10273,53 +10273,79 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 12302.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 12302.
- (ApuntesDeLenguajesDeMarcas.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12360.
-LaTeX Info: Redefining \. on input line 12360.
-LaTeX Info: Redefining \% on input line 12360.
+LaTeX Info: Redefining \. on input line 12385.
+LaTeX Info: Redefining \% on input line 12385.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12360.
+(babel)             in language  on input line 12385.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12360.
- [239]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12360.
+(babel)             in language  on input line 12385.
+ [239] (ApuntesDeLenguajesDeMarcas.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12391.
+LaTeX Info: Redefining \. on input line 12391.
+LaTeX Info: Redefining \% on input line 12391.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 12391.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 12391.
+ [240]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12391.
 
 (ApuntesDeLenguajesDeMarcas.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12360.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12391.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12360
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12391
 .
 Package rerunfilecheck Info: File `ApuntesDeLenguajesDeMarcas.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: 26213D4CC05FDE0F91D15370B09C5126;20084.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12360.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12391.
  ) 
 Here is how much of TeX's memory you used:
- 15323 strings out of 493334
- 217005 string characters out of 3129788
+ 15325 strings out of 493334
+ 217020 string characters out of 3129788
  1310326 words of memory out of 3000000
  17801 multiletter control sequences out of 15000+200000
  66375 words of font info for 82 fonts, out of 3000000 for 9000
@@ -10339,9 +10365,9 @@ a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/
 utmb8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Users/ogomez/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (245 pages, 2322801 bytes).
+Output written on ApuntesDeLenguajesDeMarcas.pdf (246 pages, 2324266 bytes).
 PDF statistics:
- 2299 PDF objects out of 2487 (max. 8388607)
- 660 named destinations out of 1000 (max. 500000)
+ 2305 PDF objects out of 2487 (max. 8388607)
+ 662 named destinations out of 1000 (max. 500000)
  1519 words of extra memory for PDF output out of 10000 (max. 10000000)
 
