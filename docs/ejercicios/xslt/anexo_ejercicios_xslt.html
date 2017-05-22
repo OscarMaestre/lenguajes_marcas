@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anexo: ejercicios sobre XSLT &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="../../index.html" />
+    <link rel="prev" title="Anexo: ejercicios sobre formularios" href="../formularios/anexo_formularios.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anexo-ejercicios-sobre-xslt">
+<h1>Anexo: ejercicios sobre XSLT<a class="headerlink" href="#anexo-ejercicios-sobre-xslt" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="fichero-origen">
+<h2>Fichero origen<a class="headerlink" href="#fichero-origen" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para los ejercicios siguiente supondremos que se va a trabajar con el fichero que se muestra a continuación:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Ordenador<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;lugar</span> <span class="na">edificio=</span><span class="s">&quot;B&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;aula&gt;</span>10<span class="nt">&lt;/aula&gt;</span>
+        <span class="nt">&lt;/lugar&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P2&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&#39;g&#39;</span><span class="nt">&gt;</span>500<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Switch<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;lugar</span> <span class="na">edificio=</span><span class="s">&quot;A&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;aula&gt;</span>6<span class="nt">&lt;/aula&gt;</span>
+        <span class="nt">&lt;/lugar&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generacion-de-lista-con-puntos">
+<h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:</p>
+<a class="reference internal image-reference" href="../../_images/lista_punteada.png"><img alt="../../_images/lista_punteada.png" class="align-center" src="../../_images/lista_punteada.png" style="width: 308.5px; height: 198.5px;" /></a>
+</div>
+<div class="section" id="recuperacion-de-elementos-pesados">
+<h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide un XSLT que muestre exactamente la misma información del fichero origen pero sin mostrar los elementos cuyo peso sea menor de 7.</p>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+ <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;producto&gt;</span>
+                <span class="nt">&lt;peso&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/peso&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;lugar&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;edificio&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/@edificio&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="nt">&lt;aula&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/aula&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/aula&gt;</span>
+                <span class="nt">&lt;/lugar&gt;</span>
+            <span class="nt">&lt;/producto&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="productos-del-edificio-b">
+<h2>Productos del edificio B<a class="headerlink" href="#productos-del-edificio-b" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide ahora mostrar en el resultado la misma información del fichero origen pero solo en los casos en que el lugar del producto sea el edificio B</p>
+<p>La solución es muy parecida, necesitando solamente modificar la condición.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+ <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio=&#39;B&#39;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;producto&gt;</span>
+                <span class="nt">&lt;peso&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/peso&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;lugar&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;edificio&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/@edificio&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="nt">&lt;aula&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/aula&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/aula&gt;</span>
+                <span class="nt">&lt;/lugar&gt;</span>
+            <span class="nt">&lt;/producto&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabla-de-localizaciones">
+<h2>Tabla de localizaciones<a class="headerlink" href="#tabla-de-localizaciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Generar una tabla HTML que muestre la información del fichero origen de la manera siguiente:</p>
+<a class="reference internal image-reference" href="../../_images/xslt_tabla_edificio_aula.png"><img alt="../../_images/xslt_tabla_edificio_aula.png" class="align-center" src="../../_images/xslt_tabla_edificio_aula.png" style="width: 241.5px; height: 214.0px;" /></a>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+ <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio=&#39;B&#39;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;producto&gt;</span>
+                <span class="nt">&lt;peso&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/peso&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span>
+                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;lugar&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;edificio&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/@edificio&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="nt">&lt;aula&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/aula&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/aula&gt;</span>
+                <span class="nt">&lt;/lugar&gt;</span>
+            <span class="nt">&lt;/producto&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tablas-con-edificios-separados">
+<h2>Tablas con edificios separados<a class="headerlink" href="#tablas-con-edificios-separados" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hacer una plantilla que fabrique una tabla
+con los datos de los productos del edificio A
+y otra tabla separada para los productos del edificio B</p>
+<a class="reference internal image-reference" href="../../_images/xslt_tabla_edificio_separadas.png"><img alt="../../_images/xslt_tabla_edificio_separadas.png" class="align-center" src="../../_images/xslt_tabla_edificio_separadas.png" style="width: 163.5px; height: 229.0px;" /></a>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Datos por edificio<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Edificio A<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio=&#39;A&#39;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                                <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                                <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/@edificio&quot;</span><span class="nt">/&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/aula&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Edificio B<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio=&#39;B&#39;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                                <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                                <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/@edificio&quot;</span><span class="nt">/&gt;</span>
+                            <span class="nt">&lt;xsl:value-of</span>
+                            <span class="na">select=</span><span class="s">&quot;lugar/aula&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="productos-del-aula-6">
+<h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/aula= &#39;6&#39; &quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nombre&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/xsl:if&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/@edificio = &#39;B&#39; &quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nombre&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/xsl:if&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
+<h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultados<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio = &#39;A&#39;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7000&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;Kg&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-de-examen-xslt">
+<h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dado el siguiente fichero XML</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+      <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1547&quot;</span><span class="nt">&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Antologia<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1898&quot;</span><span class="nt">&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1910&quot;</span><span class="nt">&gt;</span>Miguel Hernandez<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Conseguir lo siguiente:</p>
+<ol class="arabic simple">
+<li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Mostrar el nombre de los autores nacidos despues del año 1700.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Nombre<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Año nacimiento<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;xsl:for-each</span>
+                <span class="na">select=</span><span class="s">&quot;catalogo/libro/autores/autor&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &amp;gt; 1700&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;@nacimiento&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
+<li><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
+<li><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
+<li><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
+<li><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
+<li><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
+<li><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
+<li><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
+<li><a class="reference internal" href="#id1">Productos del edificio B</a></li>
+<li><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../formularios/anexo_formularios.html" title="capítulo anterior">Anexo: ejercicios sobre formularios</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
