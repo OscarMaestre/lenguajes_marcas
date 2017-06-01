@@ -1624,6 +1624,38 @@ Para hacer que Java procese un fichero mediante SAX usando nuestra clase como pr
 
 Ahora Java irá leyendo el fichero etiqueta por etiqueta y mostrándonos los nombres de todas. No importará que el fichero ocupe varios GB, ya que SAX no cargará el fichero completo en memoria.
 
+Ejercicio: encontrar producto
+----------------------------------
+
+Encontrar todos los productos cuyo nombre sea "Cafe" y su mercado "América Latina".
+
+.. code-block:: java
+
+  public void characters(
+        char[] letras, int ini, int longitud){
+      if ((mercadoEncontrado) && (cafeEncontrado)){
+        String cadena=new String(letras, ini, longitud);
+        if (cadena.equals("América Latina")){
+          System.out.println("Encontrado Cafe de AL");
+          cafeEncontrado=false;
+          mercadoEncontrado=false;
+          productoEncontrado=false;
+          futuroEncontrado=false;
+        }
+      }
+      if ((productoEncontrado) && (futuroEncontrado)){
+        String cadena=new String(letras, ini, longitud);
+        if (cadena.equals("Cafe")){
+          cafeEncontrado=true;
+        } //Fin del if interno
+      } //Fin del if externo
+    } //Fin del método characters
+    
+Ejercicio: precios
+-----------------------
+
+Encontrar todos las divisas cuya ciudad de procedencia sea "Madrid".
+
 
 Ejercicios para preparar examen
 ===========================================	
