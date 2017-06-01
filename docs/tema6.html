@@ -320,6 +320,148 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-extraccion-de-informacion-financiera">
+<h3>Ejercicio: extracción de información financiera<a class="headerlink" href="#ejercicio-extraccion-de-informacion-financiera" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el archivo XML siguiente...</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
+        <span class="nt">&lt;futuro</span> <span class="na">precio=</span><span class="s">&quot;11.28&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;producto&gt;</span>Cafe<span class="nt">&lt;/producto&gt;</span>
+                <span class="nt">&lt;mercado&gt;</span>América Latina<span class="nt">&lt;/mercado&gt;</span>
+                <span class="nt">&lt;ciudad_procedencia&gt;</span>
+                        <span class="nt">&lt;frankfurt/&gt;</span>
+                <span class="nt">&lt;/ciudad_procedencia&gt;</span>
+        <span class="nt">&lt;/futuro&gt;</span>
+        <span class="nt">&lt;divisa</span> <span class="na">precio=</span><span class="s">&quot;183&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;nombre_divisa&gt;</span>Libra esterlina<span class="nt">&lt;/nombre_divisa&gt;</span>
+                <span class="nt">&lt;tipo_de_cambio&gt;</span>2.7:1 euros<span class="nt">&lt;/tipo_de_cambio&gt;</span>
+                <span class="nt">&lt;tipo_de_cambio&gt;</span>1:0.87 dólares<span class="nt">&lt;/tipo_de_cambio&gt;</span>
+                <span class="nt">&lt;ciudad_procedencia&gt;</span>
+                        <span class="nt">&lt;madrid/&gt;</span>
+                <span class="nt">&lt;/ciudad_procedencia&gt;</span>
+        <span class="nt">&lt;/divisa&gt;</span>
+        <span class="nt">&lt;bono</span> <span class="na">precio=</span><span class="s">&quot;10000&quot;</span> <span class="na">estable=</span><span class="s">&quot;si&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;pais_de_procedencia&gt;</span>
+                        Islandia
+                <span class="nt">&lt;/pais_de_procedencia&gt;</span>
+                <span class="nt">&lt;valor_deseado&gt;</span>9980<span class="nt">&lt;/valor_deseado&gt;</span>
+                <span class="nt">&lt;valor_minimo&gt;</span>9950<span class="nt">&lt;/valor_minimo&gt;</span>
+                <span class="nt">&lt;valor_maximo&gt;</span>10020<span class="nt">&lt;/valor_maximo&gt;</span>
+                <span class="nt">&lt;ciudad_procedencia&gt;</span>
+                        <span class="nt">&lt;tokio/&gt;</span>
+                <span class="nt">&lt;/ciudad_procedencia&gt;</span>
+        <span class="nt">&lt;/bono&gt;</span>
+        <span class="nt">&lt;letra</span> <span class="na">precio=</span><span class="s">&quot;45020&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tipo_de_interes&gt;</span>4.54%<span class="nt">&lt;/tipo_de_interes&gt;</span>
+                <span class="nt">&lt;pais_emisor&gt;</span>
+                        <span class="nt">&lt;espania/&gt;</span>
+                <span class="nt">&lt;/pais_emisor&gt;</span>
+                <span class="nt">&lt;ciudad_procedencia&gt;</span>
+                        <span class="nt">&lt;madrid/&gt;</span>
+                <span class="nt">&lt;/ciudad_procedencia&gt;</span>
+        <span class="nt">&lt;/letra&gt;</span>
+<span class="nt">&lt;/listado&gt;</span>
+</pre></div>
+</div>
+<p>...crear un programa XML que:</p>
+<ul class="simple">
+<li>Busque todos los elementos cuya ciudad de procedencia sea &#8220;Madrid&#8221;.</li>
+<li>Si el elemento es un futuro mostrará el contenido de la etiqueta &#8220;producto&#8221;.</li>
+<li>Si el elemento es una divisa se mostrará el contenido de la etiqueta &#8220;nombre&#8221;.</li>
+<li>Si el elemento es una letra  se mostrará el contenido de la etiqueta &#8220;pais_emisor&#8221;.</li>
+<li>Si el elemento es un bono  se mostrará el contenido de la etiqueta &#8220;pais_de_procedencia&#8221;.</li>
+</ul>
+<p>Una posibilidad (incompleta) sería esta:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Element</span> <span class="nf">getRaiz</span> <span class="o">(</span><span class="n">String</span> <span class="n">rutaFichero</span><span class="o">){</span>
+
+    <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
+    <span class="n">DocumentBuilderFactory</span> <span class="n">fabrica</span><span class="o">;</span>
+    <span class="n">fabrica</span><span class="o">=</span><span class="n">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+    <span class="n">DocumentBuilder</span> <span class="n">constructor</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">constructor</span><span class="o">=</span><span class="n">fabrica</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
+      <span class="n">FileInputStream</span> <span class="n">fichero</span><span class="o">;</span>
+      <span class="n">fichero</span><span class="o">=</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">rutaFichero</span><span class="o">);</span>
+      <span class="n">Document</span> <span class="n">documento</span><span class="o">;</span>
+      <span class="n">documento</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">fichero</span><span class="o">);</span>
+      <span class="n">raiz</span><span class="o">=</span><span class="n">documento</span><span class="o">.</span><span class="na">getDocumentElement</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ParserConfigurationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SAXException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// TODO Auto-generated catch block</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">raiz</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostrarMadrid</span><span class="o">(</span><span class="n">Element</span> <span class="n">raiz</span><span class="o">){</span>
+    <span class="n">NodeList</span> <span class="n">hijos</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hijos</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+      <span class="n">Node</span> <span class="n">nodoVisitado</span><span class="o">=</span><span class="n">hijos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">nodoVisitado</span><span class="o">.</span><span class="na">getNodeType</span><span class="o">()</span>
+          <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="na">ELEMENT_NODE</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//El nodo sí es un elemento y no</span>
+        <span class="c1">//un nodo con texto \n</span>
+        <span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">;</span>
+        <span class="n">elemVisitado</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">nodoVisitado</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;futuro&quot;</span><span class="o">)){</span>
+          <span class="n">procesarFuturo</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;bono&quot;</span><span class="o">)){</span>
+          <span class="n">procesarBono</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;letra&quot;</span><span class="o">)){</span>
+          <span class="n">procesarLetra</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;divisa&quot;</span><span class="o">)){</span>
+          <span class="n">procesarDivisa</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarDivisa</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// TODO Auto-generated method stub</span>
+
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarLetra</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// TODO Auto-generated method stub</span>
+
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarBono</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// TODO Auto-generated method stub</span>
+
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarFuturo</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">NodeList</span> <span class="n">hijosCiudad</span><span class="o">;</span>
+    <span class="n">hijosCiudad</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
+        <span class="s">&quot;ciudad_procedencia&quot;</span><span class="o">);</span>
+    <span class="n">Node</span> <span class="n">unicaCiudad</span><span class="o">=</span><span class="n">hijosCiudad</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="n">NodeList</span> <span class="n">ciudades</span><span class="o">=</span><span class="n">unicaCiudad</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
+    <span class="n">Node</span> <span class="n">ciudadProcedencia</span><span class="o">=</span><span class="n">ciudades</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="n">Element</span> <span class="n">elemCiudad</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">ciudadProcedencia</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">elemCiudad</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;madrid&quot;</span><span class="o">)){</span>
+      <span class="n">NodeList</span> <span class="n">productos</span><span class="o">;</span>
+      <span class="n">productos</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
+          <span class="s">&quot;producto&quot;</span><span class="o">);</span>
+      <span class="n">Element</span> <span class="n">elemProducto</span><span class="o">;</span>
+      <span class="n">elemProducto</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">productos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+          <span class="n">elemProducto</span><span class="o">.</span><span class="na">getTextContent</span><span class="o">()</span> <span class="o">);</span>
+
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="n">getRaiz</span><span class="o">(</span>
+      <span class="s">&quot;c:/users/ogomez/documents/finanzas.xml&quot;</span><span class="o">);</span>
+    <span class="n">mostrarMadrid</span><span class="o">(</span><span class="n">raiz</span><span class="o">);</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+<p>}</p>
+</div>
 <div class="section" id="id3">
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ampliar el programa para que nos diga cuantos elementos &#8220;divisa&#8221; hay en el archivo.</p>
@@ -1339,6 +1481,86 @@
 </div>
 </div>
 </div>
+<div class="section" id="procesamiento-con-sax">
+<h2>Procesamiento con SAX<a class="headerlink" href="#procesamiento-con-sax" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Simple Api for XML (o SAX) es un conjunto de clases para procesar XML de una forma muchísimo más eficiente (pero también más incómoda). Consiste en un <em>parser</em> que va leyendo etiqueta por etiqueta. Cada vez que el parser encuentra una etiqueta nueva nos lo comunicará mediante un evento y tendremos que incluir código de gestión de eventos que decidan que hacer.</p>
+<p>La forma más sencilla de trabajar es hacer que nuestra clase herede de <code class="docutils literal"><span class="pre">DefaultHandler</span></code> y sobrecargar el código de los métodos <code class="docutils literal"><span class="pre">startElement</span></code> y <code class="docutils literal"><span class="pre">endElement</span></code>.</p>
+<p>Cuando se procesa XML podemos encontrarnos con que se usen o no espacios de nombres. Si usamos espacios de nombres SAX nos devolverá un argumento pero si no los usamos SAX nos devolverá otro argumento. Observemos el siguiente código:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startElement</span><span class="o">(</span>
+      <span class="n">String</span> <span class="n">ns</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombreCuandoHayNS</span><span class="o">,</span>
+      <span class="n">String</span> <span class="n">nombreCuandoNoHayNS</span><span class="o">,</span>
+      <span class="n">Attributes</span> <span class="n">atributos</span><span class="o">)</span>
+      <span class="kd">throws</span> <span class="n">SAXException</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nombreCuandoNoHayNS</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>En este código SAX avisará a nuestro método <code class="docutils literal"><span class="pre">startElement</span></code> (el nombre debe ser así), cada vez que
+encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios de nombres nos interesa imprimir el tercer parámetro.</p>
+<p>Para hacer que Java procese un fichero mediante SAX usando nuestra clase como procesador de etiquetas haremos lo siguiente:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startElement</span><span class="o">(</span>
+      <span class="n">String</span> <span class="n">ns</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombreCuandoHayNS</span><span class="o">,</span>
+      <span class="n">String</span> <span class="n">nombreCuandoNoHayNS</span><span class="o">,</span>
+      <span class="n">Attributes</span> <span class="n">atributos</span><span class="o">)</span>
+      <span class="kd">throws</span> <span class="n">SAXException</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nombreCuandoNoHayNS</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+      <span class="kd">throws</span> <span class="n">ParserConfigurationException</span><span class="o">,</span>
+      <span class="n">SAXException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+
+    <span class="n">SAXParserFactory</span> <span class="n">fabrica</span><span class="o">;</span>
+    <span class="n">fabrica</span><span class="o">=</span><span class="n">SAXParserFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+    <span class="n">SAXParser</span> <span class="n">parser</span><span class="o">=</span><span class="n">fabrica</span><span class="o">.</span><span class="na">newSAXParser</span><span class="o">();</span>
+    <span class="n">XMLReader</span> <span class="n">lector</span><span class="o">=</span><span class="n">parser</span><span class="o">.</span><span class="na">getXMLReader</span><span class="o">();</span>
+    <span class="n">lector</span><span class="o">.</span><span class="na">setContentHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">ProcesadorSAX</span><span class="o">());</span>
+    <span class="n">lector</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span>
+      <span class="s">&quot;c:/users/ogomez/documents/finanzas.xml&quot;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Ahora Java irá leyendo el fichero etiqueta por etiqueta y mostrándonos los nombres de todas. No importará que el fichero ocupe varios GB, ya que SAX no cargará el fichero completo en memoria.</p>
+<div class="section" id="ejercicio-encontrar-producto">
+<h3>Ejercicio: encontrar producto<a class="headerlink" href="#ejercicio-encontrar-producto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Encontrar todos los productos cuyo nombre sea &#8220;Cafe&#8221; y su mercado &#8220;América Latina&#8221;.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">characters</span><span class="o">(</span>
+      <span class="kt">char</span><span class="o">[]</span> <span class="n">letras</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ini</span><span class="o">,</span> <span class="kt">int</span> <span class="n">longitud</span><span class="o">){</span>
+    <span class="k">if</span> <span class="o">((</span><span class="n">mercadoEncontrado</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">cafeEncontrado</span><span class="o">)){</span>
+      <span class="n">String</span> <span class="n">cadena</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">letras</span><span class="o">,</span> <span class="n">ini</span><span class="o">,</span> <span class="n">longitud</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">cadena</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;América Latina&quot;</span><span class="o">)){</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Encontrado Cafe de AL&quot;</span><span class="o">);</span>
+        <span class="n">cafeEncontrado</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+        <span class="n">mercadoEncontrado</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+        <span class="n">productoEncontrado</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+        <span class="n">futuroEncontrado</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">((</span><span class="n">productoEncontrado</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">futuroEncontrado</span><span class="o">)){</span>
+      <span class="n">String</span> <span class="n">cadena</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">letras</span><span class="o">,</span> <span class="n">ini</span><span class="o">,</span> <span class="n">longitud</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">cadena</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;Cafe&quot;</span><span class="o">)){</span>
+        <span class="n">cafeEncontrado</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+      <span class="o">}</span> <span class="c1">//Fin del if interno</span>
+    <span class="o">}</span> <span class="c1">//Fin del if externo</span>
+  <span class="o">}</span> <span class="c1">//Fin del método characters</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-precios">
+<h3>Ejercicio: precios<a class="headerlink" href="#ejercicio-precios" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Encontrar todos las divisas cuya ciudad de procedencia sea &#8220;Madrid&#8221;.</p>
+</div>
+</div>
 <div class="section" id="ejercicios-para-preparar-examen">
 <h2>Ejercicios para preparar examen<a class="headerlink" href="#ejercicios-para-preparar-examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <ol class="arabic simple">
@@ -1366,6 +1588,7 @@
 <li><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
 <li><a class="reference internal" href="#id1">Ejercicio</a></li>
 <li><a class="reference internal" href="#id2">Ejercicio</a></li>
+<li><a class="reference internal" href="#ejercicio-extraccion-de-informacion-financiera">Ejercicio: extracción de información financiera</a></li>
 <li><a class="reference internal" href="#id3">Ejercicio</a></li>
 <li><a class="reference internal" href="#id4">Ejercicio</a></li>
 <li><a class="reference internal" href="#id5">Ejercicio</a></li>
@@ -1399,6 +1622,11 @@
 <li><a class="reference internal" href="#anexo">Anexo</a><ul>
 <li><a class="reference internal" href="#codigo-java">Código Java</a></li>
 <li><a class="reference internal" href="#archivo-xml">Archivo XML</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#procesamiento-con-sax">Procesamiento con SAX</a><ul>
+<li><a class="reference internal" href="#ejercicio-encontrar-producto">Ejercicio: encontrar producto</a></li>
+<li><a class="reference internal" href="#ejercicio-precios">Ejercicio: precios</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicios-para-preparar-examen">Ejercicios para preparar examen</a></li>

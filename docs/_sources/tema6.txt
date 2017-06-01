@@ -317,6 +317,152 @@ Otra posibilidad sería usar el ``getChildNodes`` que nos devuelve un vector con
 		} //Fin del for
 	} //Fin del método
 
+Ejercicio: extracción de información financiera
+--------------------------------------------------
+
+Dado el archivo XML siguiente...
+
+.. code-block:: xml
+
+  <listado>
+          <futuro precio="11.28">
+                  <producto>Cafe</producto>
+                  <mercado>América Latina</mercado>
+                  <ciudad_procedencia>
+                          <frankfurt/>
+                  </ciudad_procedencia>
+          </futuro>
+          <divisa precio="183">
+                  <nombre_divisa>Libra esterlina</nombre_divisa>
+                  <tipo_de_cambio>2.7:1 euros</tipo_de_cambio>
+                  <tipo_de_cambio>1:0.87 dólares</tipo_de_cambio>
+                  <ciudad_procedencia>
+                          <madrid/>
+                  </ciudad_procedencia>
+          </divisa>
+          <bono precio="10000" estable="si">
+                  <pais_de_procedencia>
+                          Islandia
+                  </pais_de_procedencia>
+                  <valor_deseado>9980</valor_deseado>
+                  <valor_minimo>9950</valor_minimo>
+                  <valor_maximo>10020</valor_maximo>
+                  <ciudad_procedencia>
+                          <tokio/>
+                  </ciudad_procedencia>
+          </bono>
+          <letra precio="45020">
+                  <tipo_de_interes>4.54%</tipo_de_interes>
+                  <pais_emisor>
+                          <espania/>
+                  </pais_emisor>
+                  <ciudad_procedencia>
+                          <madrid/>
+                  </ciudad_procedencia>
+          </letra>
+  </listado>
+
+...crear un programa XML que:
+
+* Busque todos los elementos cuya ciudad de procedencia sea "Madrid".
+* Si el elemento es un futuro mostrará el contenido de la etiqueta "producto".
+* Si el elemento es una divisa se mostrará el contenido de la etiqueta "nombre".
+* Si el elemento es una letra  se mostrará el contenido de la etiqueta "pais_emisor".
+* Si el elemento es un bono  se mostrará el contenido de la etiqueta "pais_de_procedencia".
+
+
+Una posibilidad (incompleta) sería esta:
+
+.. code-block:: java
+
+  public class ProcesadorFinanzas {
+    
+    public static Element getRaiz (String rutaFichero){
+  
+      Element raiz=null;
+      DocumentBuilderFactory fabrica;
+      fabrica=DocumentBuilderFactory.newInstance();
+      DocumentBuilder constructor;
+      try {
+        constructor=fabrica.newDocumentBuilder();
+        FileInputStream fichero;
+        fichero=new FileInputStream(rutaFichero);
+        Document documento;
+        documento=constructor.parse(fichero);
+        raiz=documento.getDocumentElement();
+      } catch (ParserConfigurationException e) {
+        e.printStackTrace();
+      } catch (FileNotFoundException e) {
+        e.printStackTrace();
+      } catch (SAXException e) {
+        // TODO Auto-generated catch block
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      return raiz;
+    }
+    public static void mostrarMadrid(Element raiz){
+      NodeList hijos=raiz.getChildNodes();
+      for (int i=0; i<hijos.getLength(); i++){
+        Node nodoVisitado=hijos.item(i);
+        if (nodoVisitado.getNodeType()
+            == Node.ELEMENT_NODE) {
+          //El nodo sí es un elemento y no
+          //un nodo con texto \n
+          Element elemVisitado;
+          elemVisitado=(Element) nodoVisitado;
+          if (elemVisitado.getTagName().equals("futuro")){
+            procesarFuturo(elemVisitado);
+          }
+          if (elemVisitado.getTagName().equals("bono")){
+            procesarBono(elemVisitado);
+          }
+          if (elemVisitado.getTagName().equals("letra")){
+            procesarLetra(elemVisitado);
+          }
+          if (elemVisitado.getTagName().equals("divisa")){
+            procesarDivisa(elemVisitado);
+          }
+        }
+      }
+    }
+    private static void procesarDivisa(Element elemVisitado) {
+      // TODO Auto-generated method stub
+      
+    }
+    private static void procesarLetra(Element elemVisitado) {
+      // TODO Auto-generated method stub
+      
+    }
+    private static void procesarBono(Element elemVisitado) {
+      // TODO Auto-generated method stub
+      
+    }
+    private static void procesarFuturo(Element elemVisitado) {		
+      NodeList hijosCiudad;
+      hijosCiudad=elemVisitado.getElementsByTagName(
+          "ciudad_procedencia");
+      Node unicaCiudad=hijosCiudad.item(0);
+      NodeList ciudades=unicaCiudad.getChildNodes();
+      Node ciudadProcedencia=ciudades.item(1);
+      Element elemCiudad=(Element) ciudadProcedencia;
+      if (elemCiudad.getTagName().equals("madrid")){
+        NodeList productos;
+        productos=elemVisitado.getElementsByTagName(
+            "producto");
+        Element elemProducto;
+        elemProducto=(Element) productos.item(0);
+        System.out.println(
+            elemProducto.getTextContent() );
+        
+      }
+    }
+    public static void main(String[] args) {
+      Element raiz=getRaiz(
+        "c:/users/ogomez/documents/finanzas.xml");
+      mostrarMadrid(raiz);
+    }
+}
 
 
 		
@@ -1416,7 +1562,101 @@ Archivo XML
 			</ciudad_procedencia>
 		</letra>
 	</listado>
-	
+  
+  
+Procesamiento con SAX
+==============================
+
+Simple Api for XML (o SAX) es un conjunto de clases para procesar XML de una forma muchísimo más eficiente (pero también más incómoda). Consiste en un *parser* que va leyendo etiqueta por etiqueta. Cada vez que el parser encuentra una etiqueta nueva nos lo comunicará mediante un evento y tendremos que incluir código de gestión de eventos que decidan que hacer.
+
+La forma más sencilla de trabajar es hacer que nuestra clase herede de ``DefaultHandler`` y sobrecargar el código de los métodos ``startElement`` y ``endElement``.
+
+Cuando se procesa XML podemos encontrarnos con que se usen o no espacios de nombres. Si usamos espacios de nombres SAX nos devolverá un argumento pero si no los usamos SAX nos devolverá otro argumento. Observemos el siguiente código:
+
+.. code-block:: java
+
+  public class ProcesadorSAX extends DefaultHandler{
+  
+    @Override
+    public void startElement(
+        String ns, String nombreCuandoHayNS, 
+        String nombreCuandoNoHayNS, 
+        Attributes atributos) 
+        throws SAXException 
+    {
+      System.out.println(nombreCuandoNoHayNS);
+    }
+  }
+
+
+En este código SAX avisará a nuestro método ``startElement`` (el nombre debe ser así), cada vez que
+encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios de nombres nos interesa imprimir el tercer parámetro.
+
+Para hacer que Java procese un fichero mediante SAX usando nuestra clase como procesador de etiquetas haremos lo siguiente:
+
+.. code-block:: java
+
+  public class ProcesadorSAX extends DefaultHandler{
+  
+    @Override
+    public void startElement(
+        String ns, String nombreCuandoHayNS, 
+        String nombreCuandoNoHayNS, 
+        Attributes atributos) 
+        throws SAXException 
+    {
+      System.out.println(nombreCuandoNoHayNS);
+    }
+    
+    public static void main(String[] args) 
+        throws ParserConfigurationException, 
+        SAXException, IOException {
+      
+      SAXParserFactory fabrica;
+      fabrica=SAXParserFactory.newInstance();
+      SAXParser parser=fabrica.newSAXParser();
+      XMLReader lector=parser.getXMLReader();
+      lector.setContentHandler(new ProcesadorSAX());
+      lector.parse(
+        "c:/users/ogomez/documents/finanzas.xml");
+    }
+  }
+
+Ahora Java irá leyendo el fichero etiqueta por etiqueta y mostrándonos los nombres de todas. No importará que el fichero ocupe varios GB, ya que SAX no cargará el fichero completo en memoria.
+
+Ejercicio: encontrar producto
+----------------------------------
+
+Encontrar todos los productos cuyo nombre sea "Cafe" y su mercado "América Latina".
+
+.. code-block:: java
+
+  public void characters(
+        char[] letras, int ini, int longitud){
+      if ((mercadoEncontrado) && (cafeEncontrado)){
+        String cadena=new String(letras, ini, longitud);
+        if (cadena.equals("América Latina")){
+          System.out.println("Encontrado Cafe de AL");
+          cafeEncontrado=false;
+          mercadoEncontrado=false;
+          productoEncontrado=false;
+          futuroEncontrado=false;
+        }
+      }
+      if ((productoEncontrado) && (futuroEncontrado)){
+        String cadena=new String(letras, ini, longitud);
+        if (cadena.equals("Cafe")){
+          cafeEncontrado=true;
+        } //Fin del if interno
+      } //Fin del if externo
+    } //Fin del método characters
+    
+Ejercicio: precios
+-----------------------
+
+Encontrar todos las divisas cuya ciudad de procedencia sea "Madrid".
+
+
 Ejercicios para preparar examen
 ===========================================	
 

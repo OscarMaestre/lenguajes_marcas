@@ -247,35 +247,22 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="productos-del-aula-6">
 <h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/aula= &#39;6&#39; &quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nombre&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;/xsl:if&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>&lt;xsl:stylesheet</dt>
-<dd>xmlns:xsl=&#8221;http://www.w3.org/1999/XSL/Transform&#8221;&gt;</dd>
-<dt>&lt;xsl:template match=&#8221;/&#8221;&gt;</dt>
-<dd><p class="first">&lt;inventario&gt;
-&lt;xsl:for-each select=&#8221;/inventario/producto&#8221;&gt;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;xsl:if test=&#8221; lugar/aula= &#8216;6&#8217; &#8220;&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;nombre&gt;</dt>
-<dd>&lt;xsl:value-of select=&#8221;nombre&#8221;/&gt;</dd>
-</dl>
-<p class="last">&lt;/nombre&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsl:if&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/xsl:for-each&gt;
-&lt;/inventario&gt;</p>
-</dd>
-</dl>
-<p>&lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</p>
-</div></blockquote>
 </div>
 <div class="section" id="id1">
 <h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -296,7 +283,115 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 <div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
 <h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Se pide ahora generar un fichero de inventario igual que el original pero en el que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7.</p>
+<p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultados<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;lugar/@edificio = &#39;A&#39;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7000&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;Kg&#39;&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;lt; 7&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                    <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                            <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                    <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-de-examen-xslt">
+<h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dado el siguiente fichero XML</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+      <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1547&quot;</span><span class="nt">&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;titulo&gt;</span>Antologia<span class="nt">&lt;/titulo&gt;</span>
+    <span class="nt">&lt;autores&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1898&quot;</span><span class="nt">&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;autor</span> <span class="na">nacimiento=</span><span class="s">&quot;1910&quot;</span><span class="nt">&gt;</span>Miguel Hernandez<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/autores&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Conseguir lo siguiente:</p>
+<ol class="arabic simple">
+<li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
+    No se da la solución de este
+    ejercicio
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Mostrar el nombre de los autores nacidos despues del año 1700.</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Nombre<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Año nacimiento<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;xsl:for-each</span>
+                <span class="na">select=</span><span class="s">&quot;catalogo/libro/autores/autor&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &amp;gt; 1700&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;@nacimiento&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/xsl:if&gt;</span>
+                <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -318,6 +413,7 @@ y otra tabla separada para los productos del edificio B</p>
 <li><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
 <li><a class="reference internal" href="#id1">Productos del edificio B</a></li>
 <li><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
 </ul>
 </li>
 </ul>
