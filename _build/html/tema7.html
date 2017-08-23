@@ -1266,6 +1266,54 @@ esta</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
+<p>Sigamos con el problema original: ya hemos creado un elemento <code class="docutils literal"><span class="pre">cuentas</span></code> que lleva dentro un elemento <code class="docutils literal"><span class="pre">cuenta</span></code> para cada una de las cuentas originales. Ahora en dicho elemento <code class="docutils literal"><span class="pre">cuenta</span></code> vamos a meter dentro un atributo llamado <code class="docutils literal"><span class="pre">dnititular</span></code> usando la etiqueta <code class="docutils literal"><span class="pre">xsl:attribute</span></code> que debe ir <strong>dentro del elemento al que le queramos poner el atributo y además al final</strong>. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al final.</p>
+<p>Así, el código siguiente nos fabrica el atributo.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/xsl:attribute&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Pero hay un problema, todas las cuentas tienen el <code class="docutils literal"><span class="pre">dnititular</span></code> a 10. Necesitamos la etiqueta <code class="docutils literal"><span class="pre">value-of</span></code> que nos permite <strong>extraer el contenido de un elemento o atributo</strong>, en este caso queremos extrar el valor del atributo <code class="docutils literal"><span class="pre">dni</span></code> que está dentro del elemento <code class="docutils literal"><span class="pre">titular</span></code>. Esto se hace con <code class="docutils literal"><span class="pre">titular/&#64;dni</span></code> que significa &#8220;extraer el atributo dni que debe estar dentro del elemento titular&#8221;.</p>
+<p>Así, el código siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Nos devuelve como resultado:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

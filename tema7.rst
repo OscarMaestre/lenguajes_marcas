@@ -1398,3 +1398,59 @@ Como puede verse, la plantilla genera dos elementos ``cuenta``, uno por cada ``c
         </datos>
     </xsl:template>
     </xsl:stylesheet>
+    
+Sigamos con el problema original: ya hemos creado un elemento ``cuentas`` que lleva dentro un elemento ``cuenta`` para cada una de las cuentas originales. Ahora en dicho elemento ``cuenta`` vamos a meter dentro un atributo llamado ``dnititular`` usando la etiqueta ``xsl:attribute`` que debe ir **dentro del elemento al que le queramos poner el atributo y además al final**. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al final.
+
+Así, el código siguiente nos fabrica el atributo.
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">10</xsl:attribute>
+                    </cuenta>                    
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+
+Pero hay un problema, todas las cuentas tienen el ``dnititular`` a 10. Necesitamos la etiqueta ``value-of`` que nos permite **extraer el contenido de un elemento o atributo**, en este caso queremos extrar el valor del atributo ``dni`` que está dentro del elemento ``titular``. Esto se hace con ``titular/@dni`` que significa "extraer el atributo dni que debe estar dentro del elemento titular".
+
+Así, el código siguiente:
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Nos devuelve como resultado:
+
+.. code-block:: xml
+
+    <datos>
+      <cuentas>
+        <cuenta dnititular="5671001D"/>
+        <cuenta dnititular="39812341C"/>
+      </cuentas>
+      <fondos/>
+    </datos>
