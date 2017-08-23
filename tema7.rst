@@ -1237,15 +1237,16 @@ Poner en una lista ordenada (elemento ``ol``) todas las capacidades RAM que se e
 Ejercicio resuelto
 ------------------------
 
-Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores
+Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores. Sin embargo han comprado un nuevo sistema que necesita que la información tenga una estructura siguiente. Los dos listados que se ven a continuación ilustran la estructura original y la nueva estructura que deben tener los datos. Crear el XSLT que permita convertir la información original en un formato que pueda entender el nuevo sistema.
 
 
 .. code-block:: xml
     
+    <!--Estructura original de la información-->
     <listado>
         <cuenta>
             <titular dni="5671001D">Ramon Perez</titular>
-            <saldoactual moneda="euros"></saldoactual>
+            <saldoactual moneda="euros">12000</saldoactual>
             <fechacreacion>13-abril-2012</fechacreacion>
         </cuenta>
         <fondo>
@@ -1264,7 +1265,136 @@ Una empresa utiliza el siguiente XML para intercambiar información entre bases 
         </fondo>
         <cuenta>
             <titular dni="39812341C">Carmen Diaz</titular>
-            <saldoactual moneda="euros"></saldoactual>
+            <saldoactual moneda="euros">1900</saldoactual>
             <fechacreacion>15-febrero-2011</fechacreacion>
         </cuenta>
     </listado>
+    
+    
+.. code-block:: xml
+
+    <!--Estructura final que debemos conseguir-->
+    <datos>
+        <cuentas>
+            <cuenta dnititular="5671001D">
+                <creacion>13-abril-2012</creacion>
+                <titular>Ramon Perez</titular>
+                <saldoactual>12000 euros</saldoactual>
+                
+            </cuenta>
+            <cuenta dnititular="39812341C">
+                <creacion>15-febrero-2011</creacion>
+                <titular>Carmen Diaz</titular>
+                <saldoactual>1900 euros</saldoactual>
+                
+            </cuenta>
+        </cuentas>
+        <fondos>
+            <fondo cuentaasociada="20-A">
+                <cantidaddepositada>20000</cantidaddepositada>
+                <moneda>Euros</moneda>
+            </fondo>
+            <fondo cuentaasociada="21-DX">            
+                <cantidaddepositada>4800</cantidaddepositada>
+                <moneda>Dolares</moneda>
+            </fondo>
+        </fondos>
+    </datos>
+
+Análisis del problema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Es necesario hacer varios cambios:
+
+1. Se ha cambiado el nombre de elemento raíz de ``listado`` a ``datos``.
+2. Ahora todos los elementos ``cuenta`` van dentro de un nuevo elemento ``cuentas`` y todos los elementos ``fondo`` van dentro de un nuevo elemento ``fondos``.
+3. El ``dni`` se ha movido del elemento ``titular`` al elemento ``cuenta``.
+4. La ``fechacreación`` se ha movido y se ha renombrado a ``creacion``.
+5. El elememento ``moneda`` desaparece y su texto se ha puesto al lado de la cantidad que hay en ``saldoactual``.
+5. En el elemento ``fondo`` se ha quitado el elemento ``datos``.
+6. El elemento ``cuentaasociada`` ha pasado a ser un atributo.
+
+
+Solución paso a paso
+~~~~~~~~~~~~~~~~~~~~~~
+
+Empecemos por crear una hoja muy básica, que busque el elemento raíz y devuelva como salida el elemento ``datos`` (que va a ser la nueva raíz)
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>            
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>    
+
+    
+Si probamos dicho XSLT aplicándolo al XML original obtendremos esto:
+
+.. code-block:: xml
+
+    <datos/>
+    
+No pasa nada porque se obtenga el elemento raíz vacío, el programa de transformación lo hace para ahorrar tiempo y bytes.
+
+Una vez que hemos cambiado el elemento raíz tenemos que generar dos elementos más que agrupen los elementos ``cuenta`` y los elementos ``fondo``. Para ello, basta con escribirlos como muestra la siguiente hoja de estilo.
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas></cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Ahora tenemos que ir buscando todos los elementos ``cuenta`` y meterlos dentro de ``cuentas``. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle ``for-each``. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle no vaya dando cada uno de los elementos ``listado/cuenta``. Es decir, le pedimos al bucle que se meta en el elemento hijo ``listado`` y nos vaya dando cada uno de los elementos ``cuenta`` que hay dentro. Un posible bucle sería este:
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta></cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Que al pasárselo a nuestros datos nos da esto:
+
+.. code-block:: xml
+
+    <datos>
+      <cuentas>
+        <cuenta/>
+        <cuenta/>
+      </cuentas>
+      <fondos/>
+    </datos>
+    
+Como puede verse, la plantilla genera dos elementos ``cuenta``, uno por cada ``cuenta`` que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, **y este es el "truco" para poder cambiar de nombre un elemento** :
+
+
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <otroelemento></otroelemento>
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
