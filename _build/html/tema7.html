@@ -303,23 +303,23 @@
 </div>
 <p>Si usamos el archivo <code class="docutils literal"><span class="pre">estilo.css</span></code> de esta forma:</p>
 <div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">catalogo</span><span class="p">{</span>
-        <span class="nb">background-color</span><span class="o">:</span><span class="nb">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">230</span><span class="o">,</span> <span class="m">220</span><span class="p">);</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">libro</span><span class="p">{</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
-        <span class="nb">border</span><span class="o">:</span> <span class="nb">solid</span> <span class="nb">black</span> <span class="m">1px</span><span class="p">;</span>
-        <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">margin-bottom</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">title</span><span class="p">{</span>
-        <span class="nb">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">autor</span><span class="p">{</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
-        <span class="nb">font</span><span class="o">-</span><span class="n">face</span><span class="o">:</span><span class="n">Arial</span><span class="p">;</span>
-        <span class="nb">text-decoration</span><span class="o">:</span><span class="nb">underline</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="n">font-face</span><span class="p">:</span><span class="n">Arial</span><span class="p">;</span>
+        <span class="k">text-decoration</span><span class="p">:</span><span class="kc">underline</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -330,31 +330,31 @@
 <p>Crear una hoja de estilo asociada al catálogo anterior, que muestre la información de cada libro de forma parecida a una tabla, en la que el <code class="docutils literal"><span class="pre">title</span></code> utilice un color de fondo distinto del <code class="docutils literal"><span class="pre">autor</span></code>.</p>
 <a class="reference internal image-reference" href="_images/estilo-xml2.png"><img alt="_images/estilo-xml2.png" class="align-center" src="_images/estilo-xml2.png" style="width: 497.0px; height: 67.5px;" /></a>
 <div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">catalogo</span><span class="p">{</span>
-        <span class="nb">background-color</span><span class="o">:</span><span class="nb">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">230</span><span class="o">,</span> <span class="m">220</span><span class="p">);</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">libro</span><span class="p">{</span>
-        <span class="nb">display</span><span class="o">:</span><span class="nb">block</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
-        <span class="nb">margin-bottom</span><span class="o">:</span><span class="m">40px</span><span class="p">;</span>
-        <span class="nb">clear</span><span class="o">:</span><span class="nb">both</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">margin-bottom</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">title</span><span class="p">{</span>
-        <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span><span class="m">45%</span><span class="p">;</span>
-        <span class="nb">border</span><span class="o">:</span><span class="nb">solid</span> <span class="nb">black</span> <span class="m">1px</span><span class="p">;</span>
-        <span class="nb">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span>
-        <span class="nb">text-align</span><span class="o">:</span><span class="nb">center</span><span class="p">;</span>
-        <span class="nb">background-color</span><span class="o">:</span><span class="nb">rgb</span><span class="p">(</span><span class="m">180</span><span class="o">,</span><span class="m">180</span><span class="o">,</span><span class="m">240</span><span class="p">);</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nt">autor</span><span class="p">{</span>
-        <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-        <span class="nb">text-align</span><span class="o">:</span><span class="nb">center</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span><span class="m">45%</span><span class="p">;</span>
-        <span class="nb">border</span><span class="o">:</span><span class="nb">solid</span> <span class="nb">black</span> <span class="m">1px</span><span class="p">;</span>
-        <span class="nb">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span>
-        <span class="nb">background-color</span><span class="o">:</span><span class="nb">rgb</span><span class="p">(</span><span class="m">340</span><span class="o">,</span><span class="m">180</span><span class="o">,</span><span class="m">240</span><span class="p">);</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1125,6 +1125,38 @@ esta</p>
 <h3>Ejercicio (no se da la solución)<a class="headerlink" href="#ejercicio-no-se-da-la-solucion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Poner en una lista ordenada (elemento <code class="docutils literal"><span class="pre">ol</span></code>) todas las capacidades RAM que se encuentren en el fichero XML.</p>
 </div>
+<div class="section" id="ejercicio-resuelto">
+<h3>Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
+    <span class="nt">&lt;cuenta&gt;</span>
+        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;fechacreacion&gt;</span>13-abril-2012<span class="nt">&lt;/fechacreacion&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;fondo&gt;</span>
+        <span class="nt">&lt;cuentaasociada&gt;</span>20-A<span class="nt">&lt;/cuentaasociada&gt;</span>
+        <span class="nt">&lt;datos&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/datos&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;fondo&gt;</span>
+        <span class="nt">&lt;cuentaasociada&gt;</span>21-DX<span class="nt">&lt;/cuentaasociada&gt;</span>
+        <span class="nt">&lt;datos&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/datos&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;cuenta&gt;</span>
+        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;fechacreacion&gt;</span>15-febrero-2011<span class="nt">&lt;/fechacreacion&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+<span class="nt">&lt;/listado&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1164,6 +1196,7 @@ esta</p>
 <li><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
 <li><a class="reference internal" href="#ejercicio-no-se-da-la-solucion">Ejercicio (no se da la solución)</a></li>
+<li><a class="reference internal" href="#ejercicio-resuelto">Ejercicio resuelto</a></li>
 </ul>
 </li>
 </ul>

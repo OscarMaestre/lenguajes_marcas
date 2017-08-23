@@ -1230,3 +1230,41 @@ El fichero siguiente ilustra una posible forma de hacerlo:
 Ejercicio (no se da la solución)
 ------------------------------------------------------
 Poner en una lista ordenada (elemento ``ol``) todas las capacidades RAM que se encuentren en el fichero XML.
+
+
+
+
+Ejercicio resuelto
+------------------------
+
+Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores
+
+
+.. code-block:: xml
+    
+    <listado>
+        <cuenta>
+            <titular dni="5671001D">Ramon Perez</titular>
+            <saldoactual moneda="euros"></saldoactual>
+            <fechacreacion>13-abril-2012</fechacreacion>
+        </cuenta>
+        <fondo>
+            <cuentaasociada>20-A</cuentaasociada>
+            <datos>
+                <cantidaddepositada>20000</cantidaddepositada>
+                <moneda>Euros</moneda>
+            </datos>
+        </fondo>
+        <fondo>
+            <cuentaasociada>21-DX</cuentaasociada>
+            <datos>
+                <cantidaddepositada>4800</cantidaddepositada>
+                <moneda>Dolares</moneda>
+            </datos>
+        </fondo>
+        <cuenta>
+            <titular dni="39812341C">Carmen Diaz</titular>
+            <saldoactual moneda="euros"></saldoactual>
+            <fechacreacion>15-febrero-2011</fechacreacion>
+        </cuenta>
+    </listado>
