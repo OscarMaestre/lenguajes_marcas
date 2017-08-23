@@ -1127,11 +1127,12 @@ esta</p>
 </div>
 <div class="section" id="ejercicio-resuelto">
 <h3>Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
+<p>Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores. Sin embargo han comprado un nuevo sistema que necesita que la información tenga una estructura siguiente. Los dos listados que se ven a continuación ilustran la estructura original y la nueva estructura que deben tener los datos. Crear el XSLT que permita convertir la información original en un formato que pueda entender el nuevo sistema.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura original de la información--&gt;</span>
+<span class="nt">&lt;listado&gt;</span>
     <span class="nt">&lt;cuenta&gt;</span>
         <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
-        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>12000<span class="nt">&lt;/saldoactual&gt;</span>
         <span class="nt">&lt;fechacreacion&gt;</span>13-abril-2012<span class="nt">&lt;/fechacreacion&gt;</span>
     <span class="nt">&lt;/cuenta&gt;</span>
     <span class="nt">&lt;fondo&gt;</span>
@@ -1150,11 +1151,121 @@ esta</p>
     <span class="nt">&lt;/fondo&gt;</span>
     <span class="nt">&lt;cuenta&gt;</span>
         <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
-        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>1900<span class="nt">&lt;/saldoactual&gt;</span>
         <span class="nt">&lt;fechacreacion&gt;</span>15-febrero-2011<span class="nt">&lt;/fechacreacion&gt;</span>
     <span class="nt">&lt;/cuenta&gt;</span>
 <span class="nt">&lt;/listado&gt;</span>
 </pre></div>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura final que debemos conseguir--&gt;</span>
+<span class="nt">&lt;datos&gt;</span>
+    <span class="nt">&lt;cuentas&gt;</span>
+        <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;creacion&gt;</span>13-abril-2012<span class="nt">&lt;/creacion&gt;</span>
+            <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+            <span class="nt">&lt;saldoactual&gt;</span>12000 euros<span class="nt">&lt;/saldoactual&gt;</span>
+
+        <span class="nt">&lt;/cuenta&gt;</span>
+        <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;creacion&gt;</span>15-febrero-2011<span class="nt">&lt;/creacion&gt;</span>
+            <span class="nt">&lt;titular&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+            <span class="nt">&lt;saldoactual&gt;</span>1900 euros<span class="nt">&lt;/saldoactual&gt;</span>
+
+        <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;/cuentas&gt;</span>
+    <span class="nt">&lt;fondos&gt;</span>
+        <span class="nt">&lt;fondo</span> <span class="na">cuentaasociada=</span><span class="s">&quot;20-A&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/fondo&gt;</span>
+        <span class="nt">&lt;fondo</span> <span class="na">cuentaasociada=</span><span class="s">&quot;21-DX&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;/fondos&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="analisis-del-problema">
+<h4>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Es necesario hacer varios cambios:</p>
+<ol class="arabic simple">
+<li>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal"><span class="pre">listado</span></code> a <code class="docutils literal"><span class="pre">datos</span></code>.</li>
+<li>Ahora todos los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">fondos</span></code>.</li>
+<li>El <code class="docutils literal"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal"><span class="pre">titular</span></code> al elemento <code class="docutils literal"><span class="pre">cuenta</span></code>.</li>
+<li>La <code class="docutils literal"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal"><span class="pre">creacion</span></code>.</li>
+</ol>
+<p>5. El elememento <code class="docutils literal"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal"><span class="pre">saldoactual</span></code>.
+5. En el elemento <code class="docutils literal"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal"><span class="pre">datos</span></code>.
+6. El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</p>
+</div>
+<div class="section" id="solucion-paso-a-paso">
+<h4>Solución paso a paso<a class="headerlink" href="#solucion-paso-a-paso" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Empecemos por crear una hoja muy básica, que busque el elemento raíz y devuelva como salida el elemento <code class="docutils literal"><span class="pre">datos</span></code> (que va a ser la nueva raíz)</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Si probamos dicho XSLT aplicándolo al XML original obtendremos esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos/&gt;</span>
+</pre></div>
+</div>
+<p>No pasa nada porque se obtenga el elemento raíz vacío, el programa de transformación lo hace para ahorrar tiempo y bytes.</p>
+<p>Una vez que hemos cambiado el elemento raíz tenemos que generar dos elementos más que agrupen los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> y los elementos <code class="docutils literal"><span class="pre">fondo</span></code>. Para ello, basta con escribirlos como muestra la siguiente hoja de estilo.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Ahora tenemos que ir buscando todos los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> y meterlos dentro de <code class="docutils literal"><span class="pre">cuentas</span></code>. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle <code class="docutils literal"><span class="pre">for-each</span></code>. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle no vaya dando cada uno de los elementos <code class="docutils literal"><span class="pre">listado/cuenta</span></code>. Es decir, le pedimos al bucle que se meta en el elemento hijo <code class="docutils literal"><span class="pre">listado</span></code> y nos vaya dando cada uno de los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> que hay dentro. Un posible bucle sería este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Que al pasárselo a nuestros datos nos da esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta/&gt;</span>
+    <span class="nt">&lt;cuenta/&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>Como puede verse, la plantilla genera dos elementos <code class="docutils literal"><span class="pre">cuenta</span></code>, uno por cada <code class="docutils literal"><span class="pre">cuenta</span></code> que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, <strong>y este es el &#8220;truco&#8221; para poder cambiar de nombre un elemento</strong> :</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;otroelemento&gt;&lt;/otroelemento&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1196,7 +1307,11 @@ esta</p>
 <li><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
 <li><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
 <li><a class="reference internal" href="#ejercicio-no-se-da-la-solucion">Ejercicio (no se da la solución)</a></li>
-<li><a class="reference internal" href="#ejercicio-resuelto">Ejercicio resuelto</a></li>
+<li><a class="reference internal" href="#ejercicio-resuelto">Ejercicio resuelto</a><ul>
+<li><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
+<li><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
