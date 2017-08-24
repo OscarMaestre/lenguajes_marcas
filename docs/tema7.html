@@ -1194,10 +1194,10 @@ esta</p>
 <li>Ahora todos los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">fondos</span></code>.</li>
 <li>El <code class="docutils literal"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal"><span class="pre">titular</span></code> al elemento <code class="docutils literal"><span class="pre">cuenta</span></code>.</li>
 <li>La <code class="docutils literal"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal"><span class="pre">creacion</span></code>.</li>
+<li>El elememento <code class="docutils literal"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal"><span class="pre">saldoactual</span></code>.</li>
+<li>En el elemento <code class="docutils literal"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal"><span class="pre">datos</span></code>.</li>
+<li>El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</li>
 </ol>
-<p>5. El elememento <code class="docutils literal"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal"><span class="pre">saldoactual</span></code>.
-5. En el elemento <code class="docutils literal"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal"><span class="pre">datos</span></code>.
-6. El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</p>
 </div>
 <div class="section" id="solucion-paso-a-paso">
 <h4>Solución paso a paso<a class="headerlink" href="#solucion-paso-a-paso" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -1266,7 +1266,7 @@ esta</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Sigamos con el problema original: ya hemos creado un elemento <code class="docutils literal"><span class="pre">cuentas</span></code> que lleva dentro un elemento <code class="docutils literal"><span class="pre">cuenta</span></code> para cada una de las cuentas originales. Ahora en dicho elemento <code class="docutils literal"><span class="pre">cuenta</span></code> vamos a meter dentro un atributo llamado <code class="docutils literal"><span class="pre">dnititular</span></code> usando la etiqueta <code class="docutils literal"><span class="pre">xsl:attribute</span></code> que debe ir <strong>dentro del elemento al que le queramos poner el atributo y además al final</strong>. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al final.</p>
+<p>Sigamos con el problema original: ya hemos creado un elemento <code class="docutils literal"><span class="pre">cuentas</span></code> que lleva dentro un elemento <code class="docutils literal"><span class="pre">cuenta</span></code> para cada una de las cuentas originales. Ahora en dicho elemento <code class="docutils literal"><span class="pre">cuenta</span></code> vamos a meter dentro un atributo llamado <code class="docutils literal"><span class="pre">dnititular</span></code> usando la etiqueta <code class="docutils literal"><span class="pre">xsl:attribute</span></code> que debe ir <strong>dentro del elemento al que le queramos poner el atributo y además al principio</strong>. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al principio.</p>
 <p>Así, el código siguiente nos fabrica el atributo.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
@@ -1274,6 +1274,7 @@ esta</p>
         <span class="nt">&lt;cuentas&gt;</span>
             <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="c">&lt;!--Esto añade el atributo dnititular a cuenta--&gt;</span>
                     <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/xsl:attribute&gt;</span>
                 <span class="nt">&lt;/cuenta&gt;</span>
             <span class="nt">&lt;/xsl:for-each&gt;</span>
@@ -1311,6 +1312,386 @@ esta</p>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/cuentas&gt;</span>
   <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>El paso siguiente va a ser crear el elemento <code class="docutils literal"><span class="pre">titular</span></code> que también se llama <code class="docutils literal"><span class="pre">titular</span></code> en el archivo original. Para ello lo metemos dentro de <code class="docutils literal"><span class="pre">cuenta</span></code> y permitiendo que la creación del atributo <code class="docutils literal"><span class="pre">dnititular</span></code> se quede al principio.</p>
+<p>El código XSLT es este</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Que genera el siguiente resultado:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>Ahora vamos a crear el elemento <code class="docutils literal"><span class="pre">saldoactual</span></code>. Dentro de ese elemento debemos escribir el texto que ya tuviese el <code class="docutils literal"><span class="pre">saldoactual</span></code> antiguo y escribiendo al lado el atributo <code class="docutils literal"><span class="pre">moneda</span></code>.</p>
+<p>El código necesario es este</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Y el resultado es este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>12000euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>1900euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>Por último, añadamos la fecha de creación. En el fichero original se llama <code class="docutils literal"><span class="pre">fechacreación</span></code> y en el fichero final se llama <code class="docutils literal"><span class="pre">creación</span></code> y además va como primer elemento. El XSLT sería este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento &quot;creación&quot; que en</span>
+<span class="c">                    realidad contiene el texto del elemento</span>
+<span class="c">                    &quot;fechacreación&quot; original--&gt;</span>
+                    <span class="nt">&lt;creacion&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;fechacreacion&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/creacion&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Que genera el resultado siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;creacion&gt;</span>13-abril-2012<span class="nt">&lt;/creacion&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>12000euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;creacion&gt;</span>15-febrero-2011<span class="nt">&lt;/creacion&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>1900euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos/&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>Con esto, la parte de las <code class="docutils literal"><span class="pre">cuentas</span></code> ya está hecha. Ahora queda lo siguiente</p>
+<ol class="arabic simple">
+<li>Hacer un elemento <code class="docutils literal"><span class="pre">fondos</span></code> con un bucle que vaya generando elementos <code class="docutils literal"><span class="pre">fondo</span></code>.</li>
+<li>Poner en el <code class="docutils literal"><span class="pre">fondo</span></code> el atributo <code class="docutils literal"><span class="pre">cuentaasociada</span></code>.</li>
+<li>Crear el elemento <code class="docutils literal"><span class="pre">cantidaddepositada</span></code>.</li>
+<li>Crear el elemento moneda.</li>
+</ol>
+<p>Vamos con el paso 1 <em>&#8220;crear el elemento fondos&#8221;</em></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento &quot;creación&quot; que en</span>
+<span class="c">                    realidad contiene el texto del elemento</span>
+<span class="c">                    &quot;fechacreación&quot; original--&gt;</span>
+                    <span class="nt">&lt;creacion&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;fechacreacion&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/creacion&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/fondo&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!--Paso 1: crear un fondo por cada fondo original--&gt;</span>
+                <span class="nt">&lt;fondo&gt;</span>
+
+                <span class="nt">&lt;/fondo&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Ahora el paso 2: <em>poner el atributo &#8220;cuentaasociada&#8221;</em>. El XSLT sería así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento &quot;creación&quot; que en</span>
+<span class="c">                    realidad contiene el texto del elemento</span>
+<span class="c">                    &quot;fechacreación&quot; original--&gt;</span>
+                    <span class="nt">&lt;creacion&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;fechacreacion&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/creacion&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/fondo&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!--Paso 1: crear un fondo por cada fondo original--&gt;</span>
+                <span class="nt">&lt;fondo&gt;</span>
+                    <span class="c">&lt;!--Paso 2, crear el atributo cuentaasociada--&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+
+                <span class="nt">&lt;/fondo&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Con el XSLT siguiente conseguimos el paso 3: <em>&#8220;crear el elemento cantidaddepositada&#8221;</em></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento &quot;creación&quot; que en</span>
+<span class="c">                    realidad contiene el texto del elemento</span>
+<span class="c">                    &quot;fechacreación&quot; original--&gt;</span>
+                    <span class="nt">&lt;creacion&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;fechacreacion&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/creacion&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/fondo&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!--Paso 1: crear un fondo por cada fondo original--&gt;</span>
+                <span class="nt">&lt;fondo&gt;</span>
+                    <span class="c">&lt;!--Paso 2, crear el atributo cuentaasociada--&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Paso 3, crear el elemento cantidaddepositada--&gt;</span>
+                    <span class="nt">&lt;cantidaddepositada&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;datos/cantidaddepositada&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/cantidaddepositada&gt;</span>
+                <span class="nt">&lt;/fondo&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Y por último el paso 4 &#8220;crear el elemento moneda&#8221;. El XSLT sería algo así:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;cuentas&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/cuenta&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;cuenta&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;dnititular&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular/@dni&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento &quot;creación&quot; que en</span>
+<span class="c">                    realidad contiene el texto del elemento</span>
+<span class="c">                    &quot;fechacreación&quot; original--&gt;</span>
+                    <span class="nt">&lt;creacion&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;fechacreacion&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/creacion&gt;</span>
+                    <span class="c">&lt;!--Creamos el elemento titular y metemos</span>
+<span class="c">                    dentro del valor original del titular--&gt;</span>
+                    <span class="nt">&lt;titular&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titular&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/titular&gt;</span>
+                    <span class="c">&lt;!--Creamos el saldo actual--&gt;</span>
+                    <span class="nt">&lt;saldoactual&gt;</span>
+                        <span class="c">&lt;!--Y metemos dentro la cantidad que tuviese</span>
+<span class="c">                        el fichero original...--&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual&quot;</span><span class="nt">/&gt;</span>
+                        <span class="c">&lt;!--Y extraemos la moneda...--&gt;</span>
+                         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;saldoactual/@moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/saldoactual&gt;</span>
+                <span class="nt">&lt;/cuenta&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/cuentas&gt;</span>
+        <span class="nt">&lt;fondos&gt;</span>
+            <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;listado/fondo&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!--Paso 1: crear un fondo por cada fondo original--&gt;</span>
+                <span class="nt">&lt;fondo&gt;</span>
+                    <span class="c">&lt;!--Paso 2, crear el atributo cuentaasociada--&gt;</span>
+                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;cuentaasociada&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsl:attribute&gt;</span>
+                    <span class="c">&lt;!--Paso 3, crear el elemento cantidaddepositada--&gt;</span>
+                    <span class="nt">&lt;cantidaddepositada&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;datos/cantidaddepositada&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/cantidaddepositada&gt;</span>
+                    <span class="c">&lt;!--Paso 4:Crear el elemento moneda--&gt;</span>
+                    <span class="nt">&lt;moneda&gt;</span>
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;datos/moneda&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/moneda&gt;</span>
+                <span class="nt">&lt;/fondo&gt;</span>
+            <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/fondos&gt;</span>
+    <span class="nt">&lt;/datos&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Si probamos el XSLT anterior veremos que efectivamente conseguimos transformar el fichero original en el fichero resultado que nos piden, que es el siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+  <span class="nt">&lt;cuentas&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;creacion&gt;</span>13-abril-2012<span class="nt">&lt;/creacion&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>12000euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;creacion&gt;</span>15-febrero-2011<span class="nt">&lt;/creacion&gt;</span>
+      <span class="nt">&lt;titular&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+      <span class="nt">&lt;saldoactual&gt;</span>1900euros<span class="nt">&lt;/saldoactual&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+  <span class="nt">&lt;/cuentas&gt;</span>
+  <span class="nt">&lt;fondos&gt;</span>
+    <span class="nt">&lt;fondo</span> <span class="na">cuentaasociada=</span><span class="s">&quot;20-A&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
+      <span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;fondo</span> <span class="na">cuentaasociada=</span><span class="s">&quot;21-DX&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
+      <span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+  <span class="nt">&lt;/fondos&gt;</span>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>

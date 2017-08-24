@@ -76,7 +76,9 @@ Las reglas serían las siguientes:
 .. code-block:: xml
 
 	<rss version="2.0">
+    
 * Un RSS tiene uno o más canales
+
 .. code-block:: xml
 
 	<channel>
@@ -1311,8 +1313,9 @@ Es necesario hacer varios cambios:
 3. El ``dni`` se ha movido del elemento ``titular`` al elemento ``cuenta``.
 4. La ``fechacreación`` se ha movido y se ha renombrado a ``creacion``.
 5. El elememento ``moneda`` desaparece y su texto se ha puesto al lado de la cantidad que hay en ``saldoactual``.
-5. En el elemento ``fondo`` se ha quitado el elemento ``datos``.
-6. El elemento ``cuentaasociada`` ha pasado a ser un atributo.
+6. En el elemento ``fondo`` se ha quitado el elemento ``datos``.
+7. El elemento ``cuentaasociada`` ha pasado a ser un atributo.
+
 
 
 Solución paso a paso
@@ -1399,7 +1402,7 @@ Como puede verse, la plantilla genera dos elementos ``cuenta``, uno por cada ``c
     </xsl:template>
     </xsl:stylesheet>
     
-Sigamos con el problema original: ya hemos creado un elemento ``cuentas`` que lleva dentro un elemento ``cuenta`` para cada una de las cuentas originales. Ahora en dicho elemento ``cuenta`` vamos a meter dentro un atributo llamado ``dnititular`` usando la etiqueta ``xsl:attribute`` que debe ir **dentro del elemento al que le queramos poner el atributo y además al final**. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al final.
+Sigamos con el problema original: ya hemos creado un elemento ``cuentas`` que lleva dentro un elemento ``cuenta`` para cada una de las cuentas originales. Ahora en dicho elemento ``cuenta`` vamos a meter dentro un atributo llamado ``dnititular`` usando la etiqueta ``xsl:attribute`` que debe ir **dentro del elemento al que le queramos poner el atributo y además al principio**. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al principio.
 
 Así, el código siguiente nos fabrica el atributo.
 
@@ -1411,6 +1414,7 @@ Así, el código siguiente nos fabrica el atributo.
             <cuentas>
                 <xsl:for-each select="listado/cuenta">
                     <cuenta>
+                        <!--Esto añade el atributo dnititular a cuenta-->
                         <xsl:attribute name="dnititular">10</xsl:attribute>
                     </cuenta>                    
                 </xsl:for-each>
@@ -1453,4 +1457,413 @@ Nos devuelve como resultado:
         <cuenta dnititular="39812341C"/>
       </cuentas>
       <fondos/>
+    </datos>
+
+El paso siguiente va a ser crear el elemento ``titular`` que también se llama ``titular`` en el archivo original. Para ello lo metemos dentro de ``cuenta`` y permitiendo que la creación del atributo ``dnititular`` se quede al principio.
+
+El código XSLT es este
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                    </cuenta>                    
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Que genera el siguiente resultado:
+
+.. code-block:: xml
+    
+    <datos>
+      <cuentas>
+        <cuenta dnititular="5671001D">
+          <titular>Ramon Perez</titular>
+        </cuenta>
+        <cuenta dnititular="39812341C">
+          <titular>Carmen Diaz</titular>
+        </cuenta>
+      </cuentas>
+      <fondos/>
+    </datos>
+    
+    
+Ahora vamos a crear el elemento ``saldoactual``. Dentro de ese elemento debemos escribir el texto que ya tuviese el ``saldoactual`` antiguo y escribiendo al lado el atributo ``moneda``.
+
+El código necesario es este
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Y el resultado es este:
+
+.. code-block:: xml
+
+    <datos>
+      <cuentas>
+        <cuenta dnititular="5671001D">
+          <titular>Ramon Perez</titular>
+          <saldoactual>12000euros</saldoactual>
+        </cuenta>
+        <cuenta dnititular="39812341C">
+          <titular>Carmen Diaz</titular>
+          <saldoactual>1900euros</saldoactual>
+        </cuenta>
+      </cuentas>
+      <fondos/>
+    </datos>
+
+
+Por último, añadamos la fecha de creación. En el fichero original se llama ``fechacreación`` y en el fichero final se llama ``creación`` y además va como primer elemento. El XSLT sería este:
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento "creación" que en
+                        realidad contiene el texto del elemento
+                        "fechacreación" original-->
+                        <creacion>
+                            <xsl:value-of select="fechacreacion"/>
+                        </creacion>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos></fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Que genera el resultado siguiente:
+
+.. code-block:: xml
+    
+    <datos>
+      <cuentas>
+        <cuenta dnititular="5671001D">
+          <creacion>13-abril-2012</creacion>
+          <titular>Ramon Perez</titular>
+          <saldoactual>12000euros</saldoactual>
+        </cuenta>
+        <cuenta dnititular="39812341C">
+          <creacion>15-febrero-2011</creacion>
+          <titular>Carmen Diaz</titular>
+          <saldoactual>1900euros</saldoactual>
+        </cuenta>
+      </cuentas>
+      <fondos/>
+    </datos>
+
+
+
+Con esto, la parte de las ``cuentas`` ya está hecha. Ahora queda lo siguiente
+
+1. Hacer un elemento ``fondos`` con un bucle que vaya generando elementos ``fondo``.
+2. Poner en el ``fondo`` el atributo ``cuentaasociada``.
+3. Crear el elemento ``cantidaddepositada``.
+4. Crear el elemento moneda.
+
+Vamos con el paso 1 *"crear el elemento fondos"*
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento "creación" que en
+                        realidad contiene el texto del elemento
+                        "fechacreación" original-->
+                        <creacion>
+                            <xsl:value-of select="fechacreacion"/>
+                        </creacion>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos>
+                <xsl:for-each select="listado/fondo">
+                    <!--Paso 1: crear un fondo por cada fondo original-->
+                    <fondo>
+                        
+                    </fondo>
+                </xsl:for-each>
+            </fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+
+
+Ahora el paso 2: *poner el atributo "cuentaasociada"*. El XSLT sería así:
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento "creación" que en
+                        realidad contiene el texto del elemento
+                        "fechacreación" original-->
+                        <creacion>
+                            <xsl:value-of select="fechacreacion"/>
+                        </creacion>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos>
+                <xsl:for-each select="listado/fondo">
+                    <!--Paso 1: crear un fondo por cada fondo original-->
+                    <fondo>
+                        <!--Paso 2, crear el atributo cuentaasociada-->
+                        <xsl:attribute name="cuentaasociada">
+                            <xsl:value-of select="cuentaasociada"/>
+                        </xsl:attribute>
+                        
+                    </fondo>
+                </xsl:for-each>
+            </fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Con el XSLT siguiente conseguimos el paso 3: *"crear el elemento cantidaddepositada"*
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento "creación" que en
+                        realidad contiene el texto del elemento
+                        "fechacreación" original-->
+                        <creacion>
+                            <xsl:value-of select="fechacreacion"/>
+                        </creacion>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos>
+                <xsl:for-each select="listado/fondo">
+                    <!--Paso 1: crear un fondo por cada fondo original-->
+                    <fondo>
+                        <!--Paso 2, crear el atributo cuentaasociada-->
+                        <xsl:attribute name="cuentaasociada">
+                            <xsl:value-of select="cuentaasociada"/>
+                        </xsl:attribute>
+                        <!--Paso 3, crear el elemento cantidaddepositada-->
+                        <cantidaddepositada>
+                            <xsl:value-of select="datos/cantidaddepositada"/>
+                        </cantidaddepositada>
+                    </fondo>
+                </xsl:for-each>
+            </fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Y por último el paso 4 "crear el elemento moneda". El XSLT sería algo así:
+
+.. code-block:: xml
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <datos>
+            <cuentas>
+                <xsl:for-each select="listado/cuenta">
+                    <cuenta>
+                        <xsl:attribute name="dnititular">
+                            <xsl:value-of select="titular/@dni"/>
+                        </xsl:attribute>
+                        <!--Creamos el elemento "creación" que en
+                        realidad contiene el texto del elemento
+                        "fechacreación" original-->
+                        <creacion>
+                            <xsl:value-of select="fechacreacion"/>
+                        </creacion>
+                        <!--Creamos el elemento titular y metemos
+                        dentro del valor original del titular-->
+                        <titular>
+                            <xsl:value-of select="titular"/>
+                        </titular>
+                        <!--Creamos el saldo actual-->
+                        <saldoactual>
+                            <!--Y metemos dentro la cantidad que tuviese
+                            el fichero original...-->
+                            <xsl:value-of select="saldoactual"/>
+                            <!--Y extraemos la moneda...-->
+                             <xsl:value-of select="saldoactual/@moneda"/>
+                        </saldoactual>
+                    </cuenta>
+                </xsl:for-each>
+            </cuentas>
+            <fondos>
+                <xsl:for-each select="listado/fondo">
+                    <!--Paso 1: crear un fondo por cada fondo original-->
+                    <fondo>
+                        <!--Paso 2, crear el atributo cuentaasociada-->
+                        <xsl:attribute name="cuentaasociada">
+                            <xsl:value-of select="cuentaasociada"/>
+                        </xsl:attribute>
+                        <!--Paso 3, crear el elemento cantidaddepositada-->
+                        <cantidaddepositada>
+                            <xsl:value-of select="datos/cantidaddepositada"/>
+                        </cantidaddepositada>
+                        <!--Paso 4:Crear el elemento moneda-->
+                        <moneda>
+                            <xsl:value-of select="datos/moneda"/>
+                        </moneda>
+                    </fondo>
+                </xsl:for-each>
+            </fondos>
+        </datos>
+    </xsl:template>
+    </xsl:stylesheet>
+    
+Si probamos el XSLT anterior veremos que efectivamente conseguimos transformar el fichero original en el fichero resultado que nos piden, que es el siguiente:
+
+.. code-block:: xml
+
+    <datos>
+      <cuentas>
+        <cuenta dnititular="5671001D">
+          <creacion>13-abril-2012</creacion>
+          <titular>Ramon Perez</titular>
+          <saldoactual>12000euros</saldoactual>
+        </cuenta>
+        <cuenta dnititular="39812341C">
+          <creacion>15-febrero-2011</creacion>
+          <titular>Carmen Diaz</titular>
+          <saldoactual>1900euros</saldoactual>
+        </cuenta>
+      </cuentas>
+      <fondos>
+        <fondo cuentaasociada="20-A">
+          <cantidaddepositada>20000</cantidaddepositada>
+          <moneda>Euros</moneda>
+        </fondo>
+        <fondo cuentaasociada="21-DX">
+          <cantidaddepositada>4800</cantidaddepositada>
+          <moneda>Dolares</moneda>
+        </fondo>
+      </fondos>
     </datos>
