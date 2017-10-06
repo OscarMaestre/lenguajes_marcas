@@ -5,7 +5,7 @@ HTML5
 Introducción
 =============
 Es la última revisión del estándar HTML. Se incluyen algunas etiquetas nuevas cuyo significado
-se comentará a continuación. Aún está completándose.
+se comentará a continuación. 
 
 Etiquetas estructurales
 ========================
