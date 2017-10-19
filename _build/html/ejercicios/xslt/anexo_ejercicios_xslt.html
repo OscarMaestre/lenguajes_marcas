@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Anexo: ejercicios sobre XSLT &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="../../index.html" />
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="prev" title="Anexo: ejercicios sobre formularios" href="../formularios/anexo_formularios.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -33,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -519,7 +518,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>Como puede verse, la plantilla genera dos elementos <code class="docutils literal"><span class="pre">cuenta</span></code>, uno por cada <code class="docutils literal"><span class="pre">cuenta</span></code> que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, <strong>y este es el &#8220;truco&#8221; para poder cambiar de nombre un elemento</strong> :</p>
+<p>Como puede verse, la plantilla genera dos elementos <code class="docutils literal"><span class="pre">cuenta</span></code>, uno por cada <code class="docutils literal"><span class="pre">cuenta</span></code> que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, <strong>y este es el «truco» para poder cambiar de nombre un elemento</strong> :</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
@@ -553,7 +552,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Pero hay un problema, todas las cuentas tienen el <code class="docutils literal"><span class="pre">dnititular</span></code> a 10. Necesitamos la etiqueta <code class="docutils literal"><span class="pre">value-of</span></code> que nos permite <strong>extraer el contenido de un elemento o atributo</strong>, en este caso queremos extrar el valor del atributo <code class="docutils literal"><span class="pre">dni</span></code> que está dentro del elemento <code class="docutils literal"><span class="pre">titular</span></code>. Esto se hace con <code class="docutils literal"><span class="pre">titular/&#64;dni</span></code> que significa &#8220;extraer el atributo dni que debe estar dentro del elemento titular&#8221;.</p>
+<p>Pero hay un problema, todas las cuentas tienen el <code class="docutils literal"><span class="pre">dnititular</span></code> a 10. Necesitamos la etiqueta <code class="docutils literal"><span class="pre">value-of</span></code> que nos permite <strong>extraer el contenido de un elemento o atributo</strong>, en este caso queremos extrar el valor del atributo <code class="docutils literal"><span class="pre">dni</span></code> que está dentro del elemento <code class="docutils literal"><span class="pre">titular</span></code>. Esto se hace con <code class="docutils literal"><span class="pre">titular/&#64;dni</span></code> que significa «extraer el atributo dni que debe estar dentro del elemento titular».</p>
 <p>Así, el código siguiente:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
@@ -734,7 +733,7 @@ y otra tabla separada para los productos del edificio B</p>
 <li>Crear el elemento <code class="docutils literal"><span class="pre">cantidaddepositada</span></code>.</li>
 <li>Crear el elemento moneda.</li>
 </ol>
-<p>Vamos con el paso 1 <em>&#8220;crear el elemento fondos&#8221;</em></p>
+<p>Vamos con el paso 1 <em>«crear el elemento fondos»</em></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
@@ -779,7 +778,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Ahora el paso 2: <em>poner el atributo &#8220;cuentaasociada&#8221;</em>. El XSLT sería así:</p>
+<p>Ahora el paso 2: <em>poner el atributo «cuentaasociada»</em>. El XSLT sería así:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
@@ -828,7 +827,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Con el XSLT siguiente conseguimos el paso 3: <em>&#8220;crear el elemento cantidaddepositada&#8221;</em></p>
+<p>Con el XSLT siguiente conseguimos el paso 3: <em>«crear el elemento cantidaddepositada»</em></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
@@ -880,7 +879,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Y por último el paso 4 &#8220;crear el elemento moneda&#8221;. El XSLT sería algo así:</p>
+<p>Y por último el paso 4 «crear el elemento moneda». El XSLT sería algo así:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
@@ -1005,7 +1004,7 @@ y otra tabla separada para los productos del edificio B</p>
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.txt"
+      <li><a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -1027,11 +1026,11 @@ y otra tabla separada para los productos del edificio B</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.txt"
+      <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

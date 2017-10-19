@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>CSS &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Javascript" href="tema4.html" />
     <link rel="prev" title="HTML5" href="tema2.html" />
    
@@ -34,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -46,7 +45,7 @@
 <h1>CSS<a class="headerlink" href="#css" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML&#8217;s modificando un solo CSS.</p>
+<p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.</p>
 </div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -119,39 +118,39 @@ varias cosas:</p>
 </pre></div>
 </div>
 <p>Y un posible CSS sería este:</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="nn">#lema</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">33%</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="p">);</span>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">#</span><span class="nn">lema</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">33</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">66%</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">240</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">230</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="nn">#publi1</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">25%</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">200</span><span class="p">);</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">66</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#contenido</span><span class="p">{</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">190</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">240</span><span class="p">);</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">div</span><span class="nn">#publi2</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">25%</span><span class="p">;</span>
-  <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">200</span><span class="p">);</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">publi1</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#copyright</span><span class="p">{</span>
-  <span class="nb">position</span><span class="o">:</span> <span class="nb">fixed</span><span class="p">;</span>
-  <span class="nb">bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="nb">left</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">publi2</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">copyright</span><span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -203,34 +202,34 @@ Publicidad publicidad
 </pre></div>
 </div>
 <p>Y un posible CSS sería este:</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-  <span class="nb">position</span><span class="o">:</span> <span class="nb">fixed</span><span class="p">;</span>
-  <span class="nb">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-  <span class="nb">left</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">20%</span><span class="p">;</span>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+  <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#lema</span><span class="p">{</span>
- <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">70%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">lema</span><span class="p">{</span>
+ <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">70</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#contenedor_central</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">75%</span><span class="p">;</span>
-  <span class="nb">margin-right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenedor_central</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">75</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#contenido</span><span class="p">{</span>
-  <span class="nb">font-family</span><span class="o">:</span> <span class="n">Helvetica</span><span class="p">;</span> 
-  <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">62%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">;</span> 
+  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">62</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#publi</span><span class="p">{</span>
-  <span class="nb">margin-right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span><span class="m">32%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">publi</span><span class="p">{</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">32</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#copyright</span><span class="p">{</span>
-  <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-  <span class="nb">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">copyright</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -282,39 +281,39 @@ Publicidad publicidad
 <div class="section" id="id1">
 <h4>CSS<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
 <div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="p">{</span>
-        <span class="nb">background-image</span><span class="o">:</span>
-                <span class="sx">url(&quot;textura.jpg&quot;)</span><span class="p">;</span>
-        <span class="nb">background-attachment</span><span class="o">:</span> <span class="nb">fixed</span><span class="p">;</span>
+        <span class="k">background-image</span><span class="p">:</span>
+                <span class="nb">url</span><span class="p">(</span><span class="s2">&quot;textura.jpg&quot;</span><span class="p">);</span>
+        <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-        <span class="nb">position</span><span class="o">:</span> <span class="nb">fixed</span><span class="p">;</span>
-        <span class="nb">top</span><span class="o">:</span><span class="m">40%</span><span class="p">;</span>
-        <span class="nb">left</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span><span class="m">17%</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">40</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">17</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#contenido</span><span class="p">{</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">80%</span><span class="p">;</span>
-        <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
-        <span class="nb">top</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
-        <span class="nb">right</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c">/* Todos los párrafos llevan</span>
 <span class="c"> * un pequeño sangrado extra</span>
 <span class="c"> * de 15 px en la primera línea*/</span>
 <span class="nt">p</span><span class="p">{</span>
-        <span class="nb">text-indent</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+        <span class="k">text-indent</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">img</span><span class="p">{</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">25%</span><span class="p">;</span>
-        <span class="nb">border</span><span class="o">:</span> <span class="nb">solid</span> <span class="nb">black</span> <span class="m">1px</span><span class="p">;</span>
-        <span class="nb">padding</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
-        <span class="nb">display</span><span class="o">:</span> <span class="nb">block</span><span class="p">;</span>
-        <span class="nb">margin-left</span><span class="o">:</span> <span class="nb">auto</span><span class="p">;</span>
-        <span class="nb">margin-right</span><span class="o">:</span> <span class="nb">auto</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+        <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+        <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -371,52 +370,52 @@ Publicidad publicidad
 </div>
 <div class="section" id="id3">
 <h3>CSS<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nn">#cabecera</span><span class="p">{</span>
-        <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
-        <span class="nb">background-color</span><span class="o">:</span>
-                <span class="nb">rgb</span><span class="p">(</span><span class="m">242</span><span class="o">,</span><span class="m">227</span><span class="o">,</span><span class="m">148</span><span class="p">)</span>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">cabecera</span><span class="p">{</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">242</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">148</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nn">#marcacabecera</span><span class="p">{</span>
-        <span class="nb">font-size</span><span class="o">:</span> <span class="nb">larger</span><span class="p">;</span>
-        <span class="nb">font-family</span><span class="o">:</span> <span class="s2">&quot;Impact&quot;</span><span class="p">;</span>
+<span class="p">#</span><span class="nn">marcacabecera</span><span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">larger</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Impact&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nn">#lemacabecera</span><span class="p">{</span>
-        <span class="nb">font-style</span><span class="o">:</span> <span class="nb">italic</span><span class="p">;</span>
-        <span class="nb">font-size</span><span class="o">:</span> <span class="nb">smaller</span><span class="p">;</span>
-        <span class="nb">font-family</span><span class="o">:</span> <span class="s2">&quot;Lucida Handwriting&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="nn">#cuerpo</span><span class="o">,</span> <span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-        <span class="nb">background-color</span><span class="o">:</span>
-                <span class="nb">rgb</span><span class="p">(</span><span class="m">217</span><span class="o">,</span><span class="m">195</span><span class="o">,</span><span class="m">89</span><span class="p">);</span>
-
+<span class="p">#</span><span class="nn">lemacabecera</span><span class="p">{</span>
+        <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">smaller</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Lucida Handwriting&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#cuerpo</span><span class="p">{</span>
-        <span class="nb">width</span><span class="o">:</span><span class="m">65%</span><span class="p">;</span>
-        <span class="nb">float</span><span class="o">:</span><span class="nb">left</span><span class="p">;</span>
-        <span class="nb">margin-top</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
-        <span class="nb">padding</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
-        <span class="nb">text-align</span><span class="o">:</span> <span class="nb">justify</span><span class="p">;</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">cuerpo</span><span class="o">,</span> <span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">217</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">89</span><span class="p">);</span>
 
 <span class="p">}</span>
-<span class="nt">div</span><span class="nn">#enlaces</span><span class="p">{</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">20%</span><span class="p">;</span>
-        <span class="nb">float</span><span class="o">:</span><span class="nb">right</span><span class="p">;</span>
-        <span class="nb">margin-top</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">cuerpo</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">65</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">div</span><span class="p">{</span>
-        <span class="nb">border-width</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
-        <span class="nb">border-style</span><span class="o">:</span> <span class="nb">solid</span><span class="p">;</span>
-        <span class="nb">border-color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
-        <span class="nb">background-color</span><span class="o">:</span>
-                <span class="nb">rgb</span><span class="p">(</span><span class="m">230</span><span class="o">,</span><span class="m">230</span><span class="o">,</span> <span class="m">230</span><span class="p">);</span>
+        <span class="k">border-width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">border-style</span><span class="p">:</span> <span class="kc">solid</span><span class="p">;</span>
+        <span class="k">border-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="nn">#contenedorglobal</span><span class="p">{</span>
-        <span class="nb">background-color</span><span class="o">:</span>
-                <span class="nb">rgb</span><span class="p">(</span><span class="m">188</span><span class="o">,</span><span class="m">182</span><span class="o">,</span><span class="m">175</span><span class="p">);</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenedorglobal</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">188</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">175</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -553,21 +552,21 @@ Publicidad publicidad
 <li>Por nombre: <code class="docutils literal"><span class="pre">red</span></code>, <code class="docutils literal"><span class="pre">yellow</span></code>, <code class="docutils literal"><span class="pre">green</span></code></li>
 <li>Mediante <code class="docutils literal"><span class="pre">rgb(rojo,</span> <span class="pre">verde,</span> <span class="pre">azul</span></code>, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, <code class="docutils literal"><span class="pre">rgb(0,0,0)</span></code> es negro y <code class="docutils literal"><span class="pre">rgb(255,255,255)</span></code> es blanco.</li>
 <li>Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.</li>
-<li>Desde hace poco se pueden indicar también con <a href="#id5"><span class="problematic" id="id6">``</span></a>hsl(num, num, num)&#8217;&#8216;</li>
+<li>Desde hace poco se pueden indicar también con <a href="#id5"><span class="problematic" id="id6">``</span></a>hsl(num, num, num)”“</li>
 </ul>
-<p>Se pueden encontrar en Internet listas de colores denominados &#8220;seguros&#8221; (buscando por &#8220;web safe colors&#8221;) que indican nombres de color que se ven igual en los distintos navegadores.</p>
+<p>Se pueden encontrar en Internet listas de colores denominados «seguros» (buscando por «web safe colors») que indican nombres de color que se ven igual en los distintos navegadores.</p>
 </div>
 <div class="section" id="tipografias">
 <h2>Tipografías<a class="headerlink" href="#tipografias" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En tipografía se habla de dos términos distintos: el &#8220;typeface&#8221; y la &#8220;font&#8221;.</p>
+<p>En tipografía se habla de dos términos distintos: el «typeface» y la «font».</p>
 <ul class="simple">
-<li>Hay tipos &#8220;Serif&#8221;, que llevan &#8220;rabito&#8221;.</li>
-<li>Hay tipos &#8220;Sans-serif&#8221; que no lo llevan</li>
+<li>Hay tipos «Serif», que llevan «rabito».</li>
+<li>Hay tipos «Sans-serif» que no lo llevan</li>
 <li>Hay tipos monoespaciados</li>
 </ul>
 <p>Lo más relevante, es que cuando usamos <code class="docutils literal"><span class="pre">font-family:</span> <span class="pre">&quot;Arial&quot;;</span></code>, el navegador puede decidir poner otro tipo de letra de la misma familia.</p>
 <p>Se pueden indicar varios tipos de letra por orden de preferencia.</p>
-<p>Google Fonts permite el &#8220;embebido&#8221; de fuentes de manera muy segura.</p>
+<p>Google Fonts permite el «embebido» de fuentes de manera muy segura.</p>
 <p>Alineación del texto
 ===========     =========</p>
 <p>Se puede usar la propiedad <code class="docutils literal"><span class="pre">text-align:</span> <span class="pre">left</span></code> para modificar la alineación del texto, usando <code class="docutils literal"><span class="pre">left</span></code>, <code class="docutils literal"><span class="pre">center</span></code>, <code class="docutils literal"><span class="pre">right</span></code> o <code class="docutils literal"><span class="pre">justify</span></code></p>
@@ -590,7 +589,7 @@ el aspecto del texto como estas:</p>
 <li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1in</span></code>: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.</li>
 <li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1px</span></code>: muy dependiente de la resolución</li>
 <li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1%</span></code>: es la más apropiada al modificar elementos div en pantalla.</li>
-<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra &#8220;m&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra «m».</li>
 </ul>
 </div>
 <div class="section" id="selectores">
@@ -660,8 +659,8 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-p-destacado">
 <h3>Solución <code class="docutils literal"><span class="pre">p#destacado</span></code><a class="headerlink" href="#solucion-p-destacado" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Si tenemos un estilo como este:</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="nn">#destacado</span><span class="p">{</span>
-        <span class="nb">border</span><span class="o">:</span><span class="nb">solid</span> <span class="nb">black</span> <span class="m">1px</span><span class="p">;</span>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">#</span><span class="nn">destacado</span><span class="p">{</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -770,10 +769,10 @@ el aspecto del texto como estas:</p>
 </div>
 <p>En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:</p>
 <ul class="simple">
-<li>col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura &#8220;muy pequeña/extrasmall&#8221; (menos de 768)</li>
-<li>col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura &#8220;pequeña/small&#8221; (más de 768 y menos de 992)</li>
-<li>col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura &#8220;media&#8221; (unos 992 px)</li>
-<li>col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura &#8220;grande/large&#8221; (unos 992 px)</li>
+<li>col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «muy pequeña/extrasmall» (menos de 768)</li>
+<li>col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «pequeña/small» (más de 768 y menos de 992)</li>
+<li>col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «media» (unos 992 px)</li>
+<li>col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «grande/large» (unos 992 px)</li>
 </ul>
 </div>
 <div class="section" id="tipografia">
@@ -860,7 +859,7 @@ el aspecto del texto como estas:</p>
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/tema3.txt"
+      <li><a href="_sources/tema3.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -882,11 +881,11 @@ el aspecto del texto como estas:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/tema3.txt"
+      <a href="_sources/tema3.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

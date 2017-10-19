@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>XML &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Recuperación de información" href="tema6.html" />
     <link rel="prev" title="Javascript" href="tema4.html" />
    
@@ -34,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -48,7 +47,7 @@
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los lenguajes de marcas como HTML tienen una orientación muy clara: describir páginas web.</p>
 <p>En un contexto distinto, muy a menudo ocurre que es muy difícil intercambiar datos entre programas.</p>
-<p>XML es un conjunto de tecnologías orientadas a crear nuestros propios lenguajes de marcas. A estos lenguajes de marcas &#8220;propios&#8221; se les denomina &#8220;vocabularios&#8221;.</p>
+<p>XML es un conjunto de tecnologías orientadas a crear nuestros propios lenguajes de marcas. A estos lenguajes de marcas «propios» se les denomina «vocabularios».</p>
 </div>
 <div class="section" id="un-ejemplo-sencillo">
 <h2>Un ejemplo sencillo<a class="headerlink" href="#un-ejemplo-sencillo" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -64,13 +63,13 @@
 <span class="nt">&lt;/clientes&gt;</span>
 </pre></div>
 </div>
-<p>Lo fundamental es que podemos crear nuestros propios &#8220;vocabularios&#8221; XML.</p>
+<p>Lo fundamental es que podemos crear nuestros propios «vocabularios» XML.</p>
 </div>
 <div class="section" id="construccion-de-xml">
 <h2>Construcción de XML<a class="headerlink" href="#construccion-de-xml" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para crear XML es importante recordar una serie de reglas:</p>
 <ul class="simple">
-<li>XML es &#8220;case-sensitive&#8221;, es decir que no es lo mismo mayúsculas que minúsculas y que por tanto no es lo mismo <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code>, que <code class="docutils literal"><span class="pre">&lt;Cliente&gt;</span></code> que <code class="docutils literal"><span class="pre">&lt;CLIENTE&gt;</span></code>.</li>
+<li>XML es «case-sensitive», es decir que no es lo mismo mayúsculas que minúsculas y que por tanto no es lo mismo <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code>, que <code class="docutils literal"><span class="pre">&lt;Cliente&gt;</span></code> que <code class="docutils literal"><span class="pre">&lt;CLIENTE&gt;</span></code>.</li>
 <li>Obligatorio: solo un elemento raíz.</li>
 <li>En general, la costumbre es poner todo en minúsculas.</li>
 <li>Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas <code class="docutils literal"><span class="pre">&lt;12Cliente&gt;</span></code>.</li>
@@ -79,7 +78,7 @@
 </div>
 <div class="section" id="validez">
 <h2>Validez<a class="headerlink" href="#validez" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Un documento XML puede &#8220;estar bien formado&#8221; o &#8220;ser válido&#8221;. Se dice que un documento &#8220;está bien formado&#8221; cuando respeta las reglas XML básicas. Si alguien ha definido las reglas XML para un vocabulario, podremos además decir si el documento es válido o no, lo cual es mejor que simplemente estar bien formado.</p>
+<p>Un documento XML puede «estar bien formado» o «ser válido». Se dice que un documento «está bien formado» cuando respeta las reglas XML básicas. Si alguien ha definido las reglas XML para un vocabulario, podremos además decir si el documento es válido o no, lo cual es mejor que simplemente estar bien formado.</p>
 <p>Por ejemplo, los siguientes archivos ni siquiera están bien formados.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;clientes&gt;</span>
         <span class="nt">&lt;cliente&gt;</span>
@@ -261,8 +260,8 @@
 <p>Esto significa lo siguiente:</p>
 <ul class="simple">
 <li>Se establece el tipo de documento <code class="docutils literal"><span class="pre">listaclientes</span></code> que consta de una serie de elementos (dentro del corchete)</li>
-<li>Un elemento <code class="docutils literal"><span class="pre">listaclientes</span>&#160;&#160; <span class="pre">``</span> <span class="pre">consta</span> <span class="pre">de</span> <span class="pre">uno</span> <span class="pre">o</span> <span class="pre">más</span> <span class="pre">clientes.</span> <span class="pre">El</span> <span class="pre">signo</span> <span class="pre">``+</span></code> significa &#8220;uno o más&#8221;.</li>
-<li>Un cliente tiene un nombre y un cif. También puede tener un elemento <code class="docutils literal"><span class="pre">diasentrega</span></code> que puede o no aparecer (el signo <code class="docutils literal"><span class="pre">?</span></code> significa &#8220;0 o 1 veces&#8221;).</li>
+<li>Un elemento <code class="docutils literal"><span class="pre">listaclientes</span>&#160;&#160; <span class="pre">``</span> <span class="pre">consta</span> <span class="pre">de</span> <span class="pre">uno</span> <span class="pre">o</span> <span class="pre">más</span> <span class="pre">clientes.</span> <span class="pre">El</span> <span class="pre">signo</span> <span class="pre">``+</span></code> significa «uno o más».</li>
+<li>Un cliente tiene un nombre y un cif. También puede tener un elemento <code class="docutils literal"><span class="pre">diasentrega</span></code> que puede o no aparecer (el signo <code class="docutils literal"><span class="pre">?</span></code> significa «0 o 1 veces»).</li>
 <li>Un <code class="docutils literal"><span class="pre">nombre</span></code> no tiene más elementos dentro, solo caracteres (<code class="docutils literal"><span class="pre">#PCDATA</span></code>)</li>
 <li>Un <code class="docutils literal"><span class="pre">CIF</span></code> solo consta de caracteres.</li>
 <li>Un elemento <code class="docutils literal"><span class="pre">diasentrega</span></code> consta solo de caracteres.</li>
@@ -795,15 +794,15 @@
 <ul>
 <li><p class="first">Un archivo tiene una serie de operaciones dentro.</p>
 </li>
-<li><p class="first">Las operaciones pueden ser &#8220;venta&#8221;, &#8220;compra&#8221;, o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p>
+<li><p class="first">Las operaciones pueden ser «venta», «compra», o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p>
 </li>
 <li><p class="first">Una venta tiene:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Uno o más títulos vendidos.</li>
 <li>La cantidad total de libros vendidos.</li>
-<li>Puede haber un elemento &#8220;entregado&#8221; que indique si la entrega se ha realizado.</li>
-<li>Debe haber un elemento importe con un atributo obligatorio llamado &#8220;moneda&#8221;.</li>
+<li>Puede haber un elemento «entregado» que indique si la entrega se ha realizado.</li>
+<li>Debe haber un elemento importe con un atributo obligatorio llamado «moneda».</li>
 </ul>
 </div></blockquote>
 </li>
@@ -923,12 +922,12 @@
 <ul class="simple">
 <li>En el listado aparecen siempre uno o varios futuros, despues una o varias divisas, despues uno o varios bonos y una o varias letras.</li>
 <li>Todos ellos tienen un atributo precio que es <strong>obligatorio</strong></li>
-<li>Todos ellos tienen un elemento vacío que indica  de donde es el producto anterior: &#8220;Madrid&#8221;, &#8220;Nueva York&#8221;, &#8220;Frankfurt&#8221; o &#8220;Tokio&#8221;.</li>
+<li>Todos ellos tienen un elemento vacío que indica  de donde es el producto anterior: «Madrid», «Nueva York», «Frankfurt» o «Tokio».</li>
 <li>Las divisas y los bonos tienen un atributo optativo que se usa para indicar si el producto ha sido estable en el pasado o no.</li>
 <li>Un futuro es un valor esperado que tendrá un cierto producto en el futuro. Se debe incluir este producto en forma de elemento. También puede aparecer un elemento mercado que indique el país de procedencia del producto.</li>
-<li>Todo bono tiene un elemento país_de_procedencia para saber a qué estado pertenece. Debe tener tres elementos extra llamados &#8220;valor_deseado&#8221;, &#8220;valor_mínimo&#8221; y &#8220;valor_máximo&#8221; para saber los posibles precios.</li>
+<li>Todo bono tiene un elemento país_de_procedencia para saber a qué estado pertenece. Debe tener tres elementos extra llamados «valor_deseado», «valor_mínimo» y «valor_máximo» para saber los posibles precios.</li>
 <li>Las divisas tienen siempre un nombre pueden incluir uno o más tipos de cambio para otras monedas.</li>
-<li>Las letras tienen siempre un tipo de interés pagadero por un país emisor. El país emisor también debe existir y debe ser siempre de uno de los países cuyas capitales aparecen arriba (es decir &#8220;España&#8221;, &#8220;EEUU&#8221;, &#8220;Alemania&#8221; y &#8220;Japón&#8221;</li>
+<li>Las letras tienen siempre un tipo de interés pagadero por un país emisor. El país emisor también debe existir y debe ser siempre de uno de los países cuyas capitales aparecen arriba (es decir «España», «EEUU», «Alemania» y «Japón»</li>
 </ul>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE listado [</span>
@@ -1022,7 +1021,7 @@
 </li>
 <li><p class="first">Apellidos</p>
 </li>
-<li><p class="first">Situación laboral: que tiene que ser una y solo una de entre estas posibilidades: &#8220;en_paro&#8221;, &#8220;en_activo&#8221;, &#8220;jubilado&#8221;, &#8220;edad_no_laboral&#8221;</p>
+<li><p class="first">Situación laboral: que tiene que ser una y solo una de entre estas posibilidades: «en_paro», «en_activo», «jubilado», «edad_no_laboral»</p>
 </li>
 <li><p class="first">Fecha de nacimiento: que se desglosa en los elementos obligatorios día, mes y anio.</p>
 </li>
@@ -1085,8 +1084,8 @@
 <li><code class="docutils literal"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</li>
 <li><code class="docutils literal"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</li>
 <li><code class="docutils literal"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <code class="docutils literal"><span class="pre">2020-09-22T10:40:22.6</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con &#8220;P&#8221; y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo &#8220;P1Y4M21DT8H&#8221; indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
-<li><code class="docutils literal"><span class="pre">xsd:boolean</span></code>: acepta solo valores &#8220;true&#8221; y &#8220;false&#8221;.</li>
+<li><code class="docutils literal"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con «P» y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo «P1Y4M21DT8H» indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
+<li><code class="docutils literal"><span class="pre">xsd:boolean</span></code>: acepta solo valores «true» y «false».</li>
 <li><code class="docutils literal"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</li>
 <li><code class="docutils literal"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</li>
 </ul>
@@ -1098,12 +1097,12 @@
 </div>
 <div class="section" id="derivaciones">
 <h3>Derivaciones<a class="headerlink" href="#derivaciones" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de &#8220;heredar&#8221; tenemos más posibilidades que en Java (dondo solo tenemos el &#8220;extends&#8221;). En concreto podemos heredar de 4 formas:</p>
+<p>Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de «heredar» tenemos más posibilidades que en Java (dondo solo tenemos el «extends»). En concreto podemos heredar de 4 formas:</p>
 <ol class="arabic simple">
 <li>Poniendo restricciones (<code class="docutils literal"><span class="pre">restriction</span></code>). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.</li>
 <li>Extendiendo un tipo (<code class="docutils literal"><span class="pre">extension</span></code>). Se toma un tipo y se crea uno nuevo añadiendo cosas a los posibles valores que pueda tomar el tipo inicial.</li>
 <li>Haciendo listas (<code class="docutils literal"><span class="pre">lists</span></code>). Es como crear vectores en Java.</li>
-<li>Juntando otros tipos para crear tipos complejos (<code class="docutils literal"><span class="pre">union</span></code>). Es como crear clases Java en las que añadimos atributos de tipo <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">String</span></code>, etc...</li>
+<li>Juntando otros tipos para crear tipos complejos (<code class="docutils literal"><span class="pre">union</span></code>). Es como crear clases Java en las que añadimos atributos de tipo <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">String</span></code>, etc…</li>
 </ol>
 <p>En general, las dos derivaciones más usadas con diferencia son las restricciones y las extensiones, que se comentan por separado en los puntos siguientes.</p>
 </div>
@@ -1217,7 +1216,7 @@
 <li>Por un lado tenemos que especificar si nuestros tipos serán simples o complejos (los cuales a su vez pueden ser complejos con contenido simple o complejos con contenido complejo).</li>
 <li>Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo cosas (restricciones a los valores).</li>
 </ul>
-<p>Se deduce por tanto que no podemos aplicar todas las &#8220;herencias&#8221; a todos los tipos:</p>
+<p>Se deduce por tanto que no podemos aplicar todas las «herencias» a todos los tipos:</p>
 <ol class="arabic simple">
 <li>Los tipos simples no pueden tener atributos ni subelementos, por lo tanto <strong>les podremos aplicar restricciones pero nunca la extensión</strong>.</li>
 <li>Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que <strong>les podremos aplicar tanto restricciones como extensiones</strong>.</li>
@@ -1249,7 +1248,7 @@
 <div class="section" id="id4">
 <h3>Atributos<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En primer lugar es muy importante recordar que <strong>si queremos que un elemento tenga atributos entonces ya no
-se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType</strong>. Por otro lado en los XML Schema todos los atributos <strong>son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un &#8220;required&#8221;.</strong></p>
+se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complexType</strong>. Por otro lado en los XML Schema todos los atributos <strong>son siempre opcionales, si queremos hacerlos obligatorios habrá que añadir un «required».</strong></p>
 <p>Un atributo se define de la siguiente manera:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;fechanacimiento&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:date&quot;</span> <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
@@ -1283,8 +1282,8 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <span class="nt">&lt;/xs:schema&gt;</span>
 </pre></div>
 </div>
-<p>Este esquema dice que el elemento raíz debe ser <code class="docutils literal"><span class="pre">cantidad</span></code>. Luego indica que es un tipo simple y dentro de él indica que se va a establecer una restricción teniendo en mente que se va a &#8220;heredar&#8221; del tipo <code class="docutils literal"><span class="pre">short</span></code>. En concreto se van a poner dos restricciones, una que el valor mínimo debe ser -30 y otra que el valor máximo debe ser 30.</p>
-<p>Existe una alternativa más recomendable, que es separar los elementos de los tipos. De esa manera, se pueden &#8220;reutilizar&#8221; las definiciones de tipos.</p>
+<p>Este esquema dice que el elemento raíz debe ser <code class="docutils literal"><span class="pre">cantidad</span></code>. Luego indica que es un tipo simple y dentro de él indica que se va a establecer una restricción teniendo en mente que se va a «heredar» del tipo <code class="docutils literal"><span class="pre">short</span></code>. En concreto se van a poner dos restricciones, una que el valor mínimo debe ser -30 y otra que el valor máximo debe ser 30.</p>
+<p>Existe una alternativa más recomendable, que es separar los elementos de los tipos. De esa manera, se pueden «reutilizar» las definiciones de tipos.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidades&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/xs:element&gt;</span>
@@ -1301,7 +1300,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <div class="section" id="cantidades-limitadas-con-atributo-divisa">
 <h3>Cantidades limitadas con atributo divisa<a class="headerlink" href="#cantidades-limitadas-con-atributo-divisa" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Se desea crear un esquema para validar XML en los que haya un solo elemento raíz llamado cantidad en el que se debe poner siempre un atributo &#8220;divisa&#8221; que indique en qué moneda está una cierta cantidad. El atributo divisa siempre será una cadena y la cantidad siempre será un tipo numérico que acepte decimales (por ejemplo <code class="docutils literal"><span class="pre">float</span></code>). El esquema debe validar los archivos siguientes:</p>
+<p>Se desea crear un esquema para validar XML en los que haya un solo elemento raíz llamado cantidad en el que se debe poner siempre un atributo «divisa» que indique en qué moneda está una cierta cantidad. El atributo divisa siempre será una cadena y la cantidad siempre será un tipo numérico que acepte decimales (por ejemplo <code class="docutils literal"><span class="pre">float</span></code>). El esquema debe validar los archivos siguientes:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;euro&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/cantidad&gt;</span>
 </pre></div>
 </div>
@@ -1318,8 +1317,8 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <div class="section" id="solucion-a-las-cantidades-limitadas-con-atributo-divisa">
 <h3>Solución a las cantidades limitadas con atributo divisa<a class="headerlink" href="#solucion-a-las-cantidades-limitadas-con-atributo-divisa" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Crearemos un tipo llamado &#8220;tipoCantidad&#8221;. Dicho tipo <em>ya no puede ser un simpleType ya que necesitamos que haya atributos</em>. Como no necesitamos que tenga dentro subelementos entonces este <code class="docutils literal"><span class="pre">complexType</span></code> llevará dentro un <code class="docutils literal"><span class="pre">simpleContent</span></code> (y no un <code class="docutils literal"><span class="pre">complexContent</span></code>).</p>
-<p>Aparte de eso, como queremos &#8220;ampliar&#8221; un elemento para que acepte tener dentro un atributo obligatorio &#8220;cantidad&#8221; usaremos una <code class="docutils literal"><span class="pre">&lt;extension&gt;</span></code>. Así, el posible esquema sería este:</p>
+<p>Crearemos un tipo llamado «tipoCantidad». Dicho tipo <em>ya no puede ser un simpleType ya que necesitamos que haya atributos</em>. Como no necesitamos que tenga dentro subelementos entonces este <code class="docutils literal"><span class="pre">complexType</span></code> llevará dentro un <code class="docutils literal"><span class="pre">simpleContent</span></code> (y no un <code class="docutils literal"><span class="pre">complexContent</span></code>).</p>
+<p>Aparte de eso, como queremos «ampliar» un elemento para que acepte tener dentro un atributo obligatorio «cantidad» usaremos una <code class="docutils literal"><span class="pre">&lt;extension&gt;</span></code>. Así, el posible esquema sería este:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoCantidad&quot;</span><span class="nt">&gt;</span>
@@ -1339,7 +1338,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cantidad</span> <span class="na">divisa=</span><span class="s">&quot;aaaa&quot;</span><span class="nt">&gt;</span>18.32<span class="nt">&lt;/cantidad&gt;</span>
 </pre></div>
 </div>
-<p>Vamos a indicar que el atributo solo puede tomar tres posibles valores: &#8220;euros&#8221;, &#8220;dolares&#8221; y &#8220;yenes&#8221;.</p>
+<p>Vamos a indicar que el atributo solo puede tomar tres posibles valores: «euros», «dolares» y «yenes».</p>
 </div>
 <div class="section" id="solucion-al-atributo-con-solo-ciertos-valores">
 <h3>Solución al atributo con solo ciertos valores<a class="headerlink" href="#solucion-al-atributo-con-solo-ciertos-valores" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1397,7 +1396,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <p>Se desea crear un esquema que permita validar un elemento raíz llamado <code class="docutils literal"><span class="pre">producto</span></code> de tipo <code class="docutils literal"><span class="pre">xsd:string</span></code>. El producto tiene dos atributos:</p>
 <ul class="simple">
 <li>Un atributo se llamará <code class="docutils literal"><span class="pre">cantidad</span></code> y es obligatorio. Debe aceptar solo enteros positivos.</li>
-<li>También habrá un atributo llamado <code class="docutils literal"><span class="pre">unidad</span></code> que solo acepta los <code class="docutils literal"><span class="pre">xsd:string</span></code> &#8220;cajas&#8221; y &#8220;pales&#8221;.</li>
+<li>También habrá un atributo llamado <code class="docutils literal"><span class="pre">unidad</span></code> que solo acepta los <code class="docutils literal"><span class="pre">xsd:string</span></code> «cajas» y «pales».</li>
 </ul>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
     <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -1427,7 +1426,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <p>Se desea crear un esquema XML que permita validar un elemento llamado <code class="docutils literal"><span class="pre">cliente</span></code> que puede almacenar un <code class="docutils literal"><span class="pre">xsd:string</span></code>. El cliente contiene:</p>
 <ul class="simple">
 <li>Un atributo obligatorio llamado <code class="docutils literal"><span class="pre">codigo</span></code> que contiene el código del cliente, que siempre consta de tres letras mayúsculas de tres números.</li>
-<li>Un atributo optativo llamado <code class="docutils literal"><span class="pre">habitual</span></code> que se usará para saber si es un cliente habitual o no. Acepta valores &#8220;true&#8221; y &#8220;false&#8221;.</li>
+<li>Un atributo optativo llamado <code class="docutils literal"><span class="pre">habitual</span></code> que se usará para saber si es un cliente habitual o no. Acepta valores «true» y «false».</li>
 <li>Un atributo optativo llamado <code class="docutils literal"><span class="pre">cantidad</span></code> que indica su compra. Es un entero con valores de entre 0 y 1000.</li>
 </ul>
 </div>
@@ -1454,7 +1453,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <span class="nt">&lt;/xsd:schema&gt;</span>
 </pre></div>
 </div>
-<p>Definamos ahora el tipo <code class="docutils literal"><span class="pre">tipoCliente</span></code>. Dicho tipo <strong>necesita tener subelementos dentro</strong> así que evidentemente va a ser de tipo complejo. La pregunta es ¿es &#8220;tipo complejo con contenido simple&#8221; o &#8220;tipo complejo con contenido complejo&#8221;?. Si lo hiciéramos de &#8220;tipo complejo con contenido simple&#8221; podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un &#8220;tipo complejo con contenido complejo&#8221;. Igual que antes impondremos una restricciones que es permitir solo que aparezcan ciertos elementos en cierto orden. El elemento <code class="docutils literal"><span class="pre">plazo</span></code> lo haremos optativo.</p>
+<p>Definamos ahora el tipo <code class="docutils literal"><span class="pre">tipoCliente</span></code>. Dicho tipo <strong>necesita tener subelementos dentro</strong> así que evidentemente va a ser de tipo complejo. La pregunta es ¿es «tipo complejo con contenido simple» o «tipo complejo con contenido complejo»?. Si lo hiciéramos de «tipo complejo con contenido simple» podríamos tener atributos pero no subelementos, así que forzosamente tendrá que ser de un «tipo complejo con contenido complejo». Igual que antes impondremos una restricciones que es permitir solo que aparezcan ciertos elementos en cierto orden. El elemento <code class="docutils literal"><span class="pre">plazo</span></code> lo haremos optativo.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaclientes&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaClientes&quot;</span><span class="nt">&gt;</span>
@@ -1579,7 +1578,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Despues va exactamente un digito.</li>
 <li>Por último hay exactamente dos mayúsculas.</li>
 </ol>
-<p>Un posible esquema XML sería el siguiente (obsérvese como usamos <code class="docutils literal"><span class="pre">maxOccurs</span></code> para indicar que el elemento puede repetirse un máximo de &#8220;infitas veces&#8221;:</p>
+<p>Un posible esquema XML sería el siguiente (obsérvese como usamos <code class="docutils literal"><span class="pre">maxOccurs</span></code> para indicar que el elemento puede repetirse un máximo de «infitas veces»:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
     <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listacodigos&quot;</span>
@@ -1673,7 +1672,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <p>Las reglas son:</p>
 <ol class="arabic simple">
 <li>Una lista de productos puede tener dentro muchos productos.</li>
-<li>Todo producto tiene un &#8220;codigo&#8221; cuya estructura <em>dos mayúsculas seguidas de un guión seguido de dos o tres cifras</em></li>
+<li>Todo producto tiene un «codigo» cuya estructura <em>dos mayúsculas seguidas de un guión seguido de dos o tres cifras</em></li>
 <li>Todo producto <em>puede tener (optativo)</em> un elemento descripción que es de tipo texto.</li>
 <li>Todo producto <strong>debe tener</strong> un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0</li>
 </ol>
@@ -1751,7 +1750,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Una tarjeta gráfica siempre tiene dos elementos llamados <code class="docutils literal"><span class="pre">memoria</span></code> y <code class="docutils literal"><span class="pre">precio</span></code>.</li>
 <li>La memoria siempre es una cifra seguido de GB o TB.</li>
 <li>El tamaño del monitor siempre es un entero positivo.</li>
-<li>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal"><span class="pre">moneda</span></code> que solo puede valer &#8220;euros&#8221; o &#8220;dolares&#8221; y que se utiliza para saber en qué moneda está el precio.</li>
+<li>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal"><span class="pre">moneda</span></code> que solo puede valer «euros» o «dolares» y que se utiliza para saber en qué moneda está el precio.</li>
 </ol>
 <p>La solución se muestra a continuación:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -2094,7 +2093,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Todo <code class="docutils literal"><span class="pre">&lt;futuro&gt;</span></code> tiene un hijo llamado <code class="docutils literal"><span class="pre">&lt;elemento&gt;</span></code> que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado <code class="docutils literal"><span class="pre">idioma</span></code> que indica el idioma en el que está escrita la cadena.</li>
 <li>Las acciones siempre tienen un elemento <code class="docutils literal"><span class="pre">&lt;empresa&gt;</span></code> que indica el nombre de la empresa y un atributo llamado <code class="docutils literal"><span class="pre">país</span></code> que indica de donde es la empresa. De momento queremos limitarnos a los países <code class="docutils literal"><span class="pre">usa</span></code>, <code class="docutils literal"><span class="pre">alemania</span></code>, <code class="docutils literal"><span class="pre">japon</span></code> y <code class="docutils literal"><span class="pre">espana</span></code>.</li>
 </ol>
-<p>Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es <strong>obligatorio</strong>. Si algo es optativo nos dirán &#8220;puede tener dentro&#8221;, &#8220;puede contener&#8221;, &#8220;puede aparecer&#8221;, etc...</p>
+<p>Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es <strong>obligatorio</strong>. Si algo es optativo nos dirán «puede tener dentro», «puede contener», «puede aparecer», etc…</p>
 <p>Una posible solución sería esta:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;productosfinancieros&quot;</span>
@@ -2333,7 +2332,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/tema5.txt"
+      <li><a href="_sources/tema5.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -2355,11 +2354,11 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/tema5.txt"
+      <a href="_sources/tema5.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Javascript &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="../index.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -32,7 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -47,7 +46,7 @@
 <p>Surgió como una iniciativa de Netscape. <strong>No hay ninguna relación entre Java y Javascript</strong>. Algunas características de Javascript son:</p>
 <ul class="simple">
 <li>No se convierte en bytecodes, lo interpreta el navegador</li>
-<li>Está estandarizado aunque no todos los navegadores se ciñen al 100% al estándar. El nombre del estándar es &#8220;ECMAScript&#8221;</li>
+<li>Está estandarizado aunque no todos los navegadores se ciñen al 100% al estándar. El nombre del estándar es «ECMAScript»</li>
 <li>No está orientado a objetos, sino que está basado en objetos.</li>
 <li>Es de tipado débil: esto significa que podemos cambiar una variable de tipo sin problemas, el intérprete intentará hacer las conversiones correctas.</li>
 </ul>
@@ -325,7 +324,7 @@
 </div>
 <div class="section" id="programacion-oo">
 <h2>Programación OO<a class="headerlink" href="#programacion-oo" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Se ha dicho anteriormente que Javascript es &#8220;basado en objetos&#8221; y no &#8220;orientado a objetos&#8221;, es decir la POO es optativa. No por ello es menos potente.</p>
+<p>Se ha dicho anteriormente que Javascript es «basado en objetos» y no «orientado a objetos», es decir la POO es optativa. No por ello es menos potente.</p>
 <p>En primer lugar, es posible crear objetos sin crear clases.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
@@ -348,11 +347,11 @@
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Añadir un método llamado <code class="docutils literal"><span class="pre">nivelExperiencia</span></code> que nos diga una de estas cosas:</p>
 <ul class="simple">
-<li>Nos debe devolver &#8220;junior&#8221; si la edad está entre 18 y 25</li>
-<li>Nos debe devolver &#8220;asociado&#8221; si la edad está entre 26 y 45</li>
-<li>Nos debe devolver &#8220;senior&#8221; si la edad está entre 46 y 60</li>
-<li>Nos debe devolver &#8220;experto&#8221; si la edad está entre 61 y 65</li>
-<li>Nos debe devolver &#8220;no aplicable&#8221; si la edad es mayor de 65</li>
+<li>Nos debe devolver «junior» si la edad está entre 18 y 25</li>
+<li>Nos debe devolver «asociado» si la edad está entre 26 y 45</li>
+<li>Nos debe devolver «senior» si la edad está entre 46 y 60</li>
+<li>Nos debe devolver «experto» si la edad está entre 61 y 65</li>
+<li>Nos debe devolver «no aplicable» si la edad es mayor de 65</li>
 </ul>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
@@ -448,8 +447,8 @@
         <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ejemplo.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplos<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-                <span class="nt">div</span><span class="nn">#texto</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span><span class="nb">yellow</span><span class="p">;</span>
+                <span class="nt">div</span><span class="p">#</span><span class="nn">texto</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span>
                 <span class="p">}</span>
         <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -590,10 +589,10 @@
 <h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear un programa que tenga varios párrafos con 4 botones que permitan que cuando se haga click en ellos ocurran distintas cosas</p>
 <ul class="simple">
-<li>Habrá un botón con el texto &#8220;Ocultar pares&#8221;. Cuando se hace click en él se ocultan los párrafos pares.</li>
-<li>Habrá un botón con el texto &#8220;Ocultar impares&#8221;. Cuando se hace click en él se ocultan los párrafos impares.</li>
-<li>Habrá un botón con el texto &#8220;Mostrar pares&#8221;. Cuando se hace click en él se muestran los párrafos pares (que tal vez estaban ocultos).</li>
-<li>Habrá un botón con el texto &#8220;Mostrar impares&#8221;. Cuando se hace click en él se muestran los párrafos impares (que tal vez estaban ocultos).</li>
+<li>Habrá un botón con el texto «Ocultar pares». Cuando se hace click en él se ocultan los párrafos pares.</li>
+<li>Habrá un botón con el texto «Ocultar impares». Cuando se hace click en él se ocultan los párrafos impares.</li>
+<li>Habrá un botón con el texto «Mostrar pares». Cuando se hace click en él se muestran los párrafos pares (que tal vez estaban ocultos).</li>
+<li>Habrá un botón con el texto «Mostrar impares». Cuando se hace click en él se muestran los párrafos impares (que tal vez estaban ocultos).</li>
 </ul>
 </div>
 <div class="section" id="id6">
@@ -652,8 +651,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Por ejemplo, en los checkboxes y en los radios, podemos comprobar si uno de ellos está marcado comprobando la propiedad &#8220;checked&#8221; con el método <code class="docutils literal"><span class="pre">prop</span></code>.</p>
-<p>Supongamos que deseamos saber cuantos checkboxes se marcan. Si se marcan cero, una o dos, mostraremos el texto &#8220;poca variedad&#8221;, si se marcan tres mostraremos &#8220;cierta variedad&#8221; y si se marcan cuatro o cinco, mostraremos &#8220;mucha variedad&#8221;.</p>
+<p>Por ejemplo, en los checkboxes y en los radios, podemos comprobar si uno de ellos está marcado comprobando la propiedad «checked» con el método <code class="docutils literal"><span class="pre">prop</span></code>.</p>
+<p>Supongamos que deseamos saber cuantos checkboxes se marcan. Si se marcan cero, una o dos, mostraremos el texto «poca variedad», si se marcan tres mostraremos «cierta variedad» y si se marcan cuatro o cinco, mostraremos «mucha variedad».</p>
 <p>Aquí hay dos posibles soluciones, siendo una de ellas  más corta y flexible que la otra.</p>
 <p>La primera:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opc_coche</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#coche&quot;</span><span class="p">)</span>
@@ -945,14 +944,14 @@
 
         <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-                <span class="nn">#mapa</span><span class="p">{</span>
-                        <span class="nb">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
-                        <span class="nb">height</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
-                        <span class="nb">float</span><span class="o">:</span> <span class="nb">right</span><span class="p">;</span>
-                        <span class="nb">background-color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">180</span><span class="o">,</span><span class="m">190</span><span class="o">,</span><span class="m">240</span><span class="p">);</span>
+                <span class="p">#</span><span class="nn">mapa</span><span class="p">{</span>
+                        <span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">height</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+                        <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">240</span><span class="p">);</span>
                 <span class="p">}</span>
-                <span class="nn">#controles</span><span class="p">{</span>
-                        <span class="nb">float</span><span class="o">:</span> <span class="nb">left</span><span class="p">;</span>
+                <span class="p">#</span><span class="nn">controles</span><span class="p">{</span>
+                        <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
                 <span class="p">}</span>
         <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/programa.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -1145,20 +1144,20 @@
 <h4>Solución HTML<a class="headerlink" href="#solucion-html" title="Enlazar permanentemente con este título">¶</a></h4>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-                <span class="nc">.muestrarojo</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
+                <span class="p">.</span><span class="nc">muestrarojo</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="nc">.muestraverde</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+                <span class="p">.</span><span class="nc">muestraverde</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="nc">.muestraazul</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+                <span class="p">.</span><span class="nc">muestraazul</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="nc">.muestragris</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span> <span class="n">grey</span><span class="p">;</span>
+                <span class="p">.</span><span class="nc">muestragris</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="nc">.muestrablanco</span><span class="p">{</span>
-                        <span class="nb">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+                <span class="p">.</span><span class="nc">muestrablanco</span><span class="p">{</span>
+                        <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
                 <span class="p">}</span>
         <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1348,7 +1347,7 @@
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/txt/tema4.txt"
+      <li><a href="../_sources/txt/tema4.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -1370,11 +1369,11 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="../_sources/txt/tema4.txt"
+      <a href="../_sources/txt/tema4.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

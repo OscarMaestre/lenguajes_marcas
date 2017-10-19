@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Recuperación de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Sindicación y transformación de contenidos" href="tema7.html" />
     <link rel="prev" title="XML" href="tema5.html" />
    
@@ -34,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -111,7 +110,7 @@
 </div>
 <p>La clase principal que nos interesa es la clase <code class="docutils literal"><span class="pre">Node</span></code>, siendo <code class="docutils literal"><span class="pre">Document</span></code> su clase Hija. Algunos métodos de interés son estos:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a &#8220;navegar&#8221; a través de los elementos.</li>
+<li><code class="docutils literal"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a «navegar» a través de los elementos.</li>
 <li><code class="docutils literal"><span class="pre">getFirstChild()</span></code> obtiene el primer elemento hijo del nodo que estemos visitando.</li>
 <li><code class="docutils literal"><span class="pre">getParentNode()</span></code> nos permite obtener el nodo padre de un cierto nodo.</li>
 <li><code class="docutils literal"><span class="pre">getChildNodes()</span></code> obtiene todos los nodos hijo.</li>
@@ -322,7 +321,7 @@
 </div>
 <div class="section" id="ejercicio-extraccion-de-informacion-financiera">
 <h3>Ejercicio: extracción de información financiera<a class="headerlink" href="#ejercicio-extraccion-de-informacion-financiera" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Dado el archivo XML siguiente...</p>
+<p>Dado el archivo XML siguiente…</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
         <span class="nt">&lt;futuro</span> <span class="na">precio=</span><span class="s">&quot;11.28&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;producto&gt;</span>Cafe<span class="nt">&lt;/producto&gt;</span>
@@ -362,13 +361,13 @@
 <span class="nt">&lt;/listado&gt;</span>
 </pre></div>
 </div>
-<p>...crear un programa XML que:</p>
+<p>…crear un programa XML que:</p>
 <ul class="simple">
-<li>Busque todos los elementos cuya ciudad de procedencia sea &#8220;Madrid&#8221;.</li>
-<li>Si el elemento es un futuro mostrará el contenido de la etiqueta &#8220;producto&#8221;.</li>
-<li>Si el elemento es una divisa se mostrará el contenido de la etiqueta &#8220;nombre&#8221;.</li>
-<li>Si el elemento es una letra  se mostrará el contenido de la etiqueta &#8220;pais_emisor&#8221;.</li>
-<li>Si el elemento es un bono  se mostrará el contenido de la etiqueta &#8220;pais_de_procedencia&#8221;.</li>
+<li>Busque todos los elementos cuya ciudad de procedencia sea «Madrid».</li>
+<li>Si el elemento es un futuro mostrará el contenido de la etiqueta «producto».</li>
+<li>Si el elemento es una divisa se mostrará el contenido de la etiqueta «nombre».</li>
+<li>Si el elemento es una letra  se mostrará el contenido de la etiqueta «pais_emisor».</li>
+<li>Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais_de_procedencia».</li>
 </ul>
 <p>Una posibilidad (incompleta) sería esta:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
@@ -464,7 +463,7 @@
 </div>
 <div class="section" id="id3">
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Ampliar el programa para que nos diga cuantos elementos &#8220;divisa&#8221; hay en el archivo.</p>
+<p>Ampliar el programa para que nos diga cuantos elementos «divisa» hay en el archivo.</p>
 <p>Para practicar esto y de paso practicar programación genérica, fabricaremos un método al que le pasaremos el nombre del elemento a buscar y el método nos dirá cuantos elementos con ese nombre hay.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">contadorElementos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span><span class="n">String</span> <span class="n">nombreElemento</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">contador</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
@@ -558,7 +557,7 @@
 </div>
 <div class="section" id="id7">
 <h3>Ejercicio<a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Contar cuantos productos financieros tienen algo que ver con el país &#8220;Islandia&#8221;</p>
+<p>Contar cuantos productos financieros tienen algo que ver con el país «Islandia»</p>
 <p>Se deben tener presentes varias cosas:</p>
 <ul>
 <li><p class="first">Si no se tiene claro lo que nos piden, preguntar.</p>
@@ -575,7 +574,7 @@
 </ul>
 <div class="section" id="analisis-del-problema">
 <h4>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Despues de haber examinado la DTD se llega a la conclusión de que el único elemento que puede transportar alguna clase de información relacionada con &#8220;Islandia&#8221; es el nodo <code class="docutils literal"><span class="pre">país_de_procedencia</span></code>, que es un elemento hijo del elemento <code class="docutils literal"><span class="pre">bono</span></code>.</p>
+<p>Despues de haber examinado la DTD se llega a la conclusión de que el único elemento que puede transportar alguna clase de información relacionada con «Islandia» es el nodo <code class="docutils literal"><span class="pre">país_de_procedencia</span></code>, que es un elemento hijo del elemento <code class="docutils literal"><span class="pre">bono</span></code>.</p>
 </div>
 <div class="section" id="solucion">
 <h4>Solución<a class="headerlink" href="#solucion" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -609,11 +608,11 @@
 </div>
 <div class="section" id="id8">
 <h3>Ejercicio<a class="headerlink" href="#id8" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Se desea crear un método que indique cuantos elementos tienen relación de alguna forma con &#8220;España&#8221;.</p>
+<p>Se desea crear un método que indique cuantos elementos tienen relación de alguna forma con «España».</p>
 <div class="section" id="analisis">
 <h4>Análisis<a class="headerlink" href="#analisis" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>Se dispone del método anterior <code class="docutils literal"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país &#8220;España&#8221;.</li>
+<li>Se dispone del método anterior <code class="docutils literal"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país «España».</li>
 <li>Al analizar la DTD, se ha encontrado que la ciudad de procedencia de un elemento <code class="docutils literal"><span class="pre">futuro</span></code> puede ser Madrid.</li>
 <li>Al analizar la DTD también se ha encontrado que elemento <code class="docutils literal"><span class="pre">pais_emisor</span></code> de un elemento <code class="docutils literal"><span class="pre">letra</span></code> puede ser <code class="docutils literal"><span class="pre">espania</span></code></li>
 <li>Al analizar las divisas se debe comprobar si el elemento <code class="docutils literal"><span class="pre">ciudad_procedencia</span></code> es el elemento <code class="docutils literal"><span class="pre">madrid</span></code></li>
@@ -848,7 +847,7 @@
 <p>Contar cuantos productos que no sean estables tienen como ciudad de procedencia Tokio. Si hay más de 2, devolver los precios en un vector y si no devolver un vector vacío.</p>
 <div class="section" id="id14">
 <h4>Análisis<a class="headerlink" href="#id14" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>El atributo <code class="docutils literal"><span class="pre">estable</span></code>, solo lo tienen los productos <code class="docutils literal"><span class="pre">bono</span></code>. Ese atributo es optativo, puede que esté o puede que no. Si existe, debemos comprobar si tiene un &#8220;no&#8221;.</p>
+<p>El atributo <code class="docutils literal"><span class="pre">estable</span></code>, solo lo tienen los productos <code class="docutils literal"><span class="pre">bono</span></code>. Ese atributo es optativo, puede que esté o puede que no. Si existe, debemos comprobar si tiene un «no».</p>
 <p>Por otro lado, no sabemos a priori si habrá más de 2 o no.</p>
 <ul class="simple">
 <li>Podríamos hacer la cuenta, y si da más de 2 repetir operaciones y meter los bonos correctos en un vector.</li>
@@ -1533,7 +1532,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 <p>Ahora Java irá leyendo el fichero etiqueta por etiqueta y mostrándonos los nombres de todas. No importará que el fichero ocupe varios GB, ya que SAX no cargará el fichero completo en memoria.</p>
 <div class="section" id="ejercicio-encontrar-producto">
 <h3>Ejercicio: encontrar producto<a class="headerlink" href="#ejercicio-encontrar-producto" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Encontrar todos los productos cuyo nombre sea &#8220;Cafe&#8221; y su mercado &#8220;América Latina&#8221;.</p>
+<p>Encontrar todos los productos cuyo nombre sea «Cafe» y su mercado «América Latina».</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">characters</span><span class="o">(</span>
       <span class="kt">char</span><span class="o">[]</span> <span class="n">letras</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ini</span><span class="o">,</span> <span class="kt">int</span> <span class="n">longitud</span><span class="o">){</span>
     <span class="k">if</span> <span class="o">((</span><span class="n">mercadoEncontrado</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">cafeEncontrado</span><span class="o">)){</span>
@@ -1558,14 +1557,14 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 </div>
 <div class="section" id="ejercicio-precios">
 <h3>Ejercicio: precios<a class="headerlink" href="#ejercicio-precios" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Encontrar todos las divisas cuya ciudad de procedencia sea &#8220;Madrid&#8221;.</p>
+<p>Encontrar todos las divisas cuya ciudad de procedencia sea «Madrid».</p>
 </div>
 </div>
 <div class="section" id="ejercicios-para-preparar-examen">
 <h2>Ejercicios para preparar examen<a class="headerlink" href="#ejercicios-para-preparar-examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <ol class="arabic simple">
 <li>Indicar cuantas letras tienen un tipo de interés inferior al 3% e indicar para cada una de ellas el país emisor.</li>
-<li>Comprobar si hay alguna divisa con nombre &#8220;Euro&#8221; cuyo precio sea mayor de 195.</li>
+<li>Comprobar si hay alguna divisa con nombre «Euro» cuyo precio sea mayor de 195.</li>
 <li>Indicar todos los productos que tengan la misma ciudad de procedencia.</li>
 </ol>
 </div>
@@ -1645,7 +1644,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/tema6.txt"
+      <li><a href="_sources/tema6.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -1667,11 +1666,11 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/tema6.txt"
+      <a href="_sources/tema6.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

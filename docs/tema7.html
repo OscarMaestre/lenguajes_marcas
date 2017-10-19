@@ -1,30 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Sindicación y transformación de contenidos &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '1.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="Apuntes de Lenguajes de Marcas v1.3" href="index.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Sistemas de gestión de información" href="tema8.html" />
     <link rel="prev" title="Recuperación de información" href="tema6.html" />
    
@@ -34,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -46,12 +45,12 @@
 <h1>Sindicación y transformación de contenidos<a class="headerlink" href="#sindicacion-y-transformacion-de-contenidos" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Muchas páginas web disponen de &#8220;feeds&#8221;. Un &#8220;feed&#8221; es un mecanismo de suscripción que facilita la recepción de información.</p>
+<p>Muchas páginas web disponen de «feeds». Un «feed» es un mecanismo de suscripción que facilita la recepción de información.</p>
 <p>En general, los feed utilizan un vocabulario XML llamado RSS o uno llamado Atom.</p>
 </div>
 <div class="section" id="rss">
 <h2>RSS<a class="headerlink" href="#rss" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>RSS es un estándar para la &#8220;sindicación&#8221; o &#8220;agregación&#8221; de recursos (recursos web normalmente).</p>
+<p>RSS es un estándar para la «sindicación» o «agregación» de recursos (recursos web normalmente).</p>
 <p>Su objetivo principal era permitir a un sitio web publicar las novedades con facilidad y que el usuario puede ir derectamente al lugar que le interese.</p>
 <div class="section" id="formato-de-archivo-rss">
 <h3>Formato de archivo RSS<a class="headerlink" href="#formato-de-archivo-rss" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1066,8 +1065,8 @@ esta</p>
 <h3>Transformación de pedidos (II)<a class="headerlink" href="#transformacion-de-pedidos-ii" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Con el mismo fichero de pedidos crear una sola tabla que tenga 3 columnas y aglutine información tanto de portátiles como de tablets:</p>
 <ul class="simple">
-<li>Cuando procesemos portátiles, las columnas serán respectivamente &#8220;precio&#8221;, &#8220;ram&#8221; y &#8220;disco&#8221;. Solo se procesan portátiles con más de 2GB de RAM.</li>
-<li>Cuando procesemos tablets, las columnas serán &#8220;plataforma&#8221;, &#8220;ram&#8221; y &#8220;batería&#8221;. Solo se procesan los tablets con más de 2GB de RAM y que además tengan un tamaño superior a 7 pulgadas.</li>
+<li>Cuando procesemos portátiles, las columnas serán respectivamente «precio», «ram» y «disco». Solo se procesan portátiles con más de 2GB de RAM.</li>
+<li>Cuando procesemos tablets, las columnas serán «plataforma», «ram» y «batería». Solo se procesan los tablets con más de 2GB de RAM y que además tengan un tamaño superior a 7 pulgadas.</li>
 </ul>
 <p>El fichero siguiente ilustra una posible forma de hacerlo:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
@@ -1181,7 +1180,7 @@ esta</p>
   <div role="note" aria-label="source link">
     <h3>Esta página</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/tema7.txt"
+      <li><a href="_sources/tema7.rst.txt"
             rel="nofollow">Mostrar el código</a></li>
     </ul>
    </div>
@@ -1203,11 +1202,11 @@ esta</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/tema7.txt"
+      <a href="_sources/tema7.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
