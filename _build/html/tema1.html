@@ -45,23 +45,29 @@
 <h1>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="historia">
 <h2>Historia<a class="headerlink" href="#historia" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.</p>
-<p>Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)</p>
-<p>El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
-independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el <a class="reference external" href="http://www.w3c.org">World Wide Web Consortium (W3C)</a> .</p>
-<p>El futuro de todas estas tecnologías sigue estando en sistemas abiertos (Firefox OS). Ahora mismo las tres grandes plataformas por orden de supremacía en el mercado son:</p>
-<ol class="arabic simple">
-<li>Android.</li>
-<li>iPhone</li>
-<li>Windows Phone.</li>
-</ol>
+<div class="section" id="el-pasado">
+<h3>El pasado<a class="headerlink" href="#el-pasado" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.  De hecho, los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). Dicho lenguaje en realidad nunca llegó al gran público, aunque sigue existiendo y usándose en entornos muy específicos. Lo más usado y conocido hoy día es HTML (HyperText Markup Language).</p>
+</div>
+<div class="section" id="el-presente">
+<h3>El presente<a class="headerlink" href="#el-presente" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El lenguaje HTML ha ido cambiando mucho a lo largo del tiempo. La versión más actual es la conocida como HTML5 y es la que se contará en estos apuntes.
+El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
+independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el <a class="reference external" href="http://www.w3c.org">World Wide Web Consortium (W3C)</a> . Todos sus estándares (que ellos llaman «Technical Reports») pueden descargarse gratuitamente en su web.</p>
+</div>
+<div class="section" id="el-futuro">
+<h3>El futuro<a class="headerlink" href="#el-futuro" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El futuro de todas estas tecnologías sigue estando en sistemas abiertos, que facilitan la competencia y por tanto benefician al usuario. La web ha tenido un crecimiento exponencial debido a la existencias de las plataformas móviles, que han multiplicado los accesos a las páginas web (y que también han dificultado el diseño web, hablaremos más de ello en el tema sobre CSS).</p>
+</div>
 </div>
 <div class="section" id="servidores-web">
 <h2>Servidores web<a class="headerlink" href="#servidores-web" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores
-sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio.</p>
-<p>Cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en
-el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado). Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
+<p>Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos «<a class="reference external" href="http://www.google.es">http://www.google.es</a>» contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre «www.google.es» y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="_images/http_get_y_post.png"><img alt="_images/http_get_y_post.png" src="_images/http_get_y_post.png" style="width: 344.5px; height: 179.5px;" /></a>
+<p class="caption"><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span></p>
+</div>
+<p>Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
 <ul class="simple">
 <li>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</li>
 <li>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</li>
@@ -224,7 +230,12 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
   <h3><a href="index.html">Tabla de Contenidos</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Introducción</a><ul>
-<li><a class="reference internal" href="#historia">Historia</a></li>
+<li><a class="reference internal" href="#historia">Historia</a><ul>
+<li><a class="reference internal" href="#el-pasado">El pasado</a></li>
+<li><a class="reference internal" href="#el-presente">El presente</a></li>
+<li><a class="reference internal" href="#el-futuro">El futuro</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#servidores-web">Servidores web</a><ul>
 <li><a class="reference internal" href="#como-configurar-un-servidor-en-casa">Como configurar un servidor en casa</a></li>
 </ul>
@@ -273,7 +284,7 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

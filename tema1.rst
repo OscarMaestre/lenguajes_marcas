@@ -5,27 +5,38 @@ Introducción
 Historia
 ========
 
-Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet. 
+El pasado
+-------------
 
-Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)
+Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.  De hecho, los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). Dicho lenguaje en realidad nunca llegó al gran público, aunque sigue existiendo y usándose en entornos muy específicos. Lo más usado y conocido hoy día es HTML (HyperText Markup Language).
 
+
+El presente
+------------
+
+El lenguaje HTML ha ido cambiando mucho a lo largo del tiempo. La versión más actual es la conocida como HTML5 y es la que se contará en estos apuntes.
 El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
-independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el `World Wide Web Consortium (W3C) <http://www.w3c.org>`_ . 
+independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el `World Wide Web Consortium (W3C) <http://www.w3c.org>`_ . Todos sus estándares (que ellos llaman "Technical Reports") pueden descargarse gratuitamente en su web.
 
-El futuro de todas estas tecnologías sigue estando en sistemas abiertos (Firefox OS). Ahora mismo las tres grandes plataformas por orden de supremacía en el mercado son:
 
-1. Android.
-2. iPhone
-3. Windows Phone.
+El futuro
+-------------
+
+El futuro de todas estas tecnologías sigue estando en sistemas abiertos, que facilitan la competencia y por tanto benefician al usuario. La web ha tenido un crecimiento exponencial debido a la existencias de las plataformas móviles, que han multiplicado los accesos a las páginas web (y que también han dificultado el diseño web, hablaremos más de ello en el tema sobre CSS).
+
 
 Servidores web
 ==============
 
-Es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores
-sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio.
+Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos "http://www.google.es" contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre "www.google.es" y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200 
 
-Cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en
-el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado). Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.
+.. figure:: graficos/http_get_y_post.png
+   :scale: 50%
+   
+   Intercambio de mensajes entre cliente web (o navegador) y servidor web.
+
+
+Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.
 
 
 
@@ -59,18 +70,6 @@ El servicio de nombres de dominio es un sistema que convierte de direcciones tip
 Los nombres de dominio se resuelven de final a principio. La última parte se llama TLD o Top Level Domain o dominio de primer nivel.. Estos dominios son administrados por países ocupándose cada uno de ellos de los nombres o marcas que hay dentro de dichos países.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 Los sistemas de gestión de información
 ======================================
 
@@ -83,8 +82,6 @@ Definamos primero algunos términos:
 * Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.
 
 Un SGI no tiene por qué estar informatizado.
-
-
 
 Son programas que se pueden adaptar las necesidades de la empresa y que a veces necesitan
 importar (o exportar) datos e información.

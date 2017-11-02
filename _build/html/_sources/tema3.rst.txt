@@ -7,6 +7,107 @@ Introducción
 
 El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML's modificando un solo CSS.
 
+Sintaxis
+===========
+
+CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuación.
+
+.. code-block:: css
+
+    h1, h3 {
+        background-color: blue;
+        color: white;
+    }
+
+En las reglas tenemos tres cosas:
+
+1. Los selectores. En este caso queremos modificar como van a quedar todos los ``<h1>`` y ``<h3>``
+2. Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.
+3. Los valores. En este caso se pone el valor ``blue`` para la propiedad ``background-color`` y el valor ``white`` para la propiedad ``color``
+
+Los atributos ``class`` e ``id``
+=====================================
+
+A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
+
+.. code-block:: html
+
+    <h1>Encabezamiento</h1>
+    .... texto ...
+    
+    <h1 id="noticia_del_dia">Otro encabezamiento</h1>
+    .... texto ...
+    
+    <h1>Y otro más</h1>
+    .... texto ...
+    
+Si luego desde CSS queremos modificar solo el encabezamiento con la noticia del dia deberemos hacer esto
+
+.. code-block:: css
+
+    h1#noticia_del_dia{
+        font-weight: bold;
+    }
+    
+Obsérvese que hemos usado la almohadillas (#) para decir "queremos seleccionar el h1 cuyo id es noticia_del_dia" y ponerlo en negrita. Debe señalarse que es importante que en el HTML **NO DEBE HABER DOS ELEMENTOS CON EL MISMO ID**
+
+Si en vez de uno queremos aplicar un cambio a **un conjunto de elementos** deberemos ir al HTML y ponerles a todos
+ellos un atributo ``class`` con el mismo valor en todos ellos. Por ejemplo:
+
+
+.. code-block:: html
+
+    <h1 class="titular_economia">Encabezamiento</h1>
+    .... texto ...
+    
+    <h1>Otro encabezamiento</h1>
+    .... texto ...
+    
+    <h1 class="titular_economia">Y otro más</h1>
+    .... texto ...
+    
+Con este HTML podemos crear un CSS como este que cambia solo los ``h1`` cuyo ``class`` tiene el valor ``titular_economia``
+
+.. code-block:: css
+
+    h1.titular_economia{
+        font-weight: bold;
+    }
+    
+Se puede poner el mismo ``class`` a distintos elementos, por ejemplo así
+
+.. code-block:: html
+
+    <h1 class="titular_economia">Encabezamiento</h1>
+    .... texto ...
+    
+    <h1>Otro encabezamiento</h1>
+    .... texto ...
+    
+    <h2 class="titular_economia">Y otro más</h2>
+    .... texto ...
+
+Y luego usar un CSS como este:
+
+.. code-block:: css
+
+    h1.titular_economia, h2.titular_economia{
+        font-weight: bold;
+    }
+
+Este último CSS **se puede resumir**
+
+.. code-block:: css
+
+    .titular_economia{
+        font-weight: bold;
+    }
+
+Esta regla dice "seleccionar todos los elementos cuyo class sea titular_economia"  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.
+
+
+
+
 Posicionamiento
 ===============
 

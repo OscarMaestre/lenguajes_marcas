@@ -47,6 +47,85 @@
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.</p>
 </div>
+<div class="section" id="sintaxis">
+<h2>Sintaxis<a class="headerlink" href="#sintaxis" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuación.</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En las reglas tenemos tres cosas:</p>
+<ol class="arabic simple">
+<li>Los selectores. En este caso queremos modificar como van a quedar todos los <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;h3&gt;</span></code></li>
+<li>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</li>
+<li>Los valores. En este caso se pone el valor <code class="docutils literal"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal"><span class="pre">background-color</span></code> y el valor <code class="docutils literal"><span class="pre">white</span></code> para la propiedad <code class="docutils literal"><span class="pre">color</span></code></li>
+</ol>
+</div>
+<div class="section" id="los-atributos-class-e-id">
+<h2>Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code><a class="headerlink" href="#los-atributos-class-e-id" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;noticia_del_dia&quot;</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Si luego desde CSS queremos modificar solo el encabezamiento con la noticia del dia deberemos hacer esto</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">#</span><span class="nn">noticia_del_dia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Obsérvese que hemos usado la almohadillas (#) para decir «queremos seleccionar el h1 cuyo id es noticia_del_dia» y ponerlo en negrita. Debe señalarse que es importante que en el HTML <strong>NO DEBE HABER DOS ELEMENTOS CON EL MISMO ID</strong></p>
+<p>Si en vez de uno queremos aplicar un cambio a <strong>un conjunto de elementos</strong> deberemos ir al HTML y ponerles a todos
+ellos un atributo <code class="docutils literal"><span class="pre">class</span></code> con el mismo valor en todos ellos. Por ejemplo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Con este HTML podemos crear un CSS como este que cambia solo los <code class="docutils literal"><span class="pre">h1</span></code> cuyo <code class="docutils literal"><span class="pre">class</span></code> tiene el valor <code class="docutils literal"><span class="pre">titular_economia</span></code></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Se puede poner el mismo <code class="docutils literal"><span class="pre">class</span></code> a distintos elementos, por ejemplo así</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Y luego usar un CSS como este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="o">,</span> <span class="nt">h2</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Este último CSS <strong>se puede resumir</strong></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Esta regla dice «seleccionar todos los elementos cuyo class sea titular_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.</p>
+</div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
@@ -806,6 +885,8 @@ el aspecto del texto como estas:</p>
   <ul>
 <li><a class="reference internal" href="#">CSS</a><ul>
 <li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#sintaxis">Sintaxis</a></li>
+<li><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></a></li>
 <li><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
 <li><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
@@ -881,7 +962,7 @@ el aspecto del texto como estas:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
