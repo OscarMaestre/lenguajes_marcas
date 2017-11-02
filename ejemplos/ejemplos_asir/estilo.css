@@ -1,0 +1,25 @@
+p, h1{
+    font-family: "Comic Sans MS";
+    
+    background-color: rgb(220, 220, 220);
+    
+}
+
+p{
+    /*El cliente pidió que esto fuese
+     *centrado */
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    
+}
+
+h1{
+    color:#FCD116;
+    border: solid black 1px;
+    margin-left:25%;
+    margin-right: 25%;
+    padding:40px;
+    
+    
+}
