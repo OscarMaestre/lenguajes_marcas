@@ -541,7 +541,7 @@ Maquetación avanzada con ``grid-layouts``
 
 La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada "grid-layouts", que nos permiten varias características interesantes:
 
-1. Un elemento (por ejemplo un ``div`` se puede dividir en forma de tabla
+1. Un elemento (por ejemplo un ``div``) se puede dividir en forma de tabla
 2. Dicha tabla puede tener columnas y/o filas de distinto tamaño.
 3. Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.
 

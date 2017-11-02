@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ejemplo de rejilla con track</title>
+    <style>
+        #contenedor{
+            display: grid;
+            margin:10%;
+            grid-template-columns:25% 50% 25%;
+            
+            grid-gap:10px;
+        }
+        .celda{
+            border:solid black 1px;
+            background-color:rgb(220, 220, 220);
+        }
+        .d{
+            
+            
+            grid-column: 1/4;
+            grid-row: 2/4;
+            background-color:rgb(120, 220, 220);    
+        }
+        .e{
+            grid-column:2/4;
+        }
+        .f{
+            grid-row:4;
+            grid-column:1/4;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div id="contenedor">
+    <div class="celda a">Celda A</div>
+    <div class="celda b">Celda B</div>
+    <div class="celda c">Celda C</div>
+    <div class="celda d">Celda D</div>
+    <div class="celda e">Celda E</div>
+    <div class="celda f">Celda F</div>
+</div>
+
+</body>
+</html>
