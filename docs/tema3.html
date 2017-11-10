@@ -47,6 +47,85 @@
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.</p>
 </div>
+<div class="section" id="sintaxis">
+<h2>Sintaxis<a class="headerlink" href="#sintaxis" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuación.</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En las reglas tenemos tres cosas:</p>
+<ol class="arabic simple">
+<li>Los selectores. En este caso queremos modificar como van a quedar todos los <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;h3&gt;</span></code></li>
+<li>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</li>
+<li>Los valores. En este caso se pone el valor <code class="docutils literal"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal"><span class="pre">background-color</span></code> y el valor <code class="docutils literal"><span class="pre">white</span></code> para la propiedad <code class="docutils literal"><span class="pre">color</span></code></li>
+</ol>
+</div>
+<div class="section" id="los-atributos-class-e-id">
+<h2>Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code><a class="headerlink" href="#los-atributos-class-e-id" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;noticia_del_dia&quot;</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Si luego desde CSS queremos modificar solo el encabezamiento con la noticia del dia deberemos hacer esto</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">#</span><span class="nn">noticia_del_dia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Obsérvese que hemos usado la almohadillas (#) para decir «queremos seleccionar el h1 cuyo id es noticia_del_dia» y ponerlo en negrita. Debe señalarse que es importante que en el HTML <strong>NO DEBE HABER DOS ELEMENTOS CON EL MISMO ID</strong></p>
+<p>Si en vez de uno queremos aplicar un cambio a <strong>un conjunto de elementos</strong> deberemos ir al HTML y ponerles a todos
+ellos un atributo <code class="docutils literal"><span class="pre">class</span></code> con el mismo valor en todos ellos. Por ejemplo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Con este HTML podemos crear un CSS como este que cambia solo los <code class="docutils literal"><span class="pre">h1</span></code> cuyo <code class="docutils literal"><span class="pre">class</span></code> tiene el valor <code class="docutils literal"><span class="pre">titular_economia</span></code></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Se puede poner el mismo <code class="docutils literal"><span class="pre">class</span></code> a distintos elementos, por ejemplo así</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Y luego usar un CSS como este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="o">,</span> <span class="nt">h2</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Este último CSS <strong>se puede resumir</strong></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Esta regla dice «seleccionar todos los elementos cuyo class sea titular_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.</p>
+</div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
@@ -54,7 +133,7 @@
 <li>&lt;span&gt; se usa para no romper el flujo, es decir en principio todo va en la misma línea</li>
 <li>&lt;div&gt; sí rompe el flujo, por lo que va a una línea distinta</li>
 </ul>
-<p>En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, se deben utilizar los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></p>
+<p>En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, recordemos que se deben utilizar los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></p>
 <ul class="simple">
 <li>El <code class="docutils literal"><span class="pre">class</span></code> es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.</li>
 <li>El <code class="docutils literal"><span class="pre">id</span></code> es un atributo que debe tener distinto valor en todos los casos, no se puede repetir.</li>
@@ -69,8 +148,8 @@ varias cosas:</p>
 <li><code class="docutils literal"><span class="pre">fixed</span></code>: la caja va en cierta posición y no se mueve de allí</li>
 <li><code class="docutils literal"><span class="pre">absolute</span></code>: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.</li>
 <li><code class="docutils literal"><span class="pre">relative</span></code>: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador</li>
-<li>static: dar permiso al navegador para que coloque la caja donde corresponda</li>
-<li>float: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor</li>
+<li><code class="docutils literal"><span class="pre">static</span></code>: dar permiso al navegador para que coloque la caja donde corresponda</li>
+<li><code class="docutils literal"><span class="pre">float</span></code>: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor</li>
 </ul>
 </dd>
 </dl>
@@ -118,39 +197,27 @@ varias cosas:</p>
 </pre></div>
 </div>
 <p>Y un posible CSS sería este:</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">#</span><span class="nn">lema</span><span class="p">{</span>
-  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span><span class="mi">33</span><span class="kt">%</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
-  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span><span class="mi">66</span><span class="kt">%</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">#</span><span class="nn">bienvenida</span><span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Comic Sans MS&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="p">#</span><span class="nn">publi1</span><span class="p">{</span>
-  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="nt">p</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+  <span class="k">margin-left</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">15</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+  <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
-  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
-  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">div</span><span class="p">#</span><span class="nn">publi2</span><span class="p">{</span>
-  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="nt">tr</span><span class="p">.</span><span class="nc">par</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nt">div</span><span class="p">#</span><span class="nn">copyright</span><span class="p">{</span>
-  <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
-  <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="nt">tr</span><span class="p">.</span><span class="nc">impar</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -541,6 +608,15 @@ Publicidad publicidad
 <p>Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.</p>
 </div>
 </div>
+<div class="section" id="maquetacion-avanzada-con-grid-layouts">
+<h2>Maquetación avanzada con <code class="docutils literal"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:</p>
+<ol class="arabic simple">
+<li>Un elemento (por ejemplo un <code class="docutils literal"><span class="pre">div</span></code>) se puede dividir en forma de tabla</li>
+<li>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</li>
+<li>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</li>
+</ol>
+</div>
 <div class="section" id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En CSS se puede controlar el espacio interno y externo por medio de las propiedades <code class="docutils literal"><span class="pre">padding-</span></code> y <code class="docutils literal"><span class="pre">margin-</span></code> pudiendo usar <code class="docutils literal"><span class="pre">margin-top</span></code> o <code class="docutils literal"><span class="pre">padding-left</span></code>. Las cuatro posiciones son <code class="docutils literal"><span class="pre">top</span></code>, <code class="docutils literal"><span class="pre">bottom</span></code>, <code class="docutils literal"><span class="pre">left</span></code> y <code class="docutils literal"><span class="pre">right</span></code></p>
@@ -806,6 +882,8 @@ el aspecto del texto como estas:</p>
   <ul>
 <li><a class="reference internal" href="#">CSS</a><ul>
 <li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#sintaxis">Sintaxis</a></li>
+<li><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></a></li>
 <li><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
 <li><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
@@ -824,6 +902,7 @@ el aspecto del texto como estas:</p>
 <li><a class="reference internal" href="#id4">Ejercicio</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal"><span class="pre">grid-layouts</span></code></a></li>
 <li><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
 <li><a class="reference internal" href="#colores">Colores</a></li>
 <li><a class="reference internal" href="#tipografias">Tipografías</a></li>
@@ -881,7 +960,7 @@ el aspecto del texto como estas:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

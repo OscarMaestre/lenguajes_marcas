@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{02 de noviembre de 2017}
+\date{10 de noviembre de 2017}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,38 +70,40 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
-Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.
 
-Los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). En realidad, lo más usado hoy día es HTML (HyperText Markup Lamguage)
+\subsection{El pasado}
+\label{\detokenize{tema1:el-pasado}}
+Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.  De hecho, los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). Dicho lenguaje en realidad nunca llegó al gran público, aunque sigue existiendo y usándose en entornos muy específicos. Lo más usado y conocido hoy día es HTML (HyperText Markup Language).
 
+
+\subsection{El presente}
+\label{\detokenize{tema1:el-presente}}
+El lenguaje HTML ha ido cambiando mucho a lo largo del tiempo. La versión más actual es la conocida como HTML5 y es la que se contará en estos apuntes.
 El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
-independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el \sphinxhref{http://www.w3c.org}{World Wide Web Consortium (W3C)} .
+independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el \sphinxhref{http://www.w3c.org}{World Wide Web Consortium (W3C)} . Todos sus estándares (que ellos llaman «Technical Reports») pueden descargarse gratuitamente en su web.
 
-El futuro de todas estas tecnologías sigue estando en sistemas abiertos (Firefox OS). Ahora mismo las tres grandes plataformas por orden de supremacía en el mercado son:
-\begin{enumerate}
-\item {} 
-Android.
 
-\item {} 
-iPhone
-
-\item {} 
-Windows Phone.
-
-\end{enumerate}
+\subsection{El futuro}
+\label{\detokenize{tema1:el-futuro}}
+El futuro de todas estas tecnologías sigue estando en sistemas abiertos, que facilitan la competencia y por tanto benefician al usuario. La web ha tenido un crecimiento exponencial debido a la existencias de las plataformas móviles, que han multiplicado los accesos a las páginas web (y que también han dificultado el diseño web, hablaremos más de ello en el tema sobre CSS).
 
 
 \section{Servidores web}
 \label{\detokenize{tema1:servidores-web}}
-Es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores
-sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio.
+Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos «\sphinxurl{http://www.google.es}» contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre «www.google.es» y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200
 
-Cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en
-el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado). Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.5]{{http_get_y_post}.png}
+\caption{Intercambio de mensajes entre cliente web (o navegador) y servidor web.}\label{\detokenize{tema1:id1}}\end{figure}
+
+Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.
 \begin{itemize}
 \item {} 
 Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.
@@ -315,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1533,6 +1535,110 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.
 
 
+\section{Sintaxis}
+\label{\detokenize{tema3:sintaxis}}
+CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuación.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{h1}\PYG{o}{,} \PYG{n+nt}{h3} \PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+    \PYG{k}{color}\PYG{p}{:} \PYG{k+kc}{white}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+En las reglas tenemos tres cosas:
+\begin{enumerate}
+\item {} 
+Los selectores. En este caso queremos modificar como van a quedar todos los \sphinxcode{\textless{}h1\textgreater{}} y \sphinxcode{\textless{}h3\textgreater{}}
+
+\item {} 
+Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.
+
+\item {} 
+Los valores. En este caso se pone el valor \sphinxcode{blue} para la propiedad \sphinxcode{background-color} y el valor \sphinxcode{white} para la propiedad \sphinxcode{color}
+
+\end{enumerate}
+
+
+\section{Los atributos \sphinxstyleliteralintitle{class} e \sphinxstyleliteralintitle{id}}
+\label{\detokenize{tema3:los-atributos-class-e-id}}
+A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios \sphinxstyleemphasis{a un solo elemento} tendremos que haber puesto el atributo \sphinxcode{id} como muestra el ejemplo siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}noticia\PYGZus{}del\PYGZus{}dia\PYGZdq{}}\PYG{p}{\PYGZgt{}}Otro encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Y otro más\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+\end{sphinxVerbatim}
+
+Si luego desde CSS queremos modificar solo el encabezamiento con la noticia del dia deberemos hacer esto
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{h1}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{noticia\PYGZus{}del\PYGZus{}dia}\PYG{p}{\PYGZob{}}
+    \PYG{k}{font\PYGZhy{}weight}\PYG{p}{:} \PYG{k+kc}{bold}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+Obsérvese que hemos usado la almohadillas (\#) para decir «queremos seleccionar el h1 cuyo id es noticia\_del\_dia» y ponerlo en negrita. Debe señalarse que es importante que en el HTML \sphinxstylestrong{NO DEBE HABER DOS ELEMENTOS CON EL MISMO ID}
+
+Si en vez de uno queremos aplicar un cambio a \sphinxstylestrong{un conjunto de elementos} deberemos ir al HTML y ponerles a todos
+ellos un atributo \sphinxcode{class} con el mismo valor en todos ellos. Por ejemplo:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}titular\PYGZus{}economia\PYGZdq{}}\PYG{p}{\PYGZgt{}}Encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Otro encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}titular\PYGZus{}economia\PYGZdq{}}\PYG{p}{\PYGZgt{}}Y otro más\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+\end{sphinxVerbatim}
+
+Con este HTML podemos crear un CSS como este que cambia solo los \sphinxcode{h1} cuyo \sphinxcode{class} tiene el valor \sphinxcode{titular\_economia}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{h1}\PYG{p}{.}\PYG{n+nc}{titular\PYGZus{}economia}\PYG{p}{\PYGZob{}}
+    \PYG{k}{font\PYGZhy{}weight}\PYG{p}{:} \PYG{k+kc}{bold}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+Se puede poner el mismo \sphinxcode{class} a distintos elementos, por ejemplo así
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}titular\PYGZus{}economia\PYGZdq{}}\PYG{p}{\PYGZgt{}}Encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Otro encabezamiento\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+.... texto ...
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h2} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}titular\PYGZus{}economia\PYGZdq{}}\PYG{p}{\PYGZgt{}}Y otro más\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h2}\PYG{p}{\PYGZgt{}}
+.... texto ...
+\end{sphinxVerbatim}
+
+Y luego usar un CSS como este:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{h1}\PYG{p}{.}\PYG{n+nc}{titular\PYGZus{}economia}\PYG{o}{,} \PYG{n+nt}{h2}\PYG{p}{.}\PYG{n+nc}{titular\PYGZus{}economia}\PYG{p}{\PYGZob{}}
+    \PYG{k}{font\PYGZhy{}weight}\PYG{p}{:} \PYG{k+kc}{bold}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+Este último CSS \sphinxstylestrong{se puede resumir}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{.}\PYG{n+nc}{titular\PYGZus{}economia}\PYG{p}{\PYGZob{}}
+    \PYG{k}{font\PYGZhy{}weight}\PYG{p}{:} \PYG{k+kc}{bold}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+Esta regla dice «seleccionar todos los elementos cuyo class sea titular\_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.
+
+
 \section{Posicionamiento}
 \label{\detokenize{tema3:posicionamiento}}
 Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas \textless{}span\textgreater{} y \textless{}div\textgreater{}.
@@ -1545,7 +1651,7 @@ Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada
 
 \end{itemize}
 
-En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, se deben utilizar los atributos \sphinxcode{class} e \sphinxcode{id}
+En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, recordemos que se deben utilizar los atributos \sphinxcode{class} e \sphinxcode{id}
 \begin{itemize}
 \item {} 
 El \sphinxcode{class} es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.
@@ -1573,10 +1679,10 @@ Todos deberían llevar un id o un class (o las dos cosas)
 \sphinxcode{relative}: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador
 
 \item {} 
-static: dar permiso al navegador para que coloque la caja donde corresponda
+\sphinxcode{static}: dar permiso al navegador para que coloque la caja donde corresponda
 
 \item {} 
-float: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
+\sphinxcode{float}: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
 
 \end{itemize}
 
@@ -1638,39 +1744,27 @@ Un posible HTML sería el siguiente:
 Y un posible CSS sería este:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{lema}\PYG{p}{\PYGZob{}}
-  \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{33}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
-  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{)}\PYG{p}{;}
-\PYG{p}{\PYGZcb{}}
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{enlaces}\PYG{p}{\PYGZob{}}
-  \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{66}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
-  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nt}{h1}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{bienvenida}\PYG{p}{\PYGZob{}}
+  \PYG{k}{color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{66}\PYG{p}{,} \PYG{l+m+mi}{66}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{)}\PYG{p}{;}
+  \PYG{k}{font\PYGZhy{}family}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Comic Sans MS\PYGZdq{}}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{publi1}\PYG{p}{\PYGZob{}}
-  \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
-  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nt}{p}\PYG{p}{\PYGZob{}}
+  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{250}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{)}\PYG{p}{;}
+  \PYG{k}{margin\PYGZhy{}left}\PYG{p}{:}\PYG{l+m+mi}{15}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+  \PYG{k}{margin\PYGZhy{}right}\PYG{p}{:} \PYG{l+m+mi}{15}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+  \PYG{k}{padding}\PYG{p}{:}\PYG{l+m+mi}{5}\PYG{k+kt}{em}\PYG{p}{;}
+  \PYG{k}{font\PYGZhy{}weight}\PYG{p}{:} \PYG{k+kc}{bold}\PYG{p}{;}
+  \PYG{k}{font\PYGZhy{}style}\PYG{p}{:} \PYG{k+kc}{italic}\PYG{p}{;}
+  \PYG{k}{text\PYGZhy{}align}\PYG{p}{:} \PYG{k+kc}{justify}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{contenido}\PYG{p}{\PYGZob{}}
-  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{190}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{)}\PYG{p}{;}
-  \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:} \PYG{l+m+mi}{50}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
-\PYG{p}{\PYGZcb{}}
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{publi2}\PYG{p}{\PYGZob{}}
-  \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
-  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nt}{tr}\PYG{p}{.}\PYG{n+nc}{par}\PYG{p}{\PYGZob{}}
+  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{180}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{,} \PYG{l+m+mi}{180}\PYG{p}{)}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 
-\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{copyright}\PYG{p}{\PYGZob{}}
-  \PYG{k}{position}\PYG{p}{:} \PYG{k+kc}{fixed}\PYG{p}{;}
-  \PYG{k}{bottom}\PYG{p}{:} \PYG{l+m+mi}{0}\PYG{k+kt}{px}\PYG{p}{;}
-  \PYG{k}{left}\PYG{p}{:}\PYG{l+m+mi}{0}\PYG{k+kt}{px}\PYG{p}{;}
-  \PYG{k}{width}\PYG{p}{:} \PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{n+nt}{tr}\PYG{p}{.}\PYG{n+nc}{impar}\PYG{p}{\PYGZob{}}
+  \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{220}\PYG{p}{,}\PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{)}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
@@ -2103,6 +2197,22 @@ En el posicionamiento \sphinxcode{float} solo indicaremos la anchura de una caja
 \subsection{Ejercicio}
 \label{\detokenize{tema3:id4}}
 Crear una página con una cabecera que ocupe el 100\%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60\%), enlaces\_relacionados (20\%) y publicidad(20\% restante). Crear un pie de página con una anchura del 100\%.
+
+
+\section{Maquetación avanzada con \sphinxstyleliteralintitle{grid-layouts}}
+\label{\detokenize{tema3:maquetacion-avanzada-con-grid-layouts}}
+La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:
+\begin{enumerate}
+\item {} 
+Un elemento (por ejemplo un \sphinxcode{div}) se puede dividir en forma de tabla
+
+\item {} 
+Dicha tabla puede tener columnas y/o filas de distinto tamaño.
+
+\item {} 
+Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.
+
+\end{enumerate}
 
 
 \section{Gestión de espacios}
@@ -9775,7 +9885,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -12257,7 +12367,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

@@ -1,34 +1,22 @@
-div#lema{
-  float:left;
-  width:33%;
-  background-color: rgb(220, 220, 220);
-}
-div#enlaces{
-  float:right;
-  width:66%;
-  background-color: rgb(240, 220, 230);
+h1#bienvenida{
+  color: rgb(66, 66, 220);
+  font-family: "Comic Sans MS";
 }
 
-div#publi1{
-  float:left;
-  width:25%;
-  background-color: rgb(200, 220, 200);
+p{
+  background-color: rgb(240, 250, 230);
+  margin-left:15%;
+  margin-right: 15%;
+  padding:5em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: justify;
 }
 
-div#contenido{
-  background-color: rgb(190, 220, 240);
-  float:left;
-  width: 50%;
-}
-div#publi2{
-  float:right;
-  width:25%;
-  background-color: rgb(200, 220, 200);
+tr.par{
+  background-color: rgb(180, 180, 180);
 }
 
-div#copyright{
-  position: fixed;
-  bottom: 0px;
-  left:0px;
-  width: 100%;
+tr.impar{
+  background-color: rgb(220,220, 220);
 }
