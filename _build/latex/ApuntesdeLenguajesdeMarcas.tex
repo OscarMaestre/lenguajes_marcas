@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{10 de noviembre de 2017}
+\date{14 de noviembre de 2017}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2214,10 +2214,69 @@ Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias 
 
 \end{enumerate}
 
+Para poder utilizarlo necesitaremos:
+\begin{itemize}
+\item {} 
+Un contenedor principal (en concreto un \sphinxcode{div}). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas
+
+\item {} 
+Un conjunto de elementos (normalmente otros \sphinxcode{div}) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.
+
+\end{itemize}
+
 
 \section{Gestión de espacios}
 \label{\detokenize{tema3:gestion-de-espacios}}
 En CSS se puede controlar el espacio interno y externo por medio de las propiedades \sphinxcode{padding-} y \sphinxcode{margin-} pudiendo usar \sphinxcode{margin-top} o \sphinxcode{padding-left}. Las cuatro posiciones son \sphinxcode{top}, \sphinxcode{bottom}, \sphinxcode{left} y \sphinxcode{right}
+
+Supongamos el siguiente HTML
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenedor\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}a\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda A\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}b\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda B\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}c\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda C\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}d\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda D\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}e\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda E\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}celda\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}f\PYGZdq{}}\PYG{p}{\PYGZgt{}}Celda F\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Si no le hacemos nada se verá lo siguiente:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{grid_sin_estilo}.png}
+\caption{Grid sin maquetar}\label{\detokenize{tema3:id9}}\end{figure}
+
+Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS
+
+El resultado queda así:
+.. figure:: ejemplos/tema3\_css/ejemplos\_grid/celdas\_con\_borde.png
+\begin{quote}
+\begin{quote}\begin{description}
+\item[{figwidth}] \leavevmode
+50\%
+
+\item[{align}] \leavevmode
+center
+
+\end{description}\end{quote}
+
+Celdas con borde
+\end{quote}
+
+Supongamos que queremos que el \sphinxcode{div} cuyo class es \sphinxcode{contenedor} se porte como una tabla de 5 por 5. ¡Recuérdese que
+solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{tabla_5_por_5}.png}
+\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id10}}\end{figure}
 
 
 \section{Colores}
@@ -2404,7 +2463,7 @@ Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo \sphinxcode{id
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores1}.png}
-\caption{Resultado}\label{\detokenize{tema3:id9}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id11}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado}}
@@ -2416,7 +2475,7 @@ Los cambios se aplican a todos los párrafos con el \sphinxcode{class} \sphinxst
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores2}.png}
-\caption{Resultado}\label{\detokenize{tema3:id10}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id12}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado, span\#id1}}
@@ -2432,7 +2491,7 @@ Obsérvese que en el HTML hay \sphinxstylestrong{dos elementos con el mismo ID}.
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores3}.png}
-\caption{Resultado}\label{\detokenize{tema3:id11}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id13}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado \textgreater{} li.elemento\_enumeracion}}
@@ -2456,7 +2515,7 @@ Ahora el resultado es este
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores4}.png}
-\caption{Resultado}\label{\detokenize{tema3:id12}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id14}}\end{figure}
 
 ¿Por qué ahora sí funciona?
 
@@ -2528,7 +2587,7 @@ Por ejemplo, si deseamos que una fila de contenidos tenga una columna que ocupe 
 \capstart
 
 \noindent\sphinxincludegraphics{{bs1}.png}
-\caption{Ejemplo del grid}\label{\detokenize{tema3:id13}}\end{figure}
+\caption{Ejemplo del grid}\label{\detokenize{tema3:id15}}\end{figure}
 
 En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:
 \begin{itemize}
@@ -2563,7 +2622,7 @@ Bootstrap modifica la tipografía por defecto e incluso permite destacar algunos
 \capstart
 
 \noindent\sphinxincludegraphics{{bs2}.png}
-\caption{Párrafo destacado}\label{\detokenize{tema3:id14}}\end{figure}
+\caption{Párrafo destacado}\label{\detokenize{tema3:id16}}\end{figure}
 
 Se puede destacar texto usando lo siguiente:
 
@@ -6946,7 +7005,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
