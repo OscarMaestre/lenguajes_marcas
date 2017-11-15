@@ -1,61 +1,16 @@
 body{
-    background-color: #6d92a0;
-    
-}
-div#cabecera, div#enlaces, div#cuerpo, div#piepagina{
-    border-radius:30px;
+    background-color: #4e697e;
 }
 
-div#cabecera{
-    text-decoration: underline;
-    text-align: center;
-    
-}
-div#piepagina{
-    text-align: right;
-}
-div#cabecera , div#piepagina{
-    font-family: "Arial";
-    
-    background-color: #022735;
-    color:#eeeeee;
+div#cabecera, div#piepagina{
+    background-color: #718595;
     padding: 20px;
-    margin-left:5%;
-    margin-right:5%;
+    color: #fffacd;
+}
+div#cabecera{
+    margin-bottom: 50px;
 }
 
-div#enlaces{
-    background-color: #103e50;
-    padding:30px;
-    color: #e0ffff;
-        
-    
-}
-
-div#enlaces,div#cuerpo{
-    margin-top: 7%;
-    margin-bottom:7%;
-}
-
-div#cuerpo{
-    background-color: #457485 ;
-    
-    padding: 50px;
-    color: #e0ffff;
-    
-    font-family: "Helvetica";
-}
-
-
-
-div#cuerpo{
-    width: 75%;
-    float:left;
-}
-div#enlaces{
-    width: 15%;
-    float: right;
-}
-div#piepagina{
-    clear: both;
+div#cuerpo, div#enlaces{
+    background-color: #c9cfd4;
 }

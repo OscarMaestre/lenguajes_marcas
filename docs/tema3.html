@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSS &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Javascript" href="tema4.html" />
+    <link rel="prev" title="HTML5" href="tema2.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="css">
+<h1>CSS<a class="headerlink" href="#css" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.</p>
+</div>
+<div class="section" id="sintaxis">
+<h2>Sintaxis<a class="headerlink" href="#sintaxis" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuación.</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En las reglas tenemos tres cosas:</p>
+<ol class="arabic simple">
+<li>Los selectores. En este caso queremos modificar como van a quedar todos los <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;h3&gt;</span></code></li>
+<li>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</li>
+<li>Los valores. En este caso se pone el valor <code class="docutils literal"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal"><span class="pre">background-color</span></code> y el valor <code class="docutils literal"><span class="pre">white</span></code> para la propiedad <code class="docutils literal"><span class="pre">color</span></code></li>
+</ol>
+</div>
+<div class="section" id="los-atributos-class-e-id">
+<h2>Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code><a class="headerlink" href="#los-atributos-class-e-id" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;noticia_del_dia&quot;</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Si luego desde CSS queremos modificar solo el encabezamiento con la noticia del dia deberemos hacer esto</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">#</span><span class="nn">noticia_del_dia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Obsérvese que hemos usado la almohadillas (#) para decir «queremos seleccionar el h1 cuyo id es noticia_del_dia» y ponerlo en negrita. Debe señalarse que es importante que en el HTML <strong>NO DEBE HABER DOS ELEMENTOS CON EL MISMO ID</strong></p>
+<p>Si en vez de uno queremos aplicar un cambio a <strong>un conjunto de elementos</strong> deberemos ir al HTML y ponerles a todos
+ellos un atributo <code class="docutils literal"><span class="pre">class</span></code> con el mismo valor en todos ellos. Por ejemplo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Con este HTML podemos crear un CSS como este que cambia solo los <code class="docutils literal"><span class="pre">h1</span></code> cuyo <code class="docutils literal"><span class="pre">class</span></code> tiene el valor <code class="docutils literal"><span class="pre">titular_economia</span></code></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Se puede poner el mismo <code class="docutils literal"><span class="pre">class</span></code> a distintos elementos, por ejemplo así</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Otro encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+.... texto ...
+
+<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;titular_economia&quot;</span><span class="p">&gt;</span>Y otro más<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+.... texto ...
+</pre></div>
+</div>
+<p>Y luego usar un CSS como este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">.</span><span class="nc">titular_economia</span><span class="o">,</span> <span class="nt">h2</span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Este último CSS <strong>se puede resumir</strong></p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">titular_economia</span><span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Esta regla dice «seleccionar todos los elementos cuyo class sea titular_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.</p>
+</div>
+<div class="section" id="posicionamiento">
+<h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
+<ul class="simple">
+<li>&lt;span&gt; se usa para no romper el flujo, es decir en principio todo va en la misma línea</li>
+<li>&lt;div&gt; sí rompe el flujo, por lo que va a una línea distinta</li>
+</ul>
+<p>En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, recordemos que se deben utilizar los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></p>
+<ul class="simple">
+<li>El <code class="docutils literal"><span class="pre">class</span></code> es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.</li>
+<li>El <code class="docutils literal"><span class="pre">id</span></code> es un atributo que debe tener distinto valor en todos los casos, no se puede repetir.</li>
+</ul>
+<p>Para posicionar correctamente un span o un div, se deben tener en cuenta
+varias cosas:</p>
+<ul class="simple">
+<li>Todos deberían llevar un id o un class (o las dos cosas)</li>
+<li><dl class="first docutils">
+<dt>El posicionamiento tiene varias posibilidades:</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">fixed</span></code>: la caja va en cierta posición y no se mueve de allí</li>
+<li><code class="docutils literal"><span class="pre">absolute</span></code>: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.</li>
+<li><code class="docutils literal"><span class="pre">relative</span></code>: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador</li>
+<li><code class="docutils literal"><span class="pre">static</span></code>: dar permiso al navegador para que coloque la caja donde corresponda</li>
+<li><code class="docutils literal"><span class="pre">float</span></code>: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="ejercicio-propuesto">
+<h3>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crea una página con la siguiente estructura.</p>
+<ul class="simple">
+<li>En la parte superior debe haber dos cajas. Una de ellas, a la izquierda, ocupa el 33% y contiene el lema. La otra, a la derecha, contiene enlaces y ocupa el 66%.</li>
+<li>En la parte central 3 cajas. La de la izquierda contiene publicidad y ocupa el 25%. La central tiene el contenido y ocupa el 50%, la de la derecha tiene más publicidad y ocupa el 25%.</li>
+<li>En la parte de abajo hay una barra <strong>que no se mueve nunca</strong> y que ocupa el 100%. Contiene el mensaje de copyright de la empresa.</li>
+</ul>
+<p>Un posible HTML sería el siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+          <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span>
+          <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lema&quot;</span><span class="p">&gt;</span>
+    Lema...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+    Enlaces....
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi1&quot;</span><span class="p">&gt;</span>
+    Publicidad
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+    Contenido...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi2&quot;</span><span class="p">&gt;</span>
+    Publicidad...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;copyright&quot;</span><span class="p">&gt;</span>
+    <span class="ni">&amp;copy;</span> IES Maestre...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y un posible CSS sería este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">#</span><span class="nn">bienvenida</span><span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Comic Sans MS&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+  <span class="k">margin-left</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">15</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+  <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="p">.</span><span class="nc">par</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="p">.</span><span class="nc">impar</span><span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-propuesto-ii">
+<h3>Ejercicio propuesto (II)<a class="headerlink" href="#ejercicio-propuesto-ii" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una página con la siguiente estructura:</p>
+<ul class="simple">
+<li>En la parte izquierda hay una barra de enlaces. Ocupa el 25% y está <strong>fija</strong>.</li>
+<li>En la zona superior hay una capa con el lema de la empresa. Ocupa el 75% y no se debe ver tapada por los enlaces.</li>
+<li>En la zona central hay dos capas. Una de ellas es el contenido y ocupa aproximadamente el 50%. A su lado hay una capa con publicidad que ocupa el 20%.</li>
+<li>En la zona inferior hay una capa con el copyright de la empresa. Ocupa el 50% y se ve junto al margen derecho de la página.</li>
+</ul>
+<p>Un posible HTML sería el siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+Enlaces enlaces 
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lema&quot;</span><span class="p">&gt;</span>
+Progresando con el tiempo,
+mejorando con la experiencia
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor_central&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+Texto principal de la página
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi&quot;</span><span class="p">&gt;</span>
+Publicidad publicidad
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;copyright&quot;</span><span class="p">&gt;</span>
+<span class="ni">&amp;copy;</span> IES Maestre 2016
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y un posible CSS sería este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+  <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">lema</span><span class="p">{</span>
+ <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">70</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenedor_central</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">75</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">;</span> 
+  <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">62</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">publi</span><span class="p">{</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span><span class="mi">32</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">copyright</span><span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-de-maquetacion">
+<h3>Ejercicio de maquetación<a class="headerlink" href="#ejercicio-de-maquetacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una página con la siguiente estructura:</p>
+<ul class="simple">
+<li>En el margen izquierdo debe aparecer una barra de enlaces que ocupe el 20 o 25% de la anchura de la página y no debe desaparecer aunque el usuario se mueva.</li>
+<li>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</li>
+<li>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</li>
+</ul>
+<div class="figure align-center" id="id8" style="width: 50%">
+<img alt="_images/maquetacion1.png" src="_images/maquetacion1.png" />
+<p class="caption"><span class="caption-text">Resultado final</span></p>
+</div>
+<div class="section" id="html">
+<h4>HTML<a class="headerlink" href="#html" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-html"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.google.es&quot;</span><span class="p">&gt;</span>
+                Google
+            <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.terra.es&quot;</span><span class="p">&gt;</span>
+                Terra
+            <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.yahoo.es&quot;</span><span class="p">&gt;</span>
+                Yahoo
+            <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+            Nunc tempor libero risus, et ultricies ex auctor a. Curabitur efficitur convallis justo consectetur porttitor. Suspendisse potenti. Curabitur ex felis, lacinia non varius ac, ornare eget lacus. Nunc dolor mauris, fermentum nec augue id, imperdiet eleifend tortor. Vestibulum commodo orci ut lorem suscipit, at sodales justo aliquet. Vestibulum sit amet purus eu mauris imperdiet aliquet sed vitae magna. Integer tempus elit purus ...
+
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gatito1.jpg&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4>CSS<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="p">{</span>
+        <span class="k">background-image</span><span class="p">:</span>
+                <span class="nb">url</span><span class="p">(</span><span class="s2">&quot;textura.jpg&quot;</span><span class="p">);</span>
+        <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">40</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">left</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">17</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+        <span class="k">top</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Todos los párrafos llevan</span>
+<span class="c"> * un pequeño sangrado extra</span>
+<span class="c"> * de 15 px en la primera línea*/</span>
+<span class="nt">p</span><span class="p">{</span>
+        <span class="k">text-indent</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+        <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+        <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-2-de-maquetacion">
+<h3>Ejercicio 2 de maquetación<a class="headerlink" href="#ejercicio-2-de-maquetacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Conseguir una página como esta</p>
+<div class="figure align-center" style="width: 50%">
+<img alt="_images/maquetaacme.png" src="_images/maquetaacme.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h3>HTML<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedorglobal&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cabecera&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;marcacabecera&quot;</span><span class="p">&gt;</span>
+                        ACME
+                <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lemacabecera&quot;</span><span class="p">&gt;</span>
+                        donde hay que comprar
+                <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="c">&lt;!--Fin de la cabecera--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cuerpo&quot;</span><span class="p">&gt;</span>
+                En un lugar de la Mancha ...
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;google.es&quot;</span><span class="p">&gt;</span>
+                                        Google
+                                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;google.es&quot;</span><span class="p">&gt;</span>
+                                        Google
+                                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;google.es&quot;</span><span class="p">&gt;</span>
+                                        Google
+                                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;google.es&quot;</span><span class="p">&gt;</span>
+                                        Google
+                                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>CSS<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">cabecera</span><span class="p">{</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">242</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">148</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">marcacabecera</span><span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">larger</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Impact&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">lemacabecera</span><span class="p">{</span>
+        <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">smaller</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Lucida Handwriting&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">cuerpo</span><span class="o">,</span> <span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">217</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">89</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">cuerpo</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">65</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">#</span><span class="nn">enlaces</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">{</span>
+        <span class="k">border-width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">border-style</span><span class="p">:</span> <span class="kc">solid</span><span class="p">;</span>
+        <span class="k">border-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenedorglobal</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span>
+                <span class="nb">rgb</span><span class="p">(</span><span class="mi">188</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">175</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-barra-de-herramientas">
+<h3>Ejercicio: barra de herramientas<a class="headerlink" href="#ejercicio-barra-de-herramientas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una página con dos cajas diferenciadas. Una de ellas, que ocupará el 30% de la página contendrá enlaces a diferentes sitios web. La caja no se moverá aunque el usuario haga scroll. Por  otro lado, la otra caja ocupará el 70% de la página y habrá que llenarla de texto para poder desplazarse por él y comprobar que la caja de enlaces no se mueve.</p>
+<p>El HTML sería algo así:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;solucion1.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.com&quot;</span><span class="p">&gt;</span>CocaCola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://terra.es&quot;</span><span class="p">&gt;</span>Terra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+        En un lugar de la Mancha..
+        En ...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y el CSS que resuelve el problema sería:</p>
+</div>
+<div class="section" id="ejercicio-ampliacion">
+<h3>Ejercicio: ampliación<a class="headerlink" href="#ejercicio-ampliacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ampliar el ejemplo anterior para hacer que el contenido solo ocupe el 50% y añadir una barra de publicidad fija en el centro vertical que ocupe el 20%.</p>
+<p>El HTML sería</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;solucion2.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;enlaces&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.com&quot;</span><span class="p">&gt;</span>CocaCola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://terra.es&quot;</span><span class="p">&gt;</span>Terra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://iesmaestredecalatrava.es&quot;</span><span class="p">&gt;</span>IES<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+        En un lugar de la Mancha.. (repetido)
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y el CSS que resuelve el problema sería:</p>
+</div>
+<div class="section" id="ejercicio">
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una estructura de página con una cabecera que ocupe el 100% de la página, con texto centrado y algunos enlaces. A continuación un bloque de contenido que ocupe el 70% y a su izquierda un bloque de publicidad que ocupe el 30%. Debe haber un pie de página con el copyright que ocupe el 100% de la página, con el texto centrado y que no se mueva cuando el usuario desplace el texto.</p>
+<p>El HTML sería</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;solucion4.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejercicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">header</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cabecera&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://terra.es&quot;</span><span class="p">&gt;</span>Terra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+        Texto texto texto ...
+
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">aside</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publi&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.es&quot;</span><span class="p">&gt;</span>Beba Coca-Cola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="ni">&amp;copy;</span> Pepe Perez, IES Maestre 2013-2014
+<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y el CSS que resuelve el problema sería:</p>
+</div>
+<div class="section" id="posicionamiento-float">
+<h3>Posicionamiento float<a class="headerlink" href="#posicionamiento-float" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En el posicionamiento <code class="docutils literal"><span class="pre">float</span></code> solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.</p>
+</div>
+<div class="section" id="id4">
+<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.</p>
+</div>
+</div>
+<div class="section" id="maquetacion-avanzada-con-grid-layouts">
+<h2>Maquetación avanzada con <code class="docutils literal"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:</p>
+<ol class="arabic simple">
+<li>Un elemento (por ejemplo un <code class="docutils literal"><span class="pre">div</span></code>) se puede dividir en forma de tabla</li>
+<li>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</li>
+<li>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</li>
+</ol>
+<p>Para poder utilizarlo necesitaremos:</p>
+<ul class="simple">
+<li>Un contenedor principal (en concreto un <code class="docutils literal"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</li>
+<li>Un conjunto de elementos (normalmente otros <code class="docutils literal"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</li>
+</ul>
+</div>
+<div class="section" id="gestion-de-espacios">
+<h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En CSS se puede controlar el espacio interno y externo por medio de las propiedades <code class="docutils literal"><span class="pre">padding-</span></code> y <code class="docutils literal"><span class="pre">margin-</span></code> pudiendo usar <code class="docutils literal"><span class="pre">margin-top</span></code> o <code class="docutils literal"><span class="pre">padding-left</span></code>. Las cuatro posiciones son <code class="docutils literal"><span class="pre">top</span></code>, <code class="docutils literal"><span class="pre">bottom</span></code>, <code class="docutils literal"><span class="pre">left</span></code> y <code class="docutils literal"><span class="pre">right</span></code></p>
+<p>Supongamos el siguiente HTML</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>Celda A<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>Celda B<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Celda C<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Celda D<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;e&quot;</span><span class="p">&gt;</span>Celda E<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;f&quot;</span><span class="p">&gt;</span>Celda F<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Si no le hacemos nada se verá lo siguiente:</p>
+<div class="figure align-center" id="id9" style="width: 50%">
+<img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
+<p class="caption"><span class="caption-text">Grid sin maquetar</span></p>
+</div>
+<p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
+<p>El resultado queda así:
+.. figure:: ejemplos/tema3_css/ejemplos_grid/celdas_con_borde.png</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">figwidth:</th><td class="field-body">50%</td>
+</tr>
+<tr class="field-even field"><th class="field-name">align:</th><td class="field-body">center</td>
+</tr>
+</tbody>
+</table>
+<p>Celdas con borde</p>
+</div></blockquote>
+<p>Supongamos que queremos que el <code class="docutils literal"><span class="pre">div</span></code> cuyo class es <code class="docutils literal"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
+solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
+<div class="figure align-center" id="id10" style="width: 50%">
+<img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
+<p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
+</div>
+</div>
+<div class="section" id="colores">
+<h2>Colores<a class="headerlink" href="#colores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los colores en CSS se pueden especificar de varias maneras:</p>
+<ul class="simple">
+<li>Por nombre: <code class="docutils literal"><span class="pre">red</span></code>, <code class="docutils literal"><span class="pre">yellow</span></code>, <code class="docutils literal"><span class="pre">green</span></code></li>
+<li>Mediante <code class="docutils literal"><span class="pre">rgb(rojo,</span> <span class="pre">verde,</span> <span class="pre">azul</span></code>, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, <code class="docutils literal"><span class="pre">rgb(0,0,0)</span></code> es negro y <code class="docutils literal"><span class="pre">rgb(255,255,255)</span></code> es blanco.</li>
+<li>Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.</li>
+<li>Desde hace poco se pueden indicar también con <a href="#id5"><span class="problematic" id="id6">``</span></a>hsl(num, num, num)”“</li>
+</ul>
+<p>Se pueden encontrar en Internet listas de colores denominados «seguros» (buscando por «web safe colors») que indican nombres de color que se ven igual en los distintos navegadores.</p>
+</div>
+<div class="section" id="tipografias">
+<h2>Tipografías<a class="headerlink" href="#tipografias" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En tipografía se habla de dos términos distintos: el «typeface» y la «font».</p>
+<ul class="simple">
+<li>Hay tipos «Serif», que llevan «rabito».</li>
+<li>Hay tipos «Sans-serif» que no lo llevan</li>
+<li>Hay tipos monoespaciados</li>
+</ul>
+<p>Lo más relevante, es que cuando usamos <code class="docutils literal"><span class="pre">font-family:</span> <span class="pre">&quot;Arial&quot;;</span></code>, el navegador puede decidir poner otro tipo de letra de la misma familia.</p>
+<p>Se pueden indicar varios tipos de letra por orden de preferencia.</p>
+<p>Google Fonts permite el «embebido» de fuentes de manera muy segura.</p>
+<p>Alineación del texto
+===========     =========</p>
+<p>Se puede usar la propiedad <code class="docutils literal"><span class="pre">text-align:</span> <span class="pre">left</span></code> para modificar la alineación del texto, usando <code class="docutils literal"><span class="pre">left</span></code>, <code class="docutils literal"><span class="pre">center</span></code>, <code class="docutils literal"><span class="pre">right</span></code> o <code class="docutils literal"><span class="pre">justify</span></code></p>
+</div>
+<div class="section" id="decoracion-del-texto">
+<h2>Decoración del texto<a class="headerlink" href="#decoracion-del-texto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pueden usar otras propiedades para cambiar
+el aspecto del texto como estas:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">text-decoration:</span> <span class="pre">underline</span></code></li>
+<li><code class="docutils literal"><span class="pre">text-decoration:</span> <span class="pre">overline</span></code></li>
+<li><code class="docutils literal"><span class="pre">text-decoration:</span> <span class="pre">line-through</span></code></li>
+</ul>
+</div>
+<div class="section" id="medidas">
+<h2>Medidas<a class="headerlink" href="#medidas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1cm</span></code></li>
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1in</span></code>: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.</li>
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1px</span></code>: muy dependiente de la resolución</li>
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1%</span></code>: es la más apropiada al modificar elementos div en pantalla.</li>
+<li><code class="docutils literal"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra «m».</li>
+</ul>
+</div>
+<div class="section" id="selectores">
+<h2>Selectores<a class="headerlink" href="#selectores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas</p>
+<ul class="simple">
+<li>p#destacado</li>
+<li>p.destacado</li>
+<li>p.destacado, span#id1</li>
+<li>p.destacado &gt; li.elemento_enumeracion</li>
+<li>p.destacado &gt; .elemento_numeracion</li>
+<li>.destacado &gt; #id1</li>
+</ul>
+<p>Supongamos que tenemos un archivo HTML como este:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        Párrafo sin class ni ide
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cita&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;destacado&quot;</span><span class="p">&gt;</span>
+        Párrafo con el class &#39;cita&#39;
+        y el id &#39;p_destacado&#39;
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p_destacado&quot;</span><span class="p">&gt;</span>Párrafo con el class
+        destacado que no
+        contiene nada
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p_destacado&quot;</span><span class="p">&gt;</span>
+        Párrafo con el class destacado.
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;id1&quot;</span><span class="p">&gt;</span>
+                Este texto va dentro de
+                un span con el
+                id id1
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;destacado&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;elemento_numeracion&quot;</span><span class="p">&gt;</span>
+                        Esto es un li
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;elemento_numeracion&quot;</span><span class="p">&gt;</span>
+                        Esto es otro li
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;destacado&quot;</span><span class="p">&gt;</span>
+        Este párrafo tiene el class
+        destacado y en él enumeramos
+        cosas como
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;elemento_numeracion&quot;</span><span class="p">&gt;</span>
+                A
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;elemento_numeracion&quot;</span><span class="p">&gt;</span>
+                B
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> o también
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;elemento_numeracion&quot;</span><span class="p">&gt;</span>
+                C
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;destacado&quot;</span><span class="p">&gt;</span>
+        Aquí hay un
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;id1&quot;</span><span class="p">&gt;</span>
+                span con el id id1
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="solucion-p-destacado">
+<h3>Solución <code class="docutils literal"><span class="pre">p#destacado</span></code><a class="headerlink" href="#solucion-p-destacado" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si tenemos un estilo como este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">#</span><span class="nn">destacado</span><span class="p">{</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
+<div class="figure align-center" id="id11" style="width: 50%">
+<img alt="_images/selectores1.png" src="_images/selectores1.png" />
+<p class="caption"><span class="caption-text">Resultado</span></p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
+<div class="figure align-center" id="id12" style="width: 50%">
+<img alt="_images/selectores2.png" src="_images/selectores2.png" />
+<p class="caption"><span class="caption-text">Resultado</span></p>
+</div>
+</div>
+<div class="section" id="solucion-p-destacado-span-id1">
+<h3>Solución <code class="docutils literal"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code><a class="headerlink" href="#solucion-p-destacado-span-id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em> y también al <code class="docutils literal"><span class="pre">span</span></code> cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">id1</span></code></p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
+</div>
+<div class="figure align-center" id="id13" style="width: 50%">
+<img alt="_images/selectores3.png" src="_images/selectores3.png" />
+<p class="caption"><span class="caption-text">Resultado</span></p>
+</div>
+</div>
+<div class="section" id="solucion-p-destacado-li-elemento-enumeracion">
+<h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">li.elemento_enumeracion</span></code><a class="headerlink" href="#solucion-p-destacado-li-elemento-enumeracion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los cambios solo se aplican a <strong>los li cuyo class sea elemento_numeración y que además sean hijos de un p cuyo class sea destacado</strong></p>
+<p>¿Por qué los cambios no afectan a ninguno?</p>
+</div>
+<div class="section" id="solucion-p-destacado-elemento-numeracion">
+<h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">.elemento_numeracion</span></code><a class="headerlink" href="#solucion-p-destacado-elemento-numeracion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora sí veremos que algo cambia, en concreto los ultimos <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> que llevan el <code class="docutils literal"><span class="pre">class=elemento_numeracion</span></code>, ya que <em>sí son hijos directos</em> de un elemento que lleva un <code class="docutils literal"><span class="pre">class=destacado</span></code>.</p>
+</div>
+<div class="section" id="solucion-destacado-id1">
+<h3>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora el resultado es este</p>
+<div class="figure align-center" id="id14" style="width: 50%">
+<img alt="_images/selectores4.png" src="_images/selectores4.png" />
+<p class="caption"><span class="caption-text">Resultado</span></p>
+</div>
+<p>¿Por qué ahora sí funciona?</p>
+</div>
+</div>
+<div class="section" id="bootstrap">
+<h2>Bootstrap<a class="headerlink" href="#bootstrap" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Bootstrap define una estructura básica de clases CSS para facilitar el desarrollo web. En concreto CSS consigue que crear páginas que se vean igual en dispositivos muy distintos sea algo relativamente sencillo.</p>
+<div class="section" id="estructura-basica">
+<h3>Estructura básica<a class="headerlink" href="#estructura-basica" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El siguiente HTML define lo mínimo que se necesita para crear una página con Bootstrap. Dentro de <code class="docutils literal"><span class="pre">&lt;body&gt;</span></code> podremos poner lo que necesitemos y el <em>framework</em> colocará todo automáticamente y le aplicará cierto estilismo.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Plantilla bootstrap<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+
+
+        <span class="c">&lt;!--[if lt IE 9]&gt;</span>
+<span class="c">          &lt;script src=&quot;js/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">          &lt;script src=&quot;js/respond.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">        &lt;![endif]--&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página con Bootstrap<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/bootstrap.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Lo único que se debe asumir es que debe existir un <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> cuyo <code class="docutils literal"><span class="pre">class</span></code> sea <code class="docutils literal"><span class="pre">container</span></code></p>
+</div>
+<div class="section" id="rejilla-o-grid">
+<h3>Rejilla o <em>grid</em><a class="headerlink" href="#rejilla-o-grid" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Bootstrap asume que cualquier pantalla tiene una anchura básica de 12 columnas. Podremos crear una fila de elementos y hacer que cada una de ellas ocupe cierta proporción de esas columnas.</p>
+<p>Por ejemplo, si deseamos que una fila de contenidos tenga una columna que ocupe la mitad de esas 12 columnas (6) y dos columnas que ocupen la mitad restante, podremos hacer lo siguiente.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span><span class="p">&gt;</span>
+            Mitad del contenedor
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-3&quot;</span><span class="p">&gt;</span>
+            Esto ocupa un cuarto
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-3&quot;</span><span class="p">&gt;</span>
+            Esto ocupa otro  cuarto
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id15" style="width: 50%">
+<img alt="_images/bs1.png" src="_images/bs1.png" />
+<p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
+</div>
+<p>En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:</p>
+<ul class="simple">
+<li>col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «muy pequeña/extrasmall» (menos de 768)</li>
+<li>col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «pequeña/small» (más de 768 y menos de 992)</li>
+<li>col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «media» (unos 992 px)</li>
+<li>col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «grande/large» (unos 992 px)</li>
+</ul>
+</div>
+<div class="section" id="tipografia">
+<h3>Tipografía<a class="headerlink" href="#tipografia" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Bootstrap modifica la tipografía por defecto e incluso permite destacar algunos elementos. Por ejemplo un párrafo con la clase <code class="docutils literal"><span class="pre">lead</span></code> destacará:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lead&quot;</span><span class="p">&gt;</span>
+            Este párrafo es muy importante
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id16" style="width: 50%">
+<img alt="_images/bs2.png" src="_images/bs2.png" />
+<p class="caption"><span class="caption-text">Párrafo destacado</span></p>
+</div>
+<p>Se puede destacar texto usando lo siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Texto subrayado en amarillo<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CSS</a><ul>
+<li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#sintaxis">Sintaxis</a></li>
+<li><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal"><span class="pre">class</span></code> e <code class="docutils literal"><span class="pre">id</span></code></a></li>
+<li><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
+<li><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
+<li><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
+<li><a class="reference internal" href="#ejercicio-de-maquetacion">Ejercicio de maquetación</a><ul>
+<li><a class="reference internal" href="#html">HTML</a></li>
+<li><a class="reference internal" href="#id1">CSS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ejercicio-2-de-maquetacion">Ejercicio 2 de maquetación</a></li>
+<li><a class="reference internal" href="#id2">HTML</a></li>
+<li><a class="reference internal" href="#id3">CSS</a></li>
+<li><a class="reference internal" href="#ejercicio-barra-de-herramientas">Ejercicio: barra de herramientas</a></li>
+<li><a class="reference internal" href="#ejercicio-ampliacion">Ejercicio: ampliación</a></li>
+<li><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+<li><a class="reference internal" href="#posicionamiento-float">Posicionamiento float</a></li>
+<li><a class="reference internal" href="#id4">Ejercicio</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal"><span class="pre">grid-layouts</span></code></a></li>
+<li><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
+<li><a class="reference internal" href="#colores">Colores</a></li>
+<li><a class="reference internal" href="#tipografias">Tipografías</a></li>
+<li><a class="reference internal" href="#decoracion-del-texto">Decoración del texto</a></li>
+<li><a class="reference internal" href="#medidas">Medidas</a></li>
+<li><a class="reference internal" href="#selectores">Selectores</a><ul>
+<li><a class="reference internal" href="#solucion-p-destacado">Solución <code class="docutils literal"><span class="pre">p#destacado</span></code></a></li>
+<li><a class="reference internal" href="#id7">Solución <code class="docutils literal"><span class="pre">p.destacado</span></code></a></li>
+<li><a class="reference internal" href="#solucion-p-destacado-span-id1">Solución <code class="docutils literal"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code></a></li>
+<li><a class="reference internal" href="#solucion-p-destacado-li-elemento-enumeracion">Solución <code class="docutils literal"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">li.elemento_enumeracion</span></code></a></li>
+<li><a class="reference internal" href="#solucion-p-destacado-elemento-numeracion">Solución <code class="docutils literal"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">.elemento_numeracion</span></code></a></li>
+<li><a class="reference internal" href="#solucion-destacado-id1">Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bootstrap">Bootstrap</a><ul>
+<li><a class="reference internal" href="#estructura-basica">Estructura básica</a></li>
+<li><a class="reference internal" href="#rejilla-o-grid">Rejilla o <em>grid</em></a></li>
+<li><a class="reference internal" href="#tipografia">Tipografía</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tema2.html" title="capítulo anterior">HTML5</a></li>
+      <li>Next: <a href="tema4.html" title="próximo capítulo">Javascript</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tema3.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/tema3.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
