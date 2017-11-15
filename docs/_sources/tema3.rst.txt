@@ -575,7 +575,15 @@ Si no le hacemos nada se verá lo siguiente:
 
 Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS
 
+
+.. code-block:: css
+
+    .celda{
+                border: solid black 1px;
+    }
+    
 El resultado queda así:
+
 .. figure:: ejemplos/tema3_css/ejemplos_grid/celdas_con_borde.png
    :figwidth: 50%
    :align: center
@@ -631,7 +639,7 @@ Google Fonts permite el "embebido" de fuentes de manera muy segura.
 
 
 Alineación del texto
-===========	=========
+====================
 
 Se puede usar la propiedad ``text-align: left`` para modificar la alineación del texto, usando ``left``, ``center``, ``right`` o ``justify``
 

@@ -638,24 +638,19 @@ Publicidad publicidad
 <p class="caption"><span class="caption-text">Grid sin maquetar</span></p>
 </div>
 <p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
-<p>El resultado queda así:
-.. figure:: ejemplos/tema3_css/ejemplos_grid/celdas_con_borde.png</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">figwidth:</th><td class="field-body">50%</td>
-</tr>
-<tr class="field-even field"><th class="field-name">align:</th><td class="field-body">center</td>
-</tr>
-</tbody>
-</table>
-<p>Celdas con borde</p>
-</div></blockquote>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">celda</span><span class="p">{</span>
+            <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El resultado queda así:</p>
+<div class="figure align-center" id="id10" style="width: 50%">
+<img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
+<p class="caption"><span class="caption-text">Celdas con borde</span></p>
+</div>
 <p>Supongamos que queremos que el <code class="docutils literal"><span class="pre">div</span></code> cuyo class es <code class="docutils literal"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
-<div class="figure align-center" id="id10" style="width: 50%">
+<div class="figure align-center" id="id11" style="width: 50%">
 <img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
 <p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
 </div>
@@ -686,8 +681,9 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <p>Lo más relevante, es que cuando usamos <code class="docutils literal"><span class="pre">font-family:</span> <span class="pre">&quot;Arial&quot;;</span></code>, el navegador puede decidir poner otro tipo de letra de la misma familia.</p>
 <p>Se pueden indicar varios tipos de letra por orden de preferencia.</p>
 <p>Google Fonts permite el «embebido» de fuentes de manera muy segura.</p>
-<p>Alineación del texto
-===========     =========</p>
+</div>
+<div class="section" id="alineacion-del-texto">
+<h2>Alineación del texto<a class="headerlink" href="#alineacion-del-texto" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se puede usar la propiedad <code class="docutils literal"><span class="pre">text-align:</span> <span class="pre">left</span></code> para modificar la alineación del texto, usando <code class="docutils literal"><span class="pre">left</span></code>, <code class="docutils literal"><span class="pre">center</span></code>, <code class="docutils literal"><span class="pre">right</span></code> o <code class="docutils literal"><span class="pre">justify</span></code></p>
 </div>
 <div class="section" id="decoracion-del-texto">
@@ -784,7 +780,7 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
-<div class="figure align-center" id="id11" style="width: 50%">
+<div class="figure align-center" id="id12" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -792,7 +788,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="id7">
 <h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
-<div class="figure align-center" id="id12" style="width: 50%">
+<div class="figure align-center" id="id13" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -804,7 +800,7 @@ el aspecto del texto como estas:</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<div class="figure align-center" id="id13" style="width: 50%">
+<div class="figure align-center" id="id14" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -821,7 +817,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<div class="figure align-center" id="id14" style="width: 50%">
+<div class="figure align-center" id="id15" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -882,7 +878,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id15" style="width: 50%">
+<div class="figure align-center" id="id16" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
 </div>
@@ -903,7 +899,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id16" style="width: 50%">
+<div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <p class="caption"><span class="caption-text">Párrafo destacado</span></p>
 </div>
@@ -949,6 +945,7 @@ el aspecto del texto como estas:</p>
 <li><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
 <li><a class="reference internal" href="#colores">Colores</a></li>
 <li><a class="reference internal" href="#tipografias">Tipografías</a></li>
+<li><a class="reference internal" href="#alineacion-del-texto">Alineación del texto</a></li>
 <li><a class="reference internal" href="#decoracion-del-texto">Decoración del texto</a></li>
 <li><a class="reference internal" href="#medidas">Medidas</a></li>
 <li><a class="reference internal" href="#selectores">Selectores</a><ul>
