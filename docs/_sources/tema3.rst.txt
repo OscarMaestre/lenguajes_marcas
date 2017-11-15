@@ -551,12 +551,6 @@ Para poder utilizarlo necesitaremos:
 * Un conjunto de elementos (normalmente otros ``div``) que irán dentro del contenedor principal. Estos elementos se portarán como "celdas flexibles", ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.
 
 
-
-Gestión de espacios
-===================
-
-En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
-
 Supongamos el siguiente HTML
 
 .. code-block:: html
@@ -598,6 +592,14 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
    
    Tabla de 5 x 5 
 
+
+
+
+
+Gestión de espacios
+===================
+
+En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
 
 
 Colores
