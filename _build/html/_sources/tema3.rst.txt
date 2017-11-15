@@ -545,6 +545,55 @@ La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas,
 2. Dicha tabla puede tener columnas y/o filas de distinto tamaño.
 3. Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.
 
+Para poder utilizarlo necesitaremos:
+
+* Un contenedor principal (en concreto un ``div``). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas
+* Un conjunto de elementos (normalmente otros ``div``) que irán dentro del contenedor principal. Estos elementos se portarán como "celdas flexibles", ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.
+
+
+Supongamos el siguiente HTML
+
+.. code-block:: html
+
+    <div id="contenedor">
+        <div class="celda" id="a">Celda A</div>
+        <div class="celda" id="b">Celda B</div>
+        <div class="celda" id="c">Celda C</div>
+        <div class="celda" id="d">Celda D</div>
+        <div class="celda" id="e">Celda E</div>
+        <div class="celda" id="f">Celda F</div>  
+    </div>
+    
+Si no le hacemos nada se verá lo siguiente:
+
+.. figure:: ejemplos/tema3_css/ejemplos_grid/grid_sin_estilo.png
+   :figwidth: 50%
+   :align: center
+   
+   Grid sin maquetar
+
+
+Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS
+
+El resultado queda así:
+.. figure:: ejemplos/tema3_css/ejemplos_grid/celdas_con_borde.png
+   :figwidth: 50%
+   :align: center
+   
+   Celdas con borde
+
+
+Supongamos que queremos que el ``div`` cuyo class es ``contenedor`` se porte como una tabla de 5 por 5. ¡Recuérdese que
+solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
+
+.. figure:: ejemplos/tema3_css/ejemplos_grid/tabla_5_por_5.png
+   :figwidth: 50%
+   :align: center
+   
+   Tabla de 5 x 5 
+
+
+
 
 
 Gestión de espacios

@@ -616,6 +616,49 @@ Publicidad publicidad
 <li>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</li>
 <li>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</li>
 </ol>
+<p>Para poder utilizarlo necesitaremos:</p>
+<ul class="simple">
+<li>Un contenedor principal (en concreto un <code class="docutils literal"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</li>
+<li>Un conjunto de elementos (normalmente otros <code class="docutils literal"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</li>
+</ul>
+<p>Supongamos el siguiente HTML</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>Celda A<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>Celda B<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Celda C<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Celda D<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;e&quot;</span><span class="p">&gt;</span>Celda E<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;f&quot;</span><span class="p">&gt;</span>Celda F<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Si no le hacemos nada se verá lo siguiente:</p>
+<div class="figure align-center" id="id9" style="width: 50%">
+<img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
+<p class="caption"><span class="caption-text">Grid sin maquetar</span></p>
+</div>
+<p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
+<p>El resultado queda así:
+.. figure:: ejemplos/tema3_css/ejemplos_grid/celdas_con_borde.png</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">figwidth:</th><td class="field-body">50%</td>
+</tr>
+<tr class="field-even field"><th class="field-name">align:</th><td class="field-body">center</td>
+</tr>
+</tbody>
+</table>
+<p>Celdas con borde</p>
+</div></blockquote>
+<p>Supongamos que queremos que el <code class="docutils literal"><span class="pre">div</span></code> cuyo class es <code class="docutils literal"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
+solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
+<div class="figure align-center" id="id10" style="width: 50%">
+<img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
+<p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
+</div>
 </div>
 <div class="section" id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -741,7 +784,7 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
-<div class="figure align-center" id="id9" style="width: 50%">
+<div class="figure align-center" id="id11" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -749,7 +792,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="id7">
 <h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
-<div class="figure align-center" id="id10" style="width: 50%">
+<div class="figure align-center" id="id12" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -761,7 +804,7 @@ el aspecto del texto como estas:</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<div class="figure align-center" id="id11" style="width: 50%">
+<div class="figure align-center" id="id13" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -778,7 +821,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<div class="figure align-center" id="id12" style="width: 50%">
+<div class="figure align-center" id="id14" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -839,7 +882,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id13" style="width: 50%">
+<div class="figure align-center" id="id15" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
 </div>
@@ -860,7 +903,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id14" style="width: 50%">
+<div class="figure align-center" id="id16" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <p class="caption"><span class="caption-text">Párrafo destacado</span></p>
 </div>
@@ -960,7 +1003,7 @@ el aspecto del texto como estas:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

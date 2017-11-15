@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.19)  14 NOV 2017 10:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.19)  15 NOV 2017 10:43
 entering extended mode
 **ApuntesDeLenguajesDeMarcas.tex
 (F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.tex
@@ -1048,24 +1048,13 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 [1
 
 
-]
+] <http_get_y_post.png, id=779, 691.58376pt x 360.34625pt>
+File: http_get_y_post.png Graphic file (type png)
 
-LaTeX Warning: File `{http_get_y_post}.png' not found on input line 103.
-
-
-LaTeX Warning: File `{http_get_y_post}.png' not found on input line 103.
-
-
-! Package pdftex.def Error: File `http_get_y_post.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.103 ...raphics[scale=0.5]{{http_get_y_post}.png}
-                                                  
-? 
-[2]
+<use http_get_y_post.png>
+Package pdftex.def Info: http_get_y_post.png used on input line 103.
+(pdftex.def)             Requested size: 345.79103pt x 180.17268pt.
+ [2 <F:/Oscar/repos/lenguajes_marcas/_build/latex/http_get_y_post.png>]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 202.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
@@ -1079,20 +1068,20 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 347.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [7] [8]
-[9] [10] <tablamedallero.png, id=832, 429.10312pt x 211.54031pt>
+[9] [10] <tablamedallero.png, id=835, 429.10312pt x 211.54031pt>
 File: tablamedallero.png Graphic file (type png)
 
 <use tablamedallero.png>
 Package pdftex.def Info: tablamedallero.png used on input line 591.
 (pdftex.def)             Requested size: 214.55103pt x 105.76988pt.
- <tabla1.png, id=833, 139.27031pt x 213.79875pt>
+ <tabla1.png, id=836, 139.27031pt x 213.79875pt>
 File: tabla1.png Graphic file (type png)
 
 <use tabla1.png>
 Package pdftex.def Info: tabla1.png used on input line 627.
 (pdftex.def)             Requested size: 69.63498pt x 106.89911pt.
  [11 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tablamedallero.png (PNG copy
-)>] <tabla2.png, id=840, 139.27031pt x 158.09062pt>
+)>] <tabla2.png, id=843, 139.27031pt x 158.09062pt>
 File: tabla2.png Graphic file (type png)
 
 <use tabla2.png>
@@ -1100,26 +1089,26 @@ Package pdftex.def Info: tabla2.png used on input line 662.
 (pdftex.def)             Requested size: 69.63498pt x 79.0451pt.
  [12 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla1.png> <F:/Oscar/repos/
 lenguajes_marcas/_build/latex/tabla2.png>]
-<tabla3.png, id=848, 346.29375pt x 294.34969pt>
+<tabla3.png, id=851, 346.29375pt x 294.34969pt>
 File: tabla3.png Graphic file (type png)
  <use tabla3.png>
 Package pdftex.def Info: tabla3.png used on input line 715.
 (pdftex.def)             Requested size: 173.14644pt x 147.17447pt.
  [13] [14 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla3.png>]
-<tabla4.png, id=862, 292.09125pt x 299.61937pt>
+<tabla4.png, id=865, 292.09125pt x 299.61937pt>
 File: tabla4.png Graphic file (type png)
  <use tabla4.png>
 Package pdftex.def Info: tabla4.png used on input line 800.
 (pdftex.def)             Requested size: 146.04526pt x 149.80931pt.
 
-<tablaeco1.png, id=863, 231.86626pt x 313.9228pt>
+<tablaeco1.png, id=866, 231.86626pt x 313.9228pt>
 File: tablaeco1.png Graphic file (type png)
  <use tablaeco1.png>
 Package pdftex.def Info: tablaeco1.png used on input line 815.
 (pdftex.def)             Requested size: 231.86568pt x 313.92203pt.
  [15 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla4.png>] [16 <F:/Oscar/r
 epos/lenguajes_marcas/_build/latex/tablaeco1.png>]
-<tablaeco2.png, id=876, 429.85594pt x 216.05719pt>
+<tablaeco2.png, id=879, 429.85594pt x 216.05719pt>
 File: tablaeco2.png Graphic file (type png)
  <use tablaeco2.png>
 Package pdftex.def Info: tablaeco2.png used on input line 889.
@@ -1137,13 +1126,13 @@ Underfull \vbox (badness 10000) detected at line 965
  []
 
 [18 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tablaeco2.png>]
-<tabla7.png, id=887, 271.76532pt x 290.58563pt>
+<tabla7.png, id=890, 271.76532pt x 290.58563pt>
 File: tabla7.png Graphic file (type png)
  <use tabla7.png>
 Package pdftex.def Info: tabla7.png used on input line 975.
 (pdftex.def)             Requested size: 271.76465pt x 290.58492pt.
  [19 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla7.png (PNG copy)>]
-<tabla8.png, id=894, 219.82124pt x 243.15843pt>
+<tabla8.png, id=897, 219.82124pt x 243.15843pt>
 File: tabla8.png Graphic file (type png)
  <use tabla8.png>
 Package pdftex.def Info: tabla8.png used on input line 1034.
@@ -1155,13 +1144,13 @@ LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1107
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ) [22]
-<tabla5.png, id=913, 377.15906pt x 156.585pt>
+<tabla5.png, id=916, 377.15906pt x 156.585pt>
 File: tabla5.png Graphic file (type png)
  <use tabla5.png>
 Package pdftex.def Info: tabla5.png used on input line 1188.
 (pdftex.def)             Requested size: 188.57907pt x 78.2923pt.
  [23 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla5.png>]
-<tabla6.png, id=922, 143.78719pt x 134.00063pt>
+<tabla6.png, id=925, 143.78719pt x 134.00063pt>
 File: tabla6.png Graphic file (type png)
  <use tabla6.png>
 Package pdftex.def Info: tabla6.png used on input line 1237.
@@ -1170,26 +1159,26 @@ Package pdftex.def Info: tabla6.png used on input line 1237.
 Underfull \vbox (badness 1472) detected at line 1301
  []
 
-[25] <maqueta1.png, id=936, 362.10281pt x 338.01282pt>
+[25] <maqueta1.png, id=939, 362.10281pt x 338.01282pt>
 File: maqueta1.png Graphic file (type png)
  <use maqueta1.png>
 Package pdftex.def Info: maqueta1.png used on input line 1308.
 (pdftex.def)             Requested size: 181.05095pt x 169.00598pt.
 
-<maqueta2.png, id=937, 365.86688pt x 363.60844pt>
+<maqueta2.png, id=940, 365.86688pt x 363.60844pt>
 File: maqueta2.png Graphic file (type png)
  <use maqueta2.png>
 Package pdftex.def Info: maqueta2.png used on input line 1318.
 (pdftex.def)             Requested size: 182.93298pt x 181.80377pt.
  [26 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maqueta1.png> <F:/Oscar/repo
 s/lenguajes_marcas/_build/latex/maqueta2.png>] [27]
-<maqueta4.png, id=950, 495.35063pt x 359.09157pt>
+<maqueta4.png, id=953, 495.35063pt x 359.09157pt>
 File: maqueta4.png Graphic file (type png)
  <use maqueta4.png>
 Package pdftex.def Info: maqueta4.png used on input line 1390.
 (pdftex.def)             Requested size: 247.67471pt x 179.54533pt.
  [28 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maqueta4.png>]
-<formu3.png, id=956, 288.3272pt x 223.58531pt>
+<formu3.png, id=959, 288.3272pt x 223.58531pt>
 File: formu3.png Graphic file (type png)
  <use formu3.png>
 Package pdftex.def Info: formu3.png used on input line 1441.
@@ -1214,14 +1203,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [31
 
-] [32] [33] [34] [35] <maquetacion1.png, id=993, 750.55406pt x 367.3725pt>
+] [32] [33] [34] [35] <maquetacion1.png, id=996, 750.55406pt x 367.3725pt>
 File: maquetacion1.png Graphic file (type png)
 
 <use maquetacion1.png>
 Package pdftex.def Info: maquetacion1.png used on input line 1883.
 (pdftex.def)             Requested size: 469.75502pt x 229.93236pt.
  [36] [37 <F:/Oscar/repos/lenguajes_marcas/_build/latex/maquetacion1.png>] <maq
-uetaacme.png, id=1007, 761.09344pt x 365.11406pt>
+uetaacme.png, id=1010, 761.09344pt x 365.11406pt>
 File: maquetaacme.png Graphic file (type png)
 
 <use maquetaacme.png>
@@ -1234,726 +1223,700 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\sphinxstyleliteralintitle' on input line 2
 202.
 
-[42] [43] [44]
+[42] <grid_sin_estilo.png, id=1039, 70.76437pt x 119.69719pt>
+File: grid_sin_estilo.png Graphic file (type png)
+
+<use grid_sin_estilo.png>
+Package pdftex.def Info: grid_sin_estilo.png used on input line 2246.
+(pdftex.def)             Requested size: 70.76419pt x 119.69688pt.
+
+<tabla_5_por_5.png, id=1040, 547.2947pt x 124.21407pt>
+File: tabla_5_por_5.png Graphic file (type png)
+ <use tabla_5_por_5.png>
+Package pdftex.def Info: tabla_5_por_5.png used on input line 2273.
+(pdftex.def)             Requested size: 469.75502pt x 106.6173pt.
+
+[43 <F:/Oscar/repos/lenguajes_marcas/_build/latex/grid_sin_estilo.png (PNG copy
+)>] [44 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla_5_por_5.png (PNG co
+py)>] [45]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 1.
- <selectores1.png, id=1048, 750.55406pt x 389.20406pt>
+ <selectores1.png, id=1059, 750.55406pt x 389.20406pt>
 File: selectores1.png Graphic file (type png)
 
 <use selectores1.png>
-Package pdftex.def Info: selectores1.png used on input line 2406.
+Package pdftex.def Info: selectores1.png used on input line 2465.
 (pdftex.def)             Requested size: 469.75502pt x 243.59639pt.
- <selectores2.png, id=1049, 759.58781pt x 374.90062pt>
+ <selectores2.png, id=1060, 759.58781pt x 374.90062pt>
 File: selectores2.png Graphic file (type png)
 
 <use selectores2.png>
-Package pdftex.def Info: selectores2.png used on input line 2418.
+Package pdftex.def Info: selectores2.png used on input line 2477.
 (pdftex.def)             Requested size: 469.75502pt x 231.8582pt.
- <selectores3.png, id=1050, 760.34062pt x 386.19281pt>
+ <selectores3.png, id=1061, 760.34062pt x 386.19281pt>
 File: selectores3.png Graphic file (type png)
 
 <use selectores3.png>
-Package pdftex.def Info: selectores3.png used on input line 2434.
+Package pdftex.def Info: selectores3.png used on input line 2493.
 (pdftex.def)             Requested size: 469.75502pt x 238.60617pt.
- [45] [46 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores1.png> <F:/Os
+ [46] [47 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores1.png> <F:/Os
 car/repos/lenguajes_marcas/_build/latex/selectores2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2447--2448
+Underfull \hbox (badness 10000) in paragraph at lines 2506--2507
 []\T1/ptm/m/n/10 Ahora sí ve-re-mos que al-go cam-bia, en con-cre-to los ul-ti-
 mos \T1/pcr/m/n/10 <span> \T1/ptm/m/n/10 que lle-van el
  []
 
-<selectores4.png, id=1064, 743.77875pt x 377.91188pt>
+<selectores4.png, id=1075, 743.77875pt x 377.91188pt>
 File: selectores4.png Graphic file (type png)
  <use selectores4.png>
-Package pdftex.def Info: selectores4.png used on input line 2458.
+Package pdftex.def Info: selectores4.png used on input line 2517.
 (pdftex.def)             Requested size: 469.75502pt x 238.68546pt.
 
-[47 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores3.png>]
+[48 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores3.png>]
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 2504.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 2563.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 2504.
- [48 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores4.png>]
-<bs1.png, id=1079, 710.655pt x 76.03406pt>
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 2563.
+ [49 <F:/Oscar/repos/lenguajes_marcas/_build/latex/selectores4.png>]
+<bs1.png, id=1091, 710.655pt x 76.03406pt>
 File: bs1.png Graphic file (type png)
  <use bs1.png>
-Package pdftex.def Info: bs1.png used on input line 2530.
+Package pdftex.def Info: bs1.png used on input line 2589.
 (pdftex.def)             Requested size: 469.75502pt x 50.2615pt.
 
-<bs2.png, id=1080, 284.56313pt x 125.71968pt>
+<bs2.png, id=1092, 284.56313pt x 125.71968pt>
 File: bs2.png Graphic file (type png)
  <use bs2.png>
-Package pdftex.def Info: bs2.png used on input line 2565.
+Package pdftex.def Info: bs2.png used on input line 2624.
 (pdftex.def)             Requested size: 284.56242pt x 125.71936pt.
- [49 <F:/Oscar/repos/lenguajes_marcas/_build/latex/bs1.png>] [50 <F:/Oscar/repo
-s/lenguajes_marcas/_build/latex/bs2.png>]
+ [50 <F:/Oscar/repos/lenguajes_marcas/_build/latex/bs1.png>] [51 <F:/Oscar/repo
+s/lenguajes_marcas/_build/latex/bs2.png>] [52
+
+]
 Cap\'{\i }tulo 4.
-[51
-
-] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
-Overfull \vbox (1.36993pt too high) detected at line 3364
+[53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
+Overfull \vbox (1.36993pt too high) detected at line 3423
  []
 
-[63]
-Overfull \vbox (0.88535pt too high) detected at line 3408
+[65]
+Overfull \vbox (0.88535pt too high) detected at line 3467
  []
 
-[64] [65] [66] [67] [68] [69] [70] [71] [72]
-Overfull \vbox (3.12766pt too high) detected at line 3977
+[66] [67] [68] [69] [70] [71] [72] [73] [74]
+Overfull \vbox (3.12766pt too high) detected at line 4036
  []
 
-[73] [74] [75] [76]
-Underfull \vbox (badness 10000) detected at line 4200
+[75] [76] [77] [78]
+Underfull \vbox (badness 10000) detected at line 4259
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4200
+Underfull \vbox (badness 10000) detected at line 4259
  []
 
-[77] [78]
+[79] [80]
 Cap\'{\i }tulo 5.
-[79
+[81
 
-] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93]
-[94]
-Overfull \vbox (1.82733pt too high) detected at line 5301
+] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
+[96]
+Overfull \vbox (1.82733pt too high) detected at line 5360
  []
 
-[95] [96] [97] [98] <tipos_xml_schema.png, id=1350, 649.42625pt x 730.73pt>
+[97] [98] [99] [100] <tipos_xml_schema.png, id=1365, 649.42625pt x 730.73pt>
 File: tipos_xml_schema.png Graphic file (type png)
 
 <use tipos_xml_schema.png>
-Package pdftex.def Info: tipos_xml_schema.png used on input line 5566.
+Package pdftex.def Info: tipos_xml_schema.png used on input line 5625.
 (pdftex.def)             Requested size: 469.75502pt x 528.5782pt.
- [99] [100 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tipos_xml_schema.png>]
- [101] [102] [103] [104] [105] [106] [107]
-Overfull \vbox (2.0267pt too high) detected at line 6075
+ [101] [102 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tipos_xml_schema.png>
+] [103] [104] [105] [106] [107] [108] [109]
+Overfull \vbox (2.0267pt too high) detected at line 6134
  []
 
-[108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119]
-[120]
-Underfull \vbox (badness 10000) detected at line 6910
+[110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121]
+[122]
+Underfull \vbox (badness 10000) detected at line 6969
  []
 
 
-Underfull \vbox (badness 10000) detected at line 6910
+Underfull \vbox (badness 10000) detected at line 6969
  []
 
-[121] [122]
+[123] [124]
 Cap\'{\i }tulo 6.
-[123
+[125
 
-] [124] [125] [126] [127] [128] [129]
-Underfull \vbox (badness 10000) detected at line 7441
+] [126] [127] [128] [129] [130] [131]
+Underfull \vbox (badness 10000) detected at line 7500
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7441
+Underfull \vbox (badness 10000) detected at line 7500
  []
 
-[130] [131] [132] [133] [134]
-Overfull \vbox (2.12764pt too high) detected at line 7751
+[132] [133] [134] [135] [136]
+Overfull \vbox (2.12764pt too high) detected at line 7810
  []
 
-[135] [136] [137] [138] [139] [140]
-Underfull \vbox (badness 10000) detected at line 8426
- []
-
-
-Underfull \vbox (badness 10000) detected at line 8426
- []
-
-[141]
-Underfull \vbox (badness 10000) detected at line 8426
+[137] [138] [139] [140] [141] [142]
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8426
- []
-
-[142]
-Underfull \vbox (badness 10000) detected at line 8426
- []
-
-
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 [143]
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 [144]
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 [145]
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8426
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
-[146] [147]
-Underfull \vbox (badness 10000) detected at line 8538
+[146]
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
 
-Underfull \vbox (badness 10000) detected at line 8538
+Underfull \vbox (badness 10000) detected at line 8485
  []
 
-[148] [149] [150] [151] [152
+[147]
+Underfull \vbox (badness 10000) detected at line 8485
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8485
+ []
+
+[148] [149]
+Underfull \vbox (badness 10000) detected at line 8597
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8597
+ []
+
+[150] [151] [152] [153] [154
 
 ]
 Cap\'{\i }tulo 7.
-[153] [154] [155]
-Overfull \vbox (0.82733pt too high) detected at line 8898
+[155] [156] [157]
+Overfull \vbox (0.82733pt too high) detected at line 8957
  []
 
-[156] [157] <estilo-xml.png, id=1703, 453.19313pt x 195.73125pt>
+[158] [159] <estilo-xml.png, id=1717, 453.19313pt x 195.73125pt>
 File: estilo-xml.png Graphic file (type png)
 
 <use estilo-xml.png>
-Package pdftex.def Info: estilo-xml.png used on input line 8981.
+Package pdftex.def Info: estilo-xml.png used on input line 9040.
 (pdftex.def)             Requested size: 226.59601pt x 97.86537pt.
- <estilo-xml2.png, id=1704, 748.29562pt x 101.62968pt>
+ <estilo-xml2.png, id=1718, 748.29562pt x 101.62968pt>
 File: estilo-xml2.png Graphic file (type png)
 
 <use estilo-xml2.png>
-Package pdftex.def Info: estilo-xml2.png used on input line 8988.
+Package pdftex.def Info: estilo-xml2.png used on input line 9047.
 (pdftex.def)             Requested size: 374.1469pt x 50.81471pt.
 
-Overfull \vbox (2.13757pt too high) detected at line 9018
+Overfull \vbox (2.13757pt too high) detected at line 9077
  []
 
-[158 <F:/Oscar/repos/lenguajes_marcas/_build/latex/estilo-xml.png> <F:/Oscar/re
-pos/lenguajes_marcas/_build/latex/estilo-xml2.png>] [159] [160]
-Overfull \vbox (1.12764pt too high) detected at line 9196
+[160 <F:/Oscar/repos/lenguajes_marcas/_build/latex/estilo-xml.png> <F:/Oscar/re
+pos/lenguajes_marcas/_build/latex/estilo-xml2.png>] [161] [162]
+Overfull \vbox (1.12764pt too high) detected at line 9255
  []
 
-[161] [162] [163] [164] [165]
-<ejercicio1xslpaso1.png, id=1749, 209.28188pt x 35.38219pt>
+[163] [164] [165] [166] [167]
+<ejercicio1xslpaso1.png, id=1763, 209.28188pt x 35.38219pt>
 File: ejercicio1xslpaso1.png Graphic file (type png)
 
 <use ejercicio1xslpaso1.png>
-Package pdftex.def Info: ejercicio1xslpaso1.png used on input line 9505.
+Package pdftex.def Info: ejercicio1xslpaso1.png used on input line 9564.
 (pdftex.def)             Requested size: 209.28134pt x 35.3821pt.
- [166]
-<ejercicio1xslpaso2.png, id=1755, 216.81pt x 201.00093pt>
+ [168]
+<ejercicio1xslpaso2.png, id=1769, 216.81pt x 201.00093pt>
 File: ejercicio1xslpaso2.png Graphic file (type png)
 
 <use ejercicio1xslpaso2.png>
-Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 9537.
+Package pdftex.def Info: ejercicio1xslpaso2.png used on input line 9596.
 (pdftex.def)             Requested size: 216.80946pt x 201.00043pt.
- [167 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso1.png> <F:
+ [169 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso1.png> <F:
 /Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso2.png>] <ejercicio1
-xslpaso3.png, id=1762, 224.33812pt x 155.07938pt>
+xslpaso3.png, id=1777, 224.33812pt x 155.07938pt>
 File: ejercicio1xslpaso3.png Graphic file (type png)
 
 <use ejercicio1xslpaso3.png>
-Package pdftex.def Info: ejercicio1xslpaso3.png used on input line 9574.
+Package pdftex.def Info: ejercicio1xslpaso3.png used on input line 9633.
 (pdftex.def)             Requested size: 224.33757pt x 155.07898pt.
- [168 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso3.png>]
-<ejercicio1xslpaso4.png, id=1768, 228.855pt x 188.20313pt>
+ [170 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso3.png>]
+<ejercicio1xslpaso4.png, id=1783, 228.855pt x 188.20313pt>
 File: ejercicio1xslpaso4.png Graphic file (type png)
 
 <use ejercicio1xslpaso4.png>
-Package pdftex.def Info: ejercicio1xslpaso4.png used on input line 9622.
+Package pdftex.def Info: ejercicio1xslpaso4.png used on input line 9681.
 (pdftex.def)             Requested size: 228.85443pt x 188.20265pt.
- [169 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso4.png>]
+ [171 <F:/Oscar/repos/lenguajes_marcas/_build/latex/ejercicio1xslpaso4.png>]
+<tabla_tras_xslt1.png, id=1790, 307.90031pt x 153.57375pt>
+File: tabla_tras_xslt1.png Graphic file (type png)
 
-LaTeX Warning: File `{tabla_tras_xslt1}.png' not found on input line 9680.
-
-
-LaTeX Warning: File `{tabla_tras_xslt1}.png' not found on input line 9680.
-
-
-! Package pdftex.def Error: File `tabla_tras_xslt1.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9680 ...phics[scale=0.5]{{tabla_tras_xslt1}.png}
-                                                  \hspace*{\fill}}
-? 
-[170] <xsl1.png, id=1781, 158.84344pt x 158.09062pt>
+<use tabla_tras_xslt1.png>
+Package pdftex.def Info: tabla_tras_xslt1.png used on input line 9739.
+(pdftex.def)             Requested size: 153.94977pt x 76.78668pt.
+ [172 <F:/Oscar/repos/lenguajes_marcas/_build/latex/tabla_tras_xslt1.png (PNG c
+opy)>]
+<xsl1.png, id=1796, 158.84344pt x 158.09062pt>
 File: xsl1.png Graphic file (type png)
  <use xsl1.png>
-Package pdftex.def Info: xsl1.png used on input line 9768.
+Package pdftex.def Info: xsl1.png used on input line 9827.
 (pdftex.def)             Requested size: 158.84305pt x 158.09023pt.
- [171]
-[172 <F:/Oscar/repos/lenguajes_marcas/_build/latex/xsl1.png>] [173] [174]
+ [173] [174 <F:/Oscar/repos/lenguajes_marcas/_build/latex/xsl1.png>] [175] [176
+]
 Cap\'{\i }tulo 8.
-[175
+[177
 
-] [176] [177] [178]
+] [178] [179] [180]
 Cap\'{\i }tulo 9.
-<foto_01.png, id=1834, 413.545pt x 260.975pt>
+<foto_01.png, id=1849, 413.545pt x 260.975pt>
 File: foto_01.png Graphic file (type png)
  <use foto_01.png>
-Package pdftex.def Info: foto_01.png used on input line 10094.
+Package pdftex.def Info: foto_01.png used on input line 10153.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [179
+ [181
 
  <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_01.png>]
-Underfull \vbox (badness 10000) detected at line 10171
+Underfull \vbox (badness 10000) detected at line 10230
  []
 
 
-Underfull \vbox (badness 10000) detected at line 10171
+Underfull \vbox (badness 10000) detected at line 10230
  []
 
-[180] <foto_02.png, id=1844, 413.545pt x 260.975pt>
+[182] <foto_02.png, id=1860, 413.545pt x 260.975pt>
 File: foto_02.png Graphic file (type png)
  <use foto_02.png>
-Package pdftex.def Info: foto_02.png used on input line 10178.
+Package pdftex.def Info: foto_02.png used on input line 10237.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 10245
+Overfull \vbox (0.57846pt too high) detected at line 10304
  []
 
-[181 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_02.png>]
-<foto_03.png, id=1851, 413.545pt x 260.975pt>
+[183 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_02.png>]
+<foto_03.png, id=1866, 413.545pt x 260.975pt>
 File: foto_03.png Graphic file (type png)
  <use foto_03.png>
-Package pdftex.def Info: foto_03.png used on input line 10252.
+Package pdftex.def Info: foto_03.png used on input line 10311.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [182 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_03.png>]
-<foto_04.png, id=1857, 413.545pt x 260.975pt>
+ [184 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_03.png>]
+<foto_04.png, id=1872, 413.545pt x 260.975pt>
 File: foto_04.png Graphic file (type png)
  <use foto_04.png>
-Package pdftex.def Info: foto_04.png used on input line 10315.
+Package pdftex.def Info: foto_04.png used on input line 10374.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [183]
-Overfull \vbox (1.15617pt too high) detected at line 10432
+ [185]
+Overfull \vbox (1.15617pt too high) detected at line 10491
  []
 
-[184 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_04.png>]
-Underfull \vbox (badness 10000) detected at line 10432
+[186 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_04.png>]
+Underfull \vbox (badness 10000) detected at line 10491
  []
 
 
-Underfull \vbox (badness 10000) detected at line 10432
+Underfull \vbox (badness 10000) detected at line 10491
  []
 
-[185] <foto_05.png, id=1871, 413.545pt x 260.975pt>
+[187] <foto_05.png, id=1887, 413.545pt x 260.975pt>
 File: foto_05.png Graphic file (type png)
  <use foto_05.png>
-Package pdftex.def Info: foto_05.png used on input line 10439.
+Package pdftex.def Info: foto_05.png used on input line 10498.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 10529
+Overfull \vbox (0.57846pt too high) detected at line 10588
  []
 
-[186 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_05.png>]
-Underfull \vbox (badness 10000) detected at line 10529
+[188 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_05.png>]
+Underfull \vbox (badness 10000) detected at line 10588
  []
 
 
-Underfull \vbox (badness 10000) detected at line 10529
+Underfull \vbox (badness 10000) detected at line 10588
  []
 
-[187] <foto_06.png, id=1882, 413.545pt x 260.975pt>
+[189] <foto_06.png, id=1897, 413.545pt x 260.975pt>
 File: foto_06.png Graphic file (type png)
  <use foto_06.png>
-Package pdftex.def Info: foto_06.png used on input line 10536.
+Package pdftex.def Info: foto_06.png used on input line 10595.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 10596
+Overfull \vbox (0.57846pt too high) detected at line 10655
  []
 
-[188 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_06.png>]
-<foto_07.png, id=1888, 413.545pt x 260.975pt>
+[190 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_06.png>]
+<foto_07.png, id=1903, 413.545pt x 260.975pt>
 File: foto_07.png Graphic file (type png)
  <use foto_07.png>
-Package pdftex.def Info: foto_07.png used on input line 10603.
+Package pdftex.def Info: foto_07.png used on input line 10662.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 10666
+Overfull \vbox (0.57846pt too high) detected at line 10725
  []
 
-[189 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_07.png>]
-<foto_08.png, id=1894, 413.545pt x 260.975pt>
+[191 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_07.png>]
+<foto_08.png, id=1909, 413.545pt x 260.975pt>
 File: foto_08.png Graphic file (type png)
  <use foto_08.png>
-Package pdftex.def Info: foto_08.png used on input line 10673.
+Package pdftex.def Info: foto_08.png used on input line 10732.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [190]
-Overfull \vbox (1.15617pt too high) detected at line 10752
+ [192]
+Overfull \vbox (1.15617pt too high) detected at line 10811
  []
 
-[191 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_08.png>]
-<foto_09.png, id=1904, 413.545pt x 260.975pt>
+[193 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_08.png>]
+<foto_09.png, id=1920, 413.545pt x 260.975pt>
 File: foto_09.png Graphic file (type png)
  <use foto_09.png>
-Package pdftex.def Info: foto_09.png used on input line 10759.
+Package pdftex.def Info: foto_09.png used on input line 10818.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 10799
+Overfull \vbox (0.57846pt too high) detected at line 10858
  []
 
-[192 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_09.png>]
-<foto_10.png, id=1910, 413.545pt x 260.975pt>
+[194 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_09.png>]
+<foto_10.png, id=1926, 413.545pt x 260.975pt>
 File: foto_10.png Graphic file (type png)
  <use foto_10.png>
-Package pdftex.def Info: foto_10.png used on input line 10806.
+Package pdftex.def Info: foto_10.png used on input line 10865.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [193 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_10.png>]
-Underfull \vbox (badness 10000) detected at line 10913
+ [195 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_10.png>]
+Underfull \vbox (badness 10000) detected at line 10972
  []
 
 
-Underfull \vbox (badness 10000) detected at line 10913
+Underfull \vbox (badness 10000) detected at line 10972
  []
 
-[194] <foto_11.png, id=1921, 413.545pt x 260.975pt>
+[196] <foto_11.png, id=1936, 413.545pt x 260.975pt>
 File: foto_11.png Graphic file (type png)
  <use foto_11.png>
-Package pdftex.def Info: foto_11.png used on input line 10920.
+Package pdftex.def Info: foto_11.png used on input line 10979.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [195]
-Overfull \vbox (1.15617pt too high) detected at line 10995
+ [197]
+Overfull \vbox (1.15617pt too high) detected at line 11054
  []
 
-[196 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_11.png>]
-<foto_12.png, id=1931, 413.545pt x 260.975pt>
+[198 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_11.png>]
+<foto_12.png, id=1946, 413.545pt x 260.975pt>
 File: foto_12.png Graphic file (type png)
  <use foto_12.png>
-Package pdftex.def Info: foto_12.png used on input line 11002.
+Package pdftex.def Info: foto_12.png used on input line 11061.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 11031
+Overfull \vbox (0.57846pt too high) detected at line 11090
  []
 
-[197 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_12.png>]
-<foto_13.png, id=1937, 413.545pt x 260.975pt>
+[199 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_12.png>]
+<foto_13.png, id=1953, 413.545pt x 260.975pt>
 File: foto_13.png Graphic file (type png)
  <use foto_13.png>
-Package pdftex.def Info: foto_13.png used on input line 11038.
+Package pdftex.def Info: foto_13.png used on input line 11097.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 11102
+Overfull \vbox (0.57846pt too high) detected at line 11161
  []
 
-[198 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_13.png>]
-<foto_14.png, id=1943, 413.545pt x 260.975pt>
+[200 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_13.png>]
+<foto_14.png, id=1959, 413.545pt x 260.975pt>
 File: foto_14.png Graphic file (type png)
  <use foto_14.png>
-Package pdftex.def Info: foto_14.png used on input line 11109.
+Package pdftex.def Info: foto_14.png used on input line 11168.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [199]
-Overfull \vbox (1.15617pt too high) detected at line 11157
+ [201]
+Overfull \vbox (1.15617pt too high) detected at line 11216
  []
 
-[200 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_14.png>]
-<foto_15.png, id=1954, 413.545pt x 260.975pt>
+[202 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_14.png>]
+<foto_15.png, id=1969, 413.545pt x 260.975pt>
 File: foto_15.png Graphic file (type png)
  <use foto_15.png>
-Package pdftex.def Info: foto_15.png used on input line 11164.
+Package pdftex.def Info: foto_15.png used on input line 11223.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-<foto_16.png, id=1955, 413.545pt x 260.975pt>
+<foto_16.png, id=1970, 413.545pt x 260.975pt>
 File: foto_16.png Graphic file (type png)
  <use foto_16.png>
-Package pdftex.def Info: foto_16.png used on input line 11198.
+Package pdftex.def Info: foto_16.png used on input line 11257.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [201 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_15.png>]
-Overfull \vbox (1.15617pt too high) detected at line 11252
+ [203 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_15.png>]
+Overfull \vbox (1.15617pt too high) detected at line 11311
  []
 
-[202 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_16.png>]
-<foto_17.png, id=1966, 413.545pt x 260.975pt>
+[204 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_16.png>]
+<foto_17.png, id=1981, 413.545pt x 260.975pt>
 File: foto_17.png Graphic file (type png)
  <use foto_17.png>
-Package pdftex.def Info: foto_17.png used on input line 11259.
+Package pdftex.def Info: foto_17.png used on input line 11318.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 11301
+Overfull \vbox (0.57846pt too high) detected at line 11360
  []
 
-[203 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_17.png>]
-<foto_18.png, id=1972, 413.545pt x 260.975pt>
+[205 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_17.png>]
+<foto_18.png, id=1988, 413.545pt x 260.975pt>
 File: foto_18.png Graphic file (type png)
  <use foto_18.png>
-Package pdftex.def Info: foto_18.png used on input line 11308.
+Package pdftex.def Info: foto_18.png used on input line 11367.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
 
-Overfull \vbox (0.57846pt too high) detected at line 11340
+Overfull \vbox (0.57846pt too high) detected at line 11399
  []
 
-[204 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_18.png>]
-<foto_19.png, id=1978, 413.545pt x 260.975pt>
+[206 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_18.png>]
+<foto_19.png, id=1994, 413.545pt x 260.975pt>
 File: foto_19.png Graphic file (type png)
  <use foto_19.png>
-Package pdftex.def Info: foto_19.png used on input line 11347.
+Package pdftex.def Info: foto_19.png used on input line 11406.
 (pdftex.def)             Requested size: 248.1289pt x 156.5862pt.
- [205 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_19.png>] [206
+ [207 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_19.png>] [208
 
 ]
 Cap\'{\i }tulo 10.
-<foto_formulario_01.png, id=1989, 473.77pt x 622.325pt>
+<foto_formulario_01.png, id=2004, 473.77pt x 622.325pt>
 File: foto_formulario_01.png Graphic file (type png)
 
 <use foto_formulario_01.png>
-Package pdftex.def Info: foto_formulario_01.png used on input line 11393.
+Package pdftex.def Info: foto_formulario_01.png used on input line 11452.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [207]
-<foto_formulario_02.png, id=1994, 473.77pt x 622.325pt>
+ [209]
+<foto_formulario_02.png, id=2009, 473.77pt x 622.325pt>
 File: foto_formulario_02.png Graphic file (type png)
 
 <use foto_formulario_02.png>
-Package pdftex.def Info: foto_formulario_02.png used on input line 11422.
+Package pdftex.def Info: foto_formulario_02.png used on input line 11481.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [208 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_01.png>]
-<foto_formulario_03.png, id=1999, 473.77pt x 622.325pt>
+ [210 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_01.png>]
+<foto_formulario_03.png, id=2014, 473.77pt x 622.325pt>
 File: foto_formulario_03.png Graphic file (type png)
 
 <use foto_formulario_03.png>
-Package pdftex.def Info: foto_formulario_03.png used on input line 11452.
+Package pdftex.def Info: foto_formulario_03.png used on input line 11511.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [209 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_02.png>]
-<foto_formulario_04.png, id=2004, 473.77pt x 622.325pt>
+ [211 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_02.png>]
+<foto_formulario_04.png, id=2020, 473.77pt x 622.325pt>
 File: foto_formulario_04.png Graphic file (type png)
 
 <use foto_formulario_04.png>
-Package pdftex.def Info: foto_formulario_04.png used on input line 11477.
+Package pdftex.def Info: foto_formulario_04.png used on input line 11536.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [210 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_03.png>] [2
-11 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_04.png>] <foto
-_formulario_05.png, id=2014, 473.77pt x 622.325pt>
+ [212 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_03.png>] [2
+13 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_04.png>] <foto
+_formulario_05.png, id=2029, 473.77pt x 622.325pt>
 File: foto_formulario_05.png Graphic file (type png)
 
 <use foto_formulario_05.png>
-Package pdftex.def Info: foto_formulario_05.png used on input line 11514.
+Package pdftex.def Info: foto_formulario_05.png used on input line 11573.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
 
-Overfull \vbox (1.13277pt too high) detected at line 11547
+Overfull \vbox (1.13277pt too high) detected at line 11606
  []
 
-[212 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_05.png>]
-<foto_formulario_06.png, id=2019, 473.77pt x 622.325pt>
+[214 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_05.png>]
+<foto_formulario_06.png, id=2034, 473.77pt x 622.325pt>
 File: foto_formulario_06.png Graphic file (type png)
 
 <use foto_formulario_06.png>
-Package pdftex.def Info: foto_formulario_06.png used on input line 11568.
+Package pdftex.def Info: foto_formulario_06.png used on input line 11627.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [213] [214 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_06.pn
+ [215] [216 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_06.pn
 g>]
-<foto_formulario_07.png, id=2028, 473.77pt x 622.325pt>
+<foto_formulario_07.png, id=2043, 473.77pt x 622.325pt>
 File: foto_formulario_07.png Graphic file (type png)
 
 <use foto_formulario_07.png>
-Package pdftex.def Info: foto_formulario_07.png used on input line 11621.
+Package pdftex.def Info: foto_formulario_07.png used on input line 11680.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [215] [216 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_07.pn
+ [217] [218 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_07.pn
 g>]
-<foto_formulario_08.png, id=2037, 473.77pt x 622.325pt>
+<foto_formulario_08.png, id=2053, 473.77pt x 622.325pt>
 File: foto_formulario_08.png Graphic file (type png)
 
 <use foto_formulario_08.png>
-Package pdftex.def Info: foto_formulario_08.png used on input line 11676.
+Package pdftex.def Info: foto_formulario_08.png used on input line 11735.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [217] [218 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_08.pn
+ [219] [220 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_08.pn
 g>]
-<foto_formulario_09.png, id=2047, 473.77pt x 622.325pt>
+<foto_formulario_09.png, id=2062, 473.77pt x 622.325pt>
 File: foto_formulario_09.png Graphic file (type png)
 
 <use foto_formulario_09.png>
-Package pdftex.def Info: foto_formulario_09.png used on input line 11717.
+Package pdftex.def Info: foto_formulario_09.png used on input line 11776.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [219 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_09.png>]
-<foto_formulario_10.png, id=2052, 473.77pt x 622.325pt>
+ [221 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_09.png>]
+<foto_formulario_10.png, id=2067, 473.77pt x 622.325pt>
 File: foto_formulario_10.png Graphic file (type png)
 
 <use foto_formulario_10.png>
-Package pdftex.def Info: foto_formulario_10.png used on input line 11769.
+Package pdftex.def Info: foto_formulario_10.png used on input line 11828.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [220] [221 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_10.pn
+ [222] [223 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_10.pn
 g>]
-<foto_formulario_11.png, id=2061, 473.77pt x 622.325pt>
+<foto_formulario_11.png, id=2077, 473.77pt x 622.325pt>
 File: foto_formulario_11.png Graphic file (type png)
 
 <use foto_formulario_11.png>
-Package pdftex.def Info: foto_formulario_11.png used on input line 11838.
+Package pdftex.def Info: foto_formulario_11.png used on input line 11897.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [222] [223 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_11.pn
+ [224] [225 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_11.pn
 g>]
-<foto_formulario_12.png, id=2071, 473.77pt x 622.325pt>
+<foto_formulario_12.png, id=2086, 473.77pt x 622.325pt>
 File: foto_formulario_12.png Graphic file (type png)
 
 <use foto_formulario_12.png>
-Package pdftex.def Info: foto_formulario_12.png used on input line 11908.
+Package pdftex.def Info: foto_formulario_12.png used on input line 11967.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [224] [225 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_12.pn
+ [226] [227 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_12.pn
 g>]
-<foto_formulario_13.png, id=2080, 473.77pt x 622.325pt>
+<foto_formulario_13.png, id=2095, 473.77pt x 622.325pt>
 File: foto_formulario_13.png Graphic file (type png)
 
 <use foto_formulario_13.png>
-Package pdftex.def Info: foto_formulario_13.png used on input line 11989.
+Package pdftex.def Info: foto_formulario_13.png used on input line 12048.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [226] [227 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_13.pn
+ [228] [229 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_13.pn
 g>]
-Underfull \hbox (badness 5756) in paragraph at lines 12039--12040
+Underfull \hbox (badness 5756) in paragraph at lines 12098--12099
 []\T1/ptm/m/n/10 Contiene los si-guien-tes \T1/pcr/m/n/10 radiobuttons\T1/ptm/m
 /n/10 :radio con el \T1/pcr/m/n/10 name \T1/ptm/m/n/10 me-dio_transporte , \T
 1/pcr/m/n/10 value \T1/ptm/m/n/10 me-
  []
 
-<foto_formulario_14.png, id=2089, 473.77pt x 622.325pt>
+<foto_formulario_14.png, id=2105, 473.77pt x 622.325pt>
 File: foto_formulario_14.png Graphic file (type png)
 
 <use foto_formulario_14.png>
-Package pdftex.def Info: foto_formulario_14.png used on input line 12052.
+Package pdftex.def Info: foto_formulario_14.png used on input line 12111.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [228] [229 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_14.pn
+ [230] [231 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_14.pn
 g>]
-<foto_formulario_15.png, id=2099, 473.77pt x 622.325pt>
+<foto_formulario_15.png, id=2114, 473.77pt x 622.325pt>
 File: foto_formulario_15.png Graphic file (type png)
 
 <use foto_formulario_15.png>
-Package pdftex.def Info: foto_formulario_15.png used on input line 12104.
+Package pdftex.def Info: foto_formulario_15.png used on input line 12163.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [230] [231 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_15.pn
+ [232] [233 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_15.pn
 g>]
-<foto_formulario_16.png, id=2108, 473.77pt x 622.325pt>
+<foto_formulario_16.png, id=2123, 473.77pt x 622.325pt>
 File: foto_formulario_16.png Graphic file (type png)
 
 <use foto_formulario_16.png>
-Package pdftex.def Info: foto_formulario_16.png used on input line 12159.
+Package pdftex.def Info: foto_formulario_16.png used on input line 12218.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [232]
-<foto_formulario_17.png, id=2113, 473.77pt x 622.325pt>
+ [234]
+<foto_formulario_17.png, id=2128, 473.77pt x 622.325pt>
 File: foto_formulario_17.png Graphic file (type png)
 
 <use foto_formulario_17.png>
-Package pdftex.def Info: foto_formulario_17.png used on input line 12191.
+Package pdftex.def Info: foto_formulario_17.png used on input line 12250.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [233 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_16.png>] [2
-34 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_17.png>] <foto
-_formulario_18.png, id=2122, 473.77pt x 622.325pt>
+ [235 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_16.png>] [2
+36 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_17.png>] <foto
+_formulario_18.png, id=2138, 473.77pt x 622.325pt>
 File: foto_formulario_18.png Graphic file (type png)
 
 <use foto_formulario_18.png>
-Package pdftex.def Info: foto_formulario_18.png used on input line 12231.
+Package pdftex.def Info: foto_formulario_18.png used on input line 12290.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
 
-Overfull \vbox (1.13277pt too high) detected at line 12265
+Overfull \vbox (1.13277pt too high) detected at line 12324
  []
 
-[235 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_18.png>]
-<foto_formulario_19.png, id=2128, 473.77pt x 622.325pt>
+[237 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_18.png>]
+<foto_formulario_19.png, id=2143, 473.77pt x 622.325pt>
 File: foto_formulario_19.png Graphic file (type png)
 
 <use foto_formulario_19.png>
-Package pdftex.def Info: foto_formulario_19.png used on input line 12295.
+Package pdftex.def Info: foto_formulario_19.png used on input line 12354.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [236] [237 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_19.pn
+ [238] [239 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_19.pn
 g>]
-<foto_formulario_20.png, id=2137, 473.77pt x 622.325pt>
+<foto_formulario_20.png, id=2152, 473.77pt x 622.325pt>
 File: foto_formulario_20.png Graphic file (type png)
 
 <use foto_formulario_20.png>
-Package pdftex.def Info: foto_formulario_20.png used on input line 12352.
+Package pdftex.def Info: foto_formulario_20.png used on input line 12411.
 (pdftex.def)             Requested size: 284.26419pt x 373.39787pt.
- [238] [239 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_20.pn
-g>] [240
+ [240] [241 <F:/Oscar/repos/lenguajes_marcas/_build/latex/foto_formulario_20.pn
+g>] [242
 
 ]
 Cap\'{\i }tulo 11.
+<lista_punteada.png, id=2166, 464.4853pt x 298.86656pt>
+File: lista_punteada.png Graphic file (type png)
 
-LaTeX Warning: File `{lista_punteada}.png' not found on input line 12400.
+<use lista_punteada.png>
+Package pdftex.def Info: lista_punteada.png used on input line 12459.
+(pdftex.def)             Requested size: 232.24208pt x 149.4329pt.
+ [243] [244 <F:/Oscar/repos/lenguajes_marcas/_build/latex/lista_punteada.png (P
+NG copy)>]
+<xslt_tabla_edificio_aula.png, id=2175, 363.60844pt x 322.20375pt>
+File: xslt_tabla_edificio_aula.png Graphic file (type png)
 
+<use xslt_tabla_edificio_aula.png>
+Package pdftex.def Info: xslt_tabla_edificio_aula.png used on input line 12544.
 
-LaTeX Warning: File `{lista_punteada}.png' not found on input line 12400.
+(pdftex.def)             Requested size: 181.80377pt x 161.10147pt.
+ [245 <F:/Oscar/repos/lenguajes_marcas/_build/latex/xslt_tabla_edificio_aula.pn
+g (PNG copy)>]
+<xslt_tabla_edificio_separadas.png, id=2180, 246.1697pt x 344.78813pt>
+File: xslt_tabla_edificio_separadas.png Graphic file (type png)
 
-
-! Package pdftex.def Error: File `lista_punteada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12400 ...aphics[scale=0.5]{{lista_punteada}.png}
-                                                  \hspace*{\fill}}
-? 
-[241] [242]
-
-LaTeX Warning: File `{xslt_tabla_edificio_aula}.png' not found on input line 12
-485.
-
-
-LaTeX Warning: File `{xslt_tabla_edificio_aula}.png' not found on input line 12
-485.
-
-
-! Package pdftex.def Error: File `xslt_tabla_edificio_aula.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12485 ...le=0.5]{{xslt_tabla_edificio_aula}.png}
-                                                  \hspace*{\fill}}
-? 
-[243]
-
-LaTeX Warning: File `{xslt_tabla_edificio_separadas}.png' not found on input li
-ne 12526.
-
-
-LaTeX Warning: File `{xslt_tabla_edificio_separadas}.png' not found on input li
-ne 12526.
-
-
-! Package pdftex.def Error: File `xslt_tabla_edificio_separadas.png' not found.
-
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12526 ...5]{{xslt_tabla_edificio_separadas}.png}
-                                                  \hspace*{\fill}}
-? 
-[244] [245] [246] [247] [248] [249] [250] [251] [252] [253] [254]
-Overfull \vbox (1.56996pt too high) detected at line 13313
- []
-
-[255] [256] [257]
+<use xslt_tabla_edificio_separadas.png>
+Package pdftex.def Info: xslt_tabla_edificio_separadas.png used on input line 1
+2585.
+(pdftex.def)             Requested size: 123.08453pt x 172.39363pt.
+ [246 <F:/Oscar/repos/lenguajes_marcas/_build/latex/xslt_tabla_edificio_separad
+as.png (PNG copy)>] [247] [248] [249]
+[250] [251] [252] [253] [254] [255] [256] [257] [258] [259] [260]
 No file ApuntesDeLenguajesDeMarcas.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 13406.
-[258]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 13406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 13465.
+[261]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 13465.
 
 (F:\Oscar\repos\lenguajes_marcas\_build\latex\ApuntesDeLenguajesDeMarcas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 13406.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 13465.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 13406
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 13465
 .
 Package rerunfilecheck Info: File `ApuntesDeLenguajesDeMarcas.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: B5AB0B69F08685C56B3B7A53ED4483D6;21035.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 13406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 13465.
  ) 
 Here is how much of TeX's memory you used:
- 15075 strings out of 493921
- 214490 string characters out of 3144867
- 1267271 words of memory out of 3000000
- 17285 multiletter control sequences out of 15000+200000
+ 15112 strings out of 493921
+ 215363 string characters out of 3144867
+ 1267531 words of memory out of 3000000
+ 17315 multiletter control sequences out of 15000+200000
  62946 words of font info for 83 fonts, out of 3000000 for 9000
  842 hyphenation exceptions out of 8191
- 37i,12n,48p,1075b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,12n,49p,1075b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
@@ -1966,9 +1929,9 @@ elvetic/uhvbo8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic
 /uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ApuntesDeLenguajesDeMarcas.pdf (264 pages, 2302495 bytes).
+Output written on ApuntesDeLenguajesDeMarcas.pdf (267 pages, 2435091 bytes).
 PDF statistics:
- 2435 PDF objects out of 2487 (max. 8388607)
- 706 named destinations out of 1000 (max. 500000)
- 1539 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2459 PDF objects out of 2487 (max. 8388607)
+ 711 named destinations out of 1000 (max. 500000)
+ 1574 words of extra memory for PDF output out of 10000 (max. 10000000)
 
