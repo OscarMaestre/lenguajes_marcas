@@ -601,6 +601,14 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
    Tabla de 5 x 5 
 
 
+Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:
+
+.. figure:: ejemplos/tema3_css/ejemplos_grid/resultado_5_por_5.png
+   :figwidth: 50%
+   :align: center
+   
+   Tabla de 5 x 5 
+
 
 
 
