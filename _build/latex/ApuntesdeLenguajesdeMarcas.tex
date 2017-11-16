@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -2282,6 +2282,77 @@ Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de ma
 \noindent\sphinxincludegraphics{{resultado_5_por_5}.png}
 \caption{Tabla de 5 x 5}\label{\detokenize{tema3:id12}}\end{figure}
 
+Analizando lo que se pide se observa que:
+\begin{itemize}
+\item {} 
+La «rejilla invisible» ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)
+
+\item {} 
+La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 \sphinxstylestrong{que sabemos que no existe, sino que es el límite de la tabla}.
+
+\item {} 
+La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.
+
+\item {} 
+La celda C va de la fila 1 a la 6 y está solo en la columna 1.
+
+\item {} 
+La D va de la fila 3 a la 6 y solo ocupa la 5.
+
+\item {} 
+La E va de la fila 1 a la 3 y de la columna 2 a la 4.
+
+\item {} 
+La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.
+
+\end{itemize}
+
+Además añadiremos algún color a tales «celdas» para que podamos ver el área que ocupan.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{contenedor}\PYG{p}{\PYGZob{}}
+    \PYG{k}{display}\PYG{p}{:} \PYG{k}{grid}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}template\PYGZhy{}rows}\PYG{p}{:} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}template\PYGZhy{}columns}\PYG{p}{:} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{k}{height}\PYG{p}{:}\PYG{l+m+mi}{640}\PYG{k+kt}{px}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{.}\PYG{n+nc}{celda}\PYG{p}{\PYGZob{}}
+    \PYG{k}{border}\PYG{p}{:} \PYG{k+kc}{solid} \PYG{k+kc}{black} \PYG{l+m+mi}{1}\PYG{k+kt}{px}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{a}\PYG{p}{\PYGZob{}}
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:} \PYG{l+m+mi}{4}\PYG{o}{/}\PYG{l+m+mi}{6}\PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{b}\PYG{p}{\PYGZob{}}
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:}  \PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column} \PYG{p}{:} \PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{5}   \PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{210}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{c}\PYG{p}{\PYGZob{}}
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:}  \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{6}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column} \PYG{p}{:} \PYG{l+m+mi}{1}  \PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{210}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{d}\PYG{p}{\PYGZob{}}
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{6} \PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column} \PYG{p}{:}\PYG{l+m+mi}{5}   \PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{210}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{e}\PYG{p}{\PYGZob{}}
+
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:}  \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column} \PYG{p}{:} \PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{4}  \PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{210}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{f}\PYG{p}{\PYGZob{}}
+    \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:}  \PYG{l+m+mi}{4}\PYG{o}{/}\PYG{l+m+mi}{6}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}column} \PYG{p}{:} \PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{5}  \PYG{p}{;}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
 
 \section{Gestión de espacios}
 \label{\detokenize{tema3:gestion-de-espacios}}
@@ -4269,7 +4340,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -8712,7 +8783,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}

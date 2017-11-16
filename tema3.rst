@@ -609,6 +609,72 @@ Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de ma
    
    Tabla de 5 x 5 
 
+Analizando lo que se pide se observa que:
+
+* La "rejilla invisible" ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)
+
+* La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 **que sabemos que no existe, sino que es el límite de la tabla**.
+
+
+* La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.
+
+* La celda C va de la fila 1 a la 6 y está solo en la columna 1.
+
+* La D va de la fila 3 a la 6 y solo ocupa la 5.
+
+* La E va de la fila 1 a la 3 y de la columna 2 a la 4.
+
+* La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.
+
+Además añadiremos algún color a tales "celdas" para que podamos ver el área que ocupan.
+
+
+.. code-block:: css
+
+        #contenedor{
+            display: grid;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            width:100%;
+            height:640px;
+        }
+        .celda{
+            border: solid black 1px;
+        }
+        #a{
+            grid-row: 1/3;
+            grid-column: 4/6;
+            background-color: rgb(200, 200, 200);
+        }
+        #b{
+            grid-row:  3/4;
+            grid-column : 2/5   ;
+            background-color: rgb(210, 240, 200);
+        }
+        #c{
+            grid-row:  1/6;
+            grid-column : 1  ;
+            background-color: rgb(210, 220, 200);
+        }
+        #d{
+            grid-row: 3/6 ;
+            grid-column :5   ;
+            background-color: rgb(210, 230, 230);
+        }
+        #e{
+            
+            grid-row:  1/3;
+            grid-column : 2/4  ;
+            background-color: rgb(210, 240, 240);
+        }
+        #f{
+            grid-row:  4/6;
+            grid-column : 2/5  ;
+            background-color: rgb(240, 240, 240);
+        }
+
+
+
 
 
 

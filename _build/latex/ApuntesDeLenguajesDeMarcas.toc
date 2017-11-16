@@ -79,23 +79,23 @@
 \contentsline {subsection}{\numberline {3.4.10}Posicionamiento float}{42}{subsection.3.4.10}
 \contentsline {subsection}{\numberline {3.4.11}Ejercicio}{42}{subsection.3.4.11}
 \contentsline {section}{\numberline {3.5}Maquetaci\IeC {\'o}n avanzada con \sphinxstyleliteralintitle {grid-layouts}}{42}{section.3.5}
-\contentsline {section}{\numberline {3.6}Gesti\IeC {\'o}n de espacios}{44}{section.3.6}
-\contentsline {section}{\numberline {3.7}Colores}{44}{section.3.7}
-\contentsline {section}{\numberline {3.8}Tipograf\IeC {\'\i }as}{45}{section.3.8}
-\contentsline {section}{\numberline {3.9}Alineaci\IeC {\'o}n del texto}{45}{section.3.9}
-\contentsline {section}{\numberline {3.10}Decoraci\IeC {\'o}n del texto}{45}{section.3.10}
-\contentsline {section}{\numberline {3.11}Medidas}{45}{section.3.11}
-\contentsline {section}{\numberline {3.12}Selectores}{46}{section.3.12}
-\contentsline {subsection}{\numberline {3.12.1}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p\#destacado}}{47}{subsection.3.12.1}
-\contentsline {subsection}{\numberline {3.12.2}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado}}{47}{subsection.3.12.2}
-\contentsline {subsection}{\numberline {3.12.3}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado, span\#id1}}{47}{subsection.3.12.3}
-\contentsline {subsection}{\numberline {3.12.4}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado \textgreater {} li.elemento\_enumeracion}}{48}{subsection.3.12.4}
-\contentsline {subsection}{\numberline {3.12.5}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado \textgreater {} .elemento\_numeracion}}{48}{subsection.3.12.5}
-\contentsline {subsection}{\numberline {3.12.6}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {.destacado \textgreater {} \#id1}}{48}{subsection.3.12.6}
-\contentsline {section}{\numberline {3.13}Bootstrap}{48}{section.3.13}
-\contentsline {subsection}{\numberline {3.13.1}Estructura b\IeC {\'a}sica}{50}{subsection.3.13.1}
-\contentsline {subsection}{\numberline {3.13.2}Rejilla o \sphinxstyleemphasis {grid}}{50}{subsection.3.13.2}
-\contentsline {subsection}{\numberline {3.13.3}Tipograf\IeC {\'\i }a}{51}{subsection.3.13.3}
+\contentsline {section}{\numberline {3.6}Gesti\IeC {\'o}n de espacios}{45}{section.3.6}
+\contentsline {section}{\numberline {3.7}Colores}{45}{section.3.7}
+\contentsline {section}{\numberline {3.8}Tipograf\IeC {\'\i }as}{46}{section.3.8}
+\contentsline {section}{\numberline {3.9}Alineaci\IeC {\'o}n del texto}{46}{section.3.9}
+\contentsline {section}{\numberline {3.10}Decoraci\IeC {\'o}n del texto}{46}{section.3.10}
+\contentsline {section}{\numberline {3.11}Medidas}{46}{section.3.11}
+\contentsline {section}{\numberline {3.12}Selectores}{47}{section.3.12}
+\contentsline {subsection}{\numberline {3.12.1}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p\#destacado}}{48}{subsection.3.12.1}
+\contentsline {subsection}{\numberline {3.12.2}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado}}{48}{subsection.3.12.2}
+\contentsline {subsection}{\numberline {3.12.3}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado, span\#id1}}{49}{subsection.3.12.3}
+\contentsline {subsection}{\numberline {3.12.4}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado \textgreater {} li.elemento\_enumeracion}}{49}{subsection.3.12.4}
+\contentsline {subsection}{\numberline {3.12.5}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {p.destacado \textgreater {} .elemento\_numeracion}}{49}{subsection.3.12.5}
+\contentsline {subsection}{\numberline {3.12.6}Soluci\IeC {\'o}n \sphinxstyleliteralintitle {.destacado \textgreater {} \#id1}}{49}{subsection.3.12.6}
+\contentsline {section}{\numberline {3.13}Bootstrap}{51}{section.3.13}
+\contentsline {subsection}{\numberline {3.13.1}Estructura b\IeC {\'a}sica}{51}{subsection.3.13.1}
+\contentsline {subsection}{\numberline {3.13.2}Rejilla o \sphinxstyleemphasis {grid}}{51}{subsection.3.13.2}
+\contentsline {subsection}{\numberline {3.13.3}Tipograf\IeC {\'\i }a}{52}{subsection.3.13.3}
 \contentsline {chapter}{\numberline {4}Javascript}{53}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{53}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tipos de datos}{53}{section.4.2}
