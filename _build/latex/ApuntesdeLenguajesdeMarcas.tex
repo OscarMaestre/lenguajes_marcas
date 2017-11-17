@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{16 de noviembre de 2017}
+\date{17 de noviembre de 2017}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -2354,6 +2354,119 @@ Además añadiremos algún color a tales «celdas» para que podamos ver el áre
 \end{sphinxVerbatim}
 
 
+\section{Media queries}
+\label{\detokenize{tema3:media-queries}}
+Las \sphinxstyleemphasis{media queries} (algo así como «consultas sobre el tipo de medio en el que se va a mostrar/procesar el HTML») forman parte de CSS 3, por lo que solo deben utilizarse en navegadores relativamente modernos.
+
+Las media queries permiten hacer diversas comprobaciones. Si se cumplen dichas comprobaciones se ejecutará un CSS u otro. Por ejemplo, supongamos que queremos tener dos estructuras diferentes de página en función de si se va a mostrar el HTML en pantalla o en papel.
+
+Partamos del siguiente HTML:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja1\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Caja 1
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja2\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Caja 2
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja3\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Caja 3
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y ahora supongamos que cuando se muestra el HTML en pantalla queremos que tenga un color de fondo, pero que si se va a imprimir no tengan ningún fondo (para ahorrar tinta, por ejemplo). Sabiendo que existen dos tipos de medios llamados \sphinxcode{screen} y \sphinxcode{print} podemos usar un CSS como este:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{font\PYGZhy{}size}\PYG{p}{:} \PYG{k+kc}{xx\PYGZhy{}large}\PYG{p}{;}
+        \PYG{k}{border}\PYG{p}{:} \PYG{k+kc}{double} \PYG{k+kc}{black} \PYG{l+m+mi}{1}\PYG{k+kt}{px}\PYG{p}{;}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{grey}\PYG{p}{;}
+        \PYG{k}{margin}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{k+kt}{px}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{print} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{font\PYGZhy{}size}\PYG{p}{:} \PYG{k+kc}{small}\PYG{p}{;}
+        \PYG{k}{margin}\PYG{p}{:} \PYG{l+m+mi}{15}\PYG{k+kt}{px}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+Este CSS puede hacer dos cosas distintas:
+\begin{itemize}
+\item {} 
+Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.
+
+\item {} 
+Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.
+
+\end{itemize}
+
+A continuación se muestra una captura de lo que muestra el navegador:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{media_query_screen}.png}
+\caption{HTML mostrado en pantalla}\label{\detokenize{tema3:id13}}\end{figure}
+
+Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{media_query_print}.png}
+\caption{HTML para imprimir}\label{\detokenize{tema3:id14}}\end{figure}
+
+Uno de los usos más comunes de las \sphinxstyleemphasis{media queries} es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.
+\begin{itemize}
+\item {} 
+Cuando la resolución sea de 800 px o más haremos que \sphinxcode{caja1}  y \sphinxcode{caja2} estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.
+
+\item {} 
+Cuando la resolución sea de 799px o menos \sphinxcode{caja1}, \sphinxcode{caja2}  y \sphinxcode{caja3} se mostrarán una encima de otra pero con un margen entre ellas de 40px.
+
+\end{itemize}
+
+Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son \sphinxcode{min-width} y \sphinxcode{max-width}. Veamos como se usan para conseguir lo que nos piden:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c}{/* Si estamos en una pantalla y la anchura mínima que podemos}
+\PYG{c}{ * usar es 800px...*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{min\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{800px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{border}\PYG{p}{:}\PYG{k+kc}{solid} \PYG{k+kc}{black} \PYG{l+m+mi}{1}\PYG{k+kt}{px}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c}{/*... entonces dividir caja 1 y caja 2 en dos mitades*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja1}\PYG{p}{\PYGZob{}}
+        \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
+        \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja2}\PYG{p}{\PYGZob{}}
+        \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
+        \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja3}\PYG{p}{\PYGZob{}}
+        \PYG{k}{clear}\PYG{p}{:}\PYG{k+kc}{both}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{c}{/* Sin embargo, si estamos en una pantalla y como máximo}
+\PYG{c}{ * tenemos 799px (es decir, una pantalla más bien estrecha)...*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{799px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{border}\PYG{p}{:}\PYG{k+kc}{solid} \PYG{k+kc}{black} \PYG{l+m+mi}{1}\PYG{k+kt}{px}\PYG{p}{;}
+        \PYG{k}{margin\PYGZhy{}top}\PYG{p}{:} \PYG{l+m+mi}{40}\PYG{k+kt}{px}\PYG{p}{;}
+        \PYG{k}{text\PYGZhy{}align}\PYG{p}{:} \PYG{k+kc}{center}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
 \section{Gestión de espacios}
 \label{\detokenize{tema3:gestion-de-espacios}}
 En CSS se puede controlar el espacio interno y externo por medio de las propiedades \sphinxcode{padding-} y \sphinxcode{margin-} pudiendo usar \sphinxcode{margin-top} o \sphinxcode{padding-left}. Las cuatro posiciones son \sphinxcode{top}, \sphinxcode{bottom}, \sphinxcode{left} y \sphinxcode{right}
@@ -2543,7 +2656,7 @@ Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo \sphinxcode{id
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores1}.png}
-\caption{Resultado}\label{\detokenize{tema3:id13}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id15}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado}}
@@ -2555,7 +2668,7 @@ Los cambios se aplican a todos los párrafos con el \sphinxcode{class} \sphinxst
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores2}.png}
-\caption{Resultado}\label{\detokenize{tema3:id14}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id16}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado, span\#id1}}
@@ -2571,7 +2684,7 @@ Obsérvese que en el HTML hay \sphinxstylestrong{dos elementos con el mismo ID}.
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores3}.png}
-\caption{Resultado}\label{\detokenize{tema3:id15}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id17}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado \textgreater{} li.elemento\_enumeracion}}
@@ -2595,7 +2708,7 @@ Ahora el resultado es este
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores4}.png}
-\caption{Resultado}\label{\detokenize{tema3:id16}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id18}}\end{figure}
 
 ¿Por qué ahora sí funciona?
 
@@ -2667,7 +2780,7 @@ Por ejemplo, si deseamos que una fila de contenidos tenga una columna que ocupe 
 \capstart
 
 \noindent\sphinxincludegraphics{{bs1}.png}
-\caption{Ejemplo del grid}\label{\detokenize{tema3:id17}}\end{figure}
+\caption{Ejemplo del grid}\label{\detokenize{tema3:id19}}\end{figure}
 
 En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:
 \begin{itemize}
@@ -2702,7 +2815,7 @@ Bootstrap modifica la tipografía por defecto e incluso permite destacar algunos
 \capstart
 
 \noindent\sphinxincludegraphics{{bs2}.png}
-\caption{Párrafo destacado}\label{\detokenize{tema3:id18}}\end{figure}
+\caption{Párrafo destacado}\label{\detokenize{tema3:id20}}\end{figure}
 
 Se puede destacar texto usando lo siguiente:
 
@@ -10024,7 +10137,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -10220,7 +10333,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -11516,7 +11629,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -12506,7 +12619,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

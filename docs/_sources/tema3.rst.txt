@@ -674,8 +674,80 @@ Además añadiremos algún color a tales "celdas" para que podamos ver el área 
         }
 
 
+Media queries
+======================
 
+Las *media queries* (algo así como "consultas sobre el tipo de medio en el que se va a mostrar/procesar el HTML") forman parte de CSS 3, por lo que solo deben utilizarse en navegadores relativamente modernos.
 
+Las media queries permiten hacer diversas comprobaciones. Si se cumplen dichas comprobaciones se ejecutará un CSS u otro. Por ejemplo, supongamos que queremos tener dos estructuras diferentes de página en función de si se va a mostrar el HTML en pantalla o en papel.
+
+Partamos del siguiente HTML:
+
+.. code-block:: html
+    
+    <div id="caja1">
+        Caja 1
+    </div>
+    
+    <div id="caja2">
+        Caja 2
+    </div>
+    
+    <div id="caja3">
+        Caja 3
+    </div>
+
+Y ahora supongamos que cuando se muestra el HTML en pantalla queremos que tenga un color de fondo, pero que si se va a imprimir no tengan ningún fondo (para ahorrar tinta, por ejemplo). Sabiendo que existen dos tipos de medios llamados ``screen`` y ``print`` podemos usar un CSS como este:
+
+.. code-block:: css
+
+    @media screen {
+        div{
+            font-size: xx-large;
+            border: double black 1px;
+            background-color: grey;
+            margin: 30px;
+        }
+    }
+    @media print {
+        div{
+            font-size: small;
+            margin: 15px;
+        }
+    }
+
+Este CSS puede hacer dos cosas distintas:
+
+* Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.
+
+* Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.
+
+A continuación se muestra una captura de lo que muestra el navegador:
+
+.. figure:: ejemplos/tema3_css/ejemplo_media_queries/media_query_screen.png
+   :figwidth: 50%
+   :align: center
+   
+   HTML mostrado en pantalla
+
+Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:
+
+.. figure:: ejemplos/tema3_css/ejemplo_media_queries/media_query_print.png
+   :figwidth: 50%
+   :align: center
+   
+   HTML para imprimir
+   
+Uno de los usos más comunes de las *media queries* es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.
+
+* Cuando la resolución sea de 800 px o más haremos que ``caja1``  y ``caja2`` estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.
+ 
+* Cuando la resolución sea de 799px o menos ``caja1``, ``caja2``  y ``caja3`` se mostrarán una encima de otra pero con un margen entre ellas de 40px.
+
+Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son ``min-width`` y ``max-width``. Veamos como se usan para conseguir lo que nos piden:
+
+.. literalinclude:: ejemplos/tema3_css/ejemplo_media_queries/estilo2.css
+   :language: css
 
 
 Gestión de espacios

@@ -1,0 +1,14 @@
+@media screen {
+    div{
+        font-size: xx-large;
+        border: double black 1px;
+        background-color: rgb(220, 230, 220);
+        margin: 30px;
+    }
+}
+@media print {
+    div{
+        font-size: small;
+        margin: 15px;
+    }
+}

@@ -1,0 +1,28 @@
+/* Si estamos en una pantalla y la anchura mínima que podemos
+ * usar es 800px...*/
+@media screen and (min-width:800px){
+    div{
+        border:solid black 1px;
+    }
+    /*... entonces dividir caja 1 y caja 2 en dos mitades*/
+    #caja1{
+        float:left;
+        width:48%;
+    }
+    #caja2{
+        float:right;
+        width:48%;
+    }
+    #caja3{
+        clear:both;
+    }
+}
+/* Sin embargo, si estamos en una pantalla y como máximo
+ * tenemos 799px (es decir, una pantalla más bien estrecha)...*/
+@media screen and (max-width:799px){
+    div{
+        border:solid black 1px;
+        margin-top: 40px;
+        text-align: center;
+    }
+}

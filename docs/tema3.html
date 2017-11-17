@@ -714,6 +714,93 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="media-queries">
+<h2>Media queries<a class="headerlink" href="#media-queries" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las <em>media queries</em> (algo así como «consultas sobre el tipo de medio en el que se va a mostrar/procesar el HTML») forman parte de CSS 3, por lo que solo deben utilizarse en navegadores relativamente modernos.</p>
+<p>Las media queries permiten hacer diversas comprobaciones. Si se cumplen dichas comprobaciones se ejecutará un CSS u otro. Por ejemplo, supongamos que queremos tener dos estructuras diferentes de página en función de si se va a mostrar el HTML en pantalla o en papel.</p>
+<p>Partamos del siguiente HTML:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
+    Caja 1
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+    Caja 2
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+    Caja 3
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y ahora supongamos que cuando se muestra el HTML en pantalla queremos que tenga un color de fondo, pero que si se va a imprimir no tengan ningún fondo (para ahorrar tinta, por ejemplo). Sabiendo que existen dos tipos de medios llamados <code class="docutils literal"><span class="pre">screen</span></code> y <code class="docutils literal"><span class="pre">print</span></code> podemos usar un CSS como este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="p">{</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">xx-large</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">double</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="kc">small</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Este CSS puede hacer dos cosas distintas:</p>
+<ul class="simple">
+<li>Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.</li>
+<li>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</li>
+</ul>
+<p>A continuación se muestra una captura de lo que muestra el navegador:</p>
+<div class="figure align-center" id="id13" style="width: 50%">
+<img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
+<p class="caption"><span class="caption-text">HTML mostrado en pantalla</span></p>
+</div>
+<p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
+<div class="figure align-center" id="id14" style="width: 50%">
+<img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
+<p class="caption"><span class="caption-text">HTML para imprimir</span></p>
+</div>
+<p>Uno de los usos más comunes de las <em>media queries</em> es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.</p>
+<ul class="simple">
+<li>Cuando la resolución sea de 800 px o más haremos que <code class="docutils literal"><span class="pre">caja1</span></code>  y <code class="docutils literal"><span class="pre">caja2</span></code> estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.</li>
+<li>Cuando la resolución sea de 799px o menos <code class="docutils literal"><span class="pre">caja1</span></code>, <code class="docutils literal"><span class="pre">caja2</span></code>  y <code class="docutils literal"><span class="pre">caja3</span></code> se mostrarán una encima de otra pero con un margen entre ellas de 40px.</li>
+</ul>
+<p>Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son <code class="docutils literal"><span class="pre">min-width</span></code> y <code class="docutils literal"><span class="pre">max-width</span></code>. Veamos como se usan para conseguir lo que nos piden:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* Si estamos en una pantalla y la anchura mínima que podemos</span>
+<span class="c"> * usar es 800px...*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">800px</span><span class="o">)</span><span class="p">{</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c">/*... entonces dividir caja 1 y caja 2 en dos mitades*/</span>
+    <span class="p">#</span><span class="nn">caja1</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">caja2</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">caja3</span><span class="p">{</span>
+        <span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c">/* Sin embargo, si estamos en una pantalla y como máximo</span>
+<span class="c"> * tenemos 799px (es decir, una pantalla más bien estrecha)...*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">799px</span><span class="o">)</span><span class="p">{</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En CSS se puede controlar el espacio interno y externo por medio de las propiedades <code class="docutils literal"><span class="pre">padding-</span></code> y <code class="docutils literal"><span class="pre">margin-</span></code> pudiendo usar <code class="docutils literal"><span class="pre">margin-top</span></code> o <code class="docutils literal"><span class="pre">padding-left</span></code>. Las cuatro posiciones son <code class="docutils literal"><span class="pre">top</span></code>, <code class="docutils literal"><span class="pre">bottom</span></code>, <code class="docutils literal"><span class="pre">left</span></code> y <code class="docutils literal"><span class="pre">right</span></code></p>
@@ -839,7 +926,7 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
-<div class="figure align-center" id="id13" style="width: 50%">
+<div class="figure align-center" id="id15" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -847,7 +934,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="id7">
 <h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
-<div class="figure align-center" id="id14" style="width: 50%">
+<div class="figure align-center" id="id16" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -859,7 +946,7 @@ el aspecto del texto como estas:</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<div class="figure align-center" id="id15" style="width: 50%">
+<div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -876,7 +963,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<div class="figure align-center" id="id16" style="width: 50%">
+<div class="figure align-center" id="id18" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -937,7 +1024,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id17" style="width: 50%">
+<div class="figure align-center" id="id19" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
 </div>
@@ -958,7 +1045,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id18" style="width: 50%">
+<div class="figure align-center" id="id20" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <p class="caption"><span class="caption-text">Párrafo destacado</span></p>
 </div>
@@ -1001,6 +1088,7 @@ el aspecto del texto como estas:</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal"><span class="pre">grid-layouts</span></code></a></li>
+<li><a class="reference internal" href="#media-queries">Media queries</a></li>
 <li><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
 <li><a class="reference internal" href="#colores">Colores</a></li>
 <li><a class="reference internal" href="#tipografias">Tipografías</a></li>
