@@ -615,7 +615,6 @@ Analizando lo que se pide se observa que:
 
 * La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 **que sabemos que no existe, sino que es el límite de la tabla**.
 
-
 * La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.
 
 * La celda C va de la fila 1 a la 6 y está solo en la columna 1.
@@ -748,6 +747,24 @@ Para conseguir esto hay predicados de utilidad que podemos combinar con los que 
 
 .. literalinclude:: ejemplos/tema3_css/ejemplo_media_queries/estilo2.css
    :language: css
+
+
+El resultado de este CSS en una pantalla grande es:
+
+.. figure:: ejemplos/tema3_css/ejemplo_media_queries/mq_anchura_grande.png
+   :figwidth: 50%
+   :align: center
+   
+   Página para una resolución grande
+
+Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):
+
+.. figure:: ejemplos/tema3_css/ejemplo_media_queries/mq_anchura_pequena.png
+   :figwidth: 50%
+   :align: center
+   
+   Página para una resolución pequeña
+
 
 
 Gestión de espacios
