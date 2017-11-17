@@ -410,23 +410,6 @@ Un posible HTML que resuelve esto sería:
     </html>
 
 	
-Ejercicio sobre tablas (IV)
-----------------------------
-
-Crea una tabla con la estructura siguiente:
-
-.. image:: tabla4.png
-	:align: center
-	:scale: 50%
-	
-Solución
---------
-
-Un posible HTML que resuelve esto sería:
-
-.. literalinclude:: ejercicio2/ejtabla4.html
-	:language: html
-	
 
 Ejercicio sobre tablas (V)
 --------------------------------------------
@@ -787,19 +770,6 @@ Permiten introducir textos muy largos:
 	<textarea rows="10" cols="15">
 		Valor por defecto
 	</textarea>
-
-
-Ejercicio
----------
-
-Crear un formulario que pregunte al usuario por su nombre, apellidos, fecha de nacimiento y país. ¿Qué controles habría que usar para cada tarea?
-
-.. literalinclude:: paises.html
-	:language: html
-	
-	
-Es importante recalcar que cada vez más, muchas personas visitan páginas desde dispositivos móviles, por eso deberíamos intentar reducir la cantidad de texto que deben teclear. Así, por ejemplo, en lugar de pedir que se teclee la fecha de nacimiento, tal vez puedan seleccionarse opciones de un menú. Para generar la lista de años o de países, probablemente podamos crear un programa que nos genere los ``option`` automáticamente.
-
 
 Ejercicios tipo examen
 ======================

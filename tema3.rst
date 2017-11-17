@@ -765,6 +765,11 @@ Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana
    
    Página para una resolución pequeña
 
+Hay diversas cosas que podemos comprobar:
+
+* ``min-width: 100px `` o ``max-width:900px`` para ver las anchuras mínimas o máximas que nos ofrece un dispositivo.
+* ``@media screen`` , ``@media print`` o ``@media: handheld`` para comprobar si el HTML se va a mostrar en una pantalla, se va a imprimir o se muestra un dispositivo portátil como móvil o tablet. Hay otros ``@media`` como ``@media braille`` o ``@media tv``, pero se usan menos.
+* ``orientation:  portrait`` u ``orientation: landscape`` para saber si la pantalla está en horizontal o en vertical.
 
 
 Gestión de espacios
@@ -781,7 +786,7 @@ Los colores en CSS se pueden especificar de varias maneras:
 * Por nombre: ``red``, ``yellow``, ``green``
 * Mediante ``rgb(rojo, verde, azul``, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, ``rgb(0,0,0)`` es negro y ``rgb(255,255,255)`` es blanco.
 * Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.
-* Desde hace poco se pueden indicar también con ``hsl(num, num, num)''
+* Desde hace poco se pueden indicar también con ``hsl(num, num, num)``
 
 Se pueden encontrar en Internet listas de colores denominados "seguros" (buscando por "web safe colors") que indican nombres de color que se ven igual en los distintos navegadores.
 
