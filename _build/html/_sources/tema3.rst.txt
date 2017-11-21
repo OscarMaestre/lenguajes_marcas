@@ -530,6 +530,13 @@ Posicionamiento float
 ---------------------
 En el posicionamiento ``float`` solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.
 
+
+Deben recordarse algunas cosas:
+
+* Un elemento ``float`` lo que hace es *dar permiso a otros elementos* para que ocupen el espacio que le ha sobrado.
+
+* Cuando se usan varios elementos ``float `` es posible que otros elementos tengan que hacer ``clear:both;`` para asegurarnos de que dejen de aprovechar el espacio sobrante.
+
 Ejercicio
 ---------
 
