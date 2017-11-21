@@ -599,9 +599,78 @@ Publicidad publicidad
 </div>
 <p>Y el CSS que resuelve el problema sería:</p>
 </div>
+</div>
 <div class="section" id="posicionamiento-float">
-<h3>Posicionamiento float<a class="headerlink" href="#posicionamiento-float" title="Enlazar permanentemente con este título">¶</a></h3>
+<h2>Posicionamiento float<a class="headerlink" href="#posicionamiento-float" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En el posicionamiento <code class="docutils literal"><span class="pre">float</span></code> solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.</p>
+<p>Deben recordarse algunas cosas:</p>
+<ul class="simple">
+<li>Un elemento <code class="docutils literal"><span class="pre">float</span></code> lo que hace es <em>dar permiso a otros elementos</em> para que ocupen el espacio que le ha sobrado.</li>
+<li>Cuando se usan varios elementos <code class="docutils literal"><span class="pre">float</span></code> es posible que otros elementos tengan que hacer <code class="docutils literal"><span class="pre">clear:both;</span></code> para asegurarnos de que dejen de aprovechar el espacio sobrante.</li>
+<li>Es muy frecuente que haya que «crear contenedores extra» para conseguir colocar cajas utilizando elementos <code class="docutils literal"><span class="pre">float</span></code>.</li>
+</ul>
+<p>Por ejemplo, supongamos el siguiente HTML:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
+    Texto...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+    Texto...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+    Texto...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja4&quot;</span><span class="p">&gt;</span>
+    Texto...
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y supongamos que se necesita que las cuatro cajas queden colocadas verticalmente en pantalla y siguiendo el orden «caja4», «caja3», «caja1» y «caja2». Una posible solución sería crear dos contenedores extra de la manera siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
+        Texto...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+        Texto...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="c">&lt;!--Fin del contenedor1--&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor2&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+        Texto...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja4&quot;</span><span class="p">&gt;</span>
+        Texto...
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="c">&lt;!--Fin del contenedor2--&gt;</span>
+</pre></div>
+</div>
+<p>Y ahora haríamos lo siguiente:</p>
+<ul class="simple">
+<li>El contenedor 1 flotará hacia la derecha. Dentro de él la caja 1 flotará a la izquierda y la caja 2 flotará a la derecha.</li>
+<li>El contenedor 2 flotará hacia la izquierda. Dentro de él la caja 4 flotará hacia la izquierda y la caja 3 hacia la derecha.</li>
+</ul>
+<p>Probemos el siguiente CSS:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">contenedor2</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja1</span><span class="o">,</span> <span class="p">#</span><span class="nn">caja4</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja2</span><span class="o">,</span> <span class="p">#</span><span class="nn">caja3</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El resultado será:</p>
+<div class="figure align-center" id="id7" style="width: 50%">
+<img alt="_images/cuatro_cajas_con_floats.png" src="_images/cuatro_cajas_con_floats.png" />
+<p class="caption"><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal"><span class="pre">float</span></code></span></p>
 </div>
 <div class="section" id="id4">
 <h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -633,7 +702,7 @@ Publicidad publicidad
 </pre></div>
 </div>
 <p>Si no le hacemos nada se verá lo siguiente:</p>
-<div class="figure align-center" id="id7" style="width: 50%">
+<div class="figure align-center" id="id8" style="width: 50%">
 <img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
 <p class="caption"><span class="caption-text">Grid sin maquetar</span></p>
 </div>
@@ -644,18 +713,18 @@ Publicidad publicidad
 </pre></div>
 </div>
 <p>El resultado queda así:</p>
-<div class="figure align-center" id="id8" style="width: 50%">
+<div class="figure align-center" id="id9" style="width: 50%">
 <img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
 <p class="caption"><span class="caption-text">Celdas con borde</span></p>
 </div>
 <p>Supongamos que queremos que el <code class="docutils literal"><span class="pre">div</span></code> cuyo class es <code class="docutils literal"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
-<div class="figure align-center" id="id9" style="width: 50%">
+<div class="figure align-center" id="id10" style="width: 50%">
 <img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
 <p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
 </div>
 <p>Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:</p>
-<div class="figure align-center" id="id10" style="width: 50%">
+<div class="figure align-center" id="id11" style="width: 50%">
 <img alt="_images/resultado_5_por_5.png" src="_images/resultado_5_por_5.png" />
 <p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
 </div>
@@ -755,12 +824,12 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <li>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</li>
 </ul>
 <p>A continuación se muestra una captura de lo que muestra el navegador:</p>
-<div class="figure align-center" id="id11" style="width: 50%">
+<div class="figure align-center" id="id12" style="width: 50%">
 <img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
 <p class="caption"><span class="caption-text">HTML mostrado en pantalla</span></p>
 </div>
 <p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
-<div class="figure align-center" id="id12" style="width: 50%">
+<div class="figure align-center" id="id13" style="width: 50%">
 <img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
 <p class="caption"><span class="caption-text">HTML para imprimir</span></p>
 </div>
@@ -801,12 +870,12 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 </pre></div>
 </div>
 <p>El resultado de este CSS en una pantalla grande es:</p>
-<div class="figure align-center" id="id13" style="width: 50%">
+<div class="figure align-center" id="id14" style="width: 50%">
 <img alt="_images/mq_anchura_grande.png" src="_images/mq_anchura_grande.png" />
 <p class="caption"><span class="caption-text">Página para una resolución grande</span></p>
 </div>
 <p>Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):</p>
-<div class="figure align-center" id="id14" style="width: 50%">
+<div class="figure align-center" id="id15" style="width: 50%">
 <img alt="_images/mq_anchura_pequena.png" src="_images/mq_anchura_pequena.png" />
 <p class="caption"><span class="caption-text">Página para una resolución pequeña</span></p>
 </div>
@@ -942,7 +1011,7 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal"><span class="pre">id</span></code> sea <code class="docutils literal"><span class="pre">destacado</span></code></p>
-<div class="figure align-center" id="id15" style="width: 50%">
+<div class="figure align-center" id="id16" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -950,7 +1019,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="id5">
 <h3>Solución <code class="docutils literal"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal"><span class="pre">class</span></code> <em>destacado</em></p>
-<div class="figure align-center" id="id16" style="width: 50%">
+<div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -962,7 +1031,7 @@ el aspecto del texto como estas:</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<div class="figure align-center" id="id17" style="width: 50%">
+<div class="figure align-center" id="id18" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -979,7 +1048,7 @@ el aspecto del texto como estas:</p>
 <div class="section" id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<div class="figure align-center" id="id18" style="width: 50%">
+<div class="figure align-center" id="id19" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <p class="caption"><span class="caption-text">Resultado</span></p>
 </div>
@@ -1040,7 +1109,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id19" style="width: 50%">
+<div class="figure align-center" id="id20" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
 </div>
@@ -1061,7 +1130,7 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id20" style="width: 50%">
+<div class="figure align-center" id="id21" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <p class="caption"><span class="caption-text">Párrafo destacado</span></p>
 </div>
@@ -1099,7 +1168,9 @@ el aspecto del texto como estas:</p>
 <li><a class="reference internal" href="#ejercicio-barra-de-herramientas">Ejercicio: barra de herramientas</a></li>
 <li><a class="reference internal" href="#ejercicio-ampliacion">Ejercicio: ampliación</a></li>
 <li><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
-<li><a class="reference internal" href="#posicionamiento-float">Posicionamiento float</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#posicionamiento-float">Posicionamiento float</a><ul>
 <li><a class="reference internal" href="#id4">Ejercicio</a></li>
 </ul>
 </li>

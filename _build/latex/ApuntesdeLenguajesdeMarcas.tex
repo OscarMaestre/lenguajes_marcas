@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{17 de noviembre de 2017}
+\date{21 de noviembre de 2017}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -2170,9 +2170,100 @@ El HTML sería
 Y el CSS que resuelve el problema sería:
 
 
-\subsection{Posicionamiento float}
+\section{Posicionamiento float}
 \label{\detokenize{tema3:posicionamiento-float}}
 En el posicionamiento \sphinxcode{float} solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.
+
+Deben recordarse algunas cosas:
+\begin{itemize}
+\item {} 
+Un elemento \sphinxcode{float} lo que hace es \sphinxstyleemphasis{dar permiso a otros elementos} para que ocupen el espacio que le ha sobrado.
+
+\item {} 
+Cuando se usan varios elementos \sphinxcode{float} es posible que otros elementos tengan que hacer \sphinxcode{clear:both;} para asegurarnos de que dejen de aprovechar el espacio sobrante.
+
+\item {} 
+Es muy frecuente que haya que «crear contenedores extra» para conseguir colocar cajas utilizando elementos \sphinxcode{float}.
+
+\end{itemize}
+
+Por ejemplo, supongamos el siguiente HTML:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja1\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Texto...
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja2\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Texto...
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja3\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Texto...
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja4\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Texto...
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y supongamos que se necesita que las cuatro cajas queden colocadas verticalmente en pantalla y siguiendo el orden «caja4», «caja3», «caja1» y «caja2». Una posible solución sería crear dos contenedores extra de la manera siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenedor1\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja1\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Texto...
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja2\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Texto...
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}} \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fin del contenedor1}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenedor2\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja3\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Texto...
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}caja4\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Texto...
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}} \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fin del contenedor2}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y ahora haríamos lo siguiente:
+\begin{itemize}
+\item {} 
+El contenedor 1 flotará hacia la derecha. Dentro de él la caja 1 flotará a la izquierda y la caja 2 flotará a la derecha.
+
+\item {} 
+El contenedor 2 flotará hacia la izquierda. Dentro de él la caja 4 flotará hacia la izquierda y la caja 3 hacia la derecha.
+
+\end{itemize}
+
+Probemos el siguiente CSS:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{contenedor}\PYG{p}{\PYGZob{}}
+    \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
+    \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{contenedor2}\PYG{p}{\PYGZob{}}
+    \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
+    \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja1}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja4}\PYG{p}{\PYGZob{}}
+    \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
+    \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja2}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{caja3}\PYG{p}{\PYGZob{}}
+    \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
+    \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+El resultado será:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{cuatro_cajas_con_floats}.png}
+\caption{Cuatro cajas manipuladas con \sphinxcode{float}}\label{\detokenize{tema3:id7}}\end{figure}
 
 
 \subsection{Ejercicio}
@@ -2225,7 +2316,7 @@ Si no le hacemos nada se verá lo siguiente:
 \capstart
 
 \noindent\sphinxincludegraphics{{grid_sin_estilo}.png}
-\caption{Grid sin maquetar}\label{\detokenize{tema3:id7}}\end{figure}
+\caption{Grid sin maquetar}\label{\detokenize{tema3:id8}}\end{figure}
 
 Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS
 
@@ -2242,7 +2333,7 @@ El resultado queda así:
 \capstart
 
 \noindent\sphinxincludegraphics{{celdas_con_borde}.png}
-\caption{Celdas con borde}\label{\detokenize{tema3:id8}}\end{figure}
+\caption{Celdas con borde}\label{\detokenize{tema3:id9}}\end{figure}
 
 Supongamos que queremos que el \sphinxcode{div} cuyo class es \sphinxcode{contenedor} se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
@@ -2252,7 +2343,7 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
 \capstart
 
 \noindent\sphinxincludegraphics{{tabla_5_por_5}.png}
-\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id9}}\end{figure}
+\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id10}}\end{figure}
 
 Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:
 
@@ -2261,7 +2352,7 @@ Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de ma
 \capstart
 
 \noindent\sphinxincludegraphics{{resultado_5_por_5}.png}
-\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id10}}\end{figure}
+\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id11}}\end{figure}
 
 Analizando lo que se pide se observa que:
 \begin{itemize}
@@ -2393,7 +2484,7 @@ A continuación se muestra una captura de lo que muestra el navegador:
 \capstart
 
 \noindent\sphinxincludegraphics{{media_query_screen}.png}
-\caption{HTML mostrado en pantalla}\label{\detokenize{tema3:id11}}\end{figure}
+\caption{HTML mostrado en pantalla}\label{\detokenize{tema3:id12}}\end{figure}
 
 Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:
 
@@ -2402,7 +2493,7 @@ Y también se muestra una captura de lo que muestra el navegador cuando vamos a 
 \capstart
 
 \noindent\sphinxincludegraphics{{media_query_print}.png}
-\caption{HTML para imprimir}\label{\detokenize{tema3:id12}}\end{figure}
+\caption{HTML para imprimir}\label{\detokenize{tema3:id13}}\end{figure}
 
 Uno de los usos más comunes de las \sphinxstyleemphasis{media queries} es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.
 \begin{itemize}
@@ -2454,7 +2545,7 @@ El resultado de este CSS en una pantalla grande es:
 \capstart
 
 \noindent\sphinxincludegraphics{{mq_anchura_grande}.png}
-\caption{Página para una resolución grande}\label{\detokenize{tema3:id13}}\end{figure}
+\caption{Página para una resolución grande}\label{\detokenize{tema3:id14}}\end{figure}
 
 Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):
 
@@ -2463,7 +2554,7 @@ Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana
 \capstart
 
 \noindent\sphinxincludegraphics{{mq_anchura_pequena}.png}
-\caption{Página para una resolución pequeña}\label{\detokenize{tema3:id14}}\end{figure}
+\caption{Página para una resolución pequeña}\label{\detokenize{tema3:id15}}\end{figure}
 
 Hay diversas cosas que podemos comprobar:
 \begin{itemize}
@@ -2668,7 +2759,7 @@ Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo \sphinxcode{id
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores1}.png}
-\caption{Resultado}\label{\detokenize{tema3:id15}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id16}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado}}
@@ -2680,7 +2771,7 @@ Los cambios se aplican a todos los párrafos con el \sphinxcode{class} \sphinxst
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores2}.png}
-\caption{Resultado}\label{\detokenize{tema3:id16}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id17}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado, span\#id1}}
@@ -2696,7 +2787,7 @@ Obsérvese que en el HTML hay \sphinxstylestrong{dos elementos con el mismo ID}.
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores3}.png}
-\caption{Resultado}\label{\detokenize{tema3:id17}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id18}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{p.destacado \textgreater{} li.elemento\_enumeracion}}
@@ -2720,7 +2811,7 @@ Ahora el resultado es este
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores4}.png}
-\caption{Resultado}\label{\detokenize{tema3:id18}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id19}}\end{figure}
 
 ¿Por qué ahora sí funciona?
 
@@ -2792,7 +2883,7 @@ Por ejemplo, si deseamos que una fila de contenidos tenga una columna que ocupe 
 \capstart
 
 \noindent\sphinxincludegraphics{{bs1}.png}
-\caption{Ejemplo del grid}\label{\detokenize{tema3:id19}}\end{figure}
+\caption{Ejemplo del grid}\label{\detokenize{tema3:id20}}\end{figure}
 
 En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:
 \begin{itemize}
@@ -2827,7 +2918,7 @@ Bootstrap modifica la tipografía por defecto e incluso permite destacar algunos
 \capstart
 
 \noindent\sphinxincludegraphics{{bs2}.png}
-\caption{Párrafo destacado}\label{\detokenize{tema3:id20}}\end{figure}
+\caption{Párrafo destacado}\label{\detokenize{tema3:id21}}\end{figure}
 
 Se puede destacar texto usando lo siguiente:
 
@@ -8908,7 +8999,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10345,7 +10436,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12631,7 +12722,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

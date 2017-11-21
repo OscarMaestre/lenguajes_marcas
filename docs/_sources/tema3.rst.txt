@@ -527,8 +527,92 @@ Y el CSS que resuelve el problema sería:
 
 	
 Posicionamiento float
----------------------
+================================
 En el posicionamiento ``float`` solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.
+
+
+Deben recordarse algunas cosas:
+
+* Un elemento ``float`` lo que hace es *dar permiso a otros elementos* para que ocupen el espacio que le ha sobrado.
+
+* Cuando se usan varios elementos ``float`` es posible que otros elementos tengan que hacer ``clear:both;`` para asegurarnos de que dejen de aprovechar el espacio sobrante.
+
+
+* Es muy frecuente que haya que "crear contenedores extra" para conseguir colocar cajas utilizando elementos ``float``.
+
+Por ejemplo, supongamos el siguiente HTML:
+
+.. code-block:: html
+
+    <div id="caja1">
+        Texto...
+    </div>
+    <div id="caja2">
+        Texto...
+    </div>
+    <div id="caja3">
+        Texto...
+    </div>
+    <div id="caja4">
+        Texto...
+    </div>
+
+Y supongamos que se necesita que las cuatro cajas queden colocadas verticalmente en pantalla y siguiendo el orden "caja4", "caja3", "caja1" y "caja2". Una posible solución sería crear dos contenedores extra de la manera siguiente:
+
+.. code-block:: html
+
+    <div id="contenedor1">
+        <div id="caja1">
+            Texto...
+        </div>
+        <div id="caja2">
+            Texto...
+        </div>
+    </div> <!--Fin del contenedor1-->
+    <div id="contenedor2">
+        <div id="caja3">
+            Texto...
+        </div>
+        <div id="caja4">
+            Texto...
+        </div>
+    </div> <!--Fin del contenedor2-->
+
+
+Y ahora haríamos lo siguiente:
+
+* El contenedor 1 flotará hacia la derecha. Dentro de él la caja 1 flotará a la izquierda y la caja 2 flotará a la derecha.
+
+* El contenedor 2 flotará hacia la izquierda. Dentro de él la caja 4 flotará hacia la izquierda y la caja 3 hacia la derecha.
+
+Probemos el siguiente CSS:
+
+.. code-block:: css
+
+    #contenedor{
+        float:right;
+        width:48%;
+    }
+    #contenedor2{
+        float:left;
+        width:48%;
+    }
+    #caja1, #caja4{
+        float:left;
+        width:48%;
+    }
+    #caja2, #caja3{
+        float:right;
+        width:48%;
+    }
+
+El resultado será:
+
+.. figure:: ejemplos/ejemplos_2017_2018/asir/tema3/cuatro_cajas_con_floats.png
+   :figwidth: 50%
+   :align: center
+   
+   Cuatro cajas manipuladas con ``float``
 
 Ejercicio
 ---------
