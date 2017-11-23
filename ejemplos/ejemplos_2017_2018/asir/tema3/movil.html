@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ejemplo media queries</title>
+    <style>
+        div{
+            border: solid 1px black;
+        }
+        @media screen and (min-width: 400px) {
+            #caja1, #caja2{
+                width:10%;
+                float:left;
+            }
+            #caja3{
+                width: 78%;
+                float:rigth;
+            }
+        }
+        @media screen and (max-width:399px){
+            #caja1{
+                width: 48%;
+                float:left;
+            }
+            #caja2{
+                width:48%;
+                font: right;
+            }
+            #caja3{
+                clear: both;
+                width:100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="caja1">Caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 caja 1 </div>
+<div id="caja2">Caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 caja 2 </div>
+
+<div id="caja3">Caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 caja 3 </div>
+
+</body>
+</html>

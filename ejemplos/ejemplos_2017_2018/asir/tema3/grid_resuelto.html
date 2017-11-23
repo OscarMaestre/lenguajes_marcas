@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Solucion grid-layout</title>
+    <style>
+        div{
+            border: solid 1px black;
+        }
+        #contenedor{
+            display: grid;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+            grid-template-columns:40% 15% 15% 15% 15%;
+            
+        }
+        #celdaA{
+            grid-row: 1/3;
+            grid-column: 4/6;
+        }
+        #celdaB{
+            grid-row: 3;
+            grid-column:2/5; 
+        }
+        #celdaC{
+            grid-row: 1/6;
+            grid-column:  1;
+        }
+        #celdaD{
+            grid-row: 3/6;
+            grid-column:  5;
+        }
+        #celdaE{
+            grid-row:1/3;
+            grid-column: 2/4;
+        }
+        #celdaF{
+            grid-row: 4/6;
+            grid-column: 2/5;
+        }
+    </style>
+</head>
+
+<body>
+<div id="contenedor">
+    <div id="celdaA">Celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a celda a </div>
+    <div id="celdaB">Celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b celda b </div>
+    <div id="celdaC">Celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c celda c </div>
+    <div id="celdaD">Celda d celda d celda d celda d celda d celda d celda d celda d celda d celda d celda d celda d </div>
+    <div id="celdaE">Celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e celda e </div>
+    <div id="celdaF">Celda f celda f celda f celda f celda f celda f celda f celda f celda f celda f celda f celda f celda f celda f </div>
+</div>
+
+
+</body>
+</html>
