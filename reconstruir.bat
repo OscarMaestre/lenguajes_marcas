@@ -7,6 +7,7 @@ call pdflatex ApuntesDeLenguajesDeMarcas.tex
 cd ..
 cd ..
 copy _build\latex\*.pdf pdf
+git add docs
 call git commit -a --allow-empty-message -m ''
 call git push
 
