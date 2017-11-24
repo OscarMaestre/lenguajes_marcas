@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Pagina responsive</title>
+    <style>
+        /* En pantallas pequeñas...*/
+        @media screen and (max-width:400px){
+            /* ...no hacemos nada,dejamos que el
+             * navegador "apile" las cajas. Simplemente
+             * cambiamos el margen y el color para ver
+             * que nos funciona*/
+            div {
+                margin-top: 40px;
+                background-color: #eeeeee;
+            }
+        }/*Fin del media para ventanas pequeñas*/
+        /* En pantallas medianas...*/
+        @media screen and (min-width: 401px) and (max-width:800px){
+            /* ...haremos "flotar" a A y B...*/
+            #A{
+                float: left;
+                width:48%;
+            }
+            #B{
+                float:right;
+                width: 48%;
+            }
+            /* ...y haremos que C "limpie" el espacio sobrante"*/
+            #C{
+                clear: both;
+            }
+            /* También ponemos un color distinto
+             * pero solo para ver si lo hacemos bien*/
+            div{
+                background-color: #cccccc;
+            }
+        } /*Fin del media para ventanas medianas*/
+        /* Si estamos en pantallas grandes...*/
+        @media screen and (min-width:801px){
+            /*...entonces A y B flotan hacia la izquierda...*/
+            #A, #B{
+                width:20%;
+                float:left;
+            }
+            /* y C flota a la derecha llevándose el espacio
+             * que sobre. No lo ajustamos al 60% para
+             * evitar desbordamientos*/
+            #C{
+                width:58%;
+                float: right;
+            }
+            /* También volvemos a cambiar el color para
+             * las comprobaciones*/
+            div{
+                background-color: #eeeeee;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="A">
+    Caja A caja A caja A caja A
+    caja A caja A caja A caja A
+    caja A caja A caja A caja A 
+</div>
+
+<div id="B">
+    Caja B caja B caja B caja B
+    caja B caja B caja B caja B
+    caja B caja B caja B caja B 
+</div>
+
+<div id="C">
+    Caja C caja C caja C caja C
+    caja C caja C caja C caja C
+    caja C caja C caja C caja C 
+</div>
+
+</body>
+</html>

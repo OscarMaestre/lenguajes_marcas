@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{23 de noviembre de 2017}
+\date{24 de noviembre de 2017}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2924,6 +2924,124 @@ Se puede destacar texto usando lo siguiente:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{mark}\PYG{p}{\PYGZgt{}}Texto subrayado en amarillo\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{mark}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\section{Ejercicio responsive I}
+\label{\detokenize{tema3:ejercicio-responsive-i}}
+Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos \sphinxcode{id} serán A, B y C. El comportamiento de las cajas será el siguiente:
+\begin{itemize}
+\item {} 
+Si la página se visualiza en una pantalla de 400px o menos las 3 cajas se limitarán a mostrarse una encima de la otra.
+
+\item {} 
+Si la pantalla tiene un tamaño de entre 401px y 800px las cajas A y B se mostrarán al principio, cubriendo cada una una anchura del 50\% (quizá haya que ajustar a un porcentaje menor). La caja C se mostrará debajo de A y B.
+
+\item {} 
+Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20\%, B un 20\% y C un 58\%.
+
+\end{itemize}
+
+A continuación se muestra el resultado aproximado que se debe conseguir:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{responsive1-1}.png}
+\caption{Resultado para pantallas pequeñas}\label{\detokenize{tema3:id22}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{responsive1-2}.png}
+\caption{Resultado para pantallas medianas}\label{\detokenize{tema3:id23}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{responsive1-3}.png}
+\caption{Resultado para pantallas grandes}\label{\detokenize{tema3:id24}}\end{figure}
+
+Un posible HTML que resolviera esto sería el siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja A caja A caja A caja A
+        caja A caja A caja A caja A
+        caja A caja A caja A caja A
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}B\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja B caja B caja B caja B
+        caja B caja B caja B caja B
+        caja B caja B caja B caja B
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}C\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja C caja C caja C caja C
+        caja C caja C caja C caja C
+        caja C caja C caja C caja C
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y el CSS que lo acompaña sería este:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c}{/* En pantallas pequeñas...*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{400px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{c}{/* ...no hacemos nada,dejamos que el}
+\PYG{c}{     * navegador \PYGZdq{}apile\PYGZdq{} las cajas. Simplemente}
+\PYG{c}{     * cambiamos el margen y el color para ver}
+\PYG{c}{     * que nos funciona*/}
+    \PYG{n+nt}{div} \PYG{p}{\PYGZob{}}
+        \PYG{k}{margin\PYGZhy{}top}\PYG{p}{:} \PYG{l+m+mi}{40}\PYG{k+kt}{px}\PYG{p}{;}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{l+m+mh}{\PYGZsh{}eeeeee}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}\PYG{c}{/*Fin del media para ventanas pequeñas*/}
+\PYG{c}{/* En pantallas medianas...*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{min\PYGZhy{}width}\PYG{o}{:} \PYG{n+nt}{401px}\PYG{o}{)} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{800px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{c}{/* ...haremos \PYGZdq{}flotar\PYGZdq{} a A y B...*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{p}{\PYGZob{}}
+        \PYG{k}{float}\PYG{p}{:} \PYG{k+kc}{left}\PYG{p}{;}
+        \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{p}{\PYGZob{}}
+        \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{right}\PYG{p}{;}
+        \PYG{k}{width}\PYG{p}{:} \PYG{l+m+mi}{48}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c}{/* ...y haremos que C \PYGZdq{}limpie\PYGZdq{} el espacio sobrante\PYGZdq{}*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{p}{\PYGZob{}}
+        \PYG{k}{clear}\PYG{p}{:} \PYG{k+kc}{both}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c}{/* También ponemos un color distinto}
+\PYG{c}{     * pero solo para ver si lo hacemos bien*/}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{l+m+mh}{\PYGZsh{}cccccc}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{c}{/*Fin del media para ventanas medianas*/}
+\PYG{c}{/* Si estamos en pantallas grandes...*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{min\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{801px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{c}{/*...entonces A y B flotan hacia la izquierda...*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{p}{\PYGZob{}}
+        \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+        \PYG{k}{float}\PYG{p}{:}\PYG{k+kc}{left}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c}{/* y C flota a la derecha llevándose el espacio}
+\PYG{c}{     * que sobre. No lo ajustamos al 60\PYGZpc{} para}
+\PYG{c}{     * evitar desbordamientos*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{p}{\PYGZob{}}
+        \PYG{k}{width}\PYG{p}{:}\PYG{l+m+mi}{58}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+        \PYG{k}{float}\PYG{p}{:} \PYG{k+kc}{right}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c}{/* También volvemos a cambiar el color para}
+\PYG{c}{     * las comprobaciones*/}
+    \PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{l+m+mh}{\PYGZsh{}eeeeee}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 

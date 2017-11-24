@@ -1140,6 +1140,103 @@ el aspecto del texto como estas:</p>
 </div>
 </div>
 </div>
+<div class="section" id="ejercicio-responsive-i">
+<h2>Ejercicio responsive I<a class="headerlink" href="#ejercicio-responsive-i" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos <code class="docutils literal"><span class="pre">id</span></code> serán A, B y C. El comportamiento de las cajas será el siguiente:</p>
+<ul class="simple">
+<li>Si la página se visualiza en una pantalla de 400px o menos las 3 cajas se limitarán a mostrarse una encima de la otra.</li>
+<li>Si la pantalla tiene un tamaño de entre 401px y 800px las cajas A y B se mostrarán al principio, cubriendo cada una una anchura del 50% (quizá haya que ajustar a un porcentaje menor). La caja C se mostrará debajo de A y B.</li>
+<li>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</li>
+</ul>
+<p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
+<div class="figure align-center" id="id22" style="width: 50%">
+<img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
+<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span></p>
+</div>
+<div class="figure align-center" id="id23" style="width: 50%">
+<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
+<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span></p>
+</div>
+<div class="figure align-center" id="id24" style="width: 50%">
+<img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
+<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span></p>
+</div>
+<p>Un posible HTML que resolviera esto sería el siguiente:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
+        Caja A caja A caja A caja A
+        caja A caja A caja A caja A
+        caja A caja A caja A caja A
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;B&quot;</span><span class="p">&gt;</span>
+        Caja B caja B caja B caja B
+        caja B caja B caja B caja B
+        caja B caja B caja B caja B
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;C&quot;</span><span class="p">&gt;</span>
+        Caja C caja C caja C caja C
+        caja C caja C caja C caja C
+        caja C caja C caja C caja C
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y el CSS que lo acompaña sería este:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* En pantallas pequeñas...*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">400px</span><span class="o">)</span><span class="p">{</span>
+    <span class="c">/* ...no hacemos nada,dejamos que el</span>
+<span class="c">     * navegador &quot;apile&quot; las cajas. Simplemente</span>
+<span class="c">     * cambiamos el margen y el color para ver</span>
+<span class="c">     * que nos funciona*/</span>
+    <span class="nt">div</span> <span class="p">{</span>
+        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#eeeeee</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="c">/*Fin del media para ventanas pequeñas*/</span>
+<span class="c">/* En pantallas medianas...*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">401px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">800px</span><span class="o">)</span><span class="p">{</span>
+    <span class="c">/* ...haremos &quot;flotar&quot; a A y B...*/</span>
+    <span class="p">#</span><span class="nn">A</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">B</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">48</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c">/* ...y haremos que C &quot;limpie&quot; el espacio sobrante&quot;*/</span>
+    <span class="p">#</span><span class="nn">C</span><span class="p">{</span>
+        <span class="k">clear</span><span class="p">:</span> <span class="kc">both</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c">/* También ponemos un color distinto</span>
+<span class="c">     * pero solo para ver si lo hacemos bien*/</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#cccccc</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="c">/*Fin del media para ventanas medianas*/</span>
+<span class="c">/* Si estamos en pantallas grandes...*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">801px</span><span class="o">)</span><span class="p">{</span>
+    <span class="c">/*...entonces A y B flotan hacia la izquierda...*/</span>
+    <span class="p">#</span><span class="nn">A</span><span class="o">,</span> <span class="p">#</span><span class="nn">B</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c">/* y C flota a la derecha llevándose el espacio</span>
+<span class="c">     * que sobre. No lo ajustamos al 60% para</span>
+<span class="c">     * evitar desbordamientos*/</span>
+    <span class="p">#</span><span class="nn">C</span><span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">58</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c">/* También volvemos a cambiar el color para</span>
+<span class="c">     * las comprobaciones*/</span>
+    <span class="nt">div</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="mh">#eeeeee</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -1197,6 +1294,7 @@ el aspecto del texto como estas:</p>
 <li><a class="reference internal" href="#tipografia">Tipografía</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#ejercicio-responsive-i">Ejercicio responsive I</a></li>
 </ul>
 </li>
 </ul>
@@ -1234,7 +1332,7 @@ el aspecto del texto como estas:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

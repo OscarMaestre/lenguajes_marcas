@@ -1179,3 +1179,116 @@ Se puede destacar texto usando lo siguiente:
 .. code-block:: html
 
 	<mark>Texto subrayado en amarillo</mark>
+    
+Ejercicio responsive I
+============================
+
+Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos ``id`` serán A, B y C. El comportamiento de las cajas será el siguiente:
+
+* Si la página se visualiza en una pantalla de 400px o menos las 3 cajas se limitarán a mostrarse una encima de la otra.
+
+* Si la pantalla tiene un tamaño de entre 401px y 800px las cajas A y B se mostrarán al principio, cubriendo cada una una anchura del 50% (quizá haya que ajustar a un porcentaje menor). La caja C se mostrará debajo de A y B.
+
+* Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%. 
+
+
+A continuación se muestra el resultado aproximado que se debe conseguir:
+
+.. figure:: responsive1-1.png
+   :figwidth: 50%
+   :align: center
+   
+   Resultado para pantallas pequeñas
+   
+
+.. figure:: responsive1-2.png
+   :figwidth: 50%
+   :align: center
+   
+   Resultado para pantallas medianas
+   
+.. figure:: responsive1-3.png
+   :figwidth: 50%
+   :align: center
+   
+   Resultado para pantallas grandes
+
+   
+Un posible HTML que resolviera esto sería el siguiente:
+
+.. code-block:: html
+
+    <body>
+        <div id="A">
+            Caja A caja A caja A caja A
+            caja A caja A caja A caja A
+            caja A caja A caja A caja A 
+        </div>
+        <div id="B">
+            Caja B caja B caja B caja B
+            caja B caja B caja B caja B
+            caja B caja B caja B caja B 
+        </div>     
+        <div id="C">
+            Caja C caja C caja C caja C
+            caja C caja C caja C caja C
+            caja C caja C caja C caja C 
+        </div>
+    </body>
+    
+Y el CSS que lo acompaña sería este:
+
+.. code-block:: css
+
+    /* En pantallas pequeñas...*/
+    @media screen and (max-width:400px){
+        /* ...no hacemos nada,dejamos que el
+         * navegador "apile" las cajas. Simplemente
+         * cambiamos el margen y el color para ver
+         * que nos funciona*/
+        div {
+            margin-top: 40px;
+            background-color: #eeeeee;
+        }
+    }/*Fin del media para ventanas pequeñas*/
+    /* En pantallas medianas...*/
+    @media screen and (min-width: 401px) and (max-width:800px){
+        /* ...haremos "flotar" a A y B...*/
+        #A{
+            float: left;
+            width:48%;
+        }
+        #B{
+            float:right;
+            width: 48%;
+        }
+        /* ...y haremos que C "limpie" el espacio sobrante"*/
+        #C{
+            clear: both;
+        }
+        /* También ponemos un color distinto
+         * pero solo para ver si lo hacemos bien*/
+        div{
+            background-color: #cccccc;
+        }
+    } /*Fin del media para ventanas medianas*/
+    /* Si estamos en pantallas grandes...*/
+    @media screen and (min-width:801px){
+        /*...entonces A y B flotan hacia la izquierda...*/
+        #A, #B{
+            width:20%;
+            float:left;
+        }
+        /* y C flota a la derecha llevándose el espacio
+         * que sobre. No lo ajustamos al 60% para
+         * evitar desbordamientos*/
+        #C{
+            width:58%;
+            float: right;
+        }
+        /* También volvemos a cambiar el color para
+         * las comprobaciones*/
+        div{
+            background-color: #eeeeee;
+        }
+    }
