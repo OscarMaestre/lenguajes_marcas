@@ -1310,12 +1310,12 @@ Hacer una página cuyo diseño se adapte automáticamente en función de la reso
    :figwidth: 50%
    :align: center
    
-   Figura II-1
+   Figura II-1. (Para pantallas estrechas)
    
 .. figure:: responsive2-2.png
    :figwidth: 50%
    :align: center
    
-   Figura II-2
+   Figura II-2 (Para pantallas anchas)
 
 
