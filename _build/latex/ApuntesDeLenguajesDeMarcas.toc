@@ -95,6 +95,7 @@
 \contentsline {subsection}{\numberline {3.15.2}Rejilla o \sphinxstyleemphasis {grid}}{56}{subsection.3.15.2}
 \contentsline {subsection}{\numberline {3.15.3}Tipograf\IeC {\'\i }a}{56}{subsection.3.15.3}
 \contentsline {section}{\numberline {3.16}Ejercicio responsive I}{57}{section.3.16}
+\contentsline {section}{\numberline {3.17}Ejercicio responsive II}{59}{section.3.17}
 \contentsline {chapter}{\numberline {4}Javascript}{61}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{61}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tipos de datos}{61}{section.4.2}

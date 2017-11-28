@@ -1292,3 +1292,30 @@ Y el CSS que lo acompaña sería este:
             background-color: #eeeeee;
         }
     }
+
+
+Ejercicio responsive II
+============================
+
+Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 4 cajas cuyos ``id`` serán A, B,  C y D. El comportamiento de las cajas será el siguiente:
+
+* Para todos los casos hay una rejilla contenedora de 4 filas (todas de la misma altura) y 3 columnas (de anchos 20%, 20% y 60%).
+
+* Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.
+
+* Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.
+
+
+.. figure:: responsive2-1.png
+   :figwidth: 50%
+   :align: center
+   
+   Figura II-1
+   
+.. figure:: responsive2-2.png
+   :figwidth: 50%
+   :align: center
+   
+   Figura II-2
+
+
