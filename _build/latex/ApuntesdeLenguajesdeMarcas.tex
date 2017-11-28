@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -3074,9 +3074,95 @@ Si la pantalla tiene menos de 800px se mostrará una distribución como la que s
 \noindent\sphinxincludegraphics{{responsive2-2}.png}
 \caption{Figura II-2 (Para pantallas anchas)}\label{\detokenize{tema3:id26}}\end{figure}
 
+A continuación se muestra el HTML:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenedor\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja A
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}B\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja B
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}C\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja C
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}D\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Caja D
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y un posible CSS:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c}{/* Todas las cajas tienen borde siempre*/}
+\PYG{n+nt}{div}\PYG{p}{\PYGZob{}}
+    \PYG{k}{border}\PYG{p}{:} \PYG{k+kc}{solid} \PYG{l+m+mi}{1}\PYG{k+kt}{px} \PYG{k+kc}{black}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n+nt}{div}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{contenedor}\PYG{p}{\PYGZob{}}
+    \PYG{k}{display}\PYG{p}{:} \PYG{k}{grid}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}template\PYGZhy{}rows}\PYG{p}{:} \PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{25}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+    \PYG{k}{grid\PYGZhy{}template\PYGZhy{}columns}\PYG{p}{:} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{20}\PYG{k+kt}{\PYGZpc{}} \PYG{l+m+mi}{60}\PYG{k+kt}{\PYGZpc{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{min\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{800px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+
+    \PYG{c}{/* Esto no hacía falta, se usa}
+\PYG{c}{     * para comprobar que nos sale}
+\PYG{c}{     * bien al estrechar o ensanchar}
+\PYG{c}{     * la \PYGZdq{}pantalla\PYGZdq{}*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{D}\PYG{p}{\PYGZob{}}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{,}\PYG{l+m+mi}{220}\PYG{p}{)}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{4} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:}\PYG{l+m+mi}{2} \PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{4} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{5}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{D}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{5}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{c}{/* Fin del media para max\PYGZhy{}width 800px*/}
+\PYG{p}{@}\PYG{k}{media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{p}{:}\PYG{n+nd}{799px}\PYG{o}{)}\PYG{p}{\PYGZob{}}
+    \PYG{c}{/* Esto no hacía falta, se usa}
+\PYG{c}{     * para comprobar que nos sale}
+\PYG{c}{     * bien al estrechar o ensanchar}
+\PYG{c}{     * la \PYGZdq{}pantalla\PYGZdq{}*/}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{o}{,} \PYG{p}{\PYGZsh{}}\PYG{n+nn}{D}\PYG{p}{\PYGZob{}}
+        \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{n+nb}{rgb}\PYG{p}{(}\PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{240}\PYG{p}{,} \PYG{l+m+mi}{230}\PYG{p}{)}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{A}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{B}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{3} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{C}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{2}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{5} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZsh{}}\PYG{n+nn}{D}\PYG{p}{\PYGZob{}}
+        \PYG{k}{grid\PYGZhy{}row}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{;}
+        \PYG{k}{grid\PYGZhy{}column}\PYG{p}{:}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{5} \PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}} \PYG{c}{/* Fin del media para min\PYGZhy{}width 799px*/}
+\end{sphinxVerbatim}
+
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -4704,7 +4790,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -7449,7 +7535,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -11880,7 +11966,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -12870,7 +12956,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

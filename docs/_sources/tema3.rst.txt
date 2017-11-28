@@ -1318,4 +1318,88 @@ Hacer una página cuyo diseño se adapte automáticamente en función de la reso
    
    Figura II-2 (Para pantallas anchas)
 
+A continuación se muestra el HTML:
 
+.. code-block:: html
+
+    <div id="contenedor">
+        <div id="A">
+            Caja A
+        </div>
+        <div id="B">
+            Caja B
+        </div>
+        <div id="C">
+            Caja C
+        </div>
+        <div id="D">
+            Caja D
+        </div>
+    </div>
+
+Y un posible CSS:
+
+.. code-block:: css
+
+    /* Todas las cajas tienen borde siempre*/
+    div{
+        border: solid 1px black;
+    }
+    
+    div#contenedor{
+        display: grid;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-columns: 20% 20% 60%;
+    }
+    @media screen and (min-width:800px){
+        
+        /* Esto no hacía falta, se usa
+         * para comprobar que nos sale
+         * bien al estrechar o ensanchar
+         * la "pantalla"*/
+        #A, #B, #C, #D{
+            background-color: rgb(240, 240,220);
+        }
+        
+        #A{
+            grid-row: 1;
+            grid-column:1/4 ;
+        }
+        #B{
+            grid-row:2 ;
+            grid-column:1/4 ;
+        }
+        #C{
+            grid-row: 3/5;
+            grid-column: 1/3;
+        }
+        #D{
+            grid-row: 3/5;
+            grid-column:3/4 ;
+        }
+    } /* Fin del media para max-width 800px*/
+    @media screen and (max-width:799px){
+        /* Esto no hacía falta, se usa
+         * para comprobar que nos sale
+         * bien al estrechar o ensanchar
+         * la "pantalla"*/
+        #A, #B, #C, #D{
+            background-color: rgb(220, 240, 230);
+        }
+        #A{
+            grid-row: 1;
+            grid-column:1/3 ;
+        }
+        #B{
+            grid-row: 1;
+            grid-column:3 ;
+        }
+        #C{
+            grid-row: 2;
+            grid-column:1/5 ;
+        }
+        #D{
+            grid-row: 3/4;
+            grid-column:1/5 ;
+        }
+    } /* Fin del media para min-width 799px*/

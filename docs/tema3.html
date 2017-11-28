@@ -1253,6 +1253,88 @@ el aspecto del texto como estas:</p>
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
 <p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span></p>
 </div>
+<p>A continuación se muestra el HTML:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
+        Caja A
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;B&quot;</span><span class="p">&gt;</span>
+        Caja B
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;C&quot;</span><span class="p">&gt;</span>
+        Caja C
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;D&quot;</span><span class="p">&gt;</span>
+        Caja D
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y un posible CSS:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* Todas las cajas tienen borde siempre*/</span>
+<span class="nt">div</span><span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">25</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">20</span><span class="kt">%</span> <span class="mi">20</span><span class="kt">%</span> <span class="mi">60</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">800px</span><span class="o">)</span><span class="p">{</span>
+
+    <span class="c">/* Esto no hacía falta, se usa</span>
+<span class="c">     * para comprobar que nos sale</span>
+<span class="c">     * bien al estrechar o ensanchar</span>
+<span class="c">     * la &quot;pantalla&quot;*/</span>
+    <span class="p">#</span><span class="nn">A</span><span class="o">,</span> <span class="p">#</span><span class="nn">B</span><span class="o">,</span> <span class="p">#</span><span class="nn">C</span><span class="o">,</span> <span class="p">#</span><span class="nn">D</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span><span class="mi">220</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="p">#</span><span class="nn">A</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">B</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span><span class="mi">2</span> <span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">C</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">D</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="c">/* Fin del media para max-width 800px*/</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">799px</span><span class="o">)</span><span class="p">{</span>
+    <span class="c">/* Esto no hacía falta, se usa</span>
+<span class="c">     * para comprobar que nos sale</span>
+<span class="c">     * bien al estrechar o ensanchar</span>
+<span class="c">     * la &quot;pantalla&quot;*/</span>
+    <span class="p">#</span><span class="nn">A</span><span class="o">,</span> <span class="p">#</span><span class="nn">B</span><span class="o">,</span> <span class="p">#</span><span class="nn">C</span><span class="o">,</span> <span class="p">#</span><span class="nn">D</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">A</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">B</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">3</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">C</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span> <span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">#</span><span class="nn">D</span><span class="p">{</span>
+        <span class="k">grid-row</span><span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+        <span class="k">grid-column</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="c">/* Fin del media para min-width 799px*/</span>
+</pre></div>
+</div>
 </div>
 </div>
 
