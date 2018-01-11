@@ -1,11 +1,13 @@
-let div_mensajes=document.getElementById("mensajes");
-div_mensajes.innerHTML="<u>Hola mundo</u>";
+let pepito=document.getElementById("mensajes");
 
+let peso=20;
 
-let multiplicando=5;
-let i=0;
-for (i=0; i<=10; i=i+1){
-    let resultado = multiplicando * i;
-    let mensaje= multiplicando +"*" + i+"="+resultado + "<br/>";
-    div_mensajes.innerHTML= div_mensajes.innerHTML + mensaje;
+let mensaje="  El peso es de " + peso + "   kg";
+pepito.innerHTML=mensaje;
+
+if (peso < 30 ) {
+    let peso_incrementado=peso+1;
+    pepito.innerHTML=mensaje +
+        "El peso antes era"+peso+
+        "y ahora es " + peso_incrementado;
 }
