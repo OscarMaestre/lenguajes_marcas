@@ -14,14 +14,23 @@ function anadir_mensaje(id_html, texto_pasado){
     div.innerHTML=texto_anterior + texto_pasado;
 }
 
-let vector=new Array();
-vector[0]=61;
-vector[1]=65;
-vector[2]=58;
-vector=[67,98,32,44];
-let media=calcular_media(vector);
-let otro_vector=[56,33, 61, 87, 21, 90, 71];
-let otra_media=calcular_media(otro_vector);
-anadir_mensaje("mensajes", "La media primera es:"+media);
-anadir_mensaje("mensajes", "La otra es:"+otra_media);
+
+function calcular_desv_media(vector_pasado){
+    let media=calcular_media(vector_pasado);
+    let pos=0;
+    let vector_desviaciones=new Array();
+    for (pos=0; pos<vector_pasado.length;pos++){
+        let diferencia=vector_pasado[pos]-media;
+        vector_desviaciones[pos]=Math.abs(diferencia);
+    } //Fin del for
+    let desv_media=calcular_media(vector_desviaciones);
+    return desv_media;
+}
+let sueldos=new Array();
+sueldos=[1000, 870, 500, 690, 1300, 1590, 950];
+let media=calcular_media(sueldos);
+let desv=calcular_desv_media(sueldos);
+
+anadir_mensaje("mensajes", "La media es:"+media+"<br/>");
+anadir_mensaje("mensajes", "La desv es:"+desv+"<br/>");
 
