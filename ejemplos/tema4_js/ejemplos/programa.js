@@ -1,13 +1,9 @@
-let pepito=document.getElementById("mensajes");
+function saludar_usuario() {
+    
+    let caja_texto=document.getElementById("nombre_usuario");
+    alert("Hola " + caja_texto.value);
+}
 
-let peso=20;
-
-let mensaje="  El peso es de " + peso + "   kg";
-pepito.innerHTML=mensaje;
-
-if (peso < 30 ) {
-    let peso_incrementado=peso+1;
-    pepito.innerHTML=mensaje +
-        "El peso antes era"+peso+
-        "y ahora es " + peso_incrementado;
+function despedir_usuario() {
+    alert("Adios");
 }
