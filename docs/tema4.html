@@ -1346,6 +1346,122 @@
 </div>
 </div>
 </div>
+<div class="section" id="calculo-de-impuestos">
+<h2>Calculo de impuestos<a class="headerlink" href="#calculo-de-impuestos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se desea crear una pequeña aplicación web que permita calcular los impuestos que se deben pagar a partir de unos datos, en concreto:</p>
+<ul class="simple">
+<li>Se debe introducir el salario anual en un campo de tipo <code class="docutils literal"><span class="pre">number</span></code>.</li>
+<li>Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.</li>
+<li>Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.</li>
+</ul>
+<p>Las reglas para el calculo son:</p>
+<ul class="simple">
+<li>Si el salario es menor de 20000 los impuestos son 0.</li>
+<li>Si el salario está entre 20001 y 30000 los impuestos son el 10%.</li>
+<li>Si el salario está entre 30001 y 50000 los impuestos son el 20%.</li>
+<li>Si el salario es mayor de 50000 se paga el 38%</li>
+<li>Si se tienen hijos los impuestos se reducen en 180 euros.</li>
+<li>Si se tiene la bonificación B1 los impuestos se reducen en 355 euros.</li>
+<li>Si se tiene la bonificación B2 los impuestos se reducen en 560 euros.</li>
+<li>Se recuerda que las bonificaciones B1 y B2 son compatibles (de hecho hemos dicho que están en checkboxes).</li>
+<li>La cantidad de impuestos puede ser negativa (que significa que le sale «a devolver»)</li>
+</ul>
+<div class="section" id="html-calculador">
+<h3>HTML calculador<a class="headerlink" href="#html-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/estilo.css&quot;</span>
+          <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Plantilla de web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
+            <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/programa.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="c">&lt;!--Toda nuestra página irá aquí dentro--&gt;</span>    
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+    
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Plantilla de proyecto web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+    Salario:
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;salario&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;1000000&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;con_hijos&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hijos&quot;</span><span class="p">&gt;</span>Con hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sin_hijos&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hijos&quot;</span> <span class="na">checked</span><span class="o">=</span><span class="s">&quot;checked&quot;</span><span class="p">&gt;</span>
+            Sin hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bonificacion_b1&quot;</span><span class="p">&gt;</span> Con derecho a bonif. B1 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bonificacion_b2&quot;</span><span class="p">&gt;</span> Con derecho a bonif. B2 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;calcular&quot;</span><span class="p">&gt;</span>Calcular impuestos<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mensajes&quot;</span><span class="p">&gt;</span>Aquí aparecerán sus resultados<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-calculador">
+<h3>JS Calculador<a class="headerlink" href="#js-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getFloat</span> <span class="p">(</span> <span class="nx">identificador</span> <span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">objeto_control</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">identificador</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">cadena_control</span><span class="o">=</span><span class="nx">objeto_control</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">cantidad</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">cadena_control</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">cantidad</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">isChecked</span> <span class="p">(</span> <span class="nx">identificador</span> <span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">objeto_control</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">identificador</span><span class="p">);</span>
+    <span class="cm">/*Comprobamos si el control</span>
+<span class="cm">    tiene la propiedad checked*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_control</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">)){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Si no tiene la propiedad checked</span>
+<span class="cm">    es que no está marcado*/</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">salario_anual</span><span class="o">=</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;#salario&quot;</span><span class="p">);</span>    
+    <span class="kd">let</span> <span class="nx">impuestos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">20000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">30000</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">30001</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">50000</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">50001</span><span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.38</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#con_hijos&quot;</span><span class="p">)){</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">180</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#bonificacion_b1&quot;</span><span class="p">)){</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">245</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#bonificacion_b2&quot;</span><span class="p">)){</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">535</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">let</span> <span class="nx">div_mensajes</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#mensajes&quot;</span><span class="p">);</span>
+    <span class="nx">div_mensajes</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Sus &lt;b&gt;impuestos&lt;/b&gt; son:&quot;</span><span class="o">+</span><span class="nx">impuestos</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">boton</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#calcular&quot;</span><span class="p">);</span>
+    <span class="nx">boton</span><span class="p">.</span><span class="nx">click</span> <span class="p">(</span> <span class="nx">calcular</span> <span class="p">);</span>
+    
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">objeto_documento</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+<span class="nx">objeto_documento</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="comparador-de-telefonia">
 <h2>Comparador de telefonía<a class="headerlink" href="#comparador-de-telefonia" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos</p>
@@ -1547,6 +1663,11 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 <li><a class="reference internal" href="#configurador-en-js">Configurador en JS</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#calculo-de-impuestos">Calculo de impuestos</a><ul>
+<li><a class="reference internal" href="#html-calculador">HTML calculador</a></li>
+<li><a class="reference internal" href="#js-calculador">JS Calculador</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
 <li><a class="reference internal" href="#html-del-comparador">HTML del comparador</a></li>
 <li><a class="reference internal" href="#js-del-comparador">JS del comparador</a></li>
@@ -1589,7 +1710,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

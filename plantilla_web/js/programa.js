@@ -1,25 +1,18 @@
-function saludar(){
-    let txt_nombre=$("#txt_nombre");
-    let nombre_introducido=txt_nombre.val();
-    alert ("Hola "+nombre_introducido);
-    return false;
+function getFloat ( identificador ){
+    let objeto_control=$(identificador);
+    let cadena_control=objeto_control.val();
+    let cantidad=parseFloat(cadena_control);
+    return cantidad;
 }
-function error_pulsacion(){
-    alert("Pulse el otro boton");
-    return false;
+
+function calcular(){
+    let salario_anual=getFloat("#salario");
+    alert("Calculando para "+salario_anual);
 }
 function main(){
-    let boton_saluda=$("#btn_saludo");
-    boton_saluda.click ( saludar );
+    let boton=$("#calcular");
+    boton.click ( calcular );
     
-    let boton_adicional=$("#btn_adicional");
-    boton_adicional.click ( error_pulsacion )
 }
-//Seleccionamos el objeto document
 let objeto_documento=$(document)
-/*Y ordenamos que cuando todo esté
- *listo se ejecute la función main
- *(recordemos que main se puede llamar
- *como queramos)*/
-
 objeto_documento.ready(main)

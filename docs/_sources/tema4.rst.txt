@@ -1460,6 +1460,38 @@ Configurador en JS
 		zonaresultados.innerHTML="Precio:"+preciototal;   
 	}
 
+Calculo de impuestos
+=======================
+
+Se desea crear una pequeña aplicación web que permita calcular los impuestos que se deben pagar a partir de unos datos, en concreto:
+
+* Se debe introducir el salario anual en un campo de tipo ``number``.
+* Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.
+* Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.
+
+Las reglas para el calculo son:
+
+* Si el salario es menor de 20000 los impuestos son 0.
+* Si el salario está entre 20001 y 30000 los impuestos son el 10%.
+* Si el salario está entre 30001 y 50000 los impuestos son el 20%.
+* Si el salario es mayor de 50000 se paga el 38%
+* Si se tienen hijos los impuestos se reducen en 180 euros.
+* Si se tiene la bonificación B1 los impuestos se reducen en 355 euros.
+* Si se tiene la bonificación B2 los impuestos se reducen en 560 euros.
+* Se recuerda que las bonificaciones B1 y B2 son compatibles (de hecho hemos dicho que están en checkboxes).
+* La cantidad de impuestos puede ser negativa (que significa que le sale "a devolver")
+
+HTML calculador
+---------------
+.. literalinclude:: ejercicios/js/calculo_impuestos\index.html
+   :language: html
+   
+   
+JS Calculador
+-------------
+.. literalinclude:: ejercicios/js/calculo_impuestos/js/programa.js
+   :language: javascript
+
 Comparador de telefonía
 ===========================
 

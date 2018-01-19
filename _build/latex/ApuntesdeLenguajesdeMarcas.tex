@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{16 de enero de 2018}
+\date{19 de enero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -4664,6 +4664,150 @@ Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada 
 \end{sphinxVerbatim}
 
 
+\section{Calculo de impuestos}
+\label{\detokenize{tema4:calculo-de-impuestos}}
+Se desea crear una pequeña aplicación web que permita calcular los impuestos que se deben pagar a partir de unos datos, en concreto:
+\begin{itemize}
+\item {} 
+Se debe introducir el salario anual en un campo de tipo \sphinxcode{number}.
+
+\item {} 
+Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.
+
+\item {} 
+Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.
+
+\end{itemize}
+
+Las reglas para el calculo son:
+\begin{itemize}
+\item {} 
+Si el salario es menor de 20000 los impuestos son 0.
+
+\item {} 
+Si el salario está entre 20001 y 30000 los impuestos son el 10\%.
+
+\item {} 
+Si el salario está entre 30001 y 50000 los impuestos son el 20\%.
+
+\item {} 
+Si el salario es mayor de 50000 se paga el 38\%
+
+\item {} 
+Si se tienen hijos los impuestos se reducen en 180 euros.
+
+\item {} 
+Si se tiene la bonificación B1 los impuestos se reducen en 355 euros.
+
+\item {} 
+Si se tiene la bonificación B2 los impuestos se reducen en 560 euros.
+
+\item {} 
+Se recuerda que las bonificaciones B1 y B2 son compatibles (de hecho hemos dicho que están en checkboxes).
+
+\item {} 
+La cantidad de impuestos puede ser negativa (que significa que le sale «a devolver»)
+
+\end{itemize}
+
+
+\subsection{HTML calculador}
+\label{\detokenize{tema4:html-calculador}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{link} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}css/estilo.css\PYGZdq{}}
+          \PYG{n+na}{rel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}stylesheet\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Plantilla de web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}}
+            \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/jquery.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/programa.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Toda nuestra página irá aquí dentro}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}    
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenido\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Plantilla de proyecto web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+    Salario:
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}number\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}salario\PYGZdq{}} \PYG{n+na}{min}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{n+na}{max}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}1000000\PYGZdq{}} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}con\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}}\PYG{p}{\PYGZgt{}}Con hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}sin\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}} \PYG{n+na}{checked}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checked\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Sin hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B1 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B2 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular\PYGZdq{}}\PYG{p}{\PYGZgt{}}Calcular impuestos\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
+    
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{\PYGZgt{}}Aquí aparecerán sus resultados\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsection{JS Calculador}
+\label{\detokenize{tema4:js-calculador}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{getFloat} \PYG{p}{(} \PYG{n+nx}{identificador} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}control}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{n+nx}{identificador}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{cadena\PYGZus{}control}\PYG{o}{=}\PYG{n+nx}{objeto\PYGZus{}control}\PYG{p}{.}\PYG{n+nx}{val}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{cantidad}\PYG{o}{=}\PYG{n+nb}{parseFloat}\PYG{p}{(}\PYG{n+nx}{cadena\PYGZus{}control}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n+nx}{cantidad}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{isChecked} \PYG{p}{(} \PYG{n+nx}{identificador} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}control}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{n+nx}{identificador}\PYG{p}{)}\PYG{p}{;}
+    \PYG{c+cm}{/*Comprobamos si el control}
+\PYG{c+cm}{    tiene la propiedad checked*/}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}control}\PYG{p}{.}\PYG{n+nx}{prop}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}checked\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/* Si no tiene la propiedad checked}
+\PYG{c+cm}{    es que no está marcado*/}
+    \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{=}\PYG{n+nx}{getFloat}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}salario\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}    
+    \PYG{k+kd}{let} \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{20000}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{30000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{30001}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{50000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{50001}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.38}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{isChecked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}con\PYGZus{}hijos\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos} \PYG{o}{=} \PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{180}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{isChecked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos} \PYG{o}{=} \PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{245}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{isChecked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos} \PYG{o}{=} \PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{535}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{k+kd}{let} \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}mensajes\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{p}{.}\PYG{n+nx}{html}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Sus \PYGZlt{}b\PYGZgt{}impuestos\PYGZlt{}/b\PYGZgt{} son:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{impuestos}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{main}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{boton}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}calcular\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{boton}\PYG{p}{.}\PYG{n+nx}{click} \PYG{p}{(} \PYG{n+nx}{calcular} \PYG{p}{)}\PYG{p}{;}
+    
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}documento}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{n+nb}{document}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nx}{objeto\PYGZus{}documento}\PYG{p}{.}\PYG{n+nx}{ready}\PYG{p}{(}\PYG{n+nx}{main}\PYG{p}{)}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
 \section{Comparador de telefonía}
 \label{\detokenize{tema4:comparador-de-telefonia}}
 Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos
@@ -4790,7 +4934,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -9233,7 +9377,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10670,7 +10814,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
+\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -11966,7 +12110,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -12956,7 +13100,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
