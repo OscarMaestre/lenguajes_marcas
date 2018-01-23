@@ -148,10 +148,11 @@
 \contentsline {subsection}{\numberline {4.16.2}Configurador en JS}{87}{subsection.4.16.2}
 \contentsline {section}{\numberline {4.17}Calculo de impuestos}{88}{section.4.17}
 \contentsline {subsection}{\numberline {4.17.1}HTML calculador}{88}{subsection.4.17.1}
-\contentsline {subsection}{\numberline {4.17.2}JS Calculador}{89}{subsection.4.17.2}
+\contentsline {subsection}{\numberline {4.17.2}JS Calculador (con JQuery (DAM))}{88}{subsection.4.17.2}
+\contentsline {subsection}{\numberline {4.17.3}JS Calculador (sin JQuery (ASIR))}{89}{subsection.4.17.3}
 \contentsline {section}{\numberline {4.18}Comparador de telefon\IeC {\'\i }a}{90}{section.4.18}
 \contentsline {subsection}{\numberline {4.18.1}HTML del comparador}{90}{subsection.4.18.1}
-\contentsline {subsection}{\numberline {4.18.2}JS del comparador}{90}{subsection.4.18.2}
+\contentsline {subsection}{\numberline {4.18.2}JS del comparador}{91}{subsection.4.18.2}
 \contentsline {chapter}{\numberline {5}XML}{93}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{93}{section.5.1}
 \contentsline {section}{\numberline {5.2}Un ejemplo sencillo}{93}{section.5.2}

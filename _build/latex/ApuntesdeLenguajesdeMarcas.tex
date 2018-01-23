@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{19 de enero de 2018}
+\date{23 de enero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -4713,44 +4713,9 @@ La cantidad de impuestos puede ser negativa (que significa que le sale «a devol
 
 \subsection{HTML calculador}
 \label{\detokenize{tema4:html-calculador}}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
 
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{link} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}css/estilo.css\PYGZdq{}}
-          \PYG{n+na}{rel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}stylesheet\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Plantilla de web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}}
-            \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/jquery.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/programa.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
-
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
-\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Toda nuestra página irá aquí dentro}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}    
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenido\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-    
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Plantilla de proyecto web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
-    Salario:
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}number\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}salario\PYGZdq{}} \PYG{n+na}{min}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{n+na}{max}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}1000000\PYGZdq{}} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}con\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}}\PYG{p}{\PYGZgt{}}Con hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}sin\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}} \PYG{n+na}{checked}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checked\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-            Sin hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B1 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B2 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
-    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular\PYGZdq{}}\PYG{p}{\PYGZgt{}}Calcular impuestos\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
-    
-\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{\PYGZgt{}}Aquí aparecerán sus resultados\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
-\end{sphinxVerbatim}
-
-
-\subsection{JS Calculador}
-\label{\detokenize{tema4:js-calculador}}
+\subsection{JS Calculador (con JQuery (DAM))}
+\label{\detokenize{tema4:js-calculador-con-jquery-dam}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kd}{function} \PYG{n+nx}{getFloat} \PYG{p}{(} \PYG{n+nx}{identificador} \PYG{p}{)}\PYG{p}{\PYGZob{}}
     \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}control}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{n+nx}{identificador}\PYG{p}{)}\PYG{p}{;}
@@ -4805,6 +4770,60 @@ La cantidad de impuestos puede ser negativa (que significa que le sale «a devol
 \PYG{p}{\PYGZcb{}}
 \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}documento}\PYG{o}{=}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{n+nb}{document}\PYG{p}{)}\PYG{p}{;}
 \PYG{n+nx}{objeto\PYGZus{}documento}\PYG{p}{.}\PYG{n+nx}{ready}\PYG{p}{(}\PYG{n+nx}{main}\PYG{p}{)}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\subsection{JS Calculador (sin JQuery (ASIR))}
+\label{\detokenize{tema4:js-calculador-sin-jquery-asir}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{caja\PYGZus{}salarios}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
+                        \PYG{l+s+s2}{\PYGZdq{}salario\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{texto\PYGZus{}salario}\PYG{o}{=}\PYG{n+nx}{caja\PYGZus{}salarios}\PYG{p}{.}\PYG{n+nx}{value}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{=}\PYG{n+nb}{parseFloat}\PYG{p}{(}\PYG{n+nx}{texto\PYGZus{}salario}\PYG{p}{)}\PYG{p}{;}
+    
+    \PYG{c+cm}{/* Calculamos los impuestos*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+     
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{20000}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{30000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{30001}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{50000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{50001}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.38}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{c+cm}{/* Y ahora comprobamos si ha marcado}
+\PYG{c+cm}{     * la casilla \PYGZdq{}con\PYGZus{}hijos\PYGZdq{}*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{radio\PYGZus{}con\PYGZus{}hijos}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
+                        \PYG{l+s+s2}{\PYGZdq{}con\PYGZus{}hijos\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{radio\PYGZus{}con\PYGZus{}hijos}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{180}\PYG{p}{;}
+        \PYG{c+c1}{//code}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/* Comprobamos si marcó la}
+\PYG{c+cm}{     * bonificación B1*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{bonificacion\PYGZus{}b1}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{bonificacion\PYGZus{}b1}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{355}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/* Y comprobamos la bonificación B2*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{bonificacion\PYGZus{}b2}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{bonificacion\PYGZus{}b2}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{560}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{c+cm}{/* Escribimos el resultado*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Impuestos:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{impuestos}\PYG{p}{;}
+    
+    
+\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 
@@ -10618,7 +10637,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -10814,7 +10833,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.

@@ -1368,43 +1368,9 @@
 </ul>
 <div class="section" id="html-calculador">
 <h3>HTML calculador<a class="headerlink" href="#html-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/estilo.css&quot;</span>
-          <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Plantilla de web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
-            <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/programa.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="c">&lt;!--Toda nuestra página irá aquí dentro--&gt;</span>    
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
-    
-<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Plantilla de proyecto web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-    Salario:
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;salario&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;1000000&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;con_hijos&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hijos&quot;</span><span class="p">&gt;</span>Con hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sin_hijos&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hijos&quot;</span> <span class="na">checked</span><span class="o">=</span><span class="s">&quot;checked&quot;</span><span class="p">&gt;</span>
-            Sin hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bonificacion_b1&quot;</span><span class="p">&gt;</span> Con derecho a bonif. B1 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bonificacion_b2&quot;</span><span class="p">&gt;</span> Con derecho a bonif. B2 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;calcular&quot;</span><span class="p">&gt;</span>Calcular impuestos<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mensajes&quot;</span><span class="p">&gt;</span>Aquí aparecerán sus resultados<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
 </div>
-</div>
-<div class="section" id="js-calculador">
-<h3>JS Calculador<a class="headerlink" href="#js-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="js-calculador-con-jquery-dam">
+<h3>JS Calculador (con JQuery (DAM))<a class="headerlink" href="#js-calculador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getFloat</span> <span class="p">(</span> <span class="nx">identificador</span> <span class="p">){</span>
     <span class="kd">let</span> <span class="nx">objeto_control</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">identificador</span><span class="p">);</span>
     <span class="kd">let</span> <span class="nx">cadena_control</span><span class="o">=</span><span class="nx">objeto_control</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
@@ -1458,6 +1424,59 @@
 <span class="p">}</span>
 <span class="kd">let</span> <span class="nx">objeto_documento</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
 <span class="nx">objeto_documento</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-calculador-sin-jquery-asir">
+<h3>JS Calculador (sin JQuery (ASIR))<a class="headerlink" href="#js-calculador-sin-jquery-asir" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">caja_salarios</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s2">&quot;salario&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">texto_salario</span><span class="o">=</span><span class="nx">caja_salarios</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">salario_anual</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">texto_salario</span><span class="p">);</span>
+    
+    <span class="cm">/* Calculamos los impuestos*/</span>
+    <span class="kd">let</span> <span class="nx">impuestos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+     
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">20000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">30000</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">30001</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">50000</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">50001</span><span class="p">){</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.38</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/* Y ahora comprobamos si ha marcado</span>
+<span class="cm">     * la casilla &quot;con_hijos&quot;*/</span>
+    <span class="kd">let</span> <span class="nx">radio_con_hijos</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s2">&quot;con_hijos&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">radio_con_hijos</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">180</span><span class="p">;</span>
+        <span class="c1">//code</span>
+    <span class="p">}</span>
+    <span class="cm">/* Comprobamos si marcó la</span>
+<span class="cm">     * bonificación B1*/</span>
+    <span class="kd">let</span> <span class="nx">bonificacion_b1</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+        <span class="s2">&quot;bonificacion_b1&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">bonificacion_b1</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">355</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Y comprobamos la bonificación B2*/</span>
+    <span class="kd">let</span> <span class="nx">bonificacion_b2</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+        <span class="s2">&quot;bonificacion_b2&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">bonificacion_b2</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">560</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/* Escribimos el resultado*/</span>
+    <span class="kd">let</span> <span class="nx">div_mensajes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mensajes&quot;</span><span class="p">);</span>
+    <span class="nx">div_mensajes</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Impuestos:&quot;</span><span class="o">+</span><span class="nx">impuestos</span><span class="p">;</span>
+    
+    
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1665,7 +1684,8 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </li>
 <li><a class="reference internal" href="#calculo-de-impuestos">Calculo de impuestos</a><ul>
 <li><a class="reference internal" href="#html-calculador">HTML calculador</a></li>
-<li><a class="reference internal" href="#js-calculador">JS Calculador</a></li>
+<li><a class="reference internal" href="#js-calculador-con-jquery-dam">JS Calculador (con JQuery (DAM))</a></li>
+<li><a class="reference internal" href="#js-calculador-sin-jquery-asir">JS Calculador (sin JQuery (ASIR))</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
@@ -1710,7 +1730,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

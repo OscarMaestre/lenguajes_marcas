@@ -1487,9 +1487,14 @@ HTML calculador
    :language: html
    
    
-JS Calculador
--------------
-.. literalinclude:: ejercicios/js/calculo_impuestos/js/programa.js
+JS Calculador (con JQuery (DAM))
+----------------------------------
+.. literalinclude:: ejercicios/js/calculo_impuestos_con_jquery/js/programa.js
+   :language: javascript
+   
+JS Calculador (sin JQuery (ASIR))
+----------------------------------
+.. literalinclude:: ejercicios/js/calculo_impuestos_sin_jquery/js/programa.js
    :language: javascript
 
 Comparador de telefonía
