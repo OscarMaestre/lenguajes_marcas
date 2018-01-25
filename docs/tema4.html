@@ -1435,7 +1435,69 @@
 </div>
 <div class="section" id="js-calculador-sin-jquery-asir">
 <h3>JS Calculador (sin JQuery (ASIR))<a class="headerlink" href="#js-calculador-sin-jquery-asir" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;JS cargado&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">limpiar_errores</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">objeto_diesel</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">objeto_pot2300</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot2300&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">((</span><span class="nx">objeto_diesel</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">objeto_pot2300</span><span class="p">.</span><span class="nx">checked</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Incompatibilidad diesel+2300&quot;</span><span class="p">);</span>
+        <span class="nx">objeto_pot2300</span><span class="p">.</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">let</span> <span class="nx">objeto_pintura_normal</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">objeto_color_gris</span> <span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;gris&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">objeto_color_azul</span> <span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;azul&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">objeto_color_verde</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;verde&quot;</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">objeto_pintura_normal</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">objeto_color_gris</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Incompatibilidad normal+gris&quot;</span><span class="p">);</span>
+        <span class="nx">objeto_color_gris</span><span class="p">.</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">objeto_pintura_normal</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">objeto_color_azul</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Incompatibilidad normal+azul&quot;</span><span class="p">);</span>
+        <span class="nx">objeto_color_azul</span><span class="p">.</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">objeto_pintura_normal</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">objeto_color_verde</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Incompatibilidad normal+verde&quot;</span><span class="p">);</span>
+        <span class="nx">objeto_color_verde</span><span class="p">.</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">()</span> <span class="p">{</span>
+    
+    <span class="nx">limpiar_errores</span><span class="p">();</span>
+    
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    
+    <span class="kd">let</span> <span class="nx">objeto_gasolina</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_gasolina</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">7000</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">objeto_diesel</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_diesel</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">8200</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">let</span> <span class="nx">objeto_pot1100</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot1100&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot1100</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">800</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">objeto_pot1800</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot1800&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot1800</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">objeto_pot2300</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot2300&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot2300</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">2500</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    
+    <span class="c1">//Mostramos el precio final</span>
+    <span class="kd">let</span> <span class="nx">objeto_mensajes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mensajes&quot;</span><span class="p">);</span>
+    <span class="nx">objeto_mensajes</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio &lt;u&gt;final&lt;/u&gt;&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

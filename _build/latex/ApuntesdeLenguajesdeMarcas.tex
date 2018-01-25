@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -4782,7 +4782,69 @@ La cantidad de impuestos puede ser negativa (que significa que le sale «a devol
 \subsection{JS Calculador (sin JQuery (ASIR))}
 \label{\detokenize{tema4:js-calculador-sin-jquery-asir}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}JS cargado\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kd}{function} \PYG{n+nx}{limpiar\PYGZus{}errores}\PYG{p}{(}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}diesel}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}diesel\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}pot2300}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pot2300\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}diesel}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pot2300}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Incompatibilidad diesel+2300\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{objeto\PYGZus{}pot2300}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}pintura\PYGZus{}normal}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}gris} \PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}gris\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}azul} \PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}azul\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}verde}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}verde\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pintura\PYGZus{}normal}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}gris}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Incompatibilidad normal+gris\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}gris}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pintura\PYGZus{}normal}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}azul}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Incompatibilidad normal+azul\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}azul}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pintura\PYGZus{}normal}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}verde}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Incompatibilidad normal+verde\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{objeto\PYGZus{}color\PYGZus{}verde}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    
+    \PYG{n+nx}{limpiar\PYGZus{}errores}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+    
+    \PYG{k+kd}{let} \PYG{n+nx}{precio}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}gasolina}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}gasolina\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}gasolina}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio} \PYG{o}{+} \PYG{l+m+mi}{7000}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}diesel}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}diesel\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}diesel}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio} \PYG{o}{+} \PYG{l+m+mi}{8200}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}pot1100}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pot1100\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pot1100}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio} \PYG{o}{+} \PYG{l+m+mi}{800}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}pot1800}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pot1800\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pot1800}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio} \PYG{o}{+} \PYG{l+m+mi}{1900}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}pot2300}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pot2300\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{objeto\PYGZus{}pot2300}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio} \PYG{o}{+} \PYG{l+m+mi}{2500}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    
+    
+    \PYG{c+c1}{//Mostramos el precio final}
+    \PYG{k+kd}{let} \PYG{n+nx}{objeto\PYGZus{}mensajes}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{objeto\PYGZus{}mensajes}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Precio \PYGZlt{}u\PYGZgt{}final\PYGZlt{}/u\PYGZgt{}\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{precio}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 
@@ -4912,7 +4974,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -7657,7 +7719,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9355,7 +9417,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
+\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10596,7 +10658,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -10792,7 +10854,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12088,7 +12150,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13078,7 +13140,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
