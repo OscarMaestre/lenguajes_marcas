@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/estilo.css"
+          rel="stylesheet">
+    <title>Configurador coches</title>
+    <script type="text/javascript"
+            src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/programa.js"></script>
+</head>
+
+<body>
+<!--Toda nuestra página irá aquí dentro-->    
+<div id="contenido">
+    
+<h1>Elija sus preferencias</h1>
+<form>
+    Tipos de motor<br/>
+    <input type="radio" name="motor"
+            id="gasolina">Gasolina<br/>
+    <input type="radio" name="motor"
+            id="diesel">Diésel<br/>
+    Potencias:<br/>
+    <input type="radio" name="potencia"
+           id="pot1100">1100 cm3<br/>
+    <input type="radio" name="potencia"
+           id="pot1800">1800 cm3<br/>
+    <input type="radio" name="potencia"
+           id="pot2300">2300 cm3<br/>
+    Pinturas:<br/>
+    <input type="radio" name="pintura"
+           id="normal">Normal<br/>
+    <input type="radio" name="pintura"
+           id="metalizada">Metalizada<br/>
+    Colores:<br/>
+    <input type="radio" name="color"
+           id="negro">Negro<br/>
+    <input type="radio" name="color"
+           id="blanco">Blanco<br/>
+    <input type="radio" name="color"
+           id="rojo">Rojo<br/>
+    <input type="radio" name="color"
+           id="azul">Azul polar<br/>
+    <input type="radio" name="color"
+           id="verde">Verde turquesa<br/>
+    <input type="radio" name="color"
+           id="gris">Gris marengo<br/>
+    Extras<br/>
+    <input type="checkbox" id="aleron">Aleron<br/>
+    <input type="checkbox" id="radio">Radio CD<br/>
+    <input type="checkbox" id="altavoces">Altavoces<br/>
+    <input type="checkbox" id="gps">GPS<br/>
+</form>
+<div id="muestracolor">Aquí verá Vd. su color</div>
+<div id="mensajes">Aquí aparecerán sus resultados</div>
+<div id="precio">Precio final</div>
+</body>
+</html>
