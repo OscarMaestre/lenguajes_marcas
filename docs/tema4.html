@@ -920,9 +920,15 @@
 <li>Se pueden tener 3 potencias: 1100, 1800 y 2300 centímetros cúbicos. Los precios de cada uno son 800, 1900 y 2500. Sin embargo <strong>no es posible fabricar motores diésel de 2300</strong>.</li>
 <li>Hay dos tipos de pintura: normal y metalizada. Los precios respectivos son 750 y 1580 euros.</li>
 <li>Hay seis colores: negro, blanco, rojo, azul polar, verde turquesa y gris marengo. <strong>No se pueden fabricar colores de pintura normal de ninguno de los tres últimos colores</strong>.</li>
-<li>Se dispone de diversos extras: alerón deportivo (190 euros <a href="#id7"><span class="problematic" id="id8">**</span></a>pero solo se puede elegir si se elige pintura metalizada), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, <a href="#id9"><span class="problematic" id="id10">**</span></a>pero solo si se elige antes el Radio-CD), y GPS incorporado (520 euros más).</li>
+<li>Se dispone de diversos extras: alerón deportivo (190 euros <strong>pero solo se puede elegir si se elige pintura metalizada</strong>), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, <strong>pero solo si se elige antes el Radio-CD</strong>), y GPS incorporado (520 euros más).</li>
 </ul>
 <p>Crear la aplicación que respete las restricciones exigidas por el cliente.</p>
+<div class="section" id="html-del-configurador">
+<h3>HTML del configurador<a class="headerlink" href="#html-del-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="js-del-configurador-con-jquery-dam">
+<h3>JS del configurador (con JQuery (DAM))<a class="headerlink" href="#js-del-configurador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
 </div>
 <div class="section" id="dinamismo-con-google-maps">
 <h2>Dinamismo con Google Maps<a class="headerlink" href="#dinamismo-con-google-maps" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1023,8 +1029,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h3>Ejercicio<a class="headerlink" href="#id11" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id7">
+<h3>Ejercicio<a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ampliar el programa con una lista de ciudades del mundo. Cuando el usuario elija una de ellas, nuestro programa nos dirá la distancia desde Ciudad Real a dichas ciudades. Considerar las siguientes coordenadas en formato (latitud, longitud):</p>
 <ul class="simple">
 <li>Ciudad Real: (38.59, -3.55)</li>
@@ -1059,8 +1065,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id12">
-<h3>Ejercicio<a class="headerlink" href="#id12" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id8">
+<h3>Ejercicio<a class="headerlink" href="#id8" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>La empresa Automobile Creation for Millenium Enterprise (ACME) planea lanzar una página web en la que se permita al usuario configurar los coches a su medida, ofreciendo las distintas opciones en pantalla para que el usuario las elija. Sin embargo no todas las combinaciones se permiten en fábrica por lo que deberán tenerse en cuentas las siguientes</p>
 <div class="section" id="especificaciones">
 <h4>Especificaciones<a class="headerlink" href="#especificaciones" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -1429,54 +1435,7 @@
 </div>
 <div class="section" id="js-calculador-sin-jquery-asir">
 <h3>JS Calculador (sin JQuery (ASIR))<a class="headerlink" href="#js-calculador-sin-jquery-asir" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-    <span class="kd">let</span> <span class="nx">caja_salarios</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
-                        <span class="s2">&quot;salario&quot;</span><span class="p">);</span>
-    <span class="kd">let</span> <span class="nx">texto_salario</span><span class="o">=</span><span class="nx">caja_salarios</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">salario_anual</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">texto_salario</span><span class="p">);</span>
-    
-    <span class="cm">/* Calculamos los impuestos*/</span>
-    <span class="kd">let</span> <span class="nx">impuestos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-     
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">20000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">30000</span><span class="p">)</span> <span class="p">){</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">30001</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">50000</span><span class="p">)</span> <span class="p">){</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">50001</span><span class="p">){</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.38</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="cm">/* Y ahora comprobamos si ha marcado</span>
-<span class="cm">     * la casilla &quot;con_hijos&quot;*/</span>
-    <span class="kd">let</span> <span class="nx">radio_con_hijos</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
-                        <span class="s2">&quot;con_hijos&quot;</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">radio_con_hijos</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">180</span><span class="p">;</span>
-        <span class="c1">//code</span>
-    <span class="p">}</span>
-    <span class="cm">/* Comprobamos si marcó la</span>
-<span class="cm">     * bonificación B1*/</span>
-    <span class="kd">let</span> <span class="nx">bonificacion_b1</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
-        <span class="s2">&quot;bonificacion_b1&quot;</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">bonificacion_b1</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">355</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="cm">/* Y comprobamos la bonificación B2*/</span>
-    <span class="kd">let</span> <span class="nx">bonificacion_b2</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
-        <span class="s2">&quot;bonificacion_b2&quot;</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">bonificacion_b2</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">impuestos</span><span class="o">=</span><span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">560</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="cm">/* Escribimos el resultado*/</span>
-    <span class="kd">let</span> <span class="nx">div_mensajes</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mensajes&quot;</span><span class="p">);</span>
-    <span class="nx">div_mensajes</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Impuestos:&quot;</span><span class="o">+</span><span class="nx">impuestos</span><span class="p">;</span>
-    
-    
-<span class="p">}</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;JS cargado&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1661,12 +1620,16 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 <li><a class="reference internal" href="#ejercicio-configurador-de-pcs-ampliado">Ejercicio configurador de PCs ampliado</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a></li>
+<li><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a><ul>
+<li><a class="reference internal" href="#html-del-configurador">HTML del configurador</a></li>
+<li><a class="reference internal" href="#js-del-configurador-con-jquery-dam">JS del configurador (con JQuery (DAM))</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#dinamismo-con-google-maps">Dinamismo con Google Maps</a><ul>
 <li><a class="reference internal" href="#html-de-gmaps">HTML de GMaps</a></li>
 <li><a class="reference internal" href="#javascript-de-gmaps">Javascript de GMaps</a></li>
-<li><a class="reference internal" href="#id11">Ejercicio</a></li>
-<li><a class="reference internal" href="#id12">Ejercicio</a><ul>
+<li><a class="reference internal" href="#id7">Ejercicio</a></li>
+<li><a class="reference internal" href="#id8">Ejercicio</a><ul>
 <li><a class="reference internal" href="#especificaciones">Especificaciones</a></li>
 </ul>
 </li>
@@ -1730,7 +1693,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

@@ -5,33 +5,33 @@
     <meta charset="utf-8">
     <link type="text/css" href="css/estilo.css"
           rel="stylesheet">
-    <title>Plantilla de web</title>
-
-    
+    <title>Plantilla de web</title>  
 </head>
-
 <body>
-<!--Toda nuestra página irá aquí dentro-->    
-<div id="contenido">
-    
-<h1>Plantilla de proyecto web</h1>
 <form>
-    Salario:
-    <input type="number" id="salario" min="0" max="1000000" value="0"> <br/>
-    <input type="radio"
-           id="con_hijos" name="hijos">
-        Con hijos a cargo <br/>
-    <input type="radio"
-           id="sin_hijos" name="hijos"
-           checked="checked">
-            Sin hijos a cargo <br/>
-    <input type="checkbox" id="bonificacion_b1">
-    Con derecho a bonif. B1 <br/>
-    <input type="checkbox" id="bonificacion_b2"> Con derecho a bonif. B2 <br/>
-    <button onclick="calcular(); return false;">
-        Calcular impuestos
-    </button>
-    
+    Motores<br/>
+    <input type="radio" name="motor"
+           id="gasolina">Gasolina<br/>
+    <input type="radio" name="motor"
+           id="diesel">Diesel<br/>
+    Potencias<br/>
+    <input type="radio" name="potencia"
+           id="pot1100">1100 cm3<br/>
+    <input type="radio" name="potencia"
+           id="pot1800">1800 cm3<br/>
+    <input type="radio" name="potencia"
+           id="pot2300">2300 cm3<br/>
+    Pinturas:<br/>
+    <input type="radio" name="pintura"
+           id="normal">Pintura normal<br/>
+    <input type="radio" name="pintura"
+           id="metalizada">Pintura metalizada<br/>
+    Colores:<br/>
+    <input type="radio" name="color" id="negro">Negro<br/>
+    <input type="radio" name="color" id="negro">Negro<br/>
+    <input type="radio" name="color" id="negro">Negro<br/>
+           
+           
 </form>
 <div id="mensajes">Aquí aparecerán sus resultados</div>
 <script type="text/javascript" src="js/programa.js"></script>

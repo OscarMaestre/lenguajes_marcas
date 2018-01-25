@@ -1014,9 +1014,18 @@ Un fabricante de automóviles desea ofrecer a sus clientes una aplicación que l
 * Se pueden tener 3 potencias: 1100, 1800 y 2300 centímetros cúbicos. Los precios de cada uno son 800, 1900 y 2500. Sin embargo **no es posible fabricar motores diésel de 2300**.
 * Hay dos tipos de pintura: normal y metalizada. Los precios respectivos son 750 y 1580 euros.
 * Hay seis colores: negro, blanco, rojo, azul polar, verde turquesa y gris marengo. **No se pueden fabricar colores de pintura normal de ninguno de los tres últimos colores**.
-* Se dispone de diversos extras: alerón deportivo (190 euros **pero solo se puede elegir si se elige pintura metalizada), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, **pero solo si se elige antes el Radio-CD), y GPS incorporado (520 euros más).
+* Se dispone de diversos extras: alerón deportivo (190 euros **pero solo se puede elegir si se elige pintura metalizada**), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, **pero solo si se elige antes el Radio-CD**), y GPS incorporado (520 euros más).
+
+
 
 Crear la aplicación que respete las restricciones exigidas por el cliente.
+
+HTML del configurador
+----------------------
+
+JS del configurador (con JQuery (DAM))
+-----------------------------------------
+
 
 
 Dinamismo con Google Maps

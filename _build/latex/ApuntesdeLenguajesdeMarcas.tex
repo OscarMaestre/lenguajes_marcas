@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
+\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -4181,12 +4181,18 @@ Hay dos tipos de pintura: normal y metalizada. Los precios respectivos son 750 y
 Hay seis colores: negro, blanco, rojo, azul polar, verde turquesa y gris marengo. \sphinxstylestrong{No se pueden fabricar colores de pintura normal de ninguno de los tres últimos colores}.
 
 \item {} 
-Se dispone de diversos extras: alerón deportivo (190 euros {\color{red}\bfseries{}**}pero solo se puede elegir si se elige pintura metalizada), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, {\color{red}\bfseries{}**}pero solo si se elige antes el Radio-CD), y GPS incorporado (520 euros más).
+Se dispone de diversos extras: alerón deportivo (190 euros \sphinxstylestrong{pero solo se puede elegir si se elige pintura metalizada}), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, \sphinxstylestrong{pero solo si se elige antes el Radio-CD}), y GPS incorporado (520 euros más).
 
 \end{itemize}
 
 Crear la aplicación que respete las restricciones exigidas por el cliente.
 
+
+\subsection{HTML del configurador}
+\label{\detokenize{tema4:html-del-configurador}}
+
+\subsection{JS del configurador (con JQuery (DAM))}
+\label{\detokenize{tema4:js-del-configurador-con-jquery-dam}}
 
 \section{Dinamismo con Google Maps}
 \label{\detokenize{tema4:dinamismo-con-google-maps}}
@@ -4292,7 +4298,7 @@ Google Maps ofrece un servicio de mapas con una limitación de 25.000 peticiones
 
 
 \subsection{Ejercicio}
-\label{\detokenize{tema4:id11}}
+\label{\detokenize{tema4:id7}}
 Ampliar el programa con una lista de ciudades del mundo. Cuando el usuario elija una de ellas, nuestro programa nos dirá la distancia desde Ciudad Real a dichas ciudades. Considerar las siguientes coordenadas en formato (latitud, longitud):
 \begin{itemize}
 \item {} 
@@ -4343,7 +4349,7 @@ Ahora una función que nos calcula la distancia sería algo como esto:
 
 
 \subsection{Ejercicio}
-\label{\detokenize{tema4:id12}}
+\label{\detokenize{tema4:id8}}
 La empresa Automobile Creation for Millenium Enterprise (ACME) planea lanzar una página web en la que se permita al usuario configurar los coches a su medida, ofreciendo las distintas opciones en pantalla para que el usuario las elija. Sin embargo no todas las combinaciones se permiten en fábrica por lo que deberán tenerse en cuentas las siguientes
 
 
@@ -4776,54 +4782,7 @@ La cantidad de impuestos puede ser negativa (que significa que le sale «a devol
 \subsection{JS Calculador (sin JQuery (ASIR))}
 \label{\detokenize{tema4:js-calculador-sin-jquery-asir}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-    \PYG{k+kd}{let} \PYG{n+nx}{caja\PYGZus{}salarios}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
-                        \PYG{l+s+s2}{\PYGZdq{}salario\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
-    \PYG{k+kd}{let} \PYG{n+nx}{texto\PYGZus{}salario}\PYG{o}{=}\PYG{n+nx}{caja\PYGZus{}salarios}\PYG{p}{.}\PYG{n+nx}{value}\PYG{p}{;}
-    \PYG{k+kd}{let} \PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{=}\PYG{n+nb}{parseFloat}\PYG{p}{(}\PYG{n+nx}{texto\PYGZus{}salario}\PYG{p}{)}\PYG{p}{;}
-    
-    \PYG{c+cm}{/* Calculamos los impuestos*/}
-    \PYG{k+kd}{let} \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
-     
-    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{20000}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{30000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.1}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    
-    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{30001}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{50000}\PYG{p}{)} \PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.2}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{salario\PYGZus{}anual}\PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{50001}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{salario\PYGZus{}anual} \PYG{o}{*} \PYG{l+m+mf}{0.38}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    
-    \PYG{c+cm}{/* Y ahora comprobamos si ha marcado}
-\PYG{c+cm}{     * la casilla \PYGZdq{}con\PYGZus{}hijos\PYGZdq{}*/}
-    \PYG{k+kd}{let} \PYG{n+nx}{radio\PYGZus{}con\PYGZus{}hijos}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
-                        \PYG{l+s+s2}{\PYGZdq{}con\PYGZus{}hijos\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
-    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{radio\PYGZus{}con\PYGZus{}hijos}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{180}\PYG{p}{;}
-        \PYG{c+c1}{//code}
-    \PYG{p}{\PYGZcb{}}
-    \PYG{c+cm}{/* Comprobamos si marcó la}
-\PYG{c+cm}{     * bonificación B1*/}
-    \PYG{k+kd}{let} \PYG{n+nx}{bonificacion\PYGZus{}b1}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
-        \PYG{l+s+s2}{\PYGZdq{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
-    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{bonificacion\PYGZus{}b1}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{355}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    \PYG{c+cm}{/* Y comprobamos la bonificación B2*/}
-    \PYG{k+kd}{let} \PYG{n+nx}{bonificacion\PYGZus{}b2}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
-        \PYG{l+s+s2}{\PYGZdq{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
-    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{bonificacion\PYGZus{}b2}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{impuestos}\PYG{o}{=}\PYG{n+nx}{impuestos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{560}\PYG{p}{;}
-    \PYG{p}{\PYGZcb{}}
-    
-    \PYG{c+cm}{/* Escribimos el resultado*/}
-    \PYG{k+kd}{let} \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
-    \PYG{n+nx}{div\PYGZus{}mensajes}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Impuestos:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{impuestos}\PYG{p}{;}
-    
-    
-\PYG{p}{\PYGZcb{}}
+\PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}JS cargado\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
 \end{sphinxVerbatim}
 
 
@@ -13119,7 +13078,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
