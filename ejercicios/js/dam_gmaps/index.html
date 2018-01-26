@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/estilo.css"
+          rel="stylesheet">
+    <title>Plantilla de web</title>
+    <script type="text/javascript"
+            src="js/jquery.js"></script>
+    <script 
+		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpv9zCj9szIIu--LuNmDsry2fZCRrOqfY&sensor=false"></script>
+    <script type="text/javascript" src="js/programa.js"></script>
+</head>
+
+<body>
+<!--Toda nuestra página irá aquí dentro-->    
+<div id="contenido">
+    
+<h1>Ejemplo con Google Maps</h1>
+<div id="mapa" style="width:800px; height:600px;"></div>
+<form>
+    Latitud:<input type="number" id="latitud"><br/>
+    Longitud<input type="number" id="longitud"><br/>
+    <button id="viajar">Viajar a estas coordenadas</button>
+    
+    Si lo prefiere elija una de estas ciudades
+    <select id="ciudad">
+        <option value="CR">Ciudad Real</option>
+        <option value="BE">Berlin</option>
+        <option value="NY">Nueva York</option>
+    </select>
+    <button id="viajar_ciudad">Viajar a la seleccionada</button>
+</form>
+<div id="mensajes">Aquí aparecerán sus resultados</div>
+</body>
+</html>
