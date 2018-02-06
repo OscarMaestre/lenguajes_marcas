@@ -336,6 +336,40 @@ Elaborar la DTD que formaliza estas reglas.
     <!ELEMENT descripcion (#PCDATA)>
     <!ELEMENT teclado     (codigo,descripcion,peso?)>
     <!ELEMENT peso        (#PCDATA)>
+    
+El siguiente fichero debe validarse correctamente:
+
+.. code-block:: xml
+
+    <productos>
+    </productos>
+    
+Y el siguiente también
+
+.. code-block:: xml
+
+    <productos>
+        <teclado>
+            <codigo>T1</codigo>
+            <descripcion>Teclado inalamb.</descripcion>
+        </teclado>
+    </productos>
+    
+Y este también (a pesar del flagrante error en el peso)
+
+.. code-block:: xml
+
+
+    <productos>
+        <raton>
+            <codigo>R1</codigo>
+        </raton>
+        <teclado>
+            <codigo>T1</codigo>
+            <descripcion>Teclado inalamb.</descripcion>
+            <peso>|@¬|@~||@~</peso>
+        </teclado>
+    </productos>
 
 	
 Ejercicio I (DTD)
