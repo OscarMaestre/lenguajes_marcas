@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
+\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -5308,6 +5308,36 @@ La solución completa sería así:
 \end{sphinxVerbatim}
 
 
+\subsection{Ejemplo de DTD (productos)}
+\label{\detokenize{tema5:ejemplo-de-dtd-productos}}
+Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en los archivos XML de datos de una empresa de fabricación:
+\begin{itemize}
+\item {} 
+La raíz es \textless{}productos\textgreater{}
+
+\item {} 
+Dentro de productos puede haber \textless{}raton\textgreater{} o \textless{}teclado\textgreater{} que pueden repetirse e ir en cualquier orden (RRTT, T, TR, TTRR)
+
+\item {} 
+Todo \textless{}raton\textgreater{} tiene siempre un \textless{}codigo\textgreater{} y puede o no tener una \textless{}descripción\textgreater{}.
+
+\item {} 
+Todo \textless{}teclado\textgreater{} tiene siempre un \textless{}codigo\textgreater{}, debe llevar siempre una \textless{}descripcion\textgreater{} y puede o no tener un \textless{}peso\textgreater{}
+
+\end{itemize}
+
+Elaborar la DTD que formaliza estas reglas.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos}   \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{\textbar{}}\PYG{n+nt}{teclado}\PYG{o}{)}\PYG{o}{*} \PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{raton}       \PYG{o}{(}\PYG{n+nt}{codigo}\PYG{o}{,} \PYG{n+nt}{descripcion}\PYG{o}{?}\PYG{o}{)} \PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{codigo}      \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{descripcion} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{teclado}     \PYG{o}{(}\PYG{n+nt}{codigo}\PYG{o}{,}\PYG{n+nt}{descripcion}\PYG{o}{,}\PYG{n+nt}{peso}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{peso}        \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
 \section{Ejercicio I (DTD)}
 \label{\detokenize{tema5:ejercicio-i-dtd}}
 Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
@@ -7719,7 +7749,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9417,7 +9447,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10658,7 +10688,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -10854,7 +10884,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
+\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -13140,7 +13170,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

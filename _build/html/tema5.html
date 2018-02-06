@@ -288,6 +288,25 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejemplo-de-dtd-productos">
+<h3>Ejemplo de DTD (productos)<a class="headerlink" href="#ejemplo-de-dtd-productos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en los archivos XML de datos de una empresa de fabricación:</p>
+<ul class="simple">
+<li>La raíz es &lt;productos&gt;</li>
+<li>Dentro de productos puede haber &lt;raton&gt; o &lt;teclado&gt; que pueden repetirse e ir en cualquier orden (RRTT, T, TR, TTRR)</li>
+<li>Todo &lt;raton&gt; tiene siempre un &lt;codigo&gt; y puede o no tener una &lt;descripción&gt;.</li>
+<li>Todo &lt;teclado&gt; tiene siempre un &lt;codigo&gt;, debe llevar siempre una &lt;descripcion&gt; y puede o no tener un &lt;peso&gt;</li>
+</ul>
+<p>Elaborar la DTD que formaliza estas reglas.</p>
+<div class="highlight-dtd"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span>   <span class="o">(</span><span class="nt">raton</span><span class="o">|</span><span class="nt">teclado</span><span class="o">)*</span> <span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">raton</span>       <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span> <span class="nt">descripcion</span><span class="o">?)</span> <span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">codigo</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">descripcion</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">teclado</span>     <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span><span class="nt">descripcion</span><span class="o">,</span><span class="nt">peso</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">peso</span>        <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="ejercicio-i-dtd">
 <h2>Ejercicio I (DTD)<a class="headerlink" href="#ejercicio-i-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -2243,6 +2262,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#validez">Validez</a></li>
 <li><a class="reference internal" href="#gramaticas">Gramáticas</a><ul>
 <li><a class="reference internal" href="#sintaxis-dtd">Sintaxis DTD</a></li>
+<li><a class="reference internal" href="#ejemplo-de-dtd-productos">Ejemplo de DTD (productos)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicio-i-dtd">Ejercicio I (DTD)</a></li>

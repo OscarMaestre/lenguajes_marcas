@@ -313,6 +313,30 @@ La solución completa sería así:
 			<cif>5121554</cif>
 		</cliente>
 	</listaclientes>
+
+Ejemplo de DTD (productos)
+---------------------------------
+
+
+Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en los archivos XML de datos de una empresa de fabricación:
+
+* La raíz es <productos>
+* Dentro de productos puede haber <raton> o <teclado> que pueden repetirse e ir en cualquier orden (RRTT, T, TR, TTRR)
+* Todo <raton> tiene siempre un <codigo> y puede o no tener una <descripción>.
+* Todo <teclado> tiene siempre un <codigo>, debe llevar siempre una <descripcion> y puede o no tener un <peso>
+
+Elaborar la DTD que formaliza estas reglas.
+
+
+.. code-block:: dtd
+
+    <!ELEMENT productos   (raton|teclado)* >
+    <!ELEMENT raton       (codigo, descripcion?) >
+    <!ELEMENT codigo      (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT teclado     (codigo,descripcion,peso?)>
+    <!ELEMENT peso        (#PCDATA)>
+
 	
 Ejercicio I (DTD)
 ===================================================
