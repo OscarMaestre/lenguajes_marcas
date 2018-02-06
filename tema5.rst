@@ -155,10 +155,10 @@ DTD significa Declaración de Tipo de Documento, y es un mecanismo para expresar
 
 Por ejemplo, supongamos el mismo ejemplo ejemplo anterior en el que queremos formalizar lo que puede aparecer en un fichero de clientes. Se debe tener en cuenta que en un DTD se pueden indicar reglas para lo siguiente:
 
-* Se puede indicar si un elemento aparece o no de forma opcional
+* Se puede indicar si un elemento aparece o no de forma opcional (usando ``?``)
 * Se puede indicar si un elemento debe aparecer de forma obligatoria.
-* Se puede indicar si algo aparecer una o muchas veces.
-* Se puede indicar si algo aparece cero o muchas veces.
+* Se puede indicar si algo aparecer una o muchas veces (usando ``+``).
+* Se puede indicar si algo aparece cero o muchas veces (usando ``*``).
 
 
 Supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es ``<listaclientes>``. Dentro de ``<listaclientes>`` deseamos permitir uno o más elementos ``<cliente>``. Dentro de ``<cliente>`` todos deberán tener ``<cif>`` y ``<nombre>`` y en ese orden. Dentro de ``<cliente>`` puede aparecer o no un elemento ``<diasentrega>`` para indicar que ese cliente exige un máximo de plazos. Como no todo el mundo usa plazos el ``<diasentrega>`` es optativo.

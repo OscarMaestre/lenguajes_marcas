@@ -159,10 +159,10 @@
 <p>DTD significa Declaración de Tipo de Documento, y es un mecanismo para expresar las reglas sobre lo que se va a permitir y lo que no en archivos XML.</p>
 <p>Por ejemplo, supongamos el mismo ejemplo ejemplo anterior en el que queremos formalizar lo que puede aparecer en un fichero de clientes. Se debe tener en cuenta que en un DTD se pueden indicar reglas para lo siguiente:</p>
 <ul class="simple">
-<li>Se puede indicar si un elemento aparece o no de forma opcional</li>
+<li>Se puede indicar si un elemento aparece o no de forma opcional (usando <code class="docutils literal"><span class="pre">?</span></code>)</li>
 <li>Se puede indicar si un elemento debe aparecer de forma obligatoria.</li>
-<li>Se puede indicar si algo aparecer una o muchas veces.</li>
-<li>Se puede indicar si algo aparece cero o muchas veces.</li>
+<li>Se puede indicar si algo aparecer una o muchas veces (usando <code class="docutils literal"><span class="pre">+</span></code>).</li>
+<li>Se puede indicar si algo aparece cero o muchas veces (usando <code class="docutils literal"><span class="pre">*</span></code>).</li>
 </ul>
 <p>Supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;listaclientes&gt;</span></code> deseamos permitir uno o más elementos <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code>. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> todos deberán tener <code class="docutils literal"><span class="pre">&lt;cif&gt;</span></code> y <code class="docutils literal"><span class="pre">&lt;nombre&gt;</span></code> y en ese orden. Dentro de <code class="docutils literal"><span class="pre">&lt;cliente&gt;</span></code> puede aparecer o no un elemento <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> para indicar que ese cliente exige un máximo de plazos. Como no todo el mundo usa plazos el <code class="docutils literal"><span class="pre">&lt;diasentrega&gt;</span></code> es optativo.</p>
 <p>Por ejemplo, este XML sí es válido:</p>
@@ -2354,7 +2354,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
