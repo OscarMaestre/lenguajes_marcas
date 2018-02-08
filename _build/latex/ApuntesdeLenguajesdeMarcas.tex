@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{06 de febrero de 2018}
+\date{08 de febrero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
+\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -4974,7 +4974,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
+\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -5584,160 +5584,45 @@ Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido
 \end{itemize}
 
 
-\subsection{Solución punto 1}
-\label{\detokenize{tema5:solucion-punto-1}}
-La raíz es \sphinxcode{listacursos} y tiene uno o más cursos
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-]\PYGZgt{}
-\end{sphinxVerbatim}
-
-
-\subsection{Solución punto 2}
-\label{\detokenize{tema5:solucion-punto-2}}
-Un curso tiene uno o más elementos \sphinxcode{alumno}.
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-]\PYGZgt{}
-\end{sphinxVerbatim}
-
-
-\subsection{Solución punto 3}
-\label{\detokenize{tema5:solucion-punto-3}}
-Todo alumno tiene DNI, nombre y apellido 1, pero puede que tenga el segundo o no
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre, ap1, ap2?)\PYGZgt{}}
-]\PYGZgt{}
-\end{sphinxVerbatim}
-
-
-\subsection{Solución al punto 4}
-\label{\detokenize{tema5:solucion-al-punto-4}}
-Todo alumno tiene una lista de asignaturas que consta de una o más asignaturas. Ampliamos el elemento alumno:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre, ap1, ap2?, listaasignaturas)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT listaasignaturas (asignatura+)}
-\PYG{c+cp}{]\PYGZgt{}}
-\end{sphinxVerbatim}
-
-
-\subsection{Solución punto 5}
-\label{\detokenize{tema5:solucion-punto-5}}
-Una posible solución implicaría usar dos elementos \sphinxcode{nombre}. \sphinxstyleemphasis{Está permitido} pero solo si ambos elementos se usan de la misma forma (por ejemplo que usen \sphinxcode{(\#PCDATA)}. Para evitar problemas cambiaremos algunos nombres de elementos.
-
-Este punto pedía contemplar que una asignatura tiene un nombre, un código y un profesor.
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre\PYGZus{}alumno, ap1, ap2?, listaasignaturas)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT listaasignaturas (asignatura+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT asignatura (nombre\PYGZus{}asig, profesor)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ATTLIST asignatura codigo CDATA \PYGZsh{}REQUIRED\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nombre\PYGZus{}asig (\PYGZsh{}PCDATA)\PYGZgt{}}
-]\PYGZgt{}
-\end{sphinxVerbatim}
-
-
-\subsection{Solución punto 6}
-\label{\detokenize{tema5:solucion-punto-6}}
-Se indica que un profesor tiene una serie de elementos dentro. Aquí hay un claro ejemplo en el que repetir el elemento \sphinxcode{ap1} o el \sphinxcode{ap2} hubiera sido apropiado, ya que los apellidos de alumnos o profesores en realidad no se distinguen en nada.
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre\PYGZus{}alumno, ap1, ap2?, listaasignaturas)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT listaasignaturas (asignatura+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT asignatura (nombre\PYGZus{}asig, profesor)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ATTLIST asignatura codigo CDATA \PYGZsh{}REQUIRED\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nombre\PYGZus{}asig (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT profesor (nrp, nombre\PYGZus{}prof, ap\PYGZus{}prof1, ap\PYGZus{}prof2?)\PYGZgt{}}
-]\PYGZgt{}
-\end{sphinxVerbatim}
-
-
 \subsection{Solución completa}
 \label{\detokenize{tema5:solucion-completa}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT listacursos (curso)+\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno)+\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre,}
+\PYG{c+cp}{                    ap1, ap2?, asignatura+)\PYGZgt{}}
 
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE listacursos [}
-\PYG{c+cp}{        \PYGZlt{}!ELEMENT listacursos (curso+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre\PYGZus{}alumno, ap1, ap2?, listaasignaturas)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT listaasignaturas (asignatura+)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT asignatura (nombre\PYGZus{}asig, profesor)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ATTLIST asignatura codigo CDATA \PYGZsh{}REQUIRED\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nombre\PYGZus{}asig (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT profesor (nrp, nombre\PYGZus{}prof, ap\PYGZus{}prof1, ap\PYGZus{}prof2?)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT asignatura (nombre, profesor)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ATTLIST asignatura codigo CDATA \PYGZsh{}REQUIRED\PYGZgt{}}
 
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT dni (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nombre\PYGZus{}alumno (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT ap1 (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT ap2 (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nrp (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT nombre\PYGZus{}prof (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT ap\PYGZus{}prof1 (\PYGZsh{}PCDATA)\PYGZgt{}}
-        \PYG{c+cp}{\PYGZlt{}!ELEMENT ap\PYGZus{}prof2 (\PYGZsh{}PCDATA)\PYGZgt{}}
-]\PYGZgt{}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT profesor (nrp, nombre, ap1, ap2?)\PYGZgt{}}
 
+\PYG{c+cp}{\PYGZlt{}!ELEMENT dni    (\PYGZsh{}PCDATA)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT nombre (\PYGZsh{}PCDATA)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT ap1    (\PYGZsh{}PCDATA)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT ap2    (\PYGZsh{}PCDATA)\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}!ELEMENT nrp    (\PYGZsh{}PCDATA)\PYGZgt{}}
+\end{sphinxVerbatim}
 
+Un ejemplo de fichero válido:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n+nt}{\PYGZlt{}listacursos}\PYG{n+nt}{\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}curso}\PYG{n+nt}{\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}alumno}\PYG{n+nt}{\PYGZgt{}}
-                        \PYG{n+nt}{\PYGZlt{}dni}\PYG{n+nt}{\PYGZgt{}}1234567\PYG{n+nt}{\PYGZlt{}/dni\PYGZgt{}}
-                        \PYG{n+nt}{\PYGZlt{}nombre\PYGZus{}alumno}\PYG{n+nt}{\PYGZgt{}}Juan\PYG{n+nt}{\PYGZlt{}/nombre\PYGZus{}alumno\PYGZgt{}}
-                        \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Sanchez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
-                        \PYG{n+nt}{\PYGZlt{}listaasignaturas}\PYG{n+nt}{\PYGZgt{}}
-                                \PYG{n+nt}{\PYGZlt{}asignatura}\PYG{n+nt}{\PYGZgt{}}
-                                        \PYG{n+nt}{\PYGZlt{}nombre\PYGZus{}asig}\PYG{n+nt}{\PYGZgt{}}
-                                          Lenguajes de marcas
-                                        \PYG{n+nt}{\PYGZlt{}/nombre\PYGZus{}asig\PYGZgt{}}
-                                        \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}
-                                          XML\PYGZhy{}DAM1
-                                        \PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
-                                        \PYG{n+nt}{\PYGZlt{}profesor}\PYG{n+nt}{\PYGZgt{}}
-                                                \PYG{n+nt}{\PYGZlt{}nrp}\PYG{n+nt}{\PYGZgt{}}
-                                                  03409435898W0303
-                                                \PYG{n+nt}{\PYGZlt{}/nrp\PYGZgt{}}
-                                                \PYG{n+nt}{\PYGZlt{}nombre\PYGZus{}prof}\PYG{n+nt}{\PYGZgt{}}
-                                                  Andres
-                                                \PYG{n+nt}{\PYGZlt{}/nombre\PYGZus{}prof\PYGZgt{}}
-                                                \PYG{n+nt}{\PYGZlt{}ap\PYGZus{}prof1}\PYG{n+nt}{\PYGZgt{}}
-                                                  Ruiz
-                                                \PYG{n+nt}{\PYGZlt{}/ap\PYGZus{}prof1\PYGZgt{}}
-                                        \PYG{n+nt}{\PYGZlt{}/profesor\PYGZgt{}}
-                                \PYG{n+nt}{\PYGZlt{}/asignatura\PYGZgt{}}
-                        \PYG{n+nt}{\PYGZlt{}/listaasignaturas\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}/curso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}curso}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}alumno}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}dni}\PYG{n+nt}{\PYGZgt{}}44e\PYG{n+nt}{\PYGZlt{}/dni\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Juan\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Sanchez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}asignatura} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}LM1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Leng marcas\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}profesor}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}nrp}\PYG{n+nt}{\PYGZgt{}}8\PYG{n+nt}{\PYGZlt{}/nrp\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Oscar\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Gomez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/profesor\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/asignatura\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/curso\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/listacursos\PYGZgt{}}
 \end{sphinxVerbatim}
 
@@ -7782,7 +7667,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9480,7 +9365,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
+\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10917,7 +10802,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12213,7 +12098,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13203,7 +13088,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

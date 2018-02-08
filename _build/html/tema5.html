@@ -499,146 +499,42 @@
 <li>Un alumno escoge una lista de asignaturas donde habrá una o más asignaturas. Toda asignatura tiene un nombre, un atributo código y un profesor.</li>
 <li>Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido (también puede tener o no un segundo apellido).</li>
 </ul>
-<div class="section" id="solucion-punto-1">
-<h3>Solución punto 1<a class="headerlink" href="#solucion-punto-1" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La raíz es <code class="docutils literal"><span class="pre">listacursos</span></code> y tiene uno o más cursos</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-]&gt;
-</pre></div>
-</div>
-</div>
-<div class="section" id="solucion-punto-2">
-<h3>Solución punto 2<a class="headerlink" href="#solucion-punto-2" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Un curso tiene uno o más elementos <code class="docutils literal"><span class="pre">alumno</span></code>.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-]&gt;
-</pre></div>
-</div>
-</div>
-<div class="section" id="solucion-punto-3">
-<h3>Solución punto 3<a class="headerlink" href="#solucion-punto-3" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Todo alumno tiene DNI, nombre y apellido 1, pero puede que tenga el segundo o no</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT alumno (dni, nombre, ap1, ap2?)&gt;</span>
-]&gt;
-</pre></div>
-</div>
-</div>
-<div class="section" id="solucion-al-punto-4">
-<h3>Solución al punto 4<a class="headerlink" href="#solucion-al-punto-4" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Todo alumno tiene una lista de asignaturas que consta de una o más asignaturas. Ampliamos el elemento alumno:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT alumno (dni, nombre, ap1, ap2?, listaasignaturas)&gt;</span>
-        <span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)</span>
-<span class="cp">]&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="solucion-punto-5">
-<h3>Solución punto 5<a class="headerlink" href="#solucion-punto-5" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Una posible solución implicaría usar dos elementos <code class="docutils literal"><span class="pre">nombre</span></code>. <em>Está permitido</em> pero solo si ambos elementos se usan de la misma forma (por ejemplo que usen <code class="docutils literal"><span class="pre">(#PCDATA)</span></code>. Para evitar problemas cambiaremos algunos nombres de elementos.</p>
-<p>Este punto pedía contemplar que una asignatura tiene un nombre, un código y un profesor.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)&gt;</span>
-        <span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT asignatura (nombre_asig, profesor)&gt;</span>
-        <span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
-        <span class="cp">&lt;!ELEMENT nombre_asig (#PCDATA)&gt;</span>
-]&gt;
-</pre></div>
-</div>
-</div>
-<div class="section" id="solucion-punto-6">
-<h3>Solución punto 6<a class="headerlink" href="#solucion-punto-6" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Se indica que un profesor tiene una serie de elementos dentro. Aquí hay un claro ejemplo en el que repetir el elemento <code class="docutils literal"><span class="pre">ap1</span></code> o el <code class="docutils literal"><span class="pre">ap2</span></code> hubiera sido apropiado, ya que los apellidos de alumnos o profesores en realidad no se distinguen en nada.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)&gt;</span>
-        <span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT asignatura (nombre_asig, profesor)&gt;</span>
-        <span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
-        <span class="cp">&lt;!ELEMENT nombre_asig (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT profesor (nrp, nombre_prof, ap_prof1, ap_prof2?)&gt;</span>
-]&gt;
-</pre></div>
-</div>
-</div>
 <div class="section" id="solucion-completa">
 <h3>Solución completa<a class="headerlink" href="#solucion-completa" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;!ELEMENT listacursos (curso)+&gt;</span>
+<span class="cp">&lt;!ELEMENT curso (alumno)+&gt;</span>
+<span class="cp">&lt;!ELEMENT alumno (dni, nombre,</span>
+<span class="cp">                    ap1, ap2?, asignatura+)&gt;</span>
 
-<span class="cp">&lt;!DOCTYPE listacursos [</span>
-<span class="cp">        &lt;!ELEMENT listacursos (curso+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT curso (alumno+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)&gt;</span>
-        <span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)&gt;</span>
-        <span class="cp">&lt;!ELEMENT asignatura (nombre_asig, profesor)&gt;</span>
-        <span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
-        <span class="cp">&lt;!ELEMENT nombre_asig (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT profesor (nrp, nombre_prof, ap_prof1, ap_prof2?)&gt;</span>
+<span class="cp">&lt;!ELEMENT asignatura (nombre, profesor)&gt;</span>
+<span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
 
-        <span class="cp">&lt;!ELEMENT dni (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT nombre_alumno (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT ap1 (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT ap2 (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT nrp (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT nombre_prof (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT ap_prof1 (#PCDATA)&gt;</span>
-        <span class="cp">&lt;!ELEMENT ap_prof2 (#PCDATA)&gt;</span>
-]&gt;
+<span class="cp">&lt;!ELEMENT profesor (nrp, nombre, ap1, ap2?)&gt;</span>
 
-
-<span class="nt">&lt;listacursos&gt;</span>
-        <span class="nt">&lt;curso&gt;</span>
-                <span class="nt">&lt;alumno&gt;</span>
-                        <span class="nt">&lt;dni&gt;</span>1234567<span class="nt">&lt;/dni&gt;</span>
-                        <span class="nt">&lt;nombre_alumno&gt;</span>Juan<span class="nt">&lt;/nombre_alumno&gt;</span>
-                        <span class="nt">&lt;ap1&gt;</span>Sanchez<span class="nt">&lt;/ap1&gt;</span>
-                        <span class="nt">&lt;listaasignaturas&gt;</span>
-                                <span class="nt">&lt;asignatura&gt;</span>
-                                        <span class="nt">&lt;nombre_asig&gt;</span>
-                                          Lenguajes de marcas
-                                        <span class="nt">&lt;/nombre_asig&gt;</span>
-                                        <span class="nt">&lt;codigo&gt;</span>
-                                          XML-DAM1
-                                        <span class="nt">&lt;/codigo&gt;</span>
-                                        <span class="nt">&lt;profesor&gt;</span>
-                                                <span class="nt">&lt;nrp&gt;</span>
-                                                  03409435898W0303
-                                                <span class="nt">&lt;/nrp&gt;</span>
-                                                <span class="nt">&lt;nombre_prof&gt;</span>
-                                                  Andres
-                                                <span class="nt">&lt;/nombre_prof&gt;</span>
-                                                <span class="nt">&lt;ap_prof1&gt;</span>
-                                                  Ruiz
-                                                <span class="nt">&lt;/ap_prof1&gt;</span>
-                                        <span class="nt">&lt;/profesor&gt;</span>
-                                <span class="nt">&lt;/asignatura&gt;</span>
-                        <span class="nt">&lt;/listaasignaturas&gt;</span>
-                <span class="nt">&lt;/alumno&gt;</span>
-        <span class="nt">&lt;/curso&gt;</span>
+<span class="cp">&lt;!ELEMENT dni    (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT nombre (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT ap1    (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT ap2    (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT nrp    (#PCDATA)&gt;</span>
+</pre></div>
+</div>
+<p>Un ejemplo de fichero válido:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listacursos&gt;</span>
+    <span class="nt">&lt;curso&gt;</span>
+        <span class="nt">&lt;alumno&gt;</span>
+            <span class="nt">&lt;dni&gt;</span>44e<span class="nt">&lt;/dni&gt;</span>
+            <span class="nt">&lt;nombre&gt;</span>Juan<span class="nt">&lt;/nombre&gt;</span>
+            <span class="nt">&lt;ap1&gt;</span>Sanchez<span class="nt">&lt;/ap1&gt;</span>
+            <span class="nt">&lt;asignatura</span> <span class="na">codigo=</span><span class="s">&quot;LM1&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;nombre&gt;</span>Leng marcas<span class="nt">&lt;/nombre&gt;</span>
+                <span class="nt">&lt;profesor&gt;</span>
+                    <span class="nt">&lt;nrp&gt;</span>8<span class="nt">&lt;/nrp&gt;</span>
+                    <span class="nt">&lt;nombre&gt;</span>Oscar<span class="nt">&lt;/nombre&gt;</span>
+                    <span class="nt">&lt;ap1&gt;</span>Gomez<span class="nt">&lt;/ap1&gt;</span>
+                <span class="nt">&lt;/profesor&gt;</span>
+            <span class="nt">&lt;/asignatura&gt;</span>
+        <span class="nt">&lt;/alumno&gt;</span>
+    <span class="nt">&lt;/curso&gt;</span>
 <span class="nt">&lt;/listacursos&gt;</span>
 </pre></div>
 </div>
@@ -2302,12 +2198,6 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </ul>
 </li>
 <li><a class="reference internal" href="#ejercicio">Ejercicio</a><ul>
-<li><a class="reference internal" href="#solucion-punto-1">Solución punto 1</a></li>
-<li><a class="reference internal" href="#solucion-punto-2">Solución punto 2</a></li>
-<li><a class="reference internal" href="#solucion-punto-3">Solución punto 3</a></li>
-<li><a class="reference internal" href="#solucion-al-punto-4">Solución al punto 4</a></li>
-<li><a class="reference internal" href="#solucion-punto-5">Solución punto 5</a></li>
-<li><a class="reference internal" href="#solucion-punto-6">Solución punto 6</a></li>
 <li><a class="reference internal" href="#solucion-completa">Solución completa</a></li>
 </ul>
 </li>

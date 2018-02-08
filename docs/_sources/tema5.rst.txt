@@ -548,163 +548,50 @@ Un instituto necesita registrar los cursos y alumnos que estudian en él y neces
 * Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido (también puede tener o no un segundo apellido).
 	
 	
-Solución punto 1
-----------------------------------------------
-
-La raíz es ``listacursos`` y tiene uno o más cursos
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-	]>
-	
-Solución punto 2
-----------------------------------------------
-Un curso tiene uno o más elementos ``alumno``.
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-	]>		
-
-	
-Solución punto 3
-----------------------------------------------
-Todo alumno tiene DNI, nombre y apellido 1, pero puede que tenga el segundo o no
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-		<!ELEMENT alumno (dni, nombre, ap1, ap2?)>
-	]>	
-	
-Solución al punto 4
-----------------------------------------------
-Todo alumno tiene una lista de asignaturas que consta de una o más asignaturas. Ampliamos el elemento alumno:
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-		<!ELEMENT alumno (dni, nombre, ap1, ap2?, listaasignaturas)>
-		<!ELEMENT listaasignaturas (asignatura+)
-	]>
-	
-	
-Solución punto 5
-----------------------------------------------
-Una posible solución implicaría usar dos elementos ``nombre``. *Está permitido* pero solo si ambos elementos se usan de la misma forma (por ejemplo que usen ``(#PCDATA)``. Para evitar problemas cambiaremos algunos nombres de elementos.
-
-Este punto pedía contemplar que una asignatura tiene un nombre, un código y un profesor.
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-		<!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)>
-		<!ELEMENT listaasignaturas (asignatura+)>
-		<!ELEMENT asignatura (nombre_asig, profesor)>
-		<!ATTLIST asignatura codigo CDATA #REQUIRED>
-		<!ELEMENT nombre_asig (#PCDATA)>
-	]>	
-	
-	
-Solución punto 6
-----------------------------------------------
-Se indica que un profesor tiene una serie de elementos dentro. Aquí hay un claro ejemplo en el que repetir el elemento ``ap1`` o el ``ap2`` hubiera sido apropiado, ya que los apellidos de alumnos o profesores en realidad no se distinguen en nada.
-
-
-.. code-block:: xml
-
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-		<!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)>
-		<!ELEMENT listaasignaturas (asignatura+)>
-		<!ELEMENT asignatura (nombre_asig, profesor)>
-		<!ATTLIST asignatura codigo CDATA #REQUIRED>
-		<!ELEMENT nombre_asig (#PCDATA)>
-		<!ELEMENT profesor (nrp, nombre_prof, ap_prof1, ap_prof2?)>
-	]>
-	
 Solución completa
 ----------------------------------------------
 .. code-block:: xml
 
-	<?xml version="1.0" encoding="utf-8"?>
-
-	<!DOCTYPE listacursos [
-		<!ELEMENT listacursos (curso+)>
-		<!ELEMENT curso (alumno+)>
-		<!ELEMENT alumno (dni, nombre_alumno, ap1, ap2?, listaasignaturas)>
-		<!ELEMENT listaasignaturas (asignatura+)>
-		<!ELEMENT asignatura (nombre_asig, profesor)>
-		<!ATTLIST asignatura codigo CDATA #REQUIRED>
-		<!ELEMENT nombre_asig (#PCDATA)>
-		<!ELEMENT profesor (nrp, nombre_prof, ap_prof1, ap_prof2?)>
-		
-		<!ELEMENT dni (#PCDATA)>
-		<!ELEMENT nombre_alumno (#PCDATA)>
-		<!ELEMENT ap1 (#PCDATA)>
-		<!ELEMENT ap2 (#PCDATA)>
-		<!ELEMENT nrp (#PCDATA)>
-		<!ELEMENT nombre_prof (#PCDATA)>
-		<!ELEMENT ap_prof1 (#PCDATA)>
-		<!ELEMENT ap_prof2 (#PCDATA)>
-	]>
+    <!ELEMENT listacursos (curso)+>
+    <!ELEMENT curso (alumno)+>
+    <!ELEMENT alumno (dni, nombre,
+                        ap1, ap2?, asignatura+)>
+        
+    <!ELEMENT asignatura (nombre, profesor)>
+    <!ATTLIST asignatura codigo CDATA #REQUIRED>
+        
+    <!ELEMENT profesor (nrp, nombre, ap1, ap2?)>
+    
+    <!ELEMENT dni    (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT ap1    (#PCDATA)>
+    <!ELEMENT ap2    (#PCDATA)>
+    <!ELEMENT nrp    (#PCDATA)>
 
 
-	<listacursos>
-		<curso>
-			<alumno>
-				<dni>1234567</dni>
-				<nombre_alumno>Juan</nombre_alumno>
-				<ap1>Sanchez</ap1>
-				<listaasignaturas>
-					<asignatura>
-						<nombre_asig>
-						  Lenguajes de marcas
-						</nombre_asig>
-						<codigo>
-						  XML-DAM1
-						</codigo>
-						<profesor>
-							<nrp>
-							  03409435898W0303
-							</nrp>
-							<nombre_prof>
-							  Andres
-							</nombre_prof>
-							<ap_prof1>
-							  Ruiz
-							</ap_prof1>
-						</profesor>
-					</asignatura>
-				</listaasignaturas>
-			</alumno>
-		</curso>
-	</listacursos>
+Un ejemplo de fichero válido:
 
-	
+.. code-block:: xml
+    
+    <listacursos>
+        <curso>
+            <alumno>
+                <dni>44e</dni>
+                <nombre>Juan</nombre>
+                <ap1>Sanchez</ap1>
+                <asignatura codigo="LM1">
+                    <nombre>Leng marcas</nombre>
+                    <profesor>
+                        <nrp>8</nrp>
+                        <nombre>Oscar</nombre>
+                        <ap1>Gomez</ap1>
+                    </profesor>
+                </asignatura>
+            </alumno>
+        </curso>
+    </listacursos>
+        
+    
 	
 
 
