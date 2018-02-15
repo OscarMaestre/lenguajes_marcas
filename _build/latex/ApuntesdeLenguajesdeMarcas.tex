@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
+\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -5964,6 +5964,39 @@ El objetivo final debe ser validar un fichero como este:
 
 \subsection{Solución al mayorista de libros}
 \label{\detokenize{tema5:solucion-al-mayorista-de-libros}}
+La siguiente DTD valida el fichero arriba mostrado:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El elemento raíz es operaciones y dentro de él hay uno o más elementos operación}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{operaciones} \PYG{o}{(}\PYG{n+nt}{operacion}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Una operación puede ser ventas o compras, en cualquier orden y repetidas las veces que sea necesario}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{operacion} \PYG{o}{(}\PYG{n+nt}{venta}\PYG{o}{\textbar{}}\PYG{n+nt}{compra}\PYG{o}{)}\PYG{o}{+}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{venta} \PYG{o}{(}\PYG{n+nt}{titulosvendidos}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Una venta tiene uno o más titulos, la cantidad de libros vendidos, puede haber un elemento entregado que indique si la entrega se ha realizado, y debe haber un elemento importe con un atributo obligatorio llamado moneda. }\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{titulosvendidos} \PYG{o}{(}\PYG{n+nt}{titulo}\PYG{o}{+}\PYG{o}{,} \PYG{n+nt}{cantidadtotal}\PYG{o}{,} \PYG{n+nt}{entregado}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{importe}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Antes de que se nos olvide, fabricamos el elemento importe y su atributo moneda}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{importe} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ATTLIST} \PYG{n+nt}{importe} \PYG{n+na}{moneda} \PYG{k+kc}{CDATA} \PYG{k+kc}{\PYGZsh{}REQUIRED}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fabricamos el titulo y la cantidad total}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{titulo} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{cantidadtotal} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El elemento entregado parece que es un vacío}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{entregado} \PYG{k+kc}{EMPTY}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Una compra tiene:}
+
+\PYG{c}{\PYGZhy{}}\PYG{c}{Uno o más títulos comprados.}
+\PYG{c}{\PYGZhy{}}\PYG{c}{Nombre de proveedor.}
+\PYG{c}{\PYGZhy{}}\PYG{c}{Una fecha de compra, que debe desglosarse en elementos día, mes y año }\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{compra} \PYG{o}{(}\PYG{n+nt}{tituloscomprados}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{tituloscomprados} \PYG{o}{(}\PYG{n+nt}{titulo}\PYG{o}{+}\PYG{o}{,} \PYG{n+nt}{proveedor}\PYG{o}{,} \PYG{n+nt}{fechacompra}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{proveedor} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Desglosamos la fecha}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fechacompra} \PYG{o}{(}\PYG{n+nt}{dia}\PYG{o}{,} \PYG{n+nt}{mes}\PYG{o}{,} \PYG{n+nt}{anio}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{dia}  \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{mes}  \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{anio} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
 
 \section{Ejercicio: fabricante de tractores}
 \label{\detokenize{tema5:ejercicio-fabricante-de-tractores}}
@@ -9426,7 +9459,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -10667,7 +10700,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
+\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -10863,7 +10896,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -13149,7 +13182,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

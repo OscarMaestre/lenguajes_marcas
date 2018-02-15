@@ -908,6 +908,42 @@ El objetivo final debe ser validar un fichero como este:
 
 Solución al mayorista de libros
 ------------------------------------------------------
+La siguiente DTD valida el fichero arriba mostrado:
+
+.. code-block:: dtd
+
+    <!--El elemento raíz es operaciones y dentro de él hay uno o más elementos operación-->
+    <!ELEMENT operaciones (operacion+)>
+    <!--Una operación puede ser ventas o compras, en cualquier orden y repetidas las veces que sea necesario-->
+    <!ELEMENT operacion (venta|compra)+>
+    <!ELEMENT venta (titulosvendidos)>
+    <!--Una venta tiene uno o más titulos, la cantidad de libros vendidos, puede haber un elemento entregado que indique si la entrega se ha realizado, y debe haber un elemento importe con un atributo obligatorio llamado moneda. -->
+    <!ELEMENT titulosvendidos (titulo+, cantidadtotal, entregado?, importe)>
+    <!--Antes de que se nos olvide, fabricamos el elemento importe y su atributo moneda-->
+    <!ELEMENT importe (#PCDATA)>
+    <!ATTLIST importe moneda CDATA #REQUIRED>
+    <!--Fabricamos el titulo y la cantidad total-->
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT cantidadtotal (#PCDATA)>
+    <!--El elemento entregado parece que es un vacío-->
+    <!ELEMENT entregado EMPTY>
+    <!--Una compra tiene:
+    
+    -Uno o más títulos comprados.
+    -Nombre de proveedor.
+    -Una fecha de compra, que debe desglosarse en elementos día, mes y año -->
+    <!ELEMENT compra (tituloscomprados)>
+    <!ELEMENT tituloscomprados (titulo+, proveedor, fechacompra)>
+    <!ELEMENT proveedor (#PCDATA)>
+    <!--Desglosamos la fecha-->
+    <!ELEMENT fechacompra (dia, mes, anio)>
+    <!ELEMENT dia  (#PCDATA)>
+    <!ELEMENT mes  (#PCDATA)>
+    <!ELEMENT anio (#PCDATA)>
+    
+
+
+    
 
 
 Ejercicio: fabricante de tractores

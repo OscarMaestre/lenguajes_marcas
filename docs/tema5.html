@@ -819,6 +819,37 @@
 </div>
 <div class="section" id="solucion-al-mayorista-de-libros">
 <h3>Solución al mayorista de libros<a class="headerlink" href="#solucion-al-mayorista-de-libros" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La siguiente DTD valida el fichero arriba mostrado:</p>
+<div class="highlight-dtd"><div class="highlight"><pre><span></span><span class="c">&lt;!--El elemento raíz es operaciones y dentro de él hay uno o más elementos operación--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">operaciones</span> <span class="o">(</span><span class="nt">operacion</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Una operación puede ser ventas o compras, en cualquier orden y repetidas las veces que sea necesario--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">operacion</span> <span class="o">(</span><span class="nt">venta</span><span class="o">|</span><span class="nt">compra</span><span class="o">)+</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">venta</span> <span class="o">(</span><span class="nt">titulosvendidos</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Una venta tiene uno o más titulos, la cantidad de libros vendidos, puede haber un elemento entregado que indique si la entrega se ha realizado, y debe haber un elemento importe con un atributo obligatorio llamado moneda. --&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">titulosvendidos</span> <span class="o">(</span><span class="nt">titulo</span><span class="o">+,</span> <span class="nt">cantidadtotal</span><span class="o">,</span> <span class="nt">entregado</span><span class="o">?,</span> <span class="nt">importe</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Antes de que se nos olvide, fabricamos el elemento importe y su atributo moneda--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">importe</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">importe</span> <span class="na">moneda</span> <span class="kc">CDATA</span> <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Fabricamos el titulo y la cantidad total--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">titulo</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cantidadtotal</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--El elemento entregado parece que es un vacío--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">entregado</span> <span class="kc">EMPTY</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Una compra tiene:</span>
+
+<span class="c">-Uno o más títulos comprados.</span>
+<span class="c">-Nombre de proveedor.</span>
+<span class="c">-Una fecha de compra, que debe desglosarse en elementos día, mes y año --&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">compra</span> <span class="o">(</span><span class="nt">tituloscomprados</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">tituloscomprados</span> <span class="o">(</span><span class="nt">titulo</span><span class="o">+,</span> <span class="nt">proveedor</span><span class="o">,</span> <span class="nt">fechacompra</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">proveedor</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Desglosamos la fecha--&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">fechacompra</span> <span class="o">(</span><span class="nt">dia</span><span class="o">,</span> <span class="nt">mes</span><span class="o">,</span> <span class="nt">anio</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">dia</span>  <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">mes</span>  <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">anio</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="ejercicio-fabricante-de-tractores">
