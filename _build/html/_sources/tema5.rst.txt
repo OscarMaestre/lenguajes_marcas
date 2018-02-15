@@ -875,7 +875,6 @@ El objetivo final debe ser validar un fichero como este:
                     <titulo>De la Tierra a la Luna</titulo>
                     <titulo>Barbarroja</titulo>
                     <proveedor>Editorial EDSA</proveedor>
-                    <entregado/>
                     <fechacompra>
                         <dia>10</dia>
                         <mes>6</mes>
