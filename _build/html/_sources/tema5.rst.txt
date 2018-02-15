@@ -845,6 +845,68 @@ Se desea crear un formato de intercambio de datos para una empresa mayorista de 
 	* Nombre de proveedor.
 	* Una fecha de compra, que debe desglosarse en elementos día, mes y año
 
+El objetivo final debe ser validar un fichero como este:
+
+.. code-block:: xml
+
+    <operaciones>
+        <operacion>
+            <venta>
+                <titulosvendidos>
+                    <titulo>Don Quijote</titulo>
+                    <titulo>Rimas y leyendas</titulo>
+                    <cantidadtotal>2000</cantidadtotal>
+                    <importe moneda="euros">4400</importe>
+                </titulosvendidos>
+            </venta>
+            <venta>
+                <titulosvendidos>
+                    <titulo>Rinconete y Cortadillo</titulo>
+                    <titulo>Sainetes</titulo>
+                    <cantidadtotal>1000</cantidadtotal>
+                    <entregado/>
+                    <importe moneda="libras">290</importe>
+                </titulosvendidos>
+            </venta>
+        </operacion>
+        <operacion>
+            <compra>
+                <tituloscomprados>
+                    <titulo>De la Tierra a la Luna</titulo>
+                    <titulo>Barbarroja</titulo>
+                    <proveedor>Editorial EDSA</proveedor>
+                    <entregado/>
+                    <fechacompra>
+                        <dia>10</dia>
+                        <mes>6</mes>
+                        <anio>2018</anio>
+                    </fechacompra>
+                </tituloscomprados>
+            </compra>
+            <venta>
+                <titulosvendidos>
+                    <titulo>Cinco semanas en globo</titulo>
+                    <titulo>Sainetes</titulo>
+                    <cantidadtotal>700</cantidadtotal>
+                    <entregado/>
+                    <importe moneda="euros">1490</importe>
+                </titulosvendidos>
+            </venta>
+            <compra>
+                <tituloscomprados>
+                    <titulo>De la Tierra a la Luna</titulo>
+                    <titulo>Barbarroja</titulo>
+                    <proveedor>Editorial Recopila</proveedor>
+                    <fechacompra>
+                        <dia>2</dia>
+                        <mes>12</mes>
+                        <anio>2017</anio>
+                    </fechacompra>
+                </tituloscomprados>
+            </compra>
+        </operacion>
+    </operaciones>
+
 Solución al mayorista de libros
 ------------------------------------------------------
 

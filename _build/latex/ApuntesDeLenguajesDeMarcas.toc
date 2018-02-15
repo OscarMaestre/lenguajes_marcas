@@ -177,42 +177,42 @@
 \contentsline {section}{\numberline {5.11}Ejercicio}{105}{section.5.11}
 \contentsline {subsection}{\numberline {5.11.1}Soluci\IeC {\'o}n}{105}{subsection.5.11.1}
 \contentsline {section}{\numberline {5.12}Ejercicio: mayorista de libros}{106}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Soluci\IeC {\'o}n al mayorista de libros}{107}{subsection.5.12.1}
-\contentsline {section}{\numberline {5.13}Ejercicio: fabricante de tractores}{107}{section.5.13}
-\contentsline {section}{\numberline {5.14}Ejercicio: repeticiones de opciones}{108}{section.5.14}
-\contentsline {section}{\numberline {5.15}Ejercicio: multinacional}{109}{section.5.15}
-\contentsline {section}{\numberline {5.16}Ejercicio}{111}{section.5.16}
-\contentsline {section}{\numberline {5.17}Esquemas XML}{111}{section.5.17}
-\contentsline {subsection}{\numberline {5.17.1}Un ejemplo}{111}{subsection.5.17.1}
-\contentsline {subsection}{\numberline {5.17.2}Tipos de datos b\IeC {\'a}sicos}{112}{subsection.5.17.2}
-\contentsline {subsection}{\numberline {5.17.3}Derivaciones}{114}{subsection.5.17.3}
-\contentsline {subsection}{\numberline {5.17.4}Tipos simples y complejos}{114}{subsection.5.17.4}
-\contentsline {subsection}{\numberline {5.17.5}Ejercicio:edad de los trabajadores}{114}{subsection.5.17.5}
-\contentsline {subsection}{\numberline {5.17.6}Ejercicio: peso de productos}{115}{subsection.5.17.6}
-\contentsline {subsection}{\numberline {5.17.7}Ejercicio: pagos validados}{115}{subsection.5.17.7}
-\contentsline {subsection}{\numberline {5.17.8}Ejercicio: validaci\IeC {\'o}n de DNIs}{116}{subsection.5.17.8}
-\contentsline {subsection}{\numberline {5.17.9}Uniendo la herencia y el sistema de tipos}{116}{subsection.5.17.9}
-\contentsline {subsection}{\numberline {5.17.10}Restricciones}{116}{subsection.5.17.10}
-\contentsline {subsection}{\numberline {5.17.11}Atributos}{117}{subsection.5.17.11}
-\contentsline {section}{\numberline {5.18}Ejercicios de XML Schemas}{117}{section.5.18}
-\contentsline {subsection}{\numberline {5.18.1}Cantidades limitades}{117}{subsection.5.18.1}
-\contentsline {subsection}{\numberline {5.18.2}Soluci\IeC {\'o}n a las cantidades limitadas}{117}{subsection.5.18.2}
-\contentsline {subsection}{\numberline {5.18.3}Cantidades limitadas con atributo divisa}{118}{subsection.5.18.3}
-\contentsline {subsection}{\numberline {5.18.4}Soluci\IeC {\'o}n a las cantidades limitadas con atributo divisa}{118}{subsection.5.18.4}
-\contentsline {subsection}{\numberline {5.18.5}Cantidades limitadas con atributo divisa con solo ciertos valores}{119}{subsection.5.18.5}
-\contentsline {subsection}{\numberline {5.18.6}Soluci\IeC {\'o}n al atributo con solo ciertos valores}{119}{subsection.5.18.6}
-\contentsline {subsection}{\numberline {5.18.7}Ejercicio: productos con atributos}{120}{subsection.5.18.7}
-\contentsline {subsection}{\numberline {5.18.8}Ejercicio: clientes con informaci\IeC {\'o}n adicional}{120}{subsection.5.18.8}
-\contentsline {subsection}{\numberline {5.18.9}Lista de clientes como XML Schemas}{121}{subsection.5.18.9}
-\contentsline {subsection}{\numberline {5.18.10}Ampliaci\IeC {\'o}n del esquema para clientes}{122}{subsection.5.18.10}
-\contentsline {subsection}{\numberline {5.18.11}Ejercicio: lista de c\IeC {\'o}digos}{123}{subsection.5.18.11}
-\contentsline {subsection}{\numberline {5.18.12}Ejercicio: otra lista de clientes}{124}{subsection.5.18.12}
-\contentsline {subsection}{\numberline {5.18.13}Ejercicio: listas de productos}{125}{subsection.5.18.13}
-\contentsline {subsection}{\numberline {5.18.14}Ejercicio: validaci\IeC {\'o}n de componentes}{126}{subsection.5.18.14}
-\contentsline {subsection}{\numberline {5.18.15}Ejercicio: inventario}{128}{subsection.5.18.15}
-\contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{132}{section.5.19}
-\contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{135}{section.5.20}
-\contentsline {section}{\numberline {5.21}Examen}{135}{section.5.21}
+\contentsline {subsection}{\numberline {5.12.1}Soluci\IeC {\'o}n al mayorista de libros}{108}{subsection.5.12.1}
+\contentsline {section}{\numberline {5.13}Ejercicio: fabricante de tractores}{108}{section.5.13}
+\contentsline {section}{\numberline {5.14}Ejercicio: repeticiones de opciones}{109}{section.5.14}
+\contentsline {section}{\numberline {5.15}Ejercicio: multinacional}{110}{section.5.15}
+\contentsline {section}{\numberline {5.16}Ejercicio}{112}{section.5.16}
+\contentsline {section}{\numberline {5.17}Esquemas XML}{112}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Un ejemplo}{112}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Tipos de datos b\IeC {\'a}sicos}{113}{subsection.5.17.2}
+\contentsline {subsection}{\numberline {5.17.3}Derivaciones}{115}{subsection.5.17.3}
+\contentsline {subsection}{\numberline {5.17.4}Tipos simples y complejos}{115}{subsection.5.17.4}
+\contentsline {subsection}{\numberline {5.17.5}Ejercicio:edad de los trabajadores}{115}{subsection.5.17.5}
+\contentsline {subsection}{\numberline {5.17.6}Ejercicio: peso de productos}{116}{subsection.5.17.6}
+\contentsline {subsection}{\numberline {5.17.7}Ejercicio: pagos validados}{116}{subsection.5.17.7}
+\contentsline {subsection}{\numberline {5.17.8}Ejercicio: validaci\IeC {\'o}n de DNIs}{117}{subsection.5.17.8}
+\contentsline {subsection}{\numberline {5.17.9}Uniendo la herencia y el sistema de tipos}{117}{subsection.5.17.9}
+\contentsline {subsection}{\numberline {5.17.10}Restricciones}{117}{subsection.5.17.10}
+\contentsline {subsection}{\numberline {5.17.11}Atributos}{118}{subsection.5.17.11}
+\contentsline {section}{\numberline {5.18}Ejercicios de XML Schemas}{118}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Cantidades limitades}{118}{subsection.5.18.1}
+\contentsline {subsection}{\numberline {5.18.2}Soluci\IeC {\'o}n a las cantidades limitadas}{118}{subsection.5.18.2}
+\contentsline {subsection}{\numberline {5.18.3}Cantidades limitadas con atributo divisa}{119}{subsection.5.18.3}
+\contentsline {subsection}{\numberline {5.18.4}Soluci\IeC {\'o}n a las cantidades limitadas con atributo divisa}{119}{subsection.5.18.4}
+\contentsline {subsection}{\numberline {5.18.5}Cantidades limitadas con atributo divisa con solo ciertos valores}{120}{subsection.5.18.5}
+\contentsline {subsection}{\numberline {5.18.6}Soluci\IeC {\'o}n al atributo con solo ciertos valores}{120}{subsection.5.18.6}
+\contentsline {subsection}{\numberline {5.18.7}Ejercicio: productos con atributos}{121}{subsection.5.18.7}
+\contentsline {subsection}{\numberline {5.18.8}Ejercicio: clientes con informaci\IeC {\'o}n adicional}{121}{subsection.5.18.8}
+\contentsline {subsection}{\numberline {5.18.9}Lista de clientes como XML Schemas}{122}{subsection.5.18.9}
+\contentsline {subsection}{\numberline {5.18.10}Ampliaci\IeC {\'o}n del esquema para clientes}{123}{subsection.5.18.10}
+\contentsline {subsection}{\numberline {5.18.11}Ejercicio: lista de c\IeC {\'o}digos}{124}{subsection.5.18.11}
+\contentsline {subsection}{\numberline {5.18.12}Ejercicio: otra lista de clientes}{125}{subsection.5.18.12}
+\contentsline {subsection}{\numberline {5.18.13}Ejercicio: listas de productos}{126}{subsection.5.18.13}
+\contentsline {subsection}{\numberline {5.18.14}Ejercicio: validaci\IeC {\'o}n de componentes}{127}{subsection.5.18.14}
+\contentsline {subsection}{\numberline {5.18.15}Ejercicio: inventario}{129}{subsection.5.18.15}
+\contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{133}{section.5.19}
+\contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{136}{section.5.20}
+\contentsline {section}{\numberline {5.21}Examen}{136}{section.5.21}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{137}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{137}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fundamentos de DOM con Java}{137}{section.6.2}

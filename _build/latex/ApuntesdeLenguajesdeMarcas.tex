@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{08 de febrero de 2018}
+\date{15 de febrero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -5900,6 +5900,68 @@ Una fecha de compra, que debe desglosarse en elementos día, mes y año
 
 \end{itemize}
 
+El objetivo final debe ser validar un fichero como este:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}operaciones}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}operacion}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}titulosvendidos}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Don Quijote\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Rimas y leyendas\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}cantidadtotal}\PYG{n+nt}{\PYGZgt{}}2000\PYG{n+nt}{\PYGZlt{}/cantidadtotal\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}importe} \PYG{n+na}{moneda=}\PYG{l+s}{\PYGZdq{}euros\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}4400\PYG{n+nt}{\PYGZlt{}/importe\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/titulosvendidos\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}titulosvendidos}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Rinconete y Cortadillo\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Sainetes\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}cantidadtotal}\PYG{n+nt}{\PYGZgt{}}1000\PYG{n+nt}{\PYGZlt{}/cantidadtotal\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}entregado}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}importe} \PYG{n+na}{moneda=}\PYG{l+s}{\PYGZdq{}libras\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}290\PYG{n+nt}{\PYGZlt{}/importe\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/titulosvendidos\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/operacion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}operacion}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}compra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}tituloscomprados}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}De la Tierra a la Luna\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Barbarroja\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}proveedor}\PYG{n+nt}{\PYGZgt{}}Editorial EDSA\PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}entregado}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}fechacompra}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}dia}\PYG{n+nt}{\PYGZgt{}}10\PYG{n+nt}{\PYGZlt{}/dia\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}mes}\PYG{n+nt}{\PYGZgt{}}6\PYG{n+nt}{\PYGZlt{}/mes\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}anio}\PYG{n+nt}{\PYGZgt{}}2018\PYG{n+nt}{\PYGZlt{}/anio\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/fechacompra\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/tituloscomprados\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/compra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}titulosvendidos}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Cinco semanas en globo\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Sainetes\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}cantidadtotal}\PYG{n+nt}{\PYGZgt{}}700\PYG{n+nt}{\PYGZlt{}/cantidadtotal\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}entregado}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}importe} \PYG{n+na}{moneda=}\PYG{l+s}{\PYGZdq{}euros\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1490\PYG{n+nt}{\PYGZlt{}/importe\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/titulosvendidos\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}compra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}tituloscomprados}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}De la Tierra a la Luna\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}titulo}\PYG{n+nt}{\PYGZgt{}}Barbarroja\PYG{n+nt}{\PYGZlt{}/titulo\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}proveedor}\PYG{n+nt}{\PYGZgt{}}Editorial Recopila\PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}fechacompra}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}dia}\PYG{n+nt}{\PYGZgt{}}2\PYG{n+nt}{\PYGZlt{}/dia\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}mes}\PYG{n+nt}{\PYGZgt{}}12\PYG{n+nt}{\PYGZlt{}/mes\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}anio}\PYG{n+nt}{\PYGZgt{}}2017\PYG{n+nt}{\PYGZlt{}/anio\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/fechacompra\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/tituloscomprados\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/compra\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/operacion\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/operaciones\PYGZgt{}}
+\end{sphinxVerbatim}
+
 
 \subsection{Solución al mayorista de libros}
 \label{\detokenize{tema5:solucion-al-mayorista-de-libros}}
@@ -10802,7 +10864,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12098,7 +12160,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13088,7 +13150,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
