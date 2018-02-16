@@ -858,7 +858,7 @@
 <ul class="simple">
 <li>Un pedido consta de uno o más tractores.</li>
 <li>Un tractor consta de uno o más componentes.</li>
-<li>Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento km_maximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.</li>
+<li>Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento kmmaximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.</li>
 </ul>
 <p>Un posible fichero de ejemplo que podría validar sería este:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;pedido&gt;</span>
@@ -890,6 +890,30 @@
     <span class="nt">&lt;/tractor&gt;</span>
 <span class="nt">&lt;/pedido&gt;</span>
 </pre></div>
+</div>
+<div class="section" id="solucion-dtd-fabricante-tractores">
+<h3>Solución: DTD fabricante tractores<a class="headerlink" href="#solucion-dtd-fabricante-tractores" title="Enlazar permanentemente con este título">¶</a></h3>
+<blockquote>
+<div><div class="highlight-dtd"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>&lt;!ELEMENT pedido     (tractor)+&gt;
+&lt;!ELEMENT tractor    (componente)+&gt;
+&lt;!ELEMENT componente (fechaentrega?, (fragil|nofragil),</p>
+<blockquote>
+<div>peso, numserie, kmmaximos?)&gt;</div></blockquote>
+<p>&lt;!ELEMENT fechaentrega (dia?, mes, anio)&gt;
+&lt;!ELEMENT dia      (#PCDATA)&gt;
+&lt;!ELEMENT mes      (#PCDATA)&gt;
+&lt;!ELEMENT anio     (#PCDATA)&gt;
+&lt;!ELEMENT fragil   EMPTY&gt;
+&lt;!ELEMENT nofragil EMPTY &gt;
+&lt;!ELEMENT peso     (#PCDATA)&gt;
+&lt;!ATTLIST peso unidad CDATA #REQUIRED&gt;
+&lt;!ELEMENT numserie  (#PCDATA)&gt;
+&lt;!ELEMENT kmmaximos (#PCDATA)&gt;
+&lt;!ATTLIST componente nombrefabricante CDATA #REQUIRED&gt;</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="ejercicio-repeticiones-de-opciones">
@@ -1080,7 +1104,7 @@
 </div>
 <p>¿Qué contiene este fichero?</p>
 <ol class="arabic simple">
-<li>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí <code class="docutils literal"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal"><span class="pre">xsd</span></code>.</li>
+<li>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí <code class="docutils literal"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal"><span class="pre">xsd</span></code>. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar <code class="docutils literal"><span class="pre">xsd</span></code>.</li>
 <li>Se indica que habrá un solo elemento y que el tipo de ese elemento es <code class="docutils literal"><span class="pre">&lt;xsd:integer&gt;</span></code>. Es decir, un entero básico.</li>
 </ol>
 <p>Si probamos el fichero de esquema con el fichero de datos que hemos indicado veremos que efectivamente el fichero XML de datos es válido. Sin embargo, si en lugar de una cantidad incluyésemos una cadena, veríamos que el fichero <strong>no se validaría</strong></p>
@@ -2292,7 +2316,10 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#solucion-al-mayorista-de-libros">Solución al mayorista de libros</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ejercicio-fabricante-de-tractores">Ejercicio: fabricante de tractores</a></li>
+<li><a class="reference internal" href="#ejercicio-fabricante-de-tractores">Ejercicio: fabricante de tractores</a><ul>
+<li><a class="reference internal" href="#solucion-dtd-fabricante-tractores">Solución: DTD fabricante tractores</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#ejercicio-repeticiones-de-opciones">Ejercicio: repeticiones de opciones</a></li>
 <li><a class="reference internal" href="#ejercicio-multinacional">Ejercicio: multinacional</a></li>
 <li><a class="reference internal" href="#id3">Ejercicio</a></li>

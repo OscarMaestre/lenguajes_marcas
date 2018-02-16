@@ -952,7 +952,7 @@ Un fabricante de tractores desea unificar el formato XML de sus proveedores y pa
 
 * Un pedido consta de uno o más tractores.
 * Un tractor consta de uno o más componentes.
-* Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento km_maximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.
+* Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento kmmaximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.
 
 Un posible fichero de ejemplo que podría validar sería este:
 
@@ -986,6 +986,29 @@ Un posible fichero de ejemplo que podría validar sería este:
             </componente>
         </tractor>
     </pedido>
+
+Solución: DTD fabricante tractores
+--------------------------------------
+
+    .. code-block:: dtd
+    
+    <!ELEMENT pedido     (tractor)+>
+    <!ELEMENT tractor    (componente)+>
+    <!ELEMENT componente (fechaentrega?, (fragil|nofragil),
+                          peso, numserie, kmmaximos?)>
+        
+    <!ELEMENT fechaentrega (dia?, mes, anio)>
+    <!ELEMENT dia      (#PCDATA)>
+    <!ELEMENT mes      (#PCDATA)>
+    <!ELEMENT anio     (#PCDATA)>
+    <!ELEMENT fragil   EMPTY>
+    <!ELEMENT nofragil EMPTY >
+    <!ELEMENT peso     (#PCDATA)>
+    <!ATTLIST peso unidad CDATA #REQUIRED>
+    <!ELEMENT numserie  (#PCDATA)>
+    <!ELEMENT kmmaximos (#PCDATA)>
+    <!ATTLIST componente nombrefabricante CDATA #REQUIRED>
+
 
 Ejercicio: repeticiones de opciones
 ===================================
@@ -1185,7 +1208,7 @@ Un posible esquema sería el siguiente:
     
 ¿Qué contiene este fichero?
 
-1. En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí ``xmlns``). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será ``xsd``.
+1. En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí ``xmlns``). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será ``xsd``. Nótese que el prefijo puede ser como queramos (podría ser "abcd" o "zztop"), pero la costumbre es usar ``xsd``.
 
 2. Se indica que habrá un solo elemento y que el tipo de ese elemento es ``<xsd:integer>``. Es decir, un entero básico.
 

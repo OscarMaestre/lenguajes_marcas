@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
+\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -4974,7 +4974,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -6009,7 +6009,7 @@ Un pedido consta de uno o más tractores.
 Un tractor consta de uno o más componentes.
 
 \item {} 
-Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento km\_maximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.
+Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento kmmaximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.
 
 \end{itemize}
 
@@ -6045,6 +6045,35 @@ Un posible fichero de ejemplo que podría validar sería este:
     \PYG{n+nt}{\PYGZlt{}/tractor\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/pedido\PYGZgt{}}
 \end{sphinxVerbatim}
+
+
+\subsection{Solución: DTD fabricante tractores}
+\label{\detokenize{tema5:solucion-dtd-fabricante-tractores}}\begin{quote}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+\end{sphinxVerbatim}
+
+\textless{}!ELEMENT pedido     (tractor)+\textgreater{}
+\textless{}!ELEMENT tractor    (componente)+\textgreater{}
+\textless{}!ELEMENT componente (fechaentrega?, (fragil\textbar{}nofragil),
+\begin{quote}
+
+peso, numserie, kmmaximos?)\textgreater{}
+\end{quote}
+
+\textless{}!ELEMENT fechaentrega (dia?, mes, anio)\textgreater{}
+\textless{}!ELEMENT dia      (\#PCDATA)\textgreater{}
+\textless{}!ELEMENT mes      (\#PCDATA)\textgreater{}
+\textless{}!ELEMENT anio     (\#PCDATA)\textgreater{}
+\textless{}!ELEMENT fragil   EMPTY\textgreater{}
+\textless{}!ELEMENT nofragil EMPTY \textgreater{}
+\textless{}!ELEMENT peso     (\#PCDATA)\textgreater{}
+\textless{}!ATTLIST peso unidad CDATA \#REQUIRED\textgreater{}
+\textless{}!ELEMENT numserie  (\#PCDATA)\textgreater{}
+\textless{}!ELEMENT kmmaximos (\#PCDATA)\textgreater{}
+\textless{}!ATTLIST componente nombrefabricante CDATA \#REQUIRED\textgreater{}
+\end{quote}
 
 
 \section{Ejercicio: repeticiones de opciones}
@@ -6287,7 +6316,7 @@ Un posible esquema sería el siguiente:
 ¿Qué contiene este fichero?
 \begin{enumerate}
 \item {} 
-En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombre (o XML Namespace, de ahí \sphinxcode{xmlns}). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será \sphinxcode{xsd}.
+En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí \sphinxcode{xmlns}). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será \sphinxcode{xsd}. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar \sphinxcode{xsd}.
 
 \item {} 
 Se indica que habrá un solo elemento y que el tipo de ese elemento es \sphinxcode{\textless{}xsd:integer\textgreater{}}. Es decir, un entero básico.
@@ -12177,7 +12206,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
