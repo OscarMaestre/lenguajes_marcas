@@ -860,47 +860,34 @@
 <li>Un tractor consta de uno o más componentes.</li>
 <li>Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento km_maximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.</li>
 </ul>
-<p>Una posible solución sería esta (aunque se puede mejorar en algunos aspectos):</p>
-<div class="highlight-dtd"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">pedido</span> <span class="o">(</span><span class="nt">tractor</span><span class="o">+)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">tractor</span> <span class="o">(</span><span class="nt">componente</span><span class="o">+)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">componente</span> <span class="o">(</span><span class="nt">fecha</span><span class="o">?,</span> <span class="nt">peso</span><span class="o">,</span> <span class="nt">fragil</span><span class="o">?,</span> <span class="nt">km_maximos</span><span class="o">?)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">fragil</span> <span class="kc">EMPTY</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">peso</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">km_maximos</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ATTLIST</span> <span class="nt">componente</span> <span class="na">nombre_fabricante</span> <span class="kc">CDATA</span> <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
-<span class="k">&lt;!ATTLIST</span> <span class="nt">peso</span> <span class="na">unidades</span> <span class="kc">CDATA</span> <span class="kc">#IMPLIED</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">fecha</span> <span class="o">(</span><span class="nt">dia</span><span class="o">?,</span> <span class="nt">mes</span><span class="o">,</span> <span class="nt">anio</span><span class="o">)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">dia</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">mes</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
-<span class="k">&lt;!ELEMENT</span> <span class="nt">anio</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
-</pre></div>
-</div>
-<p>Un ejemplo de XML sería este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="cp">&lt;!DOCTYPE pedido SYSTEM &quot;tractores.dtd&quot;&gt;</span>
-<span class="nt">&lt;pedido&gt;</span>
-  <span class="nt">&lt;tractor&gt;</span>
-        <span class="nt">&lt;componente</span> <span class="na">nombre_fabricante=</span><span class="s">&quot;John Deere&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;peso</span> <span class="na">unidades=</span><span class="s">&quot;kilos&quot;</span><span class="nt">&gt;</span>2.5<span class="nt">&lt;/peso&gt;</span>
-          <span class="nt">&lt;fragil/&gt;</span>
+<p>Un posible fichero de ejemplo que podría validar sería este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;pedido&gt;</span>
+    <span class="nt">&lt;tractor&gt;</span>
+        <span class="nt">&lt;componente</span> <span class="na">nombrefabricante=</span><span class="s">&quot;Ebro&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fechaentrega&gt;</span>
+                <span class="nt">&lt;mes&gt;</span>2018<span class="nt">&lt;/mes&gt;</span> <span class="nt">&lt;anio&gt;</span>2018<span class="nt">&lt;/anio&gt;</span>
+            <span class="nt">&lt;/fechaentrega&gt;</span>
+            <span class="nt">&lt;fragil/&gt;</span>
+            <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;numserie&gt;</span>00A<span class="nt">&lt;/numserie&gt;</span>
         <span class="nt">&lt;/componente&gt;</span>
-        <span class="nt">&lt;componente</span> <span class="na">nombre_fabricante=</span><span class="s">&quot;Agrotrans&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;peso</span> <span class="na">unidades=</span><span class="s">&quot;gramos&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;componente</span> <span class="na">nombrefabricante=</span><span class="s">&quot;Avia&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fechaentrega&gt;</span>
+                <span class="nt">&lt;dia&gt;</span>12<span class="nt">&lt;/dia&gt;&lt;mes&gt;</span>1<span class="nt">&lt;/mes&gt;&lt;anio&gt;</span>2019<span class="nt">&lt;/anio&gt;</span>
+            <span class="nt">&lt;/fechaentrega&gt;</span>
+            <span class="nt">&lt;nofragil/&gt;</span>
+            <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>1450<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;numserie&gt;</span>00D<span class="nt">&lt;/numserie&gt;</span>
+            <span class="nt">&lt;kmmaximos&gt;</span>25000<span class="nt">&lt;/kmmaximos&gt;</span>
         <span class="nt">&lt;/componente&gt;</span>
-  <span class="nt">&lt;/tractor&gt;</span>
-  <span class="nt">&lt;tractor&gt;</span>
-        <span class="nt">&lt;componente</span> <span class="na">nombre_fabricante=</span><span class="s">&quot;John Deere&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;fecha&gt;</span>
-                <span class="nt">&lt;mes&gt;</span>Enero<span class="nt">&lt;/mes&gt;</span>
-                <span class="nt">&lt;anio&gt;</span>2015<span class="nt">&lt;/anio&gt;</span>
-          <span class="nt">&lt;/fecha&gt;</span>
-          <span class="nt">&lt;peso&gt;</span>150<span class="nt">&lt;/peso&gt;</span>
-          <span class="nt">&lt;fragil/&gt;</span>
+    <span class="nt">&lt;/tractor&gt;</span>
+    <span class="nt">&lt;tractor&gt;</span>
+        <span class="nt">&lt;componente</span> <span class="na">nombrefabricante=</span><span class="s">&quot;John Deere&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;fragil/&gt;</span>
+            <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>770<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;numserie&gt;</span>43Z<span class="nt">&lt;/numserie&gt;</span>
         <span class="nt">&lt;/componente&gt;</span>
-        <span class="nt">&lt;componente</span> <span class="na">nombre_fabricante=</span><span class="s">&quot;Agrotrans&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;peso</span> <span class="na">unidades=</span><span class="s">&quot;gramos&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
-        <span class="nt">&lt;/componente&gt;</span>
-  <span class="nt">&lt;/tractor&gt;</span>
+    <span class="nt">&lt;/tractor&gt;</span>
 <span class="nt">&lt;/pedido&gt;</span>
 </pre></div>
 </div>

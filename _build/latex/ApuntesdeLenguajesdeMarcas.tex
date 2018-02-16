@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{15 de febrero de 2018}
+\date{16 de febrero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
+\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -6013,51 +6013,36 @@ Un componente tiene los siguientes elementos: nombre del fabricante (atributo ob
 
 \end{itemize}
 
-Una posible solución sería esta (aunque se puede mejorar en algunos aspectos):
+Un posible fichero de ejemplo que podría validar sería este:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{pedido} \PYG{o}{(}\PYG{n+nt}{tractor}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{tractor} \PYG{o}{(}\PYG{n+nt}{componente}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{componente} \PYG{o}{(}\PYG{n+nt}{fecha}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{peso}\PYG{o}{,} \PYG{n+nt}{fragil}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{km\PYGZus{}maximos}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fragil} \PYG{k+kc}{EMPTY}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{peso} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{km\PYGZus{}maximos} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ATTLIST} \PYG{n+nt}{componente} \PYG{n+na}{nombre\PYGZus{}fabricante} \PYG{k+kc}{CDATA} \PYG{k+kc}{\PYGZsh{}REQUIRED}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ATTLIST} \PYG{n+nt}{peso} \PYG{n+na}{unidades} \PYG{k+kc}{CDATA} \PYG{k+kc}{\PYGZsh{}IMPLIED}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fecha} \PYG{o}{(}\PYG{n+nt}{dia}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{mes}\PYG{o}{,} \PYG{n+nt}{anio}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{dia} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{mes} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{anio} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
-\end{sphinxVerbatim}
-
-Un ejemplo de XML sería este:
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}UTF\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-\PYG{c+cp}{\PYGZlt{}!DOCTYPE pedido SYSTEM \PYGZdq{}tractores.dtd\PYGZdq{}\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}pedido}\PYG{n+nt}{\PYGZgt{}}
-  \PYG{n+nt}{\PYGZlt{}tractor}\PYG{n+nt}{\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombre\PYGZus{}fabricante=}\PYG{l+s}{\PYGZdq{}John Deere\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidades=}\PYG{l+s}{\PYGZdq{}kilos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}2.5\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}fragil}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}tractor}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombrefabricante=}\PYG{l+s}{\PYGZdq{}Ebro\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}fechaentrega}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}mes}\PYG{n+nt}{\PYGZgt{}}2018\PYG{n+nt}{\PYGZlt{}/mes\PYGZgt{}} \PYG{n+nt}{\PYGZlt{}anio}\PYG{n+nt}{\PYGZgt{}}2018\PYG{n+nt}{\PYGZlt{}/anio\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/fechaentrega\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}fragil}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}12\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numserie}\PYG{n+nt}{\PYGZgt{}}00A\PYG{n+nt}{\PYGZlt{}/numserie\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombre\PYGZus{}fabricante=}\PYG{l+s}{\PYGZdq{}Agrotrans\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidades=}\PYG{l+s}{\PYGZdq{}gramos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombrefabricante=}\PYG{l+s}{\PYGZdq{}Avia\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}fechaentrega}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}dia}\PYG{n+nt}{\PYGZgt{}}12\PYG{n+nt}{\PYGZlt{}/dia\PYGZgt{}}\PYG{n+nt}{\PYGZlt{}mes}\PYG{n+nt}{\PYGZgt{}}1\PYG{n+nt}{\PYGZlt{}/mes\PYGZgt{}}\PYG{n+nt}{\PYGZlt{}anio}\PYG{n+nt}{\PYGZgt{}}2019\PYG{n+nt}{\PYGZlt{}/anio\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/fechaentrega\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nofragil}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1450\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numserie}\PYG{n+nt}{\PYGZgt{}}00D\PYG{n+nt}{\PYGZlt{}/numserie\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}kmmaximos}\PYG{n+nt}{\PYGZgt{}}25000\PYG{n+nt}{\PYGZlt{}/kmmaximos\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
-  \PYG{n+nt}{\PYGZlt{}/tractor\PYGZgt{}}
-  \PYG{n+nt}{\PYGZlt{}tractor}\PYG{n+nt}{\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombre\PYGZus{}fabricante=}\PYG{l+s}{\PYGZdq{}John Deere\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}fecha}\PYG{n+nt}{\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}mes}\PYG{n+nt}{\PYGZgt{}}Enero\PYG{n+nt}{\PYGZlt{}/mes\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}anio}\PYG{n+nt}{\PYGZgt{}}2015\PYG{n+nt}{\PYGZlt{}/anio\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}/fecha\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}150\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}fragil}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/tractor\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}tractor}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombrefabricante=}\PYG{l+s}{\PYGZdq{}John Deere\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}fragil}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}770\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numserie}\PYG{n+nt}{\PYGZgt{}}43Z\PYG{n+nt}{\PYGZlt{}/numserie\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{nombre\PYGZus{}fabricante=}\PYG{l+s}{\PYGZdq{}Agrotrans\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-          \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidades=}\PYG{l+s}{\PYGZdq{}gramos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
-  \PYG{n+nt}{\PYGZlt{}/tractor\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/tractor\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/pedido\PYGZgt{}}
 \end{sphinxVerbatim}
 
@@ -10896,7 +10881,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
+\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
