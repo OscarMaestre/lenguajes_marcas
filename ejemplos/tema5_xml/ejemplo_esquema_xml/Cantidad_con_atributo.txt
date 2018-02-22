@@ -1,0 +1,38 @@
+Validar fichero con un unico elemento cantidad que solo acepte valores de entre 1 y 300 y lleve un atributo obligatorio llamada unidad que acepta cualquier cadena
+
+<cantidad unidad="g">
+    20
+</cantidad>
+
+<!--Erróneos-->
+<cantidad unidad="g">
+    aaa <!--No es un entero-->
+</cantidad>
+
+<cantidad> <!--No lleva el atributo-->
+    20
+</cantidad>
+
+Solucion:
+
+Primero se hace la restriccion y luego la extension
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="cantidad" type="tipoCantidad"/>
+   
+   <xsd:simpleType name="tipoCantidadLimitada">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="300"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   
+   <xsd:complexType name="tipoCantidad">
+    <xsd:simpleContent>
+        <xsd:extension base="tipoCantidadLimitada">
+            <xsd:attribute name="unidad" type="xsd:string"
+            use="required"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+   </xsd:complexType>
+</xsd:schema>
