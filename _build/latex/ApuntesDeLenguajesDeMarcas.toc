@@ -202,18 +202,20 @@
 \contentsline {subsection}{\numberline {5.18.4}Soluci\IeC {\'o}n a las cantidades limitadas con atributo divisa}{120}{subsection.5.18.4}
 \contentsline {subsection}{\numberline {5.18.5}Cantidades limitadas con atributo divisa con solo ciertos valores}{120}{subsection.5.18.5}
 \contentsline {subsection}{\numberline {5.18.6}Soluci\IeC {\'o}n al atributo con solo ciertos valores}{121}{subsection.5.18.6}
-\contentsline {subsection}{\numberline {5.18.7}Ejercicio: productos con atributos}{122}{subsection.5.18.7}
-\contentsline {subsection}{\numberline {5.18.8}Ejercicio: clientes con informaci\IeC {\'o}n adicional}{122}{subsection.5.18.8}
-\contentsline {subsection}{\numberline {5.18.9}Lista de clientes como XML Schemas}{122}{subsection.5.18.9}
-\contentsline {subsection}{\numberline {5.18.10}Ampliaci\IeC {\'o}n del esquema para clientes}{124}{subsection.5.18.10}
-\contentsline {subsection}{\numberline {5.18.11}Ejercicio: lista de c\IeC {\'o}digos}{125}{subsection.5.18.11}
-\contentsline {subsection}{\numberline {5.18.12}Ejercicio: otra lista de clientes}{126}{subsection.5.18.12}
-\contentsline {subsection}{\numberline {5.18.13}Ejercicio: listas de productos}{127}{subsection.5.18.13}
-\contentsline {subsection}{\numberline {5.18.14}Ejercicio: validaci\IeC {\'o}n de componentes}{128}{subsection.5.18.14}
-\contentsline {subsection}{\numberline {5.18.15}Ejercicio: inventario}{130}{subsection.5.18.15}
-\contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{134}{section.5.19}
-\contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{137}{section.5.20}
-\contentsline {section}{\numberline {5.21}Examen}{137}{section.5.21}
+\contentsline {subsection}{\numberline {5.18.7}Ejercicio: codigos y sedes}{122}{subsection.5.18.7}
+\contentsline {subsection}{\numberline {5.18.8}Soluci\IeC {\'o}n a los c\IeC {\'o}digos y sedes}{122}{subsection.5.18.8}
+\contentsline {subsection}{\numberline {5.18.9}Ejercicio: productos con atributos}{123}{subsection.5.18.9}
+\contentsline {subsection}{\numberline {5.18.10}Ejercicio: clientes con informaci\IeC {\'o}n adicional}{123}{subsection.5.18.10}
+\contentsline {subsection}{\numberline {5.18.11}Lista de clientes como XML Schemas}{123}{subsection.5.18.11}
+\contentsline {subsection}{\numberline {5.18.12}Ampliaci\IeC {\'o}n del esquema para clientes}{125}{subsection.5.18.12}
+\contentsline {subsection}{\numberline {5.18.13}Ejercicio: lista de c\IeC {\'o}digos}{126}{subsection.5.18.13}
+\contentsline {subsection}{\numberline {5.18.14}Ejercicio: otra lista de clientes}{127}{subsection.5.18.14}
+\contentsline {subsection}{\numberline {5.18.15}Ejercicio: listas de productos}{128}{subsection.5.18.15}
+\contentsline {subsection}{\numberline {5.18.16}Ejercicio: validaci\IeC {\'o}n de componentes}{129}{subsection.5.18.16}
+\contentsline {subsection}{\numberline {5.18.17}Ejercicio: inventario}{131}{subsection.5.18.17}
+\contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{135}{section.5.19}
+\contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{138}{section.5.20}
+\contentsline {section}{\numberline {5.21}Examen}{138}{section.5.21}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{139}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{139}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fundamentos de DOM con Java}{139}{section.6.2}

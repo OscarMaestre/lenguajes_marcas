@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{22 de febrero de 2018}
+\date{23 de febrero de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
+\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -6393,7 +6393,7 @@ La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como
 \capstart
 
 \noindent\sphinxincludegraphics{{tipos_xml_schema}.png}
-\caption{Tipos en los XML Schemas}\label{\detokenize{tema5:id5}}\end{figure}
+\caption{Tipos en los XML Schemas}\label{\detokenize{tema5:id7}}\end{figure}
 
 
 \subsection{Derivaciones}
@@ -6789,6 +6789,74 @@ La solución comentada puede encontrarse a continuación. Como puede verse, hemo
             \PYG{n+nt}{\PYGZlt{}xsd:enumeration} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}yenes\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ejercicio: codigos y sedes}
+\label{\detokenize{tema5:ejercicio-codigos-y-sedes}}
+Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado {\color{red}\bfseries{}{}`{}`}codigo”“
+\begin{itemize}
+\item {} 
+Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.
+
+\item {} 
+El elemento \sphinxcode{código} debe llevar un atributo \sphinxcode{sede} que será de tipo cadena.
+
+\end{itemize}
+
+
+\subsection{Solución a los códigos y sedes}
+\label{\detokenize{tema5:solucion-a-los-codigos-y-sedes}}
+Se nos piden dos cosas:
+\begin{enumerate}
+\item {} 
+Restringir un tipo básico, en este caso el \sphinxcode{string}
+
+\item {} 
+Extender una etiqueta para que tenga un atributo.
+
+\end{enumerate}
+
+Como no se puede hacer a la vez, deberemos dar dos pasos. Primero crearemos un tipo con la restricción y despues crearemos un segundo tipo con la extensión.
+
+\sphinxstylestrong{Cuando haya conflictos, siempre debemos crear primero la restricción y luego la extensión}
+
+Así, creamos primero esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}codigo\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoCodigoRestringido\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoCodigoRestringido\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+           \PYG{n+nt}{\PYGZlt{}xsd:pattern} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}[A\PYGZhy{}Z]\PYGZob{}2\PYGZcb{}[0\PYGZhy{}9]\PYGZob{}2\PYGZcb{}[A\PYGZhy{}Z]\PYGZob{}3\PYGZcb{}\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y despues lo ampliamos para que se convierta en esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}codigo\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoCodigo\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoCodigoRestringido\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:pattern} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}[A\PYGZhy{}Z]\PYGZob{}2\PYGZcb{}[0\PYGZhy{}9]\PYGZob{}2\PYGZcb{}[A\PYGZhy{}Z]\PYGZob{}3\PYGZcb{}\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoCodigo\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:simpleContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:extension} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}tipoCodigoRestringido\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}sede\PYGZdq{}}
+                               \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}
+                               \PYG{n+na}{use=}\PYG{l+s}{\PYGZdq{}required\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:extension\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:simpleContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
 \end{sphinxVerbatim}
 
@@ -7775,7 +7843,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9473,7 +9541,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
+\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -12206,7 +12274,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
