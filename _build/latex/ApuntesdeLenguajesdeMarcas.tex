@@ -44,7 +44,7 @@
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 \addto\captionsspanish{\renewcommand{\literalblockname}{Lista}}
 
-\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{continued from previous page}}
+\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{proviene de la página anterior}}
 \addto\captionsspanish{\renewcommand{\literalblockcontinuesname}{continues on next page}}
 
 \addto\extrasspanish{\def\pageautorefname{página}}
@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{23 de febrero de 2018}
+\date{01 de marzo de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -4974,7 +4974,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
+\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -7178,6 +7178,173 @@ La solución puede ser algo así:
 \end{sphinxVerbatim}
 
 
+\subsection{Ejercicio: lista de articulos (con atributos optativos)}
+\label{\detokenize{tema5:ejercicio-lista-de-articulos-con-atributos-optativos}}
+Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}listaproductos}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}articulo}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Estructura 2 letras,2 cifras}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}CD12\PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion es optativo y su atributo autor tb}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion} \PYG{n+na}{autor=}\PYG{l+s}{\PYGZdq{}Pepe\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/articulo\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}articulo}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}CA12\PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/articulo\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}articulo}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}AA99\PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/articulo\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/listaproductos\PYGZgt{}}
+\end{sphinxVerbatim}
+
+A continuación se muestra una solución con un esquema que valida ficheros como el indicado:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}listaproductos\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoListaProductos\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoListaProductos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}articulo\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoArticulo\PYGZdq{}}
+                                 \PYG{n+na}{maxOccurs=}\PYG{l+s}{\PYGZdq{}unbounded\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}} \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fin de listaarticulos}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoArticulo\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}codigo\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoCodigo\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}descripcion\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoDescripcion\PYGZdq{}}
+                                 \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{n+na}{maxOccurs=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}} \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fin de  articulo}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoCodigo\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:pattern} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}[A\PYGZhy{}Z]\PYGZob{}2\PYGZcb{}[0\PYGZhy{}9]\PYGZob{}2\PYGZcb{}\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}} \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Fin de codigo}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoDescripcion\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:simpleContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:extension} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}autor\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:extension\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:simpleContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ejercicio: lista de componentes (un enfoque distinto)}
+\label{\detokenize{tema5:ejercicio-lista-de-componentes-un-enfoque-distinto}}
+Dado un archivo como el siguiente en el cual aparecen
+las reglas incluidas como comentarios, crear el esquema que
+valide la estructura de tales ficheros:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}listacomponentes}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Obligatoria fecha entrega}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{entrega=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}15\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}fabricante}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Posibles fabricantes FAB1, FAB2 y FAB3}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}FAB1\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+            \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Calificacion es un string y es optativa}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}calificacion}\PYG{n+nt}{\PYGZgt{}}Positiva\PYG{n+nt}{\PYGZlt{}/calificacion\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/fabricante\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Atributo unidad es cadena. Dentro de peso}
+\PYG{c}{        solo puede haber numeros con decimales y mayores de 0}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}40.5\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}componente} \PYG{n+na}{entrega=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}12\PYGZhy{}31\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}fabricante}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}FAB2\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/fabricante\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}miligramos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}260.5\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/componente\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/listacomponentes\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Ahora en lugar de ir definiendo tipos empezando por el elemento raíz vamos a ir definiendo primero los tipos de los elementos más básicos que encontremos, e iremos construyendo los tipos más complejos a partir de los tipos fáciles que ya hayamos construido. Como veremos despues, el resultado va a ser el mismo.
+
+La solución:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoNombre\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:enumeration} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}FAB1\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:enumeration} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}FAB2\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:enumeration} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}FAB3\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Tipo auxiliar, el atributo lo incluimos despues}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoPesoRestringido\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:float\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:minExclusive} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{En este tipo peso incluimos ya el atributo}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoPeso\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:simpleContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:extension} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}tipoPesoRestringido\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}unidad\PYGZdq{}}
+                               \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:extension\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:simpleContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoFabricante\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoNombre\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}calificacion\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}
+                                 \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoComponente\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}fabricante\PYGZdq{}}
+                         \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoFabricante\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}peso\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoPeso\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}entrega\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:date\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoListaComponentes\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}componente\PYGZdq{}}
+                         \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoComponente\PYGZdq{}}
+                         \PYG{n+na}{maxOccurs=}\PYG{l+s}{\PYGZdq{}unbounded\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Aunque el elemento aparezca al final,}
+\PYG{c}{    no pasa nada}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}listacomponentes\PYGZdq{}}
+                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoListaComponentes\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
 \subsection{Ejercicio: listas de productos}
 \label{\detokenize{tema5:ejercicio-listas-de-productos}}
 Se pide validar correctamente algo como esto:
@@ -7843,7 +8010,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9772,6 +9939,115 @@ El siguiente código Java ilustra otra forma de hacerlo:
 \end{sphinxVerbatim}
 
 
+\section{XPath}
+\label{\detokenize{tema7:xpath}}
+Según el W3C, XPath (que ya va por su versión 3.0) es un lenguaje diseñado para acceder a las distintas partes de un archivo XML. En nuestro caso nos va a resultar de mucha utilidad combinado con XSLT, que se verá un poco despues.
+
+XPath se basa en expresiones. Así, dado un archivo XML y una expresión XPath se dice que la expresión «se evalúa» y se obtiene un resultado que puede ser:
+\begin{itemize}
+\item {} 
+Una lista de nodos.
+
+\item {} 
+Un \sphinxcode{boolean} (true o false)
+
+\item {} 
+Un \sphinxcode{float}.
+
+\item {} 
+Una cadena.
+
+\end{itemize}
+
+XPath también ofrece algunas funciones de utilidad que se asemejan a las de algunos lenguajes de programación.
+
+
+\subsection{Acceso a elementos}
+\label{\detokenize{tema7:acceso-a-elementos}}
+El mecanismo de acceso en XPath es muy similar al acceso a directorios que ofrecen algunos sistemas operativos. Para los ejemplos siguientes se usará el siguiente archivo XML
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}inventario}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}ACD\PYGZhy{}981\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DEZ\PYGZhy{}138\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/inventario\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Así dado este archivo tenemos las expresiones siguientes:
+
+Si usamos la expresión \sphinxcode{/inventario} se selecciona \sphinxstyleemphasis{el nodo inventario que cuelga de la raíz}. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión \sphinxcode{/inventario} para el archivo de ejemplo produce el resultado siguiente:
+
+Como puede verse, obtenemos el propio archivo original. Sin embargo, podemos movernos a través del árbol XML de forma similar a un árbol de directorios. Y obsérvese que decimos «similar». Observemos por ejemplo que dentro de \sphinxcode{\textless{}inventario\textgreater{}} hay 3 elementos \sphinxcode{\textless{}producto\textgreater{}}. Si pensamos en la expresión XPath \sphinxcode{/inventario/producto} puede que pensemos que obtendremos el primer producto (el que tiene el código AAA-111), sin embargo \sphinxstylestrong{una expresión XPath se parece a una consulta SQL}, y lo que obtiene la expresión es «todo elemento \sphinxcode{\textless{}producto\textgreater{}} que sea hijo de \sphinxcode{\textless{}inventario\textgreater{}}. Es decir, el fichero siguiente (que no es XML, sino una lista de nodos):
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+
+
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}ACD\PYGZhy{}981\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+
+
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DEZ\PYGZhy{}138\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\end{sphinxVerbatim}
+
+En cualquier lista podemos acceder a sus elementos como si fuese un vector. Sin embargo en XPath \sphinxstylestrong{los vectores empiezan por 1}. Por lo cual la expresión \sphinxcode{/inventario/producto{[}1{]}} produce este resultado:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y la expresión \sphinxcode{/inventario/producto{[}3{]}} produce este:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DEZ\PYGZhy{}138\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Obsérvese que no existe el elemento 4 y que por tanto la expresión \sphinxcode{/inventario/producto{[}4{]}} producirá un error. Otro aspecto relevante es que no deben confundirse los vectores con las condiciones (que el W3C llama «predicados»), y con las cuales podremos seleccionar nodos que cumplan ciertas condiciones De hecho, una buena forma de verlos es asumir que en los corchetes \sphinxstylestrong{siempre se ponen condiciones y que si hay un número como por ejemplo el 2 nos referimos a la condicion «extraer el elemento cuya posición es igual a 2}.
+
+Dado un elemento, también podemos extraer un cierto atributo usando la arroba @. Así, la expresión \sphinxcode{/inventario/producto{[}3{]}/@codigo} devuelve como resultado \sphinxcode{ACD-981}, que es el atributo código del tercer elemento \sphinxcode{producto} que está dentro de \sphinxcode{inventario} el cual cuelga de la raíz.
+
+Supongamos que deseamos extraer el producto cuyo código sea «AAA-111». Si usamos \sphinxcode{/inventario/producto} extraemos todos los elementos producto hijos de inventario, pero recordemos que entre corchetes podemos poner condiciones. Dado que queremos comprobar si @codigo = «AAA-111», la expresión correcta será \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}}, la cual nos devuelve lo siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\end{sphinxVerbatim}
+
+De hecho se puede profundizar aún más y usar la expresión \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}/nombre} que extrae los nombres de los elementos producto cuyo código sea «AAA-111». Y aún más para extraer solo el texto de los elementos nombre usando la expresión \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}/nombre/text()}. Como vemos en esta última expresión ya hemos usado una función, en concreto \sphinxcode{text()}.
+
+En una condicion podemos referirnos a cualquier hijo de un nodo, así por ejemplo, podemos extraer los productos cuyo peso sea mayor de 50 usando \sphinxcode{/inventario/producto{[}peso\textgreater{}=50{]}}. Sin embargo, sabemos que la unidad es importante, por lo que en realidad podemos extraer los que pesen más de 50 gramos usando esto \sphinxcode{/inventario/producto{[}peso\textgreater{}=50 and peso/@unidad="g"{]}}.
+
+Si se observa despacio el fichero, se observará que en realidad el tercer producto debería aparecer también. Para ello debemos ampliar la expresión convirtiendo los 50 g a kg, es decir comparando con 0.005 kg y la expresión siguiente \sphinxcode{/inventario/producto{[}(peso\textgreater{}=50 and peso/@unidad="g") or (peso\textgreater{}=0.005 and peso/@unidad="kg"){]}}.
+
+Utilizando XPath y XSLT veremos que podemos transformar un XML en casi cualquier otro XML utilizando la potencia combinada de ambos lenguajes.
+
+
 \section{Adaptación y transformación de XML}
 \label{\detokenize{tema7:adaptacion-y-transformacion-de-xml}}
 Muy a menudo va a ocurrir que un cierto formato XML va a ampliarse o a modificarse o simplemente se necesita convertir un documento XML en otro con un formato distinto.
@@ -10782,7 +11058,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -12274,7 +12550,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 

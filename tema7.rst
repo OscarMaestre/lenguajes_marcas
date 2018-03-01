@@ -211,6 +211,129 @@ El siguiente código Java ilustra otra forma de hacerlo:
 	}
 
 
+XPath
+===================================
+Según el W3C, XPath (que ya va por su versión 3.0) es un lenguaje diseñado para acceder a las distintas partes de un archivo XML. En nuestro caso nos va a resultar de mucha utilidad combinado con XSLT, que se verá un poco despues. 
+
+XPath se basa en expresiones. Así, dado un archivo XML y una expresión XPath se dice que la expresión "se evalúa" y se obtiene un resultado que puede ser:
+
+* Una lista de nodos.
+* Un ``boolean`` (true o false)
+* Un ``float``.
+* Una cadena.
+
+XPath también ofrece algunas funciones de utilidad que se asemejan a las de algunos lenguajes de programación.
+
+Acceso a elementos
+---------------------
+
+El mecanismo de acceso en XPath es muy similar al acceso a directorios que ofrecen algunos sistemas operativos. Para los ejemplos siguientes se usará el siguiente archivo XML
+
+.. code-block:: xml
+
+    <inventario>
+        <producto codigo="AAA-111">
+            <nombre>Teclado</nombre>
+            <peso unidad="g">480</peso>
+        </producto>
+        <producto codigo="ACD-981">
+            <nombre>Monitor</nombre>
+            <peso unidad="kg">1.8</peso>
+        </producto>
+        <producto codigo="DEZ-138">
+            <nombre>Raton</nombre>
+            <peso unidad="g">50</peso>
+        </producto>
+    </inventario>
+
+Así dado este archivo tenemos las expresiones siguientes:
+
+Si usamos la expresión ``/inventario`` se selecciona *el nodo inventario que cuelga de la raíz*. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión ``/inventario`` para el archivo de ejemplo produce el resultado siguiente:
+
+.. code-block::
+
+    <inventario>
+        <producto codigo="AAA-111">
+            <nombre>Teclado</nombre>
+            <peso unidad="g">480</peso>
+        </producto>
+        <producto codigo="ACD-981">
+            <nombre>Monitor</nombre>
+            <peso unidad="kg">1.8</peso>
+        </producto>
+        <producto codigo="DEZ-138">
+            <nombre>Raton</nombre>
+            <peso unidad="g">50</peso>
+        </producto>
+    </inventario>
+
+Como puede verse, obtenemos el propio archivo original. Sin embargo, podemos movernos a través del árbol XML de forma similar a un árbol de directorios. Y obsérvese que decimos "similar". Observemos por ejemplo que dentro de ``<inventario>`` hay 3 elementos ``<producto>``. Si pensamos en la expresión XPath ``/inventario/producto`` puede que pensemos que obtendremos el primer producto (el que tiene el código AAA-111), sin embargo **una expresión XPath se parece a una consulta SQL**, y lo que obtiene la expresión es "todo elemento ``<producto>`` que sea hijo de ``<inventario>``. Es decir, el fichero siguiente (que no es XML, sino una lista de nodos):
+
+
+.. code-block:: xml
+
+    <producto codigo="AAA-111">
+        <nombre>Teclado</nombre>
+        <peso unidad="g">480</peso>
+    </producto>
+    
+
+    <producto codigo="ACD-981">
+        <nombre>Monitor</nombre>
+        <peso unidad="kg">1.8</peso>
+    </producto>
+    
+
+    <producto codigo="DEZ-138">
+        <nombre>Raton</nombre>
+        <peso unidad="g">50</peso>
+    </producto>
+
+En cualquier lista podemos acceder a sus elementos como si fuese un vector. Sin embargo en XPath **los vectores empiezan por 1**. Por lo cual la expresión ``/inventario/producto[1]`` produce este resultado:
+
+.. code-block:: xml
+
+    <producto codigo="AAA-111">
+        <nombre>Teclado</nombre>
+        <peso unidad="g">480</peso>
+    </producto>
+    
+Y la expresión ``/inventario/producto[3]`` produce este:
+
+.. code-block:: xml
+
+    <producto codigo="DEZ-138">
+        <nombre>Raton</nombre>
+        <peso unidad="g">50</peso>
+    </producto>
+
+
+Obsérvese que no existe el elemento 4 y que por tanto la expresión ``/inventario/producto[4]`` producirá un error. Otro aspecto relevante es que no deben confundirse los vectores con las condiciones (que el W3C llama "predicados"), y con las cuales podremos seleccionar nodos que cumplan ciertas condiciones De hecho, una buena forma de verlos es asumir que en los corchetes **siempre se ponen condiciones y que si hay un número como por ejemplo el 2 nos referimos a la condicion "extraer el elemento cuya posición es igual a 2**.
+
+Dado un elemento, también podemos extraer un cierto atributo usando la arroba @. Así, la expresión ``/inventario/producto[3]/@codigo`` devuelve como resultado ``ACD-981``, que es el atributo código del tercer elemento ``producto`` que está dentro de ``inventario`` el cual cuelga de la raíz.
+
+
+
+Supongamos que deseamos extraer el producto cuyo código sea "AAA-111". Si usamos ``/inventario/producto`` extraemos todos los elementos producto hijos de inventario, pero recordemos que entre corchetes podemos poner condiciones. Dado que queremos comprobar si @codigo = "AAA-111", la expresión correcta será ``/inventario/producto[@codigo="AAA-111"]``, la cual nos devuelve lo siguiente:
+
+.. code-block:: xml
+
+    <producto codigo="AAA-111">
+        <nombre>Teclado</nombre>
+        <peso unidad="g">480</peso>
+    </producto>
+    
+De hecho se puede profundizar aún más y usar la expresión ``/inventario/producto[@codigo="AAA-111"]/nombre`` que extrae los nombres de los elementos producto cuyo código sea "AAA-111". Y aún más para extraer solo el texto de los elementos nombre usando la expresión ``/inventario/producto[@codigo="AAA-111"]/nombre/text()``. Como vemos en esta última expresión ya hemos usado una función, en concreto ``text()``.
+
+En una condicion podemos referirnos a cualquier hijo de un nodo, así por ejemplo, podemos extraer los productos cuyo peso sea mayor de 50 usando ``/inventario/producto[peso>=50]``. Sin embargo, sabemos que la unidad es importante, por lo que en realidad podemos extraer los que pesen más de 50 gramos usando esto ``/inventario/producto[peso>=50 and peso/@unidad="g"]``.
+
+Si se observa despacio el fichero, se observará que en realidad el tercer producto debería aparecer también. Para ello debemos ampliar la expresión convirtiendo los 50 g a kg, es decir comparando con 0.005 kg y la expresión siguiente ``/inventario/producto[(peso>=50 and peso/@unidad="g") or (peso>=0.005 and peso/@unidad="kg")]``.
+
+Utilizando XPath y XSLT veremos que podemos transformar un XML en casi cualquier otro XML utilizando la potencia combinada de ambos lenguajes.
+    
+
+
+
 Adaptación y transformación de XML
 ===========================================
 
