@@ -1963,6 +1963,110 @@ La solución puede ser algo así:
     </xsd:complexType>
   </xsd:schema>
 
+Ejercicio: lista de articulos (con atributos optativos)
+-----------------------------------------------------------
+Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:
+
+.. code-block:: xml
+    
+    <listaproductos>
+        <articulo>
+            <!--Estructura 2 letras,2 cifras-->
+            <codigo>CD12</codigo>
+            <!--Descripcion es optativo y su atributo autor tb-->
+            <descripcion autor="Pepe">Monitor</descripcion>
+        </articulo>
+        <articulo>
+            <descripcion>Teclado</descripcion>
+            <codigo>CA12</codigo>
+        </articulo>
+        <articulo>
+            <codigo>AA99</codigo>
+            <descripcion>Teclado</descripcion>
+        </articulo>
+    </listaproductos>
+    
+
+
+A continuación se muestra una solución con un esquema que valida ficheros como el indicado:
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaproductos" type="tipoListaProductos"/>
+        <xsd:complexType name="tipoListaProductos">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="articulo"
+                                     type="tipoArticulo"
+                                     maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType> <!--Fin de listaarticulos-->
+        <xsd:complexType name="tipoArticulo">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="codigo" type="tipoCodigo"/>
+                        <xsd:element name="descripcion"
+                                     type="tipoDescripcion"
+                                     minOccurs="0" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType> <!--Fin de  articulo-->
+        
+        <xsd:simpleType name="tipoCodigo">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[A-Z]{2}[0-9]{2}"/>
+            </xsd:restriction>
+        </xsd:simpleType> <!--Fin de codigo-->
+        
+        <xsd:complexType name="tipoDescripcion">
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="autor" type="xsd:string"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:schema>
+
+
+Ejercicio: lista de componentes:
+---------------------------------
+
+Dado un archivo como el siguiente en el cual aparecen
+las reglas incluidas como comentarios, crear el esquema que
+valide la estructura de tales ficheros:
+
+.. code-block:: xml
+
+    <listacomponentes>
+        <!--Obligatoria fecha entrega-->
+        <componente entrega="2018-03-15">
+            <fabricante>
+                <!--Posibles fabricantes FAB1, FAB2 y FAB3-->
+                <nombre>FAB1</nombre>
+                <!--Calificacion es un string y es optativa-->
+                <calificacion>Positiva</calificacion>
+            </fabricante>
+            <!--Atributo unidad es cadena. Dentro de peso
+            solo puede haber numeros con decimales y mayores de 0-->
+            <peso unidad="kg">40.5</peso>
+        </componente>
+        <componente entrega="2018-12-31">
+            <fabricante>
+                <nombre>FAB2</nombre>
+            </fabricante>
+            <peso unidad="miligramos">260.5</peso>
+        </componente>
+    </listacomponentes>
+
+La solución podría ser algo así:
+
+
 
 Ejercicio: listas de productos
 --------------------------------

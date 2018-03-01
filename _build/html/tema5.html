@@ -1747,6 +1747,100 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-lista-de-articulos-con-atributos-optativos">
+<h3>Ejercicio: lista de articulos (con atributos optativos)<a class="headerlink" href="#ejercicio-lista-de-articulos-con-atributos-optativos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listaproductos&gt;</span>
+    <span class="nt">&lt;articulo&gt;</span>
+        <span class="c">&lt;!--Estructura 2 letras,2 cifras--&gt;</span>
+        <span class="nt">&lt;codigo&gt;</span>CD12<span class="nt">&lt;/codigo&gt;</span>
+        <span class="c">&lt;!--Descripcion es optativo y su atributo autor tb--&gt;</span>
+        <span class="nt">&lt;descripcion</span> <span class="na">autor=</span><span class="s">&quot;Pepe&quot;</span><span class="nt">&gt;</span>Monitor<span class="nt">&lt;/descripcion&gt;</span>
+    <span class="nt">&lt;/articulo&gt;</span>
+    <span class="nt">&lt;articulo&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Teclado<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="nt">&lt;codigo&gt;</span>CA12<span class="nt">&lt;/codigo&gt;</span>
+    <span class="nt">&lt;/articulo&gt;</span>
+    <span class="nt">&lt;articulo&gt;</span>
+        <span class="nt">&lt;codigo&gt;</span>AA99<span class="nt">&lt;/codigo&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Teclado<span class="nt">&lt;/descripcion&gt;</span>
+    <span class="nt">&lt;/articulo&gt;</span>
+<span class="nt">&lt;/listaproductos&gt;</span>
+</pre></div>
+</div>
+<p>A continuación se muestra una solución con un esquema que valida ficheros como el indicado:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaproductos&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoListaProductos&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaProductos&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;articulo&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;tipoArticulo&quot;</span>
+                                 <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span> <span class="c">&lt;!--Fin de listaarticulos--&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoArticulo&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;codigo&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoCodigo&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;descripcion&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;tipoDescripcion&quot;</span>
+                                 <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span> <span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span> <span class="c">&lt;!--Fin de  articulo--&gt;</span>
+
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoCodigo&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:pattern</span> <span class="na">value=</span><span class="s">&quot;[A-Z]{2}[0-9]{2}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span> <span class="c">&lt;!--Fin de codigo--&gt;</span>
+
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoDescripcion&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;autor&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-lista-de-componentes">
+<h3>Ejercicio: lista de componentes:<a class="headerlink" href="#ejercicio-lista-de-componentes" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado un archivo como el siguiente en el cual aparecen
+las reglas incluidas como comentarios, crear el esquema que
+valide la estructura de tales ficheros:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listacomponentes&gt;</span>
+    <span class="c">&lt;!--Obligatoria fecha entrega--&gt;</span>
+    <span class="nt">&lt;componente</span> <span class="na">entrega=</span><span class="s">&quot;2018-03-15&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fabricante&gt;</span>
+            <span class="c">&lt;!--Posibles fabricantes FAB1, FAB2 y FAB3--&gt;</span>
+            <span class="nt">&lt;nombre&gt;</span>FAB1<span class="nt">&lt;/nombre&gt;</span>
+            <span class="c">&lt;!--Calificacion es un string y es optativa--&gt;</span>
+            <span class="nt">&lt;calificacion&gt;</span>Positiva<span class="nt">&lt;/calificacion&gt;</span>
+        <span class="nt">&lt;/fabricante&gt;</span>
+        <span class="c">&lt;!--Atributo unidad es cadena. Dentro de peso</span>
+<span class="c">        solo puede haber numeros con decimales y mayores de 0--&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>40.5<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/componente&gt;</span>
+    <span class="nt">&lt;componente</span> <span class="na">entrega=</span><span class="s">&quot;2018-12-31&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fabricante&gt;</span>
+            <span class="nt">&lt;nombre&gt;</span>FAB2<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;/fabricante&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;miligramos&quot;</span><span class="nt">&gt;</span>260.5<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/componente&gt;</span>
+<span class="nt">&lt;/listacomponentes&gt;</span>
+</pre></div>
+</div>
+<p>La solución podría ser algo así:</p>
+</div>
 <div class="section" id="ejercicio-listas-de-productos">
 <h3>Ejercicio: listas de productos<a class="headerlink" href="#ejercicio-listas-de-productos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se pide validar correctamente algo como esto:</p>
@@ -2404,6 +2498,8 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
+<li><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
+<li><a class="reference internal" href="#ejercicio-lista-de-componentes">Ejercicio: lista de componentes:</a></li>
 <li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
 <li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
