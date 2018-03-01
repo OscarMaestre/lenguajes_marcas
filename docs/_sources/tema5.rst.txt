@@ -2034,8 +2034,8 @@ A continuación se muestra una solución con un esquema que valida ficheros como
     </xsd:schema>
 
 
-Ejercicio: lista de componentes:
----------------------------------
+Ejercicio: lista de componentes (un enfoque distinto)
+-------------------------------------------------------
 
 Dado un archivo como el siguiente en el cual aparecen
 las reglas incluidas como comentarios, crear el esquema que
@@ -2064,8 +2064,75 @@ valide la estructura de tales ficheros:
         </componente>
     </listacomponentes>
 
-La solución podría ser algo así:
+Ahora en lugar de ir definiendo tipos empezando por el elemento raíz vamos a ir definiendo primero los tipos de los elementos más básicos que encontremos, e iremos construyendo los tipos más complejos a partir de los tipos fáciles que ya hayamos construido. Como veremos despues, el resultado va a ser el mismo.
 
+La solución:
+
+
+.. code-block:: xml
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:simpleType name="tipoNombre">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="FAB1"/>
+                <xsd:enumeration value="FAB2"/>
+                <xsd:enumeration value="FAB3"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <!--Tipo auxiliar, el atributo lo incluimos despues-->
+        <xsd:simpleType name="tipoPesoRestringido">
+            <xsd:restriction base="xsd:float">
+                <xsd:minExclusive value="0"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        
+        <!--En este tipo peso incluimos ya el atributo-->
+        <xsd:complexType name="tipoPeso">
+            <xsd:simpleContent>
+                <xsd:extension base="tipoPesoRestringido">
+                    <xsd:attribute name="unidad"
+                                   type="xsd:string"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+        
+        <xsd:complexType name="tipoFabricante">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="nombre"
+                                     type="tipoNombre"/>
+                        <xsd:element name="calificacion"
+                                     type="xsd:string"
+                                     minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoComponente">
+            <xsd:sequence>
+                <xsd:element name="fabricante"
+                             type="tipoFabricante"/>
+                <xsd:element name="peso" type="tipoPeso"/>
+            </xsd:sequence>
+            <xsd:attribute name="entrega" type="xsd:date"/>
+            
+        </xsd:complexType>
+        
+        <xsd:complexType name="tipoListaComponentes">
+            <xsd:sequence>
+                <xsd:element name="componente"
+                             type="tipoComponente"
+                             maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        
+        <!--Aunque el elemento aparezca al final,
+        no pasa nada-->
+        <xsd:element name="listacomponentes"
+                     type="tipoListaComponentes"/>
+        
+    </xsd:schema>
 
 
 Ejercicio: listas de productos

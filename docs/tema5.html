@@ -1812,8 +1812,8 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
-<div class="section" id="ejercicio-lista-de-componentes">
-<h3>Ejercicio: lista de componentes:<a class="headerlink" href="#ejercicio-lista-de-componentes" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="ejercicio-lista-de-componentes-un-enfoque-distinto">
+<h3>Ejercicio: lista de componentes (un enfoque distinto)<a class="headerlink" href="#ejercicio-lista-de-componentes-un-enfoque-distinto" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Dado un archivo como el siguiente en el cual aparecen
 las reglas incluidas como comentarios, crear el esquema que
 valide la estructura de tales ficheros:</p>
@@ -1839,7 +1839,72 @@ valide la estructura de tales ficheros:</p>
 <span class="nt">&lt;/listacomponentes&gt;</span>
 </pre></div>
 </div>
-<p>La solución podría ser algo así:</p>
+<p>Ahora en lugar de ir definiendo tipos empezando por el elemento raíz vamos a ir definiendo primero los tipos de los elementos más básicos que encontremos, e iremos construyendo los tipos más complejos a partir de los tipos fáciles que ya hayamos construido. Como veremos despues, el resultado va a ser el mismo.</p>
+<p>La solución:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoNombre&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;FAB1&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;FAB2&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;FAB3&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!--Tipo auxiliar, el atributo lo incluimos despues--&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPesoRestringido&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:float&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:minExclusive</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+
+    <span class="c">&lt;!--En este tipo peso incluimos ya el atributo--&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:simpleContent&gt;</span>
+            <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;tipoPesoRestringido&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;unidad&quot;</span>
+                               <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:extension&gt;</span>
+        <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoFabricante&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexContent&gt;</span>
+            <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;tipoNombre&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;calificacion&quot;</span>
+                                 <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
+                                 <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:restriction&gt;</span>
+        <span class="nt">&lt;/xsd:complexContent&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoComponente&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;fabricante&quot;</span>
+                         <span class="na">type=</span><span class="s">&quot;tipoFabricante&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;entrega&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:date&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaComponentes&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;componente&quot;</span>
+                         <span class="na">type=</span><span class="s">&quot;tipoComponente&quot;</span>
+                         <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+
+    <span class="c">&lt;!--Aunque el elemento aparezca al final,</span>
+<span class="c">    no pasa nada--&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listacomponentes&quot;</span>
+                 <span class="na">type=</span><span class="s">&quot;tipoListaComponentes&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ejercicio-listas-de-productos">
 <h3>Ejercicio: listas de productos<a class="headerlink" href="#ejercicio-listas-de-productos" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -2499,7 +2564,7 @@ valide la estructura de tales ficheros:</p>
 <li><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
-<li><a class="reference internal" href="#ejercicio-lista-de-componentes">Ejercicio: lista de componentes:</a></li>
+<li><a class="reference internal" href="#ejercicio-lista-de-componentes-un-enfoque-distinto">Ejercicio: lista de componentes (un enfoque distinto)</a></li>
 <li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
 <li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
