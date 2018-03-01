@@ -1977,7 +1977,6 @@ Supongamos el fichero siguiente con las reglas que se explicitan en los comentar
             <descripcion autor="Pepe">Monitor</descripcion>
         </articulo>
         <articulo>
-            <descripcion>Teclado</descripcion>
             <codigo>CA12</codigo>
         </articulo>
         <articulo>
