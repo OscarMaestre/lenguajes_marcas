@@ -2070,7 +2070,7 @@ La solución:
 
 .. code-block:: xml
 
-    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    n<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <xsd:simpleType name="tipoNombre">
             <xsd:restriction base="xsd:string">
                 <xsd:enumeration value="FAB1"/>
@@ -2133,6 +2133,43 @@ La solución:
         
     </xsd:schema>
 
+Ejercicio: listas con choice
+-----------------------------
+
+Se pide elaborar un esquema que valide un fichero como este:
+
+.. code-block:: xml
+
+    <!--Obligatorio el tener fechaGeneracion-->
+    <articulos fechaGeneracion="2018-03-01">
+        <!--El atributo codigo es optativo siempre-->
+        <monitor codigo="AAA-DDD-222">
+            <!--Descripcion obligatoria-->
+            <descripcion>Monitor de x pulgadas...</descripcion>
+            <resolucion>
+                <ancho>1920</ancho>
+                <alto>1400</alto>
+            </resolucion>
+        </monitor>
+        <raton>
+            <!--Descripcion obligatoria-->
+            <descripcion>Raton ergonomico...</descripcion>
+            <!--La unidad es g o cg-->
+            <peso unidad="g">100</peso>
+        </raton>
+        <teclado codigo="DDD-XXX-111">
+            <!---Descripcion obligatoria-->
+            <descripcion>Teclado estándar</descripcion>
+        </teclado>
+        <monitor codigo="CCC-GGG-666">
+            <!--Descripcion obligatoria-->
+            <descripcion>Monitor de x pulgadas...</descripcion>
+            <resolucion>
+                <ancho>1400</ancho>
+                <alto>1000</alto>
+            </resolucion>
+        </monitor>
+    </articulos>
 
 Ejercicio: listas de productos
 --------------------------------

@@ -1840,7 +1840,7 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Ahora en lugar de ir definiendo tipos empezando por el elemento raíz vamos a ir definiendo primero los tipos de los elementos más básicos que encontremos, e iremos construyendo los tipos más complejos a partir de los tipos fáciles que ya hayamos construido. Como veremos despues, el resultado va a ser el mismo.</p>
 <p>La solución:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>n<span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoNombre&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;FAB1&quot;</span><span class="nt">/&gt;</span>
@@ -1902,6 +1902,42 @@ valide la estructura de tales ficheros:</p>
                  <span class="na">type=</span><span class="s">&quot;tipoListaComponentes&quot;</span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-listas-con-choice">
+<h3>Ejercicio: listas con choice<a class="headerlink" href="#ejercicio-listas-con-choice" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se pide elaborar un esquema que valide un fichero como este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Obligatorio el tener fechaGeneracion--&gt;</span>
+<span class="nt">&lt;articulos</span> <span class="na">fechaGeneracion=</span><span class="s">&quot;2018-03-01&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--El atributo codigo es optativo siempre--&gt;</span>
+    <span class="nt">&lt;monitor</span> <span class="na">codigo=</span><span class="s">&quot;AAA-DDD-222&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!--Descripcion obligatoria--&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Monitor de x pulgadas...<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="nt">&lt;resolucion&gt;</span>
+            <span class="nt">&lt;ancho&gt;</span>1920<span class="nt">&lt;/ancho&gt;</span>
+            <span class="nt">&lt;alto&gt;</span>1400<span class="nt">&lt;/alto&gt;</span>
+        <span class="nt">&lt;/resolucion&gt;</span>
+    <span class="nt">&lt;/monitor&gt;</span>
+    <span class="nt">&lt;raton&gt;</span>
+        <span class="c">&lt;!--Descripcion obligatoria--&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Raton ergonomico...<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="c">&lt;!--La unidad es g o cg--&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>100<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/raton&gt;</span>
+    <span class="nt">&lt;teclado</span> <span class="na">codigo=</span><span class="s">&quot;DDD-XXX-111&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!---Descripcion obligatoria--&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Teclado estándar<span class="nt">&lt;/descripcion&gt;</span>
+    <span class="nt">&lt;/teclado&gt;</span>
+    <span class="nt">&lt;monitor</span> <span class="na">codigo=</span><span class="s">&quot;CCC-GGG-666&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!--Descripcion obligatoria--&gt;</span>
+        <span class="nt">&lt;descripcion&gt;</span>Monitor de x pulgadas...<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="nt">&lt;resolucion&gt;</span>
+            <span class="nt">&lt;ancho&gt;</span>1400<span class="nt">&lt;/ancho&gt;</span>
+            <span class="nt">&lt;alto&gt;</span>1000<span class="nt">&lt;/alto&gt;</span>
+        <span class="nt">&lt;/resolucion&gt;</span>
+    <span class="nt">&lt;/monitor&gt;</span>
+<span class="nt">&lt;/articulos&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -2564,6 +2600,7 @@ valide la estructura de tales ficheros:</p>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-componentes-un-enfoque-distinto">Ejercicio: lista de componentes (un enfoque distinto)</a></li>
+<li><a class="reference internal" href="#ejercicio-listas-con-choice">Ejercicio: listas con choice</a></li>
 <li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
 <li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
@@ -2609,7 +2646,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
