@@ -44,7 +44,7 @@
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 \addto\captionsspanish{\renewcommand{\literalblockname}{Lista}}
 
-\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{proviene de la página anterior}}
+\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{continued from previous page}}
 \addto\captionsspanish{\renewcommand{\literalblockcontinuesname}{continues on next page}}
 
 \addto\extrasspanish{\def\pageautorefname{página}}
@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{01 de marzo de 2018}
+\date{02 de marzo de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -3162,7 +3162,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -7280,7 +7280,7 @@ Ahora en lugar de ir definiendo tipos empezando por el elemento raíz vamos a ir
 La solución:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+n\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoNombre\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
             \PYG{n+nt}{\PYGZlt{}xsd:enumeration} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}FAB1\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
@@ -7342,6 +7342,61 @@ La solución:
                  \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoListaComponentes\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
 
 \PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ejercicio: listas con choice}
+\label{\detokenize{tema5:ejercicio-listas-con-choice}}
+
+\subsubsection{Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:}
+\label{\detokenize{tema5:se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes}}\begin{itemize}
+\item {} 
+El elemento raíz es \sphinxcode{articulos}. Dicho elemento raíz debe llevar siempre un atributo \sphinxcode{fechaGeneración}.
+
+\item {} 
+Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: \sphinxcode{monitor}, \sphinxcode{teclado} o \sphinxcode{raton}. Cualquiera de los tres elementos puede llevar un atributo \sphinxcode{codigo} que tiene siempre la estructura «tres letras, guión, tres letras, guión, tres cifras». Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento \sphinxcode{descripción} que contiene texto.
+
+\item {} 
+Un monitor debe llevar (aparte de la descripción que va en primer lugar) un elemento \sphinxcode{resolución} que a su vez debe llevar dentro dos elementos y en este orden \sphinxcode{ancho} y \sphinxcode{alto}. Tanto \sphinxcode{ancho}, como \sphinxcode{alto} deben llevar siempre dentro un entero positivo.
+
+\item {} 
+Un \sphinxcode{ratón} debe llevar (aparte de la descripción que va en primer lugar) un elemento \sphinxcode{peso} que siempre lleva dentro un entero positivo. Además, el \sphinxcode{peso} lleva siempre dentro un atributo \sphinxcode{unidad} que solo puede valer «g» o «cg».
+
+\end{itemize}
+
+En el fichero siguiente se muestra un ejemplo
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Obligatorio el tener fechaGeneracion}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}articulos} \PYG{n+na}{fechageneracion=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}01\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El atributo codigo es optativo siempre}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}monitor} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}DDD\PYGZhy{}222\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Monitor de x pulgadas...\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}resolucion}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ancho}\PYG{n+nt}{\PYGZgt{}}1920\PYG{n+nt}{\PYGZlt{}/ancho\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}alto}\PYG{n+nt}{\PYGZgt{}}1400\PYG{n+nt}{\PYGZlt{}/alto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/resolucion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/monitor\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}raton}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Raton ergonomico...\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{La unidad es g o cg}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}100\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/raton\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}teclado} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DDD\PYGZhy{}XXX\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Teclado estándar\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/teclado\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}monitor} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}CCC\PYGZhy{}GGG\PYGZhy{}666\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Monitor de x pulgadas...\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}resolucion}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ancho}\PYG{n+nt}{\PYGZgt{}}1400\PYG{n+nt}{\PYGZlt{}/ancho\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}alto}\PYG{n+nt}{\PYGZgt{}}1000\PYG{n+nt}{\PYGZlt{}/alto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/resolucion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/monitor\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/articulos\PYGZgt{}}
 \end{sphinxVerbatim}
 
 
@@ -8010,7 +8065,7 @@ El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -11254,7 +11309,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12550,7 +12605,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13540,7 +13595,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

@@ -2150,7 +2150,7 @@ En el fichero siguiente se muestra un ejemplo
 .. code-block:: xml
 
     <!--Obligatorio el tener fechaGeneracion-->
-    <articulos fechaGeneracion="2018-03-01">
+    <articulos fechageneracion="2018-03-01">
         <!--El atributo codigo es optativo siempre-->
         <monitor codigo="AAA-DDD-222">
             <!--Descripcion obligatoria-->
