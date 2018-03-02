@@ -1907,7 +1907,15 @@ valide la estructura de tales ficheros:</p>
 </div>
 <div class="section" id="ejercicio-listas-con-choice">
 <h3>Ejercicio: listas con choice<a class="headerlink" href="#ejercicio-listas-con-choice" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Se pide elaborar un esquema que valide un fichero como este:</p>
+<div class="section" id="se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes">
+<h4>Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:<a class="headerlink" href="#se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>El elemento raíz es <code class="docutils literal"><span class="pre">articulos</span></code>. Dicho elemento raíz debe llevar siempre un atributo <code class="docutils literal"><span class="pre">fechaGeneración</span></code>.</li>
+<li>Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: <code class="docutils literal"><span class="pre">monitor</span></code>, <code class="docutils literal"><span class="pre">teclado</span></code> o <code class="docutils literal"><span class="pre">raton</span></code>. Cualquiera de los tres elementos puede llevar un atributo <code class="docutils literal"><span class="pre">codigo</span></code> que tiene siempre la estructura «tres letras, guión, tres letras, guión, tres cifras». Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento <code class="docutils literal"><span class="pre">descripción</span></code> que contiene texto.</li>
+<li>Un monitor debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal"><span class="pre">resolución</span></code> que a su vez debe llevar dentro dos elementos y en este orden <code class="docutils literal"><span class="pre">ancho</span></code> y <code class="docutils literal"><span class="pre">alto</span></code>. Tanto <code class="docutils literal"><span class="pre">ancho</span></code>, como <code class="docutils literal"><span class="pre">alto</span></code> deben llevar siempre dentro un entero positivo.</li>
+<li>Un <code class="docutils literal"><span class="pre">ratón</span></code> debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal"><span class="pre">peso</span></code> que siempre lleva dentro un entero positivo. Además, el <code class="docutils literal"><span class="pre">peso</span></code> lleva siempre dentro un atributo <code class="docutils literal"><span class="pre">unidad</span></code> que solo puede valer «g» o «cg».</li>
+</ul>
+<p>En el fichero siguiente se muestra un ejemplo</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Obligatorio el tener fechaGeneracion--&gt;</span>
 <span class="nt">&lt;articulos</span> <span class="na">fechaGeneracion=</span><span class="s">&quot;2018-03-01&quot;</span><span class="nt">&gt;</span>
     <span class="c">&lt;!--El atributo codigo es optativo siempre--&gt;</span>
@@ -1939,6 +1947,7 @@ valide la estructura de tales ficheros:</p>
     <span class="nt">&lt;/monitor&gt;</span>
 <span class="nt">&lt;/articulos&gt;</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="ejercicio-listas-de-productos">
@@ -2600,7 +2609,10 @@ valide la estructura de tales ficheros:</p>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-componentes-un-enfoque-distinto">Ejercicio: lista de componentes (un enfoque distinto)</a></li>
-<li><a class="reference internal" href="#ejercicio-listas-con-choice">Ejercicio: listas con choice</a></li>
+<li><a class="reference internal" href="#ejercicio-listas-con-choice">Ejercicio: listas con choice</a><ul>
+<li><a class="reference internal" href="#se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes">Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
 <li><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
 <li><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>

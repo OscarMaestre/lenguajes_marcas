@@ -2136,7 +2136,16 @@ La solución:
 Ejercicio: listas con choice
 -----------------------------
 
-Se pide elaborar un esquema que valide un fichero como este:
+Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:
+````
+* El elemento raíz es ``articulos``. Dicho elemento raíz debe llevar siempre un atributo ``fechaGeneración``.
+* Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: ``monitor``, ``teclado`` o ``raton``. Cualquiera de los tres elementos puede llevar un atributo ``codigo`` que tiene siempre la estructura "tres letras, guión, tres letras, guión, tres cifras". Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento ``descripción`` que contiene texto.
+
+* Un monitor debe llevar (aparte de la descripción que va en primer lugar) un elemento ``resolución`` que a su vez debe llevar dentro dos elementos y en este orden ``ancho`` y ``alto``. Tanto ``ancho``, como ``alto`` deben llevar siempre dentro un entero positivo.
+
+* Un ``ratón`` debe llevar (aparte de la descripción que va en primer lugar) un elemento ``peso`` que siempre lleva dentro un entero positivo. Además, el ``peso`` lleva siempre dentro un atributo ``unidad`` que solo puede valer "g" o "cg".
+
+En el fichero siguiente se muestra un ejemplo
 
 .. code-block:: xml
 
