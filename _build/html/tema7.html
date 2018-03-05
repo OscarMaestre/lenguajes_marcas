@@ -268,6 +268,22 @@
 </div>
 <p>Así dado este archivo tenemos las expresiones siguientes:</p>
 <p>Si usamos la expresión <code class="docutils literal"><span class="pre">/inventario</span></code> se selecciona <em>el nodo inventario que cuelga de la raíz</em>. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión <code class="docutils literal"><span class="pre">/inventario</span></code> para el archivo de ejemplo produce el resultado siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
 <p>Como puede verse, obtenemos el propio archivo original. Sin embargo, podemos movernos a través del árbol XML de forma similar a un árbol de directorios. Y obsérvese que decimos «similar». Observemos por ejemplo que dentro de <code class="docutils literal"><span class="pre">&lt;inventario&gt;</span></code> hay 3 elementos <code class="docutils literal"><span class="pre">&lt;producto&gt;</span></code>. Si pensamos en la expresión XPath <code class="docutils literal"><span class="pre">/inventario/producto</span></code> puede que pensemos que obtendremos el primer producto (el que tiene el código AAA-111), sin embargo <strong>una expresión XPath se parece a una consulta SQL</strong>, y lo que obtiene la expresión es «todo elemento <code class="docutils literal"><span class="pre">&lt;producto&gt;</span></code> que sea hijo de <code class="docutils literal"><span class="pre">&lt;inventario&gt;</span></code>. Es decir, el fichero siguiente (que no es XML, sino una lista de nodos):</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
@@ -708,11 +724,11 @@ esta</p>
 <h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea hacer lo mismo que en el ejercicio anterior pero haciendo que los autores aparezcan de forma ordenada.</p>
 <p>La solución está fundamentada en el uso de la etiqueta siguiente:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;xsl:for-each ...&gt;
-        &lt;xsl:sort select=&quot;...&quot; ordering=&quot;...&quot;&gt;
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:sort</span> <span class="na">select=</span><span class="s">&quot;...&quot;</span> <span class="na">ordering=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
                 ..cosas del bucle...
-        &lt;/xsl&gt;
-&lt;/xsl&gt;
+        <span class="nt">&lt;/xsl:sort&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
 </pre></div>
 </div>
 <p>La solución completa sería así:</p>
@@ -1286,7 +1302,7 @@ esta</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

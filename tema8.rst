@@ -98,10 +98,8 @@ El resultado será algo como esto:
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
-
-	<resultset statement="select * from usuarios
-	" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	<resultset statement="select * from usuarios"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	  <row>
 			<field name="id">1</field>
 			<field name="nombre">Juan</field>

@@ -77,7 +77,7 @@ En este caso la etiqueta ``<nombre>`` no está cerrada.
 
 En este caso, se ha puesto ``<cif>`` cerrado con ``</CIF>`` (mayúsculas).
 
-.. code-block:: xml
+.. code-block:: none
 
 	<clientes>
 		<cliente>
@@ -86,7 +86,8 @@ En este caso, se ha puesto ``<cif>`` cerrado con ``</CIF>`` (mayúsculas).
 		</cliente>
 	</clientes>
 
-Se ha utilizado la admiración, que no es válida.
+Se ha utilizado la admiración, que no es válida (de hecho, el coloreador de sintaxis automático descubre
+que no es XML y el fichero se muestra de manera literal)
 
 Atención a este ejemplo:
 
@@ -990,7 +991,7 @@ Un posible fichero de ejemplo que podría validar sería este:
 Solución: DTD fabricante tractores
 --------------------------------------
 
-    .. code-block:: dtd
+.. code-block:: dtd
     
     <!ELEMENT pedido     (tractor)+>
     <!ELEMENT tractor    (componente)+>
@@ -1608,7 +1609,7 @@ La solución comentada puede encontrarse a continuación. Como puede verse, hemo
 Ejercicio: codigos y sedes
 ---------------------------------
 
-Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado ``codigo''
+Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado ``codigo``
 
 * Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.
 
@@ -2137,7 +2138,7 @@ Ejercicio: listas con choice
 -----------------------------
 
 Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:
-````
+
 * El elemento raíz es ``articulos``. Dicho elemento raíz debe llevar siempre un atributo ``fechaGeneración``.
 * Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: ``monitor``, ``teclado`` o ``raton``. Cualquiera de los tres elementos puede llevar un atributo ``codigo`` que tiene siempre la estructura "tres letras, guión, tres letras, guión, tres cifras". Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento ``descripción`` que contiene texto.
 
@@ -2771,7 +2772,7 @@ Ejercicio tipo examen (II)
 ===============================
 Crear una DTD que permita validar un fichero como el siguiente:
 
-.. code-block::
+.. code-block:: xml
 
     <inventario>
         <objeto codigo="MM2809">

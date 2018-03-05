@@ -1031,7 +1031,7 @@ JS del configurador (con JQuery (DAM))
 Dinamismo con Google Maps
 =========================
 
-Google Maps ofrece un servicio de mapas con una limitación de 25.000 peticiones diarias. El código básico sería así::
+Google Maps ofrece un servicio de mapas con una limitación de 25.000 peticiones diarias. El código básico sería así:
 
 HTML de GMaps
 -------------
@@ -1492,7 +1492,8 @@ Las reglas para el calculo son:
 
 HTML calculador
 ---------------
-.. literalinclude:: ejercicios/js/calculo_impuestos\index.html
+
+.. literalinclude:: ejercicios/js/calculo_impuestos_con_jquery/index.html
    :language: html
    
    

@@ -462,7 +462,7 @@ Una posibilidad (incompleta) sería esta:
         "c:/users/ogomez/documents/finanzas.xml");
       mostrarMadrid(raiz);
     }
-}
+ }
 
 
 		

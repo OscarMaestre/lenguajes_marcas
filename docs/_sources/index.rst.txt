@@ -8,7 +8,7 @@ Apuntes de Lenguajes de marcas
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    tema1
    tema2
