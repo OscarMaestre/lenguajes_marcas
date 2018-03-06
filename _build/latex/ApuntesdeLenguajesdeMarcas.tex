@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -3156,7 +3156,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -7241,6 +7241,50 @@ Un ejemplo de fichero:
         \PYG{n+nt}{\PYGZlt{}edad}\PYG{n+nt}{\PYGZgt{}}25\PYG{n+nt}{\PYGZlt{}/edad\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/listaalumnos\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y a continuación una posible solución:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}listaalumnos\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoListaAlumnos\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoListaAlumnos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}alumno\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoAlumno\PYGZdq{}}
+                                 \PYG{n+na}{maxOccurs=}\PYG{l+s}{\PYGZdq{}unbounded\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoAlumno\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap1\PYGZdq{}}
+                                \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap2\PYGZdq{}}
+                                \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}
+                                \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}edad\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:positiveInteger\PYGZdq{}}
+                                 \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}dni\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoDNI\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoDNI\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:pattern} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}[0\PYGZhy{}9]\PYGZob{}7,8\PYGZcb{}[A\PYGZhy{}Z]\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
 \end{sphinxVerbatim}
 
 

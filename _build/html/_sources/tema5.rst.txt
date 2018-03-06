@@ -1996,6 +1996,53 @@ Un ejemplo de fichero:
         </alumno>
     </listaalumnos>
 
+Y a continuación una posible solución:
+
+.. code-block:: xml
+
+    
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaalumnos" type="tipoListaAlumnos"/>
+        <xsd:complexType name="tipoListaAlumnos">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="alumno"
+                                     type="tipoAlumno"
+                                     maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoAlumno">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="nombre"
+                                     type="xsd:string"/>
+                        <xsd:element name="ap1"
+                                    type="xsd:string"/>
+                        <xsd:element name="ap2"
+                                    type="xsd:string"
+                                    minOccurs="0"/>
+                        <xsd:element name="edad"
+                                     type="xsd:positiveInteger"
+                                     minOccurs="0"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="dni" type="tipoDNI"/>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoDNI">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[0-9]{7,8}[A-Z]"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        
+    </xsd:schema>
+    
+    
+
 Ejercicio: lista de articulos (con atributos optativos)
 -----------------------------------------------------------
 Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:
