@@ -1745,6 +1745,36 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </pre></div>
 </div>
 </div>
+<div class="section" id="ejercicio-lista-de-alumnos">
+<h3>Ejercicio: lista de alumnos<a class="headerlink" href="#ejercicio-lista-de-alumnos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea construir un esquema para validar listas de alumnos en las que:</p>
+<ul class="simple">
+<li>La raíz es <code class="docutils literal"><span class="pre">listaalumnos</span></code>.</li>
+<li>Dentro de ella hay uno o más <code class="docutils literal"><span class="pre">alumno</span></code>. Todo <code class="docutils literal"><span class="pre">alumno</span></code> tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.</li>
+<li>Todo <code class="docutils literal"><span class="pre">alumno</span></code> tiene un elemento <code class="docutils literal"><span class="pre">nombre</span></code> y un <code class="docutils literal"><span class="pre">ap1</span></code> obligatorios.</li>
+<li>Todo <code class="docutils literal"><span class="pre">alumno</span></code> puede tener despues del <code class="docutils literal"><span class="pre">ap1</span></code> un elemento <code class="docutils literal"><span class="pre">ap2</span></code> y uno <code class="docutils literal"><span class="pre">edad</span></code>, ambos son optativos.</li>
+<li>El elemento <code class="docutils literal"><span class="pre">edad</span></code> debe ser entero y positivo.</li>
+</ul>
+<p>Un ejemplo de fichero:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listaalumnos&gt;</span>
+    <span class="c">&lt;!--DNI atributo obligatorio--&gt;</span>
+    <span class="nt">&lt;alumno</span> <span class="na">dni=</span><span class="s">&quot;5667545Z&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!--Nombre y ap1 obligatorios--&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Jose<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;ap1&gt;</span>Sanchez<span class="nt">&lt;/ap1&gt;</span>
+    <span class="nt">&lt;/alumno&gt;</span>
+    <span class="nt">&lt;alumno</span> <span class="na">dni=</span><span class="s">&quot;5778221D&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Andres<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;ap1&gt;</span>Ruiz<span class="nt">&lt;/ap1&gt;</span>
+        <span class="c">&lt;!--Ap2 y edad son optativos--&gt;</span>
+        <span class="nt">&lt;ap2&gt;</span>Ruiz<span class="nt">&lt;/ap2&gt;</span>
+        <span class="c">&lt;!--La edad debe ser positiva--&gt;</span>
+        <span class="nt">&lt;edad&gt;</span>25<span class="nt">&lt;/edad&gt;</span>
+    <span class="nt">&lt;/alumno&gt;</span>
+<span class="nt">&lt;/listaalumnos&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="ejercicio-lista-de-articulos-con-atributos-optativos">
 <h3>Ejercicio: lista de articulos (con atributos optativos)<a class="headerlink" href="#ejercicio-lista-de-articulos-con-atributos-optativos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:</p>
@@ -2622,6 +2652,7 @@ valide la estructura de tales ficheros:</p>
 <li><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
 <li><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
+<li><a class="reference internal" href="#ejercicio-lista-de-alumnos">Ejercicio: lista de alumnos</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
 <li><a class="reference internal" href="#ejercicio-lista-de-componentes-un-enfoque-distinto">Ejercicio: lista de componentes (un enfoque distinto)</a></li>
 <li><a class="reference internal" href="#ejercicio-listas-con-choice">Ejercicio: listas con choice</a></li>
@@ -2670,7 +2701,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

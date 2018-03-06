@@ -1963,6 +1963,38 @@ La solución puede ser algo así:
     </xsd:complexContent>
     </xsd:complexType>
   </xsd:schema>
+  
+Ejercicio: lista de alumnos
+-------------------------------------
+
+Se desea construir un esquema para validar listas de alumnos en las que:
+
+* La raíz es ``listaalumnos``.
+* Dentro de ella hay uno o más ``alumno``. Todo ``alumno`` tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.
+* Todo ``alumno`` tiene un elemento ``nombre`` y un ``ap1`` obligatorios.
+* Todo ``alumno`` puede tener despues del ``ap1`` un elemento ``ap2`` y uno ``edad``, ambos son optativos.
+* El elemento ``edad`` debe ser entero y positivo.
+
+Un ejemplo de fichero:
+
+.. code-block:: xml
+    
+    <listaalumnos>
+        <!--DNI atributo obligatorio-->
+        <alumno dni="5667545Z">
+            <!--Nombre y ap1 obligatorios-->
+            <nombre>Jose</nombre>
+            <ap1>Sanchez</ap1>
+        </alumno>
+        <alumno dni="5778221D">
+            <nombre>Andres</nombre>
+            <ap1>Ruiz</ap1>
+            <!--Ap2 y edad son optativos-->
+            <ap2>Ruiz</ap2>
+            <!--La edad debe ser positiva-->
+            <edad>25</edad>
+        </alumno>
+    </listaalumnos>
 
 Ejercicio: lista de articulos (con atributos optativos)
 -----------------------------------------------------------
