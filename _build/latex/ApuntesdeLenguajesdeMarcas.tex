@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -5003,7 +5003,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
+\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -8199,7 +8199,7 @@ El elemento raíz se llama \sphinxcode{portes}.
 Dentro de \sphinxcode{portes}, puede haber uno o más de los elementos \sphinxcode{recepcion} y \sphinxcode{entrega}. Su orden puede ser aleatorio y el número de repeticiones también.
 
 \item {} 
-Un \sphinxcode{porte} lleva dentro tres elementos: un elemento \sphinxcode{producto}, un elemento \sphinxcode{cantidad} y un elemento \sphinxcode{codigoreceptor}.
+Un \sphinxcode{recepcion} lleva dentro tres elementos: un elemento \sphinxcode{producto}, un elemento \sphinxcode{cantidad} y un elemento \sphinxcode{codigoreceptor}.
 
 \item {} 
 El \sphinxcode{producto} es obligatorio y lleva dentro texto.
@@ -8211,9 +8211,34 @@ El elemento \sphinxcode{cantidad} (obligatorio) lleva dentro un número con deci
 El \sphinxcode{codigoreceptor} lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento \sphinxcode{codigoreceptor} es optativo.
 
 \item {} 
-Una \sphinxcode{entrega} tiene siempre un atributo \sphinxcode{receptor} que lleva dentro un texto. Aparte de eso, una \sphinxcode{entrega} tiene siempre un elemento \sphinxcode{transportista} que solo puede valer \sphinxcode{T1}, \sphinxcode{T2} o \sphinxcode{T3}. Despues de el elemento \sphinxcode{entrega}  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la \sphinxcode{entrega}  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento \sphinxcode{coste} que siempre es un entero mayor de 0.
+Una \sphinxcode{entrega} tiene siempre un atributo \sphinxcode{receptor} que lleva dentro un texto. Aparte de eso, una \sphinxcode{entrega} tiene siempre un elemento \sphinxcode{transportista} que solo puede valer \sphinxcode{T1}, \sphinxcode{T2} o \sphinxcode{T3}. Despues de el elemento \sphinxcode{transportista}  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la \sphinxcode{distancia}  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento \sphinxcode{coste} que siempre es un entero mayor de 0.
 
 \end{itemize}
+
+A continuación se muestra un fichero de ejemplo
+
+\begin{sphinxadmonition}{warning}{Advertencia:}
+Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO
+\end{sphinxadmonition}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}portes}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}recepcion}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}producto}\PYG{n+nt}{\PYGZgt{}}Fruta\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}125.5\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}codigoreceptor}\PYG{n+nt}{\PYGZgt{}}333\PYGZhy{}AZT\PYG{n+nt}{\PYGZlt{}/codigoreceptor\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/recepcion\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}entrega} \PYG{n+na}{receptor=}\PYG{l+s}{\PYGZdq{}Mercados SL\PYGZdq{}} \PYG{n+na}{coste=}\PYG{l+s}{\PYGZdq{}1321\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}transportista}\PYG{n+nt}{\PYGZgt{}}T2\PYG{n+nt}{\PYGZlt{}/transportista\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}distancia} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}millas\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}468\PYG{n+nt}{\PYGZlt{}/distancia\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/entrega\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}recepcion}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}producto}\PYG{n+nt}{\PYGZgt{}}Verdura\PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}250\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El codigo de receptor no se usó aquí}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/recepcion\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/portes\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 \section{Examen}
@@ -8230,7 +8255,7 @@ Para ASIR el martes, 13 de marzo de 2018
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -11294,7 +11319,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -12784,7 +12809,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13774,7 +13799,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}

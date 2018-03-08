@@ -2889,14 +2889,36 @@ Un distribuidor de alimentación necesita un fichero XML que almacene la informa
 
 * El elemento raíz se llama ``portes``.
 * Dentro de ``portes``, puede haber uno o más de los elementos ``recepcion`` y ``entrega``. Su orden puede ser aleatorio y el número de repeticiones también.
-* Un ``porte`` lleva dentro tres elementos: un elemento ``producto``, un elemento ``cantidad`` y un elemento ``codigoreceptor``.
+* Un ``recepcion`` lleva dentro tres elementos: un elemento ``producto``, un elemento ``cantidad`` y un elemento ``codigoreceptor``.
 * El ``producto`` es obligatorio y lleva dentro texto.
 * El elemento ``cantidad`` (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.
 * El ``codigoreceptor`` lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento ``codigoreceptor`` es optativo.
-* Una ``entrega`` tiene siempre un atributo ``receptor`` que lleva dentro un texto. Aparte de eso, una ``entrega`` tiene siempre un elemento ``transportista`` que solo puede valer ``T1``, ``T2`` o ``T3``. Despues de el elemento ``entrega``  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la ``entrega``  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento ``coste`` que siempre es un entero mayor de 0.
+* Una ``entrega`` tiene siempre un atributo ``receptor`` que lleva dentro un texto. Aparte de eso, una ``entrega`` tiene siempre un elemento ``transportista`` que solo puede valer ``T1``, ``T2`` o ``T3``. Despues de el elemento ``transportista``  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la ``distancia``  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento ``coste`` que siempre es un entero mayor de 0.
+
+A continuación se muestra un fichero de ejemplo
 
 
+.. WARNING::
+   Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO
 
+.. code-block:: xml
+    
+    <portes>
+        <recepcion>
+            <producto>Fruta</producto>
+            <cantidad>125.5</cantidad>
+            <codigoreceptor>333-AZT</codigoreceptor>
+        </recepcion>
+        <entrega receptor="Mercados SL" coste="1321">
+            <transportista>T2</transportista>
+            <distancia unidad="millas">468</distancia>
+        </entrega>
+        <recepcion>
+            <producto>Verdura</producto>
+            <cantidad>250</cantidad>
+            <!--El codigo de receptor no se usó aquí-->
+        </recepcion>
+    </portes>
 
 
 

@@ -2613,12 +2613,35 @@ valide la estructura de tales ficheros:</p>
 <ul class="simple">
 <li>El elemento raíz se llama <code class="docutils literal"><span class="pre">portes</span></code>.</li>
 <li>Dentro de <code class="docutils literal"><span class="pre">portes</span></code>, puede haber uno o más de los elementos <code class="docutils literal"><span class="pre">recepcion</span></code> y <code class="docutils literal"><span class="pre">entrega</span></code>. Su orden puede ser aleatorio y el número de repeticiones también.</li>
-<li>Un <code class="docutils literal"><span class="pre">porte</span></code> lleva dentro tres elementos: un elemento <code class="docutils literal"><span class="pre">producto</span></code>, un elemento <code class="docutils literal"><span class="pre">cantidad</span></code> y un elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code>.</li>
+<li>Un <code class="docutils literal"><span class="pre">recepcion</span></code> lleva dentro tres elementos: un elemento <code class="docutils literal"><span class="pre">producto</span></code>, un elemento <code class="docutils literal"><span class="pre">cantidad</span></code> y un elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code>.</li>
 <li>El <code class="docutils literal"><span class="pre">producto</span></code> es obligatorio y lleva dentro texto.</li>
 <li>El elemento <code class="docutils literal"><span class="pre">cantidad</span></code> (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.</li>
 <li>El <code class="docutils literal"><span class="pre">codigoreceptor</span></code> lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code> es optativo.</li>
-<li>Una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal"><span class="pre">T1</span></code>, <code class="docutils literal"><span class="pre">T2</span></code> o <code class="docutils literal"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal"><span class="pre">entrega</span></code>  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la <code class="docutils literal"><span class="pre">entrega</span></code>  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento <code class="docutils literal"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
+<li>Una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal"><span class="pre">T1</span></code>, <code class="docutils literal"><span class="pre">T2</span></code> o <code class="docutils literal"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal"><span class="pre">transportista</span></code>  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la <code class="docutils literal"><span class="pre">distancia</span></code>  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento <code class="docutils literal"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
 </ul>
+<p>A continuación se muestra un fichero de ejemplo</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO</p>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;portes&gt;</span>
+    <span class="nt">&lt;recepcion&gt;</span>
+        <span class="nt">&lt;producto&gt;</span>Fruta<span class="nt">&lt;/producto&gt;</span>
+        <span class="nt">&lt;cantidad&gt;</span>125.5<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;codigoreceptor&gt;</span>333-AZT<span class="nt">&lt;/codigoreceptor&gt;</span>
+    <span class="nt">&lt;/recepcion&gt;</span>
+    <span class="nt">&lt;entrega</span> <span class="na">receptor=</span><span class="s">&quot;Mercados SL&quot;</span> <span class="na">coste=</span><span class="s">&quot;1321&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;transportista&gt;</span>T2<span class="nt">&lt;/transportista&gt;</span>
+        <span class="nt">&lt;distancia</span> <span class="na">unidad=</span><span class="s">&quot;millas&quot;</span><span class="nt">&gt;</span>468<span class="nt">&lt;/distancia&gt;</span>
+    <span class="nt">&lt;/entrega&gt;</span>
+    <span class="nt">&lt;recepcion&gt;</span>
+        <span class="nt">&lt;producto&gt;</span>Verdura<span class="nt">&lt;/producto&gt;</span>
+        <span class="nt">&lt;cantidad&gt;</span>250<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="c">&lt;!--El codigo de receptor no se usó aquí--&gt;</span>
+    <span class="nt">&lt;/recepcion&gt;</span>
+<span class="nt">&lt;/portes&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
