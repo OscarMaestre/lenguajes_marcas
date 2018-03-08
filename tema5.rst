@@ -77,7 +77,7 @@ En este caso la etiqueta ``<nombre>`` no está cerrada.
 
 En este caso, se ha puesto ``<cif>`` cerrado con ``</CIF>`` (mayúsculas).
 
-.. code-block:: xml
+.. code-block:: none
 
 	<clientes>
 		<cliente>
@@ -86,7 +86,8 @@ En este caso, se ha puesto ``<cif>`` cerrado con ``</CIF>`` (mayúsculas).
 		</cliente>
 	</clientes>
 
-Se ha utilizado la admiración, que no es válida.
+Se ha utilizado la admiración, que no es válida (de hecho, el coloreador de sintaxis automático descubre
+que no es XML y el fichero se muestra de manera literal)
 
 Atención a este ejemplo:
 
@@ -990,7 +991,7 @@ Un posible fichero de ejemplo que podría validar sería este:
 Solución: DTD fabricante tractores
 --------------------------------------
 
-    .. code-block:: dtd
+.. code-block:: dtd
     
     <!ELEMENT pedido     (tractor)+>
     <!ELEMENT tractor    (componente)+>
@@ -1608,7 +1609,7 @@ La solución comentada puede encontrarse a continuación. Como puede verse, hemo
 Ejercicio: codigos y sedes
 ---------------------------------
 
-Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado ``codigo''
+Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado ``codigo``
 
 * Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.
 
@@ -1962,6 +1963,85 @@ La solución puede ser algo así:
     </xsd:complexContent>
     </xsd:complexType>
   </xsd:schema>
+  
+Ejercicio: lista de alumnos
+-------------------------------------
+
+Se desea construir un esquema para validar listas de alumnos en las que:
+
+* La raíz es ``listaalumnos``.
+* Dentro de ella hay uno o más ``alumno``. Todo ``alumno`` tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.
+* Todo ``alumno`` tiene un elemento ``nombre`` y un ``ap1`` obligatorios.
+* Todo ``alumno`` puede tener despues del ``ap1`` un elemento ``ap2`` y uno ``edad``, ambos son optativos.
+* El elemento ``edad`` debe ser entero y positivo.
+
+Un ejemplo de fichero:
+
+.. code-block:: xml
+    
+    <listaalumnos>
+        <!--DNI atributo obligatorio-->
+        <alumno dni="5667545Z">
+            <!--Nombre y ap1 obligatorios-->
+            <nombre>Jose</nombre>
+            <ap1>Sanchez</ap1>
+        </alumno>
+        <alumno dni="5778221D">
+            <nombre>Andres</nombre>
+            <ap1>Ruiz</ap1>
+            <!--Ap2 y edad son optativos-->
+            <ap2>Ruiz</ap2>
+            <!--La edad debe ser positiva-->
+            <edad>25</edad>
+        </alumno>
+    </listaalumnos>
+
+Y a continuación una posible solución:
+
+.. code-block:: xml
+
+    
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:element name="listaalumnos" type="tipoListaAlumnos"/>
+        <xsd:complexType name="tipoListaAlumnos">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="alumno"
+                                     type="tipoAlumno"
+                                     maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:complexType name="tipoAlumno">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="nombre"
+                                     type="xsd:string"/>
+                        <xsd:element name="ap1"
+                                    type="xsd:string"/>
+                        <xsd:element name="ap2"
+                                    type="xsd:string"
+                                    minOccurs="0"/>
+                        <xsd:element name="edad"
+                                     type="xsd:positiveInteger"
+                                     minOccurs="0"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="dni" type="tipoDNI"/>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+        <xsd:simpleType name="tipoDNI">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[0-9]{7,8}[A-Z]"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        
+    </xsd:schema>
+    
+    
 
 Ejercicio: lista de articulos (con atributos optativos)
 -----------------------------------------------------------
@@ -2137,7 +2217,7 @@ Ejercicio: listas con choice
 -----------------------------
 
 Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:
-````
+
 * El elemento raíz es ``articulos``. Dicho elemento raíz debe llevar siempre un atributo ``fechaGeneración``.
 * Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: ``monitor``, ``teclado`` o ``raton``. Cualquiera de los tres elementos puede llevar un atributo ``codigo`` que tiene siempre la estructura "tres letras, guión, tres letras, guión, tres cifras". Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento ``descripción`` que contiene texto.
 
@@ -2771,7 +2851,7 @@ Ejercicio tipo examen (II)
 ===============================
 Crear una DTD que permita validar un fichero como el siguiente:
 
-.. code-block::
+.. code-block:: xml
 
     <inventario>
         <objeto codigo="MM2809">

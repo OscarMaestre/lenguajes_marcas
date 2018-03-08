@@ -423,11 +423,6 @@ El HTML sería algo así:
 	</html>
 
 	
-Y el CSS que resuelve el problema sería:
-
-.. literalinclude:: css/solucion1.css
-	:language: css
-	
 Ejercicio: ampliación
 ---------------------
 Ampliar el ejemplo anterior para hacer que el contenido solo ocupe el 50% y añadir una barra de publicidad fija en el centro vertical que ocupe el 20%.
@@ -474,10 +469,6 @@ El HTML sería
 
 
 
-Y el CSS que resuelve el problema sería:
-
-.. literalinclude:: css/solucion2.css
-	:language: css
 	
 Ejercicio
 ---------
@@ -519,10 +510,6 @@ El HTML sería
 
 
 
-Y el CSS que resuelve el problema sería:
-
-.. literalinclude:: css/solucion3.css
-	:language: css
 
 
 	

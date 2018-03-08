@@ -370,96 +370,96 @@
 <li>Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais_de_procedencia».</li>
 </ul>
 <p>Una posibilidad (incompleta) sería esta:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Element</span> <span class="nf">getRaiz</span> <span class="o">(</span><span class="n">String</span> <span class="n">rutaFichero</span><span class="o">){</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Element</span> <span class="nf">getRaiz</span> <span class="o">(</span><span class="n">String</span> <span class="n">rutaFichero</span><span class="o">){</span>
 
-    <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
-    <span class="n">DocumentBuilderFactory</span> <span class="n">fabrica</span><span class="o">;</span>
-    <span class="n">fabrica</span><span class="o">=</span><span class="n">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
-    <span class="n">DocumentBuilder</span> <span class="n">constructor</span><span class="o">;</span>
-    <span class="k">try</span> <span class="o">{</span>
-      <span class="n">constructor</span><span class="o">=</span><span class="n">fabrica</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
-      <span class="n">FileInputStream</span> <span class="n">fichero</span><span class="o">;</span>
-      <span class="n">fichero</span><span class="o">=</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">rutaFichero</span><span class="o">);</span>
-      <span class="n">Document</span> <span class="n">documento</span><span class="o">;</span>
-      <span class="n">documento</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">fichero</span><span class="o">);</span>
-      <span class="n">raiz</span><span class="o">=</span><span class="n">documento</span><span class="o">.</span><span class="na">getDocumentElement</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ParserConfigurationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SAXException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="c1">// TODO Auto-generated catch block</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">raiz</span><span class="o">;</span>
-  <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostrarMadrid</span><span class="o">(</span><span class="n">Element</span> <span class="n">raiz</span><span class="o">){</span>
-    <span class="n">NodeList</span> <span class="n">hijos</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hijos</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
-      <span class="n">Node</span> <span class="n">nodoVisitado</span><span class="o">=</span><span class="n">hijos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">nodoVisitado</span><span class="o">.</span><span class="na">getNodeType</span><span class="o">()</span>
-          <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="na">ELEMENT_NODE</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//El nodo sí es un elemento y no</span>
-        <span class="c1">//un nodo con texto \n</span>
-        <span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">;</span>
-        <span class="n">elemVisitado</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">nodoVisitado</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;futuro&quot;</span><span class="o">)){</span>
-          <span class="n">procesarFuturo</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;bono&quot;</span><span class="o">)){</span>
-          <span class="n">procesarBono</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;letra&quot;</span><span class="o">)){</span>
-          <span class="n">procesarLetra</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;divisa&quot;</span><span class="o">)){</span>
-          <span class="n">procesarDivisa</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarDivisa</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// TODO Auto-generated method stub</span>
+     <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
+     <span class="n">DocumentBuilderFactory</span> <span class="n">fabrica</span><span class="o">;</span>
+     <span class="n">fabrica</span><span class="o">=</span><span class="n">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+     <span class="n">DocumentBuilder</span> <span class="n">constructor</span><span class="o">;</span>
+     <span class="k">try</span> <span class="o">{</span>
+       <span class="n">constructor</span><span class="o">=</span><span class="n">fabrica</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
+       <span class="n">FileInputStream</span> <span class="n">fichero</span><span class="o">;</span>
+       <span class="n">fichero</span><span class="o">=</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">rutaFichero</span><span class="o">);</span>
+       <span class="n">Document</span> <span class="n">documento</span><span class="o">;</span>
+       <span class="n">documento</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">fichero</span><span class="o">);</span>
+       <span class="n">raiz</span><span class="o">=</span><span class="n">documento</span><span class="o">.</span><span class="na">getDocumentElement</span><span class="o">();</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ParserConfigurationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SAXException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+       <span class="c1">// TODO Auto-generated catch block</span>
+     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+     <span class="o">}</span>
+     <span class="k">return</span> <span class="n">raiz</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostrarMadrid</span><span class="o">(</span><span class="n">Element</span> <span class="n">raiz</span><span class="o">){</span>
+     <span class="n">NodeList</span> <span class="n">hijos</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
+     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hijos</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+       <span class="n">Node</span> <span class="n">nodoVisitado</span><span class="o">=</span><span class="n">hijos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+       <span class="k">if</span> <span class="o">(</span><span class="n">nodoVisitado</span><span class="o">.</span><span class="na">getNodeType</span><span class="o">()</span>
+           <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="na">ELEMENT_NODE</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">//El nodo sí es un elemento y no</span>
+         <span class="c1">//un nodo con texto \n</span>
+         <span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">;</span>
+         <span class="n">elemVisitado</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">nodoVisitado</span><span class="o">;</span>
+         <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;futuro&quot;</span><span class="o">)){</span>
+           <span class="n">procesarFuturo</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+         <span class="o">}</span>
+         <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;bono&quot;</span><span class="o">)){</span>
+           <span class="n">procesarBono</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+         <span class="o">}</span>
+         <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;letra&quot;</span><span class="o">)){</span>
+           <span class="n">procesarLetra</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+         <span class="o">}</span>
+         <span class="k">if</span> <span class="o">(</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;divisa&quot;</span><span class="o">)){</span>
+           <span class="n">procesarDivisa</span><span class="o">(</span><span class="n">elemVisitado</span><span class="o">);</span>
+         <span class="o">}</span>
+       <span class="o">}</span>
+     <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarDivisa</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// TODO Auto-generated method stub</span>
 
-  <span class="o">}</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarLetra</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// TODO Auto-generated method stub</span>
+   <span class="o">}</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarLetra</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// TODO Auto-generated method stub</span>
 
-  <span class="o">}</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarBono</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// TODO Auto-generated method stub</span>
+   <span class="o">}</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarBono</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// TODO Auto-generated method stub</span>
 
-  <span class="o">}</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarFuturo</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">NodeList</span> <span class="n">hijosCiudad</span><span class="o">;</span>
-    <span class="n">hijosCiudad</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
-        <span class="s">&quot;ciudad_procedencia&quot;</span><span class="o">);</span>
-    <span class="n">Node</span> <span class="n">unicaCiudad</span><span class="o">=</span><span class="n">hijosCiudad</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
-    <span class="n">NodeList</span> <span class="n">ciudades</span><span class="o">=</span><span class="n">unicaCiudad</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
-    <span class="n">Node</span> <span class="n">ciudadProcedencia</span><span class="o">=</span><span class="n">ciudades</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-    <span class="n">Element</span> <span class="n">elemCiudad</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">ciudadProcedencia</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">elemCiudad</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;madrid&quot;</span><span class="o">)){</span>
-      <span class="n">NodeList</span> <span class="n">productos</span><span class="o">;</span>
-      <span class="n">productos</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
-          <span class="s">&quot;producto&quot;</span><span class="o">);</span>
-      <span class="n">Element</span> <span class="n">elemProducto</span><span class="o">;</span>
-      <span class="n">elemProducto</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">productos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
-          <span class="n">elemProducto</span><span class="o">.</span><span class="na">getTextContent</span><span class="o">()</span> <span class="o">);</span>
+   <span class="o">}</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">procesarFuturo</span><span class="o">(</span><span class="n">Element</span> <span class="n">elemVisitado</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">NodeList</span> <span class="n">hijosCiudad</span><span class="o">;</span>
+     <span class="n">hijosCiudad</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
+         <span class="s">&quot;ciudad_procedencia&quot;</span><span class="o">);</span>
+     <span class="n">Node</span> <span class="n">unicaCiudad</span><span class="o">=</span><span class="n">hijosCiudad</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+     <span class="n">NodeList</span> <span class="n">ciudades</span><span class="o">=</span><span class="n">unicaCiudad</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
+     <span class="n">Node</span> <span class="n">ciudadProcedencia</span><span class="o">=</span><span class="n">ciudades</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+     <span class="n">Element</span> <span class="n">elemCiudad</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">ciudadProcedencia</span><span class="o">;</span>
+     <span class="k">if</span> <span class="o">(</span><span class="n">elemCiudad</span><span class="o">.</span><span class="na">getTagName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;madrid&quot;</span><span class="o">)){</span>
+       <span class="n">NodeList</span> <span class="n">productos</span><span class="o">;</span>
+       <span class="n">productos</span><span class="o">=</span><span class="n">elemVisitado</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span>
+           <span class="s">&quot;producto&quot;</span><span class="o">);</span>
+       <span class="n">Element</span> <span class="n">elemProducto</span><span class="o">;</span>
+       <span class="n">elemProducto</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">productos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+           <span class="n">elemProducto</span><span class="o">.</span><span class="na">getTextContent</span><span class="o">()</span> <span class="o">);</span>
 
-    <span class="o">}</span>
-  <span class="o">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="n">getRaiz</span><span class="o">(</span>
-      <span class="s">&quot;c:/users/ogomez/documents/finanzas.xml&quot;</span><span class="o">);</span>
-    <span class="n">mostrarMadrid</span><span class="o">(</span><span class="n">raiz</span><span class="o">);</span>
-  <span class="o">}</span>
+     <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="n">getRaiz</span><span class="o">(</span>
+       <span class="s">&quot;c:/users/ogomez/documents/finanzas.xml&quot;</span><span class="o">);</span>
+     <span class="n">mostrarMadrid</span><span class="o">(</span><span class="n">raiz</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
-<p>}</p>
 </div>
 <div class="section" id="id3">
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1666,7 +1666,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

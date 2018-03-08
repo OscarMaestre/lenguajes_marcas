@@ -49,12 +49,16 @@
 
 \addto\extrasspanish{\def\pageautorefname{página}}
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
+<<<<<<< HEAD
 \date{02 de marzo de 2018}
+=======
+\date{06 de marzo de 2018}
+>>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +74,11 @@
 
 
 \chapter{Introducción}
+<<<<<<< HEAD
 \label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
+=======
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
+>>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -2082,8 +2090,6 @@ El HTML sería algo así:
 \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
 \end{sphinxVerbatim}
 
-Y el CSS que resuelve el problema sería:
-
 
 \subsection{Ejercicio: ampliación}
 \label{\detokenize{tema3:ejercicio-ampliacion}}
@@ -2129,8 +2135,6 @@ El HTML sería
 \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
 \end{sphinxVerbatim}
 
-Y el CSS que resuelve el problema sería:
-
 
 \subsection{Ejercicio}
 \label{\detokenize{tema3:ejercicio}}
@@ -2166,8 +2170,6 @@ El HTML sería
 \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
 \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
 \end{sphinxVerbatim}
-
-Y el CSS que resuelve el problema sería:
 
 
 \section{Posicionamiento float}
@@ -4719,6 +4721,41 @@ La cantidad de impuestos puede ser negativa (que significa que le sale «a devol
 
 \subsection{HTML calculador}
 \label{\detokenize{tema4:html-calculador}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{link} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}css/estilo.css\PYGZdq{}}
+          \PYG{n+na}{rel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}stylesheet\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Plantilla de web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}}
+            \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/jquery.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}js/programa.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Toda nuestra página irá aquí dentro}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}    
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenido\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}Plantilla de proyecto web\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+    Salario:
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}number\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}salario\PYGZdq{}} \PYG{n+na}{min}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{n+na}{max}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}1000000\PYGZdq{}} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}con\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}}\PYG{p}{\PYGZgt{}}Con hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}sin\PYGZus{}hijos\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}hijos\PYGZdq{}} \PYG{n+na}{checked}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checked\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Sin hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b1\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B1 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}bonificacion\PYGZus{}b2\PYGZdq{}}\PYG{p}{\PYGZgt{}} Con derecho a bonif. B2 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular\PYGZdq{}}\PYG{p}{\PYGZgt{}}Calcular impuestos\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
+    
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mensajes\PYGZdq{}}\PYG{p}{\PYGZgt{}}Aquí aparecerán sus resultados\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
 
 \subsection{JS Calculador (con JQuery (DAM))}
 \label{\detokenize{tema4:js-calculador-con-jquery-dam}}
@@ -4974,7 +5011,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -5062,7 +5099,8 @@ En este caso, se ha puesto \sphinxcode{\textless{}cif\textgreater{}} cerrado con
 \PYGZlt{}/clientes\PYGZgt{}
 \end{sphinxVerbatim}
 
-Se ha utilizado la admiración, que no es válida.
+Se ha utilizado la admiración, que no es válida (de hecho, el coloreador de sintaxis automático descubre
+que no es XML y el fichero se muestra de manera literal)
 
 Atención a este ejemplo:
 
@@ -6048,32 +6086,25 @@ Un posible fichero de ejemplo que podría validar sería este:
 
 
 \subsection{Solución: DTD fabricante tractores}
-\label{\detokenize{tema5:solucion-dtd-fabricante-tractores}}\begin{quote}
-
+\label{\detokenize{tema5:solucion-dtd-fabricante-tractores}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{pedido}     \PYG{o}{(}\PYG{n+nt}{tractor}\PYG{o}{)}\PYG{o}{+}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{tractor}    \PYG{o}{(}\PYG{n+nt}{componente}\PYG{o}{)}\PYG{o}{+}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{componente} \PYG{o}{(}\PYG{n+nt}{fechaentrega}\PYG{o}{?}\PYG{o}{,} \PYG{o}{(}\PYG{n+nt}{fragil}\PYG{o}{\textbar{}}\PYG{n+nt}{nofragil}\PYG{o}{)}\PYG{o}{,}
+                      \PYG{n+nt}{peso}\PYG{o}{,} \PYG{n+nt}{numserie}\PYG{o}{,} \PYG{n+nt}{kmmaximos}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
 
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fechaentrega} \PYG{o}{(}\PYG{n+nt}{dia}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{mes}\PYG{o}{,} \PYG{n+nt}{anio}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{dia}      \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{mes}      \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{anio}     \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fragil}   \PYG{k+kc}{EMPTY}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{nofragil} \PYG{k+kc}{EMPTY} \PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{peso}     \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ATTLIST} \PYG{n+nt}{peso} \PYG{n+na}{unidad} \PYG{k+kc}{CDATA} \PYG{k+kc}{\PYGZsh{}REQUIRED}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{numserie}  \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{kmmaximos} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ATTLIST} \PYG{n+nt}{componente} \PYG{n+na}{nombrefabricante} \PYG{k+kc}{CDATA} \PYG{k+kc}{\PYGZsh{}REQUIRED}\PYG{k}{\PYGZgt{}}
 \end{sphinxVerbatim}
-
-\textless{}!ELEMENT pedido     (tractor)+\textgreater{}
-\textless{}!ELEMENT tractor    (componente)+\textgreater{}
-\textless{}!ELEMENT componente (fechaentrega?, (fragil\textbar{}nofragil),
-\begin{quote}
-
-peso, numserie, kmmaximos?)\textgreater{}
-\end{quote}
-
-\textless{}!ELEMENT fechaentrega (dia?, mes, anio)\textgreater{}
-\textless{}!ELEMENT dia      (\#PCDATA)\textgreater{}
-\textless{}!ELEMENT mes      (\#PCDATA)\textgreater{}
-\textless{}!ELEMENT anio     (\#PCDATA)\textgreater{}
-\textless{}!ELEMENT fragil   EMPTY\textgreater{}
-\textless{}!ELEMENT nofragil EMPTY \textgreater{}
-\textless{}!ELEMENT peso     (\#PCDATA)\textgreater{}
-\textless{}!ATTLIST peso unidad CDATA \#REQUIRED\textgreater{}
-\textless{}!ELEMENT numserie  (\#PCDATA)\textgreater{}
-\textless{}!ELEMENT kmmaximos (\#PCDATA)\textgreater{}
-\textless{}!ATTLIST componente nombrefabricante CDATA \#REQUIRED\textgreater{}
-\end{quote}
 
 
 \section{Ejercicio: repeticiones de opciones}
@@ -6393,7 +6424,7 @@ La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como
 \capstart
 
 \noindent\sphinxincludegraphics{{tipos_xml_schema}.png}
-\caption{Tipos en los XML Schemas}\label{\detokenize{tema5:id7}}\end{figure}
+\caption{Tipos en los XML Schemas}\label{\detokenize{tema5:id5}}\end{figure}
 
 
 \subsection{Derivaciones}
@@ -6795,7 +6826,7 @@ La solución comentada puede encontrarse a continuación. Como puede verse, hemo
 
 \subsection{Ejercicio: codigos y sedes}
 \label{\detokenize{tema5:ejercicio-codigos-y-sedes}}
-Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado {\color{red}\bfseries{}{}`{}`}codigo”“
+Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado \sphinxcode{codigo}
 \begin{itemize}
 \item {} 
 Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.
@@ -7178,6 +7209,93 @@ La solución puede ser algo así:
 \end{sphinxVerbatim}
 
 
+\subsection{Ejercicio: lista de alumnos}
+\label{\detokenize{tema5:ejercicio-lista-de-alumnos}}
+Se desea construir un esquema para validar listas de alumnos en las que:
+\begin{itemize}
+\item {} 
+La raíz es \sphinxcode{listaalumnos}.
+
+\item {} 
+Dentro de ella hay uno o más \sphinxcode{alumno}. Todo \sphinxcode{alumno} tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.
+
+\item {} 
+Todo \sphinxcode{alumno} tiene un elemento \sphinxcode{nombre} y un \sphinxcode{ap1} obligatorios.
+
+\item {} 
+Todo \sphinxcode{alumno} puede tener despues del \sphinxcode{ap1} un elemento \sphinxcode{ap2} y uno \sphinxcode{edad}, ambos son optativos.
+
+\item {} 
+El elemento \sphinxcode{edad} debe ser entero y positivo.
+
+\end{itemize}
+
+Un ejemplo de fichero:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}listaalumnos}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{DNI atributo obligatorio}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}alumno} \PYG{n+na}{dni=}\PYG{l+s}{\PYGZdq{}5667545Z\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Nombre y ap1 obligatorios}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Jose\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Sanchez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}alumno} \PYG{n+na}{dni=}\PYG{l+s}{\PYGZdq{}5778221D\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Andres\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Ruiz\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Ap2 y edad son optativos}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ap2}\PYG{n+nt}{\PYGZgt{}}Ruiz\PYG{n+nt}{\PYGZlt{}/ap2\PYGZgt{}}
+        \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{La edad debe ser positiva}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}edad}\PYG{n+nt}{\PYGZgt{}}25\PYG{n+nt}{\PYGZlt{}/edad\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/listaalumnos\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Y a continuación una posible solución:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}listaalumnos\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoListaAlumnos\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoListaAlumnos\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}alumno\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoAlumno\PYGZdq{}}
+                                 \PYG{n+na}{maxOccurs=}\PYG{l+s}{\PYGZdq{}unbounded\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoAlumno\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:complexContent}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:anyType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:sequence}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap1\PYGZdq{}}
+                                \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap2\PYGZdq{}}
+                                \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}
+                                \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}edad\PYGZdq{}}
+                                 \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:positiveInteger\PYGZdq{}}
+                                 \PYG{n+na}{minOccurs=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}dni\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}tipoDNI\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:complexContent\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}tipoDNI\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:string\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsd:pattern} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}[0\PYGZhy{}9]\PYGZob{}7,8\PYGZcb{}[A\PYGZhy{}Z]\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
 \subsection{Ejercicio: lista de articulos (con atributos optativos)}
 \label{\detokenize{tema5:ejercicio-lista-de-articulos-con-atributos-optativos}}
 Supongamos el fichero siguiente con las reglas que se explicitan en los comentarios:
@@ -7347,9 +7465,14 @@ n\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http:/
 
 \subsection{Ejercicio: listas con choice}
 \label{\detokenize{tema5:ejercicio-listas-con-choice}}
+<<<<<<< HEAD
 
 \subsubsection{Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:}
 \label{\detokenize{tema5:se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes}}\begin{itemize}
+=======
+Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:
+\begin{itemize}
+>>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
 \item {} 
 El elemento raíz es \sphinxcode{articulos}. Dicho elemento raíz debe llevar siempre un atributo \sphinxcode{fechaGeneración}.
 
@@ -7368,7 +7491,11 @@ En el fichero siguiente se muestra un ejemplo
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Obligatorio el tener fechaGeneracion}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+<<<<<<< HEAD
 \PYG{n+nt}{\PYGZlt{}articulos} \PYG{n+na}{fechageneracion=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}01\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+=======
+\PYG{n+nt}{\PYGZlt{}articulos} \PYG{n+na}{fechaGeneracion=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}01\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+>>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
     \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El atributo codigo es optativo siempre}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}monitor} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}DDD\PYGZhy{}222\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
         \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
@@ -8033,6 +8160,26 @@ Una posible solución sería esta:
 \label{\detokenize{tema5:ejercicio-tipo-examen-ii}}
 Crear una DTD que permita validar un fichero como el siguiente:
 
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}inventario}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}objeto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}MM2809\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}mesa}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}tipo}\PYG{n+nt}{\PYGZgt{}}Oficina\PYG{n+nt}{\PYGZlt{}/tipo\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}localizacion}\PYG{n+nt}{\PYGZgt{}}B09\PYG{n+nt}{\PYGZlt{}/localizacion\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/mesa\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/objeto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}objeto}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ordenador}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}procesador} \PYG{n+na}{fabricante=}\PYG{l+s}{\PYGZdq{}Intel\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                i3
+            \PYG{n+nt}{\PYGZlt{}/procesador\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}memoria} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}GB\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}2\PYG{n+nt}{\PYGZlt{}/memoria\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}discoduro}\PYG{n+nt}{\PYGZgt{}}520\PYG{n+nt}{\PYGZlt{}/discoduro\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ordenador\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/objeto\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/inventario\PYGZgt{}}
+\end{sphinxVerbatim}
+
 Las reglas son las siguientes:
 \begin{itemize}
 \item {} 
@@ -8470,96 +8617,95 @@ Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais\_de\_
 Una posibilidad (incompleta) sería esta:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{ProcesadorFinanzas} \PYG{o}{\PYGZob{}}
+ \PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{ProcesadorFinanzas} \PYG{o}{\PYGZob{}}
 
-  \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{Element} \PYG{n+nf}{getRaiz} \PYG{o}{(}\PYG{n}{String} \PYG{n}{rutaFichero}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+   \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{Element} \PYG{n+nf}{getRaiz} \PYG{o}{(}\PYG{n}{String} \PYG{n}{rutaFichero}\PYG{o}{)}\PYG{o}{\PYGZob{}}
 
-    \PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{=}\PYG{k+kc}{null}\PYG{o}{;}
-    \PYG{n}{DocumentBuilderFactory} \PYG{n}{fabrica}\PYG{o}{;}
-    \PYG{n}{fabrica}\PYG{o}{=}\PYG{n}{DocumentBuilderFactory}\PYG{o}{.}\PYG{n+na}{newInstance}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{DocumentBuilder} \PYG{n}{constructor}\PYG{o}{;}
-    \PYG{k}{try} \PYG{o}{\PYGZob{}}
-      \PYG{n}{constructor}\PYG{o}{=}\PYG{n}{fabrica}\PYG{o}{.}\PYG{n+na}{newDocumentBuilder}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-      \PYG{n}{FileInputStream} \PYG{n}{fichero}\PYG{o}{;}
-      \PYG{n}{fichero}\PYG{o}{=}\PYG{k}{new} \PYG{n}{FileInputStream}\PYG{o}{(}\PYG{n}{rutaFichero}\PYG{o}{)}\PYG{o}{;}
-      \PYG{n}{Document} \PYG{n}{documento}\PYG{o}{;}
-      \PYG{n}{documento}\PYG{o}{=}\PYG{n}{constructor}\PYG{o}{.}\PYG{n+na}{parse}\PYG{o}{(}\PYG{n}{fichero}\PYG{o}{)}\PYG{o}{;}
-      \PYG{n}{raiz}\PYG{o}{=}\PYG{n}{documento}\PYG{o}{.}\PYG{n+na}{getDocumentElement}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{ParserConfigurationException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-      \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{FileNotFoundException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-      \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{SAXException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-      \PYG{c+c1}{// TODO Auto\PYGZhy{}generated catch block}
-    \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-      \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{o}{\PYGZcb{}}
-    \PYG{k}{return} \PYG{n}{raiz}\PYG{o}{;}
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{mostrarMadrid}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-    \PYG{n}{NodeList} \PYG{n}{hijos}\PYG{o}{=}\PYG{n}{raiz}\PYG{o}{.}\PYG{n+na}{getChildNodes}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{k}{for} \PYG{o}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{o}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{hijos}\PYG{o}{.}\PYG{n+na}{getLength}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-      \PYG{n}{Node} \PYG{n}{nodoVisitado}\PYG{o}{=}\PYG{n}{hijos}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{n}{i}\PYG{o}{)}\PYG{o}{;}
-      \PYG{k}{if} \PYG{o}{(}\PYG{n}{nodoVisitado}\PYG{o}{.}\PYG{n+na}{getNodeType}\PYG{o}{(}\PYG{o}{)}
-          \PYG{o}{=}\PYG{o}{=} \PYG{n}{Node}\PYG{o}{.}\PYG{n+na}{ELEMENT\PYGZus{}NODE}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-        \PYG{c+c1}{//El nodo sí es un elemento y no}
-        \PYG{c+c1}{//un nodo con texto \PYGZbs{}n}
-        \PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{;}
-        \PYG{n}{elemVisitado}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{nodoVisitado}\PYG{o}{;}
-        \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}futuro\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-          \PYG{n}{procesarFuturo}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
-        \PYG{o}{\PYGZcb{}}
-        \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}bono\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-          \PYG{n}{procesarBono}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
-        \PYG{o}{\PYGZcb{}}
-        \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}letra\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-          \PYG{n}{procesarLetra}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
-        \PYG{o}{\PYGZcb{}}
-        \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}divisa\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-          \PYG{n}{procesarDivisa}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
-        \PYG{o}{\PYGZcb{}}
-      \PYG{o}{\PYGZcb{}}
-    \PYG{o}{\PYGZcb{}}
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarDivisa}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-    \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
+     \PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{=}\PYG{k+kc}{null}\PYG{o}{;}
+     \PYG{n}{DocumentBuilderFactory} \PYG{n}{fabrica}\PYG{o}{;}
+     \PYG{n}{fabrica}\PYG{o}{=}\PYG{n}{DocumentBuilderFactory}\PYG{o}{.}\PYG{n+na}{newInstance}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{DocumentBuilder} \PYG{n}{constructor}\PYG{o}{;}
+     \PYG{k}{try} \PYG{o}{\PYGZob{}}
+       \PYG{n}{constructor}\PYG{o}{=}\PYG{n}{fabrica}\PYG{o}{.}\PYG{n+na}{newDocumentBuilder}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+       \PYG{n}{FileInputStream} \PYG{n}{fichero}\PYG{o}{;}
+       \PYG{n}{fichero}\PYG{o}{=}\PYG{k}{new} \PYG{n}{FileInputStream}\PYG{o}{(}\PYG{n}{rutaFichero}\PYG{o}{)}\PYG{o}{;}
+       \PYG{n}{Document} \PYG{n}{documento}\PYG{o}{;}
+       \PYG{n}{documento}\PYG{o}{=}\PYG{n}{constructor}\PYG{o}{.}\PYG{n+na}{parse}\PYG{o}{(}\PYG{n}{fichero}\PYG{o}{)}\PYG{o}{;}
+       \PYG{n}{raiz}\PYG{o}{=}\PYG{n}{documento}\PYG{o}{.}\PYG{n+na}{getDocumentElement}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{ParserConfigurationException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+       \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{FileNotFoundException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+       \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{SAXException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+       \PYG{c+c1}{// TODO Auto\PYGZhy{}generated catch block}
+     \PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{IOException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+       \PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{o}{\PYGZcb{}}
+     \PYG{k}{return} \PYG{n}{raiz}\PYG{o}{;}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{mostrarMadrid}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+     \PYG{n}{NodeList} \PYG{n}{hijos}\PYG{o}{=}\PYG{n}{raiz}\PYG{o}{.}\PYG{n+na}{getChildNodes}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{k}{for} \PYG{o}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{o}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{hijos}\PYG{o}{.}\PYG{n+na}{getLength}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;} \PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+       \PYG{n}{Node} \PYG{n}{nodoVisitado}\PYG{o}{=}\PYG{n}{hijos}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{n}{i}\PYG{o}{)}\PYG{o}{;}
+       \PYG{k}{if} \PYG{o}{(}\PYG{n}{nodoVisitado}\PYG{o}{.}\PYG{n+na}{getNodeType}\PYG{o}{(}\PYG{o}{)}
+           \PYG{o}{=}\PYG{o}{=} \PYG{n}{Node}\PYG{o}{.}\PYG{n+na}{ELEMENT\PYGZus{}NODE}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+         \PYG{c+c1}{//El nodo sí es un elemento y no}
+         \PYG{c+c1}{//un nodo con texto \PYGZbs{}n}
+         \PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{;}
+         \PYG{n}{elemVisitado}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{nodoVisitado}\PYG{o}{;}
+         \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}futuro\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+           \PYG{n}{procesarFuturo}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
+         \PYG{o}{\PYGZcb{}}
+         \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}bono\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+           \PYG{n}{procesarBono}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
+         \PYG{o}{\PYGZcb{}}
+         \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}letra\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+           \PYG{n}{procesarLetra}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
+         \PYG{o}{\PYGZcb{}}
+         \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}divisa\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+           \PYG{n}{procesarDivisa}\PYG{o}{(}\PYG{n}{elemVisitado}\PYG{o}{)}\PYG{o}{;}
+         \PYG{o}{\PYGZcb{}}
+       \PYG{o}{\PYGZcb{}}
+     \PYG{o}{\PYGZcb{}}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarDivisa}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+     \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
 
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarLetra}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-    \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarLetra}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+     \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
 
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarBono}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-    \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarBono}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+     \PYG{c+c1}{// TODO Auto\PYGZhy{}generated method stub}
 
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarFuturo}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-    \PYG{n}{NodeList} \PYG{n}{hijosCiudad}\PYG{o}{;}
-    \PYG{n}{hijosCiudad}\PYG{o}{=}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getElementsByTagName}\PYG{o}{(}
-        \PYG{l+s}{\PYGZdq{}ciudad\PYGZus{}procedencia\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{Node} \PYG{n}{unicaCiudad}\PYG{o}{=}\PYG{n}{hijosCiudad}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{0}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{NodeList} \PYG{n}{ciudades}\PYG{o}{=}\PYG{n}{unicaCiudad}\PYG{o}{.}\PYG{n+na}{getChildNodes}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{Node} \PYG{n}{ciudadProcedencia}\PYG{o}{=}\PYG{n}{ciudades}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{1}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{Element} \PYG{n}{elemCiudad}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{ciudadProcedencia}\PYG{o}{;}
-    \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemCiudad}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}madrid\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
-      \PYG{n}{NodeList} \PYG{n}{productos}\PYG{o}{;}
-      \PYG{n}{productos}\PYG{o}{=}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getElementsByTagName}\PYG{o}{(}
-          \PYG{l+s}{\PYGZdq{}producto\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
-      \PYG{n}{Element} \PYG{n}{elemProducto}\PYG{o}{;}
-      \PYG{n}{elemProducto}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{productos}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{0}\PYG{o}{)}\PYG{o}{;}
-      \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}
-          \PYG{n}{elemProducto}\PYG{o}{.}\PYG{n+na}{getTextContent}\PYG{o}{(}\PYG{o}{)} \PYG{o}{)}\PYG{o}{;}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{procesarFuturo}\PYG{o}{(}\PYG{n}{Element} \PYG{n}{elemVisitado}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+     \PYG{n}{NodeList} \PYG{n}{hijosCiudad}\PYG{o}{;}
+     \PYG{n}{hijosCiudad}\PYG{o}{=}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getElementsByTagName}\PYG{o}{(}
+         \PYG{l+s}{\PYGZdq{}ciudad\PYGZus{}procedencia\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{Node} \PYG{n}{unicaCiudad}\PYG{o}{=}\PYG{n}{hijosCiudad}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{0}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{NodeList} \PYG{n}{ciudades}\PYG{o}{=}\PYG{n}{unicaCiudad}\PYG{o}{.}\PYG{n+na}{getChildNodes}\PYG{o}{(}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{Node} \PYG{n}{ciudadProcedencia}\PYG{o}{=}\PYG{n}{ciudades}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{1}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{Element} \PYG{n}{elemCiudad}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{ciudadProcedencia}\PYG{o}{;}
+     \PYG{k}{if} \PYG{o}{(}\PYG{n}{elemCiudad}\PYG{o}{.}\PYG{n+na}{getTagName}\PYG{o}{(}\PYG{o}{)}\PYG{o}{.}\PYG{n+na}{equals}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}madrid\PYGZdq{}}\PYG{o}{)}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+       \PYG{n}{NodeList} \PYG{n}{productos}\PYG{o}{;}
+       \PYG{n}{productos}\PYG{o}{=}\PYG{n}{elemVisitado}\PYG{o}{.}\PYG{n+na}{getElementsByTagName}\PYG{o}{(}
+           \PYG{l+s}{\PYGZdq{}producto\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
+       \PYG{n}{Element} \PYG{n}{elemProducto}\PYG{o}{;}
+       \PYG{n}{elemProducto}\PYG{o}{=}\PYG{o}{(}\PYG{n}{Element}\PYG{o}{)} \PYG{n}{productos}\PYG{o}{.}\PYG{n+na}{item}\PYG{o}{(}\PYG{l+m+mi}{0}\PYG{o}{)}\PYG{o}{;}
+       \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}
+           \PYG{n}{elemProducto}\PYG{o}{.}\PYG{n+na}{getTextContent}\PYG{o}{(}\PYG{o}{)} \PYG{o}{)}\PYG{o}{;}
 
-    \PYG{o}{\PYGZcb{}}
-  \PYG{o}{\PYGZcb{}}
-  \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{o}{(}\PYG{n}{String}\PYG{o}{[}\PYG{o}{]} \PYG{n}{args}\PYG{o}{)} \PYG{o}{\PYGZob{}}
-    \PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{=}\PYG{n}{getRaiz}\PYG{o}{(}
-      \PYG{l+s}{\PYGZdq{}c:/users/ogomez/documents/finanzas.xml\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
-    \PYG{n}{mostrarMadrid}\PYG{o}{(}\PYG{n}{raiz}\PYG{o}{)}\PYG{o}{;}
-  \PYG{o}{\PYGZcb{}}
+     \PYG{o}{\PYGZcb{}}
+   \PYG{o}{\PYGZcb{}}
+   \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{o}{(}\PYG{n}{String}\PYG{o}{[}\PYG{o}{]} \PYG{n}{args}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+     \PYG{n}{Element} \PYG{n}{raiz}\PYG{o}{=}\PYG{n}{getRaiz}\PYG{o}{(}
+       \PYG{l+s}{\PYGZdq{}c:/users/ogomez/documents/finanzas.xml\PYGZdq{}}\PYG{o}{)}\PYG{o}{;}
+     \PYG{n}{mostrarMadrid}\PYG{o}{(}\PYG{n}{raiz}\PYG{o}{)}\PYG{o}{;}
+   \PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
 \end{sphinxVerbatim}
-
-\}
 
 
 \subsection{Ejercicio}
@@ -10042,6 +10188,23 @@ Así dado este archivo tenemos las expresiones siguientes:
 
 Si usamos la expresión \sphinxcode{/inventario} se selecciona \sphinxstyleemphasis{el nodo inventario que cuelga de la raíz}. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión \sphinxcode{/inventario} para el archivo de ejemplo produce el resultado siguiente:
 
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}inventario}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}ACD\PYGZhy{}981\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DEZ\PYGZhy{}138\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/inventario\PYGZgt{}}
+\end{sphinxVerbatim}
+
 Como puede verse, obtenemos el propio archivo original. Sin embargo, podemos movernos a través del árbol XML de forma similar a un árbol de directorios. Y obsérvese que decimos «similar». Observemos por ejemplo que dentro de \sphinxcode{\textless{}inventario\textgreater{}} hay 3 elementos \sphinxcode{\textless{}producto\textgreater{}}. Si pensamos en la expresión XPath \sphinxcode{/inventario/producto} puede que pensemos que obtendremos el primer producto (el que tiene el código AAA-111), sin embargo \sphinxstylestrong{una expresión XPath se parece a una consulta SQL}, y lo que obtiene la expresión es «todo elemento \sphinxcode{\textless{}producto\textgreater{}} que sea hijo de \sphinxcode{\textless{}inventario\textgreater{}}. Es decir, el fichero siguiente (que no es XML, sino una lista de nodos):
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -10547,11 +10710,11 @@ Se desea hacer lo mismo que en el ejercicio anterior pero haciendo que los autor
 La solución está fundamentada en el uso de la etiqueta siguiente:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}xsl:for\PYGZhy{}each ...\PYGZgt{}
-        \PYGZlt{}xsl:sort select=\PYGZdq{}...\PYGZdq{} ordering=\PYGZdq{}...\PYGZdq{}\PYGZgt{}
+\PYG{n+nt}{\PYGZlt{}xsl:for\PYGZhy{}each} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}...\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}xsl:sort} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}...\PYGZdq{}} \PYG{n+na}{ordering=}\PYG{l+s}{\PYGZdq{}...\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
                 ..cosas del bucle...
-        \PYGZlt{}/xsl\PYGZgt{}
-\PYGZlt{}/xsl\PYGZgt{}
+        \PYG{n+nt}{\PYGZlt{}/xsl:sort\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsl:for\PYGZhy{}each\PYGZgt{}}
 \end{sphinxVerbatim}
 
 La solución completa sería así:
@@ -11237,28 +11400,26 @@ Sin embargo, podemos ejecutar el siguiente comando que se conecta a MySQL ejecut
 El resultado será algo como esto:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{}?\PYGZgt{}
+ \PYG{n+nt}{\PYGZlt{}resultset} \PYG{n+na}{statement=}\PYG{l+s}{\PYGZdq{}select * from usuarios\PYGZdq{}}
+\PYG{n+na}{xmlns:xsi=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZhy{}instance\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+   \PYG{n+nt}{\PYGZlt{}row}\PYG{n+nt}{\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}id\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Juan\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Lopez Lopez\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+   \PYG{n+nt}{\PYGZlt{}/row\PYGZgt{}}
 
-\PYGZlt{}resultset statement=\PYGZdq{}select * from usuarios
-\PYGZdq{} xmlns:xsi=\PYGZdq{}http://www.w3.org/2001/XMLSchema\PYGZhy{}instance\PYGZdq{}
-  \PYGZlt{}row\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}id\PYGZdq{}\PYGZgt{}1\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}nombre\PYGZdq{}\PYGZgt{}Juan\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}ap\PYGZdq{}\PYGZgt{}Lopez Lopez\PYGZlt{}/field\PYGZgt{}
-  \PYGZlt{}/row\PYGZgt{}
+   \PYG{n+nt}{\PYGZlt{}row}\PYG{n+nt}{\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}id\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}2\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Andres\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Ruiz Gomez\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+   \PYG{n+nt}{\PYGZlt{}/row\PYGZgt{}}
 
-  \PYGZlt{}row\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}id\PYGZdq{}\PYGZgt{}2\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}nombre\PYGZdq{}\PYGZgt{}Andres\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}ap\PYGZdq{}\PYGZgt{}Ruiz Gomez\PYGZlt{}/field\PYGZgt{}
-  \PYGZlt{}/row\PYGZgt{}
-
-  \PYGZlt{}row\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}id\PYGZdq{}\PYGZgt{}3\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}nombre\PYGZdq{}\PYGZgt{}Tomas\PYGZlt{}/field\PYGZgt{}
-                \PYGZlt{}field name=\PYGZdq{}ap\PYGZdq{}\PYGZgt{}Perez Diaz\PYGZlt{}/field\PYGZgt{}
-  \PYGZlt{}/row\PYGZgt{}
-\PYGZlt{}/resultset\PYGZgt{}
+   \PYG{n+nt}{\PYGZlt{}row}\PYG{n+nt}{\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}id\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}3\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Tomas\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+                 \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}ap\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Perez Diaz\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+   \PYG{n+nt}{\PYGZlt{}/row\PYGZgt{}}
+ \PYG{n+nt}{\PYGZlt{}/resultset\PYGZgt{}}
 \end{sphinxVerbatim}
 
 

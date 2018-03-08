@@ -112,28 +112,26 @@
 </pre></div>
 </div>
 <p>El resultado será algo como esto:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
+<div class="highlight-xml"><div class="highlight"><pre><span></span> <span class="nt">&lt;resultset</span> <span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Juan<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Lopez Lopez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
 
-&lt;resultset statement=&quot;select * from usuarios
-&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  &lt;row&gt;
-                &lt;field name=&quot;id&quot;&gt;1&lt;/field&gt;
-                &lt;field name=&quot;nombre&quot;&gt;Juan&lt;/field&gt;
-                &lt;field name=&quot;ap&quot;&gt;Lopez Lopez&lt;/field&gt;
-  &lt;/row&gt;
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Andres<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Ruiz Gomez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
 
-  &lt;row&gt;
-                &lt;field name=&quot;id&quot;&gt;2&lt;/field&gt;
-                &lt;field name=&quot;nombre&quot;&gt;Andres&lt;/field&gt;
-                &lt;field name=&quot;ap&quot;&gt;Ruiz Gomez&lt;/field&gt;
-  &lt;/row&gt;
-
-  &lt;row&gt;
-                &lt;field name=&quot;id&quot;&gt;3&lt;/field&gt;
-                &lt;field name=&quot;nombre&quot;&gt;Tomas&lt;/field&gt;
-                &lt;field name=&quot;ap&quot;&gt;Perez Diaz&lt;/field&gt;
-  &lt;/row&gt;
-&lt;/resultset&gt;
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Tomas<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Perez Diaz<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+ <span class="nt">&lt;/resultset&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -228,7 +226,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

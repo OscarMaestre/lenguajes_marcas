@@ -250,7 +250,7 @@ Así dado este archivo tenemos las expresiones siguientes:
 
 Si usamos la expresión ``/inventario`` se selecciona *el nodo inventario que cuelga de la raíz*. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión ``/inventario`` para el archivo de ejemplo produce el resultado siguiente:
 
-.. code-block::
+.. code-block:: xml
 
     <inventario>
         <producto codigo="AAA-111">
@@ -791,11 +791,11 @@ La solución está fundamentada en el uso de la etiqueta siguiente:
 
 .. code-block:: xml
 
-	<xsl:for-each ...>
+	<xsl:for-each select="...">
 		<xsl:sort select="..." ordering="...">
 			..cosas del bucle...
-		</xsl>
-	</xsl>
+		</xsl:sort>
+	</xsl:for-each>
 
 La solución completa sería así:
 
