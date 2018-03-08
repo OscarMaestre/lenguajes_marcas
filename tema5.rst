@@ -2882,11 +2882,33 @@ Las reglas son las siguientes:
 * Despues un elemento ``<discoduro>``.
 
 
+Ejercicio tipo examen (III)
+=======================================
+Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:
+
+
+* El elemento raíz se llama ``portes``.
+* Dentro de ``portes``, puede haber uno o más de los elementos ``recepcion`` y ``entrega``. Su orden puede ser aleatorio y el número de repeticiones también.
+* Un ``porte`` lleva dentro tres elementos: un elemento ``producto``, un elemento ``cantidad`` y un elemento ``codigoreceptor``.
+* El ``producto`` es obligatorio y lleva dentro texto.
+* El elemento ``cantidad`` (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.
+* El ``codigoreceptor`` lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento ``codigoreceptor`` es optativo.
+* Una ``entrega`` tiene siempre un atributo ``receptor`` que lleva dentro un texto. Aparte de eso, una ``entrega`` tiene siempre un elemento ``transportista`` que solo puede valer ``T1``, ``T2`` o ``T3``. Despues de el elemento ``entrega``  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la ``entrega``  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento ``coste`` que siempre es un entero mayor de 0.
+
+
+
+
+
+
 
 Examen
 ===========================================
 
-El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
+El examen de este tema tendrá lugar
+
+* Para DAM el viernes, 16 de marzo de 2018
+* Para ASIR el martes, 13 de marzo de 2018
+
 
 
 

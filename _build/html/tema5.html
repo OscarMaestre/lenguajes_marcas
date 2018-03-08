@@ -2607,9 +2607,26 @@ valide la estructura de tales ficheros:</p>
 <li>Despues un elemento <code class="docutils literal"><span class="pre">&lt;discoduro&gt;</span></code>.</li>
 </ul>
 </div>
+<div class="section" id="ejercicio-tipo-examen-iii">
+<h2>Ejercicio tipo examen (III)<a class="headerlink" href="#ejercicio-tipo-examen-iii" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:</p>
+<ul class="simple">
+<li>El elemento raíz se llama <code class="docutils literal"><span class="pre">portes</span></code>.</li>
+<li>Dentro de <code class="docutils literal"><span class="pre">portes</span></code>, puede haber uno o más de los elementos <code class="docutils literal"><span class="pre">recepcion</span></code> y <code class="docutils literal"><span class="pre">entrega</span></code>. Su orden puede ser aleatorio y el número de repeticiones también.</li>
+<li>Un <code class="docutils literal"><span class="pre">porte</span></code> lleva dentro tres elementos: un elemento <code class="docutils literal"><span class="pre">producto</span></code>, un elemento <code class="docutils literal"><span class="pre">cantidad</span></code> y un elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code>.</li>
+<li>El <code class="docutils literal"><span class="pre">producto</span></code> es obligatorio y lleva dentro texto.</li>
+<li>El elemento <code class="docutils literal"><span class="pre">cantidad</span></code> (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.</li>
+<li>El <code class="docutils literal"><span class="pre">codigoreceptor</span></code> lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code> es optativo.</li>
+<li>Una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal"><span class="pre">T1</span></code>, <code class="docutils literal"><span class="pre">T2</span></code> o <code class="docutils literal"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal"><span class="pre">entrega</span></code>  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la <code class="docutils literal"><span class="pre">entrega</span></code>  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento <code class="docutils literal"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
+</ul>
+</div>
 <div class="section" id="examen">
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.</p>
+<p>El examen de este tema tendrá lugar</p>
+<ul class="simple">
+<li>Para DAM el viernes, 16 de marzo de 2018</li>
+<li>Para ASIR el martes, 13 de marzo de 2018</li>
+</ul>
 </div>
 </div>
 
@@ -2705,6 +2722,7 @@ valide la estructura de tales ficheros:</p>
 </li>
 <li><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>
 <li><a class="reference internal" href="#ejercicio-tipo-examen-ii">Ejercicio tipo examen (II)</a></li>
+<li><a class="reference internal" href="#ejercicio-tipo-examen-iii">Ejercicio tipo examen (III)</a></li>
 <li><a class="reference internal" href="#examen">Examen</a></li>
 </ul>
 </li>
@@ -2743,7 +2761,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

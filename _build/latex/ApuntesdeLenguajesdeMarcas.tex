@@ -54,11 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-<<<<<<< HEAD
-\date{02 de marzo de 2018}
-=======
-\date{06 de marzo de 2018}
->>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
+\date{08 de marzo de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -74,11 +70,7 @@
 
 
 \chapter{Introducción}
-<<<<<<< HEAD
-\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
-=======
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
->>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -325,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1517,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
+\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -3164,7 +3156,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -7465,14 +7457,8 @@ n\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}http:/
 
 \subsection{Ejercicio: listas con choice}
 \label{\detokenize{tema5:ejercicio-listas-con-choice}}
-<<<<<<< HEAD
-
-\subsubsection{Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:}
-\label{\detokenize{tema5:se-pide-elaborar-un-esquema-que-valide-un-fichero-con-las-restricciones-siguientes}}\begin{itemize}
-=======
 Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:
 \begin{itemize}
->>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
 \item {} 
 El elemento raíz es \sphinxcode{articulos}. Dicho elemento raíz debe llevar siempre un atributo \sphinxcode{fechaGeneración}.
 
@@ -7491,11 +7477,7 @@ En el fichero siguiente se muestra un ejemplo
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Obligatorio el tener fechaGeneracion}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
-<<<<<<< HEAD
 \PYG{n+nt}{\PYGZlt{}articulos} \PYG{n+na}{fechageneracion=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}01\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-=======
-\PYG{n+nt}{\PYGZlt{}articulos} \PYG{n+na}{fechaGeneracion=}\PYG{l+s}{\PYGZdq{}2018\PYGZhy{}03\PYGZhy{}01\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
->>>>>>> 45151952b8449315c3561f7b8b90baa2dfa7f1ae
     \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{El atributo codigo es optativo siempre}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}monitor} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}DDD\PYGZhy{}222\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
         \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Descripcion obligatoria}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
@@ -8206,13 +8188,49 @@ Despues un elemento \sphinxcode{\textless{}discoduro\textgreater{}}.
 \end{itemize}
 
 
+\section{Ejercicio tipo examen (III)}
+\label{\detokenize{tema5:ejercicio-tipo-examen-iii}}
+Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:
+\begin{itemize}
+\item {} 
+El elemento raíz se llama \sphinxcode{portes}.
+
+\item {} 
+Dentro de \sphinxcode{portes}, puede haber uno o más de los elementos \sphinxcode{recepcion} y \sphinxcode{entrega}. Su orden puede ser aleatorio y el número de repeticiones también.
+
+\item {} 
+Un \sphinxcode{porte} lleva dentro tres elementos: un elemento \sphinxcode{producto}, un elemento \sphinxcode{cantidad} y un elemento \sphinxcode{codigoreceptor}.
+
+\item {} 
+El \sphinxcode{producto} es obligatorio y lleva dentro texto.
+
+\item {} 
+El elemento \sphinxcode{cantidad} (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.
+
+\item {} 
+El \sphinxcode{codigoreceptor} lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento \sphinxcode{codigoreceptor} es optativo.
+
+\item {} 
+Una \sphinxcode{entrega} tiene siempre un atributo \sphinxcode{receptor} que lleva dentro un texto. Aparte de eso, una \sphinxcode{entrega} tiene siempre un elemento \sphinxcode{transportista} que solo puede valer \sphinxcode{T1}, \sphinxcode{T2} o \sphinxcode{T3}. Despues de el elemento \sphinxcode{entrega}  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la \sphinxcode{entrega}  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento \sphinxcode{coste} que siempre es un entero mayor de 0.
+
+\end{itemize}
+
+
 \section{Examen}
 \label{\detokenize{tema5:examen}}
-El examen de este tema tendrá lugar el miércoles 22 de marzo de 2017.
+El examen de este tema tendrá lugar
+\begin{itemize}
+\item {} 
+Para DAM el viernes, 16 de marzo de 2018
+
+\item {} 
+Para ASIR el martes, 13 de marzo de 2018
+
+\end{itemize}
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -9909,7 +9927,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -11276,7 +11294,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
+\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -11470,7 +11488,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
+\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -12766,7 +12784,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13756,7 +13774,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
