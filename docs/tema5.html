@@ -2617,7 +2617,7 @@ valide la estructura de tales ficheros:</p>
 <li>El <code class="docutils literal"><span class="pre">producto</span></code> es obligatorio y lleva dentro texto.</li>
 <li>El elemento <code class="docutils literal"><span class="pre">cantidad</span></code> (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.</li>
 <li>El <code class="docutils literal"><span class="pre">codigoreceptor</span></code> lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento <code class="docutils literal"><span class="pre">codigoreceptor</span></code> es optativo.</li>
-<li>Una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal"><span class="pre">T1</span></code>, <code class="docutils literal"><span class="pre">T2</span></code> o <code class="docutils literal"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal"><span class="pre">transportista</span></code>  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la <code class="docutils literal"><span class="pre">distancia</span></code>  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento <code class="docutils literal"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
+<li>Una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal"><span class="pre">T1</span></code>, <code class="docutils literal"><span class="pre">T2</span></code> o <code class="docutils literal"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal"><span class="pre">transportista</span></code>  hay siempre un elemento <code class="docutils literal"><span class="pre">distancia</span></code> . La <code class="docutils literal"><span class="pre">distancia</span></code> es un numero mayor de 0. Es necesario que la <code class="docutils literal"><span class="pre">distancia</span></code>  tenga un atributo <code class="docutils literal"><span class="pre">unidad</span></code> que indica la unidad en forma de cadena. Además una <code class="docutils literal"><span class="pre">entrega</span></code> lleva un atributo <code class="docutils literal"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
 </ul>
 <p>A continuación se muestra un fichero de ejemplo</p>
 <div class="admonition warning">
@@ -2784,7 +2784,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

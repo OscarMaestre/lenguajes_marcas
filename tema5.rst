@@ -2893,7 +2893,7 @@ Un distribuidor de alimentación necesita un fichero XML que almacene la informa
 * El ``producto`` es obligatorio y lleva dentro texto.
 * El elemento ``cantidad`` (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.
 * El ``codigoreceptor`` lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento ``codigoreceptor`` es optativo.
-* Una ``entrega`` tiene siempre un atributo ``receptor`` que lleva dentro un texto. Aparte de eso, una ``entrega`` tiene siempre un elemento ``transportista`` que solo puede valer ``T1``, ``T2`` o ``T3``. Despues de el elemento ``transportista``  hay siempre una distancia. La distancia es un numero mayor de 0. Es necesario que la ``distancia``  tenga un atributo unidad que indica la unidad en forma de cadena. Además una entrega lleva un elemento ``coste`` que siempre es un entero mayor de 0.
+* Una ``entrega`` tiene siempre un atributo ``receptor`` que lleva dentro un texto. Aparte de eso, una ``entrega`` tiene siempre un elemento ``transportista`` que solo puede valer ``T1``, ``T2`` o ``T3``. Despues de el elemento ``transportista``  hay siempre un elemento ``distancia`` . La ``distancia`` es un numero mayor de 0. Es necesario que la ``distancia``  tenga un atributo ``unidad`` que indica la unidad en forma de cadena. Además una ``entrega`` lleva un atributo ``coste`` que siempre es un entero mayor de 0.
 
 A continuación se muestra un fichero de ejemplo
 
