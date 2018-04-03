@@ -21,3 +21,4 @@ Apuntes de Lenguajes de marcas
    ejercicios/html/anexo_tablas.rst
    ejercicios/formularios/anexo_formularios.rst
    ejercicios/xslt/anexo_ejercicios_xslt.rst
+   ejercicios/xpath/anexo_ejercicios_xpath.rst
