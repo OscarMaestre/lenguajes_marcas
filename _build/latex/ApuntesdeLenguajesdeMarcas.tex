@@ -8255,7 +8255,7 @@ Para ASIR el martes, 13 de marzo de 2018
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -12809,7 +12809,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -14884,16 +14884,77 @@ Extraer el nombre los productos que pesen exactamente 50 gramos.
 
 \end{itemize}
 
-Las soluciones (por este orden):
-* \sphinxcode{/inventario/producto/peso {}`{}`
-* {}`{}`/inventario/producto/peso/text() {}`{}`
-* {}`{}`/inventario/producto{[}last(){]}/peso}
-* \sphinxcode{/inventario/producto/peso/@unidad}
-* \sphinxcode{/inventario/producto{[}last()-1{]}/@codigo}
-* \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}/peso}
-* \sphinxcode{/inventario/producto{[}peso/@unidad="g"{]}/nombre}
-* \sphinxcode{/inventario/producto{[}nombre="Monitor"{]}/@codigo}
-* \sphinxcode{/inventario/producto{[}peso/@unidad="g" and peso/text()="50"{]}/nombre}
+
+\section{Soluciones}
+\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath:soluciones}}
+Para el enunciado  \sphinxstyleemphasis{Extraer todos los elementos peso (etiqueta incluida)} . La solución sería algo como esto \sphinxcode{/inventario/producto/peso} . De hecho nos devuelve esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Enunciado: \sphinxstyleemphasis{Extraer las cantidades de todos los elementos peso (sin la etiqueta \textless{}peso\textgreater{})}. La solución sería \sphinxcode{/inventario/producto/peso/text()}. La expresión devuelve
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+480
+1.8
+50
+\end{sphinxVerbatim}
+
+Enunciado:\sphinxstyleemphasis{Extraer el peso del ultimo producto.}. Una posible solución \sphinxstylestrong{equivocada} sería esta \sphinxcode{/inventario/producto/peso{[}last(){]}}, que en realidad recupera «el último peso de cada producto», es decir recupera muchos, como muestra el resultado siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\end{sphinxVerbatim}
+
+La expresión correcta sería \sphinxcode{/inventario/producto{[}last(){]}/peso} que devuelve esto
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Enunciado: \sphinxstyleemphasis{Extraer las distintas unidades en las que se han almacenado los pesos}. Una posible solución sería esta \sphinxcode{/inventario/producto/peso/@unidad}, que devuelve esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+g
+kg
+g
+\end{sphinxVerbatim}
+
+Enunciado: \sphinxstyleemphasis{Extraer el penúltimo codigo.}. Una posible solucion sería esta:\sphinxcode{/inventario/producto{[}last()-1{]}/@codigo}
+
+Enunciado: \sphinxstyleemphasis{Extraer el peso del elemento cuyo codigo sea AAA-111.} \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}/peso}
+
+Esto devuelve como resultado:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Enunciado: \sphinxstyleemphasis{Extraer el nombre de los productos que hayan puesto el peso en gramos.}
+
+Una idea incorrecta sería esta \sphinxcode{/inventario/producto/peso{[}@unidad="g"{]}}.
+Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho recupera esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+\end{sphinxVerbatim}
+
+La correcta sería
+
+\sphinxcode{/inventario/producto{[}peso/@unidad="g"{]}/nombre}
+
+Esto devuelve
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 

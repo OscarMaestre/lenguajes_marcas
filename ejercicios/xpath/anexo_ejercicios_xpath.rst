@@ -34,13 +34,105 @@ Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada
 * Extraer el codigo de los productos cuyo nombre sea "Monitor".
 * Extraer el nombre los productos que pesen exactamente 50 gramos.
 
-Las soluciones (por este orden):
-* ``/inventario/producto/peso ``
-* ``/inventario/producto/peso/text() ``
-* ``/inventario/producto[last()]/peso``
-* ``/inventario/producto/peso/@unidad``
-* ``/inventario/producto[last()-1]/@codigo``
-* ``/inventario/producto[@codigo="AAA-111"]/peso``
-* ``/inventario/producto[peso/@unidad="g"]/nombre``
-* ``/inventario/producto[nombre="Monitor"]/@codigo``
-* ``/inventario/producto[peso/@unidad="g" and peso/text()="50"]/nombre``
+Soluciones
+-------------
+
+
+Para el enunciado  *Extraer todos los elementos peso (etiqueta incluida)* . La solución sería algo como esto ``/inventario/producto/peso`` . De hecho nos devuelve esto:
+
+.. code-block:: xml
+    
+    <peso unidad="g">480</peso>
+    <peso unidad="kg">1.8</peso>
+    <peso unidad="g">50</peso>
+
+Enunciado: *Extraer las cantidades de todos los elementos peso (sin la etiqueta <peso>)*. La solución sería ``/inventario/producto/peso/text()``. La expresión devuelve
+
+.. code-block:: html
+
+    480
+    1.8
+    50
+
+
+
+Enunciado:*Extraer el peso del ultimo producto.*. Una posible solución **equivocada** sería esta ``/inventario/producto/peso[last()]``, que en realidad recupera "el último peso de cada producto", es decir recupera muchos, como muestra el resultado siguiente:
+
+.. code-block:: xml
+
+    <peso unidad="g">480</peso>
+    <peso unidad="kg">1.8</peso>
+    <peso unidad="g">50</peso>
+    
+La expresión correcta sería ``/inventario/producto[last()]/peso`` que devuelve esto
+
+.. code-block:: xml
+
+    <peso unidad="g">50</peso>
+        
+        
+Enunciado: *Extraer las distintas unidades en las que se han almacenado los pesos*. Una posible solución sería esta ``/inventario/producto/peso/@unidad``, que devuelve esto:
+
+.. code-block:: html
+
+    g
+    kg
+    g
+
+Enunciado: *Extraer el penúltimo codigo.*. Una posible solucion sería esta:``/inventario/producto[last()-1]/@codigo``
+
+
+Enunciado: *Extraer el peso del elemento cuyo codigo sea AAA-111.* ``/inventario/producto[@codigo="AAA-111"]/peso``
+
+Esto devuelve como resultado:
+
+.. code-block:: xml
+
+    <peso unidad="g">480</peso>
+
+Enunciado: *Extraer el nombre de los productos que hayan puesto el peso en gramos.*
+
+
+Una idea incorrecta sería esta ``/inventario/producto/peso[@unidad="g"]``.
+Esta está mal, porque recupera "pesos" en lugar de "nombres" . De hecho recupera esto:
+
+.. code-block:: xml
+
+    <peso unidad="g">480</peso>
+    <peso unidad="g">50</peso>
+    
+
+La correcta sería
+
+``/inventario/producto[peso/@unidad="g"]/nombre``
+
+Esto devuelve
+
+.. code-block:: xml
+    
+    <nombre>Teclado</nombre>
+    <nombre>Raton</nombre>
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

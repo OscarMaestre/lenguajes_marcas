@@ -71,16 +71,57 @@
 <li>Extraer el codigo de los productos cuyo nombre sea «Monitor».</li>
 <li>Extraer el nombre los productos que pesen exactamente 50 gramos.</li>
 </ul>
-<p>Las soluciones (por este orden):
-* <code class="docutils literal"><span class="pre">/inventario/producto/peso</span> <span class="pre">``</span>
-<span class="pre">*</span> <span class="pre">``/inventario/producto/peso/text()</span> <span class="pre">``</span>
-<span class="pre">*</span> <span class="pre">``/inventario/producto[last()]/peso</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto/peso/&#64;unidad</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto[last()-1]/&#64;codigo</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/peso</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto[peso/&#64;unidad=&quot;g&quot;]/nombre</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto[nombre=&quot;Monitor&quot;]/&#64;codigo</span></code>
-* <code class="docutils literal"><span class="pre">/inventario/producto[peso/&#64;unidad=&quot;g&quot;</span> <span class="pre">and</span> <span class="pre">peso/text()=&quot;50&quot;]/nombre</span></code></p>
+<div class="section" id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para el enunciado  <em>Extraer todos los elementos peso (etiqueta incluida)</em> . La solución sería algo como esto <code class="docutils literal"><span class="pre">/inventario/producto/peso</span></code> . De hecho nos devuelve esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>Enunciado: <em>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;)</em>. La solución sería <code class="docutils literal"><span class="pre">/inventario/producto/peso/text()</span></code>. La expresión devuelve</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>480
+1.8
+50
+</pre></div>
+</div>
+<p>Enunciado:<em>Extraer el peso del ultimo producto.</em>. Una posible solución <strong>equivocada</strong> sería esta <code class="docutils literal"><span class="pre">/inventario/producto/peso[last()]</span></code>, que en realidad recupera «el último peso de cada producto», es decir recupera muchos, como muestra el resultado siguiente:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>La expresión correcta sería <code class="docutils literal"><span class="pre">/inventario/producto[last()]/peso</span></code> que devuelve esto</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>Enunciado: <em>Extraer las distintas unidades en las que se han almacenado los pesos</em>. Una posible solución sería esta <code class="docutils literal"><span class="pre">/inventario/producto/peso/&#64;unidad</span></code>, que devuelve esto:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>g
+kg
+g
+</pre></div>
+</div>
+<p>Enunciado: <em>Extraer el penúltimo codigo.</em>. Una posible solucion sería esta:<code class="docutils literal"><span class="pre">/inventario/producto[last()-1]/&#64;codigo</span></code></p>
+<p>Enunciado: <em>Extraer el peso del elemento cuyo codigo sea AAA-111.</em> <code class="docutils literal"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/peso</span></code></p>
+<p>Esto devuelve como resultado:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>Enunciado: <em>Extraer el nombre de los productos que hayan puesto el peso en gramos.</em></p>
+<p>Una idea incorrecta sería esta <code class="docutils literal"><span class="pre">/inventario/producto/peso[&#64;unidad=&quot;g&quot;]</span></code>.
+Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho recupera esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>La correcta sería</p>
+<p><code class="docutils literal"><span class="pre">/inventario/producto[peso/&#64;unidad=&quot;g&quot;]/nombre</span></code></p>
+<p>Esto devuelve</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+<span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -88,7 +129,15 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Anexo: Ejercicios de XPath</a><ul>
+<li><a class="reference internal" href="#soluciones">Soluciones</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
@@ -121,7 +170,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
