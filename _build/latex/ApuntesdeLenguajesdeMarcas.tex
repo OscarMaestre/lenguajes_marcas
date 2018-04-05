@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{08 de marzo de 2018}
+\date{05 de abril de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -3156,7 +3156,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
+\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -5003,7 +5003,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
+\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -9952,7 +9952,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
+\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -11319,7 +11319,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
+\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -12809,7 +12809,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -13799,7 +13799,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
@@ -14830,6 +14830,70 @@ Si probamos el XSLT anterior veremos que efectivamente conseguimos transformar e
   \PYG{n+nt}{\PYGZlt{}/fondos\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/datos\PYGZgt{}}
 \end{sphinxVerbatim}
+
+
+\chapter{Anexo: Ejercicios de XPath}
+\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath:anexo-ejercicios-de-xpath}}\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath::doc}}
+En los ejercicios siguientes se asume que se va a utilizar el fichero siguiente:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}inventario}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}AAA\PYGZhy{}111\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Teclado\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}480\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}ACD\PYGZhy{}981\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}kg\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}1.8\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}DEZ\PYGZhy{}138\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Raton\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}peso} \PYG{n+na}{unidad=}\PYG{l+s}{\PYGZdq{}g\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}50\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/inventario\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada se puede asumir que las etiquetas no deben incluirse.
+\begin{itemize}
+\item {} 
+Extraer todos los elementos peso (etiqueta incluida).
+
+\item {} 
+Extraer las cantidades de todos los elementos peso (sin la etiqueta \textless{}peso\textgreater{}).
+
+\item {} 
+Extraer el peso del ultimo elemento.
+
+\item {} 
+Extraer las distintas unidades en las que se han almacenado los pesos.
+
+\item {} 
+Extraer el penúltimo codigo.
+
+\item {} 
+Extraer el peso del elemento cuyo codigo sea AAA-111.
+
+\item {} 
+Extraer el nombre de los productos que hayan puesto el peso en gramos.
+
+\item {} 
+Extraer el codigo de los productos cuyo nombre sea «Monitor».
+
+\item {} 
+Extraer el nombre los productos que pesen exactamente 50 gramos.
+
+\end{itemize}
+
+Las soluciones (por este orden):
+* \sphinxcode{/inventario/producto/peso {}`{}`
+* {}`{}`/inventario/producto/peso/text() {}`{}`
+* {}`{}`/inventario/producto{[}last(){]}/peso}
+* \sphinxcode{/inventario/producto/peso/@unidad}
+* \sphinxcode{/inventario/producto{[}last()-1{]}/@codigo}
+* \sphinxcode{/inventario/producto{[}@codigo="AAA-111"{]}/peso}
+* \sphinxcode{/inventario/producto{[}peso/@unidad="g"{]}/nombre}
+* \sphinxcode{/inventario/producto{[}nombre="Monitor"{]}/@codigo}
+* \sphinxcode{/inventario/producto{[}peso/@unidad="g" and peso/text()="50"{]}/nombre}
 
 
 

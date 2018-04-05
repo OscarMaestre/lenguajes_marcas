@@ -349,3 +349,4 @@
 \contentsline {section}{\numberline {11.11}Transformaci\IeC {\'o}n de un XML bancario}{274}{section.11.11}
 \contentsline {subsection}{\numberline {11.11.1}An\IeC {\'a}lisis del problema}{275}{subsection.11.11.1}
 \contentsline {subsection}{\numberline {11.11.2}Soluci\IeC {\'o}n paso a paso}{276}{subsection.11.11.2}
+\contentsline {chapter}{\numberline {12}Anexo: Ejercicios de XPath}{287}{chapter.12}

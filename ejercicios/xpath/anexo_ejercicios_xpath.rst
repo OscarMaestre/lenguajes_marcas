@@ -30,6 +30,17 @@ Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada
 * Extraer las distintas unidades en las que se han almacenado los pesos.
 * Extraer el penúltimo codigo.
 * Extraer el peso del elemento cuyo codigo sea AAA-111.
-* Extraer el nombre de los productos que hayan pueso el peso en gramos.
+* Extraer el nombre de los productos que hayan puesto el peso en gramos.
 * Extraer el codigo de los productos cuyo nombre sea "Monitor".
 * Extraer el nombre los productos que pesen exactamente 50 gramos.
+
+Las soluciones (por este orden):
+* ``/inventario/producto/peso ``
+* ``/inventario/producto/peso/text() ``
+* ``/inventario/producto[last()]/peso``
+* ``/inventario/producto/peso/@unidad``
+* ``/inventario/producto[last()-1]/@codigo``
+* ``/inventario/producto[@codigo="AAA-111"]/peso``
+* ``/inventario/producto[peso/@unidad="g"]/nombre``
+* ``/inventario/producto[nombre="Monitor"]/@codigo``
+* ``/inventario/producto[peso/@unidad="g" and peso/text()="50"]/nombre``

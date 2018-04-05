@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../../_static/translations.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="prev" title="Anexo: ejercicios sobre XSLT" href="../xslt/anexo_ejercicios_xslt.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -58,15 +59,28 @@
 <span class="nt">&lt;/inventario&gt;</span>
 </pre></div>
 </div>
-<p>Resolver los siguientes problemas usando expresiones XPath.</p>
+<p>Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada se puede asumir que las etiquetas no deben incluirse.</p>
 <ul class="simple">
-<li>Extraer todos los elementos peso (etiqueta incluida)</li>
-<li>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;)</li>
-<li>Extraer el peso del ultimo elemento</li>
-<li>Extraer las distintas unidades en las que se han almacenado los pesos</li>
-<li>Extraer el penúltimo codigo</li>
-<li>Extraer el peso del elemento cuyo codigo sea AAA-111</li>
+<li>Extraer todos los elementos peso (etiqueta incluida).</li>
+<li>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;).</li>
+<li>Extraer el peso del ultimo elemento.</li>
+<li>Extraer las distintas unidades en las que se han almacenado los pesos.</li>
+<li>Extraer el penúltimo codigo.</li>
+<li>Extraer el peso del elemento cuyo codigo sea AAA-111.</li>
+<li>Extraer el nombre de los productos que hayan puesto el peso en gramos.</li>
+<li>Extraer el codigo de los productos cuyo nombre sea «Monitor».</li>
+<li>Extraer el nombre los productos que pesen exactamente 50 gramos.</li>
 </ul>
+<p>Las soluciones (por este orden):
+* <code class="docutils literal"><span class="pre">/inventario/producto/peso</span> <span class="pre">``</span>
+<span class="pre">*</span> <span class="pre">``/inventario/producto/peso/text()</span> <span class="pre">``</span>
+<span class="pre">*</span> <span class="pre">``/inventario/producto[last()]/peso</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto/peso/&#64;unidad</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto[last()-1]/&#64;codigo</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/peso</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto[peso/&#64;unidad=&quot;g&quot;]/nombre</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto[nombre=&quot;Monitor&quot;]/&#64;codigo</span></code>
+* <code class="docutils literal"><span class="pre">/inventario/producto[peso/&#64;unidad=&quot;g&quot;</span> <span class="pre">and</span> <span class="pre">peso/text()=&quot;50&quot;]/nombre</span></code></p>
 </div>
 
 
@@ -78,6 +92,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../xslt/anexo_ejercicios_xslt.html" title="capítulo anterior">Anexo: ejercicios sobre XSLT</a></li>
   </ul></li>
 </ul>
 </div>
@@ -106,7 +121,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
