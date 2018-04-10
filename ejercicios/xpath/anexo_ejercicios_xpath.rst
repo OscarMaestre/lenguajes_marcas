@@ -113,7 +113,7 @@ Esto devuelve
     <nombre>Teclado</nombre>
     <nombre>Raton</nombre>
 
-Enunciado:* Extraer el codigo de los productos cuyo nombre sea "Monitor".*
+Enunciado: *Extraer el codigo de los productos cuyo nombre sea "Monitor"*
 
 La solución sería
 
@@ -129,7 +129,7 @@ La solución sería
 (peso/@unidad="g" and peso/text()>"250")
 or
 (peso/@unidad="kg" and peso/text()>"0.25") 
-]/@codigo `` 
+]/@codigo`` 
 
 
 

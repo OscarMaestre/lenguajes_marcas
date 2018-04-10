@@ -350,9 +350,7 @@ Supongamos una estructura como la siguiente:
 			<autor>Cervantes</autor>
 		</libro>
 		<libro>
-			<title>
-			Poeta en Nueva York
-			</title>
+			<title>Poeta en Nueva York</title>
 			<autor>Lorca</autor>
 		</libro>
 	</catalogo>	
@@ -366,7 +364,7 @@ Supongamos que un cierto sitio se necesita almacenar la información de esta for
 	<?xml version="1.0" encoding="UTF-8"?>
 	<listadolibros>
 		<libro>
-			<titulo autor="Cervantes">Don Quijote</title>
+			<titulo autor="Cervantes">Don Quijote</titulo>
 		</libro>
 		<libro>
 			<titulo autor="Lorca">

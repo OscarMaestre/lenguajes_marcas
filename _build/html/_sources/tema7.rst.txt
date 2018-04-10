@@ -350,9 +350,7 @@ Supongamos una estructura como la siguiente:
 			<autor>Cervantes</autor>
 		</libro>
 		<libro>
-			<title>
-			Poeta en Nueva York
-			</title>
+			<title>Poeta en Nueva York</title>
 			<autor>Lorca</autor>
 		</libro>
 	</catalogo>	
