@@ -32,7 +32,7 @@ Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada
 * Extraer el peso del elemento cuyo codigo sea AAA-111.
 * Extraer el nombre de los productos que hayan puesto el peso en gramos.
 * Extraer el codigo de los productos cuyo nombre sea "Monitor".
-* Extraer el nombre los productos que pesen exactamente 50 gramos.
+* Extraer el código de los productos que pesen más de un cuarto de kilo.
 
 Soluciones
 -------------
@@ -113,19 +113,23 @@ Esto devuelve
     <nombre>Teclado</nombre>
     <nombre>Raton</nombre>
 
+Enunciado:* Extraer el codigo de los productos cuyo nombre sea "Monitor".*
+
+La solución sería
+
+``/inventario/producto[nombre/text()="Monitor"]/@codigo``
 
 
 
+Enunciado: *Extraer el código de los productos que pesen más de un cuarto de kilo.*.
 
+La solución sería
 
-
-        
-
-
-
-
-
-
+``/inventario/producto[
+(peso/@unidad="g" and peso/text()>"250")
+or
+(peso/@unidad="kg" and peso/text()>"0.25") 
+]/@codigo `` 
 
 
 

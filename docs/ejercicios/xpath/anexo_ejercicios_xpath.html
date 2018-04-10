@@ -69,7 +69,7 @@
 <li>Extraer el peso del elemento cuyo codigo sea AAA-111.</li>
 <li>Extraer el nombre de los productos que hayan puesto el peso en gramos.</li>
 <li>Extraer el codigo de los productos cuyo nombre sea «Monitor».</li>
-<li>Extraer el nombre los productos que pesen exactamente 50 gramos.</li>
+<li>Extraer el código de los productos que pesen más de un cuarto de kilo.</li>
 </ul>
 <div class="section" id="soluciones">
 <h2>Soluciones<a class="headerlink" href="#soluciones" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -121,6 +121,16 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
 </pre></div>
 </div>
+<p>Enunciado:* Extraer el codigo de los productos cuyo nombre sea «Monitor».*</p>
+<p>La solución sería</p>
+<p><code class="docutils literal"><span class="pre">/inventario/producto[nombre/text()=&quot;Monitor&quot;]/&#64;codigo</span></code></p>
+<p>Enunciado: <em>Extraer el código de los productos que pesen más de un cuarto de kilo.</em>.</p>
+<p>La solución sería</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>/inventario/producto[
+(<a class="reference external" href="mailto:peso/&#37;&#52;&#48;unidad=">peso/<span>&#64;</span>unidad=</a>»g» and peso/text()&gt;»250»)
+or
+(<a class="reference external" href="mailto:peso/&#37;&#52;&#48;unidad=">peso/<span>&#64;</span>unidad=</a>»kg» and peso/text()&gt;»0.25»)
+]/&#64;codigo ``</p>
 </div>
 </div>
 
