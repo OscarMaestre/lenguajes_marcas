@@ -266,7 +266,7 @@
 \contentsline {section}{\numberline {7.3}XPath}{180}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Acceso a elementos}{181}{subsection.7.3.1}
 \contentsline {section}{\numberline {7.4}Adaptaci\IeC {\'o}n y transformaci\IeC {\'o}n de XML}{183}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}CSS con XML}{184}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.1}CSS con XML}{183}{subsection.7.4.1}
 \contentsline {subsubsection}{Ejercicio}{184}{subsubsection*.26}
 \contentsline {subsection}{\numberline {7.4.2}Transformaci\IeC {\'o}n de XML}{185}{subsection.7.4.2}
 \contentsline {subsection}{\numberline {7.4.3}Ejercicio (carga de estilos)}{186}{subsection.7.4.3}
@@ -279,8 +279,8 @@
 \contentsline {subsection}{\numberline {7.4.10}Ejercicio}{190}{subsection.7.4.10}
 \contentsline {subsection}{\numberline {7.4.11}Ejercicio}{191}{subsection.7.4.11}
 \contentsline {subsection}{\numberline {7.4.12}Ejercicio XSL, paso a paso}{192}{subsection.7.4.12}
-\contentsline {subsection}{\numberline {7.4.13}Ejercicio: condiciones complejas}{195}{subsection.7.4.13}
-\contentsline {subsection}{\numberline {7.4.14}Transformaci\IeC {\'o}n en tabla}{197}{subsection.7.4.14}
+\contentsline {subsection}{\numberline {7.4.13}Ejercicio: condiciones complejas}{196}{subsection.7.4.13}
+\contentsline {subsection}{\numberline {7.4.14}Transformaci\IeC {\'o}n en tabla}{196}{subsection.7.4.14}
 \contentsline {subsection}{\numberline {7.4.15}Transformacion de pedidos}{197}{subsection.7.4.15}
 \contentsline {subsection}{\numberline {7.4.16}Transformaci\IeC {\'o}n de pedidos (II)}{199}{subsection.7.4.16}
 \contentsline {subsection}{\numberline {7.4.17}Ejercicio (no se da la soluci\IeC {\'o}n)}{200}{subsection.7.4.17}

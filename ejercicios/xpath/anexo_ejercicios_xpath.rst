@@ -102,9 +102,16 @@ Esta está mal, porque recupera "pesos" en lugar de "nombres" . De hecho recuper
     <peso unidad="g">50</peso>
     
 
-La correcta sería
+Una correcta sería
 
 ``/inventario/producto[peso/@unidad="g"]/nombre``
+
+
+Y otra posibilidad sería
+
+``/inventario/producto[peso[@unidad="g"]]/nombre``
+
+Que literalmente pone *"extraer el nombre de productos que cumplan la condicion de tener un hijo peso y a su vez ese hijo peso cumpla la condición de tener un atributo unidad con el valor g"*
 
 Esto devuelve
 
@@ -115,9 +122,16 @@ Esto devuelve
 
 Enunciado: *Extraer el codigo de los productos cuyo nombre sea "Monitor"*
 
-La solución sería
+Una posible solución sería
 
 ``/inventario/producto[nombre/text()="Monitor"]/@codigo``
+
+
+Aunque en realidad también serviría lo siguiente:
+
+``/inventario/producto[nombre="Monitor"]/@codigo``
+
+La clave es que **como el elemento nombre no tiene hijos entonces se permite comparar el elemento como una cadena**. El evaluador XPath sobreentiende que queremos comparar "el contenido del elemento nombre" con la cadena "Monitor".
 
 
 

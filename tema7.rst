@@ -369,7 +369,7 @@ Supongamos que un cierto sitio se necesita almacenar la información de esta for
 		<libro>
 			<titulo autor="Lorca">
 			Poeta en Nueva York
-			</title>
+			</titulo>
 		</libro>
 	</listadolibros>	
 
