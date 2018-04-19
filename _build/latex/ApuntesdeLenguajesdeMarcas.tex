@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{13 de abril de 2018}
+\date{19 de abril de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -8255,7 +8255,7 @@ Para ASIR el martes, 13 de marzo de 2018
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
+\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -13829,6 +13829,40 @@ Convertir el fichero origen en una lista punteada similar a la que se muestra en
 
 \noindent{\hspace*{\fill}\sphinxincludegraphics[scale=0.5]{{lista_punteada}.png}\hspace*{\fill}}
 
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsl:stylesheet} \PYG{n+na}{xmlns:xsl=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/1999/XSL/Transform\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}xsl:template} \PYG{n+na}{match=}\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}html}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}head}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}title}\PYG{n+nt}{\PYGZgt{}}Resultado HTML\PYG{n+nt}{\PYGZlt{}/title\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/head\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}body}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ul}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsl:for\PYGZhy{}each} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}inventario/producto\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}li}\PYG{n+nt}{\PYGZgt{}}
+                        Elemento
+                        \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}./@codigo\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                        \PYG{n+nt}{\PYGZlt{}ul}\PYG{n+nt}{\PYGZgt{}}
+                            \PYG{n+nt}{\PYGZlt{}li}\PYG{n+nt}{\PYGZgt{}}
+                                Nombre:
+                                \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}nombre\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                            \PYG{n+nt}{\PYGZlt{}/li\PYGZgt{}}
+                            \PYG{n+nt}{\PYGZlt{}li}\PYG{n+nt}{\PYGZgt{}}
+                                Peso:
+                                \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}peso\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                                \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of}
+                                    \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}peso/@unidad\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                            \PYG{n+nt}{\PYGZlt{}/li\PYGZgt{}}
+                        \PYG{n+nt}{\PYGZlt{}/ul\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}/li\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/xsl:for\PYGZhy{}each\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/ul\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/body\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/html\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsl:template\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
+\end{sphinxVerbatim}
+
 
 \section{Recuperación de elementos pesados}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:recuperacion-de-elementos-pesados}}
@@ -14981,6 +15015,251 @@ La solución sería
 or
 (peso/@unidad="kg" and peso/text()\textgreater{}"0.25")
 {]}/@codigo}
+
+
+\chapter{Anexo: Ejercicios de XQuery}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:anexo-ejercicios-de-xquery}}\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery::doc}}
+En los ejercicios siguientes se asume que se va a utilizar la siguiente base de datos XML (tomada del libro de C.J. Date «Sistemas Gestores de Bases de Datos»)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}datos}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}proveedores}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proveedor} \PYG{n+na}{numprov=}\PYG{l+s}{\PYGZdq{}v1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreprov}\PYG{n+nt}{\PYGZgt{}}Smith\PYG{n+nt}{\PYGZlt{}/nombreprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}estado}\PYG{n+nt}{\PYGZgt{}}20\PYG{n+nt}{\PYGZlt{}/estado\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proveedor} \PYG{n+na}{numprov=}\PYG{l+s}{\PYGZdq{}v2\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreprov}\PYG{n+nt}{\PYGZgt{}}Jones\PYG{n+nt}{\PYGZlt{}/nombreprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}estado}\PYG{n+nt}{\PYGZgt{}}10\PYG{n+nt}{\PYGZlt{}/estado\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Paris\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proveedor} \PYG{n+na}{numprov=}\PYG{l+s}{\PYGZdq{}v3\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreprov}\PYG{n+nt}{\PYGZgt{}}Blake\PYG{n+nt}{\PYGZlt{}/nombreprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}estado}\PYG{n+nt}{\PYGZgt{}}30\PYG{n+nt}{\PYGZlt{}/estado\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Paris\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proveedor} \PYG{n+na}{numprov=}\PYG{l+s}{\PYGZdq{}v4\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreprov}\PYG{n+nt}{\PYGZgt{}}Clarke\PYG{n+nt}{\PYGZlt{}/nombreprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}estado}\PYG{n+nt}{\PYGZgt{}}20\PYG{n+nt}{\PYGZlt{}/estado\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proveedor} \PYG{n+na}{numprov=}\PYG{l+s}{\PYGZdq{}v5\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreprov}\PYG{n+nt}{\PYGZgt{}}Adams\PYG{n+nt}{\PYGZlt{}/nombreprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}estado}\PYG{n+nt}{\PYGZgt{}}30\PYG{n+nt}{\PYGZlt{}/estado\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Atenas\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proveedor\PYGZgt{}}       
+    \PYG{n+nt}{\PYGZlt{}/proveedores\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}partes}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Tuerca\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Rojo\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}12\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p2\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Perno\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Verde\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}17\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Paris\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p3\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Tornillo\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Azul\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}17\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Roma\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p4\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Tornillo\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Rojo\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}14\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p5\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Leva\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Azul\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}12\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Paris\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}parte} \PYG{n+na}{numparte=}\PYG{l+s}{\PYGZdq{}p6\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreparte}\PYG{n+nt}{\PYGZgt{}}Engranaje\PYG{n+nt}{\PYGZlt{}/nombreparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}color}\PYG{n+nt}{\PYGZgt{}}Rojo\PYG{n+nt}{\PYGZlt{}/color\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}peso}\PYG{n+nt}{\PYGZgt{}}19\PYG{n+nt}{\PYGZlt{}/peso\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/parte\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/partes\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}proyectos}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}Clasificador\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Paris\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y2\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}Monitor\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Roma\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y3\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}OCR\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Atenas\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y4\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}Consola\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Atenas\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y5\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}RAID\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y6\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}EDS\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Oslo\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}proyecto} \PYG{n+na}{numproyecto=}\PYG{l+s}{\PYGZdq{}y7\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}nombreproyecto}\PYG{n+nt}{\PYGZgt{}}Cinta\PYG{n+nt}{\PYGZlt{}/nombreproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}ciudad}\PYG{n+nt}{\PYGZgt{}}Londres\PYG{n+nt}{\PYGZlt{}/ciudad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/proyecto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/proyectos\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}suministros}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v1\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p1\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y1\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v1\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p1\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}700\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y1\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}400\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y2\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y3\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}300\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}500\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y5\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}600\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y6\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}400\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y7\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}600\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v2\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p5\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y2\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}100\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v3\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y1\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v3\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p4\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y2\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}500\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v4\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p6\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y3\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}300\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v4\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p6\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y7\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}300\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p2\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y2\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p2\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}100\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p5\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y5\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}500\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p6\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y2\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p1\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}100\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p3\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}200\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p4\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}800\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p5\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}400\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}suministra}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}v5\PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numparte}\PYG{n+nt}{\PYGZgt{}}p6\PYG{n+nt}{\PYGZlt{}/numparte\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}numproyecto}\PYG{n+nt}{\PYGZgt{}}y4\PYG{n+nt}{\PYGZlt{}/numproyecto\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}500\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/suministros\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/datos\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 

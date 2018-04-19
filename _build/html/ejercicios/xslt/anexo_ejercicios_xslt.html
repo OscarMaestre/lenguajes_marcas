@@ -69,6 +69,39 @@
 <h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:</p>
 <a class="reference internal image-reference" href="../../_images/lista_punteada.png"><img alt="../../_images/lista_punteada.png" class="align-center" src="../../_images/lista_punteada.png" style="width: 308.5px; height: 198.5px;" /></a>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Resultado HTML<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/producto&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>
+                        Elemento
+                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;./@codigo&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;ul&gt;</span>
+                            <span class="nt">&lt;li&gt;</span>
+                                Nombre:
+                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+                            <span class="nt">&lt;/li&gt;</span>
+                            <span class="nt">&lt;li&gt;</span>
+                                Peso:
+                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;xsl:value-of</span>
+                                    <span class="na">select=</span><span class="s">&quot;peso/@unidad&quot;</span><span class="nt">/&gt;</span>
+                            <span class="nt">&lt;/li&gt;</span>
+                        <span class="nt">&lt;/ul&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;/xsl:for-each&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="recuperacion-de-elementos-pesados">
 <h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1028,7 +1061,7 @@ y otra tabla separada para los productos del edificio B</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
