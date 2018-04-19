@@ -68,6 +68,13 @@ Convertir el fichero origen en una lista punteada similar a la que se muestra en
     </xsl:template>
     </xsl:stylesheet>
 
+Filtrado
+----------------
+Replicar la estructura del fichero pero filtrando
+los elementos y haciendo que solo aparezcan los que estén
+en el aula A6
+
+
 Recuperación de elementos pesados
 ----------------------------------
 

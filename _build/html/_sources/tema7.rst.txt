@@ -903,7 +903,6 @@ En general, las condiciones se escriben así:
 * < o menor que o ``&lt;``
 * >= o mayor o igual o ``&ge;``
 * <= o menor o igual o ``&le;``
-* = o igual o ``&eq;``
 * <> o distinto o ``&neq;``
 
 Ejercicio XSL, paso a paso
