@@ -395,9 +395,25 @@ Conseguir lo siguiente:
 
 .. code-block:: xml
 
-    <xsl:stylesheet>
-        No se da la solución de este
-        ejercicio
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <xsl:template match="/">
+        <html>
+          <head>
+            <title>Resultado</title>
+          </head>
+          <body>
+            <ol>
+              <xsl:for-each select="catalogo/libro/autores/autor">
+                <xsl:sort select="." order="descending"/>
+                <li>
+                  <xsl:value-of select="."/>
+                </li>
+              </xsl:for-each>
+            </ol>
+          </body>
+        </html>
+      </xsl:template>
     </xsl:stylesheet>
 
 
