@@ -384,9 +384,29 @@ y otra tabla separada para los productos del edificio B</p>
 <ol class="arabic simple">
 <li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
 </ol>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet&gt;</span>
-    No se da la solución de este
-    ejercicio
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Resultado<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;ol&gt;</span>
+          <span class="c">&lt;!--Recorremos los autores--&gt;</span>
+          <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro/autores/autor&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!--Y si nacieron despues de 1900...&quot;--&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@nacimiento &gt; 1900&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="c">&lt;!--Entonces &quot;retrocedemos&quot;</span>
+<span class="c">                para extraer el titulo--&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;../../titulo&quot;</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+          <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/ol&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>

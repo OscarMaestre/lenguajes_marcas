@@ -386,9 +386,29 @@ Conseguir lo siguiente:
 
 .. code-block:: xml
 
-    <xsl:stylesheet>
-        No se da la solución de este
-        ejercicio
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <xsl:template match="/">
+        <html>
+          <head>
+            <title>Resultado</title>
+          </head>
+          <body>
+            <ol>
+              <!--Recorremos los autores-->
+              <xsl:for-each select="catalogo/libro/autores/autor">
+                <!--Y si nacieron despues de 1900..."-->
+                <xsl:if test="@nacimiento > 1900">
+                  <li>
+                    <!--Entonces "retrocedemos"
+                    para extraer el titulo-->
+                    <xsl:value-of select="../../titulo"/>
+                  </li>
+                </xsl:if>
+              </xsl:for-each>
+            </ol>
+          </body>
+        </html>
+      </xsl:template>
     </xsl:stylesheet>
 
 2. Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
