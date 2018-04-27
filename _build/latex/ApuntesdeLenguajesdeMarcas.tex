@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{19 de abril de 2018}
+\date{26 de abril de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -14168,9 +14168,29 @@ Mostrar en un HTML con lista numerada los títulos de los libros con algún auto
 \end{enumerate}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nt}{\PYGZlt{}xsl:stylesheet}\PYG{n+nt}{\PYGZgt{}}
-    No se da la solución de este
-    ejercicio
+\PYG{n+nt}{\PYGZlt{}xsl:stylesheet} \PYG{n+na}{xmlns:xsl=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/1999/XSL/Transform\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}xsl:template} \PYG{n+na}{match=}\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}html}\PYG{n+nt}{\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}head}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}title}\PYG{n+nt}{\PYGZgt{}}Resultado\PYG{n+nt}{\PYGZlt{}/title\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/head\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}body}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ol}\PYG{n+nt}{\PYGZgt{}}
+          \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Recorremos los autores}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}xsl:for\PYGZhy{}each} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}catalogo/libro/autores/autor\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Y si nacieron despues de 1900...\PYGZdq{}}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsl:if} \PYG{n+na}{test=}\PYG{l+s}{\PYGZdq{}@nacimiento \PYGZgt{} 1900\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+              \PYG{n+nt}{\PYGZlt{}li}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{Entonces \PYGZdq{}retrocedemos\PYGZdq{}}
+\PYG{c}{                para extraer el titulo}\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}../../titulo\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+              \PYG{n+nt}{\PYGZlt{}/li\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/xsl:if\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}/xsl:for\PYGZhy{}each\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ol\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/body\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/html\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}/xsl:template\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}
@@ -14181,9 +14201,24 @@ Mostrar en un HTML la lista de los autores ordenada por orden alfabético invers
 \end{enumerate}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nt}{\PYGZlt{}xsl:stylesheet}\PYG{n+nt}{\PYGZgt{}}
-    No se da la solución de este
-    ejercicio
+\PYG{n+nt}{\PYGZlt{}xsl:stylesheet} \PYG{n+na}{xmlns:xsl=}\PYG{l+s}{\PYGZdq{}http://www.w3.org/1999/XSL/Transform\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}xsl:template} \PYG{n+na}{match=}\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}html}\PYG{n+nt}{\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}head}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}title}\PYG{n+nt}{\PYGZgt{}}Resultado\PYG{n+nt}{\PYGZlt{}/title\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/head\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}body}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ol}\PYG{n+nt}{\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}xsl:for\PYGZhy{}each} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}catalogo/libro/autores/autor\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}xsl:sort} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}.\PYGZdq{}} \PYG{n+na}{order=}\PYG{l+s}{\PYGZdq{}descending\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}li}\PYG{n+nt}{\PYGZgt{}}
+              \PYG{n+nt}{\PYGZlt{}xsl:value\PYGZhy{}of} \PYG{n+na}{select=}\PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/li\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}/xsl:for\PYGZhy{}each\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ol\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/body\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/html\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}/xsl:template\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}

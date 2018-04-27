@@ -348,8 +348,8 @@
 \contentsline {section}{\numberline {11.10}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{273}{section.11.10}
 \contentsline {section}{\numberline {11.11}Ejercicio de examen XSLT}{274}{section.11.11}
 \contentsline {section}{\numberline {11.12}Transformaci\IeC {\'o}n de un XML bancario}{275}{section.11.12}
-\contentsline {subsection}{\numberline {11.12.1}An\IeC {\'a}lisis del problema}{276}{subsection.11.12.1}
-\contentsline {subsection}{\numberline {11.12.2}Soluci\IeC {\'o}n paso a paso}{276}{subsection.11.12.2}
+\contentsline {subsection}{\numberline {11.12.1}An\IeC {\'a}lisis del problema}{277}{subsection.11.12.1}
+\contentsline {subsection}{\numberline {11.12.2}Soluci\IeC {\'o}n paso a paso}{277}{subsection.11.12.2}
 \contentsline {chapter}{\numberline {12}Anexo: Ejercicios de XPath}{287}{chapter.12}
 \contentsline {section}{\numberline {12.1}Soluciones}{288}{section.12.1}
 \contentsline {chapter}{\numberline {13}Anexo: Ejercicios de XQuery}{291}{chapter.13}
