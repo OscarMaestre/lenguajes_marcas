@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sistemas de gestión de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Anexo: ejercicios sobre tablas" href="ejercicios/html/anexo_tablas.html" />
+    <link rel="prev" title="Sindicación y transformación de contenidos" href="tema7.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sistemas-de-gestion-de-informacion">
+<h1>Sistemas de gestión de información<a class="headerlink" href="#sistemas-de-gestion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Primero definiremos los términos:</p>
+<ul class="simple">
+<li>Sistema: «conjunto de elementos interrelacionados que colaboran para la consecución de un objetivo».</li>
+<li>Gestión de información: movimientos de información que facilitan la consecución de los objetivos de la empresa.</li>
+</ul>
+<p>Entre los objetivos más habituales están:</p>
+<ul class="simple">
+<li>Objetivos económicos.</li>
+<li>Objetivos temporales (supervivencia).</li>
+<li>Objetivos legales, entre los que destacan los fiscales.</li>
+</ul>
+<p>Procesar la información hoy en día es muy difícil, por lo que la informática es de gran ayuda en dicho procesamiento: (INFORmación+autoMÁTICA).</p>
+<p>¿Todos los sistemas de una empresa son informáticos? NO. Un ejemplo es el sistema postal que no requiere (y no siempre ha requerido) parte informática.</p>
+</div>
+<div class="section" id="niveles-en-la-empresa">
+<h2>Niveles en la empresa<a class="headerlink" href="#niveles-en-la-empresa" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Toda empresa se puede ver desde tres puntos de vista temporales distintos</p>
+<ol class="arabic simple">
+<li>Nivel estratégico: en este nivel están las personas o elementos que tienen un punto de vista más global y más largo plazo (normalmente plazos de varios años).</li>
+<li>Nivel táctico: en este nivel están los mandos intermedios de la empresa con plazos medios (máximo un año)</li>
+<li>Nivel operativo: está el personal «de a pie», que recoge la información a diario y la procesa a diario.</li>
+</ol>
+<p>Ejemplo: Mercadona.</p>
+<div class="section" id="tipos-de-sgi-informaticos">
+<h3>Tipos de SGI informáticos<a class="headerlink" href="#tipos-de-sgi-informaticos" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>DSS o Decision Support System: ayudan a tomar decisiones en función de la información disponible.</li>
+<li>CRM o Customer Relationship Managements o Gestores de la relación con clientes. Son sistemas que gestionan información muy personalizada a los clientes, tales como sistemas de recomendación, sistemas de fidelización. Los CRM manejan la comunicación entre información interna y externa de la empresa.</li>
+<li>ERP o Enterprise Resource Planning o sistemas de planificación de recursos corporativos gestionan toda la información interna de la empresa.</li>
+</ul>
+<p>Los ERP han ganado mucho auge con el tiempo, ya que pueden hacer operaciones muy sofisticadas, entre ellas:</p>
+<ol class="arabic simple">
+<li>Optimización de procesos: implica resolver complejos problemas matemáticos que con una herramienta informática se resuelven al instante.</li>
+<li>Logística: implica resolver problemas de transporte de productos en base a diversas restricciones (no todas matemáticas). Un problema muy común es la optimización de rutas que implica resolver el «problema del viajante».</li>
+<li>Fiscalidad: permite aprovechar las diferentes ventajas que en materia de fiscalidad se ofrecen en distintos casos, en distintos territorios…</li>
+<li>Contabilidad: la participación en diversas sociedades empresariales puede complicar las operaciones de contabilidad, operaciones que un ERP puede registrar.</li>
+<li>Optimización de recursos humanos: optimizar el volumen de contrataciones y despidos, nóminas, etc…</li>
+<li>Operaciones de informes y estadística: para conocer el estado real de la empresa en sus distintos departamentos y períodos.</li>
+<li>Trazabilidad: permite conocer el punto exacto de ubicación de un producto a lo largo de toda la cadena de abastecimiento (supply chain).</li>
+</ol>
+</div>
+</div>
+<div class="section" id="almacenamiento-en-los-sgi">
+<h2>Almacenamiento en los SGI<a class="headerlink" href="#almacenamiento-en-los-sgi" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La mayor parte de SGI se apoyan en tecnologías conocidas como SGBD con SQL e incluso XML.</p>
+<p>La mayor parte de SGBD permite procesar y extraer información en forma de SQL.</p>
+<p>En general, cualquier consulta sobre cualquier tabla puede convertirse en XML. Cuando por ejemplo hacemos</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">marcas</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>obtenemos un resultado como este:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+----+--------+-------------+</span>
+<span class="o">|</span> <span class="nb">id</span> <span class="o">|</span> <span class="n">nombre</span> <span class="o">|</span> <span class="n">ap</span>          <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Juan</span>   <span class="o">|</span> <span class="n">Lopez</span> <span class="n">Lopez</span> <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span> <span class="n">Andres</span> <span class="o">|</span> <span class="n">Ruiz</span> <span class="n">Gomez</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">3</span> <span class="o">|</span> <span class="n">Tomas</span>  <span class="o">|</span> <span class="n">Perez</span> <span class="n">Diaz</span>  <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
+
+<span class="mi">3</span> <span class="n">rows</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sin embargo, podemos ejecutar el siguiente comando que se conecta a MySQL ejecuta la consulta dada y devuelve un fichero XML:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">Ddatos</span> <span class="o">-</span><span class="n">e</span><span class="s2">&quot;select * from usuarios&quot;</span> <span class="o">--</span><span class="n">xml</span>
+</pre></div>
+</div>
+<p>El resultado será algo como esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span> <span class="nt">&lt;resultset</span> <span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Juan<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Lopez Lopez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Andres<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Ruiz Gomez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Tomas<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Perez Diaz<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+ <span class="nt">&lt;/resultset&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="puntos-de-vista-en-los-sgi">
+<h2>Puntos de vista en los SGI<a class="headerlink" href="#puntos-de-vista-en-los-sgi" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="desarrollador">
+<h3>Desarrollador<a class="headerlink" href="#desarrollador" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para un desarrollador hay ciertos temas fundamentales a conocer del SGI con el que trabaje:</p>
+<ul class="simple">
+<li>Programable ¿qué lenguaje de programación usa? ¿usa OOP? ¿es un tipo de lenguaje distinto?.</li>
+<li>¿Se puede conectar desde algún lenguaje general?</li>
+<li>¿Se pueden usar otras bibliotecas de uso general? (Hibernate)</li>
+</ul>
+</div>
+<div class="section" id="administrador">
+<h3>Administrador<a class="headerlink" href="#administrador" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>¿Se pueden controlar  los accesos?</li>
+<li>¿Como cumplir la LOPD y sus 3 niveles?</li>
+</ul>
+</div>
+<div class="section" id="usuario">
+<h3>Usuario<a class="headerlink" href="#usuario" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>¿Como se usa el SGI? En unos casos hay muchos requisitos pero cada vez más abundan los SGI con interfaz Web.</li>
+<li>La adaptación específica que ofrece el sistema a la empresa. El PGC en España es un elemento al cual un programa puede estar adaptado o no. Otra posibilidad es que el programa permita INCOTERMS.</li>
+</ul>
+</div>
+<div class="section" id="ejercicio">
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sistemas de gestión de información</a><ul>
+<li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#niveles-en-la-empresa">Niveles en la empresa</a><ul>
+<li><a class="reference internal" href="#tipos-de-sgi-informaticos">Tipos de SGI informáticos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#almacenamiento-en-los-sgi">Almacenamiento en los SGI</a></li>
+<li><a class="reference internal" href="#puntos-de-vista-en-los-sgi">Puntos de vista en los SGI</a><ul>
+<li><a class="reference internal" href="#desarrollador">Desarrollador</a></li>
+<li><a class="reference internal" href="#administrador">Administrador</a></li>
+<li><a class="reference internal" href="#usuario">Usuario</a></li>
+<li><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tema7.html" title="capítulo anterior">Sindicación y transformación de contenidos</a></li>
+      <li>Next: <a href="ejercicios/html/anexo_tablas.html" title="próximo capítulo">Anexo: ejercicios sobre tablas</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tema8.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/tema8.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

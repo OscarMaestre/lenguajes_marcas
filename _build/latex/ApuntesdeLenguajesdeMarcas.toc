@@ -347,9 +347,14 @@
 \contentsline {section}{\numberline {11.9}Productos del edificio B}{273}{section.11.9}
 \contentsline {section}{\numberline {11.10}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{273}{section.11.10}
 \contentsline {section}{\numberline {11.11}Ejercicio de examen XSLT}{274}{section.11.11}
-\contentsline {section}{\numberline {11.12}Transformaci\IeC {\'o}n de un XML bancario}{275}{section.11.12}
+\contentsline {section}{\numberline {11.12}Transformaci\IeC {\'o}n de un XML bancario}{276}{section.11.12}
 \contentsline {subsection}{\numberline {11.12.1}An\IeC {\'a}lisis del problema}{277}{subsection.11.12.1}
 \contentsline {subsection}{\numberline {11.12.2}Soluci\IeC {\'o}n paso a paso}{277}{subsection.11.12.2}
 \contentsline {chapter}{\numberline {12}Anexo: Ejercicios de XPath}{287}{chapter.12}
 \contentsline {section}{\numberline {12.1}Soluciones}{288}{section.12.1}
-\contentsline {chapter}{\numberline {13}Anexo: Ejercicios de XQuery}{291}{chapter.13}
+\contentsline {section}{\numberline {12.2}Informaci\IeC {\'o}n bancaria}{289}{section.12.2}
+\contentsline {section}{\numberline {12.3}Consulta: \IeC {\guillemotleft }cantidad depositada\IeC {\guillemotright }}{290}{section.12.3}
+\contentsline {section}{\numberline {12.4}Consulta: \IeC {\guillemotleft }monedas usadas\IeC {\guillemotright }}{290}{section.12.4}
+\contentsline {section}{\numberline {12.5}Consulta: \IeC {\guillemotleft }dnis con d\IeC {\'o}lares\IeC {\guillemotright }}{290}{section.12.5}
+\contentsline {section}{\numberline {12.6}Consulta: \IeC {\guillemotleft }fondos con menos de 2500 euros\IeC {\guillemotright }}{291}{section.12.6}
+\contentsline {chapter}{\numberline {13}Anexo: Ejercicios de XQuery}{293}{chapter.13}
