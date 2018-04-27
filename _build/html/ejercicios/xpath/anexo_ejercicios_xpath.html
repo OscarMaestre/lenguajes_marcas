@@ -139,6 +139,99 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <span class="pre">(peso/&#64;unidad=&quot;kg&quot;</span> <span class="pre">and</span> <span class="pre">peso/text()&gt;&quot;0.25&quot;)</span>
 <span class="pre">]/&#64;codigo</span></code></p>
 </div>
+<div class="section" id="informacion-bancaria">
+<h2>Información bancaria<a class="headerlink" href="#informacion-bancaria" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dado el siguiente fichero XML, contestar a las preguntas que se enuncian más abajo usando XPath.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
+    <span class="nt">&lt;cuenta&gt;</span>
+        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>12000<span class="nt">&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;fechacreacion&gt;</span>13-abril-2012<span class="nt">&lt;/fechacreacion&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+    <span class="nt">&lt;fondo&gt;</span>
+        <span class="nt">&lt;cuentaasociada&gt;</span>20-A<span class="nt">&lt;/cuentaasociada&gt;</span>
+        <span class="nt">&lt;datos&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/datos&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;fondo&gt;</span>
+        <span class="nt">&lt;cuentaasociada&gt;</span>21-DX<span class="nt">&lt;/cuentaasociada&gt;</span>
+        <span class="nt">&lt;datos&gt;</span>
+            <span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
+            <span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
+        <span class="nt">&lt;/datos&gt;</span>
+    <span class="nt">&lt;/fondo&gt;</span>
+    <span class="nt">&lt;cuenta&gt;</span>
+        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
+        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>1900<span class="nt">&lt;/saldoactual&gt;</span>
+        <span class="nt">&lt;fechacreacion&gt;</span>15-febrero-2011<span class="nt">&lt;/fechacreacion&gt;</span>
+    <span class="nt">&lt;/cuenta&gt;</span>
+<span class="nt">&lt;/listado&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-cantidad-depositada">
+<h2>Consulta: «cantidad depositada»<a class="headerlink" href="#consulta-cantidad-depositada" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>Extraer la cantidad depositada en la cuenta 20-A</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal"><span class="pre">fondo</span></code></li>
+<li><code class="docutils literal"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal"><span class="pre">inventario</span></code>.</li>
+</ul>
+<p>Como nos piden una cantidad el último elemento XPath debe ser forzosamente <code class="docutils literal"><span class="pre">cantidad</span></code>. Como nos ponen una condición tendremos que usar corchetes. El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> es hijo de <code class="docutils literal"><span class="pre">fondo</span></code> así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que
+* Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">cuentaasociada</span> <span class="o">=</span> <span class="s2">&quot;20-A&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span>
+</pre></div>
+</div>
+<p>Si realmenten nos piden la cantidad sin etiquetas podemos añadir al final <code class="docutils literal"><span class="pre">/text()</span></code> y dejarlo así:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">cuentaasociada</span> <span class="o">=</span> <span class="s2">&quot;20-A&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-monedas-usadas">
+<h2>Consulta: «monedas usadas»<a class="headerlink" href="#consulta-monedas-usadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>Extraer un listado sin etiquetas de todas las monedas usadas por los distintos fondos</em></p>
+<p>La consulta sería simplemente:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">moneda</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-dnis-con-dolares">
+<h2>Consulta: «dnis con dólares»<a class="headerlink" href="#consulta-dnis-con-dolares" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>Extraer el DNI de las cuentas que usen dolares como moneda de base</em></p>
+<p>En las cuentas la moneda es un atributo de <code class="docutils literal"><span class="pre">saldoactual</span></code>, por lo que la condición debería ser:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span><span class="p">[</span><span class="nd">@moneda</span><span class="o">=</span><span class="s2">&quot;dolares&quot;</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Como nos piden el DNI  este debe ser el campo que debe aparecer al final del XPath. Aparte de eso el DNI es un atributo de <code class="docutils literal"><span class="pre">titular</span></code>, por lo que la consulta debería ser algo así:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span><span class="p">[</span><span class="nd">@moneda</span><span class="o">=</span><span class="s2">&quot;dolares&quot;</span><span class="p">]</span><span class="o">...</span> <span class="o">/</span><span class="nd">@dni</span>
+</pre></div>
+</div>
+<p>Como el <code class="docutils literal"><span class="pre">dni</span></code> es un atributo de <code class="docutils literal"><span class="pre">titular</span></code> y <code class="docutils literal"><span class="pre">moneda</span></code> es un atributo de <code class="docutils literal"><span class="pre">saldoactual</span></code> una buena posibilidad es mover la condición al elemento padre <code class="docutils literal"><span class="pre">cuenta</span></code> y hacer algo así:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">cuenta</span><span class="p">[</span><span class="n">saldoactual</span><span class="o">/</span><span class="nd">@moneda</span> <span class="o">=</span> <span class="s2">&quot;dolares&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">titular</span><span class="o">/</span><span class="nd">@dni</span>
+</pre></div>
+</div>
+<p>Obsérvese que para el ejemplo dado <strong>no hay ningún resultado</strong> (de hecho el evaluador dará error porque nadie cumple la condición). Si se desea comprobar que el XPath está bien se invita al lector a añadir datos al conjunto para verificar que la expresión XPath funciona correctamente.</p>
+</div>
+<div class="section" id="consulta-fondos-con-menos-de-2500-euros">
+<h2>Consulta: «fondos con menos de 2500 euros»<a class="headerlink" href="#consulta-fondos-con-menos-de-2500-euros" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>Extraer toda la información de los fondos que usen «euros» por un valor inferior a 2500</em></p>
+<p>Por el texto del enunciado es evidente que el último elemento del XPath debe ser <code class="docutils literal"><span class="pre">fondo</span></code>, por lo que de momento podemos saber que la expresión tendría este aspecto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.../</span><span class="n">fondo</span>
+</pre></div>
+</div>
+<p>También es evidente que hay una condición de filtrado. Esta condición tiene dos partes:</p>
+<ul class="simple">
+<li>Por un lado la divisa debe ser «Dolares». La divisa va dentro del elemento <code class="docutils literal"><span class="pre">moneda</span></code> que es hijo de <code class="docutils literal"><span class="pre">datos</span></code> que a su vez es hijo de <code class="docutils literal"><span class="pre">fondo</span></code></li>
+<li>Por otro lado la cantidad debe ser inferior a 2500. Esta información está en <code class="docutils literal"><span class="pre">cantidaddepositada</span></code>.</li>
+<li>Para este caso necesitamos que se cumplan ambas condiciones por lo que deberemos usar <code class="docutils literal"><span class="pre">AND</span></code></li>
+</ul>
+<p>Una posible consulta que resuelve esto es:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span><span class="o">&lt;</span><span class="mi">2500</span> <span class="ow">and</span> <span class="n">datos</span><span class="o">/</span><span class="n">moneda</span> <span class="o">=</span> <span class="s2">&quot;Dolares&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>De nuevo nos encontramos con que el programa puede dar une rror, lo que tiene todo el sentido del mundo, ya que le pedimos que extraiga datos de algo que no existe.</p>
+</div>
 </div>
 
 
@@ -151,6 +244,11 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
   <ul>
 <li><a class="reference internal" href="#">Anexo: Ejercicios de XPath</a><ul>
 <li><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li><a class="reference internal" href="#informacion-bancaria">Información bancaria</a></li>
+<li><a class="reference internal" href="#consulta-cantidad-depositada">Consulta: «cantidad depositada»</a></li>
+<li><a class="reference internal" href="#consulta-monedas-usadas">Consulta: «monedas usadas»</a></li>
+<li><a class="reference internal" href="#consulta-dnis-con-dolares">Consulta: «dnis con dólares»</a></li>
+<li><a class="reference internal" href="#consulta-fondos-con-menos-de-2500-euros">Consulta: «fondos con menos de 2500 euros»</a></li>
 </ul>
 </li>
 </ul>
@@ -188,7 +286,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

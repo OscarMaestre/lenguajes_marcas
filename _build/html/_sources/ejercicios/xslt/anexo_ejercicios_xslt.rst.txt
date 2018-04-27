@@ -114,6 +114,13 @@ Una posible solución sería esta:
     </xsl:template>    
     </xsl:stylesheet>
     
+Sin embargo, **dicha solución está mal** porque una pregunta básica es "el peso está en kg o en g", por lo que en realidad la condición de filtrado debe refinarse un poco más.
+
+Supongamos entonces que el enunciado correcto pone el peso en kg. Así, la solución entonces podría hacerse de esta manera.
+
+
+
+
 Productos del edificio B
 ----------------------------
 
