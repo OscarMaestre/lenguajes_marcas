@@ -219,7 +219,8 @@
 \contentsline {subsection}{\numberline {5.18.21}Ejercicio: inventario}{138}{subsection.5.18.21}
 \contentsline {section}{\numberline {5.19}Ejercicio tipo examen}{142}{section.5.19}
 \contentsline {section}{\numberline {5.20}Ejercicio tipo examen (II)}{145}{section.5.20}
-\contentsline {section}{\numberline {5.21}Examen}{145}{section.5.21}
+\contentsline {section}{\numberline {5.21}Ejercicio tipo examen (III)}{145}{section.5.21}
+\contentsline {section}{\numberline {5.22}Examen}{146}{section.5.22}
 \contentsline {chapter}{\numberline {6}Recuperaci\IeC {\'o}n de informaci\IeC {\'o}n}{147}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{147}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fundamentos de DOM con Java}{147}{section.6.2}
@@ -265,7 +266,7 @@
 \contentsline {section}{\numberline {7.3}XPath}{180}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Acceso a elementos}{181}{subsection.7.3.1}
 \contentsline {section}{\numberline {7.4}Adaptaci\IeC {\'o}n y transformaci\IeC {\'o}n de XML}{183}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}CSS con XML}{184}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.1}CSS con XML}{183}{subsection.7.4.1}
 \contentsline {subsubsection}{Ejercicio}{184}{subsubsection*.26}
 \contentsline {subsection}{\numberline {7.4.2}Transformaci\IeC {\'o}n de XML}{185}{subsection.7.4.2}
 \contentsline {subsection}{\numberline {7.4.3}Ejercicio (carga de estilos)}{186}{subsection.7.4.3}
@@ -278,8 +279,8 @@
 \contentsline {subsection}{\numberline {7.4.10}Ejercicio}{190}{subsection.7.4.10}
 \contentsline {subsection}{\numberline {7.4.11}Ejercicio}{191}{subsection.7.4.11}
 \contentsline {subsection}{\numberline {7.4.12}Ejercicio XSL, paso a paso}{192}{subsection.7.4.12}
-\contentsline {subsection}{\numberline {7.4.13}Ejercicio: condiciones complejas}{195}{subsection.7.4.13}
-\contentsline {subsection}{\numberline {7.4.14}Transformaci\IeC {\'o}n en tabla}{197}{subsection.7.4.14}
+\contentsline {subsection}{\numberline {7.4.13}Ejercicio: condiciones complejas}{196}{subsection.7.4.13}
+\contentsline {subsection}{\numberline {7.4.14}Transformaci\IeC {\'o}n en tabla}{196}{subsection.7.4.14}
 \contentsline {subsection}{\numberline {7.4.15}Transformacion de pedidos}{197}{subsection.7.4.15}
 \contentsline {subsection}{\numberline {7.4.16}Transformaci\IeC {\'o}n de pedidos (II)}{199}{subsection.7.4.16}
 \contentsline {subsection}{\numberline {7.4.17}Ejercicio (no se da la soluci\IeC {\'o}n)}{200}{subsection.7.4.17}
@@ -337,14 +338,23 @@
 \contentsline {chapter}{\numberline {11}Anexo: ejercicios sobre XSLT}{267}{chapter.11}
 \contentsline {section}{\numberline {11.1}Fichero origen}{267}{section.11.1}
 \contentsline {section}{\numberline {11.2}Generaci\IeC {\'o}n de lista con puntos}{267}{section.11.2}
-\contentsline {section}{\numberline {11.3}Recuperaci\IeC {\'o}n de elementos pesados}{268}{section.11.3}
-\contentsline {section}{\numberline {11.4}Productos del edificio B}{269}{section.11.4}
-\contentsline {section}{\numberline {11.5}Tabla de localizaciones}{269}{section.11.5}
-\contentsline {section}{\numberline {11.6}Tablas con edificios separados}{270}{section.11.6}
-\contentsline {section}{\numberline {11.7}Productos del aula 6}{272}{section.11.7}
-\contentsline {section}{\numberline {11.8}Productos del edificio B}{272}{section.11.8}
-\contentsline {section}{\numberline {11.9}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{272}{section.11.9}
-\contentsline {section}{\numberline {11.10}Ejercicio de examen XSLT}{273}{section.11.10}
-\contentsline {section}{\numberline {11.11}Transformaci\IeC {\'o}n de un XML bancario}{274}{section.11.11}
-\contentsline {subsection}{\numberline {11.11.1}An\IeC {\'a}lisis del problema}{275}{subsection.11.11.1}
-\contentsline {subsection}{\numberline {11.11.2}Soluci\IeC {\'o}n paso a paso}{276}{subsection.11.11.2}
+\contentsline {section}{\numberline {11.3}Filtrado}{268}{section.11.3}
+\contentsline {section}{\numberline {11.4}Recuperaci\IeC {\'o}n de elementos pesados}{269}{section.11.4}
+\contentsline {section}{\numberline {11.5}Productos del edificio B}{269}{section.11.5}
+\contentsline {section}{\numberline {11.6}Tabla de localizaciones}{270}{section.11.6}
+\contentsline {section}{\numberline {11.7}Tablas con edificios separados}{271}{section.11.7}
+\contentsline {section}{\numberline {11.8}Productos del aula 6}{272}{section.11.8}
+\contentsline {section}{\numberline {11.9}Productos del edificio B}{273}{section.11.9}
+\contentsline {section}{\numberline {11.10}Condiciones m\IeC {\'u}ltiples: peso ligero y edificio A}{273}{section.11.10}
+\contentsline {section}{\numberline {11.11}Ejercicio de examen XSLT}{274}{section.11.11}
+\contentsline {section}{\numberline {11.12}Transformaci\IeC {\'o}n de un XML bancario}{276}{section.11.12}
+\contentsline {subsection}{\numberline {11.12.1}An\IeC {\'a}lisis del problema}{277}{subsection.11.12.1}
+\contentsline {subsection}{\numberline {11.12.2}Soluci\IeC {\'o}n paso a paso}{277}{subsection.11.12.2}
+\contentsline {chapter}{\numberline {12}Anexo: Ejercicios de XPath}{287}{chapter.12}
+\contentsline {section}{\numberline {12.1}Soluciones}{288}{section.12.1}
+\contentsline {section}{\numberline {12.2}Informaci\IeC {\'o}n bancaria}{289}{section.12.2}
+\contentsline {section}{\numberline {12.3}Consulta: \IeC {\guillemotleft }cantidad depositada\IeC {\guillemotright }}{290}{section.12.3}
+\contentsline {section}{\numberline {12.4}Consulta: \IeC {\guillemotleft }monedas usadas\IeC {\guillemotright }}{290}{section.12.4}
+\contentsline {section}{\numberline {12.5}Consulta: \IeC {\guillemotleft }dnis con d\IeC {\'o}lares\IeC {\guillemotright }}{290}{section.12.5}
+\contentsline {section}{\numberline {12.6}Consulta: \IeC {\guillemotleft }fondos con menos de 2500 euros\IeC {\guillemotright }}{291}{section.12.6}
+\contentsline {chapter}{\numberline {13}Anexo: Ejercicios de XQuery}{293}{chapter.13}

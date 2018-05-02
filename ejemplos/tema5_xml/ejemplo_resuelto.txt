@@ -1,0 +1,688 @@
+<listacomponentes>
+  <componente>
+    <tarjetagrafica>
+      <memoria>2GB</memoria>
+      <precio moneda="euros">190</precio>
+    </tarjetagrafica>
+  </componente>
+  <componente codigo="123456">
+    <monitor>
+      <tamanio>14</tamanio>
+      <precio moneda="euros">99.49</precio>
+    </monitor>
+  </componente>
+</listacomponentes>
+
+<!ELEMENT listacomponentes (componente)+>
+<!ELEMENT componente ( tarjetagrafica | monitor ) >
+<!ATTLIST componente codigo CDATA #IMPLIED>
+<!ELEMENT tarjetagrafica ( memoria, precio )>
+<!ELEMENT memoria (#PCDATA)>
+<!ELEMENT monitor (tamanio, precio)>
+<!ELEMENT tamanio (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+  
+  
+  
+Al construir esquemas se debe tener presente que el W3C define tres posibles tipos
+
+1. Tipos simples (la etiqueta simpleType). No pueden llevar ni hijos ni atributos.
+2. Tipos compuestos:
+2.1 Tipos compuestos con contenido simple: sí pueden llevar atributos pero no pueden llevar hijos. Tendremos una etiqueta complexType que lleva dentro la etiqueta simpleContent
+2.2 Tipos compuestos con contenido complejo: sí pueden llevar atributos y sí pueden llevar hijos. La etiqueta es complexType con complexContent.
+
+No existe ningun tipo para la combinación "sí puede llevar hijos pero no puede llevar atributos."
+
+xmlns significa XML NameSpace o espacios de nombres XML. Podemos coger las etiquetas definidas por otro y usarlas en nuestros documentos.
+
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="tamanio" type="tipoTamanio"/>
+  
+</xsd:schema>
+
+Si ahora probamos un documento tan simple como este
+
+<tamanio>14</tamanio>
+
+Veremos que se valida correctamente
+
+
+Siguiente paso
+------------------
+
+
+El esquema siguiente:
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="memoria" type="tipoMemoria"/>
+</xsd:schema>
+
+Valida esto:
+<memoria>2GB</memoria>
+
+Pero hay un problema: aceptamos CUALQUIER CADENA. Es decir esto también lo da por válido.
+
+<memoria>kljsd809ds8907we</memoria>
+
+En realidad, tenemos que incluir un patrón que explique la estructura de las cadenas válidas. Reformamos el esquema de esta manera
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <!--Incluimos el patron que exige el ejercicio-->
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="memoria" type="tipoMemoria"/>
+
+</xsd:schema>
+
+Ahora esto sí lo da por válido.
+
+<memoria>2GB</memoria>
+
+Pero esto no
+
+<memoria>kljsd809ds8907we</memoria>
+
+Siguiente paso
+-------------------
+
+Ahora desarrollemos un tipo para controlar los precios. Los precios tienen un atributo pero no tienen hijos. Son, por tanto, complexType con simpleContent. Ampliemos el esquema anterior
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Añadimos un tipo para los precios-->
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <!--Cuidado, en realidad los precios aceptan decimales,
+      resolveremos esto despues-->
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attribute name="moneda" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:element name="precio" type="tipoPrecio"/>
+  
+
+</xsd:schema>
+
+Este esquema es "parcialmente correcto" porque nos acepta el elemento precio y nos acepta que tenga un atributo moneda. Sin embargo acepta cualquier cosa dentro del atributo moneda. Es decir, esto está bien
+
+<precio moneda="euros">190</precio>
+
+Sin embargo, SE DA POR BUENO ESTO Y NO DEBERÍA DARLO
+
+<precio moneda="alkjsakljas">190</precio>
+
+Por desgracia se debe ir mas lejos Y CONSTRUIR UN TIPO PARA LA MONEDA.
+
+
+Ampliemos el esquema
+
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Añadimos un tipo para los precios-->
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <!--Hemos creado un tipo propio para la moneda-->
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <!--La moneda es un atributo así que no puede tener otros atributos
+  y no puede tener un hijo, forzosamente debe ser un simpleType-->
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="precio" type="tipoPrecio"/>
+</xsd:schema>
+
+
+
+Ahora esto se da por bueno (igual que antes)
+
+<precio moneda="euros">190</precio>
+
+Sin embargo, YA NO SE DA POR BUENO ESTO
+
+<precio moneda="alkjsakljas">190</precio>
+
+
+
+Siguiente paso
+-------------------
+
+Tenemos tipos básicos y ahora hay que empezar a construir los tipos mas sofisticados. Por ejemplo un "monitor" es una secuencia de elementos "tamanio" y "precio". Ampliemos el esquema
+
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveFloat">
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Construimos el tipo monitor-->
+  <xsd:complexType name="tipoMonitor">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="tamanio" type="tipoTamanio"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:element name="monitor" type="tipoMonitor"></xsd:element>
+  
+</xsd:schema>
+
+Ahora podremos probar un ejemplo un poco mas complejo para ver si validamos bien un monitor.
+
+<monitor>
+  <tamanio>14</tamanio>
+  <precio moneda="euros">99</precio>
+</monitor>
+
+Si lo validamos veremos que funciona correctamente.
+
+
+Siguiente paso
+-----------------
+
+Construyamos ahora las tarjetas gráficas. De manera parecida, una tarjeta gráfica si tiene hijos (en concreto una secuencia de hijos).
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoMonitor">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="tamanio" type="tipoTamanio"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoTarjetaGrafica">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="memoria" type="tipoMemoria"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:element name="tarjetagrafica" type="tipoTarjetaGrafica"/>
+  
+</xsd:schema>
+
+
+
+Probemos a validar esto:
+
+<tarjetagrafica>
+  <memoria>2GB</memoria>
+  <precio moneda="euros">190</precio>
+</tarjetagrafica>
+
+
+Siguiente paso
+-------------------
+
+Ahora habría que definir que un componente puede ser O UNA TARJETA GRAFICA O UN MONITOR. Es decir, un componente tiene hijos pero ahora no son una secuencia sino opciones (xsd:choice)
+
+
+Ampliamos el esquema y lo dejamos asi:
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoMonitor">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="tamanio" type="tipoTamanio"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoTarjetaGrafica">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="memoria" type="tipoMemoria"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoComponente">
+    <xsd:choice>
+      <xsd:element name="tarjetagrafica"
+                   type="tipoTarjetaGrafica"/>
+      <xsd:element name="monitor"
+                   type="tipoMonitor"/>
+    </xsd:choice>
+    <!--Cuidado, los componentes tienen un codigo con una estructura
+    que tendremos que definir por separado-->
+    <xsd:attribute name="codigo"
+                   type="tipoCodigo"/>
+                   
+  </xsd:complexType>
+  
+  <!--Definamos la estructura de un codigo. Un codigo es un atributo, asi que
+  ni tiene hijos ni tiene atributos, tiene que ser un simpleType-->
+  <xsd:simpleType name="tipoCodigo">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]{6}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="componente" type="tipoComponente"/>
+</xsd:schema>
+
+
+Y veremos que valida este componente:
+
+<componente>
+    <tarjetagrafica>
+      <memoria>2GB</memoria>
+      <precio moneda="euros">190</precio>
+    </tarjetagrafica>
+</componente>
+
+Y este de aquí también:
+
+<componente codigo="123456">
+  <monitor>
+    <tamanio>14</tamanio>
+    <precio moneda="euros">99</precio>
+  </monitor>
+</componente>
+
+
+
+Siguiente paso
+-------------------
+
+Hemos dicho que los precios ACEPTABAN decimales y que debían ser positivos, sin embargo no existen los "positiveFloat", así que tenemos que construir un tipo que controle este caso. Resulta que los precios pueden llevar atributos (es decir, ampliamos o extendemos) pero por otro lado los precios no aceptan cualquier cosa (es decir, aplicamos restricciones). Esto supone un conflicto que hay que resolver en dos pasos: primero se debe hacer la restriccion y luego la extensión. Tendremos que inventarnos un tipo extra, hacer la restriccion y despues en otro tipo (que será el bueno) pondremos la extension, es decir, el atributo.
+
+Modificamos el esquema y nos queda así:
+
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Este tipo nos lo hemos tenido que fabricar para
+  conseguir lo que nos pedian-->
+  <xsd:simpleType name="tipoPositivoConDecimales">
+    <xsd:restriction base="xsd:float">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="tipoPositivoConDecimales">
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoMonitor">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="tamanio" type="tipoTamanio"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoTarjetaGrafica">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="memoria" type="tipoMemoria"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoComponente">
+    <xsd:choice>
+      <xsd:element name="tarjetagrafica"
+                   type="tipoTarjetaGrafica"/>
+      <xsd:element name="monitor"
+                   type="tipoMonitor"/>
+    </xsd:choice>
+    <!--Cuidado, los componentes tienen un codigo con una estructura
+    que tendremos que definir por separado-->
+    <xsd:attribute name="codigo"
+                   type="tipoCodigo"/>
+                   
+  </xsd:complexType>
+  
+  <!--Definamos la estructura de un codigo. Un codigo es un atributo, asi que
+  ni tiene hijos ni tiene atributos, tiene que ser un simpleType-->
+  <xsd:simpleType name="tipoCodigo">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]{6}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="componente" type="tipoComponente"/>
+</xsd:schema>
+
+Esto valida componentes como este:
+
+
+<componente codigo="123456">
+  <monitor>
+    <tamanio>14</tamanio>
+    <precio moneda="euros">99.49</precio>
+  </monitor>
+</componente>
+
+
+Siguiente paso
+-----------------
+
+Ahora toca decir que puede haber uno o mas componentes, es decir, tenemos que definir la raiz. Ampliamos el esquema y nos va a quedar asi:
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="tipoTamanio">
+    <xsd:restriction base="xsd:positiveInteger">
+      
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="tipoMemoria">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+[GT]B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Este tipo nos lo hemos tenido que fabricar para
+  conseguir lo que nos pedian-->
+  <xsd:simpleType name="tipoPositivoConDecimales">
+    <xsd:restriction base="xsd:float">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="tipoPositivoConDecimales">
+        <xsd:attribute name="moneda" type="tipoMoneda"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="euros"/>
+      <xsd:enumeration value="dolares"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="tipoMonitor">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="tamanio" type="tipoTamanio"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoTarjetaGrafica">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="memoria" type="tipoMemoria"/>
+          <xsd:element name="precio" type="tipoPrecio"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tipoComponente">
+    <xsd:choice>
+      <xsd:element name="tarjetagrafica"
+                   type="tipoTarjetaGrafica"/>
+      <xsd:element name="monitor"
+                   type="tipoMonitor"/>
+    </xsd:choice>
+    
+    <xsd:attribute name="codigo"
+                   type="tipoCodigo"/>
+                   
+  </xsd:complexType>
+  
+  
+  <xsd:simpleType name="tipoCodigo">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]{6}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!--Definimos el elemento raíz-->
+  <xsd:complexType name="tipoListaComponentes">
+    <xsd:complexContent>
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:element name="componente" type="tipoComponente"
+                       maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:element name="listacomponentes" type="tipoListaComponentes"/>
+</xsd:schema>
+
+Que nos va a validar esto correctamente:
+<listacomponentes>
+  <componente>
+    <tarjetagrafica>
+      <memoria>2GB</memoria>
+      <precio moneda="euros">190</precio>
+    </tarjetagrafica>
+  </componente>
+  <componente codigo="123456">
+    <monitor>
+      <tamanio>14</tamanio>
+      <precio moneda="euros">99.49</precio>
+    </monitor>
+  </componente>
+</listacomponentes>
+
+
+
+Y esto tambien:
+
+<listacomponentes>
+  <componente>
+    <tarjetagrafica>
+      <memoria>2GB</memoria>
+      <precio moneda="euros">190</precio>
+    </tarjetagrafica>
+  </componente>
+  <componente codigo="123456">
+    <monitor>
+      <tamanio>14</tamanio>
+      <precio moneda="euros">99</precio>
+    </monitor>
+  </componente>
+  <componente>
+    <tarjetagrafica>
+      <memoria>16gB</memoria>
+      <precio moneda="dolares">290</precio>
+    </tarjetagrafica>
+  </componente>
+</listacomponentes>
