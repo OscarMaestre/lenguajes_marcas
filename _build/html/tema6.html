@@ -45,12 +45,400 @@
 <h1>Recuperación de información<a class="headerlink" href="#recuperacion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En líneas generales hay dos grandes formas de usar un lenguaje de programación para leer o escribir archivos XML</p>
+<p>En este tema veremos que podemos recuperar información de archivos XML <em>igual</em> que si fuesen bases de datos. Para ello podemos usar dos cosas:</p>
+<ul class="simple">
+<li>Un lenguaje de programación de propósito general, como es Java.</li>
+<li>O un lenguaje de programación especializado como es XQuery.</li>
+</ul>
+<p>En líneas generales hay dos grandes formas de usar un lenguaje de programación como Java para leer o escribir archivos XML.</p>
 <ul class="simple">
 <li>DOM: significa Document Object Model (o Modelo del objeto documento). DOM en general almacena los archivos en memoria lo que es mucho más rápido y eficiente.</li>
 <li>SAX: en algunos casos, los archivos muy grandes, pueden no caber en memoria. SAX proporciona otras clases y métodos distintos para ir procesando un archivo por partes. SAX significa Simple Access for XML, pero en general es un poco más complicado. En este módulo, no lo veremos.</li>
 </ul>
 <p>DOM es un estándar y sus clases y métodos existen en muchos otros lenguajes.</p>
+</div>
+<div class="section" id="xquery">
+<h2>XQuery<a class="headerlink" href="#xquery" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para empezar <strong>XQuery es un superconjunto de XPath</strong> por lo que las expresiones básicas de XQuery también servirán en XQuery. La primera diferencia es que en XQuery tendremos que usar la función <code class="docutils literal"><span class="pre">doc</span></code> para cargar un archivo y luego navegar por él. Supongamos que tenemos un archivo de ejemplo como este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+    <span class="nt">&lt;proveedores&gt;</span>
+        <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreprov&gt;</span>Smith<span class="nt">&lt;/nombreprov&gt;</span>
+            <span class="nt">&lt;estado&gt;</span>20<span class="nt">&lt;/estado&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proveedor&gt;</span>
+        <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreprov&gt;</span>Jones<span class="nt">&lt;/nombreprov&gt;</span>
+            <span class="nt">&lt;estado&gt;</span>10<span class="nt">&lt;/estado&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Paris<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proveedor&gt;</span>
+        <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreprov&gt;</span>Blake<span class="nt">&lt;/nombreprov&gt;</span>
+            <span class="nt">&lt;estado&gt;</span>30<span class="nt">&lt;/estado&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Paris<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proveedor&gt;</span>
+        <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreprov&gt;</span>Clarke<span class="nt">&lt;/nombreprov&gt;</span>
+            <span class="nt">&lt;estado&gt;</span>20<span class="nt">&lt;/estado&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proveedor&gt;</span>
+        <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreprov&gt;</span>Adams<span class="nt">&lt;/nombreprov&gt;</span>
+            <span class="nt">&lt;estado&gt;</span>30<span class="nt">&lt;/estado&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Atenas<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proveedor&gt;</span>
+    <span class="nt">&lt;/proveedores&gt;</span>
+    <span class="nt">&lt;partes&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Tuerca<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Perno<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Verde<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>17<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Paris<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Tornillo<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Azul<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>17<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Roma<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Tornillo<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>14<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Leva<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Azul<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Paris<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+        <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p6&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreparte&gt;</span>Engranaje<span class="nt">&lt;/nombreparte&gt;</span>
+            <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+            <span class="nt">&lt;peso&gt;</span>19<span class="nt">&lt;/peso&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/parte&gt;</span>
+    <span class="nt">&lt;/partes&gt;</span>
+    <span class="nt">&lt;proyectos&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>Clasificador<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Paris<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>Monitor<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Roma<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>OCR<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Atenas<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>Consola<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Atenas<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>RAID<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y6&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>EDS<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Oslo<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+        <span class="nt">&lt;proyecto</span> <span class="na">numproyecto=</span><span class="s">&quot;y7&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nombreproyecto&gt;</span>Cinta<span class="nt">&lt;/nombreproyecto&gt;</span>
+            <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+        <span class="nt">&lt;/proyecto&gt;</span>
+    <span class="nt">&lt;/proyectos&gt;</span>
+    <span class="nt">&lt;suministros&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v1<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p1<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y1<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v1<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p1<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>700<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y1<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>400<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y2<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y3<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>300<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>500<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y5<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>600<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y6<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>400<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y7<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>600<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v2<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p5<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y2<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>100<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v3<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y1<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v3<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p4<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y2<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>500<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v4<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p6<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y3<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>300<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v4<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p6<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y7<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>300<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p2<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y2<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p2<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>100<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p5<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y5<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>500<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p6<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y2<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p1<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>100<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p3<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>200<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p4<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>800<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p5<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>400<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+        <span class="nt">&lt;suministra&gt;</span>
+            <span class="nt">&lt;numprov&gt;</span>v5<span class="nt">&lt;/numprov&gt;</span>
+            <span class="nt">&lt;numparte&gt;</span>p6<span class="nt">&lt;/numparte&gt;</span>
+            <span class="nt">&lt;numproyecto&gt;</span>y4<span class="nt">&lt;/numproyecto&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>500<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/suministra&gt;</span>
+    <span class="nt">&lt;/suministros&gt;</span>
+<span class="nt">&lt;/datos&gt;</span>
+</pre></div>
+</div>
+<p>En él podríamos ejecutar consultas como estas:
+* Recuperar todos los proveedores con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/proveedores</span></code>
+* Recuperar todos los datos con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/</span></code>
+* Recuperar todas las partes con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/partes</span></code>.</p>
+<p>De hecho, podemos usar las mismas consultas con predicados XPath y así por ejemplo extraer los datos del proveedor cuyo numprov es “v1” con la consulta siguiente:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">proveedores</span><span class="o">/</span><span class="n">proveedor</span><span class="p">[</span><span class="nd">@numprov</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Que devuelve este resultado:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombreprov&gt;</span>Smith<span class="nt">&lt;/nombreprov&gt;</span>
+    <span class="nt">&lt;estado&gt;</span>20<span class="nt">&lt;/estado&gt;</span>
+    <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+<span class="nt">&lt;/proveedor&gt;</span>
+</pre></div>
+</div>
+<p>Extraer los datos de partes cuyo color sea “Rojo”. La consulta XQuery sería:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Rojo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Y el resultado sería:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombreparte&gt;</span>Tuerca<span class="nt">&lt;/nombreparte&gt;</span>
+    <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+<span class="nt">&lt;/parte&gt;</span>
+<span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p4&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombreparte&gt;</span>Tornillo<span class="nt">&lt;/nombreparte&gt;</span>
+    <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>14<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+<span class="nt">&lt;/parte&gt;</span>
+<span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p6&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombreparte&gt;</span>Engranaje<span class="nt">&lt;/nombreparte&gt;</span>
+    <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;peso&gt;</span>19<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+<span class="nt">&lt;/parte&gt;</span>
+</pre></div>
+</div>
+<p>En XQuery se pueden mezclar las marcas con el programa. Sin embargo, para poder distinguir lo que se tiene que ejecutar de lo que no, tendremos que encerrar nuestras sentencias XQuery entre llaves y dejar las marcas fuera de las llaves.</p>
+<p>Así, esta consulta consigue generarnos un XML valido añadiendo un elemento raíz al conjunto de partes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">partesrojas</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Rojo&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">partesrojas</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado devuelto es este:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
+    <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombreparte&gt;</span>Tuerca<span class="nt">&lt;/nombreparte&gt;</span>
+        <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+    <span class="nt">&lt;/parte&gt;&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p4&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombreparte&gt;</span>Tornillo<span class="nt">&lt;/nombreparte&gt;</span>
+        <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>14<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+    <span class="nt">&lt;/parte&gt;&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p6&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombreparte&gt;</span>Engranaje<span class="nt">&lt;/nombreparte&gt;</span>
+        <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>19<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
+    <span class="nt">&lt;/parte&gt;</span>
+<span class="nt">&lt;/partesrojas&gt;</span>
+</pre></div>
+</div>
+<p>Antes se ha mencionado que se puede usar <code class="docutils literal"><span class="pre">WHERE</span></code> para crear condiciones. ¿Como cambiar entonces la consulta anterior para poner la condición en un <code class="docutils literal"><span class="pre">WHERE</span></code> y no meterla entre corchetes?</p>
+<p>Si queremos usar un <code class="docutils literal"><span class="pre">where</span></code> es porque queremos filtrar un conjunto de elementos, y si queremos un conjunto de elementos necesitaremos un bucle <code class="docutils literal"><span class="pre">for</span></code>. Y a su vez, si recorremos un conjunto de elementos tendremos que hacer algún procesamiento con ellos o al menos devolverlos de la manera normal.</p>
+<div class="section" id="bucles-for-en-xquery">
+<h3>Bucles <code class="docutils literal"><span class="pre">for</span></code> en XQuery<a class="headerlink" href="#bucles-for-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los bucles de XQuery son parecidos a los de Java. Hay una variable de bucle que iremos procesando de alguna manera. Dicha variable llevará siempre el simbolo del dolar ($). Así, un bucle que recupera todas las partes sería:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">return $p</span>
+</pre></div>
+</div>
+<p>Si ahora queremos filtrar las partes rojas haremos esto:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">where $p/color=&#39;Rojo&#39;</span>
+<span class="x">return $p</span>
+</pre></div>
+</div>
+<p>Y si ahora queremos un nuevo elemento raíz podremos hacer esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
+{
+    for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte
+    where $p/color=&#39;Rojo&#39;
+    return $p
+}
+<span class="nt">&lt;/partesrojas&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+{
+    for $suministra
+    in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
+    where $suministra/cantidad &gt; 450
+    return $suministra
+}
+<span class="nt">&lt;/suministrosgrandes&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ordenacion-en-xquery">
+<h3>Ordenación en XQuery<a class="headerlink" href="#ordenacion-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si se desea ordenar un conjunto de datos puede usarse la clásula <code class="docutils literal"><span class="pre">order</span> <span class="pre">by</span></code> poniendo despues uno o varios elementos o atributos y usando <code class="docutils literal"><span class="pre">ascending</span></code> o <code class="docutils literal"><span class="pre">descending</span></code>, de manera similar a SQL.</p>
+<p>Así, por ejemplo, para ordenar la consulta anterior por cantidad usaríamos esto:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+{
+    for $suministra
+    in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
+    where $suministra/cantidad &gt; 450
+    order by $suministra/cantidad descending
+    return $suministra
+}
+<span class="nt">&lt;/suministrosgrandes&gt;</span>
+</pre></div>
+</div>
+<p>Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.
+.. code-block:: xml</p>
+<blockquote>
+<div><p>&lt;suministrosgrandes&gt;
+{</p>
+<blockquote>
+<div><p>for $suministra
+in doc(«datos.xml»)/datos/suministros/suministra
+where $suministra/cantidad &gt; 450
+order by $suministra/proveedor ascending,</p>
+<blockquote>
+<div>$suministra/parte descending</div></blockquote>
+<p>return $suministra</p>
+</div></blockquote>
+<p>}
+&lt;/suministrosgrandes&gt;</p>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="fundamentos-de-dom-con-java">
 <h2>Fundamentos de DOM con Java<a class="headerlink" href="#fundamentos-de-dom-con-java" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1580,6 +1968,11 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
   <ul>
 <li><a class="reference internal" href="#">Recuperación de información</a><ul>
 <li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#xquery">XQuery</a><ul>
+<li><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal"><span class="pre">for</span></code> en XQuery</a></li>
+<li><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
 <li><a class="reference internal" href="#ejemplo-de-base">Ejemplo de base</a></li>
 <li><a class="reference internal" href="#la-clase-document">La clase Document</a></li>

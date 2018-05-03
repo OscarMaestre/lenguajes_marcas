@@ -5,13 +5,421 @@ Recuperación de información
 
 Introducción
 ===========================================
+En este tema veremos que podemos recuperar información de archivos XML *igual* que si fuesen bases de datos. Para ello podemos usar dos cosas:
 
-En líneas generales hay dos grandes formas de usar un lenguaje de programación para leer o escribir archivos XML
+* Un lenguaje de programación de propósito general, como es Java.
+* O un lenguaje de programación especializado como es XQuery.
+
+En líneas generales hay dos grandes formas de usar un lenguaje de programación como Java para leer o escribir archivos XML.
 
 * DOM: significa Document Object Model (o Modelo del objeto documento). DOM en general almacena los archivos en memoria lo que es mucho más rápido y eficiente.
 * SAX: en algunos casos, los archivos muy grandes, pueden no caber en memoria. SAX proporciona otras clases y métodos distintos para ir procesando un archivo por partes. SAX significa Simple Access for XML, pero en general es un poco más complicado. En este módulo, no lo veremos.
 
 DOM es un estándar y sus clases y métodos existen en muchos otros lenguajes.
+
+
+XQuery
+=============
+
+Para empezar **XQuery es un superconjunto de XPath** por lo que las expresiones básicas de XQuery también servirán en XQuery. La primera diferencia es que en XQuery tendremos que usar la función ``doc`` para cargar un archivo y luego navegar por él. Supongamos que tenemos un archivo de ejemplo como este:
+
+.. code-block:: xml
+
+    <datos>
+        <proveedores>
+            <proveedor numprov="v1">
+                <nombreprov>Smith</nombreprov>
+                <estado>20</estado>
+                <ciudad>Londres</ciudad>
+            </proveedor>
+            <proveedor numprov="v2">
+                <nombreprov>Jones</nombreprov>
+                <estado>10</estado>
+                <ciudad>Paris</ciudad>
+            </proveedor>
+            <proveedor numprov="v3">
+                <nombreprov>Blake</nombreprov>
+                <estado>30</estado>
+                <ciudad>Paris</ciudad>
+            </proveedor>
+            <proveedor numprov="v4">
+                <nombreprov>Clarke</nombreprov>
+                <estado>20</estado>
+                <ciudad>Londres</ciudad>
+            </proveedor>
+            <proveedor numprov="v5">
+                <nombreprov>Adams</nombreprov>
+                <estado>30</estado>
+                <ciudad>Atenas</ciudad>
+            </proveedor>       
+        </proveedores>
+        <partes>
+            <parte numparte="p1">
+                <nombreparte>Tuerca</nombreparte>
+                <color>Rojo</color>
+                <peso>12</peso>
+                <ciudad>Londres</ciudad>
+            </parte>
+            <parte numparte="p2">
+                <nombreparte>Perno</nombreparte>
+                <color>Verde</color>
+                <peso>17</peso>
+                <ciudad>Paris</ciudad>
+            </parte>
+            <parte numparte="p3">
+                <nombreparte>Tornillo</nombreparte>
+                <color>Azul</color>
+                <peso>17</peso>
+                <ciudad>Roma</ciudad>
+            </parte>
+            <parte numparte="p4">
+                <nombreparte>Tornillo</nombreparte>
+                <color>Rojo</color>
+                <peso>14</peso>
+                <ciudad>Londres</ciudad>
+            </parte>
+            <parte numparte="p5">
+                <nombreparte>Leva</nombreparte>
+                <color>Azul</color>
+                <peso>12</peso>
+                <ciudad>Paris</ciudad>
+            </parte>
+            <parte numparte="p6">
+                <nombreparte>Engranaje</nombreparte>
+                <color>Rojo</color>
+                <peso>19</peso>
+                <ciudad>Londres</ciudad>
+            </parte>
+        </partes>
+        <proyectos>
+            <proyecto numproyecto="y1">
+                <nombreproyecto>Clasificador</nombreproyecto>
+                <ciudad>Paris</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y2">
+                <nombreproyecto>Monitor</nombreproyecto>
+                <ciudad>Roma</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y3">
+                <nombreproyecto>OCR</nombreproyecto>
+                <ciudad>Atenas</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y4">
+                <nombreproyecto>Consola</nombreproyecto>
+                <ciudad>Atenas</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y5">
+                <nombreproyecto>RAID</nombreproyecto>
+                <ciudad>Londres</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y6">
+                <nombreproyecto>EDS</nombreproyecto>
+                <ciudad>Oslo</ciudad>
+            </proyecto>
+            <proyecto numproyecto="y7">
+                <nombreproyecto>Cinta</nombreproyecto>
+                <ciudad>Londres</ciudad>
+            </proyecto>
+        </proyectos>
+        <suministros>
+            <suministra>
+                <numprov>v1</numprov>
+                <numparte>p1</numparte>
+                <numproyecto>y1</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v1</numprov>
+                <numparte>p1</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>700</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y1</numproyecto>
+                <cantidad>400</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y2</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y3</numproyecto>
+                <cantidad>300</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>500</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y5</numproyecto>
+                <cantidad>600</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y6</numproyecto>
+                <cantidad>400</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y7</numproyecto>
+                <cantidad>600</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v2</numprov>
+                <numparte>p5</numparte>
+                <numproyecto>y2</numproyecto>
+                <cantidad>100</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v3</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y1</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v3</numprov>
+                <numparte>p4</numparte>
+                <numproyecto>y2</numproyecto>
+                <cantidad>500</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v4</numprov>
+                <numparte>p6</numparte>
+                <numproyecto>y3</numproyecto>
+                <cantidad>300</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v4</numprov>
+                <numparte>p6</numparte>
+                <numproyecto>y7</numproyecto>
+                <cantidad>300</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p2</numparte>
+                <numproyecto>y2</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p2</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>100</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p5</numparte>
+                <numproyecto>y5</numproyecto>
+                <cantidad>500</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p6</numparte>
+                <numproyecto>y2</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p1</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>100</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p3</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>200</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p4</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>800</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p5</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>400</cantidad>
+            </suministra>
+            <suministra>
+                <numprov>v5</numprov>
+                <numparte>p6</numparte>
+                <numproyecto>y4</numproyecto>
+                <cantidad>500</cantidad>
+            </suministra>
+        </suministros>
+    </datos>
+
+En él podríamos ejecutar consultas como estas:
+* Recuperar todos los proveedores con ``doc("datos.xml")/datos/proveedores``
+* Recuperar todos los datos con ``doc("datos.xml")/datos/``
+* Recuperar todas las partes con ``doc("datos.xml")/datos/partes``.
+
+De hecho, podemos usar las mismas consultas con predicados XPath y así por ejemplo extraer los datos del proveedor cuyo numprov es 'v1' con la consulta siguiente::
+
+    doc("datos.xml")/datos/proveedores/proveedor[@numprov='v1']
+    
+Que devuelve este resultado:
+
+.. code-block:: xml
+
+    <proveedor numprov="v1">
+        <nombreprov>Smith</nombreprov>
+        <estado>20</estado>
+        <ciudad>Londres</ciudad>
+    </proveedor>
+    
+Extraer los datos de partes cuyo color sea 'Rojo'. La consulta XQuery sería::
+
+    doc("datos.xml")/datos/partes/parte[color='Rojo']
+
+Y el resultado sería:
+
+.. code-block:: xml
+
+    <parte numparte="p1">
+        <nombreparte>Tuerca</nombreparte>
+        <color>Rojo</color>
+        <peso>12</peso>
+        <ciudad>Londres</ciudad>
+    </parte>
+    <parte numparte="p4">
+        <nombreparte>Tornillo</nombreparte>
+        <color>Rojo</color>
+        <peso>14</peso>
+        <ciudad>Londres</ciudad>
+    </parte>
+    <parte numparte="p6">
+        <nombreparte>Engranaje</nombreparte>
+        <color>Rojo</color>
+        <peso>19</peso>
+        <ciudad>Londres</ciudad>
+    </parte>
+        
+En XQuery se pueden mezclar las marcas con el programa. Sin embargo, para poder distinguir lo que se tiene que ejecutar de lo que no, tendremos que encerrar nuestras sentencias XQuery entre llaves y dejar las marcas fuera de las llaves.
+
+Así, esta consulta consigue generarnos un XML valido añadiendo un elemento raíz al conjunto de partes::
+
+    <partesrojas>
+    {
+        doc("datos.xml")/datos/partes/parte[color='Rojo']
+    }
+    </partesrojas>
+
+El resultado devuelto es este:
+
+.. code-block:: xml
+
+    <partesrojas>
+        <parte numparte="p1">
+            <nombreparte>Tuerca</nombreparte>
+            <color>Rojo</color>
+            <peso>12</peso>
+            <ciudad>Londres</ciudad>
+        </parte><parte numparte="p4">
+            <nombreparte>Tornillo</nombreparte>
+            <color>Rojo</color>
+            <peso>14</peso>
+            <ciudad>Londres</ciudad>
+        </parte><parte numparte="p6">
+            <nombreparte>Engranaje</nombreparte>
+            <color>Rojo</color>
+            <peso>19</peso>
+            <ciudad>Londres</ciudad>
+        </parte>
+    </partesrojas>
+    
+Antes se ha mencionado que se puede usar ``WHERE`` para crear condiciones. ¿Como cambiar entonces la consulta anterior para poner la condición en un ``WHERE`` y no meterla entre corchetes?
+
+Si queremos usar un ``where`` es porque queremos filtrar un conjunto de elementos, y si queremos un conjunto de elementos necesitaremos un bucle ``for``. Y a su vez, si recorremos un conjunto de elementos tendremos que hacer algún procesamiento con ellos o al menos devolverlos de la manera normal.
+
+Bucles ``for`` en XQuery
+---------------------------
+
+Los bucles de XQuery son parecidos a los de Java. Hay una variable de bucle que iremos procesando de alguna manera. Dicha variable llevará siempre el simbolo del dolar ($). Así, un bucle que recupera todas las partes sería:
+
+.. code-block:: php
+
+    for $p in doc("datos.xml")/datos/partes/parte
+    return $p
+
+Si ahora queremos filtrar las partes rojas haremos esto:
+
+.. code-block:: php
+
+    for $p in doc("datos.xml")/datos/partes/parte
+    where $p/color='Rojo'
+    return $p
+
+Y si ahora queremos un nuevo elemento raíz podremos hacer esto:
+
+.. code-block:: xml
+
+    <partesrojas>
+    {
+        for $p in doc("datos.xml")/datos/partes/parte
+        where $p/color='Rojo'
+        return $p
+    }
+    </partesrojas>
+    
+.. code-block:: xml
+    
+    <suministrosgrandes>
+    {
+        for $suministra
+        in doc("datos.xml")/datos/suministros/suministra
+        where $suministra/cantidad > 450
+        return $suministra
+    }
+    </suministrosgrandes>
+    
+Ordenación en XQuery
+-------------------------
+
+Si se desea ordenar un conjunto de datos puede usarse la clásula ``order by`` poniendo despues uno o varios elementos o atributos y usando ``ascending`` o ``descending``, de manera similar a SQL.
+
+Así, por ejemplo, para ordenar la consulta anterior por cantidad usaríamos esto:
+
+.. code-block:: xml
+    
+    <suministrosgrandes>
+    {
+        for $suministra
+        in doc("datos.xml")/datos/suministros/suministra
+        where $suministra/cantidad > 450
+        order by $suministra/cantidad descending
+        return $suministra
+    }
+    </suministrosgrandes>
+
+Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.
+.. code-block:: xml
+    
+    <suministrosgrandes>
+    {
+        for $suministra
+        in doc("datos.xml")/datos/suministros/suministra
+        where $suministra/cantidad > 450
+        order by $suministra/proveedor ascending,
+                $suministra/parte descending
+        return $suministra
+    }
+    </suministrosgrandes>
+
 
 
 Fundamentos de DOM con Java
