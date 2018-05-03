@@ -439,6 +439,76 @@ order by $suministra/proveedor ascending,</p>
 &lt;/suministrosgrandes&gt;</p>
 </div></blockquote>
 </div>
+<div class="section" id="funciones-en-xquery">
+<h3>Funciones en XQuery<a class="headerlink" href="#funciones-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a los nodos de un XML. A continuación se nombran algunas muy usadas:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal"><span class="pre">fila</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</li>
+</ul>
+</div>
+<div class="section" id="consultas-de-ejemplo">
+<h3>Consultas de ejemplo<a class="headerlink" href="#consultas-de-ejemplo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las siguientes consultas van referidas a la  base de datos de proveedores y partes que aparecen al principio.</p>
+<div class="section" id="suministros-grandes">
+<h4>Suministros grandes<a class="headerlink" href="#suministros-grandes" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Usando <code class="docutils literal"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450. Encerrar los resultados dentro de un elemento raíz <code class="docutils literal"><span class="pre">suministrosgrandes</span></code></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+{
+for $fila in doc(&quot;datos.xml&quot;)//suministra
+where $fila/cantidad &gt; 450
+return $fila/cantidad
+}
+<span class="nt">&lt;/suministrosgrandes&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="renombrado-de-etiquetas">
+<h4>Renombrado de etiquetas<a class="headerlink" href="#renombrado-de-etiquetas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Usando <code class="docutils literal"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450 <em>y haciendo que las etiquetas cantidad pasen a llamarse numpartes</em> . Encerrar los resultados dentro de un elemento raíz <code class="docutils literal"><span class="pre">suministrosgrandes</span></code></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+{
+for $fila in doc(&quot;datos.xml&quot;)//suministra
+where $fila/cantidad &gt; 450
+return <span class="nt">&lt;numpartes&gt;</span>
+         {$fila/cantidad/text()}
+       <span class="nt">&lt;/numpartes&gt;</span>
+}
+<span class="nt">&lt;/suministrosgrandes&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cruces-o-joins">
+<h4>Cruces o joins<a class="headerlink" href="#cruces-o-joins" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz <code class="docutils literal"><span class="pre">resultados</span></code> haciendo que en cada fila haya un elemento <code class="docutils literal"><span class="pre">datos</span></code> que tenga a su vez tres hijos:</p>
+<ul class="simple">
+<li>Un elemento <code class="docutils literal"><span class="pre">numprov</span></code> donde se vea el numero de proveedor.</li>
+<li>Un elemento <code class="docutils literal"><span class="pre">nombre</span></code> donde se vea el nombre del proveedor.</li>
+<li>Un elemento <code class="docutils literal"><span class="pre">cantidadpartes</span></code> donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)</li>
+</ul>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;resultados&gt;</span>
+{
+for $proveedor in doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor
+for $suministra in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
+where $proveedor/@numprov=$suministra/numprov
+and $suministra/cantidad &gt; 450
+return <span class="nt">&lt;datos&gt;</span>
+        <span class="nt">&lt;numprov&gt;</span>
+        {string($proveedor/@numprov)}
+        <span class="nt">&lt;/numprov&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>
+        {$proveedor/nombreprov/text()}
+        <span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;cantidadpartes&gt;</span>
+        {$suministra/cantidad/text()}
+        <span class="nt">&lt;/cantidadpartes&gt;</span>
+       <span class="nt">&lt;/datos&gt;</span>
+}
+<span class="nt">&lt;/resultados&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="fundamentos-de-dom-con-java">
 <h2>Fundamentos de DOM con Java<a class="headerlink" href="#fundamentos-de-dom-con-java" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1971,6 +2041,13 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 <li><a class="reference internal" href="#xquery">XQuery</a><ul>
 <li><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal"><span class="pre">for</span></code> en XQuery</a></li>
 <li><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
+<li><a class="reference internal" href="#funciones-en-xquery">Funciones en XQuery</a></li>
+<li><a class="reference internal" href="#consultas-de-ejemplo">Consultas de ejemplo</a><ul>
+<li><a class="reference internal" href="#suministros-grandes">Suministros grandes</a></li>
+<li><a class="reference internal" href="#renombrado-de-etiquetas">Renombrado de etiquetas</a></li>
+<li><a class="reference internal" href="#cruces-o-joins">Cruces o joins</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
@@ -2059,7 +2136,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

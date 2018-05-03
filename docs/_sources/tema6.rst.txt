@@ -421,6 +421,82 @@ Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos o
     </suministrosgrandes>
 
 
+Funciones en XQuery
+----------------------
+
+XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a los nodos de un XML. A continuación se nombran algunas muy usadas:
+
+* ``concat($fila, ' ')`` concatena dos elementos, en este caso pone un espacio tras los datos de ``fila``.
+* ``string-length($elemento)`` devuelve la longitud de una cadena.
+
+Consultas de ejemplo
+----------------------
+
+Las siguientes consultas van referidas a la  base de datos de proveedores y partes que aparecen al principio.
+
+Suministros grandes
+~~~~~~~~~~~~~~~~~~~~~~
+
+Usando ``where`` recuperar de la tabla de suministros todas las cantidades que sean mayores de 450. Encerrar los resultados dentro de un elemento raíz ``suministrosgrandes``
+
+.. code-block:: xml
+
+    <suministrosgrandes>
+    {
+    for $fila in doc("datos.xml")//suministra
+    where $fila/cantidad > 450
+    return $fila/cantidad
+    }
+    </suministrosgrandes>
+
+
+Renombrado de etiquetas
+~~~~~~~~~~~~~~~~~~~~~~~~
+Usando ``where`` recuperar de la tabla de suministros todas las cantidades que sean mayores de 450 *y haciendo que las etiquetas cantidad pasen a llamarse numpartes* . Encerrar los resultados dentro de un elemento raíz ``suministrosgrandes``
+
+.. code-block:: xml
+
+    <suministrosgrandes>
+    {
+    for $fila in doc("datos.xml")//suministra
+    where $fila/cantidad > 450
+    return <numpartes>
+             {$fila/cantidad/text()}
+           </numpartes>
+    }
+    </suministrosgrandes>
+
+Cruces o joins
+~~~~~~~~~~~~~~~~~~
+
+Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz ``resultados`` haciendo que en cada fila haya un elemento ``datos`` que tenga a su vez tres hijos:
+
+* Un elemento ``numprov`` donde se vea el numero de proveedor.
+* Un elemento ``nombre`` donde se vea el nombre del proveedor.
+* Un elemento ``cantidadpartes`` donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)
+
+.. code-block:: xml
+
+    <resultados>
+    {
+    for $proveedor in doc("datos.xml")/datos/proveedores/proveedor
+    for $suministra in doc("datos.xml")/datos/suministros/suministra
+    where $proveedor/@numprov=$suministra/numprov
+    and $suministra/cantidad > 450
+    return <datos>
+            <numprov>
+            {string($proveedor/@numprov)}
+            </numprov>
+            <nombre>
+            {$proveedor/nombreprov/text()}
+            </nombre>
+            <cantidadpartes>
+            {$suministra/cantidad/text()}
+            </cantidadpartes>
+           </datos>
+    }
+    </resultados>
+
 
 Fundamentos de DOM con Java
 ===========================================

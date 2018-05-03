@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
+\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -1509,7 +1509,7 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 
 \chapter{CSS}
-\label{\detokenize{tema3:css}}\label{\detokenize{tema3::doc}}
+\label{\detokenize{tema3::doc}}\label{\detokenize{tema3:css}}
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
@@ -5003,7 +5003,7 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
 
 
 \chapter{XML}
-\label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
+\label{\detokenize{tema5::doc}}\label{\detokenize{tema5:xml}}
 
 \section{Introducción}
 \label{\detokenize{tema5:introduccion}}
@@ -8700,6 +8700,94 @@ return \$suministra
 \end{quote}
 
 
+\subsection{Funciones en XQuery}
+\label{\detokenize{tema6:funciones-en-xquery}}
+XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a los nodos de un XML. A continuación se nombran algunas muy usadas:
+\begin{itemize}
+\item {} 
+\sphinxcode{concat(\$fila, ' ')} concatena dos elementos, en este caso pone un espacio tras los datos de \sphinxcode{fila}.
+
+\item {} 
+\sphinxcode{string-length(\$elemento)} devuelve la longitud de una cadena.
+
+\end{itemize}
+
+
+\subsection{Consultas de ejemplo}
+\label{\detokenize{tema6:consultas-de-ejemplo}}
+Las siguientes consultas van referidas a la  base de datos de proveedores y partes que aparecen al principio.
+
+
+\subsubsection{Suministros grandes}
+\label{\detokenize{tema6:suministros-grandes}}
+Usando \sphinxcode{where} recuperar de la tabla de suministros todas las cantidades que sean mayores de 450. Encerrar los resultados dentro de un elemento raíz \sphinxcode{suministrosgrandes}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}suministrosgrandes}\PYG{n+nt}{\PYGZgt{}}
+\PYGZob{}
+for \PYGZdl{}fila in doc(\PYGZdq{}datos.xml\PYGZdq{})//suministra
+where \PYGZdl{}fila/cantidad \PYGZgt{} 450
+return \PYGZdl{}fila/cantidad
+\PYGZcb{}
+\PYG{n+nt}{\PYGZlt{}/suministrosgrandes\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Renombrado de etiquetas}
+\label{\detokenize{tema6:renombrado-de-etiquetas}}
+Usando \sphinxcode{where} recuperar de la tabla de suministros todas las cantidades que sean mayores de 450 \sphinxstyleemphasis{y haciendo que las etiquetas cantidad pasen a llamarse numpartes} . Encerrar los resultados dentro de un elemento raíz \sphinxcode{suministrosgrandes}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}suministrosgrandes}\PYG{n+nt}{\PYGZgt{}}
+\PYGZob{}
+for \PYGZdl{}fila in doc(\PYGZdq{}datos.xml\PYGZdq{})//suministra
+where \PYGZdl{}fila/cantidad \PYGZgt{} 450
+return \PYG{n+nt}{\PYGZlt{}numpartes}\PYG{n+nt}{\PYGZgt{}}
+         \PYGZob{}\PYGZdl{}fila/cantidad/text()\PYGZcb{}
+       \PYG{n+nt}{\PYGZlt{}/numpartes\PYGZgt{}}
+\PYGZcb{}
+\PYG{n+nt}{\PYGZlt{}/suministrosgrandes\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Cruces o joins}
+\label{\detokenize{tema6:cruces-o-joins}}
+Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz \sphinxcode{resultados} haciendo que en cada fila haya un elemento \sphinxcode{datos} que tenga a su vez tres hijos:
+\begin{itemize}
+\item {} 
+Un elemento \sphinxcode{numprov} donde se vea el numero de proveedor.
+
+\item {} 
+Un elemento \sphinxcode{nombre} donde se vea el nombre del proveedor.
+
+\item {} 
+Un elemento \sphinxcode{cantidadpartes} donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}resultados}\PYG{n+nt}{\PYGZgt{}}
+\PYGZob{}
+for \PYGZdl{}proveedor in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/proveedores/proveedor
+for \PYGZdl{}suministra in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra
+where \PYGZdl{}proveedor/@numprov=\PYGZdl{}suministra/numprov
+and \PYGZdl{}suministra/cantidad \PYGZgt{} 450
+return \PYG{n+nt}{\PYGZlt{}datos}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}numprov}\PYG{n+nt}{\PYGZgt{}}
+        \PYGZob{}string(\PYGZdl{}proveedor/@numprov)\PYGZcb{}
+        \PYG{n+nt}{\PYGZlt{}/numprov\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}
+        \PYGZob{}\PYGZdl{}proveedor/nombreprov/text()\PYGZcb{}
+        \PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}cantidadpartes}\PYG{n+nt}{\PYGZgt{}}
+        \PYGZob{}\PYGZdl{}suministra/cantidad/text()\PYGZcb{}
+        \PYG{n+nt}{\PYGZlt{}/cantidadpartes\PYGZgt{}}
+       \PYG{n+nt}{\PYGZlt{}/datos\PYGZgt{}}
+\PYGZcb{}
+\PYG{n+nt}{\PYGZlt{}/resultados\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
 \section{Fundamentos de DOM con Java}
 \label{\detokenize{tema6:fundamentos-de-dom-con-java}}
 En primer lugar va a ser necesario importar las clases correctas para poder usar DOM. La línea correcta es
@@ -10380,7 +10468,7 @@ Indicar todos los productos que tengan la misma ciudad de procedencia.
 
 
 \chapter{Sindicación y transformación de contenidos}
-\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}\label{\detokenize{tema7::doc}}
+\label{\detokenize{tema7::doc}}\label{\detokenize{tema7:sindicacion-y-transformacion-de-contenidos}}
 
 \section{Introducción}
 \label{\detokenize{tema7:introduccion}}
@@ -11936,7 +12024,7 @@ Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»
 
 
 \chapter{Anexo: ejercicios sobre tablas}
-\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}\label{\detokenize{ejercicios/html/anexo_tablas::doc}}
+\label{\detokenize{ejercicios/html/anexo_tablas::doc}}\label{\detokenize{ejercicios/html/anexo_tablas:anexo-ejercicios-sobre-tablas}}
 Las tablas HTML muestran cierta complejidad cuando se anidan. En los ejercicios
 siguientes se muestran algunas tablas junto con su resolución en HTML. Los
 ejercicios no se muestran con ningún orden de dificultad.
@@ -13232,7 +13320,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre formularios}
-\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}
+\label{\detokenize{ejercicios/formularios/anexo_formularios::doc}}\label{\detokenize{ejercicios/formularios/anexo_formularios:anexo-ejercicios-sobre-formularios}}
 En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
@@ -14222,7 +14310,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
@@ -15336,7 +15424,7 @@ Si probamos el XSLT anterior veremos que efectivamente conseguimos transformar e
 
 
 \chapter{Anexo: Ejercicios de XPath}
-\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath:anexo-ejercicios-de-xpath}}\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath::doc}}
+\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath::doc}}\label{\detokenize{ejercicios/xpath/anexo_ejercicios_xpath:anexo-ejercicios-de-xpath}}
 En los ejercicios siguientes se asume que se va a utilizar el fichero siguiente:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -15617,7 +15705,7 @@ De nuevo nos encontramos con que el programa puede dar une rror, lo que tiene to
 
 
 \chapter{Anexo: Ejercicios de XQuery}
-\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:anexo-ejercicios-de-xquery}}\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery::doc}}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery::doc}}\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:anexo-ejercicios-de-xquery}}
 En los ejercicios siguientes se asume que se va a utilizar la siguiente base de datos XML (tomada del libro de C.J. Date «Sistemas Gestores de Bases de Datos»)
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
