@@ -407,6 +407,7 @@ Así, por ejemplo, para ordenar la consulta anterior por cantidad usaríamos est
     </suministrosgrandes>
 
 Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.
+
 .. code-block:: xml
     
     <suministrosgrandes>
@@ -428,6 +429,8 @@ XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a lo
 
 * ``concat($fila, ' ')`` concatena dos elementos, en este caso pone un espacio tras los datos de ``fila``.
 * ``string-length($elemento)`` devuelve la longitud de una cadena.
+* XQuery también tiene "funciones de agregación" al estilo de SQL como ``sum``, ``count`` y ``avg``. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle ``for``.
+* En XQuery se usa ``distinct-values`` en lugar de ``distinct`` como hace SQL.
 
 Consultas de ejemplo
 ----------------------

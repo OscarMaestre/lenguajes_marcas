@@ -231,7 +231,7 @@
 \contentsline {subsubsection}{Suministros grandes}{154}{subsubsection*.15}
 \contentsline {subsubsection}{Renombrado de etiquetas}{155}{subsubsection*.16}
 \contentsline {subsubsection}{Cruces o joins}{155}{subsubsection*.17}
-\contentsline {section}{\numberline {6.3}Fundamentos de DOM con Java}{155}{section.6.3}
+\contentsline {section}{\numberline {6.3}Fundamentos de DOM con Java}{156}{section.6.3}
 \contentsline {section}{\numberline {6.4}Ejemplo de base}{156}{section.6.4}
 \contentsline {section}{\numberline {6.5}La clase Document}{156}{section.6.5}
 \contentsline {section}{\numberline {6.6}Ejercicios}{157}{section.6.6}
@@ -240,9 +240,9 @@
 \contentsline {subsection}{\numberline {6.6.3}Ejercicio}{160}{subsection.6.6.3}
 \contentsline {subsection}{\numberline {6.6.4}Ejercicio: extracci\IeC {\'o}n de informaci\IeC {\'o}n financiera}{161}{subsection.6.6.4}
 \contentsline {subsection}{\numberline {6.6.5}Ejercicio}{163}{subsection.6.6.5}
-\contentsline {subsection}{\numberline {6.6.6}Ejercicio}{163}{subsection.6.6.6}
+\contentsline {subsection}{\numberline {6.6.6}Ejercicio}{164}{subsection.6.6.6}
 \contentsline {subsection}{\numberline {6.6.7}Ejercicio}{164}{subsection.6.6.7}
-\contentsline {subsection}{\numberline {6.6.8}Ejercicio}{164}{subsection.6.6.8}
+\contentsline {subsection}{\numberline {6.6.8}Ejercicio}{165}{subsection.6.6.8}
 \contentsline {subsection}{\numberline {6.6.9}Ejercicio}{165}{subsection.6.6.9}
 \contentsline {subsubsection}{An\IeC {\'a}lisis del problema}{165}{subsubsection*.18}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n}{165}{subsubsection*.19}
@@ -256,13 +256,13 @@
 \contentsline {subsubsection}{Implementaci\IeC {\'o}n}{169}{subsubsection*.24}
 \contentsline {subsection}{\numberline {6.6.13}Ejercicio}{170}{subsection.6.6.13}
 \contentsline {subsubsection}{An\IeC {\'a}lisis}{170}{subsubsection*.25}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{170}{subsubsection*.26}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{171}{subsubsection*.26}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n 1}{171}{subsubsection*.27}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n 2}{172}{subsubsection*.28}
-\contentsline {section}{\numberline {6.7}Anexo}{172}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}C\IeC {\'o}digo Java}{172}{subsection.6.7.1}
+\contentsline {section}{\numberline {6.7}Anexo}{173}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}C\IeC {\'o}digo Java}{173}{subsection.6.7.1}
 \contentsline {subsection}{\numberline {6.7.2}Archivo XML}{180}{subsection.6.7.2}
-\contentsline {section}{\numberline {6.8}Procesamiento con SAX}{181}{section.6.8}
+\contentsline {section}{\numberline {6.8}Procesamiento con SAX}{182}{section.6.8}
 \contentsline {subsection}{\numberline {6.8.1}Ejercicio: encontrar producto}{183}{subsection.6.8.1}
 \contentsline {subsection}{\numberline {6.8.2}Ejercicio: precios}{183}{subsection.6.8.2}
 \contentsline {section}{\numberline {6.9}Ejercicios para preparar examen}{183}{section.6.9}
@@ -366,3 +366,9 @@
 \contentsline {section}{\numberline {12.5}Consulta: \IeC {\guillemotleft }dnis con d\IeC {\'o}lares\IeC {\guillemotright }}{298}{section.12.5}
 \contentsline {section}{\numberline {12.6}Consulta: \IeC {\guillemotleft }fondos con menos de 2500 euros\IeC {\guillemotright }}{299}{section.12.6}
 \contentsline {chapter}{\numberline {13}Anexo: Ejercicios de XQuery}{301}{chapter.13}
+\contentsline {section}{\numberline {13.1}Consulta: ciudad de los proveedores}{305}{section.13.1}
+\contentsline {section}{\numberline {13.2}Consulta: filas de la tabla partes}{305}{section.13.2}
+\contentsline {section}{\numberline {13.3}Consulta: cantidad de partes de Londres}{306}{section.13.3}
+\contentsline {section}{\numberline {13.4}Consulta: media de suministros}{306}{section.13.4}
+\contentsline {section}{\numberline {13.5}Consulta: media por proveedor}{306}{section.13.5}
+\contentsline {section}{\numberline {13.6}Consulta: suministros en grandes cantidades}{307}{section.13.6}

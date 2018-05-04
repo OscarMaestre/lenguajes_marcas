@@ -282,6 +282,97 @@
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
+<div class="section" id="consulta-ciudad-de-los-proveedores">
+<h2>Consulta: ciudad de los proveedores<a class="headerlink" href="#consulta-ciudad-de-los-proveedores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Extraer la ciudad de los proveedores (no debe aparecer la etiqueta) que tengan un estado mayor de 15.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $proveedor in doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor</span>
+<span class="x">where $proveedor/estado &gt; 15</span>
+<span class="x">return $proveedor/ciudad/text()</span>
+</pre></div>
+</div>
+<p>Si se ejecuta esto se verá que el resultado es correcto sin embargo la presentación no es muy buena, al mostrarse todo seguido. Usemos por ejemplo la función <code class="docutils literal"><span class="pre">concat</span></code> para que cada resultado lleve un espacio detrás:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $proveedor in doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor</span>
+<span class="x">where $proveedor/estado &gt; 15</span>
+<span class="x">return concat($proveedor/ciudad/text(), &#39; &#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-filas-de-la-tabla-partes">
+<h2>Consulta: filas de la tabla partes<a class="headerlink" href="#consulta-filas-de-la-tabla-partes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Averiguar cuantas partes existen, es decir, el total de filas de la «tabla» partes.</p>
+<p>Para resolverlo una tentación muy común es resolverlo así:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $partes in doc(&quot;datos.xml&quot;)/datos/partes</span>
+<span class="x">return count ($partes/parte)</span>
+</pre></div>
+</div>
+<p>Y aunque esta solución funciona <strong>en realidad estamos haciendo un bucle de una sola iteración</strong>.</p>
+<p>En este caso, se puede recurrir directamente a la función <code class="docutils literal"><span class="pre">count</span></code> que permite contar el número de elementos de una consulta parcial sin tener que hacer siquiera el recorrido.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">count (doc(&quot;datos.xml&quot;)/datos/partes/parte)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-cantidad-de-partes-de-londres">
+<h2>Consulta: cantidad de partes de Londres<a class="headerlink" href="#consulta-cantidad-de-partes-de-londres" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Averiguar cuantas partes existen cuya ciudad sea «Londres», es decir, el total de filas de la «tabla» partes pero teniendo en cuenta la condición de que el «campo» ciudad debe ser Londres.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">count (doc(&quot;datos.xml&quot;)/datos/partes/parte[ciudad=&#39;Londres&#39;])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-media-de-suministros">
+<h2>Consulta: media de suministros<a class="headerlink" href="#consulta-media-de-suministros" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Averiguar la media de la cantidad de partes que aparecen en la «tabla» suministra</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">avg (doc(&quot;datos.xml&quot;)/datos/suministros/suministra/cantidad)</span>
+</pre></div>
+</div>
+<p>Pregunta: ¿por qué no ponemos esta solución?</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">avg (doc(&quot;datos.xml&quot;)/datos/suministros/suministra/cantidad/text())</span>
+</pre></div>
+</div>
+<p>Respuesta: las funciones son capaces de «extraer el texto automáticamente» si en el elemento no hay hijos. En este caso, la cantidad no tiene hijos, por lo que podemos ahorrarnos el <code class="docutils literal"><span class="pre">text()</span></code></p>
+</div>
+<div class="section" id="consulta-media-por-proveedor">
+<h2>Consulta: media por proveedor<a class="headerlink" href="#consulta-media-por-proveedor" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Averiguar la media de cantidades por proveedor usando los datos de la tabla suministra.</p>
+<p>Hagamos esta consulta por partes. En primer lugar, saquemos los distintos proveedores que hay en suministra</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $n in distinct-values(</span>
+<span class="x">doc(&quot;datos.xml&quot;)/datos/</span>
+<span class="x">proveedores/proveedor/@numprov)</span>
+<span class="x">return $n</span>
+</pre></div>
+</div>
+<p>Ahora, teniendo los distintos proveedores podemos devolver algo distinto de <code class="docutils literal"><span class="pre">numprov</span></code>. Podemos devolver la media para ese proveedor aprovechando los filtrados XPath.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $n in distinct-values(</span>
+<span class="x">doc(&quot;datos.xml&quot;)/datos/</span>
+<span class="x">proveedores/proveedor/@numprov)</span>
+<span class="x">return avg</span>
+<span class="x">( doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">[numprov=$n]/cantidad)</span>
+</pre></div>
+</div>
+<p>Y por último, si usamos <code class="docutils literal"><span class="pre">concat</span></code> apropiadamente podemos hacer que aparezca el número de proveedor al lado de dica cantidad.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $n in distinct-values(</span>
+<span class="x">doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor/@numprov)</span>
+<span class="x">return concat (</span>
+<span class="x"> $n, &#39; &#39;, avg(</span>
+<span class="x"> doc(&quot;datos.xml&quot;)/datos/suministros</span>
+<span class="x">/suministra[numprov=$n]/cantidad)</span>
+<span class="x">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-suministros-en-grandes-cantidades">
+<h2>Consulta: suministros en grandes cantidades<a class="headerlink" href="#consulta-suministros-en-grandes-cantidades" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Averiguar el nombre de los proyectos (sin que haya repeticiones) que reciban una cantidad en la tabla suministra mayor de 650.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $proyecto</span>
+<span class="x">in doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
+<span class="x">for $suministra</span>
+<span class="x">in</span>
+<span class="x">doc(&quot;datos.xml&quot;)/datos/suministros/suministra[cantidad&gt;650]</span>
+<span class="x">where $proyecto/@numproyecto = $suministra/numproyecto</span>
+<span class="x">return ($proyecto/nombreproyecto, $suministra/cantidad)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -289,7 +380,20 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Anexo: Ejercicios de XQuery</a><ul>
+<li><a class="reference internal" href="#consulta-ciudad-de-los-proveedores">Consulta: ciudad de los proveedores</a></li>
+<li><a class="reference internal" href="#consulta-filas-de-la-tabla-partes">Consulta: filas de la tabla partes</a></li>
+<li><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
+<li><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
+<li><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
+<li><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
@@ -322,7 +426,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

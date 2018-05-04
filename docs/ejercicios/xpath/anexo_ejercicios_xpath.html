@@ -178,8 +178,8 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <li><code class="docutils literal"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal"><span class="pre">fondo</span></code></li>
 <li><code class="docutils literal"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal"><span class="pre">inventario</span></code>.</li>
 </ul>
-<p>Como nos piden una cantidad el último elemento XPath debe ser forzosamente <code class="docutils literal"><span class="pre">cantidad</span></code>. Como nos ponen una condición tendremos que usar corchetes. El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> es hijo de <code class="docutils literal"><span class="pre">fondo</span></code> así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que
-* Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:</p>
+<p>Como nos piden una cantidad el último elemento XPath debe ser forzosamente <code class="docutils literal"><span class="pre">cantidad</span></code>. Como nos ponen una condición tendremos que usar corchetes. El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> es hijo de <code class="docutils literal"><span class="pre">fondo</span></code> así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que</p>
+<p>Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">cuentaasociada</span> <span class="o">=</span> <span class="s2">&quot;20-A&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span>
 </pre></div>
 </div>
@@ -286,7 +286,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

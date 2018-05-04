@@ -421,23 +421,19 @@
 <span class="nt">&lt;/suministrosgrandes&gt;</span>
 </pre></div>
 </div>
-<p>Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.
-.. code-block:: xml</p>
-<blockquote>
-<div><p>&lt;suministrosgrandes&gt;
-{</p>
-<blockquote>
-<div><p>for $suministra
-in doc(«datos.xml»)/datos/suministros/suministra
-where $suministra/cantidad &gt; 450
-order by $suministra/proveedor ascending,</p>
-<blockquote>
-<div>$suministra/parte descending</div></blockquote>
-<p>return $suministra</p>
-</div></blockquote>
-<p>}
-&lt;/suministrosgrandes&gt;</p>
-</div></blockquote>
+<p>Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+{
+    for $suministra
+    in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
+    where $suministra/cantidad &gt; 450
+    order by $suministra/proveedor ascending,
+            $suministra/parte descending
+    return $suministra
+}
+<span class="nt">&lt;/suministrosgrandes&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="funciones-en-xquery">
 <h3>Funciones en XQuery<a class="headerlink" href="#funciones-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -445,6 +441,8 @@ order by $suministra/proveedor ascending,</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal"><span class="pre">fila</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</li>
+<li>XQuery también tiene «funciones de agregación» al estilo de SQL como <code class="docutils literal"><span class="pre">sum</span></code>, <code class="docutils literal"><span class="pre">count</span></code> y <code class="docutils literal"><span class="pre">avg</span></code>. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle <code class="docutils literal"><span class="pre">for</span></code>.</li>
+<li>En XQuery se usa <code class="docutils literal"><span class="pre">distinct-values</span></code> en lugar de <code class="docutils literal"><span class="pre">distinct</span></code> como hace SQL.</li>
 </ul>
 </div>
 <div class="section" id="consultas-de-ejemplo">
@@ -2136,7 +2134,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

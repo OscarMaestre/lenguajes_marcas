@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{03 de mayo de 2018}
+\date{04 de mayo de 2018}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -3156,7 +3156,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -8255,7 +8255,7 @@ Para ASIR el martes, 13 de marzo de 2018
 
 
 \chapter{Recuperación de información}
-\label{\detokenize{tema6:recuperacion-de-informacion}}\label{\detokenize{tema6::doc}}
+\label{\detokenize{tema6::doc}}\label{\detokenize{tema6:recuperacion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema6:introduccion}}
@@ -8676,28 +8676,19 @@ Así, por ejemplo, para ordenar la consulta anterior por cantidad usaríamos est
 \end{sphinxVerbatim}
 
 Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.
-.. code-block:: xml
-\begin{quote}
 
-\textless{}suministrosgrandes\textgreater{}
-\{
-\begin{quote}
-
-for \$suministra
-in doc(«datos.xml»)/datos/suministros/suministra
-where \$suministra/cantidad \textgreater{} 450
-order by \$suministra/proveedor ascending,
-\begin{quote}
-
-\$suministra/parte descending
-\end{quote}
-
-return \$suministra
-\end{quote}
-
-\}
-\textless{}/suministrosgrandes\textgreater{}
-\end{quote}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}suministrosgrandes}\PYG{n+nt}{\PYGZgt{}}
+\PYGZob{}
+    for \PYGZdl{}suministra
+    in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra
+    where \PYGZdl{}suministra/cantidad \PYGZgt{} 450
+    order by \PYGZdl{}suministra/proveedor ascending,
+            \PYGZdl{}suministra/parte descending
+    return \PYGZdl{}suministra
+\PYGZcb{}
+\PYG{n+nt}{\PYGZlt{}/suministrosgrandes\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 \subsection{Funciones en XQuery}
@@ -8709,6 +8700,12 @@ XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a lo
 
 \item {} 
 \sphinxcode{string-length(\$elemento)} devuelve la longitud de una cadena.
+
+\item {} 
+XQuery también tiene «funciones de agregación» al estilo de SQL como \sphinxcode{sum}, \sphinxcode{count} y \sphinxcode{avg}. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle \sphinxcode{for}.
+
+\item {} 
+En XQuery se usa \sphinxcode{distinct-values} en lugar de \sphinxcode{distinct} como hace SQL.
 
 \end{itemize}
 
@@ -11830,7 +11827,7 @@ Poner en una lista ordenada (elemento \sphinxcode{ol}) todas las capacidades RAM
 
 
 \chapter{Sistemas de gestión de información}
-\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}\label{\detokenize{tema8::doc}}
+\label{\detokenize{tema8::doc}}\label{\detokenize{tema8:sistemas-de-gestion-de-informacion}}
 
 \section{Introducción}
 \label{\detokenize{tema8:introduccion}}
@@ -15623,7 +15620,8 @@ Dado el siguiente fichero XML, contestar a las preguntas que se enuncian más ab
 \end{itemize}
 
 Como nos piden una cantidad el último elemento XPath debe ser forzosamente \sphinxcode{cantidad}. Como nos ponen una condición tendremos que usar corchetes. El elemento \sphinxcode{cuentaasociada} es hijo de \sphinxcode{fondo} así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que
-* Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:
+
+Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{o}{/}\PYG{n}{listado}\PYG{o}{/}\PYG{n}{fondo}\PYG{p}{[}\PYG{n}{cuentaasociada} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{20\PYGZhy{}A}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{/}\PYG{n}{datos}\PYG{o}{/}\PYG{n}{cantidaddepositada}
@@ -15946,6 +15944,123 @@ En los ejercicios siguientes se asume que se va a utilizar la siguiente base de 
         \PYG{n+nt}{\PYGZlt{}/suministra\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}/suministros\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/datos\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\section{Consulta: ciudad de los proveedores}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-ciudad-de-los-proveedores}}
+Extraer la ciudad de los proveedores (no debe aparecer la etiqueta) que tengan un estado mayor de 15.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}proveedor in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/proveedores/proveedor}
+\PYG{x}{where \PYGZdl{}proveedor/estado \PYGZgt{} 15}
+\PYG{x}{return \PYGZdl{}proveedor/ciudad/text()}
+\end{sphinxVerbatim}
+
+Si se ejecuta esto se verá que el resultado es correcto sin embargo la presentación no es muy buena, al mostrarse todo seguido. Usemos por ejemplo la función \sphinxcode{concat} para que cada resultado lleve un espacio detrás:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}proveedor in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/proveedores/proveedor}
+\PYG{x}{where \PYGZdl{}proveedor/estado \PYGZgt{} 15}
+\PYG{x}{return concat(\PYGZdl{}proveedor/ciudad/text(), \PYGZsq{} \PYGZsq{})}
+\end{sphinxVerbatim}
+
+
+\section{Consulta: filas de la tabla partes}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-filas-de-la-tabla-partes}}
+Averiguar cuantas partes existen, es decir, el total de filas de la «tabla» partes.
+
+Para resolverlo una tentación muy común es resolverlo así:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}partes in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes}
+\PYG{x}{return count (\PYGZdl{}partes/parte)}
+\end{sphinxVerbatim}
+
+Y aunque esta solución funciona \sphinxstylestrong{en realidad estamos haciendo un bucle de una sola iteración}.
+
+En este caso, se puede recurrir directamente a la función \sphinxcode{count} que permite contar el número de elementos de una consulta parcial sin tener que hacer siquiera el recorrido.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{count (doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte)}
+\end{sphinxVerbatim}
+
+
+\section{Consulta: cantidad de partes de Londres}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-cantidad-de-partes-de-londres}}
+Averiguar cuantas partes existen cuya ciudad sea «Londres», es decir, el total de filas de la «tabla» partes pero teniendo en cuenta la condición de que el «campo» ciudad debe ser Londres.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{count (doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte[ciudad=\PYGZsq{}Londres\PYGZsq{}])}
+\end{sphinxVerbatim}
+
+
+\section{Consulta: media de suministros}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-media-de-suministros}}
+Averiguar la media de la cantidad de partes que aparecen en la «tabla» suministra
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{avg (doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra/cantidad)}
+\end{sphinxVerbatim}
+
+Pregunta: ¿por qué no ponemos esta solución?
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{avg (doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra/cantidad/text())}
+\end{sphinxVerbatim}
+
+Respuesta: las funciones son capaces de «extraer el texto automáticamente» si en el elemento no hay hijos. En este caso, la cantidad no tiene hijos, por lo que podemos ahorrarnos el \sphinxcode{text()}
+
+
+\section{Consulta: media por proveedor}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-media-por-proveedor}}
+Averiguar la media de cantidades por proveedor usando los datos de la tabla suministra.
+
+Hagamos esta consulta por partes. En primer lugar, saquemos los distintos proveedores que hay en suministra
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}n in distinct\PYGZhy{}values(}
+\PYG{x}{doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/}
+\PYG{x}{proveedores/proveedor/@numprov)}
+\PYG{x}{return \PYGZdl{}n}
+\end{sphinxVerbatim}
+
+Ahora, teniendo los distintos proveedores podemos devolver algo distinto de \sphinxcode{numprov}. Podemos devolver la media para ese proveedor aprovechando los filtrados XPath.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}n in distinct\PYGZhy{}values(}
+\PYG{x}{doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/}
+\PYG{x}{proveedores/proveedor/@numprov)}
+\PYG{x}{return avg}
+\PYG{x}{( doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra}
+\PYG{x}{[numprov=\PYGZdl{}n]/cantidad)}
+\end{sphinxVerbatim}
+
+Y por último, si usamos \sphinxcode{concat} apropiadamente podemos hacer que aparezca el número de proveedor al lado de dica cantidad.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}n in distinct\PYGZhy{}values(}
+\PYG{x}{doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/proveedores/proveedor/@numprov)}
+\PYG{x}{return concat (}
+\PYG{x}{ \PYGZdl{}n, \PYGZsq{} \PYGZsq{}, avg(}
+\PYG{x}{ doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros}
+\PYG{x}{/suministra[numprov=\PYGZdl{}n]/cantidad)}
+\PYG{x}{)}
+\end{sphinxVerbatim}
+
+
+\section{Consulta: suministros en grandes cantidades}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-suministros-en-grandes-cantidades}}
+Averiguar el nombre de los proyectos (sin que haya repeticiones) que reciban una cantidad en la tabla suministra mayor de 650.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}proyecto}
+\PYG{x}{in doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/proyectos/proyecto}
+\PYG{x}{for \PYGZdl{}suministra}
+\PYG{x}{in}
+\PYG{x}{doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra[cantidad\PYGZgt{}650]}
+\PYG{x}{where \PYGZdl{}proyecto/@numproyecto = \PYGZdl{}suministra/numproyecto}
+\PYG{x}{return (\PYGZdl{}proyecto/nombreproyecto, \PYGZdl{}suministra/cantidad)}
 \end{sphinxVerbatim}
 
 
