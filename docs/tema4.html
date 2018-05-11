@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Javascript &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -32,8 +24,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -66,9 +57,9 @@
 </div>
 <div class="section" id="incrustando-javascript">
 <h2>Incrustando Javascript<a class="headerlink" href="#incrustando-javascript" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Javascript se inserta en HTML con la etiqueta <code class="docutils literal"><span class="pre">&lt;script&gt;</span></code>. Esta etiqueta puede ir en cualquier sitio del HTML, dentro de <code class="docutils literal"><span class="pre">&lt;head&gt;</span></code> o dentro de <code class="docutils literal"><span class="pre">&lt;body&gt;</span></code>.</p>
+<p>Javascript se inserta en HTML con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. Esta etiqueta puede ir en cualquier sitio del HTML, dentro de <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> o dentro de <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code>.</p>
 <p>Un programa muy simple sería este:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">una_variable</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">una_variable</span>
 <span class="nx">una_variable</span><span class="o">=</span><span class="mi">42</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">una_variable</span><span class="p">)</span>
 </pre></div>
@@ -76,8 +67,8 @@
 </div>
 <div class="section" id="decisiones">
 <h2>Decisiones<a class="headerlink" href="#decisiones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Las decisiones se toman con la sentencia <code class="docutils literal"><span class="pre">if</span></code> que funciona exactamente igual que en Java. Se pueden utilizar los mismos operadores <code class="docutils literal"><span class="pre">&amp;&amp;</span></code> y <code class="docutils literal"><span class="pre">||</span></code> al igual que en Java.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">una_variable</span> <span class="o">&gt;</span> <span class="nx">otra_variable</span><span class="p">)</span> <span class="p">{</span>
+<p>Las decisiones se toman con la sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code> que funciona exactamente igual que en Java. Se pueden utilizar los mismos operadores <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> y <code class="docutils literal notranslate"><span class="pre">||</span></code> al igual que en Java.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">una_variable</span> <span class="o">&gt;</span> <span class="nx">otra_variable</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;La primera es mayor que la segunda&quot;</span><span class="p">)</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;La segunda es mayor que la primera&quot;</span><span class="p">)</span>
@@ -88,7 +79,7 @@
 <div class="section" id="vectores-o-arrays">
 <h2>Vectores o Arrays<a class="headerlink" href="#vectores-o-arrays" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En Javascript los arrays pueden almacenar elementos de distinto tipo. Al crearlos podemos indicar el tamaño o no, pero no habrá problemas si queremos almacenar más elementos de los previstos.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="cm">/* Una forma de crear un array*/</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Una forma de crear un array*/</span>
 <span class="nx">vector_nombres</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
 <span class="nx">vector_nombres</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Juan Perez&quot;</span>
 <span class="nx">vector_nombres</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Pedro Diaz&quot;</span>
@@ -109,20 +100,20 @@
 <div class="section" id="bucles-for-estilo-clasico">
 <h4>Bucles for estilo clásico<a class="headerlink" href="#bucles-for-estilo-clasico" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>En estos bucles hay que poner la inicialización, la condición de final y la actualización:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot; está el número &quot;</span> <span class="o">+</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Obsérvese que hemos introducido el atributo <code class="docutils literal"><span class="pre">length</span></code> de la clase <code class="docutils literal"><span class="pre">Array</span></code> que nos indica la longitud del vector.</p>
+<p>Obsérvese que hemos introducido el atributo <code class="docutils literal notranslate"><span class="pre">length</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">Array</span></code> que nos indica la longitud del vector.</p>
 </div>
 <div class="section" id="ejercicio">
 <h4>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Crear un vector de 6 posiciones y rellenarlo con estos números: 9.98, 7.86, 4.53, 8.91, 5.76, 2.31.</p>
 <p>Ordenar el vector y mostrar el contenido del vector ordenado por pantalla.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">v</span><span class="o">=</span><span class="k">new</span> <span class="n">Array</span><span class="o">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">v</span><span class="o">=</span><span class="k">new</span> <span class="n">Array</span><span class="o">()</span>
 <span class="n">v</span><span class="o">=[</span><span class="mf">9.98</span><span class="o">,</span> <span class="mf">7.86</span><span class="o">,</span> <span class="mf">4.53</span><span class="o">,</span>
    <span class="mf">8.91</span><span class="o">,</span> <span class="mf">5.76</span><span class="o">,</span> <span class="mf">2.31</span><span class="o">]</span>
 
@@ -150,7 +141,7 @@
 <div class="section" id="bucles-foreach">
 <h4>Bucles foreach<a class="headerlink" href="#bucles-foreach" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Funciona igual que el anterior pero es mucho más corto.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">posicion</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">posicion</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
                 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">posicion</span><span class="p">)</span>
                 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot; está el número &quot;</span> <span class="o">+</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">posicion</span><span class="p">])</span>
@@ -161,8 +152,8 @@
 </div>
 <div class="section" id="bucles-while">
 <h3>Bucles while<a class="headerlink" href="#bucles-while" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Los bucles <code class="docutils literal"><span class="pre">while</span></code> funcionan igual que en Java</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">posicion</span><span class="o">=</span><span class="mi">0</span>
+<p>Los bucles <code class="docutils literal notranslate"><span class="pre">while</span></code> funcionan igual que en Java</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">posicion</span><span class="o">=</span><span class="mi">0</span>
     <span class="k">while</span> <span class="p">(</span><span class="nx">posicion</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
                     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
                     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">posicion</span><span class="p">)</span>
@@ -176,7 +167,7 @@
 <div class="section" id="ejercicio-media-aritmetica">
 <h2>Ejercicio: media aritmética<a class="headerlink" href="#ejercicio-media-aritmetica" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crear un programa que calcule la media aritmética del vector de números.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">){</span>
         <span class="nx">suma</span><span class="o">=</span><span class="nx">suma</span><span class="o">+</span><span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
 <span class="p">}</span>
@@ -188,7 +179,7 @@
 <div class="section" id="ejercicio-desviacion-media">
 <h2>Ejercicio: desviación media<a class="headerlink" href="#ejercicio-desviacion-media" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crear un programa que calcule la desviación media del vector de números.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="cm">/* Para calcular la desviación media*/</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Para calcular la desviación media*/</span>
 <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">desviacion</span><span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span> <span class="p">(</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">-</span> <span class="nx">media</span> <span class="p">)</span>
@@ -203,7 +194,7 @@
 <div class="section" id="ejercicio-la-mediana">
 <h2>Ejercicio: la mediana<a class="headerlink" href="#ejercicio-la-mediana" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Calcular la mediana del vector</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">var</span> <span class="n">pos1</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span>
     <span class="n">var</span> <span class="n">pos2</span><span class="o">=</span><span class="n">pos1</span><span class="o">-</span><span class="mi">1</span>
     <span class="n">var</span> <span class="n">elem1</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos1</span><span class="o">]</span>
@@ -219,8 +210,8 @@
 </div>
 <div class="section" id="funciones">
 <h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para crear una función usaremos la palabra <code class="docutils literal"><span class="pre">function</span></code>, pondremos el nombre, luego los parámetros, dentro irá el código de la función, y si queremos devolver algo usaremos <code class="docutils literal"><span class="pre">return</span></code>.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="cm">/* Función a la que le pasamos un vector de números y que</span>
+<p>Para crear una función usaremos la palabra <code class="docutils literal notranslate"><span class="pre">function</span></code>, pondremos el nombre, luego los parámetros, dentro irá el código de la función, y si queremos devolver algo usaremos <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Función a la que le pasamos un vector de números y que</span>
 <span class="cm"> * nos devuelve la media de sus valores*/</span>
 
 <span class="kd">function</span> <span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">){</span>
@@ -242,7 +233,7 @@
 </pre></div>
 </div>
 <p>Una cuestión importante es que las funciones son valores asignables. Cuando queramos asignar una función a una variable <strong>no pondremos paréntesis</strong>. Cuando sí queramos ejecutar una función (ya sea con su nombre original o con el de la variable, sí pondremos los paréntesis con los parámetros que queramos pasar**.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">function</span> <span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">function</span> <span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="p">){</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;Hola &quot;</span>
         <span class="o">+</span><span class="nx">nombre</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
 <span class="p">}</span>
@@ -261,7 +252,7 @@
 <div class="section" id="id1">
 <h3>Ejercicio<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear un programa que tenga una función que calcule la desviación media de valores de un vector.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="cm">/* Función que calcula la desviacion media de</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Función que calcula la desviacion media de</span>
 <span class="cm">    * un vector de valores numericos*/</span>
 <span class="kd">function</span> <span class="nx">calcularDesviacionMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">)</span>
@@ -277,7 +268,7 @@
 <div class="section" id="id2">
 <h3>Ejercicio<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear un programa que tenga una función que calcule la moda.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="cm">/* Este vector nos dice cuantas veces aparece un número</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Este vector nos dice cuantas veces aparece un número</span>
 <span class="cm"> * en un vector*/</span>
 <span class="kd">function</span> <span class="nx">calcularFrecuencia</span><span class="p">(</span><span class="nx">numero</span><span class="p">,</span> <span class="nx">vector</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">num_veces</span><span class="o">=</span><span class="mi">0</span>
@@ -328,7 +319,7 @@
 <h2>Programación OO<a class="headerlink" href="#programacion-oo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se ha dicho anteriormente que Javascript es «basado en objetos» y no «orientado a objetos», es decir la POO es optativa. No por ello es menos potente.</p>
 <p>En primer lugar, es posible crear objetos sin crear clases.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
     <span class="nx">edad</span><span class="o">:</span><span class="mi">27</span><span class="p">,</span>
     <span class="nx">fijo</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
@@ -347,7 +338,7 @@
 </div>
 <div class="section" id="id3">
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Añadir un método llamado <code class="docutils literal"><span class="pre">nivelExperiencia</span></code> que nos diga una de estas cosas:</p>
+<p>Añadir un método llamado <code class="docutils literal notranslate"><span class="pre">nivelExperiencia</span></code> que nos diga una de estas cosas:</p>
 <ul class="simple">
 <li>Nos debe devolver «junior» si la edad está entre 18 y 25</li>
 <li>Nos debe devolver «asociado» si la edad está entre 26 y 45</li>
@@ -355,7 +346,7 @@
 <li>Nos debe devolver «experto» si la edad está entre 61 y 65</li>
 <li>Nos debe devolver «no aplicable» si la edad es mayor de 65</li>
 </ul>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
     <span class="nx">edad</span><span class="o">:</span><span class="mi">27</span><span class="p">,</span>
     <span class="nx">fijo</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
@@ -381,7 +372,7 @@
 <div class="section" id="id4">
 <h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear una clase GestorVectores que tenga los principales métodos estadísticos vistos hasta ahora: media, desviación media, mediana y moda.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">gestor_vectores</span><span class="o">=</span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">gestor_vectores</span><span class="o">=</span><span class="p">{</span>
         <span class="nx">vector_numeros</span><span class="o">:</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(),</span>
         <span class="nx">setDatos</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">vector</span><span class="p">){</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">vector_numeros</span><span class="o">=</span><span class="nx">vector</span>
@@ -425,7 +416,7 @@
 <div class="section" id="inicio">
 <h3>Inicio<a class="headerlink" href="#inicio" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>A partir de ahora todos nuestros archivos HTML tendrán que cargar al comienzo la biblioteca JQuery con una etiqueta como esta:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery.js&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;Javascript&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery.js&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;Javascript&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;nuestroprograma.js&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;Javascript&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -441,8 +432,8 @@
 </div>
 <div class="section" id="gestion-de-eventos">
 <h3>Gestión de eventos<a class="headerlink" href="#gestion-de-eventos" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Utilizando <code class="docutils literal"><span class="pre">click</span></code> podemos indicar a la biblioteca que queremos que cuando alguien haga click en un elemento se ejecute una cierta función. El siguiente código HTML y JS ilustra una posibilidad</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<p>Utilizando <code class="docutils literal notranslate"><span class="pre">click</span></code> podemos indicar a la biblioteca que queremos que cuando alguien haga click en un elemento se ejecute una cierta función. El siguiente código HTML y JS ilustra una posibilidad</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -470,7 +461,7 @@
 </pre></div>
 </div>
 <p>El código Javascript asociado al HTML anterior es este.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/* Esperaremos hasta que el documento esté cargado y listo</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Esperaremos hasta que el documento esté cargado y listo</span>
 <span class="cm"> * para ser procesado por nuestro programa*/</span>
 
 <span class="kd">var</span> <span class="nx">obj_documento</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">)</span>
@@ -501,7 +492,7 @@
 </div>
 <div class="section" id="solucion-html-parrafos">
 <h4>Solución HTML (párrafos)<a class="headerlink" href="#solucion-html-parrafos" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-grid-c&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-block-a&quot;</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span>
@@ -548,7 +539,7 @@
 </div>
 <div class="section" id="solucion-javascript-parrafos">
 <h4>Solución Javascript (párrafos)<a class="headerlink" href="#solucion-javascript-parrafos" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">mostrar_pares</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">objetos</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.p_par&quot;</span><span class="p">)</span>
@@ -581,9 +572,9 @@
 </div>
 <p>Existen diversos eventos aunque los más utilizados son:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">click</span></code></li>
-<li><code class="docutils literal"><span class="pre">dblclick</span></code></li>
-<li><code class="docutils literal"><span class="pre">mouseover</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">click</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dblclick</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">mouseover</span></code></li>
 </ul>
 </div>
 </div>
@@ -605,14 +596,14 @@
 </div>
 <div class="section" id="procesado-de-atributos">
 <h2>Procesado de atributos<a class="headerlink" href="#procesado-de-atributos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En JQuery sabemos que podemos procesar elementos utilizando su <code class="docutils literal"><span class="pre">id</span></code> con cosas como esta:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">objeto</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#identificador1&quot;</span><span class="p">)</span>
+<p>En JQuery sabemos que podemos procesar elementos utilizando su <code class="docutils literal notranslate"><span class="pre">id</span></code> con cosas como esta:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">objeto</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#identificador1&quot;</span><span class="p">)</span>
 <span class="nx">objeto</span><span class="p">.</span><span class="nx">metodo</span><span class="p">(</span> <span class="p">...</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>Una de las cosas que se puede hacer es leer y escribir diversos atributos de los objetos. Además, se pueden leer propiedades especiales como comprobar si un radio o un checkbox están en el estado <code class="docutils literal"><span class="pre">checked</span></code>.</p>
+<p>Una de las cosas que se puede hacer es leer y escribir diversos atributos de los objetos. Además, se pueden leer propiedades especiales como comprobar si un radio o un checkbox están en el estado <code class="docutils literal notranslate"><span class="pre">checked</span></code>.</p>
 <p>Supongamos este formulario:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;h&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;opc_h&quot;</span><span class="p">&gt;</span>Hombre
     <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;m&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;opc_m&quot;</span><span class="p">&gt;</span>Mujer
@@ -633,8 +624,8 @@
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Podemos usar el método <code class="docutils literal"><span class="pre">val</span></code> para cambiar el valor de un objeto cualquiera:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">inicio</span><span class="p">(){</span>
+<p>Podemos usar el método <code class="docutils literal notranslate"><span class="pre">val</span></code> para cambiar el valor de un objeto cualquiera:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">inicio</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">opc_h</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#opc_h&quot;</span><span class="p">)</span>
         <span class="nx">opc_h</span><span class="p">.</span><span class="nx">click</span> <span class="p">(</span> <span class="nx">click_hombre</span> <span class="p">)</span>
 
@@ -653,11 +644,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Por ejemplo, en los checkboxes y en los radios, podemos comprobar si uno de ellos está marcado comprobando la propiedad «checked» con el método <code class="docutils literal"><span class="pre">prop</span></code>.</p>
+<p>Por ejemplo, en los checkboxes y en los radios, podemos comprobar si uno de ellos está marcado comprobando la propiedad «checked» con el método <code class="docutils literal notranslate"><span class="pre">prop</span></code>.</p>
 <p>Supongamos que deseamos saber cuantos checkboxes se marcan. Si se marcan cero, una o dos, mostraremos el texto «poca variedad», si se marcan tres mostraremos «cierta variedad» y si se marcan cuatro o cinco, mostraremos «mucha variedad».</p>
 <p>Aquí hay dos posibles soluciones, siendo una de ellas  más corta y flexible que la otra.</p>
 <p>La primera:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opc_coche</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#coche&quot;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opc_coche</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#coche&quot;</span><span class="p">)</span>
 <span class="nx">opc_coche</span><span class="p">.</span><span class="nx">click</span> <span class="p">(</span> <span class="nx">cuantas_pulsadas</span> <span class="p">)</span>
 
 <span class="kd">var</span> <span class="nx">opc_moto</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#moto&quot;</span><span class="p">)</span>
@@ -677,8 +668,8 @@
     <span class="p">}</span>
 </pre></div>
 </div>
-<p>El segundo implica que todos los controles tengan el mismo atributo <code class="docutils literal"><span class="pre">class</span></code>. Ahora la solución tendría un HTML como este:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;medios[]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bus&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;medio&quot;</span><span class="p">&gt;</span>Autobús
+<p>El segundo implica que todos los controles tengan el mismo atributo <code class="docutils literal notranslate"><span class="pre">class</span></code>. Ahora la solución tendría un HTML como este:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;medios[]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;bus&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;medio&quot;</span><span class="p">&gt;</span>Autobús
 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;medios[]&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;coche&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;medio&quot;</span><span class="p">&gt;</span>Coche
 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
@@ -691,7 +682,7 @@
 </pre></div>
 </div>
 <p>Y el JS sería así:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">medios_de_locomocion</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.medio&quot;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">medios_de_locomocion</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.medio&quot;</span><span class="p">)</span>
 <span class="nx">medios_de_locomocion</span><span class="p">.</span><span class="nx">click</span> <span class="p">(</span> <span class="nx">cuantas_pulsadas</span> <span class="p">)</span>
     <span class="kd">function</span> <span class="nx">cuantas_pulsadas</span><span class="p">(){</span>
             <span class="kd">var</span> <span class="nx">cuantas_marcadas</span><span class="o">=</span><span class="mi">0</span>
@@ -721,7 +712,7 @@
 <p>Crear un programa que permita al usuario indicar cinco posibles medios de locomoción (usar checkboxes), a saber:coche, moto, bus, tren y avión. El programa debe contabilizar cuantos se usan en informar del número de medios usados en un textbox.</p>
 <div class="section" id="solucion-recuento-de-medios-html">
 <h4>Solución: recuento de medios (HTML)<a class="headerlink" href="#solucion-recuento-de-medios-html" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-html"><div class="highlight"><pre><span></span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-grid-d&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-grid-d&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-block-a&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
                <span class="na">name</span><span class="o">=</span><span class="s">&quot;medio&quot;</span>
@@ -759,8 +750,8 @@
 </div>
 <div class="section" id="solucion-recuento-de-medios-js">
 <h4>Solución: recuento de medios (JS)<a class="headerlink" href="#solucion-recuento-de-medios-js" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Variante 1: Sin vectores, implica usar muchos <code class="docutils literal"><span class="pre">if</span></code>. Aunque funcione supone cortar y pegar, que aunque en este caso no sea un trabajo muy grande nos obliga a adoptar malos hábitos</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
+<p>Variante 1: Sin vectores, implica usar muchos <code class="docutils literal notranslate"><span class="pre">if</span></code>. Aunque funcione supone cortar y pegar, que aunque en este caso no sea un trabajo muy grande nos obliga a adoptar malos hábitos</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">contar</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mi">0</span>
@@ -789,7 +780,7 @@
 </pre></div>
 </div>
 <p>Variante 2: Con vectores</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 <span class="kd">function</span> <span class="nx">contar</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mi">0</span>
         <span class="kd">var</span> <span class="nx">ids</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
@@ -831,7 +822,7 @@
 </div>
 <div class="section" id="solucion-html-configurador">
 <h3>Solución HTML configurador<a class="headerlink" href="#solucion-html-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;intel&quot;</span><span class="p">&gt;</span>Intel i5<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;intel&quot;</span><span class="p">&gt;</span>Intel i5<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span>
        <span class="na">name</span><span class="o">=</span><span class="s">&quot;procesador&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;intel&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;amd&quot;</span><span class="p">&gt;</span>AMD<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
@@ -861,7 +852,7 @@
 </div>
 <div class="section" id="solucion-js-configurador">
 <h3>Solución JS configurador<a class="headerlink" href="#solucion-js-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">calcular_precio</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span>
@@ -935,7 +926,7 @@
 <p>Google Maps ofrece un servicio de mapas con una limitación de 25.000 peticiones diarias. El código básico sería así:</p>
 <div class="section" id="html-de-gmaps">
 <h3>HTML de GMaps<a class="headerlink" href="#html-de-gmaps" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1000,7 +991,7 @@
 </div>
 <div class="section" id="javascript-de-gmaps">
 <h3>Javascript de GMaps<a class="headerlink" href="#javascript-de-gmaps" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">latitud</span><span class="o">=</span><span class="mf">38.59</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">latitud</span><span class="o">=</span><span class="mf">38.59</span>
 <span class="kd">var</span> <span class="nx">longitud</span><span class="o">=-</span><span class="mf">3.55</span>
 <span class="kd">var</span> <span class="nx">mi_nivel_de_zoom</span><span class="o">=</span><span class="mi">8</span>
 <span class="kd">var</span> <span class="nx">obj_mapa</span>
@@ -1039,14 +1030,14 @@
 <li>Berlin: (52.31, 13.39)</li>
 <li>París: (48.85, 2.35)</li>
 </ul>
-<p>Para poder conseguir esto, hay que modificar la URL de carga de GoogleMaps para solicitar que se cargue una biblioteca que nos ayudará a resolver este punto. En concreto, ahora pasaremos un parámetro <code class="docutils literal"><span class="pre">libraries</span></code> con el valor <code class="docutils literal"><span class="pre">geometry</span></code> que nos permitirá utilizar la biblioteca en concreto. Ahora el HTML es así:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=AIzaSyDpv9zCj9szIIu--LuNmDsry2fZCRrOqfY&amp;sensor=false&amp;libraries=geometry&quot;</span><span class="p">&gt;</span>
+<p>Para poder conseguir esto, hay que modificar la URL de carga de GoogleMaps para solicitar que se cargue una biblioteca que nos ayudará a resolver este punto. En concreto, ahora pasaremos un parámetro <code class="docutils literal notranslate"><span class="pre">libraries</span></code> con el valor <code class="docutils literal notranslate"><span class="pre">geometry</span></code> que nos permitirá utilizar la biblioteca en concreto. Ahora el HTML es así:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=AIzaSyDpv9zCj9szIIu--LuNmDsry2fZCRrOqfY&amp;sensor=false&amp;libraries=geometry&quot;</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Ahora una función que nos calcula la distancia sería algo como esto:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/* Nos da la distancia en metros entre CR</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Nos da la distancia en metros entre CR</span>
 <span class="cm"> * y el punto (latitud_destino,longitud_destino)</span>
 <span class="cm"> * (abreviados lat_dest y lng_dest)*/</span>
 <span class="kd">function</span> <span class="nx">distancia</span><span class="p">(</span><span class="nx">lat_dest</span><span class="p">,</span> <span class="nx">lng_dest</span><span class="p">)</span>
@@ -1081,8 +1072,8 @@
 <li>No se puede integrar el alerón en los monovolúmenes.</li>
 <li>No se puede poner el radio-cd a los monovolúmenes.</li>
 </ul>
-<p>Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configurados y avisar de que no se puede hacer eso. No se pueden usar <code class="docutils literal"><span class="pre">alerts</span></code></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
+<p>Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configurados y avisar de que no se puede hacer eso. No se pueden usar <code class="docutils literal notranslate"><span class="pre">alerts</span></code></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;#berlina&quot;</span><span class="p">,</span> <span class="s2">&quot;#radiocd&quot;</span><span class="p">,</span> <span class="s2">&quot;#alerones&quot;</span><span class="p">,</span> <span class="s2">&quot;#llantas&quot;</span><span class="p">]</span>
 <span class="kd">var</span> <span class="nx">precios</span><span class="o">=</span><span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6800</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span>
                 <span class="mi">3700</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
@@ -1147,10 +1138,10 @@
 <li>Rojo, Verde y Azul básicos: 950</li>
 <li>Gris, Negro y Naranja: 1400 euros por ser colores metalizados</li>
 </ul>
-<p>Además, se desea ver una muestra de color en algún punto de la página. Para lograrlo se necesitará utilizar un método que proporciona JQuery y que se llama <code class="docutils literal"><span class="pre">addClass</span></code></p>
+<p>Además, se desea ver una muestra de color en algún punto de la página. Para lograrlo se necesitará utilizar un método que proporciona JQuery y que se llama <code class="docutils literal notranslate"><span class="pre">addClass</span></code></p>
 <div class="section" id="solucion-html">
 <h4>Solución HTML<a class="headerlink" href="#solucion-html" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
                 <span class="p">.</span><span class="nc">muestrarojo</span><span class="p">{</span>
                         <span class="k">background-color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
@@ -1221,7 +1212,7 @@
 <div class="section" id="solucion-js">
 <h4>Solución JS<a class="headerlink" href="#solucion-js" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Añadiremos este código a nuestro programa anterior.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">obj_documento</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">obj_documento</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">)</span>
 <span class="nx">obj_documento</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="nx">inicio</span><span class="p">)</span>
 
 <span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
@@ -1273,7 +1264,7 @@
 </ul>
 <div class="section" id="configurador-en-html">
 <h3>Configurador en HTML<a class="headerlink" href="#configurador-en-html" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Elija un modelo<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;modelo&quot;</span>
                    <span class="na">id</span><span class="o">=</span><span class="s">&quot;modelo_a&quot;</span><span class="p">&gt;</span>Modelo A<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
@@ -1300,7 +1291,7 @@
 </div>
 <div class="section" id="configurador-en-js">
 <h3>Configurador en JS<a class="headerlink" href="#configurador-en-js" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
         <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
@@ -1356,7 +1347,7 @@
 <h2>Calculo de impuestos<a class="headerlink" href="#calculo-de-impuestos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear una pequeña aplicación web que permita calcular los impuestos que se deben pagar a partir de unos datos, en concreto:</p>
 <ul class="simple">
-<li>Se debe introducir el salario anual en un campo de tipo <code class="docutils literal"><span class="pre">number</span></code>.</li>
+<li>Se debe introducir el salario anual en un campo de tipo <code class="docutils literal notranslate"><span class="pre">number</span></code>.</li>
 <li>Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.</li>
 <li>Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.</li>
 </ul>
@@ -1374,7 +1365,7 @@
 </ul>
 <div class="section" id="html-calculador">
 <h3>HTML calculador<a class="headerlink" href="#html-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1411,7 +1402,7 @@
 </div>
 <div class="section" id="js-calculador-con-jquery-dam">
 <h3>JS Calculador (con JQuery (DAM))<a class="headerlink" href="#js-calculador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getFloat</span> <span class="p">(</span> <span class="nx">identificador</span> <span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getFloat</span> <span class="p">(</span> <span class="nx">identificador</span> <span class="p">){</span>
     <span class="kd">let</span> <span class="nx">objeto_control</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">identificador</span><span class="p">);</span>
     <span class="kd">let</span> <span class="nx">cadena_control</span><span class="o">=</span><span class="nx">objeto_control</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
     <span class="kd">let</span> <span class="nx">cantidad</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">cadena_control</span><span class="p">);</span>
@@ -1469,7 +1460,7 @@
 </div>
 <div class="section" id="js-calculador-sin-jquery-asir">
 <h3>JS Calculador (sin JQuery (ASIR))<a class="headerlink" href="#js-calculador-sin-jquery-asir" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">limpiar_errores</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">limpiar_errores</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">objeto_diesel</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">);</span>
     <span class="kd">let</span> <span class="nx">objeto_pot2300</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot2300&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">((</span><span class="nx">objeto_diesel</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">objeto_pot2300</span><span class="p">.</span><span class="nx">checked</span><span class="p">))</span> <span class="p">{</span>
@@ -1546,7 +1537,7 @@
 <p>Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos «Mes 1», «Mes 2» y «Mes 3»  y que le diga qué compañía le interesa más.</p>
 <div class="section" id="html-del-comparador">
 <h3>HTML del comparador<a class="headerlink" href="#html-del-comparador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
 Mes 1<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;800&quot;</span>
                          <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;5000&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mes1&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
 Mes 2<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2000&quot;</span>
@@ -1561,7 +1552,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </div>
 <div class="section" id="js-del-comparador">
 <h3>JS del comparador<a class="headerlink" href="#js-del-comparador" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">extraer_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">extraer_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">control</span><span class="p">;</span>
         <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
         <span class="kd">var</span> <span class="nx">valor</span><span class="o">=</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
@@ -1773,12 +1764,14 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Ir a" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1789,7 +1782,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Introducción &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -32,8 +24,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -124,7 +115,7 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 se acepta. Si se elige una gramática (como por ejemplo la de HTML5) es muy recomendable
 respetar las reglas de esa gramática.
 A modo de ejemplo, esto es una página válida</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
                 <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -136,7 +127,7 @@ A modo de ejemplo, esto es una página válida</p>
 </pre></div>
 </div>
 <p>y esto no lo es.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Esto es el título de la página
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </pre></div>
@@ -150,7 +141,7 @@ y tales documentos deben llevar en la cabecera algo que diga a qué estándar se
 <li>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</li>
 </ul>
 <p>Un ejemplo de DTD, sería esto:</p>
-<div class="highlight-dtd"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">lista_de_personas</span> <span class="o">(</span><span class="nt">persona</span><span class="o">*)</span><span class="k">&gt;</span>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">lista_de_personas</span> <span class="o">(</span><span class="nt">persona</span><span class="o">*)</span><span class="k">&gt;</span>
 <span class="k">&lt;!ELEMENT</span> <span class="nt">persona</span> <span class="o">(</span><span class="nt">nombre</span><span class="o">,</span> <span class="nt">fechanacimiento</span><span class="o">?,</span> <span class="nt">sexo</span><span class="o">?,</span> <span class="nt">numeroseguridadsocial</span><span class="o">?)</span><span class="k">&gt;</span>
 <span class="k">&lt;!ELEMENT</span> <span class="nt">nombre</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span> <span class="k">&gt;</span>
 <span class="k">&lt;!ELEMENT</span> <span class="nt">fechanacimiento</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span> <span class="k">&gt;</span>
@@ -159,7 +150,7 @@ y tales documentos deben llevar en la cabecera algo que diga a qué estándar se
 </pre></div>
 </div>
 <p>Y un ejemplo de archivo aceptado por esa DTD sería este</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;lista_de_personas&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;lista_de_personas&gt;</span>
         <span class="nt">&lt;persona&gt;</span>
                 <span class="nt">&lt;nombre&gt;</span> Pepe Pérez <span class="nt">&lt;/nombre&gt;</span>
                 <span class="nt">&lt;sexo&gt;</span> Varón <span class="nt">&lt;/sexo&gt;</span>
@@ -181,7 +172,7 @@ y tales documentos deben llevar en la cabecera algo que diga a qué estándar se
 la mejora en la precisión de la definición ha implicado que escribir XML Schemas sea
 mucho más complicado.</p>
 <p>Un ejemplo de XML Schema (tomado de Wikipedia):</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
         <span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Libro&quot;</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;xsd:complexType&gt;</span>
@@ -268,12 +259,14 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Ir a" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -284,7 +277,7 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

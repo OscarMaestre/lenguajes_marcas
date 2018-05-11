@@ -600,7 +600,7 @@ Una vez que hemos cambiado el elemento raíz tenemos que generar dos elementos m
     </xsl:template>
     </xsl:stylesheet>
     
-Ahora tenemos que ir buscando todos los elementos ``cuenta`` y meterlos dentro de ``cuentas``. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle ``for-each``. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle no vaya dando cada uno de los elementos ``listado/cuenta``. Es decir, le pedimos al bucle que se meta en el elemento hijo ``listado`` y nos vaya dando cada uno de los elementos ``cuenta`` que hay dentro. Un posible bucle sería este:
+Ahora tenemos que ir buscando todos los elementos ``cuenta`` y meterlos dentro de ``cuentas``. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle ``for-each``. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle nos vaya dando cada uno de los elementos ``listado/cuenta``. Es decir, le pedimos al bucle que se meta en el elemento hijo ``listado`` y nos vaya dando cada uno de los elementos ``cuenta`` que hay dentro. Un posible bucle sería este:
 
 .. code-block:: xml
 
