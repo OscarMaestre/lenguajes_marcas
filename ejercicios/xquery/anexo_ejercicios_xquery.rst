@@ -6,7 +6,58 @@ En los ejercicios siguientes se asume que se va a utilizar la siguiente base de 
 
 .. literalinclude:: bd.xml
    :language: xml
-   
+
+
+A continuación se muestra la estructura en forma de tabla de los elementos XML de dicho archivo. Obsérvese que los atributos llevan la arroba delante y que no se han puesto todas las filas:
+
+
+Tabla proveedores
+
++----------+----------+--------+------------+
+| @numprov | nombre   | estado | ciudad     |
++==========+==========+========+============+
+|  v1      | Smith    |  20    | Londres    |
++----------+----------+--------+------------+
+|  v2      | Jones    |  10    | Paris      |
++----------+----------+--------+------------+
+
+Tabla partes:
+
++----------+-------------+-------+------+--------+
+|@numparte | nombreparte | color | peso | ciudad |
++==========+=============+=======+======+========+
+|   p1     | Tuerca      | Rojo  |  12  | Londres|
++----------+-------------+-------+------+--------+
+|   p2     | Perno       | Verde |  17  | Paris  |
++----------+-------------+-------+------+--------+
+
+
+Tabla proyectos
+
++----------------+----------------+--------+
+|  @numproyecto  | nombreproyecto | ciudad |
++================+================+========+
+|  y1            | Clasificador   | Paris  |
++----------------+----------------+--------+
+|  y2            | Monitor        | Roma   |
++----------------+----------------+--------+
+
+Tabla suministra
+
++---------+----------+-------------+----------+
+| numprov | numparte | numproyecto | cantidad |
++=========+==========+=============+==========+
+|  v1     |    p1    |    y1       | 200      |
++---------+----------+-------------+----------+
+|  v1     |    p1    |    y4       | 700      |
++---------+----------+-------------+----------+
+
+Obsérvese también que:
+
+* En la tabla ``suministra`` el campo ``numprov`` es el mismo que el campo ``numprov`` de la tabla ``proveedor``
+* En la tabla ``suministra`` el campo ``numparte`` es el mismo que el campo ``numparte`` de la tabla ``partes``
+* En la tabla ``suministra`` el campo ``numproyecto`` es el mismo que el campo ``numproyecto`` de la tabla ``proyectos``
+
 
 Consulta: ciudad de los proveedores
 -------------------------------------
@@ -48,6 +99,76 @@ En este caso, se puede recurrir directamente a la función ``count`` que permite
 
     count (doc("datos.xml")/datos/partes/parte)
     
+    
+Consulta con join's
+----------------------
+
+
+Obtener el nombre de los proyectos cuya ciudad sea Paris y que reciban una cantidad de partes > 350
+
+Paso 0: análisis
+------------------
+
+La cantidad está en las filas (elementos XML) ``suministra`` pero el ``nombreproyecto`` está en las filas ``proyecto``. Será necesario "cruzar" elementos ``proyecto`` con elementos ``suministra`` usando como condición que ``@numproyecto`` de los elementos ``proyecto`` sea igual a los campos ``numproyecto`` de los elementos ``suministra``
+
+Paso 1: hacemos el cruce
+---------------------------
+Una primera aproximación sería esta:
+
+.. code-block::
+
+   for $suministra in
+     doc("datos.xml")/datos/suministros/suministra
+   for $proyecto in
+     doc("datos.xml")/datos/proyectos/proyecto
+   where $suministra/numproyecto = $proyecto/@numproyecto
+   
+   return $proyecto/nombreproyecto
+   
+Sin embargo, esto devuelve "todos los proyectos" que de alguna manera aparezcan en la tabla ``suministra``
+   
+   
+   
+Paso 2: añadir condiciones
+----------------------------
+Nos han dicho que la cantidad de la tabla ``suministra`` debe ser mayor de 350, así que en el where o en el for de ``suministra`` podemos añadir una condición de filtrado:
+
+Asimismo necesitamos solamente los proyectos cuyo campo ``ciudad`` sea Paris.
+
+.. code-block::
+
+   for $suministra in
+     doc("datos.xml")/datos/suministros/suministra[cantidad>350]
+   for $proyecto in
+     doc("datos.xml")/datos/proyectos/proyecto[ciudad="Paris"]
+   where $suministra/numproyecto = $proyecto/@numproyecto   
+   
+   return $proyecto/nombreproyecto
+   
+   
+Otra variante usando condiciones en el ``where`` sería esta:
+
+.. code-block::
+
+   for $suministra in
+     doc("datos.xml")/datos/suministros/suministra
+   for $proyecto in
+     doc("datos.xml")/datos/proyectos/proyecto
+   where $suministra/numproyecto = $proyecto/@numproyecto   
+      and
+        $suministra/cantidad > 350
+      and
+        $proyecto/ciudad="Paris"
+   return $proyecto/nombreproyecto
+   
+   
+   
+Consulta: ciudades iguales
+---------------------------------------
+Obtener los nombres de proyecto y nombres de parte que estén en la misma ciudad.
+
+
+
 Consulta: cantidad de partes de Londres
 ------------------------------------------
 

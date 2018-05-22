@@ -4,12 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sistemas de gestión de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -24,7 +32,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body>
   
 
     <div class="document">
@@ -83,11 +92,11 @@
 <p>La mayor parte de SGI se apoyan en tecnologías conocidas como SGBD con SQL e incluso XML.</p>
 <p>La mayor parte de SGBD permite procesar y extraer información en forma de SQL.</p>
 <p>En general, cualquier consulta sobre cualquier tabla puede convertirse en XML. Cuando por ejemplo hacemos</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">marcas</span><span class="p">;</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">marcas</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>obtenemos un resultado como este:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+----+--------+-------------+</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+----+--------+-------------+</span>
 <span class="o">|</span> <span class="nb">id</span> <span class="o">|</span> <span class="n">nombre</span> <span class="o">|</span> <span class="n">ap</span>          <span class="o">|</span>
 <span class="o">+----+--------+-------------+</span>
 <span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Juan</span>   <span class="o">|</span> <span class="n">Lopez</span> <span class="n">Lopez</span> <span class="o">|</span>
@@ -99,11 +108,11 @@
 </pre></div>
 </div>
 <p>Sin embargo, podemos ejecutar el siguiente comando que se conecta a MySQL ejecuta la consulta dada y devuelve un fichero XML:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">Ddatos</span> <span class="o">-</span><span class="n">e</span><span class="s2">&quot;select * from usuarios&quot;</span> <span class="o">--</span><span class="n">xml</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">Ddatos</span> <span class="o">-</span><span class="n">e</span><span class="s2">&quot;select * from usuarios&quot;</span> <span class="o">--</span><span class="n">xml</span>
 </pre></div>
 </div>
 <p>El resultado será algo como esto:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span> <span class="nt">&lt;resultset</span> <span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span> <span class="nt">&lt;resultset</span> <span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
 <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;row&gt;</span>
                  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
@@ -201,14 +210,12 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
-    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Ir a" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -219,7 +226,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
