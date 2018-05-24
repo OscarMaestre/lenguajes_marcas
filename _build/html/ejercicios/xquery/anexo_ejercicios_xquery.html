@@ -452,6 +452,53 @@
 <div class="section" id="consulta-ciudades-iguales">
 <h2>Consulta: ciudades iguales<a class="headerlink" href="#consulta-ciudades-iguales" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Obtener los nombres de proyecto y nombres de parte que estén en la misma ciudad.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $proyecto in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
+<span class="x">    for $parte in</span>
+<span class="x">        doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">        where</span>
+<span class="x">            $parte/ciudad = $proyecto/ciudad</span>
+<span class="x">    return concat(</span>
+<span class="x">        $parte/nombreparte, &quot; en la misma ciudad que &quot;,</span>
+<span class="x">        $proyecto/nombreproyecto, &quot;-----&quot;</span>
+<span class="x">    )</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consulta-partes-con-colores-iguales">
+<h2>Consulta: partes con colores iguales<a class="headerlink" href="#consulta-partes-con-colores-iguales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Obtener parejas de partes que tengan el mismo color (indicando el nombre de ambas partes y el color que comparten)</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p1 in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">for $p2 in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">    where</span>
+<span class="x">        $p1/color = $p2/color</span>
+<span class="x">    return concat ($p1/nombreparte,</span>
+<span class="x">                   &quot; tiene el mismo color que &quot;,</span>
+<span class="x">                   $p2/nombreparte,</span>
+<span class="x">                   &quot; en concreto el color es:&quot;,</span>
+<span class="x">                   $p1/color, &quot;</span>
+<span class="x">                   &quot;)</span>
+</pre></div>
+</div>
+<p>Esta consulta funciona, pero ofrece parejas de partes que no tienen mucho sentido en pantalla, por ejemplo «Tuerca es igual que Tuerca». Para mejorar la consulta, vamos a eliminar parejas en la cuales el <code class="docutils literal"><span class="pre">numparte</span></code> sea el mismo, es decir no vamos a contemplar el emparejar una parte consigo misma.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p1 in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">for $p2 in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">where</span>
+<span class="x">    $p1/color = $p2/color</span>
+<span class="x">and</span>
+<span class="x">    $p1/@numparte != $p2/@numparte</span>
+<span class="x">return concat ($p1/nombreparte,</span>
+<span class="x">                   &quot; tiene el mismo color que &quot;,</span>
+<span class="x">                   $p2/nombreparte,</span>
+<span class="x">                   &quot; en concreto el color es:&quot;,</span>
+<span class="x">                   $p1/color, &quot;</span>
+<span class="x">                   &quot;)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="consulta-cantidad-de-partes-de-londres">
 <h2>Consulta: cantidad de partes de Londres<a class="headerlink" href="#consulta-cantidad-de-partes-de-londres" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -533,6 +580,7 @@
 <li><a class="reference internal" href="#paso-1-hacemos-el-cruce">Paso 1: hacemos el cruce</a></li>
 <li><a class="reference internal" href="#paso-2-anadir-condiciones">Paso 2: añadir condiciones</a></li>
 <li><a class="reference internal" href="#consulta-ciudades-iguales">Consulta: ciudades iguales</a></li>
+<li><a class="reference internal" href="#consulta-partes-con-colores-iguales">Consulta: partes con colores iguales</a></li>
 <li><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
 <li><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
 <li><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>

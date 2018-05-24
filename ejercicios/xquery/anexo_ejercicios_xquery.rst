@@ -167,6 +167,64 @@ Consulta: ciudades iguales
 ---------------------------------------
 Obtener los nombres de proyecto y nombres de parte que estén en la misma ciudad.
 
+.. code-block:: php
+
+    for $proyecto in
+        doc("datos.xml")/datos/proyectos/proyecto
+        for $parte in
+            doc("datos.xml")/datos/partes/parte
+            where
+                $parte/ciudad = $proyecto/ciudad
+        return concat(
+            $parte/nombreparte, " en la misma ciudad que ",
+            $proyecto/nombreproyecto, "-----"
+        )
+        
+        
+Consulta: partes con colores iguales
+----------------------------------------
+Obtener parejas de partes que tengan el mismo color (indicando el nombre de ambas partes y el color que comparten)
+
+.. code-block:: php
+
+    for $p1 in
+        doc("datos.xml")/datos/partes/parte
+    for $p2 in
+        doc("datos.xml")/datos/partes/parte
+        where
+            $p1/color = $p2/color
+        return concat ($p1/nombreparte,
+                       " tiene el mismo color que ",
+                       $p2/nombreparte,
+                       " en concreto el color es:",
+                       $p1/color, "
+                       ")
+
+Esta consulta funciona, pero ofrece parejas de partes que no tienen mucho sentido en pantalla, por ejemplo "Tuerca es igual que Tuerca". Para mejorar la consulta, vamos a eliminar parejas en la cuales el ``numparte`` sea el mismo, es decir no vamos a contemplar el emparejar una parte consigo misma.
+
+
+.. code-block:: php
+
+    for $p1 in
+        doc("datos.xml")/datos/partes/parte
+    for $p2 in
+        doc("datos.xml")/datos/partes/parte
+    where
+        $p1/color = $p2/color
+    and
+        $p1/@numparte != $p2/@numparte
+    return concat ($p1/nombreparte,
+                       " tiene el mismo color que ",
+                       $p2/nombreparte,
+                       " en concreto el color es:",
+                       $p1/color, "
+                       ")
+        
+
+
+
+
+
 
 
 Consulta: cantidad de partes de Londres
