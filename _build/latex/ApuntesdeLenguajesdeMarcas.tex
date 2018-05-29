@@ -70,7 +70,7 @@
 
 
 \chapter{Introducción}
-\label{\detokenize{tema1::doc}}\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}
+\label{\detokenize{tema1:apuntes-de-lenguajes-de-marcas}}\label{\detokenize{tema1:introduccion}}\label{\detokenize{tema1::doc}}
 
 \section{Historia}
 \label{\detokenize{tema1:historia}}
@@ -317,7 +317,7 @@ de otro si está en un nivel más arriba en el árbol DOM.
 
 
 \chapter{HTML5}
-\label{\detokenize{tema2::doc}}\label{\detokenize{tema2:html5}}
+\label{\detokenize{tema2:html5}}\label{\detokenize{tema2::doc}}
 
 \section{Introducción}
 \label{\detokenize{tema2:introduccion}}
@@ -3156,7 +3156,7 @@ Y un posible CSS:
 
 
 \chapter{Javascript}
-\label{\detokenize{tema4:javascript}}\label{\detokenize{tema4::doc}}
+\label{\detokenize{tema4::doc}}\label{\detokenize{tema4:javascript}}
 
 \section{Introducción}
 \label{\detokenize{tema4:introduccion}}
@@ -14307,7 +14307,7 @@ Solución:
 
 
 \chapter{Anexo: ejercicios sobre XSLT}
-\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}
+\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt::doc}}\label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:anexo-ejercicios-sobre-xslt}}
 
 \section{Fichero origen}
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:fichero-origen}}
@@ -16256,12 +16256,58 @@ Crear una consulta XQuery que averigüe la media de partes suministradas cuyo co
 
 \subsection{Paso 1: cruce de tablas}
 \label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:paso-1-cruce-de-tablas}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}parte in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte}
+\PYG{x}{for \PYGZdl{}suministra in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra}
+\PYG{x}{where}
+\PYG{x}{    \PYGZdl{}parte/@numparte = \PYGZdl{}suministra/numparte}
+\PYG{x}{//Faltaria el return}
+\end{sphinxVerbatim}
+
 
 \subsection{Paso 2: añadir condicion de filtrado}
 \label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:paso-2-anadir-condicion-de-filtrado}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}parte in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte}
+\PYG{x}{for \PYGZdl{}suministra in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra}
+\PYG{x}{where}
+\PYG{x}{    \PYGZdl{}parte/@numparte = \PYGZdl{}suministra/numparte}
+\PYG{x}{and}
+\PYG{x}{    \PYGZdl{}parte/color=\PYGZsq{}Rojo\PYGZsq{}}
+\PYG{x}{return \PYGZdl{}suministra/cantidad}
+\end{sphinxVerbatim}
+
+En realidad, este filtro también se podría hacer así:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{for \PYGZdl{}parte in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte[color=\PYGZsq{}Rojo\PYGZsq{}]}
+\PYG{x}{for \PYGZdl{}suministra in}
+\PYG{x}{    doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra}
+\PYG{x}{where}
+\PYG{x}{    \PYGZdl{}parte/@numparte = \PYGZdl{}suministra/numparte}
+\PYG{x}{return \PYGZdl{}suministra/cantidad}
+\end{sphinxVerbatim}
+
 
 \subsection{Paso 3: calcular la media}
 \label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:paso-3-calcular-la-media}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{avg (}
+\PYG{x}{    for \PYGZdl{}parte in}
+\PYG{x}{        doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/partes/parte[color=\PYGZsq{}Rojo\PYGZsq{}]}
+\PYG{x}{    for \PYGZdl{}suministra in}
+\PYG{x}{        doc(\PYGZdq{}datos.xml\PYGZdq{})/datos/suministros/suministra}
+\PYG{x}{    where}
+\PYG{x}{        \PYGZdl{}parte/@numparte = \PYGZdl{}suministra/numparte}
+\PYG{x}{    return \PYGZdl{}suministra/cantidad}
+\PYG{x}{)}
+\end{sphinxVerbatim}
+
 
 \subsection{Comprobación}
 \label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:comprobacion}}
@@ -16369,6 +16415,17 @@ y4
 \sphinxattableend\end{savenotes}
 
 Como vemos hay 9 filas con suministros de partes cuyo color es “Rojo” y la suma de cantidades es 3600 por lo el resultado correcto es 400
+
+
+\section{Consulta: media individual de partes rojas}
+\label{\detokenize{ejercicios/xquery/anexo_ejercicios_xquery:consulta-media-individual-de-partes-rojas}}
+En el ejercicio anterior hemos calculado \sphinxstyleemphasis{la media global} de
+partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.
+
+\begin{sphinxadmonition}{important}{Importante:}
+No vale poner como condicion las partes p1, p4 y p6. Debe
+hacerse con joins
+\end{sphinxadmonition}
 
 
 \section{Consulta: media de suministros}

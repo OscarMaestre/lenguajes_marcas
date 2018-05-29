@@ -246,12 +246,64 @@ Crear una consulta XQuery que averigüe la media de partes suministradas cuyo co
 Paso 1: cruce de tablas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+.. code-block:: php
+
+    for $parte in
+        doc("datos.xml")/datos/partes/parte
+    for $suministra in
+        doc("datos.xml")/datos/suministros/suministra
+    where
+        $parte/@numparte = $suministra/numparte
+    //Faltaria el return
+
+
 Paso 2: añadir condicion de filtrado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    for $parte in
+        doc("datos.xml")/datos/partes/parte
+    for $suministra in
+        doc("datos.xml")/datos/suministros/suministra
+    where
+        $parte/@numparte = $suministra/numparte
+    and
+        $parte/color='Rojo'
+    return $suministra/cantidad
+        
+En realidad, este filtro también se podría hacer así:
+
+.. code-block:: php
+
+    for $parte in
+        doc("datos.xml")/datos/partes/parte[color='Rojo']
+    for $suministra in
+        doc("datos.xml")/datos/suministros/suministra
+    where
+        $parte/@numparte = $suministra/numparte
+    return $suministra/cantidad
+
 
 
 Paso 3: calcular la media
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    avg (
+        for $parte in
+            doc("datos.xml")/datos/partes/parte[color='Rojo']
+        for $suministra in
+            doc("datos.xml")/datos/suministros/suministra
+        where
+            $parte/@numparte = $suministra/numparte
+        return $suministra/cantidad
+    )
+
+
+
 
 Comprobación
 ~~~~~~~~~~~~~~~~
@@ -286,6 +338,17 @@ Esto significa que las unicas filas de ``suministra`` que nos interesan son esta
 
 Como vemos hay 9 filas con suministros de partes cuyo color es 'Rojo' y la suma de cantidades es 3600 por lo el resultado correcto es 400
 
+
+
+Consulta: media individual de partes rojas
+-------------------------------------------
+
+En el ejercicio anterior hemos calculado *la media global* de
+partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.
+
+.. IMPORTANT::
+   No vale poner como condicion las partes p1, p4 y p6. Debe
+   hacerse con joins 
 
     
 Consulta: media de suministros

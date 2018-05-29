@@ -512,12 +512,53 @@
 <p>Crear una consulta XQuery que averigüe la media de partes suministradas cuyo color sea “Rojo”</p>
 <div class="section" id="paso-1-cruce-de-tablas">
 <h3>Paso 1: cruce de tablas<a class="headerlink" href="#paso-1-cruce-de-tablas" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">for $suministra in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">where</span>
+<span class="x">    $parte/@numparte = $suministra/numparte</span>
+<span class="x">//Faltaria el return</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="paso-2-anadir-condicion-de-filtrado">
 <h3>Paso 2: añadir condicion de filtrado<a class="headerlink" href="#paso-2-anadir-condicion-de-filtrado" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<span class="x">for $suministra in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">where</span>
+<span class="x">    $parte/@numparte = $suministra/numparte</span>
+<span class="x">and</span>
+<span class="x">    $parte/color=&#39;Rojo&#39;</span>
+<span class="x">return $suministra/cantidad</span>
+</pre></div>
+</div>
+<p>En realidad, este filtro también se podría hacer así:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
+<span class="x">for $suministra in</span>
+<span class="x">    doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">where</span>
+<span class="x">    $parte/@numparte = $suministra/numparte</span>
+<span class="x">return $suministra/cantidad</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="paso-3-calcular-la-media">
 <h3>Paso 3: calcular la media<a class="headerlink" href="#paso-3-calcular-la-media" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">avg (</span>
+<span class="x">    for $parte in</span>
+<span class="x">        doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
+<span class="x">    for $suministra in</span>
+<span class="x">        doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">    where</span>
+<span class="x">        $parte/@numparte = $suministra/numparte</span>
+<span class="x">    return $suministra/cantidad</span>
+<span class="x">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="comprobacion">
 <h3>Comprobación<a class="headerlink" href="#comprobacion" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -586,6 +627,16 @@ Esto significa que las unicas filas de <code class="docutils literal"><span clas
 </tbody>
 </table>
 <p>Como vemos hay 9 filas con suministros de partes cuyo color es “Rojo” y la suma de cantidades es 3600 por lo el resultado correcto es 400</p>
+</div>
+</div>
+<div class="section" id="consulta-media-individual-de-partes-rojas">
+<h2>Consulta: media individual de partes rojas<a class="headerlink" href="#consulta-media-individual-de-partes-rojas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En el ejercicio anterior hemos calculado <em>la media global</em> de
+partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.</p>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p class="last">No vale poner como condicion las partes p1, p4 y p6. Debe
+hacerse con joins</p>
 </div>
 </div>
 <div class="section" id="consulta-media-de-suministros">
@@ -670,6 +721,7 @@ Esto significa que las unicas filas de <code class="docutils literal"><span clas
 <li><a class="reference internal" href="#comprobacion">Comprobación</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#consulta-media-individual-de-partes-rojas">Consulta: media individual de partes rojas</a></li>
 <li><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
 <li><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
 <li><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>
