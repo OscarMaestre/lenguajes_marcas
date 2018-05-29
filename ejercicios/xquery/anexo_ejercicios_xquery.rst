@@ -236,6 +236,58 @@ Averiguar cuantas partes existen cuya ciudad sea "Londres", es decir, el total d
 
     count (doc("datos.xml")/datos/partes/parte[ciudad='Londres'])
     
+
+
+Consulta: media de partes rojas
+----------------------------------
+
+Crear una consulta XQuery que averigüe la media de partes suministradas cuyo color sea 'Rojo'
+
+Paso 1: cruce de tablas
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Paso 2: añadir condicion de filtrado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Paso 3: calcular la media
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Comprobación
+~~~~~~~~~~~~~~~~
+
+Si analizamos la tabla partes veremos que las únicas partes cuyo color es 'Rojo' son las partes ``p1``, ``p4`` y ``p6``.
+Esto significa que las unicas filas de ``suministra`` que nos interesan son estas:
+
+
+
+
++---------+----------+-------------+----------+
+| numprov | numparte | numproyecto | cantidad |
++=========+==========+=============+==========+
+|  v1     |    p1    |    y1       | 200      |
++---------+----------+-------------+----------+
+|  v1     |    p1    |    y4       | 700      |
++---------+----------+-------------+----------+
+|  v3     |    p4    |    y2       | 500      |
++---------+----------+-------------+----------+
+|  v4     |    p6    |    y3       | 300      |
++---------+----------+-------------+----------+
+|  v4     |    p6    |    y7       | 300      |
++---------+----------+-------------+----------+
+|  v5     |    p6    |    y2       | 200      |
++---------+----------+-------------+----------+
+|  v5     |    p1    |    y4       | 100      |
++---------+----------+-------------+----------+
+|  v5     |    p4    |    y4       | 800      |
++---------+----------+-------------+----------+
+|  v5     |    p6    |    y4       | 500      |
++---------+----------+-------------+----------+
+
+Como vemos hay 9 filas con suministros de partes cuyo color es 'Rojo' y la suma de cantidades es 3600 por lo el resultado correcto es 400
+
+
+    
 Consulta: media de suministros
 ---------------------------------
 

@@ -507,6 +507,87 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="consulta-media-de-partes-rojas">
+<h2>Consulta: media de partes rojas<a class="headerlink" href="#consulta-media-de-partes-rojas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Crear una consulta XQuery que averigüe la media de partes suministradas cuyo color sea “Rojo”</p>
+<div class="section" id="paso-1-cruce-de-tablas">
+<h3>Paso 1: cruce de tablas<a class="headerlink" href="#paso-1-cruce-de-tablas" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="paso-2-anadir-condicion-de-filtrado">
+<h3>Paso 2: añadir condicion de filtrado<a class="headerlink" href="#paso-2-anadir-condicion-de-filtrado" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="paso-3-calcular-la-media">
+<h3>Paso 3: calcular la media<a class="headerlink" href="#paso-3-calcular-la-media" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="comprobacion">
+<h3>Comprobación<a class="headerlink" href="#comprobacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si analizamos la tabla partes veremos que las únicas partes cuyo color es “Rojo” son las partes <code class="docutils literal"><span class="pre">p1</span></code>, <code class="docutils literal"><span class="pre">p4</span></code> y <code class="docutils literal"><span class="pre">p6</span></code>.
+Esto significa que las unicas filas de <code class="docutils literal"><span class="pre">suministra</span></code> que nos interesan son estas:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="31%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">numprov</th>
+<th class="head">numparte</th>
+<th class="head">numproyecto</th>
+<th class="head">cantidad</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>v1</td>
+<td>p1</td>
+<td>y1</td>
+<td>200</td>
+</tr>
+<tr class="row-odd"><td>v1</td>
+<td>p1</td>
+<td>y4</td>
+<td>700</td>
+</tr>
+<tr class="row-even"><td>v3</td>
+<td>p4</td>
+<td>y2</td>
+<td>500</td>
+</tr>
+<tr class="row-odd"><td>v4</td>
+<td>p6</td>
+<td>y3</td>
+<td>300</td>
+</tr>
+<tr class="row-even"><td>v4</td>
+<td>p6</td>
+<td>y7</td>
+<td>300</td>
+</tr>
+<tr class="row-odd"><td>v5</td>
+<td>p6</td>
+<td>y2</td>
+<td>200</td>
+</tr>
+<tr class="row-even"><td>v5</td>
+<td>p1</td>
+<td>y4</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>v5</td>
+<td>p4</td>
+<td>y4</td>
+<td>800</td>
+</tr>
+<tr class="row-even"><td>v5</td>
+<td>p6</td>
+<td>y4</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>Como vemos hay 9 filas con suministros de partes cuyo color es “Rojo” y la suma de cantidades es 3600 por lo el resultado correcto es 400</p>
+</div>
+</div>
 <div class="section" id="consulta-media-de-suministros">
 <h2>Consulta: media de suministros<a class="headerlink" href="#consulta-media-de-suministros" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Averiguar la media de la cantidad de partes que aparecen en la «tabla» suministra</p>
@@ -582,6 +663,13 @@
 <li><a class="reference internal" href="#consulta-ciudades-iguales">Consulta: ciudades iguales</a></li>
 <li><a class="reference internal" href="#consulta-partes-con-colores-iguales">Consulta: partes con colores iguales</a></li>
 <li><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
+<li><a class="reference internal" href="#consulta-media-de-partes-rojas">Consulta: media de partes rojas</a><ul>
+<li><a class="reference internal" href="#paso-1-cruce-de-tablas">Paso 1: cruce de tablas</a></li>
+<li><a class="reference internal" href="#paso-2-anadir-condicion-de-filtrado">Paso 2: añadir condicion de filtrado</a></li>
+<li><a class="reference internal" href="#paso-3-calcular-la-media">Paso 3: calcular la media</a></li>
+<li><a class="reference internal" href="#comprobacion">Comprobación</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
 <li><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
 <li><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>

@@ -375,6 +375,11 @@
 \contentsline {section}{\numberline {13.7}Consulta: ciudades iguales}{307}{section.13.7}
 \contentsline {section}{\numberline {13.8}Consulta: partes con colores iguales}{307}{section.13.8}
 \contentsline {section}{\numberline {13.9}Consulta: cantidad de partes de Londres}{308}{section.13.9}
-\contentsline {section}{\numberline {13.10}Consulta: media de suministros}{308}{section.13.10}
-\contentsline {section}{\numberline {13.11}Consulta: media por proveedor}{308}{section.13.11}
-\contentsline {section}{\numberline {13.12}Consulta: suministros en grandes cantidades}{309}{section.13.12}
+\contentsline {section}{\numberline {13.10}Consulta: media de partes rojas}{308}{section.13.10}
+\contentsline {subsection}{\numberline {13.10.1}Paso 1: cruce de tablas}{308}{subsection.13.10.1}
+\contentsline {subsection}{\numberline {13.10.2}Paso 2: a\IeC {\~n}adir condicion de filtrado}{308}{subsection.13.10.2}
+\contentsline {subsection}{\numberline {13.10.3}Paso 3: calcular la media}{308}{subsection.13.10.3}
+\contentsline {subsection}{\numberline {13.10.4}Comprobaci\IeC {\'o}n}{308}{subsection.13.10.4}
+\contentsline {section}{\numberline {13.11}Consulta: media de suministros}{309}{section.13.11}
+\contentsline {section}{\numberline {13.12}Consulta: media por proveedor}{309}{section.13.12}
+\contentsline {section}{\numberline {13.13}Consulta: suministros en grandes cantidades}{310}{section.13.13}
