@@ -362,8 +362,8 @@ Si analizamos los resultados veremos que nos devuelve las partes p1, p4 y p6. Un
     return avg( doc("datos.xml")/datos/suministros/suministra
         [numparte=$parte/@numparte]/cantidad)
     
-Esta consulta nos solo las cantidades, vamos a mejorarla haciendo que aparezcan los
-nombres de parte. Observar que concatenamos las siguientes cosas:
+Esta consulta nos muestra solo las cantidades de cada parte cuyo color es rojo. Vamos a mejorarla haciendo que aparezcan los
+nombres de parte. Obsérvese que concatenamos las siguientes cosas:
 
 * Primero el nombre de la parte.
 * Segundo un pequeño separador.
