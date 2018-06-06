@@ -663,11 +663,6 @@ Esto significa que las unicas filas de <code class="docutils literal"><span clas
 <h2>Consulta: media individual de partes rojas<a class="headerlink" href="#consulta-media-individual-de-partes-rojas" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En el ejercicio anterior hemos calculado <em>la media global</em> de
 partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.</p>
-<div class="admonition important">
-<p class="first admonition-title">Importante</p>
-<p class="last">No vale poner como condicion las partes p1, p4 y p6. Debe
-hacerse con joins</p>
-</div>
 <p>Extraigamos primero las partes cuyo color es rojo:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
 <span class="x">return $parte</span>

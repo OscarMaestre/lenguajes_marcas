@@ -346,10 +346,6 @@ Consulta: media individual de partes rojas
 En el ejercicio anterior hemos calculado *la media global* de
 partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.
 
-.. IMPORTANT::
-   No vale poner como condicion las partes p1, p4 y p6. Debe
-   hacerse con joins 
-
 
 Extraigamos primero las partes cuyo color es rojo:
 
