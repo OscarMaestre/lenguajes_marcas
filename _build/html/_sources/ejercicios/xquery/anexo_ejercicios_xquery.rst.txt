@@ -359,7 +359,8 @@ Si analizamos los resultados veremos que nos devuelve las partes p1, p4 y p6. Un
 .. code-block:: php
 
     for $parte in doc("datos.xml")/datos/partes/parte[color='Rojo']
-    return avg( doc("datos.xml")/datos/suministros/suministra[numparte=$parte/@numparte]/cantidad)
+    return avg( doc("datos.xml")/datos/suministros/suministra
+        [numparte=$parte/@numparte]/cantidad)
     
 Esta consulta nos solo las cantidades, vamos a mejorarla haciendo que aparezcan los
 nombres de parte. Observar que concatenamos las siguientes cosas:
