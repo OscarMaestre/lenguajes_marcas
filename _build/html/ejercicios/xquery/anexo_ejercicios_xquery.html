@@ -441,13 +441,43 @@
 <div class="section" id="paso-1-hacemos-el-cruce">
 <h2>Paso 1: hacemos el cruce<a class="headerlink" href="#paso-1-hacemos-el-cruce" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Una primera aproximación sería esta:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $suministra in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">for $proyecto in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
+<span class="x">where $suministra/numproyecto = $proyecto/@numproyecto</span>
+
+<span class="x">return $proyecto/nombreproyecto</span>
+</pre></div>
+</div>
 <p>Sin embargo, esto devuelve «todos los proyectos» que de alguna manera aparezcan en la tabla <code class="docutils literal"><span class="pre">suministra</span></code></p>
 </div>
 <div class="section" id="paso-2-anadir-condiciones">
 <h2>Paso 2: añadir condiciones<a class="headerlink" href="#paso-2-anadir-condiciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Nos han dicho que la cantidad de la tabla <code class="docutils literal"><span class="pre">suministra</span></code> debe ser mayor de 350, así que en el where o en el for de <code class="docutils literal"><span class="pre">suministra</span></code> podemos añadir una condición de filtrado:</p>
 <p>Asimismo necesitamos solamente los proyectos cuyo campo <code class="docutils literal"><span class="pre">ciudad</span></code> sea Paris.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $suministra in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/suministros/suministra[cantidad&gt;350]</span>
+<span class="x">for $proyecto in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto[ciudad=&quot;Paris&quot;]</span>
+<span class="x">where $suministra/numproyecto = $proyecto/@numproyecto</span>
+
+<span class="x">return $proyecto/nombreproyecto</span>
+</pre></div>
+</div>
 <p>Otra variante usando condiciones en el <code class="docutils literal"><span class="pre">where</span></code> sería esta:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $suministra in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">for $proyecto in</span>
+<span class="x">  doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
+<span class="x">where $suministra/numproyecto = $proyecto/@numproyecto</span>
+<span class="x">   and</span>
+<span class="x">     $suministra/cantidad &gt; 350</span>
+<span class="x">   and</span>
+<span class="x">     $proyecto/ciudad=&quot;Paris&quot;</span>
+<span class="x">return $proyecto/nombreproyecto</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="consulta-ciudades-iguales">
 <h2>Consulta: ciudades iguales<a class="headerlink" href="#consulta-ciudades-iguales" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -637,6 +667,34 @@ partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja.
 <p class="first admonition-title">Importante</p>
 <p class="last">No vale poner como condicion las partes p1, p4 y p6. Debe
 hacerse con joins</p>
+</div>
+<p>Extraigamos primero las partes cuyo color es rojo:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
+<span class="x">return $parte</span>
+</pre></div>
+</div>
+<p>Si analizamos los resultados veremos que nos devuelve las partes p1, p4 y p6. Una vez hecho esto ahora devolvamos la media para cada una de esas partes:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
+<span class="x">return avg( doc(&quot;datos.xml&quot;)/datos/suministros/suministra[numparte=$parte/@numparte]/cantidad)</span>
+</pre></div>
+</div>
+<p>Esta consulta nos solo las cantidades, vamos a mejorarla haciendo que aparezcan los
+nombres de parte. Observar que concatenamos las siguientes cosas:</p>
+<ul class="simple">
+<li>Primero el nombre de la parte.</li>
+<li>Segundo un pequeño separador.</li>
+<li>Despues la media (que se calcula solo para las filas de <code class="docutils literal"><span class="pre">suministra</span></code> cuyo <code class="docutils literal"><span class="pre">numparte</span></code> es igual que el atributo <code class="docutils literal"><span class="pre">numparte</span></code> de la parte que estamos analizando.)</li>
+<li>Despues un espacio que separa unos resultados de otros</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $parte in doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
+<span class="x">return concat (</span>
+<span class="x">    $parte/nombreparte,</span>
+<span class="x">    &quot;--&quot;,</span>
+<span class="x">    avg (</span>
+<span class="x">        doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
+<span class="x">        [numparte=$parte/@numparte]/cantidad</span>
+<span class="x">        ), &quot;          &quot; )</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="consulta-media-de-suministros">

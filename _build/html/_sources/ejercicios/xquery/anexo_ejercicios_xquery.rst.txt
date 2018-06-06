@@ -115,7 +115,7 @@ Paso 1: hacemos el cruce
 ---------------------------
 Una primera aproximación sería esta:
 
-.. code-block::
+.. code-block:: php
 
    for $suministra in
      doc("datos.xml")/datos/suministros/suministra
@@ -135,7 +135,7 @@ Nos han dicho que la cantidad de la tabla ``suministra`` debe ser mayor de 350, 
 
 Asimismo necesitamos solamente los proyectos cuyo campo ``ciudad`` sea Paris.
 
-.. code-block::
+.. code-block:: php
 
    for $suministra in
      doc("datos.xml")/datos/suministros/suministra[cantidad>350]
@@ -148,7 +148,7 @@ Asimismo necesitamos solamente los proyectos cuyo campo ``ciudad`` sea Paris.
    
 Otra variante usando condiciones en el ``where`` sería esta:
 
-.. code-block::
+.. code-block:: php
 
    for $suministra in
      doc("datos.xml")/datos/suministros/suministra
@@ -349,6 +349,41 @@ partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja.
 .. IMPORTANT::
    No vale poner como condicion las partes p1, p4 y p6. Debe
    hacerse con joins 
+
+
+Extraigamos primero las partes cuyo color es rojo:
+
+.. code-block:: php
+
+    for $parte in doc("datos.xml")/datos/partes/parte[color='Rojo']
+    return $parte
+    
+Si analizamos los resultados veremos que nos devuelve las partes p1, p4 y p6. Una vez hecho esto ahora devolvamos la media para cada una de esas partes:
+
+.. code-block:: php
+
+    for $parte in doc("datos.xml")/datos/partes/parte[color='Rojo']
+    return avg( doc("datos.xml")/datos/suministros/suministra[numparte=$parte/@numparte]/cantidad)
+    
+Esta consulta nos solo las cantidades, vamos a mejorarla haciendo que aparezcan los
+nombres de parte. Observar que concatenamos las siguientes cosas:
+
+* Primero el nombre de la parte.
+* Segundo un pequeño separador.
+* Despues la media (que se calcula solo para las filas de ``suministra`` cuyo ``numparte`` es igual que el atributo ``numparte`` de la parte que estamos analizando.)
+* Despues un espacio que separa unos resultados de otros
+
+.. code-block:: php
+
+    for $parte in doc("datos.xml")/datos/partes/parte[color='Rojo']
+    return concat (
+        $parte/nombreparte,
+        "--",
+        avg (
+            doc("datos.xml")/datos/suministros/suministra
+            [numparte=$parte/@numparte]/cantidad
+            ), "          " ) 
+    
 
     
 Consulta: media de suministros
