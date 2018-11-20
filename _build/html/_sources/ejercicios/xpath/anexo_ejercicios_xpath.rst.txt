@@ -188,6 +188,7 @@ Consulta: "cantidad depositada"
 
 * ``/listado/fondo`` nos devolvería todos los elementos ``fondo``
 * ``/listado/fondo/datos`` nos devolvería todos los elementos ``datos`` que sean hijos de ``fondo`` los cuales a su vez deben ir dentro de ``inventario``.
+
 Como nos piden una cantidad el último elemento XPath debe ser forzosamente ``cantidad``. Como nos ponen una condición tendremos que usar corchetes. El elemento ``cuentaasociada`` es hijo de ``fondo`` así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que
 
 Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto::

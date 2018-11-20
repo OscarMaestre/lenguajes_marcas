@@ -62,6 +62,9 @@ Para el formateo elemental de textos se utilizan varias etiquetas:
 * ``<p>`` Se utiliza para marcar el comienzo y el fin de un párrafo.
 * La etiqueta ``br`` se utiliza para hacer una ruptura en el flujo del texto. Se escribe en forma abreviada ``<br/>``
 
+.. NOTE::
+   Una de las grandes preguntas es si escribir la etiqueta ``<br/>`` o ``<br>``. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que *"aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar"*. Así, en la cabecera podremos poner cosas como ``<meta...>`` o ``<meta... />``
+
 Gestión de espacios
 ===================
 

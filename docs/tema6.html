@@ -4,24 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Recuperación de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Sindicación y transformación de contenidos" href="tema7.html" />
@@ -32,13 +25,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="recuperacion-de-informacion">
@@ -59,8 +53,8 @@
 </div>
 <div class="section" id="xquery">
 <h2>XQuery<a class="headerlink" href="#xquery" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para empezar <strong>XQuery es un superconjunto de XPath</strong> por lo que las expresiones básicas de XQuery también servirán en XQuery. La primera diferencia es que en XQuery tendremos que usar la función <code class="docutils literal"><span class="pre">doc</span></code> para cargar un archivo y luego navegar por él. Supongamos que tenemos un archivo de ejemplo como este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<p>Para empezar <strong>XQuery es un superconjunto de XPath</strong> por lo que las expresiones básicas de XQuery también servirán en XQuery. La primera diferencia es que en XQuery tendremos que usar la función <code class="docutils literal notranslate"><span class="pre">doc</span></code> para cargar un archivo y luego navegar por él. Supongamos que tenemos un archivo de ejemplo como este:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
     <span class="nt">&lt;proveedores&gt;</span>
         <span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v1&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;nombreprov&gt;</span>Smith<span class="nt">&lt;/nombreprov&gt;</span>
@@ -300,15 +294,15 @@
 </pre></div>
 </div>
 <p>En él podríamos ejecutar consultas como estas:
-* Recuperar todos los proveedores con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/proveedores</span></code>
-* Recuperar todos los datos con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/</span></code>
-* Recuperar todas las partes con <code class="docutils literal"><span class="pre">doc(&quot;datos.xml&quot;)/datos/partes</span></code>.</p>
+* Recuperar todos los proveedores con <code class="docutils literal notranslate"><span class="pre">doc(&quot;datos.xml&quot;)/datos/proveedores</span></code>
+* Recuperar todos los datos con <code class="docutils literal notranslate"><span class="pre">doc(&quot;datos.xml&quot;)/datos/</span></code>
+* Recuperar todas las partes con <code class="docutils literal notranslate"><span class="pre">doc(&quot;datos.xml&quot;)/datos/partes</span></code>.</p>
 <p>De hecho, podemos usar las mismas consultas con predicados XPath y así por ejemplo extraer los datos del proveedor cuyo numprov es “v1” con la consulta siguiente:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">proveedores</span><span class="o">/</span><span class="n">proveedor</span><span class="p">[</span><span class="nd">@numprov</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">proveedores</span><span class="o">/</span><span class="n">proveedor</span><span class="p">[</span><span class="nd">@numprov</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Que devuelve este resultado:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v1&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;proveedor</span> <span class="na">numprov=</span><span class="s">&quot;v1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;nombreprov&gt;</span>Smith<span class="nt">&lt;/nombreprov&gt;</span>
     <span class="nt">&lt;estado&gt;</span>20<span class="nt">&lt;/estado&gt;</span>
     <span class="nt">&lt;ciudad&gt;</span>Londres<span class="nt">&lt;/ciudad&gt;</span>
@@ -316,11 +310,11 @@
 </pre></div>
 </div>
 <p>Extraer los datos de partes cuyo color sea “Rojo”. La consulta XQuery sería:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Rojo&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Rojo&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Y el resultado sería:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;nombreparte&gt;</span>Tuerca<span class="nt">&lt;/nombreparte&gt;</span>
     <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;peso&gt;</span>12<span class="nt">&lt;/peso&gt;</span>
@@ -342,7 +336,7 @@
 </div>
 <p>En XQuery se pueden mezclar las marcas con el programa. Sin embargo, para poder distinguir lo que se tiene que ejecutar de lo que no, tendremos que encerrar nuestras sentencias XQuery entre llaves y dejar las marcas fuera de las llaves.</p>
 <p>Así, esta consulta consigue generarnos un XML valido añadiendo un elemento raíz al conjunto de partes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">partesrojas</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">partesrojas</span><span class="o">&gt;</span>
 <span class="p">{</span>
     <span class="n">doc</span><span class="p">(</span><span class="s2">&quot;datos.xml&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;Rojo&#39;</span><span class="p">]</span>
 <span class="p">}</span>
@@ -350,7 +344,7 @@
 </pre></div>
 </div>
 <p>El resultado devuelto es este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
     <span class="nt">&lt;parte</span> <span class="na">numparte=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;nombreparte&gt;</span>Tuerca<span class="nt">&lt;/nombreparte&gt;</span>
         <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
@@ -370,23 +364,23 @@
 <span class="nt">&lt;/partesrojas&gt;</span>
 </pre></div>
 </div>
-<p>Antes se ha mencionado que se puede usar <code class="docutils literal"><span class="pre">WHERE</span></code> para crear condiciones. ¿Como cambiar entonces la consulta anterior para poner la condición en un <code class="docutils literal"><span class="pre">WHERE</span></code> y no meterla entre corchetes?</p>
-<p>Si queremos usar un <code class="docutils literal"><span class="pre">where</span></code> es porque queremos filtrar un conjunto de elementos, y si queremos un conjunto de elementos necesitaremos un bucle <code class="docutils literal"><span class="pre">for</span></code>. Y a su vez, si recorremos un conjunto de elementos tendremos que hacer algún procesamiento con ellos o al menos devolverlos de la manera normal.</p>
+<p>Antes se ha mencionado que se puede usar <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> para crear condiciones. ¿Como cambiar entonces la consulta anterior para poner la condición en un <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> y no meterla entre corchetes?</p>
+<p>Si queremos usar un <code class="docutils literal notranslate"><span class="pre">where</span></code> es porque queremos filtrar un conjunto de elementos, y si queremos un conjunto de elementos necesitaremos un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>. Y a su vez, si recorremos un conjunto de elementos tendremos que hacer algún procesamiento con ellos o al menos devolverlos de la manera normal.</p>
 <div class="section" id="bucles-for-en-xquery">
-<h3>Bucles <code class="docutils literal"><span class="pre">for</span></code> en XQuery<a class="headerlink" href="#bucles-for-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> en XQuery<a class="headerlink" href="#bucles-for-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los bucles de XQuery son parecidos a los de Java. Hay una variable de bucle que iremos procesando de alguna manera. Dicha variable llevará siempre el simbolo del dolar ($). Así, un bucle que recupera todas las partes sería:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
 <span class="x">return $p</span>
 </pre></div>
 </div>
 <p>Si ahora queremos filtrar las partes rojas haremos esto:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
 <span class="x">where $p/color=&#39;Rojo&#39;</span>
 <span class="x">return $p</span>
 </pre></div>
 </div>
 <p>Y si ahora queremos un nuevo elemento raíz podremos hacer esto:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;partesrojas&gt;</span>
 {
     for $p in doc(&quot;datos.xml&quot;)/datos/partes/parte
     where $p/color=&#39;Rojo&#39;
@@ -395,7 +389,7 @@
 <span class="nt">&lt;/partesrojas&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
 {
     for $suministra
     in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
@@ -408,9 +402,9 @@
 </div>
 <div class="section" id="ordenacion-en-xquery">
 <h3>Ordenación en XQuery<a class="headerlink" href="#ordenacion-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Si se desea ordenar un conjunto de datos puede usarse la clásula <code class="docutils literal"><span class="pre">order</span> <span class="pre">by</span></code> poniendo despues uno o varios elementos o atributos y usando <code class="docutils literal"><span class="pre">ascending</span></code> o <code class="docutils literal"><span class="pre">descending</span></code>, de manera similar a SQL.</p>
+<p>Si se desea ordenar un conjunto de datos puede usarse la clásula <code class="docutils literal notranslate"><span class="pre">order</span> <span class="pre">by</span></code> poniendo despues uno o varios elementos o atributos y usando <code class="docutils literal notranslate"><span class="pre">ascending</span></code> o <code class="docutils literal notranslate"><span class="pre">descending</span></code>, de manera similar a SQL.</p>
 <p>Así, por ejemplo, para ordenar la consulta anterior por cantidad usaríamos esto:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
 {
     for $suministra
     in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
@@ -422,7 +416,7 @@
 </pre></div>
 </div>
 <p>Igual que en SQL se pueden combinar varios campos. Si por ejemplo quisiéramos ordenar por proveedor ascendente y luego por parte descendiente haríamos esto.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
 {
     for $suministra
     in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
@@ -439,10 +433,10 @@
 <h3>Funciones en XQuery<a class="headerlink" href="#funciones-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a los nodos de un XML. A continuación se nombran algunas muy usadas:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal"><span class="pre">fila</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</li>
-<li>XQuery también tiene «funciones de agregación» al estilo de SQL como <code class="docutils literal"><span class="pre">sum</span></code>, <code class="docutils literal"><span class="pre">count</span></code> y <code class="docutils literal"><span class="pre">avg</span></code>. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle <code class="docutils literal"><span class="pre">for</span></code>.</li>
-<li>En XQuery se usa <code class="docutils literal"><span class="pre">distinct-values</span></code> en lugar de <code class="docutils literal"><span class="pre">distinct</span></code> como hace SQL.</li>
+<li><code class="docutils literal notranslate"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal notranslate"><span class="pre">fila</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</li>
+<li>XQuery también tiene «funciones de agregación» al estilo de SQL como <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> y <code class="docutils literal notranslate"><span class="pre">avg</span></code>. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</li>
+<li>En XQuery se usa <code class="docutils literal notranslate"><span class="pre">distinct-values</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">distinct</span></code> como hace SQL.</li>
 </ul>
 </div>
 <div class="section" id="consultas-de-ejemplo">
@@ -450,8 +444,8 @@
 <p>Las siguientes consultas van referidas a la  base de datos de proveedores y partes que aparecen al principio.</p>
 <div class="section" id="suministros-grandes">
 <h4>Suministros grandes<a class="headerlink" href="#suministros-grandes" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Usando <code class="docutils literal"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450. Encerrar los resultados dentro de un elemento raíz <code class="docutils literal"><span class="pre">suministrosgrandes</span></code></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+<p>Usando <code class="docutils literal notranslate"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450. Encerrar los resultados dentro de un elemento raíz <code class="docutils literal notranslate"><span class="pre">suministrosgrandes</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
 {
 for $fila in doc(&quot;datos.xml&quot;)//suministra
 where $fila/cantidad &gt; 450
@@ -463,8 +457,8 @@ return $fila/cantidad
 </div>
 <div class="section" id="renombrado-de-etiquetas">
 <h4>Renombrado de etiquetas<a class="headerlink" href="#renombrado-de-etiquetas" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Usando <code class="docutils literal"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450 <em>y haciendo que las etiquetas cantidad pasen a llamarse numpartes</em> . Encerrar los resultados dentro de un elemento raíz <code class="docutils literal"><span class="pre">suministrosgrandes</span></code></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
+<p>Usando <code class="docutils literal notranslate"><span class="pre">where</span></code> recuperar de la tabla de suministros todas las cantidades que sean mayores de 450 <em>y haciendo que las etiquetas cantidad pasen a llamarse numpartes</em> . Encerrar los resultados dentro de un elemento raíz <code class="docutils literal notranslate"><span class="pre">suministrosgrandes</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosgrandes&gt;</span>
 {
 for $fila in doc(&quot;datos.xml&quot;)//suministra
 where $fila/cantidad &gt; 450
@@ -478,13 +472,13 @@ return <span class="nt">&lt;numpartes&gt;</span>
 </div>
 <div class="section" id="cruces-o-joins">
 <h4>Cruces o joins<a class="headerlink" href="#cruces-o-joins" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz <code class="docutils literal"><span class="pre">resultados</span></code> haciendo que en cada fila haya un elemento <code class="docutils literal"><span class="pre">datos</span></code> que tenga a su vez tres hijos:</p>
+<p>Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz <code class="docutils literal notranslate"><span class="pre">resultados</span></code> haciendo que en cada fila haya un elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code> que tenga a su vez tres hijos:</p>
 <ul class="simple">
-<li>Un elemento <code class="docutils literal"><span class="pre">numprov</span></code> donde se vea el numero de proveedor.</li>
-<li>Un elemento <code class="docutils literal"><span class="pre">nombre</span></code> donde se vea el nombre del proveedor.</li>
-<li>Un elemento <code class="docutils literal"><span class="pre">cantidadpartes</span></code> donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">numprov</span></code> donde se vea el numero de proveedor.</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> donde se vea el nombre del proveedor.</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">cantidadpartes</span></code> donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;resultados&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;resultados&gt;</span>
 {
 for $proveedor in doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor
 for $suministra in doc(&quot;datos.xml&quot;)/datos/suministros/suministra
@@ -511,7 +505,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="fundamentos-de-dom-con-java">
 <h2>Fundamentos de DOM con Java<a class="headerlink" href="#fundamentos-de-dom-con-java" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En primer lugar va a ser necesario importar las clases correctas para poder usar DOM. La línea correcta es</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">javax.xml.parsers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">javax.xml.parsers.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.w3c.dom.*</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -519,7 +513,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <div class="section" id="ejemplo-de-base">
 <h2>Ejemplo de base<a class="headerlink" href="#ejemplo-de-base" title="Enlazar permanentemente con este título">¶</a></h2>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.ies</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.ies</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.xml.parsers.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.w3c.dom.*</span><span class="o">;</span>
@@ -559,32 +553,32 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>La clase Document es una representación Java que almacena en memoria un archivo XML.Mediante esta clase y otras clases compañeras podremos recorrer cualquier punto del archivo XML.</p>
 <p>Este recorrido se basa siempre en la visita de nodos hijo o nodos hermano. No todos los nodos son iguales y se debe tener presente que en un nodo podríamos encontrar que los saltos de línea pueden ser un problema a la hora de recorrer el árbol DOM.</p>
 <p>Por ejemplo, dado un documento, se debe empezar obteniendo la raíz. Este elemento se llama también el “elemento documento” y podemos obtenerlo así:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">documento</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">archivoXML</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">documento</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">archivoXML</span><span class="o">);</span>
 <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="n">documento</span><span class="o">.</span><span class="na">getDocumentElement</span><span class="o">();</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">raiz</span><span class="o">.</span><span class="na">getNodeName</span><span class="o">());</span>
 </pre></div>
 </div>
-<p>La clase principal que nos interesa es la clase <code class="docutils literal"><span class="pre">Node</span></code>, siendo <code class="docutils literal"><span class="pre">Document</span></code> su clase Hija. Algunos métodos de interés son estos:</p>
+<p>La clase principal que nos interesa es la clase <code class="docutils literal notranslate"><span class="pre">Node</span></code>, siendo <code class="docutils literal notranslate"><span class="pre">Document</span></code> su clase Hija. Algunos métodos de interés son estos:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a «navegar» a través de los elementos.</li>
-<li><code class="docutils literal"><span class="pre">getFirstChild()</span></code> obtiene el primer elemento hijo del nodo que estemos visitando.</li>
-<li><code class="docutils literal"><span class="pre">getParentNode()</span></code> nos permite obtener el nodo padre de un cierto nodo.</li>
-<li><code class="docutils literal"><span class="pre">getChildNodes()</span></code> obtiene todos los nodos hijo.</li>
-<li><code class="docutils literal"><span class="pre">getNextSibling()</span></code> obtiene el siguiente nodo hermano.</li>
-<li><code class="docutils literal"><span class="pre">getChildNodes()</span></code> devuelve un <code class="docutils literal"><span class="pre">NodeList</span></code> con todos los hijos de un elemento. Esta <code class="docutils literal"><span class="pre">NodeList</span></code> se puede recorrer con un <code class="docutils literal"><span class="pre">for</span></code>, obteniendo el tamaño de la lista con <code class="docutils literal"><span class="pre">getLength()</span></code> y extrayendo los elementos con el método <code class="docutils literal"><span class="pre">item(posicion)</span></code></li>
-<li><code class="docutils literal"><span class="pre">getNodeType()</span></code> es un método que nos indica el tipo de nodo (devuelve un <code class="docutils literal"><span class="pre">short</span></code>). Podemos comparar con <code class="docutils literal"><span class="pre">Node.ELEMENT_NODE</span></code> para ver si el nodo es realmente un elemento.</li>
-<li>Otro método de utilidad es <code class="docutils literal"><span class="pre">getElementsByTagName</span></code> que extrae todos los subelementos que tengan un cierto nombre de etiqueta.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a «navegar» a través de los elementos.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getFirstChild()</span></code> obtiene el primer elemento hijo del nodo que estemos visitando.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getParentNode()</span></code> nos permite obtener el nodo padre de un cierto nodo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> obtiene todos los nodos hijo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getNextSibling()</span></code> obtiene el siguiente nodo hermano.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> devuelve un <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> con todos los hijos de un elemento. Esta <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> se puede recorrer con un <code class="docutils literal notranslate"><span class="pre">for</span></code>, obteniendo el tamaño de la lista con <code class="docutils literal notranslate"><span class="pre">getLength()</span></code> y extrayendo los elementos con el método <code class="docutils literal notranslate"><span class="pre">item(posicion)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> es un método que nos indica el tipo de nodo (devuelve un <code class="docutils literal notranslate"><span class="pre">short</span></code>). Podemos comparar con <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code> para ver si el nodo es realmente un elemento.</li>
+<li>Otro método de utilidad es <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que extrae todos los subelementos que tengan un cierto nombre de etiqueta.</li>
 </ul>
 <div class="admonition hint">
 <p class="first admonition-title">Consejo</p>
-<p class="last">En general, hay muchas clases que proporcionan más métodos de utilidad, como por ejemplo la clase <code class="docutils literal"><span class="pre">Element</span></code>. En muchas ocasiones, podremos hacer un <code class="docutils literal"><span class="pre">cast</span></code> y aprovecharnos de ellos.</p>
+<p class="last">En general, hay muchas clases que proporcionan más métodos de utilidad, como por ejemplo la clase <code class="docutils literal notranslate"><span class="pre">Element</span></code>. En muchas ocasiones, podremos hacer un <code class="docutils literal notranslate"><span class="pre">cast</span></code> y aprovecharnos de ellos.</p>
 </div>
 <p>Cuando se procesan archivos, se debe tener especial importancia a los espacios en blanco que pueda haber. Estos dos archivos no son iguales:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>El primer hijo de listado es <span class="nt">&lt;futuro&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>El primer hijo de listado es <span class="nt">&lt;futuro&gt;</span>
 <span class="nt">&lt;listado&gt;&lt;futuro&gt;</span>...<span class="nt">&lt;/futuro&gt;&lt;/listado&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>Aquí el primer hijo de listado es \n
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Aquí el primer hijo de listado es \n
 <span class="nt">&lt;listado&gt;</span>
         <span class="nt">&lt;futuro&gt;</span>...<span class="nt">&lt;/futuro&gt;</span>
 <span class="nt">&lt;/listado&gt;</span>
@@ -596,7 +590,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="ejercicio">
 <h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Dado el siguiente archivo XML crear un programa que muestre todos los nombres:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listaempleados&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listaempleados&gt;</span>
         <span class="nt">&lt;empleado</span> <span class="na">edad=</span><span class="s">&quot;27&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;nombre&gt;</span>Pepe Perez<span class="nt">&lt;/nombre&gt;</span>
                 <span class="nt">&lt;categoria&gt;</span>Empleado<span class="nt">&lt;/categoria&gt;</span>
@@ -609,7 +603,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </pre></div>
 </div>
 <p>La solución podría ser algo así:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorXML</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorXML</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">ruta</span><span class="o">;</span>
         <span class="kd">public</span> <span class="nf">ProcesadorXML</span><span class="o">(</span><span class="n">String</span> <span class="n">ruta</span><span class="o">){</span>
                 <span class="k">this</span><span class="o">.</span><span class="na">ruta</span><span class="o">=</span><span class="n">ruta</span><span class="o">;</span>
@@ -671,7 +665,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <li>Añadir un método que diga cuantos empleados hay. El método debe ser capaz de tolerar que haya muchas líneas en blanco seguidas.</li>
 </ul>
 <p>El siguiente código resuelve el problema de mostrar los mayores de cierta edad:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">mostrarMayoresDe</span><span class="o">(</span><span class="kt">int</span> <span class="n">edadMinima</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">mostrarMayoresDe</span><span class="o">(</span><span class="kt">int</span> <span class="n">edadMinima</span><span class="o">)</span>
                 <span class="kd">throws</span> <span class="n">ParserConfigurationException</span><span class="o">,</span>
                 <span class="n">SAXException</span><span class="o">,</span> <span class="n">IOException</span>
 <span class="o">{</span>
@@ -696,8 +690,8 @@ return <span class="nt">&lt;datos&gt;</span>
 <span class="o">}</span> <span class="c1">//Fin del método</span>
 </pre></div>
 </div>
-<p>El método <code class="docutils literal"><span class="pre">getElementsByTagName</span></code> puede facilitar mucho el resolver ciertas tareas. Por ejemplo, supongamos que queremos resolver el problema de contar cuantos empleados hay:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">contarEmpleados</span><span class="o">()</span>
+<p>El método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> puede facilitar mucho el resolver ciertas tareas. Por ejemplo, supongamos que queremos resolver el problema de contar cuantos empleados hay:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">contarEmpleados</span><span class="o">()</span>
                 <span class="kd">throws</span> <span class="n">ParserConfigurationException</span><span class="o">,</span> <span class="n">SAXException</span><span class="o">,</span> <span class="n">IOException</span><span class="o">{</span>
         <span class="kt">int</span> <span class="n">numEmpleados</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">Element</span> <span class="n">raiz</span><span class="o">=</span><span class="n">getRaiz</span><span class="o">();</span>
@@ -711,7 +705,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="id1">
 <h3>Ejercicio<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Extraer la raíz de un archivo XML</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">Node</span> <span class="nf">extraerRaiz</span><span class="o">(</span><span class="n">String</span> <span class="n">nombreArchivo</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">Node</span> <span class="nf">extraerRaiz</span><span class="o">(</span><span class="n">String</span> <span class="n">nombreArchivo</span><span class="o">){</span>
         <span class="n">DocumentBuilderFactory</span> <span class="n">fabrica</span><span class="o">;</span>
         <span class="n">DocumentBuilder</span> <span class="n">constructor</span><span class="o">;</span>
         <span class="n">Document</span> <span class="n">documentoXML</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
@@ -738,10 +732,10 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>Imprimir todos los elementos hijo del archivo XML.</p>
 <p>Una posibilidad es la siguiente:</p>
 <ul class="simple">
-<li>Usar <code class="docutils literal"><span class="pre">getNextSibling</span></code> para ir recorriendo hermano a hermano hasta que se encuentre un <code class="docutils literal"><span class="pre">null</span></code></li>
-<li>Para evitar los nodos texto, solo imprimiremos cosas cuando el <code class="docutils literal"><span class="pre">getNodeType()</span></code> nos devuelva un tipo <code class="docutils literal"><span class="pre">Node.ELEMENT_NODE</span></code></li>
+<li>Usar <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir recorriendo hermano a hermano hasta que se encuentre un <code class="docutils literal notranslate"><span class="pre">null</span></code></li>
+<li>Para evitar los nodos texto, solo imprimiremos cosas cuando el <code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> nos devuelva un tipo <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirHijos</span><span class="o">(</span><span class="n">Node</span> <span class="n">nodoRaiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirHijos</span><span class="o">(</span><span class="n">Node</span> <span class="n">nodoRaiz</span><span class="o">){</span>
                 <span class="k">if</span> <span class="o">(</span><span class="n">nodoRaiz</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
                         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Imposible procesar raiz null&quot;</span><span class="o">);</span>
                         <span class="k">return</span> <span class="o">;</span>
@@ -757,8 +751,8 @@ return <span class="nt">&lt;datos&gt;</span>
         <span class="o">}</span>
 </pre></div>
 </div>
-<p>Otra posibilidad sería usar el <code class="docutils literal"><span class="pre">getChildNodes</span></code> que nos devuelve un vector con todos los hijos. Sin embargo ocurrirá lo mismo, deberemos evitar el visitar nodos texto, solo nos interesan los nodos Elemento.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirHijos2</span><span class="o">(</span><span class="n">Node</span> <span class="n">nodoRaiz</span><span class="o">){</span>
+<p>Otra posibilidad sería usar el <code class="docutils literal notranslate"><span class="pre">getChildNodes</span></code> que nos devuelve un vector con todos los hijos. Sin embargo ocurrirá lo mismo, deberemos evitar el visitar nodos texto, solo nos interesan los nodos Elemento.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirHijos2</span><span class="o">(</span><span class="n">Node</span> <span class="n">nodoRaiz</span><span class="o">){</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">nodoRaiz</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Imposible procesar raíz nula&quot;</span><span class="o">);</span>
                 <span class="k">return</span><span class="o">;</span>
@@ -778,7 +772,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="ejercicio-extraccion-de-informacion-financiera">
 <h3>Ejercicio: extracción de información financiera<a class="headerlink" href="#ejercicio-extraccion-de-informacion-financiera" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Dado el archivo XML siguiente…</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
         <span class="nt">&lt;futuro</span> <span class="na">precio=</span><span class="s">&quot;11.28&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;producto&gt;</span>Cafe<span class="nt">&lt;/producto&gt;</span>
                 <span class="nt">&lt;mercado&gt;</span>América Latina<span class="nt">&lt;/mercado&gt;</span>
@@ -826,7 +820,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <li>Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais_de_procedencia».</li>
 </ul>
 <p>Una posibilidad (incompleta) sería esta:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
 
    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Element</span> <span class="nf">getRaiz</span> <span class="o">(</span><span class="n">String</span> <span class="n">rutaFichero</span><span class="o">){</span>
 
@@ -921,7 +915,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ampliar el programa para que nos diga cuantos elementos «divisa» hay en el archivo.</p>
 <p>Para practicar esto y de paso practicar programación genérica, fabricaremos un método al que le pasaremos el nombre del elemento a buscar y el método nos dirá cuantos elementos con ese nombre hay.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">contadorElementos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span><span class="n">String</span> <span class="n">nombreElemento</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">contadorElementos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span><span class="n">String</span> <span class="n">nombreElemento</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">contador</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">nodosHijo</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nodosHijo</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
@@ -942,7 +936,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="id4">
 <h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Nos interesa conocer el precio de todos los bonos. Crear un programa que ejecute esta tarea.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">comprobarSiEsBono</span><span class="o">(</span><span class="n">Node</span> <span class="n">n</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">comprobarSiEsBono</span><span class="o">(</span><span class="n">Node</span> <span class="n">n</span><span class="o">){</span>
         <span class="n">String</span> <span class="n">nombre</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="na">getNodeName</span><span class="o">();</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">nombre</span><span class="o">==</span><span class="s">&quot;bono&quot;</span><span class="o">){</span>
                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Encontrado un bono&quot;</span><span class="o">);</span>
@@ -967,9 +961,9 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <div class="section" id="id5">
 <h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Crear un programa que nos diga cuantos productos financieros del listado no son estables. Es decir, que tengan el atributo estable y lo tengan a <code class="docutils literal"><span class="pre">false</span></code>.</p>
-<p>En su momento, en la DTD se permitió que el atributo <code class="docutils literal"><span class="pre">estable</span></code> fuera <code class="docutils literal"><span class="pre">#IMPLIED</span></code>, es decir <strong>optativo</strong>. Al ser la DTD como un contrato, esto nos obliga a preparar nuestro código para manejar la posibilidad de que el atributo no esté presente.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">cuantosInestables</span> <span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<p>Crear un programa que nos diga cuantos productos financieros del listado no son estables. Es decir, que tengan el atributo estable y lo tengan a <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>En su momento, en la DTD se permitió que el atributo <code class="docutils literal notranslate"><span class="pre">estable</span></code> fuera <code class="docutils literal notranslate"><span class="pre">#IMPLIED</span></code>, es decir <strong>optativo</strong>. Al ser la DTD como un contrato, esto nos obliga a preparar nuestro código para manejar la posibilidad de que el atributo no esté presente.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">cuantosInestables</span> <span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">cuantos</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">lista</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">lista</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
@@ -995,7 +989,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="id6">
 <h3>Ejercicio<a class="headerlink" href="#id6" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Sumar los precios de todos los productos financieros.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">float</span> <span class="nf">sumarAtributosPrecio</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">float</span> <span class="nf">sumarAtributosPrecio</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
         <span class="kt">float</span> <span class="n">precioTotal</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">hijos</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hijos</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
@@ -1021,26 +1015,26 @@ return <span class="nt">&lt;datos&gt;</span>
 <li><p class="first">En cualquier caso, si se tiene DTD, hay una buena pista.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Aparece un elemento llamado <code class="docutils literal"><span class="pre">&lt;pais_de_procedencia&gt;</span></code>, que puede contener cualquier cosa (incluido Islandia)</li>
+<li>Aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_de_procedencia&gt;</span></code>, que puede contener cualquier cosa (incluido Islandia)</li>
 <li>La ciudad de procedencia no incluye la capital o ninguna ciudad de dicho país, así que podemos ignorar eso.</li>
-<li>También aparece un elemento llamado <code class="docutils literal"><span class="pre">&lt;pais_emisor&gt;</span></code>, pero tampoco incluye Islandia, en principio también podemos saltarlo.</li>
+<li>También aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_emisor&gt;</span></code>, pero tampoco incluye Islandia, en principio también podemos saltarlo.</li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 <div class="section" id="analisis-del-problema">
 <h4>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Despues de haber examinado la DTD se llega a la conclusión de que el único elemento que puede transportar alguna clase de información relacionada con «Islandia» es el nodo <code class="docutils literal"><span class="pre">país_de_procedencia</span></code>, que es un elemento hijo del elemento <code class="docutils literal"><span class="pre">bono</span></code>.</p>
+<p>Despues de haber examinado la DTD se llega a la conclusión de que el único elemento que puede transportar alguna clase de información relacionada con «Islandia» es el nodo <code class="docutils literal notranslate"><span class="pre">país_de_procedencia</span></code>, que es un elemento hijo del elemento <code class="docutils literal notranslate"><span class="pre">bono</span></code>.</p>
 </div>
 <div class="section" id="solucion">
 <h4>Solución<a class="headerlink" href="#solucion" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>La clase <code class="docutils literal"><span class="pre">Element</span></code> tiene un método llamado <code class="docutils literal"><span class="pre">getElementsByTagName</span></code> que nos permite recuperar de una sola vez todos los elementos con el nombre <code class="docutils literal"><span class="pre">bono</span></code>.</li>
-<li>Se debe tener en cuenta que para llegar al elemento que nos interesa podemos seguir usando los métodos <code class="docutils literal"><span class="pre">getFirstChild</span></code> o <code class="docutils literal"><span class="pre">getNextSibling</span></code> para ir al primer hijo o para ir al siguiente hermano.</li>
-<li>El contenido textual de un nodo se puede extraer con <code class="docutils literal"><span class="pre">getTextContent</span></code></li>
-<li>Al procesar un contenido textual, podríamos encontrar muchos espacios en blanco, tabuladores u otros elementos que alteren las comparaciones entre cadenas, por lo que deberemos usar métodos como <code class="docutils literal"><span class="pre">trim()</span></code> que limpian los espacios en blanco.</li>
+<li>La clase <code class="docutils literal notranslate"><span class="pre">Element</span></code> tiene un método llamado <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que nos permite recuperar de una sola vez todos los elementos con el nombre <code class="docutils literal notranslate"><span class="pre">bono</span></code>.</li>
+<li>Se debe tener en cuenta que para llegar al elemento que nos interesa podemos seguir usando los métodos <code class="docutils literal notranslate"><span class="pre">getFirstChild</span></code> o <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir al primer hijo o para ir al siguiente hermano.</li>
+<li>El contenido textual de un nodo se puede extraer con <code class="docutils literal notranslate"><span class="pre">getTextContent</span></code></li>
+<li>Al procesar un contenido textual, podríamos encontrar muchos espacios en blanco, tabuladores u otros elementos que alteren las comparaciones entre cadenas, por lo que deberemos usar métodos como <code class="docutils literal notranslate"><span class="pre">trim()</span></code> que limpian los espacios en blanco.</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">algoQueVerCon</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombrePais</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">algoQueVerCon</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombrePais</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">cuantos</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">Element</span> <span class="n">elementoRaiz</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">raiz</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">lista</span><span class="o">=</span><span class="n">elementoRaiz</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">&quot;bono&quot;</span><span class="o">);</span>
@@ -1068,16 +1062,16 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="analisis">
 <h4>Análisis<a class="headerlink" href="#analisis" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>Se dispone del método anterior <code class="docutils literal"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país «España».</li>
-<li>Al analizar la DTD, se ha encontrado que la ciudad de procedencia de un elemento <code class="docutils literal"><span class="pre">futuro</span></code> puede ser Madrid.</li>
-<li>Al analizar la DTD también se ha encontrado que elemento <code class="docutils literal"><span class="pre">pais_emisor</span></code> de un elemento <code class="docutils literal"><span class="pre">letra</span></code> puede ser <code class="docutils literal"><span class="pre">espania</span></code></li>
-<li>Al analizar las divisas se debe comprobar si el elemento <code class="docutils literal"><span class="pre">ciudad_procedencia</span></code> es el elemento <code class="docutils literal"><span class="pre">madrid</span></code></li>
+<li>Se dispone del método anterior <code class="docutils literal notranslate"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país «España».</li>
+<li>Al analizar la DTD, se ha encontrado que la ciudad de procedencia de un elemento <code class="docutils literal notranslate"><span class="pre">futuro</span></code> puede ser Madrid.</li>
+<li>Al analizar la DTD también se ha encontrado que elemento <code class="docutils literal notranslate"><span class="pre">pais_emisor</span></code> de un elemento <code class="docutils literal notranslate"><span class="pre">letra</span></code> puede ser <code class="docutils literal notranslate"><span class="pre">espania</span></code></li>
+<li>Al analizar las divisas se debe comprobar si el elemento <code class="docutils literal notranslate"><span class="pre">ciudad_procedencia</span></code> es el elemento <code class="docutils literal notranslate"><span class="pre">madrid</span></code></li>
 </ul>
 </div>
 <div class="section" id="diseno">
 <h4>Diseño<a class="headerlink" href="#diseno" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Crearemos dos métodos extra, uno para calcular la solución para el segundo punto (ver cuantos elementos <code class="docutils literal"><span class="pre">futuro</span></code> tienen como <code class="docutils literal"><span class="pre">ciudad_procedencia</span></code> el valor Madrid y otro método para el tercer punto.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">cuantosFuturosTienenCiudadProcedencia</span><span class="o">(</span>
+<p>Crearemos dos métodos extra, uno para calcular la solución para el segundo punto (ver cuantos elementos <code class="docutils literal notranslate"><span class="pre">futuro</span></code> tienen como <code class="docutils literal notranslate"><span class="pre">ciudad_procedencia</span></code> el valor Madrid y otro método para el tercer punto.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">cuantosFuturosTienenCiudadProcedencia</span><span class="o">(</span>
                 <span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">ciudad</span><span class="o">)</span>
 <span class="o">{</span>
         <span class="kt">int</span> <span class="n">cuantos</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
@@ -1100,7 +1094,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </pre></div>
 </div>
 <p>Para resolver el último punto nos bastaría un método como este:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">letrasConPaisEmisor</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombrePais</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">letrasConPaisEmisor</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombrePais</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">cuantos</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="n">Element</span> <span class="n">eRaiz</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">raiz</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">listaLetras</span><span class="o">=</span><span class="n">eRaiz</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">&quot;letra&quot;</span><span class="o">);</span>
@@ -1121,7 +1115,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </pre></div>
 </div>
 <p>Ahora el método que resuelve este ejercicio es tan simple como esto:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">algoQueVerConEspania</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">algoQueVerConEspania</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">cuantasLetras</span><span class="o">=</span><span class="k">this</span><span class="o">.</span><span class="na">letrasConPaisEmisor</span><span class="o">(</span><span class="n">raiz</span><span class="o">,</span> <span class="s">&quot;espania&quot;</span><span class="o">);</span>
         <span class="kt">int</span> <span class="n">cuantosFuturos</span><span class="o">=</span><span class="k">this</span><span class="o">.</span><span class="na">cuantosFuturosTienenCiudadProcedencia</span><span class="o">(</span><span class="n">raiz</span><span class="o">,</span>
                         <span class="s">&quot;madrid&quot;</span><span class="o">);</span>
@@ -1136,7 +1130,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <h3>Ejercicio<a class="headerlink" href="#id9" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear un programa que indique el país de procedencia de todos aquellos bonos en los que el precio deseado tenga un valor comprendido entre el precio mínimo y el máximo.</p>
 <p>Una posible solución sería esta:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirBonos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirBonos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
 
         <span class="n">Element</span> <span class="n">eRaiz</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">raiz</span><span class="o">;</span>
         <span class="n">NodeList</span> <span class="n">listaBonos</span><span class="o">=</span><span class="n">eRaiz</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">&quot;bono&quot;</span><span class="o">);</span>
@@ -1179,7 +1173,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </pre></div>
 </div>
 <p>Una solución mejor sería esta:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">extraerHijoNumero</span> <span class="o">(</span><span class="n">Element</span> <span class="n">padre</span><span class="o">,</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">extraerHijoNumero</span> <span class="o">(</span><span class="n">Element</span> <span class="n">padre</span><span class="o">,</span>
                 <span class="n">String</span> <span class="n">nombreHijo</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">valor</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="c1">//Esta lista tiene solo un elemento</span>
@@ -1227,12 +1221,12 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <div class="section" id="id12">
 <h4>Diseño<a class="headerlink" href="#id12" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Todos los elementos tienen un elemento <code class="docutils literal"><span class="pre">ciudad_de_procedencia</span></code>, por lo cual, probablemente sea útil crear algún pequeño método de utilidad que dado un elemento nos devuelva un string con la ciudad de procedencia.</p>
+<p>Todos los elementos tienen un elemento <code class="docutils literal notranslate"><span class="pre">ciudad_de_procedencia</span></code>, por lo cual, probablemente sea útil crear algún pequeño método de utilidad que dado un elemento nos devuelva un string con la ciudad de procedencia.</p>
 <p>Por otro lado, comparar <em>todos con todos</em> suele implicar un doble bucle, donde el primer irá extrayendo elementos y el otro irá extrayendo todos los demás.</p>
 </div>
 <div class="section" id="implementacion">
 <h4>Implementación<a class="headerlink" href="#implementacion" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">getCiudadProcedencia</span><span class="o">(</span><span class="n">Element</span> <span class="n">e</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">getCiudadProcedencia</span><span class="o">(</span><span class="n">Element</span> <span class="n">e</span><span class="o">){</span>
         <span class="n">NodeList</span> <span class="n">listaHijos</span><span class="o">=</span>
                         <span class="n">e</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">&quot;ciudad_procedencia&quot;</span><span class="o">);</span>
         <span class="n">Element</span> <span class="n">eCiudad</span><span class="o">=(</span><span class="n">Element</span><span class="o">)</span> <span class="n">listaHijos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
@@ -1244,7 +1238,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirMismaCiudad</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirMismaCiudad</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
         <span class="n">NodeList</span> <span class="n">hijos</span><span class="o">=</span><span class="n">raiz</span><span class="o">.</span><span class="na">getChildNodes</span><span class="o">();</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hijos</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
                 <span class="n">Node</span> <span class="n">hijo</span><span class="o">=</span><span class="n">hijos</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
@@ -1303,7 +1297,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>Contar cuantos productos que no sean estables tienen como ciudad de procedencia Tokio. Si hay más de 2, devolver los precios en un vector y si no devolver un vector vacío.</p>
 <div class="section" id="id14">
 <h4>Análisis<a class="headerlink" href="#id14" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>El atributo <code class="docutils literal"><span class="pre">estable</span></code>, solo lo tienen los productos <code class="docutils literal"><span class="pre">bono</span></code>. Ese atributo es optativo, puede que esté o puede que no. Si existe, debemos comprobar si tiene un «no».</p>
+<p>El atributo <code class="docutils literal notranslate"><span class="pre">estable</span></code>, solo lo tienen los productos <code class="docutils literal notranslate"><span class="pre">bono</span></code>. Ese atributo es optativo, puede que esté o puede que no. Si existe, debemos comprobar si tiene un «no».</p>
 <p>Por otro lado, no sabemos a priori si habrá más de 2 o no.</p>
 <ul class="simple">
 <li>Podríamos hacer la cuenta, y si da más de 2 repetir operaciones y meter los bonos correctos en un vector.</li>
@@ -1315,15 +1309,15 @@ return <span class="nt">&lt;datos&gt;</span>
 <h4>Diseño<a class="headerlink" href="#id15" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
 <li>Aprovecharemos los métodos que nos permiten extraer el elemento raíz de un fichero.</li>
-<li>Necesitaremos crear vectores que tengan un cierto tamaño. Crearemos vectores muy grandes y los dejaremos con la inicialización que hace Java por defecto llenándolo con valores <code class="docutils literal"><span class="pre">null</span></code>.</li>
-<li>Podemos aprovechar métodos ofrecidos por Java como <code class="docutils literal"><span class="pre">getElementsByTagName</span></code>.</li>
+<li>Necesitaremos crear vectores que tengan un cierto tamaño. Crearemos vectores muy grandes y los dejaremos con la inicialización que hace Java por defecto llenándolo con valores <code class="docutils literal notranslate"><span class="pre">null</span></code>.</li>
+<li>Podemos aprovechar métodos ofrecidos por Java como <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code>.</li>
 <li>Después recorreremos los elementos, comprobaremos si sus atributos cumplen las condiciones y si las cumplen almacenaremos en el vector a devolver la ciudad de ese bono.</li>
 <li>Nuestro método devolverá siempre algo como String[], ese vector puede que vaya lleno o no.</li>
 </ul>
 </div>
 <div class="section" id="solucion-1">
 <h4>Solución 1<a class="headerlink" href="#solucion-1" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorXML</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorXML</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="n">Element</span> <span class="nf">getRaiz</span><span class="o">(</span><span class="n">String</span> <span class="n">nombreFichero</span><span class="o">)</span>
                         <span class="kd">throws</span> <span class="n">ParserConfigurationException</span><span class="o">,</span> <span class="n">SAXException</span><span class="o">,</span> <span class="n">IOException</span><span class="o">{</span>
                 <span class="n">DocumentBuilderFactory</span>
@@ -1381,7 +1375,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <div class="section" id="solucion-2">
 <h4>Solución 2<a class="headerlink" href="#solucion-2" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">obtenerListaBonos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">obtenerListaBonos</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">tamanioMaximo</span><span class="o">=</span><span class="mi">1000</span><span class="o">;</span>
         <span class="n">String</span><span class="o">[]</span> <span class="n">ciudades</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">tamanioMaximo</span><span class="o">];</span>
         <span class="n">String</span><span class="o">[]</span> <span class="n">aux</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">tamanioMaximo</span><span class="o">];</span>
@@ -1420,7 +1414,7 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="codigo-java">
 <h3>Código Java<a class="headerlink" href="#codigo-java" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>A continuación se muestra el código Java completo:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.ies</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.ies</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.xml.parsers.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.xml.transform.Transformer</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerFactory</span><span class="o">;</span>
@@ -1826,7 +1820,7 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <div class="section" id="archivo-xml">
 <h3>Archivo XML<a class="headerlink" href="#archivo-xml" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE listado [</span>
 <span class="cp">        &lt;!ELEMENT listado (futuro+, divisa+, bono+, letra+)&gt;</span>
         <span class="cp">&lt;!ATTLIST futuro precio CDATA #REQUIRED&gt;</span>
@@ -1939,9 +1933,9 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="procesamiento-con-sax">
 <h2>Procesamiento con SAX<a class="headerlink" href="#procesamiento-con-sax" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Simple Api for XML (o SAX) es un conjunto de clases para procesar XML de una forma muchísimo más eficiente (pero también más incómoda). Consiste en un <em>parser</em> que va leyendo etiqueta por etiqueta. Cada vez que el parser encuentra una etiqueta nueva nos lo comunicará mediante un evento y tendremos que incluir código de gestión de eventos que decidan que hacer.</p>
-<p>La forma más sencilla de trabajar es hacer que nuestra clase herede de <code class="docutils literal"><span class="pre">DefaultHandler</span></code> y sobrecargar el código de los métodos <code class="docutils literal"><span class="pre">startElement</span></code> y <code class="docutils literal"><span class="pre">endElement</span></code>.</p>
+<p>La forma más sencilla de trabajar es hacer que nuestra clase herede de <code class="docutils literal notranslate"><span class="pre">DefaultHandler</span></code> y sobrecargar el código de los métodos <code class="docutils literal notranslate"><span class="pre">startElement</span></code> y <code class="docutils literal notranslate"><span class="pre">endElement</span></code>.</p>
 <p>Cuando se procesa XML podemos encontrarnos con que se usen o no espacios de nombres. Si usamos espacios de nombres SAX nos devolverá un argumento pero si no los usamos SAX nos devolverá otro argumento. Observemos el siguiente código:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
 
   <span class="nd">@Override</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startElement</span><span class="o">(</span>
@@ -1955,10 +1949,10 @@ return <span class="nt">&lt;datos&gt;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>En este código SAX avisará a nuestro método <code class="docutils literal"><span class="pre">startElement</span></code> (el nombre debe ser así), cada vez que
+<p>En este código SAX avisará a nuestro método <code class="docutils literal notranslate"><span class="pre">startElement</span></code> (el nombre debe ser así), cada vez que
 encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios de nombres nos interesa imprimir el tercer parámetro.</p>
 <p>Para hacer que Java procese un fichero mediante SAX usando nuestra clase como procesador de etiquetas haremos lo siguiente:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorSAX</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span><span class="o">{</span>
 
   <span class="nd">@Override</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startElement</span><span class="o">(</span>
@@ -1989,7 +1983,7 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 <div class="section" id="ejercicio-encontrar-producto">
 <h3>Ejercicio: encontrar producto<a class="headerlink" href="#ejercicio-encontrar-producto" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Encontrar todos los productos cuyo nombre sea «Cafe» y su mercado «América Latina».</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">characters</span><span class="o">(</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">characters</span><span class="o">(</span>
       <span class="kt">char</span><span class="o">[]</span> <span class="n">letras</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ini</span><span class="o">,</span> <span class="kt">int</span> <span class="n">longitud</span><span class="o">){</span>
     <span class="k">if</span> <span class="o">((</span><span class="n">mercadoEncontrado</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">cafeEncontrado</span><span class="o">)){</span>
       <span class="n">String</span> <span class="n">cadena</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">letras</span><span class="o">,</span> <span class="n">ini</span><span class="o">,</span> <span class="n">longitud</span><span class="o">);</span>
@@ -2028,78 +2022,77 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Tabla de Contenidos</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Recuperación de información</a><ul>
-<li><a class="reference internal" href="#introduccion">Introducción</a></li>
-<li><a class="reference internal" href="#xquery">XQuery</a><ul>
-<li><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal"><span class="pre">for</span></code> en XQuery</a></li>
-<li><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
-<li><a class="reference internal" href="#funciones-en-xquery">Funciones en XQuery</a></li>
-<li><a class="reference internal" href="#consultas-de-ejemplo">Consultas de ejemplo</a><ul>
-<li><a class="reference internal" href="#suministros-grandes">Suministros grandes</a></li>
-<li><a class="reference internal" href="#renombrado-de-etiquetas">Renombrado de etiquetas</a></li>
-<li><a class="reference internal" href="#cruces-o-joins">Cruces o joins</a></li>
+<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Recuperación de información</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xquery">XQuery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-en-xquery">Funciones en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#consultas-de-ejemplo">Consultas de ejemplo</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-base">Ejemplo de base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#la-clase-document">La clase Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-extraccion-de-informacion-financiera">Ejercicio: extracción de información financiera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Ejercicio</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
-<li><a class="reference internal" href="#ejemplo-de-base">Ejemplo de base</a></li>
-<li><a class="reference internal" href="#la-clase-document">La clase Document</a></li>
-<li><a class="reference internal" href="#ejercicios">Ejercicios</a><ul>
-<li><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
-<li><a class="reference internal" href="#id1">Ejercicio</a></li>
-<li><a class="reference internal" href="#id2">Ejercicio</a></li>
-<li><a class="reference internal" href="#ejercicio-extraccion-de-informacion-financiera">Ejercicio: extracción de información financiera</a></li>
-<li><a class="reference internal" href="#id3">Ejercicio</a></li>
-<li><a class="reference internal" href="#id4">Ejercicio</a></li>
-<li><a class="reference internal" href="#id5">Ejercicio</a></li>
-<li><a class="reference internal" href="#id6">Ejercicio</a></li>
-<li><a class="reference internal" href="#id7">Ejercicio</a><ul>
-<li><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
-<li><a class="reference internal" href="#solucion">Solución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anexo">Anexo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#codigo-java">Código Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archivo-xml">Archivo XML</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">Ejercicio</a><ul>
-<li><a class="reference internal" href="#analisis">Análisis</a></li>
-<li><a class="reference internal" href="#diseno">Diseño</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procesamiento-con-sax">Procesamiento con SAX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-encontrar-producto">Ejercicio: encontrar producto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-precios">Ejercicio: precios</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">Ejercicio</a></li>
-<li><a class="reference internal" href="#id10">Ejercicio</a><ul>
-<li><a class="reference internal" href="#id11">Análisis</a></li>
-<li><a class="reference internal" href="#id12">Diseño</a></li>
-<li><a class="reference internal" href="#implementacion">Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-para-preparar-examen">Ejercicios para preparar examen</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id13">Ejercicio</a><ul>
-<li><a class="reference internal" href="#id14">Análisis</a></li>
-<li><a class="reference internal" href="#id15">Diseño</a></li>
-<li><a class="reference internal" href="#solucion-1">Solución 1</a></li>
-<li><a class="reference internal" href="#solucion-2">Solución 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#anexo">Anexo</a><ul>
-<li><a class="reference internal" href="#codigo-java">Código Java</a></li>
-<li><a class="reference internal" href="#archivo-xml">Archivo XML</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#procesamiento-con-sax">Procesamiento con SAX</a><ul>
-<li><a class="reference internal" href="#ejercicio-encontrar-producto">Ejercicio: encontrar producto</a></li>
-<li><a class="reference internal" href="#ejercicio-precios">Ejercicio: precios</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#ejercicios-para-preparar-examen">Ejercicios para preparar examen</a></li>
-</ul>
-</li>
-</ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -2109,23 +2102,26 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>Esta página</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/tema6.rst.txt"
-            rel="nofollow">Mostrar el código</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Ir a" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -2134,8 +2130,8 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/tema6.rst.txt"

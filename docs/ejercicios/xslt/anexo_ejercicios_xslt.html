@@ -4,24 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Anexo: ejercicios sobre XSLT &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" />
@@ -32,13 +25,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="anexo-ejercicios-sobre-xslt">
@@ -46,7 +40,7 @@
 <div class="section" id="fichero-origen">
 <h2>Fichero origen<a class="headerlink" href="#fichero-origen" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para los ejercicios siguiente supondremos que se va a trabajar con el fichero que se muestra a continuación:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
     <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/peso&gt;</span>
         <span class="nt">&lt;nombre&gt;</span>Ordenador<span class="nt">&lt;/nombre&gt;</span>
@@ -69,7 +63,7 @@
 <h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:</p>
 <a class="reference internal image-reference" href="../../_images/lista_punteada.png"><img alt="../../_images/lista_punteada.png" class="align-center" src="../../_images/lista_punteada.png" style="width: 308.5px; height: 198.5px;" /></a>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
         <span class="nt">&lt;head&gt;</span>
@@ -113,7 +107,7 @@ en el aula A6</p>
 <h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide un XSLT que muestre exactamente la misma información del fichero origen pero sin mostrar los elementos cuyo peso sea menor de 7.</p>
 <p>Una posible solución sería esta:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;inventario&gt;</span>
@@ -151,7 +145,7 @@ en el aula A6</p>
 <h2>Productos del edificio B<a class="headerlink" href="#productos-del-edificio-b" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide ahora mostrar en el resultado la misma información del fichero origen pero solo en los casos en que el lugar del producto sea el edificio B</p>
 <p>La solución es muy parecida, necesitando solamente modificar la condición.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;inventario&gt;</span>
@@ -187,7 +181,7 @@ en el aula A6</p>
 <h2>Tabla de localizaciones<a class="headerlink" href="#tabla-de-localizaciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Generar una tabla HTML que muestre la información del fichero origen de la manera siguiente:</p>
 <a class="reference internal image-reference" href="../../_images/xslt_tabla_edificio_aula.png"><img alt="../../_images/xslt_tabla_edificio_aula.png" class="align-center" src="../../_images/xslt_tabla_edificio_aula.png" style="width: 241.5px; height: 214.0px;" /></a>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;inventario&gt;</span>
@@ -226,7 +220,7 @@ con los datos de los productos del edificio A
 y otra tabla separada para los productos del edificio B</p>
 <a class="reference internal image-reference" href="../../_images/xslt_tabla_edificio_separadas.png"><img alt="../../_images/xslt_tabla_edificio_separadas.png" class="align-center" src="../../_images/xslt_tabla_edificio_separadas.png" style="width: 163.5px; height: 229.0px;" /></a>
 <p>Una posible solución sería esta:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
 <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
@@ -288,7 +282,7 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="productos-del-aula-6">
 <h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
   <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;inventario&gt;</span>
@@ -308,7 +302,7 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="id1">
 <h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
   <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot; lugar/@edificio = &#39;B&#39; &quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;nombre&gt;</span>
@@ -325,7 +319,7 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="condiciones-multiples-peso-ligero-y-edificio-a">
 <h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
 <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
@@ -365,7 +359,7 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="ejercicio-de-examen-xslt">
 <h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Dado el siguiente fichero XML</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
   <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;titulo&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
     <span class="nt">&lt;autores&gt;</span>
@@ -386,7 +380,7 @@ y otra tabla separada para los productos del edificio B</p>
 <ol class="arabic simple">
 <li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
 </ol>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
       <span class="nt">&lt;head&gt;</span>
@@ -415,7 +409,7 @@ y otra tabla separada para los productos del edificio B</p>
 <ol class="arabic simple" start="2">
 <li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
 </ol>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
       <span class="nt">&lt;head&gt;</span>
@@ -439,7 +433,7 @@ y otra tabla separada para los productos del edificio B</p>
 <ol class="arabic simple" start="3">
 <li>Mostrar el nombre de los autores nacidos despues del año 1700.</li>
 </ol>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
 <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;html&gt;</span>
@@ -472,7 +466,7 @@ y otra tabla separada para los productos del edificio B</p>
 <div class="section" id="transformacion-de-un-xml-bancario">
 <h2>Transformación de un XML bancario<a class="headerlink" href="#transformacion-de-un-xml-bancario" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores. Sin embargo han comprado un nuevo sistema que necesita que la información tenga una estructura siguiente. Los dos listados que se ven a continuación ilustran la estructura original y la nueva estructura que deben tener los datos. Crear el XSLT que permita convertir la información original en un formato que pueda entender el nuevo sistema.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura original de la información--&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura original de la información--&gt;</span>
 <span class="nt">&lt;listado&gt;</span>
     <span class="nt">&lt;cuenta&gt;</span>
         <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
@@ -501,7 +495,7 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/listado&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura final que debemos conseguir--&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Estructura final que debemos conseguir--&gt;</span>
 <span class="nt">&lt;datos&gt;</span>
     <span class="nt">&lt;cuentas&gt;</span>
         <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
@@ -534,19 +528,19 @@ y otra tabla separada para los productos del edificio B</p>
 <h3>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Es necesario hacer varios cambios:</p>
 <ol class="arabic simple">
-<li>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal"><span class="pre">listado</span></code> a <code class="docutils literal"><span class="pre">datos</span></code>.</li>
-<li>Ahora todos los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal"><span class="pre">fondos</span></code>.</li>
-<li>El <code class="docutils literal"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal"><span class="pre">titular</span></code> al elemento <code class="docutils literal"><span class="pre">cuenta</span></code>.</li>
-<li>La <code class="docutils literal"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal"><span class="pre">creacion</span></code>.</li>
-<li>El elememento <code class="docutils literal"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal"><span class="pre">saldoactual</span></code>.</li>
-<li>En el elemento <code class="docutils literal"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal"><span class="pre">datos</span></code>.</li>
-<li>El elemento <code class="docutils literal"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</li>
+<li>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal notranslate"><span class="pre">listado</span></code> a <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</li>
+<li>Ahora todos los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code>.</li>
+<li>El <code class="docutils literal notranslate"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal notranslate"><span class="pre">titular</span></code> al elemento <code class="docutils literal notranslate"><span class="pre">cuenta</span></code>.</li>
+<li>La <code class="docutils literal notranslate"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal notranslate"><span class="pre">creacion</span></code>.</li>
+<li>El elememento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code>.</li>
+<li>En el elemento <code class="docutils literal notranslate"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</li>
+<li>El elemento <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</li>
 </ol>
 </div>
 <div class="section" id="solucion-paso-a-paso">
 <h3>Solución paso a paso<a class="headerlink" href="#solucion-paso-a-paso" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Empecemos por crear una hoja muy básica, que busque el elemento raíz y devuelva como salida el elemento <code class="docutils literal"><span class="pre">datos</span></code> (que va a ser la nueva raíz)</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<p>Empecemos por crear una hoja muy básica, que busque el elemento raíz y devuelva como salida el elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code> (que va a ser la nueva raíz)</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
     <span class="nt">&lt;/datos&gt;</span>
@@ -555,12 +549,12 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Si probamos dicho XSLT aplicándolo al XML original obtendremos esto:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos/&gt;</span>
 </pre></div>
 </div>
 <p>No pasa nada porque se obtenga el elemento raíz vacío, el programa de transformación lo hace para ahorrar tiempo y bytes.</p>
-<p>Una vez que hemos cambiado el elemento raíz tenemos que generar dos elementos más que agrupen los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> y los elementos <code class="docutils literal"><span class="pre">fondo</span></code>. Para ello, basta con escribirlos como muestra la siguiente hoja de estilo.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<p>Una vez que hemos cambiado el elemento raíz tenemos que generar dos elementos más que agrupen los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> y los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code>. Para ello, basta con escribirlos como muestra la siguiente hoja de estilo.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;&lt;/cuentas&gt;</span>
@@ -570,8 +564,8 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Ahora tenemos que ir buscando todos los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> y meterlos dentro de <code class="docutils literal"><span class="pre">cuentas</span></code>. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle <code class="docutils literal"><span class="pre">for-each</span></code>. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle nos vaya dando cada uno de los elementos <code class="docutils literal"><span class="pre">listado/cuenta</span></code>. Es decir, le pedimos al bucle que se meta en el elemento hijo <code class="docutils literal"><span class="pre">listado</span></code> y nos vaya dando cada uno de los elementos <code class="docutils literal"><span class="pre">cuenta</span></code> que hay dentro. Un posible bucle sería este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<p>Ahora tenemos que ir buscando todos los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> y meterlos dentro de <code class="docutils literal notranslate"><span class="pre">cuentas</span></code>. Despues resolveremos el problema de los fondos. Para recorrer elementos necesitamos un bucle <code class="docutils literal notranslate"><span class="pre">for-each</span></code>. Como la plantilla ya nos ha situado en la raíz necesitaremos que el bucle nos vaya dando cada uno de los elementos <code class="docutils literal notranslate"><span class="pre">listado/cuenta</span></code>. Es decir, le pedimos al bucle que se meta en el elemento hijo <code class="docutils literal notranslate"><span class="pre">listado</span></code> y nos vaya dando cada uno de los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> que hay dentro. Un posible bucle sería este:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -586,7 +580,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Que al pasárselo a nuestros datos nos da esto:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta/&gt;</span>
     <span class="nt">&lt;cuenta/&gt;</span>
@@ -595,8 +589,8 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>Como puede verse, la plantilla genera dos elementos <code class="docutils literal"><span class="pre">cuenta</span></code>, uno por cada <code class="docutils literal"><span class="pre">cuenta</span></code> que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, <strong>y este es el «truco» para poder cambiar de nombre un elemento</strong> :</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<p>Como puede verse, la plantilla genera dos elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code>, uno por cada <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> que nos da el bucle. Obsérvese que podríamos haber hecho esto para tener un nombre de elemento distinto, <strong>y este es el «truco» para poder cambiar de nombre un elemento</strong> :</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -610,9 +604,9 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Sigamos con el problema original: ya hemos creado un elemento <code class="docutils literal"><span class="pre">cuentas</span></code> que lleva dentro un elemento <code class="docutils literal"><span class="pre">cuenta</span></code> para cada una de las cuentas originales. Ahora en dicho elemento <code class="docutils literal"><span class="pre">cuenta</span></code> vamos a meter dentro un atributo llamado <code class="docutils literal"><span class="pre">dnititular</span></code> usando la etiqueta <code class="docutils literal"><span class="pre">xsl:attribute</span></code> que debe ir <strong>dentro del elemento al que le queramos poner el atributo y además al principio</strong>. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al principio.</p>
+<p>Sigamos con el problema original: ya hemos creado un elemento <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> que lleva dentro un elemento <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> para cada una de las cuentas originales. Ahora en dicho elemento <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> vamos a meter dentro un atributo llamado <code class="docutils literal notranslate"><span class="pre">dnititular</span></code> usando la etiqueta <code class="docutils literal notranslate"><span class="pre">xsl:attribute</span></code> que debe ir <strong>dentro del elemento al que le queramos poner el atributo y además al principio</strong>. Si queremos varios atributos no pasa nada podemos ponerlos todos dentro del elemento pero recordando ponerlos al principio.</p>
 <p>Así, el código siguiente nos fabrica el atributo.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -629,9 +623,9 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </pre></div>
 </div>
-<p>Pero hay un problema, todas las cuentas tienen el <code class="docutils literal"><span class="pre">dnititular</span></code> a 10. Necesitamos la etiqueta <code class="docutils literal"><span class="pre">value-of</span></code> que nos permite <strong>extraer el contenido de un elemento o atributo</strong>, en este caso queremos extrar el valor del atributo <code class="docutils literal"><span class="pre">dni</span></code> que está dentro del elemento <code class="docutils literal"><span class="pre">titular</span></code>. Esto se hace con <code class="docutils literal"><span class="pre">titular/&#64;dni</span></code> que significa «extraer el atributo dni que debe estar dentro del elemento titular».</p>
+<p>Pero hay un problema, todas las cuentas tienen el <code class="docutils literal notranslate"><span class="pre">dnititular</span></code> a 10. Necesitamos la etiqueta <code class="docutils literal notranslate"><span class="pre">value-of</span></code> que nos permite <strong>extraer el contenido de un elemento o atributo</strong>, en este caso queremos extrar el valor del atributo <code class="docutils literal notranslate"><span class="pre">dni</span></code> que está dentro del elemento <code class="docutils literal notranslate"><span class="pre">titular</span></code>. Esto se hace con <code class="docutils literal notranslate"><span class="pre">titular/&#64;dni</span></code> que significa «extraer el atributo dni que debe estar dentro del elemento titular».</p>
 <p>Así, el código siguiente:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -650,7 +644,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Nos devuelve como resultado:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">/&gt;</span>
@@ -659,9 +653,9 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>El paso siguiente va a ser crear el elemento <code class="docutils literal"><span class="pre">titular</span></code> que también se llama <code class="docutils literal"><span class="pre">titular</span></code> en el archivo original. Para ello lo metemos dentro de <code class="docutils literal"><span class="pre">cuenta</span></code> y permitiendo que la creación del atributo <code class="docutils literal"><span class="pre">dnititular</span></code> se quede al principio.</p>
+<p>El paso siguiente va a ser crear el elemento <code class="docutils literal notranslate"><span class="pre">titular</span></code> que también se llama <code class="docutils literal notranslate"><span class="pre">titular</span></code> en el archivo original. Para ello lo metemos dentro de <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> y permitiendo que la creación del atributo <code class="docutils literal notranslate"><span class="pre">dnititular</span></code> se quede al principio.</p>
 <p>El código XSLT es este</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -685,7 +679,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Que genera el siguiente resultado:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
@@ -698,9 +692,9 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>Ahora vamos a crear el elemento <code class="docutils literal"><span class="pre">saldoactual</span></code>. Dentro de ese elemento debemos escribir el texto que ya tuviese el <code class="docutils literal"><span class="pre">saldoactual</span></code> antiguo y escribiendo al lado el atributo <code class="docutils literal"><span class="pre">moneda</span></code>.</p>
+<p>Ahora vamos a crear el elemento <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code>. Dentro de ese elemento debemos escribir el texto que ya tuviese el <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code> antiguo y escribiendo al lado el atributo <code class="docutils literal notranslate"><span class="pre">moneda</span></code>.</p>
 <p>El código necesario es este</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -732,7 +726,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Y el resultado es este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;titular&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
@@ -747,8 +741,8 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>Por último, añadamos la fecha de creación. En el fichero original se llama <code class="docutils literal"><span class="pre">fechacreación</span></code> y en el fichero final se llama <code class="docutils literal"><span class="pre">creación</span></code> y además va como primer elemento. El XSLT sería este:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<p>Por último, añadamos la fecha de creación. En el fichero original se llama <code class="docutils literal notranslate"><span class="pre">fechacreación</span></code> y en el fichero final se llama <code class="docutils literal notranslate"><span class="pre">creación</span></code> y además va como primer elemento. El XSLT sería este:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -786,7 +780,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Que genera el resultado siguiente:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;creacion&gt;</span>13-abril-2012<span class="nt">&lt;/creacion&gt;</span>
@@ -803,15 +797,15 @@ y otra tabla separada para los productos del edificio B</p>
 <span class="nt">&lt;/datos&gt;</span>
 </pre></div>
 </div>
-<p>Con esto, la parte de las <code class="docutils literal"><span class="pre">cuentas</span></code> ya está hecha. Ahora queda lo siguiente</p>
+<p>Con esto, la parte de las <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> ya está hecha. Ahora queda lo siguiente</p>
 <ol class="arabic simple">
-<li>Hacer un elemento <code class="docutils literal"><span class="pre">fondos</span></code> con un bucle que vaya generando elementos <code class="docutils literal"><span class="pre">fondo</span></code>.</li>
-<li>Poner en el <code class="docutils literal"><span class="pre">fondo</span></code> el atributo <code class="docutils literal"><span class="pre">cuentaasociada</span></code>.</li>
-<li>Crear el elemento <code class="docutils literal"><span class="pre">cantidaddepositada</span></code>.</li>
+<li>Hacer un elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code> con un bucle que vaya generando elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code>.</li>
+<li>Poner en el <code class="docutils literal notranslate"><span class="pre">fondo</span></code> el atributo <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code>.</li>
+<li>Crear el elemento <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</li>
 <li>Crear el elemento moneda.</li>
 </ol>
 <p>Vamos con el paso 1 <em>«crear el elemento fondos»</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -856,7 +850,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Ahora el paso 2: <em>poner el atributo «cuentaasociada»</em>. El XSLT sería así:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -905,7 +899,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Con el XSLT siguiente conseguimos el paso 3: <em>«crear el elemento cantidaddepositada»</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -957,7 +951,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Y por último el paso 4 «crear el elemento moneda». El XSLT sería algo así:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;datos&gt;</span>
         <span class="nt">&lt;cuentas&gt;</span>
@@ -1013,7 +1007,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <p>Si probamos el XSLT anterior veremos que efectivamente conseguimos transformar el fichero original en el fichero resultado que nos piden, que es el siguiente:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
   <span class="nt">&lt;cuentas&gt;</span>
     <span class="nt">&lt;cuenta</span> <span class="na">dnititular=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;creacion&gt;</span>13-abril-2012<span class="nt">&lt;/creacion&gt;</span>
@@ -1045,32 +1039,55 @@ y otra tabla separada para los productos del edificio B</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Tabla de Contenidos</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
-<li><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
-<li><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
-<li><a class="reference internal" href="#filtrado">Filtrado</a></li>
-<li><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
-<li><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
-<li><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
-<li><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
-<li><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
-<li><a class="reference internal" href="#id1">Productos del edificio B</a></li>
-<li><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
-<li><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
-<li><a class="reference internal" href="#transformacion-de-un-xml-bancario">Transformación de un XML bancario</a><ul>
-<li><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
-<li><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
+<h1 class="logo"><a href="../../index.html">Apuntes de Lenguajes de Marcas</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtrado">Filtrado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-un-xml-bancario">Transformación de un XML bancario</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
 </ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -1080,23 +1097,26 @@ y otra tabla separada para los productos del edificio B</p>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>Esta página</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt"
-            rel="nofollow">Mostrar el código</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Ir a" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -1105,8 +1125,8 @@ y otra tabla separada para los productos del edificio B</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt"
