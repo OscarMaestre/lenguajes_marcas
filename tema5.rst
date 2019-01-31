@@ -112,7 +112,7 @@ En general, podemos asumir que un documento puede estar en uno de estos estados 
 2. Bien formado.
 3. Válido: está bien formado y además nos han dado las reglas para determinar si algo está bien o mal y el documento XML cumple dichas reglas. Este es el mejor caso.
 
-Para determinar si un documento es válido o no, se puede usar el validador del W3C situado en http://validator.w3c.org
+Para determinar si un documento es válido o no, se puede usar el validador del W3C situado en http://validator.w3.org
 
 Gramáticas
 ==========
