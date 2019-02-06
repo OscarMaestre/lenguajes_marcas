@@ -112,7 +112,7 @@ En general, podemos asumir que un documento puede estar en uno de estos estados 
 2. Bien formado.
 3. Válido: está bien formado y además nos han dado las reglas para determinar si algo está bien o mal y el documento XML cumple dichas reglas. Este es el mejor caso.
 
-Para determinar si un documento es válido o no, se puede usar el validador del W3C situado en http://validator.w3.org
+Para determinar si un documento es válido o no, se puede usar el validador del W3C situado en http://validator.w3c.org
 
 Gramáticas
 ==========
@@ -328,6 +328,68 @@ Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en
 
 Elaborar la DTD que formaliza estas reglas.
 
+Analicemos algunas posibilidades para la raíz,por ejemplo esta:
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (raton,teclado)>
+
+Esto está MAL. Exige que dentro de productos haya exactamente
+un ratón y despues un teclado, y solo uno de cada.
+
+Veamos otra:
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (raton, teclado)+>
+
+También está MAL. Exige que haya raton y despues teclado. Es cierto que permite repetir elementos, pero esa repetición es de la pareja, es decir obligamos a que los ficheros sean así:
+
+.. code-block:: xml
+
+    <raton>
+    </raton>
+    <teclado>
+    </teclado>
+    <raton>
+    </raton>
+    <teclado>
+    </teclado>
+    <raton>
+    </raton>
+    <teclado>
+    </teclado>
+
+Echemos un vistazo a otra posible regla para la raíz:
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (raton, teclado)*>
+    
+Esto también está mal. Permite que no haya nada dentro de productos, pero ni siquiera nos hablan de eso.
+
+Veamos otra:
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (raton|teclado)>
+    
+Esto también está mal porque nos ofrece que dentro de "productos" haya un ratón o un teclado. Es cierto que ofrece algo de flexibilidad, pero aún no es lo que queremos.
+
+Otra regla raíz equivocada sería esta:
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (raton+|teclado+)>
+
+Esto también está mal. Permite que dentro de productos haya una sola de estas cosas
+
+* O una secuencia de "raton"
+* O una secuencia de "teclado"
+
+¡Pero no permite secuencias con mezcla!
+
+Veamos, ahora sí, una solución correcta
 
 .. code-block:: dtd
 

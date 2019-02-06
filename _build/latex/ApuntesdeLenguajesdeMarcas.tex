@@ -54,7 +54,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{20 de noviembre de 2018}
+\date{06 de febrero de 2019}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -5511,6 +5511,80 @@ Todo \textless{}teclado\textgreater{} tiene siempre un \textless{}codigo\textgre
 \end{itemize}
 
 Elaborar la DTD que formaliza estas reglas.
+
+Analicemos algunas posibilidades para la raíz,por ejemplo esta:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{,}\PYG{n+nt}{teclado}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Esto está MAL. Exige que dentro de productos haya exactamente
+un ratón y despues un teclado, y solo uno de cada.
+
+Veamos otra:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{,} \PYG{n+nt}{teclado}\PYG{o}{)}\PYG{o}{+}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+También está MAL. Exige que haya raton y despues teclado. Es cierto que permite repetir elementos, pero esa repetición es de la pareja, es decir obligamos a que los ficheros sean así:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}raton}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/raton\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}teclado}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/teclado\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}raton}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/raton\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}teclado}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/teclado\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}raton}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/raton\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}teclado}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/teclado\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Echemos un vistazo a otra posible regla para la raíz:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{,} \PYG{n+nt}{teclado}\PYG{o}{)}\PYG{o}{*}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Esto también está mal. Permite que no haya nada dentro de productos, pero ni siquiera nos hablan de eso.
+
+Veamos otra:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{\textbar{}}\PYG{n+nt}{teclado}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Esto también está mal porque nos ofrece que dentro de «productos» haya un ratón o un teclado. Es cierto que ofrece algo de flexibilidad, pero aún no es lo que queremos.
+
+Otra regla raíz equivocada sería esta:
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{+}\PYG{o}{\textbar{}}\PYG{n+nt}{teclado}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Esto también está mal. Permite que dentro de productos haya una sola de estas cosas
+\begin{itemize}
+\item {} 
+O una secuencia de «raton»
+
+\item {} 
+O una secuencia de «teclado»
+
+\end{itemize}
+
+¡Pero no permite secuencias con mezcla!
+
+Veamos, ahora sí, una solución correcta
 
 \fvset{hllines={, ,}}%
 \begin{sphinxVerbatim}[commandchars=\\\{\}]

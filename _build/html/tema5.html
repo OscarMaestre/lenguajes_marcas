@@ -14,7 +14,6 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Recuperación de información" href="tema6.html" />
@@ -293,6 +292,52 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <li>Todo &lt;teclado&gt; tiene siempre un &lt;codigo&gt;, debe llevar siempre una &lt;descripcion&gt; y puede o no tener un &lt;peso&gt;</li>
 </ul>
 <p>Elaborar la DTD que formaliza estas reglas.</p>
+<p>Analicemos algunas posibilidades para la raíz,por ejemplo esta:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">raton</span><span class="o">,</span><span class="nt">teclado</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Esto está MAL. Exige que dentro de productos haya exactamente
+un ratón y despues un teclado, y solo uno de cada.</p>
+<p>Veamos otra:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">raton</span><span class="o">,</span> <span class="nt">teclado</span><span class="o">)+</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>También está MAL. Exige que haya raton y despues teclado. Es cierto que permite repetir elementos, pero esa repetición es de la pareja, es decir obligamos a que los ficheros sean así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;raton&gt;</span>
+<span class="nt">&lt;/raton&gt;</span>
+<span class="nt">&lt;teclado&gt;</span>
+<span class="nt">&lt;/teclado&gt;</span>
+<span class="nt">&lt;raton&gt;</span>
+<span class="nt">&lt;/raton&gt;</span>
+<span class="nt">&lt;teclado&gt;</span>
+<span class="nt">&lt;/teclado&gt;</span>
+<span class="nt">&lt;raton&gt;</span>
+<span class="nt">&lt;/raton&gt;</span>
+<span class="nt">&lt;teclado&gt;</span>
+<span class="nt">&lt;/teclado&gt;</span>
+</pre></div>
+</div>
+<p>Echemos un vistazo a otra posible regla para la raíz:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">raton</span><span class="o">,</span> <span class="nt">teclado</span><span class="o">)*</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Esto también está mal. Permite que no haya nada dentro de productos, pero ni siquiera nos hablan de eso.</p>
+<p>Veamos otra:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">raton</span><span class="o">|</span><span class="nt">teclado</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Esto también está mal porque nos ofrece que dentro de «productos» haya un ratón o un teclado. Es cierto que ofrece algo de flexibilidad, pero aún no es lo que queremos.</p>
+<p>Otra regla raíz equivocada sería esta:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">raton</span><span class="o">+|</span><span class="nt">teclado</span><span class="o">+)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Esto también está mal. Permite que dentro de productos haya una sola de estas cosas</p>
+<ul class="simple">
+<li>O una secuencia de «raton»</li>
+<li>O una secuencia de «teclado»</li>
+</ul>
+<p>¡Pero no permite secuencias con mezcla!</p>
+<p>Veamos, ahora sí, una solución correcta</p>
 <div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span>   <span class="o">(</span><span class="nt">raton</span><span class="o">|</span><span class="nt">teclado</span><span class="o">)*</span> <span class="k">&gt;</span>
 <span class="k">&lt;!ELEMENT</span> <span class="nt">raton</span>       <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span> <span class="nt">descripcion</span><span class="o">?)</span> <span class="k">&gt;</span>
 <span class="k">&lt;!ELEMENT</span> <span class="nt">codigo</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
@@ -2804,7 +2849,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
