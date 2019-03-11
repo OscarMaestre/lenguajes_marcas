@@ -1772,7 +1772,11 @@ Se desea crear un esquema XML que permita validar un elemento llamado ``cliente`
 
 * Un atributo optativo llamado ``cantidad`` que indica su compra. Es un entero con valores de entre 0 y 1000. 
 
+.. code-block:: xml
 
+    <cliente codigo="AAA222" habitual="true" cantidad="1000">
+        Pepe Pérez
+    </cliente>
 
 
 
