@@ -1201,6 +1201,11 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div></blockquote>
 </li>
 </ul>
+<p>El diagrama siguiente refleja como funciona la estructuración de tipos de los XML Schema.</p>
+<div class="figure align-center" id="id6" style="width: 50%">
+<img alt="_images/Esquema-tipos.png" src="_images/Esquema-tipos.png" />
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span></p>
+</div>
 <p>Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo <code class="docutils literal notranslate"><span class="pre">type</span></code> de un <code class="docutils literal notranslate"><span class="pre">element</span></code> como hacíamos antes:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;cantidad&quot;</span> <span class="na">type=</span><span class="s">&quot;xsd:integer&quot;</span><span class="nt">/&gt;</span>
@@ -1561,6 +1566,11 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <li>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">habitual</span></code> que se usará para saber si es un cliente habitual o no. Acepta valores «true» y «false».</li>
 <li>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> que indica su compra. Es un entero con valores de entre 0 y 1000.</li>
 </ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cliente</span> <span class="na">codigo=</span><span class="s">&quot;AAA222&quot;</span> <span class="na">habitual=</span><span class="s">&quot;true&quot;</span> <span class="na">cantidad=</span><span class="s">&quot;1000&quot;</span><span class="nt">&gt;</span>
+    Pepe Pérez
+<span class="nt">&lt;/cliente&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="lista-de-clientes-como-xml-schemas">
 <h3>Lista de clientes como XML Schemas<a class="headerlink" href="#lista-de-clientes-como-xml-schemas" title="Enlazar permanentemente con este título">¶</a></h3>

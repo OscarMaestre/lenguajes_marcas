@@ -1337,6 +1337,14 @@ Todo elemento de un esquema debe ser de uno de estos dos tipos.
     * Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.
     * Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.
     
+El diagrama siguiente refleja como funciona la estructuración de tipos de los XML Schema.
+
+.. figure:: esquema-tipos-w3c/Esquema-tipos.png
+   :figwidth: 50%
+   :align: center	
+
+   Tipos en los XML Schemas
+
 Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo ``type`` de un ``element`` como hacíamos antes:
 
 .. code-block:: xml
