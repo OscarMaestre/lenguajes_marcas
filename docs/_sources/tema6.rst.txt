@@ -263,6 +263,14 @@ Para empezar **XQuery es un superconjunto de XPath** por lo que las expresiones 
         </suministros>
     </datos>
 
+
+En el esquema siguiente se muestra el mismo fichero en forma de tablas.
+
+.. figure:: graficos/BaseDatosProveedoresPartesProyectos.png
+   :scale: 70%
+   
+   Estructura de tablas del XML de la base de datos de proveedores, partes y proyectos
+
 En él podríamos ejecutar consultas como estas:
 * Recuperar todos los proveedores con ``doc("datos.xml")/datos/proveedores``
 * Recuperar todos los datos con ``doc("datos.xml")/datos/``
