@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Recuperación de información" href="tema6.html" />
@@ -1799,7 +1800,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <p>Se desea construir un esquema para validar listas de alumnos en las que:</p>
 <ul class="simple">
 <li>La raíz es <code class="docutils literal notranslate"><span class="pre">listaalumnos</span></code>.</li>
-<li>Dentro de ella hay uno o más <code class="docutils literal notranslate"><span class="pre">alumno</span></code>. Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.</li>
+<li>Dentro de ella hay uno o más <code class="docutils literal notranslate"><span class="pre">alumno</span></code>. Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene siempre un atributo DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.</li>
 <li>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y un <code class="docutils literal notranslate"><span class="pre">ap1</span></code> obligatorios.</li>
 <li>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> puede tener despues del <code class="docutils literal notranslate"><span class="pre">ap1</span></code> un elemento <code class="docutils literal notranslate"><span class="pre">ap2</span></code> y uno <code class="docutils literal notranslate"><span class="pre">edad</span></code>, ambos son optativos.</li>
 <li>El elemento <code class="docutils literal notranslate"><span class="pre">edad</span></code> debe ser entero y positivo.</li>
@@ -1852,7 +1853,7 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
                                  <span class="na">type=</span><span class="s">&quot;xsd:positiveInteger&quot;</span>
                                  <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/xsd:sequence&gt;</span>
-                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;dni&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoDNI&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;dni&quot;</span> <span class="na">type=</span><span class="s">&quot;tipoDNI&quot;</span> <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/xsd:restriction&gt;</span>
         <span class="nt">&lt;/xsd:complexContent&gt;</span>
     <span class="nt">&lt;/xsd:complexType&gt;</span>
@@ -2859,7 +2860,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
