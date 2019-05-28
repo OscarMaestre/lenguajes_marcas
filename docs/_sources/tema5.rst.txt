@@ -2049,6 +2049,8 @@ Se desea construir un esquema para validar listas de alumnos en las que:
 * Todo ``alumno`` puede tener despues del ``ap1`` un elemento ``ap2`` y uno ``edad``, ambos son optativos.
 * El elemento ``edad`` debe ser entero y positivo.
 
+(Gracias a Jesús VB por corregir una errata)
+
 Un ejemplo de fichero:
 
 .. code-block:: xml
