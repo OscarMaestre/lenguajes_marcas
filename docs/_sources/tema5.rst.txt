@@ -2044,10 +2044,12 @@ Ejercicio: lista de alumnos
 Se desea construir un esquema para validar listas de alumnos en las que:
 
 * La raíz es ``listaalumnos``.
-* Dentro de ella hay uno o más ``alumno``. Todo ``alumno`` tiene siempre un DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.
+* Dentro de ella hay uno o más ``alumno``. Todo ``alumno`` tiene siempre un atributo DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.
 * Todo ``alumno`` tiene un elemento ``nombre`` y un ``ap1`` obligatorios.
 * Todo ``alumno`` puede tener despues del ``ap1`` un elemento ``ap2`` y uno ``edad``, ambos son optativos.
 * El elemento ``edad`` debe ser entero y positivo.
+
+(Gracias a Jesús VB por corregir una errata)
 
 Un ejemplo de fichero:
 
@@ -2103,7 +2105,7 @@ Y a continuación una posible solución:
                                      type="xsd:positiveInteger"
                                      minOccurs="0"/>
                     </xsd:sequence>
-                    <xsd:attribute name="dni" type="tipoDNI"/>
+                    <xsd:attribute name="dni" type="tipoDNI" use="required"/>
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
