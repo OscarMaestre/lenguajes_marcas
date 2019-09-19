@@ -14,7 +14,7 @@ Crean la estructura para el resto de la página:,
 * doctype: identifica el estándar.
 * todo documento debe ir entre las marcas <html> y </html>.
 * Todo html tiene dos partes: head y body. El primero incluye otros elementos estructurales como ``<title>`` que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.
-* Existe una etiqueta vital para el correcto visionado de los símbolos de nuestra página. Esta etiqueta se denomina <meta> y lleva el atributo ``charset="...."``
+
 * Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:
 
 	* La etiqueta ``<section>`` permite marcar contenido de una página relacionado con un tema concreto.
@@ -34,18 +34,38 @@ Crean la estructura para el resto de la página:,
 * ``<h1>``, ``<h2>``, ``<h3>``, ``<h4>``, ``<h5>`` y ``<h6>`` establecen encabezados: trozos de texto que identifican la importancia del siguiente trozo de texto.
 * Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con ``<!--`` y se cierra con ``-->``
 
+
+* La etiqueta ``<a>`` permite construir enlaces.
+
 * La etiqueta ``<nav>`` se utilizará para crear barras de navegación.
 
 * La etiqueta ``<aside>`` se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo "artículos relacionados con este".
 
-* La etiqueta ``<base>`` define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
 
 
 * Las etiquetas ``<script>`` y ``<noscript>`` se utilizan para marcar pequeños programas o la ausencia de ellos.
 
 * El elemento ``<main>`` indica **el contenido principal de una página**
 
-* La etiqueta ``<div>`` permite crear "divisiones" en el documento y nos serán muy útiles cuando hagamos posicionamiento.
+* La etiqueta ``<div>`` permite crear "divisiones" en el documento y nos serán muy útiles cuando hagamos posicionamiento. Una etiqueta muy similar, pero con un comportamiento distinto es ``<span>`` que permite dividir trozos de texto en un párrafo.
+
+* La etiqueta ``<details>`` junto con la etiqueta ``<summary>`` permite crear controles que ofrecen al usuario la posibilidad de "ampliar información" a voluntad.
+
+.. code-block:: html
+
+    <body>
+        <details>
+            <summary>HTML5</summary>
+            <p>Es la última revisión del lenguaje</p>
+        </details>
+    </body>
+
+* La etiqueta ``<hr>`` produce una línea horizontal.
+
+Etiquetas para definir metadatos
+====================================
+* En líneas generales, los metadatos más importantes se definen con la etiqueta ``<meta>``. Para el correcto visionado de los símbolos de nuestra página usaremos el atributo ``charset="...."``
+* La etiqueta ``<base>`` define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
 
 
 Etiquetas de formato
