@@ -45,7 +45,7 @@ Crean la estructura para el resto de la página:,
 
 * El elemento ``<main>`` indica **el contenido principal de una página**
 
-
+* La etiqueta ``<div>`` permite crear "divisiones" en el documento y nos serán muy útiles cuando hagamos posicionamiento.
 
 
 Etiquetas de formato
