@@ -45,9 +45,21 @@ Crean la estructura para el resto de la página:,
 
 * El elemento ``<main>`` indica **el contenido principal de una página**
 
+* La etiqueta ``<div>`` permite crear "divisiones" en el documento y nos serán muy útiles cuando hagamos posicionamiento.
+
+* La etiqueta ``<details>`` junto con la etiqueta ``<summary>`` permite crear controles que ofrecen al usuario la posibilidad de "ampliar información" a voluntad.
+
+.. code-block:: html
+
+	<body>
+        <details>
+            <summary>HTML5</summary>
+            <p>Es la última revisión del lenguaje</p>
+        </details>
+    </body>
 
 
-
+	
 Etiquetas de formato
 ====================
 
