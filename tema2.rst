@@ -66,6 +66,13 @@ Etiquetas para definir metadatos
 ====================================
 * En líneas generales, los metadatos más importantes se definen con la etiqueta ``<meta>``. Para el correcto visionado de los símbolos de nuestra página usaremos el atributo ``charset="...."``
 * La etiqueta ``<base>`` define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
+* Esta etiqueta permite "intentar conseguir" que se vea bien una página antigua que no se pensó para dispositivos móviles: ´´<meta name="viewport" content="width=device-width, initial-scale=1">´´
+* Podemos instruir a los buscadores sobre como tratar a nuestra página en cuanto a si indexarla o no y en cuanto a seguir los enlaces que ponemos (o no) con ´´<meta name="robots" contents="index, follow">´´ o <meta name="robots" contents="noindex, follow"> o <meta name="robots" contents="index, nofollow">
+* Las etiquetas siguientes permiten insertar código CSS :´´<style>`` y ´´</style>``. Las veremos en profundidad en el tema sobre CSS.
+* Podemos insertar una descripción de nuestra página con ´´<meta name="description" content="Descripción.">´´
+* Podemos insertar un icono con ``<link rel="icon" sizes="192x192" href="/ruta/icon.png">``
+
+En realidad existen muchísimas variantes definidas por Google o Facebook pero no forman parte de ningún estándar por lo que no se comentarán (aunque eso no quita para que se utilicen muy a menudo)
 
 
 Etiquetas de formato
