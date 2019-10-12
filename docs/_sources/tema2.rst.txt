@@ -208,8 +208,10 @@ Una tabla muestra un conjunto de elementos relacionados en forma de matriz. No d
 
 Una tabla puede tener una cabecera, un cuerpo y un pie, especificados por ``<thead>``, ``<tbody>`` y ``<tfoot>``. La primera etiqueta dentro de ``<tbody>``, solo puede ser <tr>. **Cuidado al crear tablas, todo dato, o subtablas debe ir dentro de <td>, es absolutamente obligatorio**
 
-Para ser exactos una tabla puede llevar estas tres etiquetas:
+Para ser exactos una tabla puede llevar estas etiquetas:
 
+* ``caption``: permite asociar a una tabla un texto.
+* ``colgroup`` :permite asociar información a columnas usando dentro la etiqueta ``<col>`` .
 * ``thead``: dentro de ella a su vez pondremos una fila (``<tr>``) con celdas en las que la etiqueta es ``<th>``
 * ``tbody``: utiliza las filas y columnas normales.
 * ``tfooter``: también usa ``<tr>`` y ``<td>`` de la forma habitual, sin embargo permite describir mejor el contenido de la tabla. Se utiliza para celdas con los valores acumulados o similares.
