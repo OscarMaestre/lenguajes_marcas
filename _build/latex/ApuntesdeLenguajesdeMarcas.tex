@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{17 de septiembre de 2019}
+\date{18 de octubre de 2019}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -367,9 +367,6 @@ todo documento debe ir entre las marcas \textless{}html\textgreater{} y \textles
 Todo html tiene dos partes: head y body. El primero incluye otros elementos estructurales como \sphinxcode{\sphinxupquote{\textless{}title\textgreater{}}} que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.
 
 \item {} 
-Existe una etiqueta vital para el correcto visionado de los símbolos de nuestra página. Esta etiqueta se denomina \textless{}meta\textgreater{} y lleva el atributo \sphinxcode{\sphinxupquote{charset="...."}}
-
-\item {} 
 Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:
 \begin{itemize}
 \item {} 
@@ -402,13 +399,13 @@ La etiqueta \sphinxcode{\sphinxupquote{\textless{}section\textgreater{}}} permit
 Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con \sphinxcode{\sphinxupquote{\textless{}!-{-}}} y se cierra con \sphinxcode{\sphinxupquote{-{-}\textgreater{}}}
 
 \item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}a\textgreater{}}} permite construir enlaces.
+
+\item {} 
 La etiqueta \sphinxcode{\sphinxupquote{\textless{}nav\textgreater{}}} se utilizará para crear barras de navegación.
 
 \item {} 
 La etiqueta \sphinxcode{\sphinxupquote{\textless{}aside\textgreater{}}} se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo «artículos relacionados con este».
-
-\item {} 
-La etiqueta \sphinxcode{\sphinxupquote{\textless{}base\textgreater{}}} define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
 
 \item {} 
 Las etiquetas \sphinxcode{\sphinxupquote{\textless{}script\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}noscript\textgreater{}}} se utilizan para marcar pequeños programas o la ausencia de ellos.
@@ -416,7 +413,55 @@ Las etiquetas \sphinxcode{\sphinxupquote{\textless{}script\textgreater{}}} y \sp
 \item {} 
 El elemento \sphinxcode{\sphinxupquote{\textless{}main\textgreater{}}} indica \sphinxstylestrong{el contenido principal de una página}
 
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}div\textgreater{}}} permite crear «divisiones» en el documento y nos serán muy útiles cuando hagamos posicionamiento. Una etiqueta muy similar, pero con un comportamiento distinto es \sphinxcode{\sphinxupquote{\textless{}span\textgreater{}}} que permite dividir trozos de texto en un párrafo.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}details\textgreater{}}} junto con la etiqueta \sphinxcode{\sphinxupquote{\textless{}summary\textgreater{}}} permite crear controles que ofrecen al usuario la posibilidad de «ampliar información» a voluntad.
+
 \end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{details}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{summary}\PYG{p}{\PYGZgt{}}HTML5\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{summary}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}Es la última revisión del lenguaje\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{details}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+\begin{itemize}
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}hr\textgreater{}}} produce una línea horizontal.
+
+\end{itemize}
+
+
+\section{Etiquetas para definir metadatos}
+\label{\detokenize{tema2:etiquetas-para-definir-metadatos}}\begin{itemize}
+\item {} 
+En líneas generales, los metadatos más importantes se definen con la etiqueta \sphinxcode{\sphinxupquote{\textless{}meta\textgreater{}}}. Para el correcto visionado de los símbolos de nuestra página usaremos el atributo \sphinxcode{\sphinxupquote{charset="...."}}
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}base\textgreater{}}} define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.
+
+\item {} 
+Esta etiqueta permite «intentar conseguir» que se vea bien una página antigua que no se pensó para dispositivos móviles: ´´\textless{}meta name=»viewport» content=»width=device-width, initial-scale=1»\textgreater{}´´
+
+\item {} 
+Podemos instruir a los buscadores sobre como tratar a nuestra página en cuanto a si indexarla o no y en cuanto a seguir los enlaces que ponemos (o no) con ´´\textless{}meta name=»robots» contents=»index, follow»\textgreater{}´´ o \textless{}meta name=»robots» contents=»noindex, follow»\textgreater{} o \textless{}meta name=»robots» contents=»index, nofollow»\textgreater{}
+
+\item {} 
+Las etiquetas siguientes permiten insertar código CSS :´´\textless{}style\textgreater{}{}`{}` y ´´\textless{}/style\textgreater{}{}`{}`. Las veremos en profundidad en el tema sobre CSS.
+
+\item {} 
+Podemos insertar una descripción de nuestra página con ´´\textless{}meta name=»description» content=»Descripción.»\textgreater{}´´
+
+\item {} 
+Podemos insertar un icono con \sphinxcode{\sphinxupquote{\textless{}link rel="icon" sizes="192x192" href="/ruta/icon.png"\textgreater{}}}
+
+\end{itemize}
+
+En realidad existen muchísimas variantes definidas por Google o Facebook pero no forman parte de ningún estándar por lo que no se comentarán (aunque eso no quita para que se utilicen muy a menudo)
 
 
 \section{Etiquetas de formato}
@@ -602,8 +647,14 @@ Una tabla muestra un conjunto de elementos relacionados en forma de matriz. No d
 
 Una tabla puede tener una cabecera, un cuerpo y un pie, especificados por \sphinxcode{\sphinxupquote{\textless{}thead\textgreater{}}}, \sphinxcode{\sphinxupquote{\textless{}tbody\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}tfoot\textgreater{}}}. La primera etiqueta dentro de \sphinxcode{\sphinxupquote{\textless{}tbody\textgreater{}}}, solo puede ser \textless{}tr\textgreater{}. \sphinxstylestrong{Cuidado al crear tablas, todo dato, o subtablas debe ir dentro de \textless{}td\textgreater{}, es absolutamente obligatorio}
 
-Para ser exactos una tabla puede llevar estas tres etiquetas:
+Para ser exactos una tabla puede llevar estas etiquetas:
 \begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{caption}}: permite asociar a una tabla un texto.
+
+\item {} 
+\sphinxcode{\sphinxupquote{colgroup}} :permite asociar información a columnas usando dentro la etiqueta \sphinxcode{\sphinxupquote{\textless{}col\textgreater{}}} .
+
 \item {} 
 \sphinxcode{\sphinxupquote{thead}}: dentro de ella a su vez pondremos una fila (\sphinxcode{\sphinxupquote{\textless{}tr\textgreater{}}}) con celdas en las que la etiqueta es \sphinxcode{\sphinxupquote{\textless{}th\textgreater{}}}
 
