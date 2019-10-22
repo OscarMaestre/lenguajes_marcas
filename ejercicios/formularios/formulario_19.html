@@ -1,40 +1,33 @@
 <form>
 <fieldset>
-  <legend>Complete, por favor</legend>
-  Nombre<input type='text' name='nombre'>
-  Apellidos<input type='text' name='apellidos'>
+  <legend>Preferencias</legend>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Direccion<input type='text' name='direccion'> <br/>
   <br/>
-  <input type='checkbox' name='preferencia' value='preferenciaciencias'> Ciencias   <br/>
-  <input type='checkbox' name='preferencia' value='preferencialetras'> Letras   <br/>
-  <br/>
-  <select name='asignatura' multiple='multiple'>
-    <option value='historia'>Historia</option>
-    <option value='geografia'>Geografía</option>
-    <option value='lengua'>Lengua</option>
-    <option value='matematicas'>Matemáticas</option>
-  </select>
-  <br/>
+  <textarea rows='8' cols='50'>Por favor, escriba aquí</textarea>  <br/>
+  Elija una fecha:<input type="date">  <br/>
 </fieldset>
 <fieldset>
-  <legend>Indique</legend>
-  <select name='asignatura' >
-    <option value='geografia'>Geografía</option>
-    <option value='lengua'>Lengua</option>
-    <option value='matematicas'>Matemáticas</option>
-    <option value='historia'>Historia</option>
+  <legend>Rellene las opciones siguientes</legend>
+  <select name='medio_transporte' >
+    <option value='automovil'>Automóvil</option>
+    <option value='moto'>Moto</option>
+    <option value='autobus'>Autobús</option>
   </select>
   <br/>
-  <textarea rows='4' cols='49'>
-    Escriba aquí, por favor
-  </textarea>  <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <input type='checkbox' name='ide' value='ideeclipse'> Eclipse 
+  <input type='checkbox' name='ide' value='idenetbeans'> Netbeans 
+  <input type='checkbox' name='ide' value='idenotepad'> Notepad 
+  <input type='checkbox' name='ide' value='ideidea'> IDEA 
+  <br/>
+  DNI<input type='text' name='dni'>
   Nombre<input type='text' name='nombre'>
   Apellidos<input type='text' name='apellidos'>
-  Direccion<input type='text' name='direccion'>
+  Email<input type='text' name='email'>
   <br/>
-  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua 
-  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas 
-  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia 
-  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía 
-  <br/>
+  Elija una hora:<input type="time">  <br/>
+  Elija un color:<input type="color">  <br/>
 </fieldset>
 </form>

@@ -1,8 +1,30 @@
 <form>
 <fieldset>
-  <legend>Opciones</legend>
-  <input type='checkbox' name='procesador' value='procesadorintel'> Intel   <br/>
-  <input type='checkbox' name='procesador' value='procesadoramd'> AMD   <br/>
+  <legend>Completar</legend>
+  Elija un color:<input type="color">  <br/>
+  <textarea rows='5' cols='53'>Por favor, escriba aquí</textarea>  <br/>
+  <select name='lenguaje' >
+    <option value='java'>Java</option>
+    <option value='python'>Python</option>
+    <option value='html'>HTML</option>
+    <option value='visual_basic'>Visual Basic</option>
+  </select>
+  <br/>
+  <input type='checkbox' name='ciclo' value='cicloasir'> ASIR 
+  <input type='checkbox' name='ciclo' value='ciclodam'> DAM 
+  <input type='checkbox' name='ciclo' value='ciclodaw'> DAW 
+  <br/>
+</fieldset>
+<fieldset>
+  <legend>Rellene las opciones siguientes</legend>
+  Elija una fecha:<input type="date">  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <select name='ciclo' multiple='multiple'>
+    <option value='smir'>SMIR</option>
+    <option value='asir'>ASIR</option>
+    <option value='dam'>DAM</option>
+    <option value='daw'>DAW</option>
+  </select>
   <br/>
 </fieldset>
 </form>

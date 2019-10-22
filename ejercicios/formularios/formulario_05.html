@@ -1,28 +1,35 @@
 <form>
 <fieldset>
-  <legend>Completar estas opciones</legend>
-  <textarea rows='6' cols='54'>
-    Inserte aqui el texto
-  </textarea>  <br/>
-  <input type='checkbox' name='idioma' value='idiomaespanol'> Español   <br/>
-  <input type='checkbox' name='idioma' value='idiomaingles'> Inglés   <br/>
-  <input type='checkbox' name='idioma' value='idiomaaleman'> Alemán   <br/>
-  <input type='checkbox' name='idioma' value='idiomafrances'> Francés   <br/>
+  <legend>Completar</legend>
+  Elija un color:<input type="color">  <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Telefono<input type='text' name='telefono'> <br/>
   <br/>
-  <textarea rows='7' cols='55'>
-    Escriba aquí, por favor
-  </textarea>  <br/>
+  <input type='checkbox' name='asignatura' value='asignaturalengua'> Lengua 
+  <input type='checkbox' name='asignatura' value='asignaturamatematicas'> Matemáticas 
+  <input type='checkbox' name='asignatura' value='asignaturahistoria'> Historia 
+  <input type='checkbox' name='asignatura' value='asignaturageografia'> Geografía 
+  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <textarea rows='4' cols='57'>Utilice este cuadro para escribir</textarea>  <br/>
+  <input type='radio' name='formato' value='formatojpg'> JPG 
+  <input type='radio' name='formato' value='formatopng'> PNG 
+  <br/>
 </fieldset>
 <fieldset>
-  <legend>Rellene las opciones siguientes</legend>
-  <input type='checkbox' name='ciclo' value='ciclosmir'> SMIR 
-  <input type='checkbox' name='ciclo' value='cicloasir'> ASIR 
-  <input type='checkbox' name='ciclo' value='ciclodam'> DAM 
-  <input type='checkbox' name='ciclo' value='ciclodaw'> DAW 
-  <br/>
+  <legend>Completar</legend>
   Nombre<input type='text' name='nombre'> <br/>
   Apellidos<input type='text' name='apellidos'> <br/>
   Direccion<input type='text' name='direccion'> <br/>
   <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <select name='conector' multiple='multiple'>
+    <option value='usb'>USB</option>
+    <option value='paralelo'>Paralelo</option>
+    <option value='ps2'>PS2</option>
+  </select>
+  <br/>
+  Elija un fichero:<input type="file">  <br/>
 </fieldset>
 </form>

@@ -1,20 +1,42 @@
 <form>
 <fieldset>
-  <legend>Preferencias</legend>
-  <input type='radio' name='medio_transporte' value='medio_transporteautomovil'> Automóvil   <br/>
-  <input type='radio' name='medio_transporte' value='medio_transportemoto'> Moto   <br/>
-  <input type='radio' name='medio_transporte' value='medio_transporteautobus'> Autobús   <br/>
+  <legend>Rellenar</legend>
+  <select name='sexo' >
+    <option value='hombre'>Hombre</option>
+    <option value='mujer'>Mujer</option>
+  </select>
   <br/>
-  <textarea rows='6' cols='47'>
-    Utilice este recuadro por favor
-  </textarea>  <br/>
-  <input type='checkbox' name='formato' value='formatojpg'> JPG   <br/>
-  <input type='checkbox' name='formato' value='formatopng'> PNG   <br/>
+  Elija un color:<input type="color">  <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <input type='radio' name='lenguaje' value='lenguajejava'> Java 
+  <input type='radio' name='lenguaje' value='lenguajepython'> Python 
+  <input type='radio' name='lenguaje' value='lenguajehtml'> HTML 
+  <input type='radio' name='lenguaje' value='lenguajevisual_basic'> Visual Basic 
+  <input type='radio' name='lenguaje' value='lenguajecss'> CSS 
   <br/>
-  <input type='radio' name='idioma' value='idiomaespanol'> Español 
-  <input type='radio' name='idioma' value='idiomaingles'> Inglés 
-  <input type='radio' name='idioma' value='idiomaaleman'> Alemán 
-  <input type='radio' name='idioma' value='idiomafrances'> Francés 
+  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
+  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
   <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <textarea rows='8' cols='60'>Por favor, escriba aquí</textarea>  <br/>
+  Instituto<input type='text' name='instituto'> <br/>
+  Estudios elegidos<input type='text' name='estudios'> <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Email<input type='text' name='email'> <br/>
+  <br/>
+</fieldset>
+<fieldset>
+  <legend>Rellene las opciones siguientes</legend>
+  <input type='checkbox' name='sistema' value='sistemawindows'> Windows 
+  <input type='checkbox' name='sistema' value='sistemamac'> Mac 
+  <input type='checkbox' name='sistema' value='sistemalinux'> Linux 
+  <br/>
+  Elija una hora:<input type="time">  <br/>
+  <input type='radio' name='procesador' value='procesadoramd'> AMD 
+  <input type='radio' name='procesador' value='procesadorintel_i5'> Intel i5 
+  <input type='radio' name='procesador' value='procesadorintel_i7'> Intel i7 
+  <br/>
+  Elija un fichero:<input type="file">  <br/>
 </fieldset>
 </form>

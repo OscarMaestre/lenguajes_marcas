@@ -1,17 +1,50 @@
 <form>
 <fieldset>
-  <legend>Formulario de opciones</legend>
-  <input type='radio' name='aula' value='aulaa01'> A01 
-  <input type='radio' name='aula' value='aulaa02'> A02 
-  <input type='radio' name='aula' value='aulaa03'> A03 
+  <legend>Indique</legend>
+  Nombre<input type='text' name='nombre'>
+  Apellidos<input type='text' name='apellidos'>
   <br/>
-  <input type='radio' name='idioma' value='idiomaespanol'> Español   <br/>
-  <input type='radio' name='idioma' value='idiomaingles'> Inglés   <br/>
-  <input type='radio' name='idioma' value='idiomaaleman'> Alemán   <br/>
-  <input type='radio' name='idioma' value='idiomafrances'> Francés   <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <textarea rows='5' cols='53'>Por favor, escriba aquí</textarea>  <br/>
+  <select name='hardware' >
+    <option value='monitor_led'>Monitor LED</option>
+    <option value='ssd'>SSD</option>
+  </select>
   <br/>
-  Nombre<input type='text' name='nombre'> <br/>
-  Apellidos<input type='text' name='apellidos'> <br/>
+  <input type='radio' name='ide' value='ideeclipse'> Eclipse 
+  <input type='radio' name='ide' value='idenetbeans'> Netbeans 
+  <input type='radio' name='ide' value='idenotepad'> Notepad 
+  <input type='radio' name='ide' value='ideidea'> IDEA 
   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturamatematicas'> Matemáticas   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturahistoria'> Historia   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturageografia'> Geografía   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturalengua'> Lengua   <br/>
+  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  Elija un color:<input type="color">  <br/>
+</fieldset>
+<fieldset>
+  <legend>Preferencias</legend>
+  Elija un color:<input type="color">  <br/>
+  <select name='ciclo' multiple='multiple'>
+    <option value='asir'>ASIR</option>
+    <option value='dam'>DAM</option>
+    <option value='daw'>DAW</option>
+  </select>
+  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <textarea rows='5' cols='47'>Escriba aquí, por favor</textarea>  <br/>
+  DNI<input type='text' name='dni'>
+  Nombre<input type='text' name='nombre'>
+  Apellidos<input type='text' name='apellidos'>
+  Telefono<input type='text' name='telefono'>
+  <br/>
+  <input type='checkbox' name='asignatura' value='asignaturahistoria'> Historia   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturageografia'> Geografía   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturalengua'> Lengua   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturamatematicas'> Matemáticas   <br/>
+  <br/>
+  Elija una hora:<input type="time">  <br/>
 </fieldset>
 </form>

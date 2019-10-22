@@ -1,3 +1,8 @@
 nombre:Nombre-apellidos:Apellidos
+nombre:Nombre-apellidos:Apellidos-telefono:Telefono
 nombre:Nombre-apellidos:Apellidos-direccion:Direccion
 instituto:Instituto-estudios:Estudios elegidos
+nombre:Nombre-apellidos:Apellidos-email:Email-telefono:Telefono
+dni:DNI-nombre:Nombre-apellidos:Apellidos-email:Email
+dni:DNI-nombre:Nombre-apellidos:Apellidos-telefono:Telefono
+instituto:Instituto-estudios:Estudios elegidos-nombre:Nombre-apellidos:Apellidos-email:Email

@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Anexo: ejercicios sobre XSLT &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -11,8 +13,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" />
@@ -376,7 +378,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 <p>Conseguir lo siguiente:</p>
 <ol class="arabic simple">
-<li><p>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</p></li>
+<li>Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.</li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
@@ -405,7 +407,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</p></li>
+<li>Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.</li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
@@ -429,7 +431,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Mostrar el nombre de los autores nacidos despues del año 1700.</p></li>
+<li>Mostrar el nombre de los autores nacidos despues del año 1700.</li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
 <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
@@ -526,13 +528,13 @@ y otra tabla separada para los productos del edificio B</p>
 <h3>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Es necesario hacer varios cambios:</p>
 <ol class="arabic simple">
-<li><p>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal notranslate"><span class="pre">listado</span></code> a <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</p></li>
-<li><p>Ahora todos los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code>.</p></li>
-<li><p>El <code class="docutils literal notranslate"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal notranslate"><span class="pre">titular</span></code> al elemento <code class="docutils literal notranslate"><span class="pre">cuenta</span></code>.</p></li>
-<li><p>La <code class="docutils literal notranslate"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal notranslate"><span class="pre">creacion</span></code>.</p></li>
-<li><p>El elememento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code>.</p></li>
-<li><p>En el elemento <code class="docutils literal notranslate"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</p></li>
-<li><p>El elemento <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</p></li>
+<li>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal notranslate"><span class="pre">listado</span></code> a <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</li>
+<li>Ahora todos los elementos <code class="docutils literal notranslate"><span class="pre">cuenta</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> y todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code> van dentro de un nuevo elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code>.</li>
+<li>El <code class="docutils literal notranslate"><span class="pre">dni</span></code> se ha movido del elemento <code class="docutils literal notranslate"><span class="pre">titular</span></code> al elemento <code class="docutils literal notranslate"><span class="pre">cuenta</span></code>.</li>
+<li>La <code class="docutils literal notranslate"><span class="pre">fechacreación</span></code> se ha movido y se ha renombrado a <code class="docutils literal notranslate"><span class="pre">creacion</span></code>.</li>
+<li>El elememento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> desaparece y su texto se ha puesto al lado de la cantidad que hay en <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code>.</li>
+<li>En el elemento <code class="docutils literal notranslate"><span class="pre">fondo</span></code> se ha quitado el elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</li>
+<li>El elemento <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code> ha pasado a ser un atributo.</li>
 </ol>
 </div>
 <div class="section" id="solucion-paso-a-paso">
@@ -797,10 +799,10 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 <p>Con esto, la parte de las <code class="docutils literal notranslate"><span class="pre">cuentas</span></code> ya está hecha. Ahora queda lo siguiente</p>
 <ol class="arabic simple">
-<li><p>Hacer un elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code> con un bucle que vaya generando elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code>.</p></li>
-<li><p>Poner en el <code class="docutils literal notranslate"><span class="pre">fondo</span></code> el atributo <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code>.</p></li>
-<li><p>Crear el elemento <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</p></li>
-<li><p>Crear el elemento moneda.</p></li>
+<li>Hacer un elemento <code class="docutils literal notranslate"><span class="pre">fondos</span></code> con un bucle que vaya generando elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code>.</li>
+<li>Poner en el <code class="docutils literal notranslate"><span class="pre">fondo</span></code> el atributo <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code>.</li>
+<li>Crear el elemento <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</li>
+<li>Crear el elemento moneda.</li>
 </ol>
 <p>Vamos con el paso 1 <em>«crear el elemento fondos»</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
@@ -1096,11 +1098,13 @@ y otra tabla separada para los productos del edificio B</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
+  <h3>Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -1121,7 +1125,7 @@ y otra tabla separada para los productos del edificio B</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
