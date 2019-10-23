@@ -497,6 +497,52 @@ La etiqueta \sphinxcode{\sphinxupquote{br}} se utiliza para hacer una ruptura en
 \begin{sphinxadmonition}{note}{Nota:}
 Una de las grandes preguntas es si escribir la etiqueta \sphinxcode{\sphinxupquote{\textless{}br/\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}br\textgreater{}}}. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que \sphinxstyleemphasis{«aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar»}. Así, en la cabecera podremos poner cosas como \sphinxcode{\sphinxupquote{\textless{}meta...\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}meta... /\textgreater{}}}
 \end{sphinxadmonition}
+\begin{itemize}
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}abbr\textgreater{}}} permite usar abreviaturas. Ejemplo: \sphinxcode{\sphinxupquote{El \textless{}abbr title="World Wide Web Consortiun\textgreater{}W3C\textless{}/abbr\textgreater{}}} .
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}acronym\textgreater{}}} se ha llegado a usar pero está \sphinxstylestrong{obsoleta} .
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}blockqoute\textgreater{}}} se usa para indicar citas largas, por ejemplo.
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{blockquote}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}En un lugar de la Mancha de cuyo nombre...\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{blockquote}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+\begin{itemize}
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}cite\textgreater{}}} permite indicar una cita breve, como en \sphinxcode{\sphinxupquote{\textless{}p\textgreater{} Es habitual decir \textless{}cite\textgreater{}Alea jact est\textless{}/cite\textgreater{}\textless{}/p\textgreater{}}}
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}del\textgreater{}}} permite mostrar texto tachado.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}dfn\textgreater{}}} permite mostrar una definición. Los navegadores suelen mostrar esta etiqueta igual que \sphinxcode{\sphinxupquote{\textless{}abbr\textgreater{}}} .
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}ins\textgreater{}}} permite indicar texto que haya sido insertado a posteriori. Suele mostrarse en cursiva.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}mark\textgreater{}}} permite destacar texto de una manera muy llamativa.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}output\textgreater{}}} es como el control de un formulario pero se introdujo para recalcar que contiene el resultado de un cálculo.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}samp\textgreater{}}} está pensada para muestras (samples) de programas o resultado de ejecuciones.
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}tt\textgreater{}}} imita los teletipos (estilo máquina de escribir).
+
+\item {} 
+La etiqueta \sphinxcode{\sphinxupquote{\textless{}wbr\textgreater{}}} está pensada para ayudar al navegador a decidir donde «romper» una palabra y poner el guión.
+
+\end{itemize}
 
 
 \section{Gestión de espacios}
