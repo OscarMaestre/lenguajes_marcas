@@ -1,0 +1,1331 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sindicación y transformación de contenidos &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Sistemas de gestión de información" href="tema8.html" />
+    <link rel="prev" title="Recuperación de información" href="tema6.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sindicacion-y-transformacion-de-contenidos">
+<h1>Sindicación y transformación de contenidos<a class="headerlink" href="#sindicacion-y-transformacion-de-contenidos" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Muchas páginas web disponen de «feeds». Un «feed» es un mecanismo de suscripción que facilita la recepción de información.</p>
+<p>En general, los feed utilizan un vocabulario XML llamado RSS o uno llamado Atom.</p>
+</div>
+<div class="section" id="rss">
+<h2>RSS<a class="headerlink" href="#rss" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>RSS es un estándar para la «sindicación» o «agregación» de recursos (recursos web normalmente).</p>
+<p>Su objetivo principal era permitir a un sitio web publicar las novedades con facilidad y que el usuario puede ir derectamente al lugar que le interese.</p>
+<div class="section" id="formato-de-archivo-rss">
+<h3>Formato de archivo RSS<a class="headerlink" href="#formato-de-archivo-rss" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Todo archivo RSS es, por supuesto, un XML</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;channel&gt;</span>
+                <span class="nt">&lt;title&gt;</span>
+                        Canal de noticias de SSOO de DAM
+                <span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;link&gt;</span>
+                        http://ssoo.iesmaestredecalatrava.es
+                <span class="nt">&lt;/link&gt;</span>
+                <span class="nt">&lt;description&gt;</span>
+                        En este canal...
+                <span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                        <span class="nt">&lt;title&gt;</span>Nueva versión de Ubuntu<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;link&gt;</span>http://ubuntu.org<span class="nt">&lt;/link&gt;</span>
+                        <span class="nt">&lt;description&gt;</span>
+                                Nueva versión...
+                        <span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/channel&gt;</span>
+        <span class="nt">&lt;channel&gt;</span>
+                <span class="nt">&lt;title&gt;</span>
+                        Canal de Lenguajes de marcas
+                <span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;link&gt;</span>
+                        http://xml.iesmaestredecalatrava.es
+                <span class="nt">&lt;/link&gt;</span>
+                <span class="nt">&lt;description&gt;</span>
+                        En este canal...
+                <span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;item&gt;</span>
+                        <span class="nt">&lt;title&gt;</span>Publicado nuevo validador del W3C<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;link&gt;</span>http://validator.w3c.org<span class="nt">&lt;/link&gt;</span>
+                        <span class="nt">&lt;description&gt;</span>
+                                Hay nuevo validador...
+                        <span class="nt">&lt;/description&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/channel&gt;</span>
+<span class="nt">&lt;/rss&gt;</span>
+</pre></div>
+</div>
+<p>Las reglas serían las siguientes:</p>
+<ul class="simple">
+<li>Todo archivo de descripción de recursos en RSS utiliza el preámbulo típico de los documentos xml</li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Todo RSS tiene un solo elemento raíz en el cual se puede indicar la versión RSS a la que nos ceñimos</li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Un RSS tiene uno o más canales</li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;channel&gt;</span>
+<span class="nt">&lt;/channel&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Todo canal debe tener, al menos un título, un enlace base (la dirección del propio sitio web) y una descripción:</li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;channel&gt;</span>
+        <span class="nt">&lt;title&gt;</span>
+        <span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link&gt;</span>
+        <span class="nt">&lt;/link&gt;</span>
+        <span class="nt">&lt;description&gt;</span>
+        <span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;item&gt;</span>
+                ...
+        <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item&gt;</span>
+                ...
+        <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/channel&gt;</span>
+</pre></div>
+</div>
+<p>Resumiendo los puntos más importantes:</p>
+<ol class="arabic simple">
+<li>Usar como elemento raíz <code class="docutils literal notranslate"><span class="pre">rss</span></code>.</li>
+<li>Todo RSS tiene uno o más <code class="docutils literal notranslate"><span class="pre">channel</span></code></li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">channel</span></code> tiene al menos <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></li>
+<li>Despues de estos elementos, un <code class="docutils literal notranslate"><span class="pre">channel</span></code> puede tener uno o más elementos <code class="docutils literal notranslate"><span class="pre">item</span></code> (que son los que contienen las noticias)</li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">item</span></code> también debe tener un <code class="docutils literal notranslate"><span class="pre">title</span></code>, un <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></li>
+</ol>
+</div>
+<div class="section" id="ejercicio">
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear un fichero Java que construya el siguiente fichero XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;channel&gt;</span>
+                <span class="nt">&lt;title&gt;</span>Prueba<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;link&gt;</span>http://www.google.es<span class="nt">&lt;/link&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Prueba de descripcion<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;/channel&gt;</span>
+<span class="nt">&lt;/rss&gt;</span>
+</pre></div>
+</div>
+<p>Una posible solución es esta:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CreadorRSS</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getEtiquetas</span><span class="o">(</span>
+                        <span class="n">String</span> <span class="n">titulo</span><span class="o">,</span>
+                        <span class="n">String</span> <span class="n">enlace</span><span class="o">,</span>
+                        <span class="n">String</span> <span class="n">descripcion</span><span class="o">)</span>
+        <span class="o">{</span>
+                <span class="n">String</span> <span class="n">resultado</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;title&gt;&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="n">titulo</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;/title&gt;\n&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;link&gt;&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="n">enlace</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;/link&gt;\n&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;description&gt;&quot;</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="n">descripcion</span><span class="o">;</span>
+                <span class="n">resultado</span><span class="o">+=</span><span class="s">&quot;&lt;/description&gt;&quot;</span><span class="o">;</span>
+                <span class="k">return</span> <span class="n">resultado</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">crearArchivo</span><span class="o">(</span><span class="n">String</span> <span class="n">nombre</span><span class="o">)</span>
+                        <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
+                <span class="n">FileOutputStream</span> <span class="n">fos</span><span class="o">=</span>
+                                <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">nombre</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">cabecera</span><span class="o">=</span><span class="s">&quot;&lt;?xml version=&#39;1.0&#39;?&gt;\n&quot;</span><span class="o">;</span>
+                <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">cabecera</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+                <span class="n">String</span> <span class="n">rss</span><span class="o">=</span><span class="s">&quot;&lt;rss version=&#39;1.0&#39;&gt;\n&quot;</span><span class="o">;</span>
+                <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">rss</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">etiquetas</span><span class="o">=</span><span class="k">this</span><span class="o">.</span><span class="na">getEtiquetas</span><span class="o">(</span>
+                                <span class="s">&quot;Titulo de la noticia&quot;</span><span class="o">,</span>
+                                <span class="s">&quot;http://www.algo.com&quot;</span><span class="o">,</span>
+                                <span class="s">&quot;Noticia muy importante&quot;</span><span class="o">);</span>
+                <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">etiquetas</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">rssCierre</span><span class="o">=</span><span class="s">&quot;&lt;/rss&gt;&quot;</span><span class="o">;</span>
+                <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">rssCierre</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+                <span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+                        <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+                <span class="n">CreadorRSS</span> <span class="n">creador</span><span class="o">=</span><span class="k">new</span> <span class="n">CreadorRSS</span><span class="o">();</span>
+                <span class="n">creador</span><span class="o">.</span><span class="na">crearArchivo</span><span class="o">(</span><span class="s">&quot;D:/oscar/archivo.rss&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>El siguiente código Java ilustra otra forma de hacerlo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">crearRSS</span><span class="o">(){</span>
+        <span class="n">DocumentBuilderFactory</span> <span class="n">fabrica</span><span class="o">;</span>
+        <span class="n">DocumentBuilder</span> <span class="n">constructor</span><span class="o">;</span>
+        <span class="n">Document</span> <span class="n">documentoXML</span><span class="o">;</span>
+        <span class="k">try</span><span class="o">{</span>
+                <span class="n">fabrica</span><span class="o">=</span>
+                                <span class="n">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+                <span class="n">constructor</span><span class="o">=</span><span class="n">fabrica</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
+                <span class="n">documentoXML</span><span class="o">=</span><span class="n">constructor</span><span class="o">.</span><span class="na">newDocument</span><span class="o">();</span>
+                <span class="n">TransformerFactory</span> <span class="n">fabricaConv</span> <span class="o">=</span>
+                                <span class="n">TransformerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+                <span class="n">Transformer</span> <span class="n">transformador</span> <span class="o">=</span>
+                                <span class="n">fabricaConv</span><span class="o">.</span><span class="na">newTransformer</span><span class="o">();</span>
+                <span class="n">DOMSource</span> <span class="n">origenDOM</span> <span class="o">=</span>
+                                <span class="k">new</span> <span class="n">DOMSource</span><span class="o">(</span><span class="n">documentoXML</span><span class="o">);</span>
+                <span class="n">Element</span> <span class="n">e</span><span class="o">=</span><span class="n">documentoXML</span><span class="o">.</span><span class="na">createElement</span><span class="o">(</span><span class="s">&quot;rss&quot;</span><span class="o">);</span>
+                <span class="n">documentoXML</span><span class="o">.</span><span class="na">appendChild</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+                <span class="n">StreamResult</span> <span class="n">resultado</span><span class="o">=</span>
+                                <span class="k">new</span> <span class="n">StreamResult</span><span class="o">(</span>
+                                        <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;D:\\resul\\archivo.rss&quot;</span><span class="o">));</span>
+                <span class="n">transformador</span><span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="n">origenDOM</span><span class="o">,</span> <span class="n">resultado</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;No se han podido crear los&quot;</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; objetos necesarios.&quot;</span><span class="o">);</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                <span class="k">return</span> <span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="xpath">
+<h2>XPath<a class="headerlink" href="#xpath" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Según el W3C, XPath (que ya va por su versión 3.0) es un lenguaje diseñado para acceder a las distintas partes de un archivo XML. En nuestro caso nos va a resultar de mucha utilidad combinado con XSLT, que se verá un poco despues.</p>
+<p>XPath se basa en expresiones. Así, dado un archivo XML y una expresión XPath se dice que la expresión «se evalúa» y se obtiene un resultado que puede ser:</p>
+<ul class="simple">
+<li>Una lista de nodos.</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (true o false)</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</li>
+<li>Una cadena.</li>
+</ul>
+<p>XPath también ofrece algunas funciones de utilidad que se asemejan a las de algunos lenguajes de programación.</p>
+<div class="section" id="acceso-a-elementos">
+<h3>Acceso a elementos<a class="headerlink" href="#acceso-a-elementos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El mecanismo de acceso en XPath es muy similar al acceso a directorios que ofrecen algunos sistemas operativos. Para los ejemplos siguientes se usará el siguiente archivo XML</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<p>Así dado este archivo tenemos las expresiones siguientes:</p>
+<p>Si usamos la expresión <code class="docutils literal notranslate"><span class="pre">/inventario</span></code> se selecciona <em>el nodo inventario que cuelga de la raíz</em>. Como puede verse la raíz en XPath es un elemento conceptual, no existe como elemento. Además, dado como es XML solo puede haber un elemento en la raíz. Así, el resultado de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">/inventario</span></code> para el archivo de ejemplo produce el resultado siguiente:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<p>Como puede verse, obtenemos el propio archivo original. Sin embargo, podemos movernos a través del árbol XML de forma similar a un árbol de directorios. Y obsérvese que decimos «similar». Observemos por ejemplo que dentro de <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code> hay 3 elementos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code>. Si pensamos en la expresión XPath <code class="docutils literal notranslate"><span class="pre">/inventario/producto</span></code> puede que pensemos que obtendremos el primer producto (el que tiene el código AAA-111), sin embargo <strong>una expresión XPath se parece a una consulta SQL</strong>, y lo que obtiene la expresión es «todo elemento <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> que sea hijo de <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code>. Es decir, el fichero siguiente (que no es XML, sino una lista de nodos):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+
+
+<span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+
+
+<span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+</pre></div>
+</div>
+<p>En cualquier lista podemos acceder a sus elementos como si fuese un vector. Sin embargo en XPath <strong>los vectores empiezan por 1</strong>. Por lo cual la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[1]</span></code> produce este resultado:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+</pre></div>
+</div>
+<p>Y la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[3]</span></code> produce este:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+</pre></div>
+</div>
+<p>Obsérvese que no existe el elemento 4 y que por tanto la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[4]</span></code> producirá un error. Otro aspecto relevante es que no deben confundirse los vectores con las condiciones (que el W3C llama «predicados»), y con las cuales podremos seleccionar nodos que cumplan ciertas condiciones De hecho, una buena forma de verlos es asumir que en los corchetes <strong>siempre se ponen condiciones y que si hay un número como por ejemplo el 2 nos referimos a la condicion «extraer el elemento cuya posición es igual a 2</strong>.</p>
+<p>Dado un elemento, también podemos extraer un cierto atributo usando la arroba &#64;. Así, la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[3]/&#64;codigo</span></code> devuelve como resultado <code class="docutils literal notranslate"><span class="pre">ACD-981</span></code>, que es el atributo código del tercer elemento <code class="docutils literal notranslate"><span class="pre">producto</span></code> que está dentro de <code class="docutils literal notranslate"><span class="pre">inventario</span></code> el cual cuelga de la raíz.</p>
+<p>Supongamos que deseamos extraer el producto cuyo código sea «AAA-111». Si usamos <code class="docutils literal notranslate"><span class="pre">/inventario/producto</span></code> extraemos todos los elementos producto hijos de inventario, pero recordemos que entre corchetes podemos poner condiciones. Dado que queremos comprobar si &#64;codigo = «AAA-111», la expresión correcta será <code class="docutils literal notranslate"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]</span></code>, la cual nos devuelve lo siguiente:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+    <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;/producto&gt;</span>
+</pre></div>
+</div>
+<p>De hecho se puede profundizar aún más y usar la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/nombre</span></code> que extrae los nombres de los elementos producto cuyo código sea «AAA-111». Y aún más para extraer solo el texto de los elementos nombre usando la expresión <code class="docutils literal notranslate"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/nombre/text()</span></code>. Como vemos en esta última expresión ya hemos usado una función, en concreto <code class="docutils literal notranslate"><span class="pre">text()</span></code>.</p>
+<p>En una condicion podemos referirnos a cualquier hijo de un nodo, así por ejemplo, podemos extraer los productos cuyo peso sea mayor de 50 usando <code class="docutils literal notranslate"><span class="pre">/inventario/producto[peso&gt;=50]</span></code>. Sin embargo, sabemos que la unidad es importante, por lo que en realidad podemos extraer los que pesen más de 50 gramos usando esto <code class="docutils literal notranslate"><span class="pre">/inventario/producto[peso&gt;=50</span> <span class="pre">and</span> <span class="pre">peso/&#64;unidad=&quot;g&quot;]</span></code>.</p>
+<p>Si se observa despacio el fichero, se observará que en realidad el tercer producto debería aparecer también. Para ello debemos ampliar la expresión convirtiendo los 50 g a kg, es decir comparando con 0.005 kg y la expresión siguiente <code class="docutils literal notranslate"><span class="pre">/inventario/producto[(peso&gt;=50</span> <span class="pre">and</span> <span class="pre">peso/&#64;unidad=&quot;g&quot;)</span> <span class="pre">or</span> <span class="pre">(peso&gt;=0.005</span> <span class="pre">and</span> <span class="pre">peso/&#64;unidad=&quot;kg&quot;)]</span></code>.</p>
+<p>Utilizando XPath y XSLT veremos que podemos transformar un XML en casi cualquier otro XML utilizando la potencia combinada de ambos lenguajes.</p>
+</div>
+</div>
+<div class="section" id="adaptacion-y-transformacion-de-xml">
+<h2>Adaptación y transformación de XML<a class="headerlink" href="#adaptacion-y-transformacion-de-xml" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Muy a menudo va a ocurrir que un cierto formato XML va a ampliarse o a modificarse o simplemente se necesita convertir un documento XML en otro con un formato distinto.</p>
+<p>Supongamos una estructura como la siguiente:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;catalogo&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;title&gt;</span>Poeta en Nueva York<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;autor&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Supongamos que un cierto sitio se necesita almacenar la información de esta forma:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;listadolibros&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;titulo</span> <span class="na">autor=</span><span class="s">&quot;Cervantes&quot;</span><span class="nt">&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;titulo</span> <span class="na">autor=</span><span class="s">&quot;Lorca&quot;</span><span class="nt">&gt;</span>
+                Poeta en Nueva York
+                <span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/listadolibros&gt;</span>
+</pre></div>
+</div>
+<p>En general, para poder modificar o presentar los XML se puede hacen varias cosas:</p>
+<ul>
+<li><p class="first">En primer lugar, se puede usar CSS para poder cargar los documentos XML en un navegador y mostrarlos de forma aceptable.</p>
+</li>
+<li><p class="first">Se pueden utilizar otras tecnologías para transformar por completo la estructura del XML.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Se puede usar un lenguaje llamado XSLT (Xml Stylesheet Language Transformation) para convertir el XML en otro distinto.</li>
+<li>Se puede utilizar XSL:FO (Xml Stylesheet Language: Formatting Objects) cuando se desee convertir el documento en algo que se desee imprimir (normalmente un PDF)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="css-con-xml">
+<h3>CSS con XML<a class="headerlink" href="#css-con-xml" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos de nuevo el archivo anterior, el cual ahora queremos mostrar en un navegador:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;catalogo&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+                <span class="nt">&lt;title&gt;</span>
+                Poeta en Nueva York
+                <span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;autor&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Si usamos el archivo <code class="docutils literal notranslate"><span class="pre">estilo.css</span></code> de esta forma:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">catalogo</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">libro</span><span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">margin-bottom</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">title</span><span class="p">{</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">autor</span><span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="n">font-face</span><span class="p">:</span><span class="n">Arial</span><span class="p">;</span>
+        <span class="k">text-decoration</span><span class="p">:</span><span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Veremos algo como esto:</p>
+<a class="reference internal image-reference" href="_images/estilo-xml.png"><img alt="_images/estilo-xml.png" class="align-center" src="_images/estilo-xml.png" style="width: 301.0px; height: 130.0px;" /></a>
+<div class="section" id="id1">
+<h4>Ejercicio<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Crear una hoja de estilo asociada al catálogo anterior, que muestre la información de cada libro de forma parecida a una tabla, en la que el <code class="docutils literal notranslate"><span class="pre">title</span></code> utilice un color de fondo distinto del <code class="docutils literal notranslate"><span class="pre">autor</span></code>.</p>
+<a class="reference internal image-reference" href="_images/estilo-xml2.png"><img alt="_images/estilo-xml2.png" class="align-center" src="_images/estilo-xml2.png" style="width: 497.0px; height: 67.5px;" /></a>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">catalogo</span><span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">220</span><span class="p">);</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">libro</span><span class="p">{</span>
+        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">margin-bottom</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">title</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">autor</span><span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+        <span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="kc">black</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="p">:</span><span class="nb">rgb</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transformacion-de-xml">
+<h3>Transformación de XML<a class="headerlink" href="#transformacion-de-xml" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si deseamos <em>transformar un XML en otro XML</em> necesitaremos usar XSLT. Un archivo XSLT tiene la extensión XSL e indica las reglas para convertir entre formatos XML.</p>
+<p>El documento XSL básico sería así (los navegadores la darán por mala, ya que no hace absolutamente
+nada):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>En este caso xsl es el espacio de nombres. Un espacio de nombres es un contenedor que
+permite evitar que haya confusiones entre unas etiquetas y otras que se llamen igual. En este
+caso, queremos usar la etiqueta &lt;stylesheet&gt; definida por el W3C. Una hoja básica sería
+esta</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+        <span class="na">xmlns:xsl=</span>
+        <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>
+                                        Resultado
+                                <span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                Documento resultado
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Algunos navegadores no ejecutan XSL por seguridad. Los detalles de como “abrir” la seguridad de cada uno de estos navegadores deben investigarse en el manual de cada uno de ellos.</p>
+<p>Cabe destacar que esta hoja simplemente genera HTML básico pero no recoge ningún dato del XML original.</p>
+</div>
+<div class="section" id="ejercicio-carga-de-estilos">
+<h3>Ejercicio (carga de estilos)<a class="headerlink" href="#ejercicio-carga-de-estilos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hacer que el archivo XML de libros cargue esta hoja de estilos.</p>
+<p>Solución: consiste en añadir una línea al archivo que referencie el archivo de transformación y el tipo de lenguaje usado para transformar.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet href=&quot;hoja1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
+
+<span class="nt">&lt;catalogo&gt;</span>
+        ... (El resto es igual)
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-conversion-entre-xmls">
+<h3>Ejercicio (conversion entre XMLs)<a class="headerlink" href="#ejercicio-conversion-entre-xmls" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el fichero de información del catálogo, transformar dicho XML en otro fichero en el que la etiqueta <code class="docutils literal notranslate"><span class="pre">title</span></code> vaya en español, es decir, que el resultado quede así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;title&gt;</span>
+    Poeta en Nueva York
+    <span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;autor&gt;</span>Lorca<span class="nt">&lt;/autor&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>La solución podría ser algo así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+    <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;catalogo&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/catalogo/libro&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+          <span class="nt">&lt;titulo&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/titulo&gt;</span>
+          <span class="nt">&lt;autor&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/autor&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/catalogo&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-generacion-de-atributos">
+<h3>Ejercicio (generación de atributos)<a class="headerlink" href="#ejercicio-generacion-de-atributos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el archivo XML del catálogo generar un XML en el que el autor vaya como un atributo del título, es decir, que quede algo así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;titulo</span> <span class="na">escritor=</span><span class="s">&quot;Cervantes&quot;</span><span class="nt">&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+  <span class="nt">&lt;libro&gt;</span>
+    <span class="nt">&lt;titulo</span> <span class="na">escritor=</span><span class="s">&quot;Lorca&quot;</span><span class="nt">&gt;</span>
+    Poeta en Nueva York
+    <span class="nt">&lt;/titulo&gt;</span>
+  <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>La solución:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+    <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;catalogo&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/catalogo/libro&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;libro&gt;</span>
+          <span class="nt">&lt;titulo&gt;</span>
+            <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;escritor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:attribute&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;/libro&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/catalogo&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-tabla-html">
+<h3>Ejercicio (tabla HTML)<a class="headerlink" href="#ejercicio-tabla-html" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Convertir el catalogo XML en una tabla HTML</p>
+<p>Solución:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;html&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Catalogo de libros<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Listado de libros<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;td&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;/td&gt;</span>
+              <span class="nt">&lt;td&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;autor&quot;</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+          <span class="nt">&lt;/xsl:for-each&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-generacion">
+<h3>Ejercicio (generacion)<a class="headerlink" href="#ejercicio-generacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hacer que el XSL genere un HTML con información del archivo XML de libro.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
+                <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejemplo de transformación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;p&gt;</span>
+                                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;/p&gt;</span>
+                                <span class="nt">&lt;/xsl:for-each&gt;</span>
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Ejercicio<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Extraer los títulos de los libros pero consiguiendo encerrarlos en una lista ordenada HTML para que aparezcan numerados.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
+                <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejemplo de transformación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                                <span class="nt">&lt;ol&gt;</span>
+                                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;li&gt;</span>
+                                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;/li&gt;</span>
+                                <span class="nt">&lt;/xsl:for-each&gt;</span>
+                                <span class="nt">&lt;/ol&gt;</span>
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos que ahora un libro tiene varios autores y el XML es algo así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet href=&quot;hoja1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
+
+<span class="nt">&lt;catalogo&gt;</span>
+                <span class="nt">&lt;libro&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+                                <span class="nt">&lt;autores&gt;</span>
+                                                <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;/autores&gt;</span>
+                <span class="nt">&lt;/libro&gt;</span>
+                <span class="nt">&lt;libro&gt;</span>
+                        <span class="nt">&lt;title&gt;</span>Patrones de diseño en programación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;autores&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>Erich Gamma<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>John Vlissides<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>Ralph Johnson<span class="nt">&lt;/autor&gt;</span>
+                        <span class="nt">&lt;/autores&gt;</span>
+                <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>¿Como mostrar en HTML el título y todos los autores de cada libro?</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
+                <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejemplo de transformación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                                <span class="nt">&lt;ol&gt;</span>
+                                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;li&gt;</span>
+                                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+                                                <span class="nt">&lt;ol&gt;</span>
+                                                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;li&gt;</span>
+                                                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                                                                <span class="nt">&lt;/li&gt;</span>
+                                                        <span class="nt">&lt;/xsl:for-each&gt;</span> <span class="c">&lt;!--Fin del bucle autores--&gt;</span>
+                                                <span class="nt">&lt;/ol&gt;</span>
+                                        <span class="nt">&lt;/li&gt;</span>
+                                <span class="nt">&lt;/xsl:for-each&gt;</span> <span class="c">&lt;!--Fin del recorrido de libro--&gt;</span>
+                                <span class="nt">&lt;/ol&gt;</span>
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea hacer lo mismo que en el ejercicio anterior pero haciendo que los autores aparezcan de forma ordenada.</p>
+<p>La solución está fundamentada en el uso de la etiqueta siguiente:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:sort</span> <span class="na">select=</span><span class="s">&quot;...&quot;</span> <span class="na">ordering=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+                ..cosas del bucle...
+        <span class="nt">&lt;/xsl:sort&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
+</pre></div>
+</div>
+<p>La solución completa sería así:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
+                <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejemplo de transformación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                                <span class="nt">&lt;ol&gt;</span>
+                                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;li&gt;</span>
+                                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+                                                <span class="nt">&lt;ol&gt;</span>
+                                                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
+                                                        <span class="nt">&lt;xsl:sort</span> <span class="na">order=</span><span class="s">&quot;descending&quot;</span><span class="nt">/&gt;</span>
+                                                                <span class="nt">&lt;li&gt;</span>
+                                                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                                                                <span class="nt">&lt;/li&gt;</span>
+                                                        <span class="nt">&lt;/xsl:for-each&gt;</span>
+                                                <span class="nt">&lt;/ol&gt;</span>
+                                        <span class="nt">&lt;/li&gt;</span>
+                                <span class="nt">&lt;/xsl:for-each&gt;</span> <span class="c">&lt;!--Fin del recorrido de libro--&gt;</span>
+                                <span class="nt">&lt;/ol&gt;</span>
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Suponiendo que además todos los libros tienen además un elemento <code class="docutils literal notranslate"><span class="pre">&lt;fechaedicion&gt;</span></code> mostrar los libros editados despues del 2000.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet href=&quot;hoja1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
+
+<span class="nt">&lt;catalogo&gt;</span>
+                <span class="nt">&lt;libro&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Don Quijote<span class="nt">&lt;/title&gt;</span>
+                                <span class="nt">&lt;autores&gt;</span>
+                                                <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;/autores&gt;</span>
+                                <span class="nt">&lt;fechaedicion&gt;</span>1984<span class="nt">&lt;/fechaedicion&gt;</span>
+                <span class="nt">&lt;/libro&gt;</span>
+                <span class="nt">&lt;libro&gt;</span>
+                        <span class="nt">&lt;title&gt;</span>Patrones de diseño en programación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;autores&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>Ralph Johnson<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>Erich Gamma<span class="nt">&lt;/autor&gt;</span>
+                                <span class="nt">&lt;autor&gt;</span>John Vlissides<span class="nt">&lt;/autor&gt;</span>
+                        <span class="nt">&lt;/autores&gt;</span>
+                        <span class="nt">&lt;fechaedicion&gt;</span>2007<span class="nt">&lt;/fechaedicion&gt;</span>
+                <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns:xsl=</span>
+                <span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejemplo de transformación<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                                <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                                <span class="nt">&lt;ol&gt;</span>
+                                <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;fechaedicion &amp;gt; 2000&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;li&gt;</span>
+                                                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+                                                <span class="nt">&lt;ol&gt;</span>
+                                                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
+                                                        <span class="nt">&lt;xsl:sort</span> <span class="na">order=</span><span class="s">&quot;descending&quot;</span><span class="nt">/&gt;</span>
+                                                                <span class="nt">&lt;li&gt;</span>
+                                                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                                                                <span class="nt">&lt;/li&gt;</span>
+
+                                                        <span class="nt">&lt;/xsl:for-each&gt;</span>
+                                                <span class="nt">&lt;/ol&gt;</span>
+                                        <span class="nt">&lt;/li&gt;</span>
+                                        <span class="nt">&lt;/xsl:if&gt;</span>
+
+                                <span class="nt">&lt;/xsl:for-each&gt;</span> <span class="c">&lt;!--Fin del recorrido de libro--&gt;</span>
+                                <span class="nt">&lt;/ol&gt;</span>
+                        <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>En general, las condiciones se escriben así:</p>
+<ul class="simple">
+<li>&gt; o mayor que o <code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code></li>
+<li>&lt; o menor que o <code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code></li>
+<li>&gt;= o mayor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;ge;</span></code></li>
+<li>&lt;= o menor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;le;</span></code></li>
+<li>&lt;&gt; o distinto o <code class="docutils literal notranslate"><span class="pre">&amp;neq;</span></code></li>
+</ul>
+</div>
+<div class="section" id="ejercicio-xsl-paso-a-paso">
+<h3>Ejercicio XSL, paso a paso<a class="headerlink" href="#ejercicio-xsl-paso-a-paso" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el siguiente XML crear un programa con XSLT que muestre los titulos y los autores de los libros cuya fecha de edicion sea posterior al 2000.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet     type=&quot;text/xsl&quot;         href=&quot;ejercicio1.xsl&quot;?&gt;</span>
+     <span class="nt">&lt;catalogo&gt;</span>
+             <span class="nt">&lt;libro</span> <span class="na">fechaedicion=</span><span class="s">&quot;1999&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;titulo&gt;</span>Don Quijote<span class="nt">&lt;/titulo&gt;</span>
+                     <span class="nt">&lt;autores&gt;</span>
+                             <span class="nt">&lt;autor&gt;</span>Cervantes<span class="nt">&lt;/autor&gt;</span>
+                     <span class="nt">&lt;/autores&gt;</span>
+             <span class="nt">&lt;/libro&gt;</span>
+             <span class="nt">&lt;libro</span> <span class="na">fechaedicion=</span><span class="s">&quot;2005&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;titulo&gt;</span>
+                     La sociedad civil moderna
+                     <span class="nt">&lt;/titulo&gt;</span>
+                     <span class="nt">&lt;autores&gt;</span>
+                             <span class="nt">&lt;autor&gt;</span>Luis Diaz<span class="nt">&lt;/autor&gt;</span>
+                             <span class="nt">&lt;autor&gt;</span>Pedro Campos<span class="nt">&lt;/autor&gt;</span>
+                     <span class="nt">&lt;/autores&gt;</span>
+             <span class="nt">&lt;/libro&gt;</span>
+     <span class="nt">&lt;/catalogo&gt;</span>
+</pre></div>
+</div>
+<p>Hagámoslo paso a paso. En primer lugar tendremos que crear el fichero <code class="docutils literal notranslate"><span class="pre">ejercicio1.xsl</span></code> y crear la estructura básica:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Ahora recorramos los libros que hay en el catalogo (recordemos que la estructura es <code class="docutils literal notranslate"><span class="pre">catalogo/libro</span></code>. Simplemente por ver si funciona, de momento el navegado solo muestra los títulos y en una sola línea.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titulo&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id6" style="width: 50%">
+<img alt="_images/ejercicio1xslpaso1.png" src="_images/ejercicio1xslpaso1.png" />
+<p class="caption"><span class="caption-text">Paso inicial del XSL</span></p>
+</div>
+<p>Avancemos un poco más y creemos una estructura HTML válida</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+         <span class="nt">&lt;title&gt;</span>Filtrado con XSLT<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Filtrado con XSLT<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titulo&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/ol&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id7" style="width: 50%">
+<img alt="_images/ejercicio1xslpaso2.png" src="_images/ejercicio1xslpaso2.png" />
+<p class="caption"><span class="caption-text">Extrayendo los titulos con XSL</span></p>
+</div>
+<p>Ahora vamos a procesar solo los libros cuya <code class="docutils literal notranslate"><span class="pre">fechaedicion</span></code> sea posterior al 2000. Añadamos un <code class="docutils literal notranslate"><span class="pre">if</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+         <span class="nt">&lt;title&gt;</span>Filtrado con XSLT<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Filtrado con XSLT<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@fechaedicion &amp;gt; 2000&quot;</span><span class="nt">&gt;</span>
+
+                <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titulo&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;/xsl:if&gt;</span>
+        <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/ol&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id8" style="width: 50%">
+<img alt="_images/ejercicio1xslpaso3.png" src="_images/ejercicio1xslpaso3.png" />
+<p class="caption"><span class="caption-text">Procesando los que son &gt; 2000</span></p>
+</div>
+<p>Ahora para cada libro queremos también mostrar los elementos autor con su propia lista</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+         <span class="nt">&lt;title&gt;</span>Filtrado con XSLT<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Filtrado con XSLT<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;ol&gt;</span>
+        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;catalogo/libro&quot;</span><span class="nt">&gt;</span>
+
+                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@fechaedicion &amp;gt; 2000&quot;</span><span class="nt">&gt;</span>
+
+                <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;titulo&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;ol&gt;</span>
+                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;autores/autor&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;li&gt;</span>
+                                        <span class="c">&lt;!--El elemento actual es .--&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/li&gt;</span>
+                        <span class="nt">&lt;/xsl:for-each&gt;</span>
+                <span class="nt">&lt;/ol&gt;</span>
+
+                <span class="nt">&lt;/xsl:if&gt;</span>
+        <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/ol&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Y el navegador muestra lo siguiente</p>
+<div class="figure align-center" id="id9" style="width: 50%">
+<img alt="_images/ejercicio1xslpaso4.png" src="_images/ejercicio1xslpaso4.png" />
+<p class="caption"><span class="caption-text">Mostrando también los autores</span></p>
+</div>
+</div>
+<div class="section" id="ejercicio-condiciones-complejas">
+<h3>Ejercicio: condiciones complejas<a class="headerlink" href="#ejercicio-condiciones-complejas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Supongamos que nos dan el siguiente fichero de inventario:</p>
+<p>Y supongamos que nos dicen que se necesita extraer la información relativa a los productos que pesan más de 5. Una primera aproximación equivocada sería esta:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>
+          <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/nombre&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+<p>Esta solución está equivocada porque de entrada <em>la pregunta está mal</em> Si se refieren a 5kg solo debería mostrarse el ordenador y si se refieren a 5g solo debería mostrarse el altavoz.</p>
+<p>Una solución correcta sería esta. Obsérvese como se meten unos if dentro de otros para extraer la información deseada.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;./peso/@unidad = &#39;kg&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;nombre&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad = &#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso &amp;gt; 5000&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;nombre&gt;</span>
+            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;/xsl:if&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/inventario&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transformacion-en-tabla">
+<h3>Transformación en tabla<a class="headerlink" href="#transformacion-en-tabla" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se nos pide convertir el inventario de antes en la tabla siguiente donde el peso debe estar normalizado y aparecer siempre en gramos:</p>
+<a class="reference internal image-reference" href="_images/tabla_tras_xslt1.png"><img alt="_images/tabla_tras_xslt1.png" class="align-center" src="_images/tabla_tras_xslt1.png" style="width: 204.5px; height: 102.0px;" /></a>
+<p>Una posible solución sería:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
+  <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;&lt;title&gt;</span>Tabla de inventario<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;inventario/elemento&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;nombre&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad=&#39;kg&#39;&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso * 1000&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+            <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;peso/@unidad=&#39;g&#39;&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsl:if&gt;</span>
+          <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;/xsl:for-each&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transformacion-de-pedidos">
+<h3>Transformacion de pedidos<a class="headerlink" href="#transformacion-de-pedidos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el siguiente archivo XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet href=&quot;estilo1.xsl&quot; type=&quot;text/xsl&quot;?&gt;</span>
+<span class="nt">&lt;pedido&gt;</span>
+        <span class="nt">&lt;portatiles&gt;</span>
+                <span class="nt">&lt;portatil&gt;</span>
+                        <span class="nt">&lt;peso&gt;</span>1430<span class="nt">&lt;/peso&gt;</span>
+                        <span class="nt">&lt;ram</span> <span class="na">unidad=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/ram&gt;</span>
+                        <span class="nt">&lt;disco</span> <span class="na">tipo=</span><span class="s">&quot;ssd&quot;</span><span class="nt">&gt;</span>500<span class="nt">&lt;/disco&gt;</span>
+                        <span class="nt">&lt;precio&gt;</span>499<span class="nt">&lt;/precio&gt;</span>
+                <span class="nt">&lt;/portatil&gt;</span>
+                <span class="nt">&lt;portatil&gt;</span>
+                        <span class="nt">&lt;peso&gt;</span>1830<span class="nt">&lt;/peso&gt;</span>
+                        <span class="nt">&lt;ram</span> <span class="na">unidad=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/ram&gt;</span>
+                        <span class="nt">&lt;disco</span> <span class="na">tipo=</span><span class="s">&quot;ssd&quot;</span><span class="nt">&gt;</span>1000<span class="nt">&lt;/disco&gt;</span>
+                        <span class="nt">&lt;precio&gt;</span>1199<span class="nt">&lt;/precio&gt;</span>
+                <span class="nt">&lt;/portatil&gt;</span>
+                <span class="nt">&lt;portatil&gt;</span>
+                        <span class="nt">&lt;peso&gt;</span>1250<span class="nt">&lt;/peso&gt;</span>
+                        <span class="nt">&lt;ram</span> <span class="na">unidad=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/ram&gt;</span>
+                        <span class="nt">&lt;disco</span> <span class="na">tipo=</span><span class="s">&quot;ssd&quot;</span><span class="nt">&gt;</span>750<span class="nt">&lt;/disco&gt;</span>
+                        <span class="nt">&lt;precio&gt;</span>699<span class="nt">&lt;/precio&gt;</span>
+                <span class="nt">&lt;/portatil&gt;</span>
+        <span class="nt">&lt;/portatiles&gt;</span>
+        <span class="nt">&lt;tablets&gt;</span>
+                <span class="nt">&lt;tablet&gt;</span>
+                        <span class="nt">&lt;plataforma&gt;</span>Android<span class="nt">&lt;/plataforma&gt;</span>
+                        <span class="nt">&lt;caracteristicas&gt;</span>
+                                <span class="nt">&lt;memoria</span> <span class="na">medida=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/memoria&gt;</span>
+                                <span class="nt">&lt;tamanio</span> <span class="na">medida=</span><span class="s">&quot;pulgadas&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/tamanio&gt;</span>
+                                <span class="nt">&lt;bateria&gt;</span>LiPo<span class="nt">&lt;/bateria&gt;</span>
+                        <span class="nt">&lt;/caracteristicas&gt;</span>
+                <span class="nt">&lt;/tablet&gt;</span>
+                <span class="nt">&lt;tablet&gt;</span>
+                        <span class="nt">&lt;plataforma&gt;</span>iOS<span class="nt">&lt;/plataforma&gt;</span>
+                        <span class="nt">&lt;caracteristicas&gt;</span>
+                                <span class="nt">&lt;memoria</span> <span class="na">medida=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/memoria&gt;</span>
+                                <span class="nt">&lt;tamanio</span> <span class="na">medida=</span><span class="s">&quot;pulgadas&quot;</span><span class="nt">&gt;</span>9<span class="nt">&lt;/tamanio&gt;</span>
+                                <span class="nt">&lt;bateria&gt;</span>LiIon<span class="nt">&lt;/bateria&gt;</span>
+                        <span class="nt">&lt;/caracteristicas&gt;</span>
+                <span class="nt">&lt;/tablet&gt;</span>
+        <span class="nt">&lt;/tablets&gt;</span>
+<span class="nt">&lt;/pedido&gt;</span>
+</pre></div>
+</div>
+<p>Crear un fichero de estilos que permita mostrar la información de los portátiles en forma de tabla.</p>
+<div class="figure align-center" id="id10" style="width: 50%">
+<img alt="_images/xsl1.png" src="_images/xsl1.png" />
+<p class="caption"><span class="caption-text">Transformacion XSL</span></p>
+</div>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span>
+        <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;html&gt;</span>
+                        <span class="nt">&lt;head&gt;</span>
+                                <span class="nt">&lt;title&gt;</span>Ejercicio 1<span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;/head&gt;</span>
+                        <span class="nt">&lt;body&gt;</span>
+                        <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;tr&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>Peso<span class="nt">&lt;/td&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>RAM<span class="nt">&lt;/td&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>Disco<span class="nt">&lt;/td&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>Precio<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span>
+                                <span class="s">&quot;pedido/portatiles/portatil&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;tr&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;peso&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;ram&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;disco&quot;</span><span class="nt">/&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                                <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;precio&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:for-each&gt;</span>
+                        <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transformacion-de-pedidos-ii">
+<h3>Transformación de pedidos (II)<a class="headerlink" href="#transformacion-de-pedidos-ii" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Con el mismo fichero de pedidos crear una sola tabla que tenga 3 columnas y aglutine información tanto de portátiles como de tablets:</p>
+<ul class="simple">
+<li>Cuando procesemos portátiles, las columnas serán respectivamente «precio», «ram» y «disco». Solo se procesan portátiles con más de 2GB de RAM.</li>
+<li>Cuando procesemos tablets, las columnas serán «plataforma», «ram» y «batería». Solo se procesan los tablets con más de 2GB de RAM y que además tengan un tamaño superior a 7 pulgadas.</li>
+</ul>
+<p>El fichero siguiente ilustra una posible forma de hacerlo:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span>
+<span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;html&gt;</span>
+                <span class="nt">&lt;head&gt;</span>
+                        <span class="nt">&lt;title&gt;</span>Ejercicio 1<span class="nt">&lt;/title&gt;</span>
+                <span class="nt">&lt;/head&gt;</span>
+                <span class="nt">&lt;body&gt;</span>
+                        <span class="nt">&lt;h1&gt;</span>Resultado<span class="nt">&lt;/h1&gt;</span>
+                        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span>
+                        <span class="s">&quot;pedido/portatiles/portatil&quot;</span><span class="nt">&gt;</span>
+                           <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;ram &amp;gt; 2&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;tr&gt;</span>
+                                  <span class="nt">&lt;td&gt;</span>
+                                        Precio:<span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;precio&quot;</span><span class="nt">/&gt;</span>
+                                  <span class="nt">&lt;/td&gt;</span>
+                                  <span class="nt">&lt;td&gt;</span>
+                                        Memoria:<span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;ram&quot;</span><span class="nt">/&gt;</span>
+                              <span class="nt">&lt;/td&gt;</span>
+                                  <span class="nt">&lt;td&gt;</span>
+                                        Disco duro:<span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;disco&quot;</span><span class="nt">/&gt;</span>
+                                  <span class="nt">&lt;/td&gt;</span>
+                                <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                        <span class="nt">&lt;/xsl:for-each&gt;</span>
+                        <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;pedido/tablets/tablet&quot;</span><span class="nt">&gt;</span>
+                           <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;caracteristicas/memoria &amp;gt; 2&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;caracteristicas/tamanio &amp;gt; 7&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;tr&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;plataforma&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;/td&gt;</span>                                           <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;caracteristicas/memoria&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;/td&gt;</span>
+                                        <span class="nt">&lt;td&gt;</span>
+                                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;caracteristicas/bateria&quot;</span><span class="nt">/&gt;</span>
+                                        <span class="nt">&lt;/td&gt;</span>
+                                <span class="nt">&lt;/tr&gt;</span>
+                        <span class="nt">&lt;/xsl:if&gt;</span>
+                                <span class="nt">&lt;/xsl:if&gt;</span>
+                                <span class="nt">&lt;/xsl:for-each&gt;</span>
+                        <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;/body&gt;</span>
+                <span class="nt">&lt;/html&gt;</span>
+        <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-no-se-da-la-solucion">
+<h3>Ejercicio (no se da la solución)<a class="headerlink" href="#ejercicio-no-se-da-la-solucion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Poner en una lista ordenada (elemento <code class="docutils literal notranslate"><span class="pre">ol</span></code>) todas las capacidades RAM que se encuentren en el fichero XML.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sindicación y transformación de contenidos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rss">RSS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#formato-de-archivo-rss">Formato de archivo RSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#xpath">XPath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#acceso-a-elementos">Acceso a elementos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adaptacion-y-transformacion-de-xml">Adaptación y transformación de XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#css-con-xml">CSS con XML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacion-de-xml">Transformación de XML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-carga-de-estilos">Ejercicio (carga de estilos)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-conversion-entre-xmls">Ejercicio (conversion entre XMLs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-generacion-de-atributos">Ejercicio (generación de atributos)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-tabla-html">Ejercicio (tabla HTML)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-generacion">Ejercicio (generacion)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-xsl-paso-a-paso">Ejercicio XSL, paso a paso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-condiciones-complejas">Ejercicio: condiciones complejas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacion-en-tabla">Transformación en tabla</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacion-de-pedidos">Transformacion de pedidos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacion-de-pedidos-ii">Transformación de pedidos (II)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-no-se-da-la-solucion">Ejercicio (no se da la solución)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tema6.html" title="capítulo anterior">Recuperación de información</a></li>
+      <li>Next: <a href="tema8.html" title="próximo capítulo">Sistemas de gestión de información</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tema7.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

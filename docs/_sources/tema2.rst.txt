@@ -743,34 +743,6 @@ Un campo de texto puede llevar asociada una etiqueta ``label`` que indique al na
 
 Si el type de este elemento se sustituye por ``password`` se obtiene un control igual, pero que reemplaza el texto por símbolos que ocultan el texto.
 
-Es posible ofrecer un conjunto de posibles opciones para un campo de texto usando un control llamado ``<datalist>``. Así, supongamos que pedimos el idioma al usuario pero deseamos ofrecer la posibilidad de autocompletar mostrando algunos idiomas comunes. Se puede usar este código:
-
-.. code-block:: html
-
-	<br/>
-	Introduzca su idioma:<input type="text" id="idiomascomunes">
-    <datalist id="idiomas">
-        <option value="Inglés"></option>
-        <option value="Alemán"></option>
-        <option value="Español"></option>
-        <option value="Francés"></option>
-    </datalist>
-
-
-Campo email
---------------
-
-Si sabemos con seguridad que en un campo se va a introducir el email se puede usar este código:
-
-.. code-block:: html
-
-	<br/>
-	Introduzca su email:<input type="email" name="sexo">
-
-El navegador hará **automáticamente** la comprobación de que lo que introduce el usuario es realmente un email.
-
-
-
 Selector único (radio-button)
 ---------------------------------
 
@@ -830,8 +802,6 @@ Permiten introducir textos muy largos:
 	<textarea rows="10" cols="15">
 		Valor por defecto
 	</textarea>
-
-
 
 Ejercicios tipo examen
 ======================
