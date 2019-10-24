@@ -57,7 +57,7 @@ En el tercero haríamos esto:
 
 Debe recordarse lo siguiente:
 
-* Escribir CSS para cada etiqueta es **MUY POCO PRÁCTICO ** y difícil de cambiar en el futuro.
+* Escribir CSS para cada etiqueta es **MUY POCO PRÁCTICO** y difícil de cambiar en el futuro.
 * Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.
 * Lo habitual es definirlo todo en estilos externos.
 
@@ -134,7 +134,67 @@ En el siguiente CSS se muestran los principales selectores.
         background-color: blue;
     }
 
+Un fichero para hacer pruebas con selectores
+--------------------------------------------------------------------------------
 
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <div class="noticia1">
+                <p class="introduccion">
+                    Soy la introducción de la noticia
+                </p>
+                <p>Párrafo 2 de la noticia 2</p>
+                <p id="nucleonoticia1">Párrafo 3 de la noticia 2</p>
+                <p>Párrafo 4 de la noticia 2</p>
+                <p>
+                    Párrafo 5 de la noticia 2. Aquí desgloso
+                    algunos elementos importantes.
+                    <ul class="listaimportantes">
+                        <li>Elemento 1</li>
+                        <li>Elemento 2</li>
+                        <li>Elemento 3</li>
+                    </ul>
+                    Además ocurre que
+
+                    <ol>
+                        <li>Razón 1</li>
+                        <li>Razón 2</li>
+                        <li>Razón 3</li>
+                    </ol>
+                </p>
+            </div><!--Fin de la noticia 2-->
+            <div class="noticia2">
+                    <p class="introduccion">
+                        Soy la introducción de la noticia 2
+                    </p>
+                    <p>Párrafo 2 de la noticia 2</p>
+                    <p id="nucleonoticia2">Párrafo 3 de la noticia 2</p>
+                    <p>Párrafo 4 de la noticia 2</p>
+                    <p>
+                        Párrafo 5 de la noticia 2. Aquí desgloso
+                        algunos elementos importantes.
+                        <ol class="listaimportantes">
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                        </ol>
+                        Además ocurre que
+        
+                        <ol>
+                            <li>Razón 1</li>
+                            <li>Razón 2</li>
+                            <li>Razón 3</li>
+                        </ol>
+                    </p>
+                </div><!--Fin de la noticia 2-->
+        </body>
+    </html>
 
 
 
