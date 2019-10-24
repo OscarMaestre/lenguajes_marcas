@@ -9,49 +9,19 @@
 \usepackage[utf8]{inputenc}
 \ifdefined\DeclareUnicodeCharacter
 % support both utf8 and utf8x syntaxes
-  \ifdefined\DeclareUnicodeCharacterAsOptional
-    \def\sphinxDUC#1{\DeclareUnicodeCharacter{"#1}}
-  \else
-    \let\sphinxDUC\DeclareUnicodeCharacter
-  \fi
-  \sphinxDUC{00A0}{\nobreakspace}
-  \sphinxDUC{2500}{\sphinxunichar{2500}}
-  \sphinxDUC{2502}{\sphinxunichar{2502}}
-  \sphinxDUC{2514}{\sphinxunichar{2514}}
-  \sphinxDUC{251C}{\sphinxunichar{251C}}
-  \sphinxDUC{2572}{\textbackslash}
+\edef\sphinxdqmaybe{\ifdefined\DeclareUnicodeCharacterAsOptional\string"\fi}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe00A0}{\nobreakspace}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2500}{\sphinxunichar{2500}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2502}{\sphinxunichar{2502}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2514}{\sphinxunichar{2514}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe251C}{\sphinxunichar{251C}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2572}{\textbackslash}
 \fi
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amstext}
 \usepackage{babel}
-
-
-
 \usepackage{times}
-\expandafter\ifx\csname T@LGR\endcsname\relax
-\else
-% LGR was declared as font encoding
-  \substitutefont{LGR}{\rmdefault}{cmr}
-  \substitutefont{LGR}{\sfdefault}{cmss}
-  \substitutefont{LGR}{\ttdefault}{cmtt}
-\fi
-\expandafter\ifx\csname T@X2\endcsname\relax
-  \expandafter\ifx\csname T@T2A\endcsname\relax
-  \else
-  % T2A was declared as font encoding
-    \substitutefont{T2A}{\rmdefault}{cmr}
-    \substitutefont{T2A}{\sfdefault}{cmss}
-    \substitutefont{T2A}{\ttdefault}{cmtt}
-  \fi
-\else
-% X2 was declared as font encoding
-  \substitutefont{X2}{\rmdefault}{cmr}
-  \substitutefont{X2}{\sfdefault}{cmss}
-  \substitutefont{X2}{\ttdefault}{cmtt}
-\fi
-
-
 \usepackage[Sonny]{fncychap}
 \ChNameVar{\Large\normalfont\sffamily}
 \ChTitleVar{\Large\normalfont\sffamily}
@@ -67,13 +37,24 @@
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
 
-\usepackage{sphinxmessages}
+\addto\captionsspanish{\renewcommand{\figurename}{Figura}}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\addto\captionsspanish{\renewcommand{\literalblockname}{Lista}}
+
+\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{proviene de la página anterior}}
+\addto\captionsspanish{\renewcommand{\literalblockcontinuesname}{continué en la próxima página}}
+\addto\captionsspanish{\renewcommand{\sphinxnonalphabeticalgroupname}{Non-alphabetical}}
+\addto\captionsspanish{\renewcommand{\sphinxsymbolsname}{Símbolos}}
+\addto\captionsspanish{\renewcommand{\sphinxnumbersname}{Numbers}}
+
+\addto\extrasspanish{\def\pageautorefname{página}}
+
 \setcounter{tocdepth}{2}
 
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{23 de octubre de 2019}
+\date{24 de octubre de 2019}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -142,7 +123,9 @@ Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio p
 
 \subsection{Como configurar un servidor en casa}
 \label{\detokenize{tema1:como-configurar-un-servidor-en-casa}}\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)
 
@@ -209,7 +192,9 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 
 \section{Organismos de regulación}
 \label{\detokenize{tema1:organismos-de-regulacion}}\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 La Internation Standards Organization emite estándares para la documentación.
 
@@ -1667,7 +1652,90 @@ El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
 
 \section{Introducción}
 \label{\detokenize{tema3:introduccion}}
-El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.
+El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS. A menudo se dice que un CSS es una «hoja de estilo».
+
+Hay tres mecanismos básicos para añadir CSS a un HTML
+\begin{enumerate}
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\item {} 
+Usar CSS en las etiquetas HTML del cuerpo de la página.
+
+\item {} 
+Usar CSS en la cabecera del HTML.
+
+\item {} 
+Usar CSS cargando un archivo externo.
+
+\end{enumerate}
+
+En el  primer caso se haría de esta manera:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{p} \PYG{n+na}{style}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}background\PYGZhy{}color:red\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+Este párrafo lleva fondo rojo
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+En el segundo caso haríamos algo como esto.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{style} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYG{n+nt}{p}\PYG{p}{\PYGZob{}}
+            \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{red}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{style}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}Todos los párrafos van en rojo\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+En el tercero haríamos esto:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{link} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}estilo.css\PYGZdq{}} \PYG{n+na}{rel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}stylesheet\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}Todos los párrafos van en rojo\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{p}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Debe recordarse lo siguiente:
+\begin{itemize}
+\item {} 
+Escribir CSS para cada etiqueta es {\color{red}\bfseries{}**}MUY POCO PRÁCTICO ** y difícil de cambiar en el futuro.
+
+\item {} 
+Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.
+
+\item {} 
+Lo habitual es definirlo todo en estilos externos.
+
+\end{itemize}
+
+
+\section{Recordatorio: el modelo DOM}
+\label{\detokenize{tema3:recordatorio-el-modelo-dom}}
+Se debe recordar que
+\begin{itemize}
+\item {} 
+Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.
+
+\item {} 
+Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.
+
+\item {} 
+Se dice que los nodos del árbol tienen «relaciones de parentesco» y por tanto diremos que «un nodo es hermano de otro» o que «un nodo es padre o hijo de otro nodo».
+
+\end{itemize}
 
 
 \section{Sintaxis}
@@ -1683,7 +1751,9 @@ CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuació
 
 En las reglas tenemos tres cosas:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Los selectores. En este caso queremos modificar como van a quedar todos los \sphinxcode{\sphinxupquote{\textless{}h1\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}h3\textgreater{}}}
 
@@ -1694,6 +1764,51 @@ Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color 
 Los valores. En este caso se pone el valor \sphinxcode{\sphinxupquote{blue}} para la propiedad \sphinxcode{\sphinxupquote{background-color}} y el valor \sphinxcode{\sphinxupquote{white}} para la propiedad \sphinxcode{\sphinxupquote{color}}
 
 \end{enumerate}
+
+En el siguiente CSS se muestran los principales selectores.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{h1}\PYG{p}{\PYGZob{}} \PYG{c}{/*Selecciona TODOS los h1 y les pone fondo azul*/}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nt}{h1}\PYG{o}{,} \PYG{n+nt}{h2}\PYG{p}{\PYGZob{}} \PYG{c}{/*Selecciona TODOS LOS H1 Y TODOS LOS H2 y les pone fondo azul*/}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nt}{h1}\PYG{p}{.}\PYG{n+nc}{titular}\PYG{p}{\PYGZob{}} \PYG{c}{/*Selecciona TODOS LOS H1 con el class \PYGZdq{}titular\PYGZdq{}*/}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n+nt}{h1}\PYG{p}{\PYGZsh{}}\PYG{n+nn}{titulonoticia}\PYG{p}{\PYGZob{}} \PYG{c}{/*Selecciona SOLO UN H1, el que tenga el id indicado*/}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c}{/* Selecciona todos los elementos li que sean hijos de un ul*/}
+\PYG{n+nt}{ul}\PYG{o}{\PYGZgt{}}\PYG{n+nt}{li} \PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c}{/* Selecciona los párrafos que vayan justo detrás de un div*/}
+\PYG{n+nt}{div} \PYG{o}{+} \PYG{n+nt}{p}\PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c}{/* Selecciona todos los elementos li que estén dentro de algun ul,}
+\PYG{c}{INCLUSO AUNQUE NO SEAN HIJOS DIRECTOS, sino \PYGZdq{}nietos\PYGZdq{}, \PYGZdq{}bisnietos\PYGZdq{}...*/}
+\PYG{n+nt}{ul} \PYG{n+nt}{li} \PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c}{/* Esto es una \PYGZdq{}pseudo\PYGZhy{}clase\PYGZdq{} selecciona los enlaces no visitados}
+\PYG{c}{y los pone con fondo azul*/}
+\PYG{n+nt}{a}\PYG{p}{:}\PYG{n+nd}{link}\PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c}{/* Pone en fondo rojo los enlaces ya visitados*/}
+\PYG{n+nt}{a}\PYG{p}{:}\PYG{n+nd}{visited}\PYG{p}{\PYGZob{}}
+    \PYG{k}{background\PYGZhy{}color}\PYG{p}{:} \PYG{k+kc}{blue}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
 
 
 \section{Los atributos \sphinxstyleliteralintitle{\sphinxupquote{class}} e \sphinxstyleliteralintitle{\sphinxupquote{id}}}
@@ -1773,6 +1888,46 @@ Este último CSS \sphinxstylestrong{se puede resumir}
 \end{sphinxVerbatim}
 
 Esta regla dice «seleccionar todos los elementos cuyo class sea titular\_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.
+
+
+\section{Pseudo-clases}
+\label{\detokenize{tema3:pseudo-clases}}
+Como ya se ha indicado selecciona elementos en algún estado especial. Hay muchas pero algunas de las principales son:
+\begin{itemize}
+\item {} 
+\sphinxcode{\sphinxupquote{p:hover}} : selector que se aplica cuando se pasa el ratón por encima del párrafo.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:first-of-type}} : selector que se aplica al primero de los párrafos.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:first-child}} : selector que se aplica un párrafo si es el primero de los hijos.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:last-child}} : selector que se aplica al último párrafo ignorando al resto de hermanos.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:nth-child(4)}} : selector que se aplica sobre el cuarto párrafo.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:nth-child(even)}} : selector que se aplica a párrafos impares.
+
+\item {} 
+\sphinxcode{\sphinxupquote{p:nth-child(odd)}} : selector que se aplica a párrafos pares.
+
+\item {} 
+\sphinxcode{\sphinxupquote{a:active}} : selector para enlaces que están siendo pulsados.
+
+\item {} 
+\sphinxcode{\sphinxupquote{a:visited}} : selector para enlaces ya visitados.
+
+\item {} 
+\sphinxcode{\sphinxupquote{a:active}} : selector para enlaces que están siendo pulsados.
+
+\item {} 
+\sphinxcode{\sphinxupquote{input:checked}} : selector para controles (radios, checkboxes) que estén marcados.
+
+\end{itemize}
 
 
 \section{Posicionamiento}
@@ -2017,7 +2172,7 @@ Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto fina
 \capstart
 
 \noindent\sphinxincludegraphics{{maquetacion1}.png}
-\caption{Resultado final}\label{\detokenize{tema3:id6}}\end{figure}
+\caption{Resultado final}\label{\detokenize{tema3:id8}}\end{figure}
 
 
 \subsubsection{HTML}
@@ -2054,7 +2209,7 @@ Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto fina
 
 
 \subsubsection{CSS}
-\label{\detokenize{tema3:id1}}
+\label{\detokenize{tema3:id3}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n+nt}{body}\PYG{p}{\PYGZob{}}
         \PYG{k}{background\PYGZhy{}image}\PYG{p}{:}
@@ -2106,7 +2261,7 @@ Conseguir una página como esta
 
 
 \subsection{HTML}
-\label{\detokenize{tema3:id2}}
+\label{\detokenize{tema3:id4}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenedorglobal\PYGZdq{}}\PYG{p}{\PYGZgt{}}
         \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}cabecera\PYGZdq{}}\PYG{p}{\PYGZgt{}}
@@ -2149,7 +2304,7 @@ Conseguir una página como esta
 
 
 \subsection{CSS}
-\label{\detokenize{tema3:id3}}
+\label{\detokenize{tema3:id5}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{p}{\PYGZsh{}}\PYG{n+nn}{cabecera}\PYG{p}{\PYGZob{}}
         \PYG{k}{text\PYGZhy{}align}\PYG{p}{:} \PYG{k+kc}{center}\PYG{p}{;}
@@ -2412,11 +2567,11 @@ El resultado será:
 \capstart
 
 \noindent\sphinxincludegraphics{{cuatro_cajas_con_floats}.png}
-\caption{Cuatro cajas manipuladas con \sphinxcode{\sphinxupquote{float}}}\label{\detokenize{tema3:id7}}\end{figure}
+\caption{Cuatro cajas manipuladas con \sphinxcode{\sphinxupquote{float}}}\label{\detokenize{tema3:id9}}\end{figure}
 
 
 \subsection{Ejercicio}
-\label{\detokenize{tema3:id4}}
+\label{\detokenize{tema3:id6}}
 Crear una página con una cabecera que ocupe el 100\%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60\%), enlaces\_relacionados (20\%) y publicidad(20\% restante). Crear un pie de página con una anchura del 100\%.
 
 
@@ -2424,7 +2579,9 @@ Crear una página con una cabecera que ocupe el 100\%, que tenga el texto centra
 \label{\detokenize{tema3:maquetacion-avanzada-con-grid-layouts}}
 La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Un elemento (por ejemplo un \sphinxcode{\sphinxupquote{div}}) se puede dividir en forma de tabla
 
@@ -2466,7 +2623,7 @@ Si no le hacemos nada se verá lo siguiente:
 \capstart
 
 \noindent\sphinxincludegraphics{{grid_sin_estilo}.png}
-\caption{Grid sin maquetar}\label{\detokenize{tema3:id8}}\end{figure}
+\caption{Grid sin maquetar}\label{\detokenize{tema3:id10}}\end{figure}
 
 Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS
 
@@ -2483,7 +2640,7 @@ El resultado queda así:
 \capstart
 
 \noindent\sphinxincludegraphics{{celdas_con_borde}.png}
-\caption{Celdas con borde}\label{\detokenize{tema3:id9}}\end{figure}
+\caption{Celdas con borde}\label{\detokenize{tema3:id11}}\end{figure}
 
 Supongamos que queremos que el \sphinxcode{\sphinxupquote{div}} cuyo class es \sphinxcode{\sphinxupquote{contenedor}} se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
@@ -2493,7 +2650,7 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:
 \capstart
 
 \noindent\sphinxincludegraphics{{tabla_5_por_5}.png}
-\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id10}}\end{figure}
+\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id12}}\end{figure}
 
 Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:
 
@@ -2502,7 +2659,7 @@ Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de ma
 \capstart
 
 \noindent\sphinxincludegraphics{{resultado_5_por_5}.png}
-\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id11}}\end{figure}
+\caption{Tabla de 5 x 5}\label{\detokenize{tema3:id13}}\end{figure}
 
 Analizando lo que se pide se observa que:
 \begin{itemize}
@@ -2634,7 +2791,7 @@ A continuación se muestra una captura de lo que muestra el navegador:
 \capstart
 
 \noindent\sphinxincludegraphics{{media_query_screen}.png}
-\caption{HTML mostrado en pantalla}\label{\detokenize{tema3:id12}}\end{figure}
+\caption{HTML mostrado en pantalla}\label{\detokenize{tema3:id14}}\end{figure}
 
 Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:
 
@@ -2643,7 +2800,7 @@ Y también se muestra una captura de lo que muestra el navegador cuando vamos a 
 \capstart
 
 \noindent\sphinxincludegraphics{{media_query_print}.png}
-\caption{HTML para imprimir}\label{\detokenize{tema3:id13}}\end{figure}
+\caption{HTML para imprimir}\label{\detokenize{tema3:id15}}\end{figure}
 
 Uno de los usos más comunes de las \sphinxstyleemphasis{media queries} es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.
 \begin{itemize}
@@ -2695,7 +2852,7 @@ El resultado de este CSS en una pantalla grande es:
 \capstart
 
 \noindent\sphinxincludegraphics{{mq_anchura_grande}.png}
-\caption{Página para una resolución grande}\label{\detokenize{tema3:id14}}\end{figure}
+\caption{Página para una resolución grande}\label{\detokenize{tema3:id16}}\end{figure}
 
 Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):
 
@@ -2704,7 +2861,7 @@ Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana
 \capstart
 
 \noindent\sphinxincludegraphics{{mq_anchura_pequena}.png}
-\caption{Página para una resolución pequeña}\label{\detokenize{tema3:id15}}\end{figure}
+\caption{Página para una resolución pequeña}\label{\detokenize{tema3:id17}}\end{figure}
 
 Hay diversas cosas que podemos comprobar:
 \begin{itemize}
@@ -2812,8 +2969,8 @@ Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay ot
 \end{itemize}
 
 
-\section{Selectores}
-\label{\detokenize{tema3:selectores}}
+\section{Ejercicios comentados sobre selectores.}
+\label{\detokenize{tema3:ejercicios-comentados-sobre-selectores}}
 Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas
 \begin{itemize}
 \item {} 
@@ -2909,11 +3066,11 @@ Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo \sphinxcode{\s
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores1}.png}
-\caption{Resultado}\label{\detokenize{tema3:id16}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id18}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{\sphinxupquote{p.destacado}}}
-\label{\detokenize{tema3:id5}}
+\label{\detokenize{tema3:id7}}
 Los cambios se aplican a todos los párrafos con el \sphinxcode{\sphinxupquote{class}} \sphinxstyleemphasis{destacado}
 
 \begin{figure}[htbp]
@@ -2921,7 +3078,7 @@ Los cambios se aplican a todos los párrafos con el \sphinxcode{\sphinxupquote{c
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores2}.png}
-\caption{Resultado}\label{\detokenize{tema3:id17}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id19}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{\sphinxupquote{p.destacado, span\#id1}}}
@@ -2937,7 +3094,7 @@ Obsérvese que en el HTML hay \sphinxstylestrong{dos elementos con el mismo ID}.
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores3}.png}
-\caption{Resultado}\label{\detokenize{tema3:id18}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id20}}\end{figure}
 
 
 \subsection{Solución \sphinxstyleliteralintitle{\sphinxupquote{p.destacado \textgreater{} li.elemento\_enumeracion}}}
@@ -2961,7 +3118,7 @@ Ahora el resultado es este
 \capstart
 
 \noindent\sphinxincludegraphics{{selectores4}.png}
-\caption{Resultado}\label{\detokenize{tema3:id19}}\end{figure}
+\caption{Resultado}\label{\detokenize{tema3:id21}}\end{figure}
 
 ¿Por qué ahora sí funciona?
 
@@ -3033,7 +3190,7 @@ Por ejemplo, si deseamos que una fila de contenidos tenga una columna que ocupe 
 \capstart
 
 \noindent\sphinxincludegraphics{{bs1}.png}
-\caption{Ejemplo del grid}\label{\detokenize{tema3:id20}}\end{figure}
+\caption{Ejemplo del grid}\label{\detokenize{tema3:id22}}\end{figure}
 
 En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:
 \begin{itemize}
@@ -3068,7 +3225,7 @@ Bootstrap modifica la tipografía por defecto e incluso permite destacar algunos
 \capstart
 
 \noindent\sphinxincludegraphics{{bs2}.png}
-\caption{Párrafo destacado}\label{\detokenize{tema3:id21}}\end{figure}
+\caption{Párrafo destacado}\label{\detokenize{tema3:id23}}\end{figure}
 
 Se puede destacar texto usando lo siguiente:
 
@@ -3099,21 +3256,21 @@ A continuación se muestra el resultado aproximado que se debe conseguir:
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-1}.png}
-\caption{Resultado para pantallas pequeñas}\label{\detokenize{tema3:id22}}\end{figure}
+\caption{Resultado para pantallas pequeñas}\label{\detokenize{tema3:id24}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-2}.png}
-\caption{Resultado para pantallas medianas}\label{\detokenize{tema3:id23}}\end{figure}
+\caption{Resultado para pantallas medianas}\label{\detokenize{tema3:id25}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-3}.png}
-\caption{Resultado para pantallas grandes}\label{\detokenize{tema3:id24}}\end{figure}
+\caption{Resultado para pantallas grandes}\label{\detokenize{tema3:id26}}\end{figure}
 
 Un posible HTML que resolviera esto sería el siguiente:
 
@@ -3215,14 +3372,14 @@ Si la pantalla tiene menos de 800px se mostrará una distribución como la que s
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive2-1}.png}
-\caption{Figura II-1. (Para pantallas estrechas)}\label{\detokenize{tema3:id25}}\end{figure}
+\caption{Figura II-1. (Para pantallas estrechas)}\label{\detokenize{tema3:id27}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive2-2}.png}
-\caption{Figura II-2 (Para pantallas anchas)}\label{\detokenize{tema3:id26}}\end{figure}
+\caption{Figura II-2 (Para pantallas anchas)}\label{\detokenize{tema3:id28}}\end{figure}
 
 A continuación se muestra el HTML:
 
@@ -5267,7 +5424,9 @@ En este caso, el problema es que hay más de un elemento raíz.
 
 En general, podemos asumir que un documento puede estar en uno de estos estados que de peor a mejor podríamos indicar así:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Mal formado (lo peor)
 
@@ -6563,7 +6722,9 @@ Un posible esquema sería el siguiente:
 
 ¿Qué contiene este fichero?
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí \sphinxcode{\sphinxupquote{xmlns}}). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será \sphinxcode{\sphinxupquote{xsd}}. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar \sphinxcode{\sphinxupquote{xsd}}.
 
@@ -6649,7 +6810,9 @@ La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como
 \label{\detokenize{tema5:derivaciones}}
 Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de «heredar» tenemos más posibilidades que en Java (dondo solo tenemos el «extends»). En concreto podemos heredar de 4 formas:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Poniendo restricciones (\sphinxcode{\sphinxupquote{restriction}}). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.
 
@@ -6816,7 +6979,9 @@ Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo 
 
 Se deduce por tanto que no podemos aplicar todas las «herencias» a todos los tipos:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Los tipos simples no pueden tener atributos ni subelementos, por lo tanto \sphinxstylestrong{les podremos aplicar restricciones pero nunca la extensión}.
 
@@ -7070,7 +7235,9 @@ El elemento \sphinxcode{\sphinxupquote{código}} debe llevar un atributo \sphinx
 \label{\detokenize{tema5:solucion-a-los-codigos-y-sedes}}
 Se nos piden dos cosas:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Restringir un tipo básico, en este caso el \sphinxcode{\sphinxupquote{string}}
 
@@ -7261,7 +7428,9 @@ Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre i
 
 En concreto tenemos tres datos:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 El CIF, que vamos a presuponer que siempre tiene 8 cifras y al final una letra mayúsculas. Si alguna empresa tiene 7 cifras deberá incluir un 0 extra.
 
@@ -7291,7 +7460,9 @@ Ahora, el fichero anterior no debería ser validado por el validador, pero sí d
 
 La solución a los tres problemas indicados antes sería la siguiente:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 El nombre puede ser una cadena cualquiera, por lo que tendrá que seguir siendo de tipo \sphinxcode{\sphinxupquote{xsd:string}}. Eso significa que si alguien introdujese un número en el nombre el fichero seguiría validándose. Por desgracia dicho problema no se puede resolver.
 
@@ -7356,7 +7527,9 @@ Se nos pide crear un esquema que permita validar un fichero como el siguiente:
 
 En concreto, todo código tiene la estructura siguiente:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Primero van tres mayúsculas
 
@@ -7779,7 +7952,9 @@ Se pide validar correctamente algo como esto:
 
 Las reglas son:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Una lista de productos puede tener dentro muchos productos.
 
@@ -7865,7 +8040,9 @@ Validar un fichero como este:
 
 Las reglas son las siguientes:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 El elemento raíz se llama \sphinxcode{\sphinxupquote{listacomponentes}}.
 
@@ -8000,7 +8177,9 @@ Varios administradores necesitan intercambiar información sobre inventario de m
 
 Las reglas concretas son estas:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Dentro de \sphinxcode{\sphinxupquote{\textless{}objeto\textgreater{}}} puede haber uno de estos dos elementos hijo: un elemento \sphinxcode{\sphinxupquote{\textless{}mesa\textgreater{}}} o un elemento \sphinxcode{\sphinxupquote{\textless{}silla\textgreater{}}}.
 
@@ -8252,7 +8431,9 @@ Se necesita crear un esquema que controle la correcta sintaxis de ficheros con e
 
 Las reglas concretas son las siguientes:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 El elemento raíz es \sphinxcode{\sphinxupquote{\textless{}productosfinancieros\textgreater{}}}. Dentro de él debe haber uno o más elementos \sphinxcode{\sphinxupquote{\textless{}producto\textgreater{}}}.
 
@@ -10714,7 +10895,9 @@ Encontrar todos las divisas cuya ciudad de procedencia sea «Madrid».
 
 \section{Ejercicios para preparar examen}
 \label{\detokenize{tema6:ejercicios-para-preparar-examen}}\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Indicar cuantas letras tienen un tipo de interés inferior al 3\% e indicar para cada una de ellas el país emisor.
 
@@ -10844,7 +11027,9 @@ Todo canal debe tener, al menos un título, un enlace base (la dirección del pr
 
 Resumiendo los puntos más importantes:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Usar como elemento raíz \sphinxcode{\sphinxupquote{rss}}.
 
@@ -12127,7 +12312,9 @@ Procesar la información hoy en día es muy difícil, por lo que la informática
 \label{\detokenize{tema8:niveles-en-la-empresa}}
 Toda empresa se puede ver desde tres puntos de vista temporales distintos
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Nivel estratégico: en este nivel están las personas o elementos que tienen un punto de vista más global y más largo plazo (normalmente plazos de varios años).
 
@@ -12157,7 +12344,9 @@ ERP o Enterprise Resource Planning o sistemas de planificación de recursos corp
 
 Los ERP han ganado mucho auge con el tiempo, ya que pueden hacer operaciones muy sofisticadas, entre ellas:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Optimización de procesos: implica resolver complejos problemas matemáticos que con una herramienta informática se resuelven al instante.
 
@@ -16999,7 +17188,9 @@ Dado el siguiente fichero XML
 
 Conseguir lo siguiente:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.
 
@@ -17032,7 +17223,9 @@ Mostrar en un HTML con lista numerada los títulos de los libros con algún auto
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \setcounter{enumi}{1}
 \item {} 
 Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
@@ -17061,7 +17254,9 @@ Mostrar en un HTML la lista de los autores ordenada por orden alfabético invers
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \setcounter{enumi}{2}
 \item {} 
 Mostrar el nombre de los autores nacidos despues del año 1700.
@@ -17168,7 +17363,9 @@ Una empresa utiliza el siguiente XML para intercambiar información entre bases 
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:analisis-del-problema}}
 Es necesario hacer varios cambios:
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Se ha cambiado el nombre de elemento raíz de \sphinxcode{\sphinxupquote{listado}} a \sphinxcode{\sphinxupquote{datos}}.
 
@@ -17490,7 +17687,9 @@ Que genera el resultado siguiente:
 
 Con esto, la parte de las \sphinxcode{\sphinxupquote{cuentas}} ya está hecha. Ahora queda lo siguiente
 \begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\def\theenumi{\arabic{enumi}}
+\def\labelenumi{\theenumi .}
+\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
 \item {} 
 Hacer un elemento \sphinxcode{\sphinxupquote{fondos}} con un bucle que vaya generando elementos \sphinxcode{\sphinxupquote{fondo}}.
 

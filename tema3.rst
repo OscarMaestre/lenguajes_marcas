@@ -5,7 +5,70 @@ CSS
 Introducción
 ============
 
-El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML's modificando un solo CSS.
+El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML's modificando un solo CSS. A menudo se dice que un CSS es una "hoja de estilo".
+
+Hay tres mecanismos básicos para añadir CSS a un HTML
+
+1. Usar CSS en las etiquetas HTML del cuerpo de la página.
+2. Usar CSS en la cabecera del HTML.
+3. Usar CSS cargando un archivo externo.
+
+
+
+En el  primer caso se haría de esta manera:
+
+.. code-block:: html
+
+    <p style="background-color:red">
+    Este párrafo lleva fondo rojo
+    </p>
+
+En el segundo caso haríamos algo como esto.
+
+.. code-block:: html
+
+    <html>
+        <head>
+            <style type="text/css">
+            p{
+                background-color: red;
+            }
+            </style>
+        </head>
+        <body>
+            <p>Todos los párrafos van en rojo</p>
+        </body>
+    </html>
+
+
+En el tercero haríamos esto:
+
+.. code-block:: html
+
+    <html>
+        <head>
+            <link type="text/css" href="estilo.css" rel="stylesheet">
+        </head>
+        <body>
+            <p>Todos los párrafos van en rojo</p>
+        </body>
+    </html>
+
+
+Debe recordarse lo siguiente:
+
+* Escribir CSS para cada etiqueta es **MUY POCO PRÁCTICO ** y difícil de cambiar en el futuro.
+* Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.
+* Lo habitual es definirlo todo en estilos externos.
+
+Recordatorio: el modelo DOM
+================================================================================
+
+Se debe recordar que 
+
+* Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.
+* Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.
+* Se dice que los nodos del árbol tienen "relaciones de parentesco" y por tanto diremos que "un nodo es hermano de otro" o que "un nodo es padre o hijo de otro nodo".
 
 Sintaxis
 ===========
@@ -24,6 +87,56 @@ En las reglas tenemos tres cosas:
 1. Los selectores. En este caso queremos modificar como van a quedar todos los ``<h1>`` y ``<h3>``
 2. Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.
 3. Los valores. En este caso se pone el valor ``blue`` para la propiedad ``background-color`` y el valor ``white`` para la propiedad ``color``
+
+
+En el siguiente CSS se muestran los principales selectores.
+
+.. code-block:: css
+
+    h1{ /*Selecciona TODOS los h1 y les pone fondo azul*/
+        background-color: blue;
+    }
+    h1, h2{ /*Selecciona TODOS LOS H1 Y TODOS LOS H2 y les pone fondo azul*/
+        background-color: blue;
+    }
+    h1.titular{ /*Selecciona TODOS LOS H1 con el class "titular"*/
+        background-color: blue;
+    }
+    h1#titulonoticia{ /*Selecciona SOLO UN H1, el que tenga el id indicado*/
+        background-color: blue;
+    }
+
+    /* Selecciona todos los elementos li que sean hijos de un ul*/
+    ul>li {
+        background-color: blue;
+    }
+
+    /* Selecciona los párrafos que vayan justo detrás de un div*/
+    div + p{
+        background-color: blue;
+    }
+    
+    /* Selecciona todos los elementos li que estén dentro de algun ul,
+    INCLUSO AUNQUE NO SEAN HIJOS DIRECTOS, sino "nietos", "bisnietos"...*/
+    ul li {
+        background-color: blue;
+    }
+
+
+    /* Esto es una "pseudo-clase" selecciona los enlaces no visitados
+    y los pone con fondo azul*/
+    a:link{ 
+        background-color: blue;
+    }
+
+    /* Pone en fondo rojo los enlaces ya visitados*/
+    a:visited{
+        background-color: blue;
+    }
+
+
+
+
 
 Los atributos ``class`` e ``id``
 =====================================
@@ -106,7 +219,22 @@ Este último CSS **se puede resumir**
 Esta regla dice "seleccionar todos los elementos cuyo class sea titular_economia"  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.
 
 
+Pseudo-clases
+================================================================================
 
+Como ya se ha indicado selecciona elementos en algún estado especial. Hay muchas pero algunas de las principales son:
+
+* ``p:hover`` : selector que se aplica cuando se pasa el ratón por encima del párrafo.
+* ``p:first-of-type`` : selector que se aplica al primero de los párrafos.
+* ``p:first-child`` : selector que se aplica un párrafo si es el primero de los hijos.
+* ``p:last-child`` : selector que se aplica al último párrafo ignorando al resto de hermanos.
+* ``p:nth-child(4)`` : selector que se aplica sobre el cuarto párrafo.
+* ``p:nth-child(even)`` : selector que se aplica a párrafos impares.
+* ``p:nth-child(odd)`` : selector que se aplica a párrafos pares.
+* ``a:active`` : selector para enlaces que están siendo pulsados.
+* ``a:visited`` : selector para enlaces ya visitados.
+* ``a:active`` : selector para enlaces que están siendo pulsados.
+* ``input:checked`` : selector para controles (radios, checkboxes) que estén marcados.
 
 Posicionamiento
 ===============
@@ -903,8 +1031,10 @@ Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay ot
 * ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
 
 	
-Selectores
-==========
+Ejercicios comentados sobre selectores.
+================================================================================
+
+
 
 
 

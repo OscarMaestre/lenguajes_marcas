@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Apuntes de Lenguajes de marcas &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -114,22 +116,24 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tema3.html#recordatorio-el-modelo-dom">Recordatorio: el modelo DOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#sintaxis">Sintaxis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#los-atributos-class-e-id">Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tema3.html#pseudo-clases">Pseudo-clases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#posicionamiento">Posicionamiento</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-de-maquetacion">Ejercicio de maquetación</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-2-de-maquetacion">Ejercicio 2 de maquetación</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tema3.html#id2">HTML</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tema3.html#id3">CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tema3.html#id4">HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tema3.html#id5">CSS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-barra-de-herramientas">Ejercicio: barra de herramientas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio-ampliacion">Ejercicio: ampliación</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#ejercicio">Ejercicio</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#posicionamiento-float">Posicionamiento float</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tema3.html#id4">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tema3.html#id6">Ejercicio</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
@@ -140,9 +144,9 @@
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#alineacion-del-texto">Alineación del texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#decoracion-del-texto">Decoración del texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tema3.html#medidas">Medidas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tema3.html#selectores">Selectores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema3.html#ejercicios-comentados-sobre-selectores">Ejercicios comentados sobre selectores.</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#solucion-p-destacado">Solución <code class="docutils literal notranslate"><span class="pre">p#destacado</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tema3.html#id5">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tema3.html#id7">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#solucion-p-destacado-span-id1">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#solucion-p-destacado-li-elemento-enumeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">li.elemento_enumeracion</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="tema3.html#solucion-p-destacado-elemento-numeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">.elemento_numeracion</span></code></a></li>
@@ -570,11 +574,13 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
+  <h3>Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -595,7 +601,7 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
