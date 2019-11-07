@@ -308,6 +308,11 @@ Las principales propiedades son:
 * La propiedad ``background-size`` permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.
 * La propiedad ``background-attachment`` puede ponerse a ``fixed`` para controlar como hace "scroll" la imagen.
 
+
+Bordes
+================================================================================
+
+
 Posicionamiento
 ===============
 
