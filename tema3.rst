@@ -312,7 +312,19 @@ Las principales propiedades son:
 Bordes
 ================================================================================
 
+Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:
 
+* ``border-style``: permite cambiar distintos estilos de borde como ``solid``, ``double``, ``dashed``, ``dotted``, ``inset``, ``outset``...
+* ``border-color`` permite cambiar el color del borde.
+* ``border-width`` permite cambiar la anchura del borde.
+
+Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:
+
+* ``border-bottom-style``
+* ``border-bottom-color``
+* ``border-bottom-width``
+
+Pudiendo reemplazar ``bottom`` con otras posiciones como ``top``, ``left`` o ``right``.
 Posicionamiento
 ===============
 
