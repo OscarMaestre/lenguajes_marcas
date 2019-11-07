@@ -201,7 +201,7 @@ Un fichero para hacer pruebas con selectores
 Los atributos ``class`` e ``id``
 =====================================
 
-A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
+A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
 
 .. code-block:: html
 
