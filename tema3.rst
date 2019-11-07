@@ -296,6 +296,18 @@ Como ya se ha indicado selecciona elementos en algún estado especial. Hay mucha
 * ``a:active`` : selector para enlaces que están siendo pulsados.
 * ``input:checked`` : selector para controles (radios, checkboxes) que estén marcados.
 
+
+Fondos e imágenes
+================================================================================
+
+Las principales propiedades son:
+
+* La propiedad ``background-image`` permite cargar una imagen de fondo: P. ej: ``background-image: url("../img/low-res/cork-board.png");``
+* La propiedad ``background-repeat`` permite controlar como se repite la imagen, puede tomar los valores ``no-repeat`` , ``repeat-x`` y ``repeat-y`` .
+* La propiedad ``background-position`` controla donde se posicionará la imagen, puede tomar varios valores como ``top`` , ``bottom`` , ``left``, ``right`` y ``center``, así como combinaciones. Por ejemplo ``top center`` o ``bottom right`` .
+* La propiedad ``background-size`` permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.
+* La propiedad ``background-attachment`` puede ponerse a ``fixed`` para controlar como hace "scroll" la imagen.
+
 Posicionamiento
 ===============
 
