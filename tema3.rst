@@ -346,7 +346,7 @@ Los textos pueden llevar diversas decoraciones especificadas con la propiedad ``
 * ``text-decoration: line-through;`` para tachar.
 * ``text-decoration: none;`` que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.
 
-Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-spacing.`` .
+Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-height.`` .
 
 Se pueden añadir sombras a los textos usando ``text-shadow``. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos ``text-shadow:2px 3px blue`` apreciaremos una sombra azul en un texto.
 
