@@ -214,7 +214,7 @@ Este párrafo lleva fondo rojo
 </div>
 <div class="section" id="los-atributos-class-e-id">
 <h2>Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code><a class="headerlink" href="#los-atributos-class-e-id" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal notranslate"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
+<p>A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal notranslate"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 .... texto ...
 
@@ -290,6 +290,63 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <li><p><code class="docutils literal notranslate"><span class="pre">a:visited</span></code> : selector para enlaces ya visitados.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">input:checked</span></code> : selector para controles (radios, checkboxes) que estén marcados.</p></li>
+</ul>
+</div>
+<div class="section" id="fondos-e-imagenes">
+<h2>Fondos e imágenes<a class="headerlink" href="#fondos-e-imagenes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las principales propiedades son:</p>
+<ul class="simple">
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-image</span></code> permite cargar una imagen de fondo: P. ej: <code class="docutils literal notranslate"><span class="pre">background-image:</span> <span class="pre">url(&quot;../img/low-res/cork-board.png&quot;);</span></code></p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> permite controlar como se repite la imagen, puede tomar los valores <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code> , <code class="docutils literal notranslate"><span class="pre">repeat-x</span></code> y <code class="docutils literal notranslate"><span class="pre">repeat-y</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-position</span></code> controla donde se posicionará la imagen, puede tomar varios valores como <code class="docutils literal notranslate"><span class="pre">top</span></code> , <code class="docutils literal notranslate"><span class="pre">bottom</span></code> , <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code> y <code class="docutils literal notranslate"><span class="pre">center</span></code>, así como combinaciones. Por ejemplo <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">center</span></code> o <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">right</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-size</span></code> permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> puede ponerse a <code class="docutils literal notranslate"><span class="pre">fixed</span></code> para controlar como hace «scroll» la imagen.</p></li>
+</ul>
+</div>
+<div class="section" id="bordes">
+<h2>Bordes<a class="headerlink" href="#bordes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">border-style</span></code>: permite cambiar distintos estilos de borde como <code class="docutils literal notranslate"><span class="pre">solid</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, <code class="docutils literal notranslate"><span class="pre">inset</span></code>, <code class="docutils literal notranslate"><span class="pre">outset</span></code>. Por ejemplo podemos cambiar un borde con <code class="docutils literal notranslate"><span class="pre">border-style:</span> <span class="pre">double;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-color</span></code> permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor <code class="docutils literal notranslate"><span class="pre">rgb</span></code>, color en hexadecimal, etc…).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-width</span></code> permite cambiar la anchura del borde.</p></li>
+</ul>
+<p>Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-style</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-width</span></code></p></li>
+</ul>
+<p>Pudiendo reemplazar <code class="docutils literal notranslate"><span class="pre">bottom</span></code> con otras posiciones como <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code> o <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p>
+<p>Aparte de eso se puede usar la propiedad <code class="docutils literal notranslate"><span class="pre">border-radius:</span> <span class="pre">2px</span></code> para aplicar un redondeo en las esquinas de los bordes.</p>
+</div>
+<div class="section" id="texto">
+<h2>Texto<a class="headerlink" href="#texto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Podemos modificar el alineamiento usando la propiedad <code class="docutils literal notranslate"><span class="pre">text-align</span></code> . Esta propiedad puede tomar distintos valores en función de la posición que queramos que adopten los márgenes del texto.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">left;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">right;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">center;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">justify;</span></code></p></li>
+</ul>
+<p>Se pueden cambiar los tipos de letra usando <code class="docutils literal notranslate"><span class="pre">font-family</span></code> , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como «Google Fonts» que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta &lt;link&gt; en todos los HTML y una propiedad <code class="docutils literal notranslate"><span class="pre">font-family</span></code> a nuestro CSS).</p>
+<p>Los textos pueden llevar diversas decoraciones especificadas con la propiedad <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code>. Por ejemplo :
+* <code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline;</span></code> para subrayar.
+* <code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code> para tachar.
+* <code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">none;</span></code> que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.</p>
+<p>Se puede modificar el espacio entre letras usando <code class="docutils literal notranslate"><span class="pre">letter-spacing:2px</span></code> (usar con cuidado), modificar el espacio entre palabras con <code class="docutils literal notranslate"><span class="pre">word-spacing</span></code>  o modificar el espacio entre líneas con <code class="docutils literal notranslate"><span class="pre">line-spacing.</span></code> .</p>
+<p>Se pueden añadir sombras a los textos usando <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code>. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos <code class="docutils literal notranslate"><span class="pre">text-shadow:2px</span> <span class="pre">3px</span> <span class="pre">blue</span></code> apreciaremos una sombra azul en un texto.</p>
+<p>Es posible convertir las mayúsculas o minúsculas de un texto con CSS como <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">uppercase</span></code> , <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">lowercase</span></code> o <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">capitalize</span></code> (esto último muy usado en el mundo anglosajón).</p>
+</div>
+<div class="section" id="border-externos">
+<h2>Border externos<a class="headerlink" href="#border-externos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque <strong>no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.</strong></p>
+<p>Funcionan de manera parecida a los bordes. Todo «outline» tiene un estilo, un grosor y un color que se especifican con:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-style</span></code> que puede ser <code class="docutils literal notranslate"><span class="pre">solid</span></code> , <code class="docutils literal notranslate"><span class="pre">dotted</span></code> , etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-width</span></code> que puede ir en medidas o en valores como <code class="docutils literal notranslate"><span class="pre">thin</span></code> , <code class="docutils literal notranslate"><span class="pre">medium</span></code> o <code class="docutils literal notranslate"><span class="pre">thick</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-color</span></code></p></li>
+<li><p>Existe una última propiedad que permite añadir un espacio extra entre nuestro <code class="docutils literal notranslate"><span class="pre">outline</span></code> y nuestro <code class="docutils literal notranslate"><span class="pre">border</span></code> . Esta propiedad se llama <code class="docutils literal notranslate"><span class="pre">outline-offset</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="posicionamiento">
@@ -1529,6 +1586,10 @@ el aspecto del texto como estas:</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pseudo-clases">Pseudo-clases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fondos-e-imagenes">Fondos e imágenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bordes">Bordes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#texto">Texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#border-externos">Border externos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>

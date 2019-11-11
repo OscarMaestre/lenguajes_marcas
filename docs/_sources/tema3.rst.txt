@@ -201,7 +201,7 @@ Un fichero para hacer pruebas con selectores
 Los atributos ``class`` e ``id``
 =====================================
 
-A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
+A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
 
 .. code-block:: html
 
@@ -295,6 +295,74 @@ Como ya se ha indicado selecciona elementos en algún estado especial. Hay mucha
 * ``a:visited`` : selector para enlaces ya visitados.
 * ``a:active`` : selector para enlaces que están siendo pulsados.
 * ``input:checked`` : selector para controles (radios, checkboxes) que estén marcados.
+
+
+Fondos e imágenes
+================================================================================
+
+Las principales propiedades son:
+
+* La propiedad ``background-image`` permite cargar una imagen de fondo: P. ej: ``background-image: url("../img/low-res/cork-board.png");``
+* La propiedad ``background-repeat`` permite controlar como se repite la imagen, puede tomar los valores ``no-repeat`` , ``repeat-x`` y ``repeat-y`` .
+* La propiedad ``background-position`` controla donde se posicionará la imagen, puede tomar varios valores como ``top`` , ``bottom`` , ``left``, ``right`` y ``center``, así como combinaciones. Por ejemplo ``top center`` o ``bottom right`` .
+* La propiedad ``background-size`` permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.
+* La propiedad ``background-attachment`` puede ponerse a ``fixed`` para controlar como hace "scroll" la imagen.
+
+
+Bordes
+================================================================================
+
+Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:
+
+* ``border-style``: permite cambiar distintos estilos de borde como ``solid``, ``double``, ``dashed``, ``dotted``, ``inset``, ``outset``. Por ejemplo podemos cambiar un borde con ``border-style: double;`` 
+* ``border-color`` permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor ``rgb``, color en hexadecimal, etc...).
+* ``border-width`` permite cambiar la anchura del borde.
+
+Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:
+
+* ``border-bottom-style``
+* ``border-bottom-color``
+* ``border-bottom-width``
+
+Pudiendo reemplazar ``bottom`` con otras posiciones como ``top``, ``left`` o ``right``.
+
+Aparte de eso se puede usar la propiedad ``border-radius: 2px`` para aplicar un redondeo en las esquinas de los bordes.
+
+
+Texto
+================================================================================
+
+Podemos modificar el alineamiento usando la propiedad ``text-align`` . Esta propiedad puede tomar distintos valores en función de la posición que queramos que adopten los márgenes del texto.
+
+* ``text-align: left;`` 
+* ``text-align: right;`` 
+* ``text-align: center;`` 
+* ``text-align: justify;`` 
+
+Se pueden cambiar los tipos de letra usando ``font-family`` , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como "Google Fonts" que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta <link> en todos los HTML y una propiedad ``font-family`` a nuestro CSS).
+
+Los textos pueden llevar diversas decoraciones especificadas con la propiedad ``text-decoration``. Por ejemplo :
+* ``text-decoration: underline;`` para subrayar.
+* ``text-decoration: line-through;`` para tachar.
+* ``text-decoration: none;`` que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.
+
+Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-spacing.`` .
+
+Se pueden añadir sombras a los textos usando ``text-shadow``. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos ``text-shadow:2px 3px blue`` apreciaremos una sombra azul en un texto.
+
+Es posible convertir las mayúsculas o minúsculas de un texto con CSS como ``text-transform: uppercase`` , ``text-transform: lowercase`` o ``text-transform: capitalize`` (esto último muy usado en el mundo anglosajón).
+
+Border externos
+================================================================================
+
+Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque **no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.** 
+
+Funcionan de manera parecida a los bordes. Todo "outline" tiene un estilo, un grosor y un color que se especifican con:
+
+* ``outline-style`` que puede ser ``solid`` , ``dotted`` , etc...
+* ``outline-width`` que puede ir en medidas o en valores como ``thin`` , ``medium`` o ``thick`` 
+* ``outline-color`` 
+* Existe una última propiedad que permite añadir un espacio extra entre nuestro ``outline`` y nuestro ``border`` . Esta propiedad se llama ``outline-offset`` 
 
 Posicionamiento
 ===============
