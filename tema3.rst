@@ -342,17 +342,18 @@ Podemos modificar el alineamiento usando la propiedad ``text-align`` . Esta prop
 Se pueden cambiar los tipos de letra usando ``font-family`` , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como "Google Fonts" que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta <link> en todos los HTML y una propiedad ``font-family`` a nuestro CSS).
 
 Los textos pueden llevar diversas decoraciones especificadas con la propiedad ``text-decoration``. Por ejemplo :
+
 * ``text-decoration: underline;`` para subrayar.
 * ``text-decoration: line-through;`` para tachar.
 * ``text-decoration: none;`` que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.
 
-Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-height.`` .
+Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-height`` .
 
 Se pueden añadir sombras a los textos usando ``text-shadow``. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos ``text-shadow:2px 3px blue`` apreciaremos una sombra azul en un texto.
 
 Es posible convertir las mayúsculas o minúsculas de un texto con CSS como ``text-transform: uppercase`` , ``text-transform: lowercase`` o ``text-transform: capitalize`` (esto último muy usado en el mundo anglosajón).
 
-Border externos
+Border externos (Outlines)
 ================================================================================
 
 Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque **no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.** 

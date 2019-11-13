@@ -852,6 +852,22 @@ Permiten introducir textos muy largos:
 		Valor por defecto
 	</textarea>
 
+Otros elementos HTML: contenido embebido y multimedia
+================================================================================
+
+En HTML existen otras etiquetas que permiten insertar contenido dentro del HTML que no tiene por qué ser HTML
+
+Contenido embebido en general
+--------------------------------------------------------------------------------
+
+
+
+Podemos usar la etiqueta ``object`` para insertar contenido de otro tipo, como archivos de vídeo, de audio, documentos PDF etc... Así, por ejemplo, el siguiente HTML inserta una imagen (cosa que en realidad ya se podía hacer con la etiqueta ``img`` 
+
+.. code-block:: html
+
+    <object data= 
+    "low_res.png" width="550px" height="150px">Imagen </object> 
 
 
 Ejercicios tipo examen
@@ -1117,8 +1133,3 @@ Solución
 		</fieldset>
 	</form>
 
-Examen
-======
-
-* El grupo DAM-1 realizará el Jueves 10 de noviembre de 2016
-* El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.
