@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Anexo: Ejercicios de XPath &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -54,15 +56,15 @@
 </div>
 <p>Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada se puede asumir que las etiquetas no deben incluirse.</p>
 <ul class="simple">
-<li><p>Extraer todos los elementos peso (etiqueta incluida).</p></li>
-<li><p>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;).</p></li>
-<li><p>Extraer el peso del ultimo elemento.</p></li>
-<li><p>Extraer las distintas unidades en las que se han almacenado los pesos.</p></li>
-<li><p>Extraer el penúltimo codigo.</p></li>
-<li><p>Extraer el peso del elemento cuyo codigo sea AAA-111.</p></li>
-<li><p>Extraer el nombre de los productos que hayan puesto el peso en gramos.</p></li>
-<li><p>Extraer el codigo de los productos cuyo nombre sea «Monitor».</p></li>
-<li><p>Extraer el código de los productos que pesen más de un cuarto de kilo.</p></li>
+<li>Extraer todos los elementos peso (etiqueta incluida).</li>
+<li>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;).</li>
+<li>Extraer el peso del ultimo elemento.</li>
+<li>Extraer las distintas unidades en las que se han almacenado los pesos.</li>
+<li>Extraer el penúltimo codigo.</li>
+<li>Extraer el peso del elemento cuyo codigo sea AAA-111.</li>
+<li>Extraer el nombre de los productos que hayan puesto el peso en gramos.</li>
+<li>Extraer el codigo de los productos cuyo nombre sea «Monitor».</li>
+<li>Extraer el código de los productos que pesen más de un cuarto de kilo.</li>
 </ul>
 <div class="section" id="soluciones">
 <h2>Soluciones<a class="headerlink" href="#soluciones" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -167,8 +169,8 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <h2>Consulta: «cantidad depositada»<a class="headerlink" href="#consulta-cantidad-depositada" title="Enlazar permanentemente con este título">¶</a></h2>
 <p><em>Extraer la cantidad depositada en la cuenta 20-A</em></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal notranslate"><span class="pre">inventario</span></code>.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal notranslate"><span class="pre">inventario</span></code>.</li>
 </ul>
 <p>Como nos piden una cantidad el último elemento XPath debe ser forzosamente <code class="docutils literal notranslate"><span class="pre">cantidad</span></code>. Como nos ponen una condición tendremos que usar corchetes. El elemento <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code> es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que</p>
 <p>Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:</p>
@@ -214,9 +216,9 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 <p>También es evidente que hay una condición de filtrado. Esta condición tiene dos partes:</p>
 <ul class="simple">
-<li><p>Por un lado la divisa debe ser «Dolares». La divisa va dentro del elemento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que es hijo de <code class="docutils literal notranslate"><span class="pre">datos</span></code> que a su vez es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code></p></li>
-<li><p>Por otro lado la cantidad debe ser inferior a 2500. Esta información está en <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</p></li>
-<li><p>Para este caso necesitamos que se cumplan ambas condiciones por lo que deberemos usar <code class="docutils literal notranslate"><span class="pre">AND</span></code></p></li>
+<li>Por un lado la divisa debe ser «Dolares». La divisa va dentro del elemento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que es hijo de <code class="docutils literal notranslate"><span class="pre">datos</span></code> que a su vez es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code></li>
+<li>Por otro lado la cantidad debe ser inferior a 2500. Esta información está en <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</li>
+<li>Para este caso necesitamos que se cumplan ambas condiciones por lo que deberemos usar <code class="docutils literal notranslate"><span class="pre">AND</span></code></li>
 </ul>
 <p>Una posible consulta que resuelve esto es:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span><span class="o">&lt;</span><span class="mi">2500</span> <span class="ow">and</span> <span class="n">datos</span><span class="o">/</span><span class="n">moneda</span> <span class="o">=</span> <span class="s2">&quot;Dolares&quot;</span><span class="p">]</span>
@@ -277,11 +279,13 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
+  <h3>Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -302,7 +306,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
