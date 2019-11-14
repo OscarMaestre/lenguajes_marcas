@@ -365,6 +365,17 @@ Funcionan de manera parecida a los bordes. Todo "outline" tiene un estilo, un gr
 * ``outline-color`` 
 * Existe una última propiedad que permite añadir un espacio extra entre nuestro ``outline`` y nuestro ``border`` . Esta propiedad se llama ``outline-offset`` 
 
+
+Tablas
+================================================================================
+
+Se pueden modificar muchas propiedades de las tablas:
+
+* Se pueden poner bordes a elementos ``table`` y ``td`` con cosas como ``border: solid 1px black``.
+* Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos ``border-collapse: collapse``
+* Se pueden cambiar propiedades filas pares o impares con ``tr:nth-child(even)`` o ``tr:nth-child(odd)`` 
+* Se puede cambiar un elemento *solo cuando el ratón pase por encima de él con* cosas como ``tr:hover{background-color:red;}`` 
+
 Posicionamiento
 ===============
 
