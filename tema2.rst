@@ -869,6 +869,26 @@ Podemos usar la etiqueta ``object`` para insertar contenido de otro tipo, como a
     <object data= 
     "low_res.png" width="550px" height="150px">Imagen </object> 
 
+El problema principal con la etiqueta ``object`` es que su soporte dentro de los navegadores es menos amplio que el de las etiquetas que veremos ahora. Sin embargo, su versatilidad es mayor.
+
+
+La etiqueta ``audio`` permite insertar audios dentro del documento, ofreciendo además un interfaz de control del audio con los elementos típicos: reproducción, parada, control de volumen, etc...
+
+.. code-block:: html
+
+    <audio controls="controls" src="media/cancion.mp3">
+        Su navegador no ofrece soporte para audios embebidos
+    </audio>
+
+
+La etiqueta ``video`` funciona de manera similar a ``audio`` permitiendo insertar en este caso vídeos dentro de una página.
+
+
+.. code-block:: html
+
+    <video controls="controls" src="videos/video.mp4">
+        Su navegador no ofrece soporte para vídeos embebidos.
+    </video>
 
 Ejercicios tipo examen
 ======================
