@@ -353,6 +353,16 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <li>Existe una última propiedad que permite añadir un espacio extra entre nuestro <code class="docutils literal notranslate"><span class="pre">outline</span></code> y nuestro <code class="docutils literal notranslate"><span class="pre">border</span></code> . Esta propiedad se llama <code class="docutils literal notranslate"><span class="pre">outline-offset</span></code></li>
 </ul>
 </div>
+<div class="section" id="tablas">
+<h2>Tablas<a class="headerlink" href="#tablas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pueden modificar muchas propiedades de las tablas:</p>
+<ul class="simple">
+<li>Se pueden poner bordes a elementos <code class="docutils literal notranslate"><span class="pre">table</span></code> y <code class="docutils literal notranslate"><span class="pre">td</span></code> con cosas como <code class="docutils literal notranslate"><span class="pre">border:</span> <span class="pre">solid</span> <span class="pre">1px</span> <span class="pre">black</span></code>.</li>
+<li>Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos <code class="docutils literal notranslate"><span class="pre">border-collapse:</span> <span class="pre">collapse</span></code></li>
+<li>Se pueden cambiar propiedades filas pares o impares con <code class="docutils literal notranslate"><span class="pre">tr:nth-child(even)</span></code> o <code class="docutils literal notranslate"><span class="pre">tr:nth-child(odd)</span></code></li>
+<li>Se puede cambiar un elemento <em>solo cuando el ratón pase por encima de él con</em> cosas como <code class="docutils literal notranslate"><span class="pre">tr:hover{background-color:red;}</span></code></li>
+</ul>
+</div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
@@ -900,6 +910,11 @@ Publicidad publicidad
 <h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.</p>
 </div>
+</div>
+<div class="section" id="maquetacion-con-flexboxes">
+<h2>Maquetación con flexboxes<a class="headerlink" href="#maquetacion-con-flexboxes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.</p>
+<p>Por ejemplo, supongamos que tenemos el siguiente fichero.</p>
 </div>
 <div class="section" id="maquetacion-avanzada-con-grid-layouts">
 <h2>Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -1595,6 +1610,7 @@ el aspecto del texto como estas:</p>
 <li class="toctree-l2"><a class="reference internal" href="#bordes">Bordes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#texto">Texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#border-externos-outlines">Border externos (Outlines)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas">Tablas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
@@ -1611,6 +1627,7 @@ el aspecto del texto como estas:</p>
 <li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#maquetacion-con-flexboxes">Maquetación con flexboxes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#media-queries">Media queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>

@@ -874,6 +874,16 @@ Ejercicio
 
 Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.
 
+Maquetación con flexboxes
+================================================================================
+Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
+
+Por ejemplo, supongamos que tenemos el siguiente fichero.
+
+.. literalinclude: ejemplos/tema_3_css/ejemplo_flexbox/index.html
+   :language: html
+   :linenos:
+
 
 Maquetación avanzada con ``grid-layouts``
 ============================================

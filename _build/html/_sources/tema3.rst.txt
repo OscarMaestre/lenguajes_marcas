@@ -365,6 +365,17 @@ Funcionan de manera parecida a los bordes. Todo "outline" tiene un estilo, un gr
 * ``outline-color`` 
 * Existe una última propiedad que permite añadir un espacio extra entre nuestro ``outline`` y nuestro ``border`` . Esta propiedad se llama ``outline-offset`` 
 
+
+Tablas
+================================================================================
+
+Se pueden modificar muchas propiedades de las tablas:
+
+* Se pueden poner bordes a elementos ``table`` y ``td`` con cosas como ``border: solid 1px black``.
+* Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos ``border-collapse: collapse``
+* Se pueden cambiar propiedades filas pares o impares con ``tr:nth-child(even)`` o ``tr:nth-child(odd)`` 
+* Se puede cambiar un elemento *solo cuando el ratón pase por encima de él con* cosas como ``tr:hover{background-color:red;}`` 
+
 Posicionamiento
 ===============
 
@@ -862,6 +873,16 @@ Ejercicio
 ---------
 
 Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.
+
+Maquetación con flexboxes
+================================================================================
+Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
+
+Por ejemplo, supongamos que tenemos el siguiente fichero.
+
+.. literalinclude: ejemplos/tema_3_css/ejemplo_flexbox/index.html
+   :language: html
+   :linenos:
 
 
 Maquetación avanzada con ``grid-layouts``
