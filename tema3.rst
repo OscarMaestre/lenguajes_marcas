@@ -869,10 +869,151 @@ El resultado será:
    
    Cuatro cajas manipuladas con ``float``
 
-Ejercicio
----------
+Ejercicio de maquetación con floats (I)
+--------------------------------------------------------------------------------
+
+
 
 Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.
+
+Ejercicio de maquetación con floats (II)
+--------------------------------------------------------------------------------
+
+Dado el HTML siguiente:
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Ejemplo de maquetación</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link type="text/css" href="estilo2.css" rel="stylesheet">
+        </head>
+        <body>
+            <header>
+            <h2>Practicando maquetación CSS</h2>
+            <h1>Bienvenido a nuestra web</h1>
+            </header>
+            <section id="navegacion">
+            <ul>
+                <li>Enlace 1</li>
+                <li>Enlace 2</li>
+                <li>Enlace 3</li>
+                <li>Enlace 4</li>
+            </ul>
+            </section>
+            <section id="contenido">
+            <div id="caja1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare c    ondimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            </section>
+            <section id="publicidad">
+                    <ul>
+                        <li>Enlace 1</li>
+                        <li>Enlace 2</li>
+                        <li>Enlace 3</li>
+                        <li>Enlace 4</li>
+                    </ul>     
+            </section>
+            <section id="copyright">
+                &copy; IES Maestre de Calatrava 2019
+            </section>
+        </body>
+    </html>
+
+Conseguir que quede maquetado de la siguiente manera usando adecuadamente los elementos float. Se debe tener en cuenta lo siguientes
+
+* La cabecera ocupa un 50% y está desplazada a la derecha.
+* La navegación ocupa un 15% y está desplazada a la izquierda.
+* El contenido ocupa un 80%.
+* La caja 1 ocupa el 100%.
+* La caja 2 un 50%, la caja3 un 25% y la caja 4 un 25%.
+* La publicidad ocupa un 33% y está desplazada a la derecha.
+* El copyright ocupa un 66% y está desplazado a la izquierda.
+* Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.
+* Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.
+
+
+
+
+.. figure:: maqueta5.png
+   :figwidth: 50%
+   :align: center
+   :alt: Resultado final  
+     
+   Resultado final
+
+
+Una posible solución sería esta:
+
+.. code-block:: css
+
+    body{
+        background-color: lightcyan;
+        margin:2%;
+    }
+    header{
+        width: 50%;
+        margin-left: auto;
+        border:solid 1px black;
+    }
+    section#navegacion{
+        float:left;
+        width:15%;
+        background-color: lightgoldenrodyellow;
+    }
+
+    #contenido{
+        width:80%;
+        float:right;
+        background-color: lime;
+    }
+    #caja1{
+        background-color: mediumturquoise;
+    }
+    #caja2{
+        background-color: mediumvioletred;
+        float:left; width:49%;
+    }
+    #caja3{
+        background-color: palegoldenrod;
+        float:left; width:24%; 
+        margin-left:1%;margin-right:1%;
+    }
+    #caja4{
+        background-color:pink;
+        float:left; width:24%;
+    }
+
+    #publicidad{
+        float:right;width:33%; clear:both;
+        background-color: paleturquoise;
+    }
+    #copyright{
+        float:left; width:66%;
+        background-color: palevioletred;
+    }
+
+
 
 Maquetación con flexboxes
 ================================================================================
