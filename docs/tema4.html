@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Javascript &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -39,21 +41,21 @@
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Surgió como una iniciativa de Netscape. <strong>No hay ninguna relación entre Java y Javascript</strong>. Algunas características de Javascript son:</p>
 <ul class="simple">
-<li><p>No se convierte en bytecodes, lo interpreta el navegador</p></li>
-<li><p>Está estandarizado aunque no todos los navegadores se ciñen al 100% al estándar. El nombre del estándar es «ECMAScript»</p></li>
-<li><p>No está orientado a objetos, sino que está basado en objetos.</p></li>
-<li><p>Es de tipado débil: esto significa que podemos cambiar una variable de tipo sin problemas, el intérprete intentará hacer las conversiones correctas.</p></li>
+<li>No se convierte en bytecodes, lo interpreta el navegador</li>
+<li>Está estandarizado aunque no todos los navegadores se ciñen al 100% al estándar. El nombre del estándar es «ECMAScript»</li>
+<li>No está orientado a objetos, sino que está basado en objetos.</li>
+<li>Es de tipado débil: esto significa que podemos cambiar una variable de tipo sin problemas, el intérprete intentará hacer las conversiones correctas.</li>
 </ul>
 </div>
 <div class="section" id="tipos-de-datos">
 <h2>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Javascript acepta los siguientes tipos de datos:</p>
 <ul class="simple">
-<li><p>Números.</p></li>
-<li><p>Cadenas</p></li>
-<li><p>Booleanos (lógicos)</p></li>
-<li><p>undefined: se utiliza cuando intentamos acceder a una variable que no contiene nada porque no se ha creado.</p></li>
-<li><p>null: se utiliza habitualmente para indicar algo vacío.</p></li>
+<li>Números.</li>
+<li>Cadenas</li>
+<li>Booleanos (lógicos)</li>
+<li>undefined: se utiliza cuando intentamos acceder a una variable que no contiene nada porque no se ha creado.</li>
+<li>null: se utiliza habitualmente para indicar algo vacío.</li>
 </ul>
 </div>
 <div class="section" id="incrustando-javascript">
@@ -341,11 +343,11 @@
 <h3>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Añadir un método llamado <code class="docutils literal notranslate"><span class="pre">nivelExperiencia</span></code> que nos diga una de estas cosas:</p>
 <ul class="simple">
-<li><p>Nos debe devolver «junior» si la edad está entre 18 y 25</p></li>
-<li><p>Nos debe devolver «asociado» si la edad está entre 26 y 45</p></li>
-<li><p>Nos debe devolver «senior» si la edad está entre 46 y 60</p></li>
-<li><p>Nos debe devolver «experto» si la edad está entre 61 y 65</p></li>
-<li><p>Nos debe devolver «no aplicable» si la edad es mayor de 65</p></li>
+<li>Nos debe devolver «junior» si la edad está entre 18 y 25</li>
+<li>Nos debe devolver «asociado» si la edad está entre 26 y 45</li>
+<li>Nos debe devolver «senior» si la edad está entre 46 y 60</li>
+<li>Nos debe devolver «experto» si la edad está entre 61 y 65</li>
+<li>Nos debe devolver «no aplicable» si la edad es mayor de 65</li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
@@ -573,9 +575,9 @@
 </div>
 <p>Existen diversos eventos aunque los más utilizados son:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">click</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dblclick</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mouseover</span></code></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">click</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dblclick</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">mouseover</span></code></li>
 </ul>
 </div>
 </div>
@@ -583,10 +585,10 @@
 <h3>Ejercicio<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear un programa que tenga varios párrafos con 4 botones que permitan que cuando se haga click en ellos ocurran distintas cosas</p>
 <ul class="simple">
-<li><p>Habrá un botón con el texto «Ocultar pares». Cuando se hace click en él se ocultan los párrafos pares.</p></li>
-<li><p>Habrá un botón con el texto «Ocultar impares». Cuando se hace click en él se ocultan los párrafos impares.</p></li>
-<li><p>Habrá un botón con el texto «Mostrar pares». Cuando se hace click en él se muestran los párrafos pares (que tal vez estaban ocultos).</p></li>
-<li><p>Habrá un botón con el texto «Mostrar impares». Cuando se hace click en él se muestran los párrafos impares (que tal vez estaban ocultos).</p></li>
+<li>Habrá un botón con el texto «Ocultar pares». Cuando se hace click en él se ocultan los párrafos pares.</li>
+<li>Habrá un botón con el texto «Ocultar impares». Cuando se hace click en él se ocultan los párrafos impares.</li>
+<li>Habrá un botón con el texto «Mostrar pares». Cuando se hace click en él se muestran los párrafos pares (que tal vez estaban ocultos).</li>
+<li>Habrá un botón con el texto «Mostrar impares». Cuando se hace click en él se muestran los párrafos impares (que tal vez estaban ocultos).</li>
 </ul>
 </div>
 <div class="section" id="id6">
@@ -816,9 +818,9 @@
 <h3>Ejercicio configurador<a class="headerlink" href="#ejercicio-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea tener una aplicación que permita configurar un equipo al gusto del usuario:</p>
 <ul class="simple">
-<li><p>Se debe elegir entre un procesador Intel o AMD. El primero cuesta 250 euros y el segundo 230.</p></li>
-<li><p>Se debe elegir entre 2, 4 y 8 GB de memoria. El coste es respectivamente 90, 145, 210</p></li>
-<li><p>Hay extras que se pueden elegir o no, ya que son completamente optativos (es decir, usar checkboxes). En concreto se puede tener un grabador de Blu-ray (190 euros), tarjeta gráfica aceleradora (430 euros) y un monitor LED (185 euros).</p></li>
+<li>Se debe elegir entre un procesador Intel o AMD. El primero cuesta 250 euros y el segundo 230.</li>
+<li>Se debe elegir entre 2, 4 y 8 GB de memoria. El coste es respectivamente 90, 145, 210</li>
+<li>Hay extras que se pueden elegir o no, ya que son completamente optativos (es decir, usar checkboxes). En concreto se puede tener un grabador de Blu-ray (190 euros), tarjeta gráfica aceleradora (430 euros) y un monitor LED (185 euros).</li>
 </ul>
 </div>
 <div class="section" id="solucion-html-configurador">
@@ -908,11 +910,11 @@
 <h2>Configurador de coches<a class="headerlink" href="#configurador-de-coches" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un fabricante de automóviles desea ofrecer a sus clientes una aplicación que les permita configurar sus vehículos según sus preferencias y ver el precio final del coche. Los precios y las restricciones son los siguientes:</p>
 <ul class="simple">
-<li><p>Se pueden tener dos tipos de motor: gasolina (precio base 7000 euros) y diésel (precio base 8200).</p></li>
-<li><p>Se pueden tener 3 potencias: 1100, 1800 y 2300 centímetros cúbicos. Los precios de cada uno son 800, 1900 y 2500. Sin embargo <strong>no es posible fabricar motores diésel de 2300</strong>.</p></li>
-<li><p>Hay dos tipos de pintura: normal y metalizada. Los precios respectivos son 750 y 1580 euros.</p></li>
-<li><p>Hay seis colores: negro, blanco, rojo, azul polar, verde turquesa y gris marengo. <strong>No se pueden fabricar colores de pintura normal de ninguno de los tres últimos colores</strong>.</p></li>
-<li><p>Se dispone de diversos extras: alerón deportivo (190 euros <strong>pero solo se puede elegir si se elige pintura metalizada</strong>), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, <strong>pero solo si se elige antes el Radio-CD</strong>), y GPS incorporado (520 euros más).</p></li>
+<li>Se pueden tener dos tipos de motor: gasolina (precio base 7000 euros) y diésel (precio base 8200).</li>
+<li>Se pueden tener 3 potencias: 1100, 1800 y 2300 centímetros cúbicos. Los precios de cada uno son 800, 1900 y 2500. Sin embargo <strong>no es posible fabricar motores diésel de 2300</strong>.</li>
+<li>Hay dos tipos de pintura: normal y metalizada. Los precios respectivos son 750 y 1580 euros.</li>
+<li>Hay seis colores: negro, blanco, rojo, azul polar, verde turquesa y gris marengo. <strong>No se pueden fabricar colores de pintura normal de ninguno de los tres últimos colores</strong>.</li>
+<li>Se dispone de diversos extras: alerón deportivo (190 euros <strong>pero solo se puede elegir si se elige pintura metalizada</strong>), radio-CD con MP3 (230 euros más), altavoces traseros (320 euros más, <strong>pero solo si se elige antes el Radio-CD</strong>), y GPS incorporado (520 euros más).</li>
 </ul>
 <p>Crear la aplicación que respete las restricciones exigidas por el cliente.</p>
 <div class="section" id="html-del-configurador">
@@ -1025,11 +1027,11 @@
 <h3>Ejercicio<a class="headerlink" href="#id7" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ampliar el programa con una lista de ciudades del mundo. Cuando el usuario elija una de ellas, nuestro programa nos dirá la distancia desde Ciudad Real a dichas ciudades. Considerar las siguientes coordenadas en formato (latitud, longitud):</p>
 <ul class="simple">
-<li><p>Ciudad Real: (38.59, -3.55)</p></li>
-<li><p>Nueva York: (40.73, -73.87)</p></li>
-<li><p>Sidney: (-33.90, 151.13)</p></li>
-<li><p>Berlin: (52.31, 13.39)</p></li>
-<li><p>París: (48.85, 2.35)</p></li>
+<li>Ciudad Real: (38.59, -3.55)</li>
+<li>Nueva York: (40.73, -73.87)</li>
+<li>Sidney: (-33.90, 151.13)</li>
+<li>Berlin: (52.31, 13.39)</li>
+<li>París: (48.85, 2.35)</li>
 </ul>
 <p>Para poder conseguir esto, hay que modificar la URL de carga de GoogleMaps para solicitar que se cargue una biblioteca que nos ayudará a resolver este punto. En concreto, ahora pasaremos un parámetro <code class="docutils literal notranslate"><span class="pre">libraries</span></code> con el valor <code class="docutils literal notranslate"><span class="pre">geometry</span></code> que nos permitirá utilizar la biblioteca en concreto. Ahora el HTML es así:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=AIzaSyDpv9zCj9szIIu--LuNmDsry2fZCRrOqfY&amp;sensor=false&amp;libraries=geometry&quot;</span><span class="p">&gt;</span>
@@ -1063,15 +1065,15 @@
 <div class="section" id="especificaciones">
 <h4>Especificaciones<a class="headerlink" href="#especificaciones" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li><p>Hay dos motores: gasolina (5000) y diésel (6800)</p></li>
-<li><p>Hay dos carrocerías: monovolumen (4500) y berlina (3700)</p></li>
-<li><p>Hay tres accesorios: radio-cd con MP3 (180), alerones deportivos (220) y llantas de aleación (200)</p></li>
+<li>Hay dos motores: gasolina (5000) y diésel (6800)</li>
+<li>Hay dos carrocerías: monovolumen (4500) y berlina (3700)</li>
+<li>Hay tres accesorios: radio-cd con MP3 (180), alerones deportivos (220) y llantas de aleación (200)</li>
 </ul>
 <p>Por diversos problemas, no es posible combinar las siguientes opciones:</p>
 <ul class="simple">
-<li><p>No se pueden tener berlinas de gasolina.</p></li>
-<li><p>No se puede integrar el alerón en los monovolúmenes.</p></li>
-<li><p>No se puede poner el radio-cd a los monovolúmenes.</p></li>
+<li>No se pueden tener berlinas de gasolina.</li>
+<li>No se puede integrar el alerón en los monovolúmenes.</li>
+<li>No se puede poner el radio-cd a los monovolúmenes.</li>
 </ul>
 <p>Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configurados y avisar de que no se puede hacer eso. No se pueden usar <code class="docutils literal notranslate"><span class="pre">alerts</span></code></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
@@ -1135,9 +1137,9 @@
 <h3>Ampliación<a class="headerlink" href="#ampliacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea que el usuario puede elegir entre los siguientes colores con los siguientes precios:</p>
 <ul class="simple">
-<li><p>Blanco: 700 euros</p></li>
-<li><p>Rojo, Verde y Azul básicos: 950</p></li>
-<li><p>Gris, Negro y Naranja: 1400 euros por ser colores metalizados</p></li>
+<li>Blanco: 700 euros</li>
+<li>Rojo, Verde y Azul básicos: 950</li>
+<li>Gris, Negro y Naranja: 1400 euros por ser colores metalizados</li>
 </ul>
 <p>Además, se desea ver una muestra de color en algún punto de la página. Para lograrlo se necesitará utilizar un método que proporciona JQuery y que se llama <code class="docutils literal notranslate"><span class="pre">addClass</span></code></p>
 <div class="section" id="solucion-html">
@@ -1259,9 +1261,9 @@
 <h2>Otro configurador de coches<a class="headerlink" href="#otro-configurador-de-coches" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Sin utilizar JQuery se desea crear un configurador de coches en JS que responda a las siguientes premisas:</p>
 <ul class="simple">
-<li><p>Hay dos modelos a elegir: el modelo A cuesta 7000 euros y el modelo B cuesta 9000.</p></li>
-<li><p>Se pueden elegir dos tipos de motor. El motor de gasolina cuesta 2000 y el diésel 5000 euros.</p></li>
-<li><p>Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada por 1000 euros más, pack de sonido por 500 euros más y pack de seguridad por 1000 euros más</p></li>
+<li>Hay dos modelos a elegir: el modelo A cuesta 7000 euros y el modelo B cuesta 9000.</li>
+<li>Se pueden elegir dos tipos de motor. El motor de gasolina cuesta 2000 y el diésel 5000 euros.</li>
+<li>Se pueden elegir 0, 1, muchos o todos los extras siguientes: Pintura metalizada por 1000 euros más, pack de sonido por 500 euros más y pack de seguridad por 1000 euros más</li>
 </ul>
 <div class="section" id="configurador-en-html">
 <h3>Configurador en HTML<a class="headerlink" href="#configurador-en-html" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1348,21 +1350,21 @@
 <h2>Calculo de impuestos<a class="headerlink" href="#calculo-de-impuestos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear una pequeña aplicación web que permita calcular los impuestos que se deben pagar a partir de unos datos, en concreto:</p>
 <ul class="simple">
-<li><p>Se debe introducir el salario anual en un campo de tipo <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
-<li><p>Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.</p></li>
-<li><p>Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.</p></li>
+<li>Se debe introducir el salario anual en un campo de tipo <code class="docutils literal notranslate"><span class="pre">number</span></code>.</li>
+<li>Hay dos radios que permiten indicar si el contribuyente tiene hijos o no.</li>
+<li>Hay dos checkboxes que permiten saber si el contribuyente tiene derecho a algunas modificaciones llamadas B1 y B2.</li>
 </ul>
 <p>Las reglas para el calculo son:</p>
 <ul class="simple">
-<li><p>Si el salario es menor de 20000 los impuestos son 0.</p></li>
-<li><p>Si el salario está entre 20001 y 30000 los impuestos son el 10%.</p></li>
-<li><p>Si el salario está entre 30001 y 50000 los impuestos son el 20%.</p></li>
-<li><p>Si el salario es mayor de 50000 se paga el 38%</p></li>
-<li><p>Si se tienen hijos los impuestos se reducen en 180 euros.</p></li>
-<li><p>Si se tiene la bonificación B1 los impuestos se reducen en 355 euros.</p></li>
-<li><p>Si se tiene la bonificación B2 los impuestos se reducen en 560 euros.</p></li>
-<li><p>Se recuerda que las bonificaciones B1 y B2 son compatibles (de hecho hemos dicho que están en checkboxes).</p></li>
-<li><p>La cantidad de impuestos puede ser negativa (que significa que le sale «a devolver»)</p></li>
+<li>Si el salario es menor de 20000 los impuestos son 0.</li>
+<li>Si el salario está entre 20001 y 30000 los impuestos son el 10%.</li>
+<li>Si el salario está entre 30001 y 50000 los impuestos son el 20%.</li>
+<li>Si el salario es mayor de 50000 se paga el 38%</li>
+<li>Si se tienen hijos los impuestos se reducen en 180 euros.</li>
+<li>Si se tiene la bonificación B1 los impuestos se reducen en 355 euros.</li>
+<li>Si se tiene la bonificación B2 los impuestos se reducen en 560 euros.</li>
+<li>Se recuerda que las bonificaciones B1 y B2 son compatibles (de hecho hemos dicho que están en checkboxes).</li>
+<li>La cantidad de impuestos puede ser negativa (que significa que le sale «a devolver»)</li>
 </ul>
 <div class="section" id="html-calculador">
 <h3>HTML calculador<a class="headerlink" href="#html-calculador" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1532,8 +1534,8 @@
 <h2>Comparador de telefonía<a class="headerlink" href="#comparador-de-telefonia" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear una aplicación que permita al usuario saber qué compañía de telefonía le conviene más partiendo de los siguientes datos</p>
 <ul class="simple">
-<li><p>La empresa A ofrece una tarifa que cuesta 20 euros al mes con los 1000 primeros minutos gratis y despues cada minuto cuesta 8 céntimos.</p></li>
-<li><p>La empresa B ofrece una tarifa que cuesta 10 euros al mes con los 500 primeros minutos gratis y despues cada llamada cuesta 12 céntimos.</p></li>
+<li>La empresa A ofrece una tarifa que cuesta 20 euros al mes con los 1000 primeros minutos gratis y despues cada minuto cuesta 8 céntimos.</li>
+<li>La empresa B ofrece una tarifa que cuesta 10 euros al mes con los 500 primeros minutos gratis y despues cada llamada cuesta 12 céntimos.</li>
 </ul>
 <p>Hacer una aplicación que permita al usuario introducir la cantidad de minutos que llamará para tres meses distintos que llamaremos «Mes 1», «Mes 2» y «Mes 3»  y que le diga qué compañía le interesa más.</p>
 <div class="section" id="html-del-comparador">
@@ -1760,11 +1762,13 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
+  <h3>Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -1785,7 +1789,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
