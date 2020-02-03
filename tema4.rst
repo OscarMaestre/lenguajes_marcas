@@ -1096,6 +1096,28 @@ JS del configurador (sin JQuery)
             error=true;
             
         }
+        if (esta_checked("normal") && (esta_checked("azulpolar"))){
+            alert("Imposible normal+azul");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("gris"))){
+            alert("Imposible normal+gris");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("verde"))){
+            alert("Imposible normal+verde");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("aleron"))){
+            alert("Imposible normal+aleron. Elija pintura metalizada");
+            error=true;
+        }
+        /*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/
+        if (esta_checked("altavoces") && (!esta_checked("radiocd"))){
+            alert("No puede pedir altavoces sin pedir el RadioCD");
+            error=true;
+        }
+        
         return error;
     }
     function calcular(){
@@ -1110,7 +1132,6 @@ JS del configurador (sin JQuery)
         }
         alert("Su precio es:"+precio);
     }
-    
 
 
 Dinamismo con Google Maps

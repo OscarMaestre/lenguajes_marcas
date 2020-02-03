@@ -986,6 +986,28 @@
         <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
 
     <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;azulpolar&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+azul&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gris&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+gris&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;verde&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+verde&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+aleron. Elija pintura metalizada&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;No puede pedir altavoces sin pedir el RadioCD&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
     <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
