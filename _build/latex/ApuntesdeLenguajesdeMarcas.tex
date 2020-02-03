@@ -5035,6 +5035,33 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
     \PYG{k+kd}{let} \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
     \PYG{c+cm}{/* Si detectamos un error}
 \PYG{c+cm}{    ponemos error a true*/}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}diesel\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}2300\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Imposible diesel de 2300, por favor modifique sus opciones.\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}azulpolar\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Imposible normal+azul\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}gris\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Imposible normal+gris\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}verde\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Imposible normal+verde\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}aleron\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Imposible normal+aleron. Elija pintura metalizada\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}altavoces\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{o}{!}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}radiocd\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}No puede pedir altavoces sin pedir el RadioCD\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+        \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
     \PYG{k}{return} \PYG{n+nx}{error}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
@@ -5044,6 +5071,42 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
     \PYG{p}{\PYGZcb{}}
     \PYG{c+cm}{/* Si llegamos aquí es que}
 \PYG{c+cm}{    no hay errores y el precio se puede calcular*/}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}gasolina\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{7000}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}diesel\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{8200}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}1100\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{800}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}1800\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{1900}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}2300\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{2500}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{750}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}metalizada\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{1580}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/*Obsérvese que el precio}
+\PYG{c+cm}{    no ha cambiado dependiendo del color*/}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}aleron\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{190}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}radiocd\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{230}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}altavoces\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{320}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}gps\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{precio}\PYG{o}{=}\PYG{n+nx}{precio}\PYG{o}{+}\PYG{l+m+mi}{520}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Su precio es:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{precio}\PYG{p}{)}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
