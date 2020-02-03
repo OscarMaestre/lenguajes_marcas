@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{25 de noviembre de 2019}
+\date{03 de febrero de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -3621,6 +3621,91 @@ Se puede destacar texto usando lo siguiente:
 \end{sphinxVerbatim}
 
 
+\section{Preprocesadores CSS: \sphinxstyleliteralintitle{\sphinxupquote{less}}}
+\label{\detokenize{tema3:preprocesadores-css-less}}
+CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio «cortar y pegar» definiciones CSS. Para resolver esto han surgido unos programas llamado «preprocesadores» que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:
+\begin{itemize}
+\item {} 
+En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.
+
+\item {} 
+El diseñador escribe su hoja de estilos usando este «lenguaje ampliado».
+
+\item {} 
+El archivo de hoja de estilos se «preprocesa» y el programa \sphinxstylestrong{genera un archivo CSS válido}
+
+\end{itemize}
+
+El flujo de trabajo se muestra en la figura siguiente:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{diagramaless}.png}
+\caption{Resultado final}\label{\detokenize{tema3:id22}}\end{figure}
+
+Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.
+
+
+\subsection{Variables \sphinxstyleliteralintitle{\sphinxupquote{less}}}
+\label{\detokenize{tema3:variables-less}}
+En \sphinxcode{\sphinxupquote{less}} las variables se definen usando el símbolo arroba (@). En \sphinxcode{\sphinxupquote{less}} se pueden hacer operaciones matemáticas con variables:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+/*En una variable podemos meter cualquier cosa que aparezca
+en la parte derecha de una propiedad CSS: medidas, colores, tipos de
+letra...*/
+@colorbordes:black;
+\PYGZsh{}caja1, \PYGZsh{}caja2, \PYGZsh{}caja3\PYGZob{}
+    border: solid @grosorbordesnoticias @colorbordes;
+\PYGZcb{}
+
+header\PYGZob{}
+    border: solid @grosorbordescabeceras @colorbordes;
+\PYGZcb{}
+\end{sphinxVerbatim}
+
+
+\subsection{«Mixins»}
+\label{\detokenize{tema3:mixins}}
+Un «mixin» es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS…
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+@colorbordes:black;
+
+
+/*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
+que en el HTML alguién use class=\PYGZdq{}margenesnoticias\PYGZdq{}*/
+.margenesnoticias\PYGZob{}
+    padding\PYGZhy{}top:10px;
+    padding\PYGZhy{}bottom:10px;
+    padding\PYGZhy{}left:5px;
+    padding\PYGZhy{}left:5px;
+    /*Recordemos que esto se lee \PYGZdq{}top\PYGZdq{}, \PYGZdq{}left\PYGZdq{},\PYGZdq{}bottom\PYGZdq{}, \PYGZdq{}right\PYGZdq{}*/
+    margin: 20px 10px 20px 10px;
+\PYGZcb{}
+\PYGZsh{}caja1, \PYGZsh{}caja2, \PYGZsh{}caja3\PYGZob{}
+    border: solid @grosorbordesnoticias @colorbordes;
+    /*Obsérvese que llamamos a esta definición
+    COMO SI FUESE UNA FUNCIÓN. De hecho, si
+    queremos volver a aplicar unos márgenes en otro elemento
+    bastará con que llamemos a esta función o \PYGZdq{}mixin\PYGZdq{}*/
+    .margenesnoticias();
+\PYGZcb{}
+
+header\PYGZob{}
+    border: solid @grosorbordescabeceras @colorbordes;
+\PYGZcb{}
+\end{sphinxVerbatim}
+
+Y veamos que hemos podido «llamar a una función» para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el «copiado y pegado»
+
+
 \section{Ejercicio responsive I}
 \label{\detokenize{tema3:ejercicio-responsive-i}}
 Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos \sphinxcode{\sphinxupquote{id}} serán A, B y C. El comportamiento de las cajas será el siguiente:
@@ -3643,21 +3728,21 @@ A continuación se muestra el resultado aproximado que se debe conseguir:
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-1}.png}
-\caption{Resultado para pantallas pequeñas}\label{\detokenize{tema3:id22}}\end{figure}
+\caption{Resultado para pantallas pequeñas}\label{\detokenize{tema3:id23}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-2}.png}
-\caption{Resultado para pantallas medianas}\label{\detokenize{tema3:id23}}\end{figure}
+\caption{Resultado para pantallas medianas}\label{\detokenize{tema3:id24}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive1-3}.png}
-\caption{Resultado para pantallas grandes}\label{\detokenize{tema3:id24}}\end{figure}
+\caption{Resultado para pantallas grandes}\label{\detokenize{tema3:id25}}\end{figure}
 
 Un posible HTML que resolviera esto sería el siguiente:
 
@@ -3759,14 +3844,14 @@ Si la pantalla tiene menos de 800px se mostrará una distribución como la que s
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive2-1}.png}
-\caption{Figura II-1. (Para pantallas estrechas)}\label{\detokenize{tema3:id25}}\end{figure}
+\caption{Figura II-1. (Para pantallas estrechas)}\label{\detokenize{tema3:id26}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{responsive2-2}.png}
-\caption{Figura II-2 (Para pantallas anchas)}\label{\detokenize{tema3:id26}}\end{figure}
+\caption{Figura II-2 (Para pantallas anchas)}\label{\detokenize{tema3:id27}}\end{figure}
 
 A continuación se muestra el HTML:
 
@@ -3906,7 +3991,7 @@ Javascript se inserta en HTML con la etiqueta \sphinxcode{\sphinxupquote{\textle
 Un programa muy simple sería este:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-    \PYG{k+kd}{var} \PYG{n+nx}{una\PYGZus{}variable}
+    \PYG{k+kd}{let} \PYG{n+nx}{una\PYGZus{}variable}
 \PYG{n+nx}{una\PYGZus{}variable}\PYG{o}{=}\PYG{l+m+mi}{42}
 \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write}\PYG{p}{(}\PYG{n+nx}{una\PYGZus{}variable}\PYG{p}{)}
 \end{sphinxVerbatim}
@@ -3955,7 +4040,7 @@ En Javascript los arrays pueden almacenar elementos de distinto tipo. Al crearlo
 En estos bucles hay que poner la inicialización, la condición de final y la actualización:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{vector\PYGZus{}numeros}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+\PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{let} \PYG{n+nx}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{vector\PYGZus{}numeros}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)}\PYG{p}{\PYGZob{}}
         \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}br/\PYGZgt{}\PYGZdq{}}\PYG{p}{)}
 \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}En la posición \PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{i}\PYG{p}{)}
 \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} está el número \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{vector\PYGZus{}numeros}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{)}
@@ -4884,6 +4969,54 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
 
 \subsection{HTML del configurador}
 \label{\detokenize{tema4:html-del-configurador}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}Tipo de motor\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}motor\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}gasolina\PYGZdq{}}\PYG{p}{\PYGZgt{}}Gasolina \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}motor\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}diesel\PYGZdq{}}\PYG{p}{\PYGZgt{}}Diésel\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}} Cubicaje\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}cubicaje\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}1100\PYGZdq{}}\PYG{p}{\PYGZgt{}}1100m3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}cubicaje\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}1800\PYGZdq{}}\PYG{p}{\PYGZgt{}}1800m3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}cubicaje\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}2300\PYGZdq{}}\PYG{p}{\PYGZgt{}}2300m3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}Pinturas\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}pintura\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}normal\PYGZdq{}}\PYG{p}{\PYGZgt{}}Normal\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}pintura\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}metalizada\PYGZdq{}}\PYG{p}{\PYGZgt{}}Metaliz.\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}Colores\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}negro\PYGZdq{}}\PYG{p}{\PYGZgt{}}Negro
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}blanco\PYGZdq{}}\PYG{p}{\PYGZgt{}}Blanco
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}rojo\PYGZdq{}}\PYG{p}{\PYGZgt{}}Rojo
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}azulpolar\PYGZdq{}}\PYG{p}{\PYGZgt{}}Azul polar
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}verde\PYGZdq{}}\PYG{p}{\PYGZgt{}}Verde
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}color\PYGZdq{}}
+           \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}gris\PYGZdq{}}\PYG{p}{\PYGZgt{}}Gris
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}Extras\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}aleron\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Alerón
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radiocd\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    radiocd
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}altavoces\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    Altavoces
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}gps\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    GPS
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button}
+      \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();return false\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        Calcular precio
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
 
 \subsection{JS del configurador (con JQuery (DAM))}
 \label{\detokenize{tema4:js-del-configurador-con-jquery-dam}}

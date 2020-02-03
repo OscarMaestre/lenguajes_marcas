@@ -1023,6 +1023,54 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
 HTML del configurador
 ----------------------
 
+.. code-block:: html
+    
+        <form>Tipo de motor<br/>
+            <input type="radio" name="motor"
+                   id="gasolina">Gasolina <br/>
+            <input type="radio" name="motor"
+                   id="diesel">Diésel<br/>
+            <br/> Cubicaje<br/>
+            <input type="radio" name="cubicaje"
+                   id="1100">1100m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="1800">1800m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="2300">2300m3<br/>
+            <br/>Pinturas<br/>
+            <input type="radio" name="pintura"
+                   id="normal">Normal<br/>
+            <input type="radio" name="pintura"
+                   id="metalizada">Metaliz.<br/>
+            <br/>Colores<br/>
+            <input type="radio" name="color"
+                   id="negro">Negro 
+            <input type="radio" name="color"
+                   id="blanco">Blanco 
+            <input type="radio" name="color"
+                   id="rojo">Rojo 
+            <br/>
+            <input type="radio" name="color"
+                   id="azulpolar">Azul polar
+            <input type="radio" name="color"
+                   id="verde">Verde
+            <input type="radio" name="color"
+                   id="gris">Gris
+            <br/>Extras<br/>
+            <input type="checkbox" id="aleron">
+            Alerón
+            <input type="checkbox" id="radiocd">
+            radiocd
+            <input type="checkbox" id="altavoces">
+            Altavoces
+            <input type="checkbox" id="gps">
+            GPS
+            <button 
+              onclick="calcular();return false">
+                Calcular precio
+            </button>
+        </form>
+
 JS del configurador (con JQuery (DAM))
 -----------------------------------------
 

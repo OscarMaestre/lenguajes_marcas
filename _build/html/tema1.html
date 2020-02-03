@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Introducción &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -57,24 +55,24 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 <div class="section" id="servidores-web">
 <h2>Servidores web<a class="headerlink" href="#servidores-web" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos «<a class="reference external" href="http://www.google.es">http://www.google.es</a>» contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre «www.google.es» y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200</p>
-<div class="figure" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="_images/http_get_y_post.png"><img alt="_images/http_get_y_post.png" src="_images/http_get_y_post.png" style="width: 344.5px; height: 179.5px;" /></a>
-<p class="caption"><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span></p>
+<p class="caption"><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
 <ul class="simple">
-<li>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</li>
-<li>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</li>
+<li><p>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</p></li>
+<li><p>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</p></li>
 </ul>
 <div class="section" id="como-configurar-un-servidor-en-casa">
 <h3>Como configurar un servidor en casa<a class="headerlink" href="#como-configurar-un-servidor-en-casa" title="Enlazar permanentemente con este título">¶</a></h3>
 <ol class="arabic simple">
-<li>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</li>
-<li>Apuntar la IP del equipo en el que se instala Apache.</li>
-<li>Entrar en el router y <strong>abrir el puerto 80</strong> indicando que se debe reenviar el tráfico a la IP que se apuntó.</li>
-<li>Se debe averiguar la IP pública del router (por ejemplo podemos visitar <a class="reference external" href="http://whatsmyip.org">WhatsMyIp</a> ,</li>
-<li>La IP que aparece es la que se puede dar a clientes o amigos para que naveguen por nuestro sitio web.</li>
-<li>(Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.</li>
+<li><p>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</p></li>
+<li><p>Apuntar la IP del equipo en el que se instala Apache.</p></li>
+<li><p>Entrar en el router y <strong>abrir el puerto 80</strong> indicando que se debe reenviar el tráfico a la IP que se apuntó.</p></li>
+<li><p>Se debe averiguar la IP pública del router (por ejemplo podemos visitar <a class="reference external" href="http://whatsmyip.org">WhatsMyIp</a> ,</p></li>
+<li><p>La IP que aparece es la que se puede dar a clientes o amigos para que naveguen por nuestro sitio web.</p></li>
+<li><p>(Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.</p></li>
 </ol>
 </div>
 </div>
@@ -87,9 +85,9 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 <h2>Los sistemas de gestión de información<a class="headerlink" href="#los-sistemas-de-gestion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Definamos primero algunos términos:</p>
 <ul class="simple">
-<li>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</li>
-<li>Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.</li>
-<li>Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.</li>
+<li><p>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</p></li>
+<li><p>Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.</p></li>
+<li><p>Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.</p></li>
 </ul>
 <p>Un SGI no tiene por qué estar informatizado.</p>
 <p>Son programas que se pueden adaptar las necesidades de la empresa y que a veces necesitan
@@ -108,8 +106,8 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 <div class="section" id="organismos-de-regulacion">
 <h2>Organismos de regulación<a class="headerlink" href="#organismos-de-regulacion" title="Enlazar permanentemente con este título">¶</a></h2>
 <ol class="arabic simple">
-<li>La Internation Standards Organization emite estándares para la documentación.</li>
-<li>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></li>
+<li><p>La Internation Standards Organization emite estándares para la documentación.</p></li>
+<li><p>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></p></li>
 </ol>
 </div>
 <div class="section" id="gramaticas-y-dtds">
@@ -139,9 +137,9 @@ A modo de ejemplo, esto es una página válida</p>
 y tales documentos deben llevar en la cabecera algo que diga a qué estándar se ciñen.</p>
 <p>Las tres últimas familias de estándares han sido</p>
 <ul class="simple">
-<li>HTML4: muy permisivo, lo que dificulta a los navegadores el procesar el HTML dando lugar a que fuera bastante difícil para ellos el mostrar correctamente y de igual forma todos los HTML</li>
-<li>XHTML: es HTML con las estrictas reglas que impuso XML. Esto simplificó el desarrollo de navegadores y se avanzó en facilidad para mostrar páginas en distintos navegadores.</li>
-<li>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</li>
+<li><p>HTML4: muy permisivo, lo que dificulta a los navegadores el procesar el HTML dando lugar a que fuera bastante difícil para ellos el mostrar correctamente y de igual forma todos los HTML</p></li>
+<li><p>XHTML: es HTML con las estrictas reglas que impuso XML. Esto simplificó el desarrollo de navegadores y se avanzó en facilidad para mostrar páginas en distintos navegadores.</p></li>
+<li><p>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</p></li>
 </ul>
 <p>Un ejemplo de DTD, sería esto:</p>
 <div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">lista_de_personas</span> <span class="o">(</span><span class="nt">persona</span><span class="o">*)</span><span class="k">&gt;</span>
@@ -277,13 +275,11 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Búsqueda rápida</h3>
+  <h3 id="searchlabel">Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Ir a" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -304,7 +300,7 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
