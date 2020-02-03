@@ -5018,8 +5018,35 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
 \end{sphinxVerbatim}
 
 
-\subsection{JS del configurador (con JQuery (DAM))}
-\label{\detokenize{tema4:js-del-configurador-con-jquery-dam}}
+\subsection{JS del configurador (sin JQuery)}
+\label{\detokenize{tema4:js-del-configurador-sin-jquery}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{n+nx}{identificador}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{control}\PYG{p}{;}
+    \PYG{n+nx}{control}\PYG{o}{=}
+        \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}
+            \PYG{n+nx}{identificador}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{control}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{hay\PYGZus{}errores}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{error}\PYG{o}{=}\PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{c+cm}{/* Si detectamos un error}
+\PYG{c+cm}{    ponemos error a true*/}
+    \PYG{k}{return} \PYG{n+nx}{error}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{precio}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{hay\PYGZus{}errores}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+cm}{/* Si llegamos aquí es que}
+\PYG{c+cm}{    no hay errores y el precio se puede calcular*/}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
 
 \section{Dinamismo con Google Maps}
 \label{\detokenize{tema4:dinamismo-con-google-maps}}

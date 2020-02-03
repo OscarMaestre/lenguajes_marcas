@@ -965,8 +965,34 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="js-del-configurador-con-jquery-dam">
-<h3>JS del configurador (con JQuery (DAM))<a class="headerlink" href="#js-del-configurador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="js-del-configurador-sin-jquery">
+<h3>JS del configurador (sin JQuery)<a class="headerlink" href="#js-del-configurador-sin-jquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">identificador</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="p">;</span>
+    <span class="nx">control</span><span class="o">=</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+            <span class="nx">identificador</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">hay_errores</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">error</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="cm">/* Si detectamos un error</span>
+<span class="cm">    ponemos error a true*/</span>
+    <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">hay_errores</span><span class="p">()){</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Si llegamos aquí es que</span>
+<span class="cm">    no hay errores y el precio se puede calcular*/</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="dinamismo-con-google-maps">
@@ -1757,7 +1783,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#html-del-configurador">HTML del configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-con-jquery-dam">JS del configurador (con JQuery (DAM))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-sin-jquery">JS del configurador (sin JQuery)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#dinamismo-con-google-maps">Dinamismo con Google Maps</a><ul>

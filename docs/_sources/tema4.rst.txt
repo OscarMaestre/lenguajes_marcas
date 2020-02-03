@@ -1071,9 +1071,37 @@ HTML del configurador
             </button>
         </form>
 
-JS del configurador (con JQuery (DAM))
+JS del configurador (sin JQuery)
 -----------------------------------------
 
+
+.. code-block:: javascript
+
+    function esta_checked(identificador){
+        let control;
+        control=
+            document.getElementById(
+                identificador);
+        if (control.checked){
+            return true;
+        }
+        return false;
+    }
+    function hay_errores(){
+        let error=false;
+        /* Si detectamos un error
+        ponemos error a true*/
+        return error;
+    }
+    function calcular(){
+        let precio=0;
+        if (hay_errores()){
+            return false;
+        }
+        /* Si llegamos aquí es que
+        no hay errores y el precio se puede calcular*/
+    }
+    
 
 
 Dinamismo con Google Maps
