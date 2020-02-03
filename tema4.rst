@@ -1130,9 +1130,40 @@ JS del configurador (sin JQuery)
         if (esta_checked("gasolina")){
             precio=precio+7000;
         }
+        if (esta_checked("diesel")){
+            precio=precio+8200;
+        }
+        if (esta_checked("1100")){
+            precio=precio+800;
+        }
+        if (esta_checked("1800")){
+            precio=precio+1900;
+        }
+        if (esta_checked("2300")){
+            precio=precio+2500;
+        }
+        if (esta_checked("normal")){
+            precio=precio+750;
+        }
+        if (esta_checked("metalizada")){
+            precio=precio+1580;
+        }
+        /*Obsérvese que el precio
+        no ha cambiado dependiendo del color*/
+        if (esta_checked("aleron")){
+            precio=precio+190;
+        }
+        if (esta_checked("radiocd")){
+            precio=precio+230;
+        }
+        if (esta_checked("altavoces")){
+            precio=precio+320;
+        }
+        if (esta_checked("gps")){
+            precio=precio+520;
+        }
         alert("Su precio es:"+precio);
     }
-
 
 Dinamismo con Google Maps
 =========================
