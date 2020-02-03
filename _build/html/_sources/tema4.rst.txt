@@ -1091,6 +1091,11 @@ JS del configurador (sin JQuery)
         let error=false;
         /* Si detectamos un error
         ponemos error a true*/
+        if (esta_checked("diesel") && (esta_checked("2300"))){
+            alert("Imposible diesel de 2300, por favor modifique sus opciones.");
+            error=true;
+            
+        }
         return error;
     }
     function calcular(){
@@ -1100,6 +1105,10 @@ JS del configurador (sin JQuery)
         }
         /* Si llegamos aquí es que
         no hay errores y el precio se puede calcular*/
+        if (esta_checked("gasolina")){
+            precio=precio+7000;
+        }
+        alert("Su precio es:"+precio);
     }
     
 
