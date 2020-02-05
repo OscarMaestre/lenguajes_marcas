@@ -1582,6 +1582,74 @@ el aspecto del texto como estas:</p>
 </div>
 </div>
 </div>
+<div class="section" id="preprocesadores-css-less">
+<h2>Preprocesadores CSS: <code class="docutils literal notranslate"><span class="pre">less</span></code><a class="headerlink" href="#preprocesadores-css-less" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio «cortar y pegar» definiciones CSS. Para resolver esto han surgido unos programas llamado «preprocesadores» que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:</p>
+<ul class="simple">
+<li><p>En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.</p></li>
+<li><p>El diseñador escribe su hoja de estilos usando este «lenguaje ampliado».</p></li>
+<li><p>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></p></li>
+</ul>
+<p>El flujo de trabajo se muestra en la figura siguiente:</p>
+<div class="figure align-center" id="id22" style="width: 50%">
+<img alt="_images/diagramaless.png" src="_images/diagramaless.png" />
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.</p>
+<div class="section" id="variables-less">
+<h3>Variables <code class="docutils literal notranslate"><span class="pre">less</span></code><a class="headerlink" href="#variables-less" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En <code class="docutils literal notranslate"><span class="pre">less</span></code> las variables se definen usando el símbolo arroba (&#64;). En <code class="docutils literal notranslate"><span class="pre">less</span></code> se pueden hacer operaciones matemáticas con variables:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+/*En una variable podemos meter cualquier cosa que aparezca
+en la parte derecha de una propiedad CSS: medidas, colores, tipos de
+letra...*/
+@colorbordes:black;
+#caja1, #caja2, #caja3{
+    border: solid @grosorbordesnoticias @colorbordes;
+}
+
+header{
+    border: solid @grosorbordescabeceras @colorbordes;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="mixins">
+<h3>«Mixins»<a class="headerlink" href="#mixins" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Un «mixin» es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS…</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+@colorbordes:black;
+
+
+/*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
+que en el HTML alguién use class=&quot;margenesnoticias&quot;*/
+.margenesnoticias{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:5px;
+    padding-left:5px;
+    /*Recordemos que esto se lee &quot;top&quot;, &quot;left&quot;,&quot;bottom&quot;, &quot;right&quot;*/
+    margin: 20px 10px 20px 10px;
+}
+#caja1, #caja2, #caja3{
+    border: solid @grosorbordesnoticias @colorbordes;
+    /*Obsérvese que llamamos a esta definición
+    COMO SI FUESE UNA FUNCIÓN. De hecho, si
+    queremos volver a aplicar unos márgenes en otro elemento
+    bastará con que llamemos a esta función o &quot;mixin&quot;*/
+    .margenesnoticias();
+}
+
+header{
+    border: solid @grosorbordescabeceras @colorbordes;
+}
+</pre></div>
+</div>
+<p>Y veamos que hemos podido «llamar a una función» para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el «copiado y pegado»</p>
+</div>
+</div>
 <div class="section" id="ejercicio-responsive-i">
 <h2>Ejercicio responsive I<a class="headerlink" href="#ejercicio-responsive-i" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos <code class="docutils literal notranslate"><span class="pre">id</span></code> serán A, B y C. El comportamiento de las cajas será el siguiente:</p>
@@ -1591,17 +1659,29 @@ el aspecto del texto como estas:</p>
 <li>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</li>
 </ul>
 <p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
-<div class="figure align-center" id="id22" style="width: 50%">
-<img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span></p>
-</div>
 <div class="figure align-center" id="id23" style="width: 50%">
-<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span></p>
+<img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
+<<<<<<< HEAD
+<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span></p>
+=======
+<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> e92e202324185871784cfc39b85e76f28624c518
 </div>
 <div class="figure align-center" id="id24" style="width: 50%">
+<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
+<<<<<<< HEAD
+<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span></p>
+=======
+<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> e92e202324185871784cfc39b85e76f28624c518
+</div>
+<div class="figure align-center" id="id25" style="width: 50%">
 <img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
+<<<<<<< HEAD
 <p class="caption"><span class="caption-text">Resultado para pantallas grandes</span></p>
+=======
+<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> e92e202324185871784cfc39b85e76f28624c518
 </div>
 <p>Un posible HTML que resolviera esto sería el siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1687,13 +1767,21 @@ el aspecto del texto como estas:</p>
 <li>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</li>
 <li>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</li>
 </ul>
-<div class="figure align-center" id="id25" style="width: 50%">
-<img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
-<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span></p>
-</div>
 <div class="figure align-center" id="id26" style="width: 50%">
+<img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
+<<<<<<< HEAD
+<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span></p>
+=======
+<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> e92e202324185871784cfc39b85e76f28624c518
+</div>
+<div class="figure align-center" id="id27" style="width: 50%">
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
+<<<<<<< HEAD
 <p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span></p>
+=======
+<p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id27" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> e92e202324185871784cfc39b85e76f28624c518
 </div>
 <p>A continuación se muestra el HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
@@ -1853,6 +1941,11 @@ el aspecto del texto como estas:</p>
 <li class="toctree-l3"><a class="reference internal" href="#estructura-basica">Estructura básica</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rejilla-o-grid">Rejilla o <em>grid</em></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tipografia">Tipografía</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocesadores-css-less">Preprocesadores CSS: <code class="docutils literal notranslate"><span class="pre">less</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables-less">Variables <code class="docutils literal notranslate"><span class="pre">less</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixins">«Mixins»</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ejercicio-responsive-i">Ejercicio responsive I</a></li>

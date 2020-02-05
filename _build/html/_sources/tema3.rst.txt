@@ -1587,7 +1587,89 @@ Se puede destacar texto usando lo siguiente:
 .. code-block:: html
 
 	<mark>Texto subrayado en amarillo</mark>
-    
+
+
+Preprocesadores CSS: ``less`` 
+================================================================================
+
+CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio "cortar y pegar" definiciones CSS. Para resolver esto han surgido unos programas llamado "preprocesadores" que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:
+
+* En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.
+* El diseñador escribe su hoja de estilos usando este "lenguaje ampliado".
+* El archivo de hoja de estilos se "preprocesa" y el programa **genera un archivo CSS válido** 
+
+El flujo de trabajo se muestra en la figura siguiente:
+
+.. figure:: graficos/diagramaless.png
+   :figwidth: 50%
+   :align: center
+	
+   Resultado final
+
+
+Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.
+
+Variables ``less`` 
+--------------------------------------------------------------------------------
+
+En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` se pueden hacer operaciones matemáticas con variables:
+
+.. code-block:: css
+
+    @grosorbordesnoticias: 3px;
+    @grosorbordescabeceras:@grosorbordesnoticias + 2px;
+    /*En una variable podemos meter cualquier cosa que aparezca
+    en la parte derecha de una propiedad CSS: medidas, colores, tipos de
+    letra...*/
+    @colorbordes:black;
+    #caja1, #caja2, #caja3{
+        border: solid @grosorbordesnoticias @colorbordes;
+    }
+
+    header{
+        border: solid @grosorbordescabeceras @colorbordes;
+    }
+
+
+"Mixins"
+--------------------------------------------------------------------------------
+
+Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS...
+
+.. code-block:: css
+
+    @grosorbordesnoticias: 3px;
+    @grosorbordescabeceras:@grosorbordesnoticias + 2px;
+    @colorbordes:black;
+
+
+    /*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
+    que en el HTML alguién use class="margenesnoticias"*/
+    .margenesnoticias{
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:5px;
+        padding-left:5px;
+        /*Recordemos que esto se lee "top", "left","bottom", "right"*/
+        margin: 20px 10px 20px 10px;
+    }
+    #caja1, #caja2, #caja3{
+        border: solid @grosorbordesnoticias @colorbordes;
+        /*Obsérvese que llamamos a esta definición 
+        COMO SI FUESE UNA FUNCIÓN. De hecho, si 
+        queremos volver a aplicar unos márgenes en otro elemento
+        bastará con que llamemos a esta función o "mixin"*/
+        .margenesnoticias();
+    }
+
+    header{
+        border: solid @grosorbordescabeceras @colorbordes;
+    }
+
+
+Y veamos que hemos podido "llamar a una función" para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el "copiado y pegado"
+
+
 Ejercicio responsive I
 ============================
 

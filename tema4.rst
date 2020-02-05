@@ -40,7 +40,7 @@ Un programa muy simple sería este:
 
 .. code-block:: javascript
 
-	var una_variable
+	let una_variable
     una_variable=42
     document.write(una_variable)
 	
@@ -93,7 +93,7 @@ En estos bucles hay que poner la inicialización, la condición de final y la ac
 
 .. code-block:: javascript
 
-	for (var i=0; i<vector_numeros.length; i++){
+	for (let i=0; i<vector_numeros.length; i++){
 		document.write("<br/>")
         document.write ("En la posición "+i)
         document.write (" está el número " + vector_numeros[i])
@@ -1023,10 +1023,147 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
 HTML del configurador
 ----------------------
 
-JS del configurador (con JQuery (DAM))
+.. code-block:: html
+    
+        <form>Tipo de motor<br/>
+            <input type="radio" name="motor"
+                   id="gasolina">Gasolina <br/>
+            <input type="radio" name="motor"
+                   id="diesel">Diésel<br/>
+            <br/> Cubicaje<br/>
+            <input type="radio" name="cubicaje"
+                   id="1100">1100m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="1800">1800m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="2300">2300m3<br/>
+            <br/>Pinturas<br/>
+            <input type="radio" name="pintura"
+                   id="normal">Normal<br/>
+            <input type="radio" name="pintura"
+                   id="metalizada">Metaliz.<br/>
+            <br/>Colores<br/>
+            <input type="radio" name="color"
+                   id="negro">Negro 
+            <input type="radio" name="color"
+                   id="blanco">Blanco 
+            <input type="radio" name="color"
+                   id="rojo">Rojo 
+            <br/>
+            <input type="radio" name="color"
+                   id="azulpolar">Azul polar
+            <input type="radio" name="color"
+                   id="verde">Verde
+            <input type="radio" name="color"
+                   id="gris">Gris
+            <br/>Extras<br/>
+            <input type="checkbox" id="aleron">
+            Alerón
+            <input type="checkbox" id="radiocd">
+            radiocd
+            <input type="checkbox" id="altavoces">
+            Altavoces
+            <input type="checkbox" id="gps">
+            GPS
+            <button 
+              onclick="calcular();return false">
+                Calcular precio
+            </button>
+        </form>
+
+JS del configurador (sin JQuery)
 -----------------------------------------
 
 
+.. code-block:: javascript
+
+    function esta_checked(identificador){
+        let control;
+        control=
+            document.getElementById(
+                identificador);
+        if (control.checked){
+            return true;
+        }
+        return false;
+    }
+    function hay_errores(){
+        let error=false;
+        /* Si detectamos un error
+        ponemos error a true*/
+        if (esta_checked("diesel") && (esta_checked("2300"))){
+            alert("Imposible diesel de 2300, por favor modifique sus opciones.");
+            error=true;
+            
+        }
+        if (esta_checked("normal") && (esta_checked("azulpolar"))){
+            alert("Imposible normal+azul");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("gris"))){
+            alert("Imposible normal+gris");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("verde"))){
+            alert("Imposible normal+verde");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("aleron"))){
+            alert("Imposible normal+aleron. Elija pintura metalizada");
+            error=true;
+        }
+        /*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/
+        if (esta_checked("altavoces") && (!esta_checked("radiocd"))){
+            alert("No puede pedir altavoces sin pedir el RadioCD");
+            error=true;
+        }
+        
+        return error;
+    }
+    function calcular(){
+        let precio=0;
+        if (hay_errores()){
+            return false;
+        }
+        /* Si llegamos aquí es que
+        no hay errores y el precio se puede calcular*/
+        if (esta_checked("gasolina")){
+            precio=precio+7000;
+        }
+        if (esta_checked("diesel")){
+            precio=precio+8200;
+        }
+        if (esta_checked("1100")){
+            precio=precio+800;
+        }
+        if (esta_checked("1800")){
+            precio=precio+1900;
+        }
+        if (esta_checked("2300")){
+            precio=precio+2500;
+        }
+        if (esta_checked("normal")){
+            precio=precio+750;
+        }
+        if (esta_checked("metalizada")){
+            precio=precio+1580;
+        }
+        /*Obsérvese que el precio
+        no ha cambiado dependiendo del color*/
+        if (esta_checked("aleron")){
+            precio=precio+190;
+        }
+        if (esta_checked("radiocd")){
+            precio=precio+230;
+        }
+        if (esta_checked("altavoces")){
+            precio=precio+320;
+        }
+        if (esta_checked("gps")){
+            precio=precio+520;
+        }
+        alert("Su precio es:"+precio);
+    }
 
 Dinamismo con Google Maps
 =========================

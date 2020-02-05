@@ -62,7 +62,7 @@
 <h2>Incrustando Javascript<a class="headerlink" href="#incrustando-javascript" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Javascript se inserta en HTML con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. Esta etiqueta puede ir en cualquier sitio del HTML, dentro de <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> o dentro de <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code>.</p>
 <p>Un programa muy simple sería este:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">una_variable</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">let</span> <span class="nx">una_variable</span>
 <span class="nx">una_variable</span><span class="o">=</span><span class="mi">42</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">una_variable</span><span class="p">)</span>
 </pre></div>
@@ -103,7 +103,7 @@
 <div class="section" id="bucles-for-estilo-clasico">
 <h4>Bucles for estilo clásico<a class="headerlink" href="#bucles-for-estilo-clasico" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>En estos bucles hay que poner la inicialización, la condición de final y la actualización:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot; está el número &quot;</span> <span class="o">+</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
@@ -919,9 +919,145 @@
 <p>Crear la aplicación que respete las restricciones exigidas por el cliente.</p>
 <div class="section" id="html-del-configurador">
 <h3>HTML del configurador<a class="headerlink" href="#html-del-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>Tipo de motor<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;gasolina&quot;</span><span class="p">&gt;</span>Gasolina <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;diesel&quot;</span><span class="p">&gt;</span>Diésel<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span> Cubicaje<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;1100&quot;</span><span class="p">&gt;</span>1100m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;1800&quot;</span><span class="p">&gt;</span>1800m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;2300&quot;</span><span class="p">&gt;</span>2300m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Pinturas<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pintura&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;normal&quot;</span><span class="p">&gt;</span>Normal<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pintura&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;metalizada&quot;</span><span class="p">&gt;</span>Metaliz.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Colores<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;negro&quot;</span><span class="p">&gt;</span>Negro
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;blanco&quot;</span><span class="p">&gt;</span>Blanco
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;rojo&quot;</span><span class="p">&gt;</span>Rojo
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;azulpolar&quot;</span><span class="p">&gt;</span>Azul polar
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;verde&quot;</span><span class="p">&gt;</span>Verde
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;gris&quot;</span><span class="p">&gt;</span>Gris
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Extras<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;aleron&quot;</span><span class="p">&gt;</span>
+    Alerón
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;radiocd&quot;</span><span class="p">&gt;</span>
+    radiocd
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;altavoces&quot;</span><span class="p">&gt;</span>
+    Altavoces
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;gps&quot;</span><span class="p">&gt;</span>
+    GPS
+    <span class="p">&lt;</span><span class="nt">button</span>
+      <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false&quot;</span><span class="p">&gt;</span>
+        Calcular precio
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="js-del-configurador-con-jquery-dam">
-<h3>JS del configurador (con JQuery (DAM))<a class="headerlink" href="#js-del-configurador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="js-del-configurador-sin-jquery">
+<h3>JS del configurador (sin JQuery)<a class="headerlink" href="#js-del-configurador-sin-jquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">identificador</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="p">;</span>
+    <span class="nx">control</span><span class="o">=</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+            <span class="nx">identificador</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">hay_errores</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">error</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="cm">/* Si detectamos un error</span>
+<span class="cm">    ponemos error a true*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;2300&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible diesel de 2300, por favor modifique sus opciones.&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;azulpolar&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+azul&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gris&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+gris&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;verde&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+verde&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+aleron. Elija pintura metalizada&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;No puede pedir altavoces sin pedir el RadioCD&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">hay_errores</span><span class="p">()){</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Si llegamos aquí es que</span>
+<span class="cm">    no hay errores y el precio se puede calcular*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">7000</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">8200</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1100&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">800</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1800&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1900</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;2300&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">2500</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">750</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1580</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*Obsérvese que el precio</span>
+<span class="cm">    no ha cambiado dependiendo del color*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">190</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">230</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">320</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gps&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">520</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Su precio es:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="dinamismo-con-google-maps">
@@ -1712,7 +1848,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#html-del-configurador">HTML del configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-con-jquery-dam">JS del configurador (con JQuery (DAM))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-sin-jquery">JS del configurador (sin JQuery)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#dinamismo-con-google-maps">Dinamismo con Google Maps</a><ul>
