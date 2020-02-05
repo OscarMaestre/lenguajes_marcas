@@ -1021,9 +1021,8 @@ Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen
 
 Por ejemplo, supongamos que tenemos el siguiente fichero.
 
-.. literalinclude: ejemplos/tema_3_css/ejemplo_flexbox/index.html
+.. literalinclude:: ejemplos/tema3_css/ejemplo_flexbox/index.html
    :language: html
-   :linenos:
 
 
 Maquetación avanzada con ``grid-layouts``
