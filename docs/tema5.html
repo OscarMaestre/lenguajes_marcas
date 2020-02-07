@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>XML &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -61,11 +63,11 @@
 <h2>Construcción de XML<a class="headerlink" href="#construccion-de-xml" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para crear XML es importante recordar una serie de reglas:</p>
 <ul class="simple">
-<li><p>XML es «case-sensitive», es decir que no es lo mismo mayúsculas que minúsculas y que por tanto no es lo mismo <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code>, que <code class="docutils literal notranslate"><span class="pre">&lt;Cliente&gt;</span></code> que <code class="docutils literal notranslate"><span class="pre">&lt;CLIENTE&gt;</span></code>.</p></li>
-<li><p>Obligatorio: solo un elemento raíz.</p></li>
-<li><p>En general, la costumbre es poner todo en minúsculas.</p></li>
-<li><p>Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas <code class="docutils literal notranslate"><span class="pre">&lt;12Cliente&gt;</span></code>.</p></li>
-<li><p>Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida <code class="docutils literal notranslate"><span class="pre">&lt;Cliente12&gt;</span></code>.</p></li>
+<li>XML es «case-sensitive», es decir que no es lo mismo mayúsculas que minúsculas y que por tanto no es lo mismo <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code>, que <code class="docutils literal notranslate"><span class="pre">&lt;Cliente&gt;</span></code> que <code class="docutils literal notranslate"><span class="pre">&lt;CLIENTE&gt;</span></code>.</li>
+<li>Obligatorio: solo un elemento raíz.</li>
+<li>En general, la costumbre es poner todo en minúsculas.</li>
+<li>Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas <code class="docutils literal notranslate"><span class="pre">&lt;12Cliente&gt;</span></code>.</li>
+<li>Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida <code class="docutils literal notranslate"><span class="pre">&lt;Cliente12&gt;</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="validez">
@@ -114,9 +116,9 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <p>En este caso, el problema es que hay más de un elemento raíz.</p>
 <p>En general, podemos asumir que un documento puede estar en uno de estos estados que de peor a mejor podríamos indicar así:</p>
 <ol class="arabic simple">
-<li><p>Mal formado (lo peor)</p></li>
-<li><p>Bien formado.</p></li>
-<li><p>Válido: está bien formado y además nos han dado las reglas para determinar si algo está bien o mal y el documento XML cumple dichas reglas. Este es el mejor caso.</p></li>
+<li>Mal formado (lo peor)</li>
+<li>Bien formado.</li>
+<li>Válido: está bien formado y además nos han dado las reglas para determinar si algo está bien o mal y el documento XML cumple dichas reglas. Este es el mejor caso.</li>
 </ol>
 <p>Para determinar si un documento es válido o no, se puede usar el validador del W3C situado en <a class="reference external" href="http://validator.w3c.org">http://validator.w3c.org</a></p>
 </div>
@@ -152,10 +154,10 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <p>DTD significa Declaración de Tipo de Documento, y es un mecanismo para expresar las reglas sobre lo que se va a permitir y lo que no en archivos XML.</p>
 <p>Por ejemplo, supongamos el mismo ejemplo ejemplo anterior en el que queremos formalizar lo que puede aparecer en un fichero de clientes. Se debe tener en cuenta que en un DTD se pueden indicar reglas para lo siguiente:</p>
 <ul class="simple">
-<li><p>Se puede indicar si un elemento aparece o no de forma opcional (usando <code class="docutils literal notranslate"><span class="pre">?</span></code>)</p></li>
-<li><p>Se puede indicar si un elemento debe aparecer de forma obligatoria.</p></li>
-<li><p>Se puede indicar si algo aparecer una o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">+</span></code>).</p></li>
-<li><p>Se puede indicar si algo aparece cero o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">*</span></code>).</p></li>
+<li>Se puede indicar si un elemento aparece o no de forma opcional (usando <code class="docutils literal notranslate"><span class="pre">?</span></code>)</li>
+<li>Se puede indicar si un elemento debe aparecer de forma obligatoria.</li>
+<li>Se puede indicar si algo aparecer una o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">+</span></code>).</li>
+<li>Se puede indicar si algo aparece cero o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">*</span></code>).</li>
 </ul>
 <p>Supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;listaclientes&gt;</span></code>. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;listaclientes&gt;</span></code> deseamos permitir uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code>. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code> todos deberán tener <code class="docutils literal notranslate"><span class="pre">&lt;cif&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;nombre&gt;</span></code> y en ese orden. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code> puede aparecer o no un elemento <code class="docutils literal notranslate"><span class="pre">&lt;diasentrega&gt;</span></code> para indicar que ese cliente exige un máximo de plazos. Como no todo el mundo usa plazos el <code class="docutils literal notranslate"><span class="pre">&lt;diasentrega&gt;</span></code> es optativo.</p>
 <p>Por ejemplo, este XML sí es válido:</p>
@@ -252,12 +254,12 @@ que no es XML y el fichero se muestra de manera literal)</p>
 </div>
 <p>Esto significa lo siguiente:</p>
 <ul class="simple">
-<li><p>Se establece el tipo de documento <code class="docutils literal notranslate"><span class="pre">listaclientes</span></code> que consta de una serie de elementos (dentro del corchete)</p></li>
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">listaclientes</span>&#160;&#160; <span class="pre">``</span> <span class="pre">consta</span> <span class="pre">de</span> <span class="pre">uno</span> <span class="pre">o</span> <span class="pre">más</span> <span class="pre">clientes.</span> <span class="pre">El</span> <span class="pre">signo</span> <span class="pre">``+</span></code> significa «uno o más».</p></li>
-<li><p>Un cliente tiene un nombre y un cif. También puede tener un elemento <code class="docutils literal notranslate"><span class="pre">diasentrega</span></code> que puede o no aparecer (el signo <code class="docutils literal notranslate"><span class="pre">?</span></code> significa «0 o 1 veces»).</p></li>
-<li><p>Un <code class="docutils literal notranslate"><span class="pre">nombre</span></code> no tiene más elementos dentro, solo caracteres (<code class="docutils literal notranslate"><span class="pre">#PCDATA</span></code>)</p></li>
-<li><p>Un <code class="docutils literal notranslate"><span class="pre">CIF</span></code> solo consta de caracteres.</p></li>
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">diasentrega</span></code> consta solo de caracteres.</p></li>
+<li>Se establece el tipo de documento <code class="docutils literal notranslate"><span class="pre">listaclientes</span></code> que consta de una serie de elementos (dentro del corchete)</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">listaclientes</span></code> consta de uno o más clientes. El signo <code class="docutils literal notranslate"><span class="pre">+</span></code> significa «uno o más».</li>
+<li>Un cliente tiene un nombre y un cif. También puede tener un elemento <code class="docutils literal notranslate"><span class="pre">diasentrega</span></code> que puede o no aparecer (el signo <code class="docutils literal notranslate"><span class="pre">?</span></code> significa «0 o 1 veces»).</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">nombre</span></code> no tiene más elementos dentro, solo caracteres (<code class="docutils literal notranslate"><span class="pre">#PCDATA</span></code>)</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">CIF</span></code> solo consta de caracteres.</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">diasentrega</span></code> consta solo de caracteres.</li>
 </ul>
 <p>La solución completa sería así:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -285,10 +287,10 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <h3>Ejemplo de DTD (productos)<a class="headerlink" href="#ejemplo-de-dtd-productos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en los archivos XML de datos de una empresa de fabricación:</p>
 <ul class="simple">
-<li><p>La raíz es &lt;productos&gt;</p></li>
-<li><p>Dentro de productos puede haber &lt;raton&gt; o &lt;teclado&gt; que pueden repetirse e ir en cualquier orden (RRTT, T, TR, TTRR)</p></li>
-<li><p>Todo &lt;raton&gt; tiene siempre un &lt;codigo&gt; y puede o no tener una &lt;descripción&gt;.</p></li>
-<li><p>Todo &lt;teclado&gt; tiene siempre un &lt;codigo&gt;, debe llevar siempre una &lt;descripcion&gt; y puede o no tener un &lt;peso&gt;</p></li>
+<li>La raíz es &lt;productos&gt;</li>
+<li>Dentro de productos puede haber &lt;raton&gt; o &lt;teclado&gt; que pueden repetirse e ir en cualquier orden (RRTT, T, TR, TTRR)</li>
+<li>Todo &lt;raton&gt; tiene siempre un &lt;codigo&gt; y puede o no tener una &lt;descripción&gt;.</li>
+<li>Todo &lt;teclado&gt; tiene siempre un &lt;codigo&gt;, debe llevar siempre una &lt;descripcion&gt; y puede o no tener un &lt;peso&gt;</li>
 </ul>
 <p>Elaborar la DTD que formaliza estas reglas.</p>
 <p>Analicemos algunas posibilidades para la raíz,por ejemplo esta:</p>
@@ -332,8 +334,8 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <p>Esto también está mal. Permite que dentro de productos haya una sola de estas cosas</p>
 <ul class="simple">
-<li><p>O una secuencia de «raton»</p></li>
-<li><p>O una secuencia de «teclado»</p></li>
+<li>O una secuencia de «raton»</li>
+<li>O una secuencia de «teclado»</li>
 </ul>
 <p>¡Pero no permite secuencias con mezcla!</p>
 <p>Veamos, ahora sí, una solución correcta</p>
@@ -378,16 +380,18 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio I (DTD)<a class="headerlink" href="#ejercicio-i-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:</p>
 <ul>
-<li><p>El elemento raíz será <code class="docutils literal notranslate"><span class="pre">&lt;listaventas&gt;</span></code></p></li>
-<li><p>Toda <code class="docutils literal notranslate"><span class="pre">&lt;listaventas&gt;</span></code> tiene una o más ventas.</p></li>
-<li><p>Toda <code class="docutils literal notranslate"><span class="pre">&lt;venta&gt;</span></code> tiene los siguientes datos:</p>
+<li><p class="first">El elemento raíz será <code class="docutils literal notranslate"><span class="pre">&lt;listaventas&gt;</span></code></p>
+</li>
+<li><p class="first">Toda <code class="docutils literal notranslate"><span class="pre">&lt;listaventas&gt;</span></code> tiene una o más ventas.</p>
+</li>
+<li><p class="first">Toda <code class="docutils literal notranslate"><span class="pre">&lt;venta&gt;</span></code> tiene los siguientes datos:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Importe.</p></li>
-<li><p>Comprador.</p></li>
-<li><p>Vendedor.</p></li>
-<li><p>Fecha (optativa).</p></li>
-<li><p>Un codigo de factura.</p></li>
+<li>Importe.</li>
+<li>Comprador.</li>
+<li>Vendedor.</li>
+<li>Fecha (optativa).</li>
+<li>Un codigo de factura.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -485,12 +489,12 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio (con atributos)<a class="headerlink" href="#ejercicio-con-atributos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:</p>
 <ul class="simple">
-<li><p>Los ficheros deben tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;listafacturas&gt;</span></code></p></li>
-<li><p>Dentro de la lista debe haber una o más facturas.</p></li>
-<li><p>Las facturas tienen un atributo <code class="docutils literal notranslate"><span class="pre">fecha</span></code> que es optativo.</p></li>
-<li><p>Toda factura tiene un <code class="docutils literal notranslate"><span class="pre">emisor</span></code>, que es un elemento obligatorio y que debe tener un atributo <code class="docutils literal notranslate"><span class="pre">cif</span></code> que es obligatorio. Dentro de <code class="docutils literal notranslate"><span class="pre">emisor</span></code> debe haber un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, que es obligatorio y puede o no haber un elemento <code class="docutils literal notranslate"><span class="pre">volumenventas</span></code>.</p></li>
-<li><p>Toda factura debe tener un elemento <code class="docutils literal notranslate"><span class="pre">pagador</span></code>, el cual tiene exactamente la misma estructura que <code class="docutils literal notranslate"><span class="pre">emisor</span></code>.</p></li>
-<li><p>Toda factura tiene un elemento <code class="docutils literal notranslate"><span class="pre">importe</span></code>.</p></li>
+<li>Los ficheros deben tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;listafacturas&gt;</span></code></li>
+<li>Dentro de la lista debe haber una o más facturas.</li>
+<li>Las facturas tienen un atributo <code class="docutils literal notranslate"><span class="pre">fecha</span></code> que es optativo.</li>
+<li>Toda factura tiene un <code class="docutils literal notranslate"><span class="pre">emisor</span></code>, que es un elemento obligatorio y que debe tener un atributo <code class="docutils literal notranslate"><span class="pre">cif</span></code> que es obligatorio. Dentro de <code class="docutils literal notranslate"><span class="pre">emisor</span></code> debe haber un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, que es obligatorio y puede o no haber un elemento <code class="docutils literal notranslate"><span class="pre">volumenventas</span></code>.</li>
+<li>Toda factura debe tener un elemento <code class="docutils literal notranslate"><span class="pre">pagador</span></code>, el cual tiene exactamente la misma estructura que <code class="docutils literal notranslate"><span class="pre">emisor</span></code>.</li>
+<li>Toda factura tiene un elemento <code class="docutils literal notranslate"><span class="pre">importe</span></code>.</li>
 </ul>
 <div class="section" id="solucion-ejercicio-con-atributos">
 <h3>Solución ejercicio con atributos<a class="headerlink" href="#solucion-ejercicio-con-atributos" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -530,11 +534,11 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un instituto necesita registrar los cursos y alumnos que estudian en él y necesita una DTD para comprobar los documentos XML de los programas que utiliza:</p>
 <ul class="simple">
-<li><p>Tiene que haber un elemento raíz <code class="docutils literal notranslate"><span class="pre">listacursos</span></code>. Tiene que haber uno o más cursos.</p></li>
-<li><p>Un curso tiene uno o más alumnos</p></li>
-<li><p>Todo alumno tiene un DNI, un nombre y un apellido, puede que tenga segundo apellido o no.</p></li>
-<li><p>Un alumno escoge una lista de asignaturas donde habrá una o más asignaturas. Toda asignatura tiene un nombre, un atributo código y un profesor.</p></li>
-<li><p>Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido (también puede tener o no un segundo apellido).</p></li>
+<li>Tiene que haber un elemento raíz <code class="docutils literal notranslate"><span class="pre">listacursos</span></code>. Tiene que haber uno o más cursos.</li>
+<li>Un curso tiene uno o más alumnos</li>
+<li>Todo alumno tiene un DNI, un nombre y un apellido, puede que tenga segundo apellido o no.</li>
+<li>Un alumno escoge una lista de asignaturas donde habrá una o más asignaturas. Toda asignatura tiene un nombre, un atributo código y un profesor.</li>
+<li>Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido (también puede tener o no un segundo apellido).</li>
 </ul>
 <div class="section" id="solucion-completa">
 <h3>Solución completa<a class="headerlink" href="#solucion-completa" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -706,10 +710,10 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un mayorista informático necesita especificar las reglas de los elementos permitidos en las aplicaciones que utiliza en sus empresas, para ello ha indicado los siguientes requisitos:</p>
 <ul class="simple">
-<li><p>Una entrega consta de uno o más lotes.</p></li>
-<li><p>Un lote tiene uno o más palés</p></li>
-<li><p>Todo palé tiene una serie de elementos: número de cajas, contenido y peso y forma de manipulación.</p></li>
-<li><p>El contenido consta de una serie de elementos: nombre del componente, procedencia (puede aparecer 0, 1 o más países), número de serie del componente, peso del componente individual y unidad de peso que puede aparecer o no.</p></li>
+<li>Una entrega consta de uno o más lotes.</li>
+<li>Un lote tiene uno o más palés</li>
+<li>Todo palé tiene una serie de elementos: número de cajas, contenido y peso y forma de manipulación.</li>
+<li>El contenido consta de una serie de elementos: nombre del componente, procedencia (puede aparecer 0, 1 o más países), número de serie del componente, peso del componente individual y unidad de peso que puede aparecer o no.</li>
 </ul>
 <div class="section" id="id2">
 <h3>Solución<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -771,24 +775,26 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio: mayorista de libros<a class="headerlink" href="#ejercicio-mayorista-de-libros" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear un formato de intercambio de datos para una empresa mayorista de libros con el fin de que sus distintos programas puedan manejar la información interna. El formato de archivo debe tener la siguiente estructura:</p>
 <ul>
-<li><p>Un archivo tiene una serie de operaciones dentro.</p></li>
-<li><p>Las operaciones pueden ser «venta», «compra», o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p></li>
-<li><p>Una venta tiene:</p>
+<li><p class="first">Un archivo tiene una serie de operaciones dentro.</p>
+</li>
+<li><p class="first">Las operaciones pueden ser «venta», «compra», o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p>
+</li>
+<li><p class="first">Una venta tiene:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Uno o más títulos vendidos.</p></li>
-<li><p>La cantidad total de libros vendidos.</p></li>
-<li><p>Puede haber un elemento «entregado» que indique si la entrega se ha realizado.</p></li>
-<li><p>Debe haber un elemento importe con un atributo obligatorio llamado «moneda».</p></li>
+<li>Uno o más títulos vendidos.</li>
+<li>La cantidad total de libros vendidos.</li>
+<li>Puede haber un elemento «entregado» que indique si la entrega se ha realizado.</li>
+<li>Debe haber un elemento importe con un atributo obligatorio llamado «moneda».</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Una compra tiene:</p>
+<li><p class="first">Una compra tiene:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Uno o más títulos comprados.</p></li>
-<li><p>Nombre de proveedor.</p></li>
-<li><p>Una fecha de compra, que debe desglosarse en elementos día, mes y año</p></li>
+<li>Uno o más títulos comprados.</li>
+<li>Nombre de proveedor.</li>
+<li>Una fecha de compra, que debe desglosarse en elementos día, mes y año</li>
 </ul>
 </div></blockquote>
 </li>
@@ -891,9 +897,9 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio: fabricante de tractores<a class="headerlink" href="#ejercicio-fabricante-de-tractores" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un fabricante de tractores desea unificar el formato XML de sus proveedores y para ello ha indicado que necesita que los archivos XML cumplan las siguientes restricciones:</p>
 <ul class="simple">
-<li><p>Un pedido consta de uno o más tractores.</p></li>
-<li><p>Un tractor consta de uno o más componentes.</p></li>
-<li><p>Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento kmmaximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.</p></li>
+<li>Un pedido consta de uno o más tractores.</li>
+<li>Un tractor consta de uno o más componentes.</li>
+<li>Un componente tiene los siguientes elementos: nombre del fabricante (atributo obligatorio), fecha de entrega  (si es posible, aunque puede que no aparezca, si aparece el dia es optativo, pero el mes y el año son obligatorios). También se necesita saber del componente si es frágil o no. También debe aparecer un elemento peso del componente y dicho elemento peso tiene un atributo unidad del peso (kilos o gramos), un elemento número de serie y puede que aparezca o no un elemento kmmaximos indicando que el componente debe sustituirse tras un cierto número de kilómetros.</li>
 </ul>
 <p>Un posible fichero de ejemplo que podría validar sería este:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;pedido&gt;</span>
@@ -952,10 +958,10 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio: repeticiones de opciones<a class="headerlink" href="#ejercicio-repeticiones-de-opciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se necesita un formato de archivo para intercambiar productos entre almacenes de productos de librería y se desea una DTD que incluya estas restricciones:</p>
 <ul class="simple">
-<li><p>Debe haber un elemento raíz pedido que puede constar de libros, cuadernos y/o lápices. Los tres elementos pueden aparecer repetidos y en cualquier orden. Tambien pueden aparecer por ejemplo 4 libros, 2 lapices y luego 4 lapices de nuevo.</p></li>
-<li><p>Todo libro tiene un atributo obligatorio titulo.</p></li>
-<li><p>Los elementos cuaderno tiene un atributo optativo num_hojas.</p></li>
-<li><p>Todo elemento lápiz debe tener dentro un  elemento obligatorio número.</p></li>
+<li>Debe haber un elemento raíz pedido que puede constar de libros, cuadernos y/o lápices. Los tres elementos pueden aparecer repetidos y en cualquier orden. Tambien pueden aparecer por ejemplo 4 libros, 2 lapices y luego 4 lapices de nuevo.</li>
+<li>Todo libro tiene un atributo obligatorio titulo.</li>
+<li>Los elementos cuaderno tiene un atributo optativo num_hojas.</li>
+<li>Todo elemento lápiz debe tener dentro un  elemento obligatorio número.</li>
 </ul>
 <p>La solución a la DTD:</p>
 <div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">pedido</span> <span class="o">(</span><span class="nt">libro</span><span class="o">|</span><span class="nt">cuaderno</span><span class="o">|</span><span class="nt">lapiz</span><span class="o">)+</span><span class="k">&gt;</span>
@@ -995,14 +1001,14 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <p>Una multinacional que opera en bolsa necesita un formato de intercambio de datos para que sus programas intercambien información sobre los mercados de acciones.</p>
 <p>En general todo archivo constará de un listado de cosas como se detalla a continuación</p>
 <ul class="simple">
-<li><p>En el listado aparecen siempre uno o varios futuros, despues una o varias divisas, despues uno o varios bonos y una o varias letras.</p></li>
-<li><p>Todos ellos tienen un atributo precio que es <strong>obligatorio</strong></p></li>
-<li><p>Todos ellos tienen un elemento vacío que indica  de donde es el producto anterior: «Madrid», «Nueva York», «Frankfurt» o «Tokio».</p></li>
-<li><p>Las divisas y los bonos tienen un atributo optativo que se usa para indicar si el producto ha sido estable en el pasado o no.</p></li>
-<li><p>Un futuro es un valor esperado que tendrá un cierto producto en el futuro. Se debe incluir este producto en forma de elemento. También puede aparecer un elemento mercado que indique el país de procedencia del producto.</p></li>
-<li><p>Todo bono tiene un elemento país_de_procedencia para saber a qué estado pertenece. Debe tener tres elementos extra llamados «valor_deseado», «valor_mínimo» y «valor_máximo» para saber los posibles precios.</p></li>
-<li><p>Las divisas tienen siempre un nombre pueden incluir uno o más tipos de cambio para otras monedas.</p></li>
-<li><p>Las letras tienen siempre un tipo de interés pagadero por un país emisor. El país emisor también debe existir y debe ser siempre de uno de los países cuyas capitales aparecen arriba (es decir «España», «EEUU», «Alemania» y «Japón»</p></li>
+<li>En el listado aparecen siempre uno o varios futuros, despues una o varias divisas, despues uno o varios bonos y una o varias letras.</li>
+<li>Todos ellos tienen un atributo precio que es <strong>obligatorio</strong></li>
+<li>Todos ellos tienen un elemento vacío que indica  de donde es el producto anterior: «Madrid», «Nueva York», «Frankfurt» o «Tokio».</li>
+<li>Las divisas y los bonos tienen un atributo optativo que se usa para indicar si el producto ha sido estable en el pasado o no.</li>
+<li>Un futuro es un valor esperado que tendrá un cierto producto en el futuro. Se debe incluir este producto en forma de elemento. También puede aparecer un elemento mercado que indique el país de procedencia del producto.</li>
+<li>Todo bono tiene un elemento país_de_procedencia para saber a qué estado pertenece. Debe tener tres elementos extra llamados «valor_deseado», «valor_mínimo» y «valor_máximo» para saber los posibles precios.</li>
+<li>Las divisas tienen siempre un nombre pueden incluir uno o más tipos de cambio para otras monedas.</li>
+<li>Las letras tienen siempre un tipo de interés pagadero por un país emisor. El país emisor también debe existir y debe ser siempre de uno de los países cuyas capitales aparecen arriba (es decir «España», «EEUU», «Alemania» y «Japón»</li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE listado [</span>
@@ -1085,23 +1091,30 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Ejercicio<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La Seguridad Social necesita un formato de intercambio unificado para distribuir la información personal de los afiliados.</p>
 <ul>
-<li><p>Todo archivo XML contiene un listado de uno o mas afiliados</p></li>
-<li><p>Todo afiliado tiene los siguientes elementos:</p>
+<li><p class="first">Todo archivo XML contiene un listado de uno o mas afiliados</p>
+</li>
+<li><p class="first">Todo afiliado tiene los siguientes elementos:</p>
 <blockquote>
 <div><ul>
-<li><p>DNI o NIE</p></li>
-<li><p>Nombre</p></li>
-<li><p>Apellidos</p></li>
-<li><p>Situación laboral: que tiene que ser una y solo una de entre estas posibilidades: «en_paro», «en_activo», «jubilado», «edad_no_laboral»</p></li>
-<li><p>Fecha de nacimiento: que se desglosa en los elementos obligatorios día, mes y anio.</p></li>
-<li><p>Listado de bajas: que indica las situaciones de baja laboral del empleado. Dicho listado consta de una repetición de 0 o más bajas:</p>
+<li><p class="first">DNI o NIE</p>
+</li>
+<li><p class="first">Nombre</p>
+</li>
+<li><p class="first">Apellidos</p>
+</li>
+<li><p class="first">Situación laboral: que tiene que ser una y solo una de entre estas posibilidades: «en_paro», «en_activo», «jubilado», «edad_no_laboral»</p>
+</li>
+<li><p class="first">Fecha de nacimiento: que se desglosa en los elementos obligatorios día, mes y anio.</p>
+</li>
+<li><p class="first">Listado de bajas: que indica las situaciones de baja laboral del empleado. Dicho listado consta de una repetición de 0 o más bajas:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Una baja consta de tres elementos: causa (obligatoria), fecha de inicio (obligatorio) y fecha de final (optativa),</p></li>
+<li>Una baja consta de tres elementos: causa (obligatoria), fecha de inicio (obligatorio) y fecha de final (optativa),</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Listado de prestaciones cobradas: consta de 0 o más elementos prestación, donde se indicará la cantidad percibida (obligatorio), la fecha de inicio (obligatorio) y la fecha de final (obligatorio)</p></li>
+<li><p class="first">Listado de prestaciones cobradas: consta de 0 o más elementos prestación, donde se indicará la cantidad percibida (obligatorio), la fecha de inicio (obligatorio) y la fecha de final (obligatorio)</p>
+</li>
 </ul>
 </div></blockquote>
 </li>
@@ -1111,9 +1124,9 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h2>Esquemas XML<a class="headerlink" href="#esquemas-xml" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los esquemas XML son un mecanismo radicalmente distinto de crear reglas para validar ficheros XML. Se caracterizan por:</p>
 <ul class="simple">
-<li><p>Estar escritos en XML. Por lo tanto, las mismas bibliotecas que permiten procesar ficheros XML de datos permitirían procesar ficheros XML de reglas.</p></li>
-<li><p>Son mucho más potentes: ofrecen soporte a tipos de datos con comprobación de si el contenido de una etiqueta es de tipo <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> o de otros tipos. También se permite añadir restricciones como indicar valores mínimo y máximo para un número o determinar el patrón que debe seguir una cadena válida</p></li>
-<li><p>Ofrecen la posibilidad de usar <em>espacios de nombres</em>. Los espacios de nombres son similares a los paquetes Java: permiten a personas distintas el definir etiquetas con el mismo nombre pudiendo luego distinguir etiquetas iguales en función del espacio de nombres que importemos.</p></li>
+<li>Estar escritos en XML. Por lo tanto, las mismas bibliotecas que permiten procesar ficheros XML de datos permitirían procesar ficheros XML de reglas.</li>
+<li>Son mucho más potentes: ofrecen soporte a tipos de datos con comprobación de si el contenido de una etiqueta es de tipo <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> o de otros tipos. También se permite añadir restricciones como indicar valores mínimo y máximo para un número o determinar el patrón que debe seguir una cadena válida</li>
+<li>Ofrecen la posibilidad de usar <em>espacios de nombres</em>. Los espacios de nombres son similares a los paquetes Java: permiten a personas distintas el definir etiquetas con el mismo nombre pudiendo luego distinguir etiquetas iguales en función del espacio de nombres que importemos.</li>
 </ul>
 <div class="section" id="un-ejemplo">
 <h3>Un ejemplo<a class="headerlink" href="#un-ejemplo" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -1129,8 +1142,8 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <p>¿Qué contiene este fichero?</p>
 <ol class="arabic simple">
-<li><p>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí <code class="docutils literal notranslate"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal notranslate"><span class="pre">xsd</span></code>. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar <code class="docutils literal notranslate"><span class="pre">xsd</span></code>.</p></li>
-<li><p>Se indica que habrá un solo elemento y que el tipo de ese elemento es <code class="docutils literal notranslate"><span class="pre">&lt;xsd:integer&gt;</span></code>. Es decir, un entero básico.</p></li>
+<li>En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí <code class="docutils literal notranslate"><span class="pre">xmlns</span></code>). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será <code class="docutils literal notranslate"><span class="pre">xsd</span></code>. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar <code class="docutils literal notranslate"><span class="pre">xsd</span></code>.</li>
+<li>Se indica que habrá un solo elemento y que el tipo de ese elemento es <code class="docutils literal notranslate"><span class="pre">&lt;xsd:integer&gt;</span></code>. Es decir, un entero básico.</li>
 </ol>
 <p>Si probamos el fichero de esquema con el fichero de datos que hemos indicado veremos que efectivamente el fichero XML de datos es válido. Sin embargo, si en lugar de una cantidad incluyésemos una cadena, veríamos que el fichero <strong>no se validaría</strong></p>
 </div>
@@ -1138,39 +1151,39 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h3>Tipos de datos básicos<a class="headerlink" href="#tipos-de-datos-basicos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Podemos usar los siguientes tipos de datos:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:byte</span></code>: entero de 8 bits.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:short</span></code>: entero de 16 bits</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:int</span></code>: número entero de 32 bits.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:long</span></code>: entero de 64 bits.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:integer</span></code>: número entero sin límite de capacidad.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:unsignedByte</span></code>: entero de 8 bits sin signo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:unsignedShort</span></code>: entero de 16 bits sin signo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:unsignedInt</span></code>: entero de 32 bits sin signo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:unsignedLong</span></code>: entero de 64 bits sin signo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>: cadena de caracteres en la que los espacios en blanco se respetan.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:normalizedString</span></code>: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <code class="docutils literal notranslate"><span class="pre">2020-09-22T10:40:22.6</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con «P» y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo «P1Y4M21DT8H» indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:boolean</span></code>: acepta solo valores «true» y «false».</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal notranslate"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:byte</span></code>: entero de 8 bits.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:short</span></code>: entero de 16 bits</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:int</span></code>: número entero de 32 bits.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:long</span></code>: entero de 64 bits.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:integer</span></code>: número entero sin límite de capacidad.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:unsignedByte</span></code>: entero de 8 bits sin signo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:unsignedShort</span></code>: entero de 16 bits sin signo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:unsignedInt</span></code>: entero de 32 bits sin signo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:unsignedLong</span></code>: entero de 64 bits sin signo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>: cadena de caracteres en la que los espacios en blanco se respetan.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:normalizedString</span></code>: cadena de caracteres en la que los espacios en blanco no se respetan y se reemplazarán secuencias largas de espacios o fines de línea por un solo espacio.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:date</span></code>: permite almacenar fechas que deben ir <strong>obligatoriamente</strong> en formato AAAA-MM-DD (4 digitos para el año, seguidos de un guión, seguido de dos dígitos para el mes, seguidos de un guión, seguidos de dos dígitos para el día del mes)</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:time</span></code>: para almacenar horas en formato HH:MM:SS.C</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:datetime</span></code>: mezcla la fecha y la hora separando ambos campos con una T mayúscula. Esto permitiría almacenar <code class="docutils literal notranslate"><span class="pre">2020-09-22T10:40:22.6</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:duration</span></code>. Para indicar períodos. Se debe empezar con «P» y luego indicar el número de años, meses, días, minutos o segundos. Por ejemplo «P1Y4M21DT8H» indica un período de 1 año, 4 meses, 21 días y 8 horas. Se aceptan períodos negativos poniendo -P en lugar de P.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:boolean</span></code>: acepta solo valores «true» y «false».</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:anyURI</span></code>: acepta URIs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal notranslate"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</li>
 </ul>
 <p>La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como sus relaciones de herencia:</p>
 <div class="figure align-center" id="id5" style="width: 50%">
 <img alt="_images/tipos_xml_schema.png" src="_images/tipos_xml_schema.png" />
-<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span></p>
 </div>
 </div>
 <div class="section" id="derivaciones">
 <h3>Derivaciones<a class="headerlink" href="#derivaciones" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de «heredar» tenemos más posibilidades que en Java (dondo solo tenemos el «extends»). En concreto podemos heredar de 4 formas:</p>
 <ol class="arabic simple">
-<li><p>Poniendo restricciones (<code class="docutils literal notranslate"><span class="pre">restriction</span></code>). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.</p></li>
-<li><p>Extendiendo un tipo (<code class="docutils literal notranslate"><span class="pre">extension</span></code>). Se toma un tipo y se crea uno nuevo añadiendo cosas a los posibles valores que pueda tomar el tipo inicial.</p></li>
-<li><p>Haciendo listas (<code class="docutils literal notranslate"><span class="pre">lists</span></code>). Es como crear vectores en Java.</p></li>
-<li><p>Juntando otros tipos para crear tipos complejos (<code class="docutils literal notranslate"><span class="pre">union</span></code>). Es como crear clases Java en las que añadimos atributos de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, etc…</p></li>
+<li>Poniendo restricciones (<code class="docutils literal notranslate"><span class="pre">restriction</span></code>). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.</li>
+<li>Extendiendo un tipo (<code class="docutils literal notranslate"><span class="pre">extension</span></code>). Se toma un tipo y se crea uno nuevo añadiendo cosas a los posibles valores que pueda tomar el tipo inicial.</li>
+<li>Haciendo listas (<code class="docutils literal notranslate"><span class="pre">lists</span></code>). Es como crear vectores en Java.</li>
+<li>Juntando otros tipos para crear tipos complejos (<code class="docutils literal notranslate"><span class="pre">union</span></code>). Es como crear clases Java en las que añadimos atributos de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, etc…</li>
 </ol>
 <p>En general, las dos derivaciones más usadas con diferencia son las restricciones y las extensiones, que se comentan por separado en los puntos siguientes.</p>
 </div>
@@ -1178,12 +1191,13 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h3>Tipos simples y complejos<a class="headerlink" href="#tipos-simples-y-complejos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Todo elemento de un esquema debe ser de uno de estos dos tipos.</p>
 <ul>
-<li><p>Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.</p></li>
-<li><p>Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:</p>
+<li><p class="first">Un elemento es de tipo simple si no permite dentro ni elementos hijo ni atributos.</p>
+</li>
+<li><p class="first">Un elemento es tipo complejo si permite tener dentro otras cosas (que veremos en seguida). Un tipo complejo puede a su vez tener contenido simple o contenido complejo:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.</p></li>
-<li><p>Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.</p></li>
+<li>Los que son de contenido simple no permiten tener dentro elementos hijo pero sí permiten atributos.</li>
+<li>Los que son de contenido complejo sí permiten tener dentro elementos hijo y atributos.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -1191,7 +1205,7 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <p>El diagrama siguiente refleja como funciona la estructuración de tipos de los XML Schema.</p>
 <div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/Esquema-tipos.png" src="_images/Esquema-tipos.png" />
-<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span></p>
 </div>
 <p>Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo <code class="docutils literal notranslate"><span class="pre">type</span></code> de un <code class="docutils literal notranslate"><span class="pre">element</span></code> como hacíamos antes:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -1285,13 +1299,13 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <h3>Uniendo la herencia y el sistema de tipos<a class="headerlink" href="#uniendo-la-herencia-y-el-sistema-de-tipos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Llegados a este punto ocurre lo siguiente:</p>
 <ul class="simple">
-<li><p>Por un lado tenemos que especificar si nuestros tipos serán simples o complejos (los cuales a su vez pueden ser complejos con contenido simple o complejos con contenido complejo).</p></li>
-<li><p>Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo cosas (restricciones a los valores).</p></li>
+<li>Por un lado tenemos que especificar si nuestros tipos serán simples o complejos (los cuales a su vez pueden ser complejos con contenido simple o complejos con contenido complejo).</li>
+<li>Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo cosas (restricciones a los valores).</li>
 </ul>
 <p>Se deduce por tanto que no podemos aplicar todas las «herencias» a todos los tipos:</p>
 <ol class="arabic simple">
-<li><p>Los tipos simples no pueden tener atributos ni subelementos, por lo tanto <strong>les podremos aplicar restricciones pero nunca la extensión</strong>.</p></li>
-<li><p>Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que <strong>les podremos aplicar tanto restricciones como extensiones</strong>.</p></li>
+<li>Los tipos simples no pueden tener atributos ni subelementos, por lo tanto <strong>les podremos aplicar restricciones pero nunca la extensión</strong>.</li>
+<li>Los tipos complejos (independientemente del tipo de contenido) sí pueden tener otras cosas dentro por lo que <strong>les podremos aplicar tanto restricciones como extensiones</strong>.</li>
 </ol>
 </div>
 <div class="section" id="restricciones">
@@ -1299,22 +1313,22 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <p>Como se ha dicho anteriormente la forma más común de trabajar es crear tipos que en unos casos aplicarán modificaciones en los tipos ya sea añadiendo cosas o restringiendo posibilidades. En este apartado se verá como aplicar restricciones.</p>
 <p><strong>Si queremos aplicar restricciones para un tipo simple las posibles restricciones son:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">minInclusive</span></code> para indicar el menor valor numérico permitido.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">maxInclusive</span></code> para indicar el mayor valor numérico permitido.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">minExclusive</span></code> para indicar el menor valor numérico que ya no estaría permitido.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">maxExclusive</span></code> para indicar el mayor valor numérico que ya no estaría permitido.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">totalDigits</span></code> para indicar cuantas posibles cifras se permiten.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fractionDigits</span></code> para indicar cuantas posibles cifras decimales se permiten.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code> para indicar la longitud exacta de una cadena.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">minLength</span></code> para indicar la longitud mínima de una cadena.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">maxLength</span></code> para indicar la longitud máxima de una cadena.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">enumeration</span></code> para indicar los valores aceptados por una cadena.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code> para indicar la estructura aceptada por una cadena.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">minInclusive</span></code> para indicar el menor valor numérico permitido.</li>
+<li><code class="docutils literal notranslate"><span class="pre">maxInclusive</span></code> para indicar el mayor valor numérico permitido.</li>
+<li><code class="docutils literal notranslate"><span class="pre">minExclusive</span></code> para indicar el menor valor numérico que ya no estaría permitido.</li>
+<li><code class="docutils literal notranslate"><span class="pre">maxExclusive</span></code> para indicar el mayor valor numérico que ya no estaría permitido.</li>
+<li><code class="docutils literal notranslate"><span class="pre">totalDigits</span></code> para indicar cuantas posibles cifras se permiten.</li>
+<li><code class="docutils literal notranslate"><span class="pre">fractionDigits</span></code> para indicar cuantas posibles cifras decimales se permiten.</li>
+<li><code class="docutils literal notranslate"><span class="pre">length</span></code> para indicar la longitud exacta de una cadena.</li>
+<li><code class="docutils literal notranslate"><span class="pre">minLength</span></code> para indicar la longitud mínima de una cadena.</li>
+<li><code class="docutils literal notranslate"><span class="pre">maxLength</span></code> para indicar la longitud máxima de una cadena.</li>
+<li><code class="docutils literal notranslate"><span class="pre">enumeration</span></code> para indicar los valores aceptados por una cadena.</li>
+<li><code class="docutils literal notranslate"><span class="pre">pattern</span></code> para indicar la estructura aceptada por una cadena.</li>
 </ul>
 <p><strong>Si queremos aplicar restricciones para un tipo complejo con contenido las posibles restricciones son las mismas de antes, pero además podemos añadir el elemento &lt;attribute&gt; así como las siguientes.</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sequence</span></code> para indicar una secuencia de elementos</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">choice</span></code> para indicar que se debe elegir un elemento de entre los que aparecen.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">sequence</span></code> para indicar una secuencia de elementos</li>
+<li><code class="docutils literal notranslate"><span class="pre">choice</span></code> para indicar que se debe elegir un elemento de entre los que aparecen.</li>
 </ul>
 </div>
 <div class="section" id="id4">
@@ -1467,16 +1481,16 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <h3>Ejercicio: codigos y sedes<a class="headerlink" href="#ejercicio-codigos-y-sedes" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se necesita tener un esquema que valide un fichero en el que hay un solo elemento llamado <code class="docutils literal notranslate"><span class="pre">codigo</span></code></p>
 <ul class="simple">
-<li><p>Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.</p></li>
-<li><p>El elemento <code class="docutils literal notranslate"><span class="pre">código</span></code> debe llevar un atributo <code class="docutils literal notranslate"><span class="pre">sede</span></code> que será de tipo cadena.</p></li>
+<li>Dentro de código hay una cadena con una estructura rígida: 2 letras mayúsculas, seguidas de 2 cifras, seguidas a su vez de 3 letras.</li>
+<li>El elemento <code class="docutils literal notranslate"><span class="pre">código</span></code> debe llevar un atributo <code class="docutils literal notranslate"><span class="pre">sede</span></code> que será de tipo cadena.</li>
 </ul>
 </div>
 <div class="section" id="solucion-a-los-codigos-y-sedes">
 <h3>Solución a los códigos y sedes<a class="headerlink" href="#solucion-a-los-codigos-y-sedes" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se nos piden dos cosas:</p>
 <ol class="arabic simple">
-<li><p>Restringir un tipo básico, en este caso el <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
-<li><p>Extender una etiqueta para que tenga un atributo.</p></li>
+<li>Restringir un tipo básico, en este caso el <code class="docutils literal notranslate"><span class="pre">string</span></code></li>
+<li>Extender una etiqueta para que tenga un atributo.</li>
 </ol>
 <p>Como no se puede hacer a la vez, deberemos dar dos pasos. Primero crearemos un tipo con la restricción y despues crearemos un segundo tipo con la extensión.</p>
 <p><strong>Cuando haya conflictos, siempre debemos crear primero la restricción y luego la extensión</strong></p>
@@ -1519,8 +1533,8 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <h3>Ejercicio: productos con atributos<a class="headerlink" href="#ejercicio-productos-con-atributos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea crear un esquema que permita validar un elemento raíz llamado <code class="docutils literal notranslate"><span class="pre">producto</span></code> de tipo <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>. El producto tiene dos atributos:</p>
 <ul class="simple">
-<li><p>Un atributo se llamará <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> y es obligatorio. Debe aceptar solo enteros positivos.</p></li>
-<li><p>También habrá un atributo llamado <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que solo acepta los <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code> «cajas» y «pales».</p></li>
+<li>Un atributo se llamará <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> y es obligatorio. Debe aceptar solo enteros positivos.</li>
+<li>También habrá un atributo llamado <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que solo acepta los <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code> «cajas» y «pales».</li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
     <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -1549,9 +1563,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <h3>Ejercicio: clientes con información adicional<a class="headerlink" href="#ejercicio-clientes-con-informacion-adicional" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea crear un esquema XML que permita validar un elemento llamado <code class="docutils literal notranslate"><span class="pre">cliente</span></code> que puede almacenar un <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>. El cliente contiene:</p>
 <ul class="simple">
-<li><p>Un atributo obligatorio llamado <code class="docutils literal notranslate"><span class="pre">codigo</span></code> que contiene el código del cliente, que siempre consta de tres letras mayúsculas de tres números.</p></li>
-<li><p>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">habitual</span></code> que se usará para saber si es un cliente habitual o no. Acepta valores «true» y «false».</p></li>
-<li><p>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> que indica su compra. Es un entero con valores de entre 0 y 1000.</p></li>
+<li>Un atributo obligatorio llamado <code class="docutils literal notranslate"><span class="pre">codigo</span></code> que contiene el código del cliente, que siempre consta de tres letras mayúsculas de tres números.</li>
+<li>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">habitual</span></code> que se usará para saber si es un cliente habitual o no. Acepta valores «true» y «false».</li>
+<li>Un atributo optativo llamado <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> que indica su compra. Es un entero con valores de entre 0 y 1000.</li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cliente</span> <span class="na">codigo=</span><span class="s">&quot;AAA222&quot;</span> <span class="na">habitual=</span><span class="s">&quot;true&quot;</span> <span class="na">cantidad=</span><span class="s">&quot;1000&quot;</span><span class="nt">&gt;</span>
     Pepe Pérez
@@ -1630,9 +1644,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <p>Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre información incorrecta.</p>
 <p>En concreto tenemos tres datos:</p>
 <ol class="arabic simple">
-<li><p>El CIF, que vamos a presuponer que siempre tiene 8 cifras y al final una letra mayúsculas. Si alguna empresa tiene 7 cifras deberá incluir un 0 extra.</p></li>
-<li><p>El nombre, que puede ser una cadena cualquiera.</p></li>
-<li><p>El plazo, que debería ser un número positivo válido.</p></li>
+<li>El CIF, que vamos a presuponer que siempre tiene 8 cifras y al final una letra mayúsculas. Si alguna empresa tiene 7 cifras deberá incluir un 0 extra.</li>
+<li>El nombre, que puede ser una cadena cualquiera.</li>
+<li>El plazo, que debería ser un número positivo válido.</li>
 </ol>
 <p>Ahora, el fichero anterior no debería ser validado por el validador, pero sí debería serlo un fichero como este.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listaclientes&gt;</span>
@@ -1650,9 +1664,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <p>La solución a los tres problemas indicados antes sería la siguiente:</p>
 <ol class="arabic simple">
-<li><p>El nombre puede ser una cadena cualquiera, por lo que tendrá que seguir siendo de tipo <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>. Eso significa que si alguien introdujese un número en el nombre el fichero seguiría validándose. Por desgracia dicho problema no se puede resolver.</p></li>
-<li><p>El plazo debería ser un número. Le asignaremos un tipo <code class="docutils literal notranslate"><span class="pre">xsd:unsignedInt</span></code>.</p></li>
-<li><p>El CIF es más complejo. Deberemos crear un tipo nuevo y establecer una restricción a los posibles valores que puede tomar.</p></li>
+<li>El nombre puede ser una cadena cualquiera, por lo que tendrá que seguir siendo de tipo <code class="docutils literal notranslate"><span class="pre">xsd:string</span></code>. Eso significa que si alguien introdujese un número en el nombre el fichero seguiría validándose. Por desgracia dicho problema no se puede resolver.</li>
+<li>El plazo debería ser un número. Le asignaremos un tipo <code class="docutils literal notranslate"><span class="pre">xsd:unsignedInt</span></code>.</li>
+<li>El CIF es más complejo. Deberemos crear un tipo nuevo y establecer una restricción a los posibles valores que puede tomar.</li>
 </ol>
 <p>Así, una posible solución sería esta:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -1703,9 +1717,9 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 </div>
 <p>En concreto, todo código tiene la estructura siguiente:</p>
 <ol class="arabic simple">
-<li><p>Primero van tres mayúsculas</p></li>
-<li><p>Despues va exactamente un digito.</p></li>
-<li><p>Por último hay exactamente dos mayúsculas.</p></li>
+<li>Primero van tres mayúsculas</li>
+<li>Despues va exactamente un digito.</li>
+<li>Por último hay exactamente dos mayúsculas.</li>
 </ol>
 <p>Un posible esquema XML sería el siguiente (obsérvese como usamos <code class="docutils literal notranslate"><span class="pre">maxOccurs</span></code> para indicar que el elemento puede repetirse un máximo de «infitas veces»:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
@@ -1785,11 +1799,11 @@ se puede considerar que sea de tipo simple. Se debe usar FORZOSAMENTE un complex
 <h3>Ejercicio: lista de alumnos<a class="headerlink" href="#ejercicio-lista-de-alumnos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se desea construir un esquema para validar listas de alumnos en las que:</p>
 <ul class="simple">
-<li><p>La raíz es <code class="docutils literal notranslate"><span class="pre">listaalumnos</span></code>.</p></li>
-<li><p>Dentro de ella hay uno o más <code class="docutils literal notranslate"><span class="pre">alumno</span></code>. Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene siempre un atributo DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.</p></li>
-<li><p>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y un <code class="docutils literal notranslate"><span class="pre">ap1</span></code> obligatorios.</p></li>
-<li><p>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> puede tener despues del <code class="docutils literal notranslate"><span class="pre">ap1</span></code> un elemento <code class="docutils literal notranslate"><span class="pre">ap2</span></code> y uno <code class="docutils literal notranslate"><span class="pre">edad</span></code>, ambos son optativos.</p></li>
-<li><p>El elemento <code class="docutils literal notranslate"><span class="pre">edad</span></code> debe ser entero y positivo.</p></li>
+<li>La raíz es <code class="docutils literal notranslate"><span class="pre">listaalumnos</span></code>.</li>
+<li>Dentro de ella hay uno o más <code class="docutils literal notranslate"><span class="pre">alumno</span></code>. Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene siempre un atributo DNI que es obligatorio y que tiene una estructura formada por 7 u 8 cifras seguidas de una mayúscula.</li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> tiene un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y un <code class="docutils literal notranslate"><span class="pre">ap1</span></code> obligatorios.</li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">alumno</span></code> puede tener despues del <code class="docutils literal notranslate"><span class="pre">ap1</span></code> un elemento <code class="docutils literal notranslate"><span class="pre">ap2</span></code> y uno <code class="docutils literal notranslate"><span class="pre">edad</span></code>, ambos son optativos.</li>
+<li>El elemento <code class="docutils literal notranslate"><span class="pre">edad</span></code> debe ser entero y positivo.</li>
 </ul>
 <p>(Gracias a Jesús VB por corregir una errata)</p>
 <p>Un ejemplo de fichero:</p>
@@ -2016,10 +2030,10 @@ valide la estructura de tales ficheros:</p>
 <h3>Ejercicio: listas con choice<a class="headerlink" href="#ejercicio-listas-con-choice" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se pide elaborar un esquema que valide un fichero con las restricciones siguientes:</p>
 <ul class="simple">
-<li><p>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">articulos</span></code>. Dicho elemento raíz debe llevar siempre un atributo <code class="docutils literal notranslate"><span class="pre">fechaGeneración</span></code>.</p></li>
-<li><p>Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: <code class="docutils literal notranslate"><span class="pre">monitor</span></code>, <code class="docutils literal notranslate"><span class="pre">teclado</span></code> o <code class="docutils literal notranslate"><span class="pre">raton</span></code>. Cualquiera de los tres elementos puede llevar un atributo <code class="docutils literal notranslate"><span class="pre">codigo</span></code> que tiene siempre la estructura «tres letras, guión, tres letras, guión, tres cifras». Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento <code class="docutils literal notranslate"><span class="pre">descripción</span></code> que contiene texto.</p></li>
-<li><p>Un monitor debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal notranslate"><span class="pre">resolución</span></code> que a su vez debe llevar dentro dos elementos y en este orden <code class="docutils literal notranslate"><span class="pre">ancho</span></code> y <code class="docutils literal notranslate"><span class="pre">alto</span></code>. Tanto <code class="docutils literal notranslate"><span class="pre">ancho</span></code>, como <code class="docutils literal notranslate"><span class="pre">alto</span></code> deben llevar siempre dentro un entero positivo.</p></li>
-<li><p>Un <code class="docutils literal notranslate"><span class="pre">ratón</span></code> debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal notranslate"><span class="pre">peso</span></code> que siempre lleva dentro un entero positivo. Además, el <code class="docutils literal notranslate"><span class="pre">peso</span></code> lleva siempre dentro un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que solo puede valer «g» o «cg».</p></li>
+<li>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">articulos</span></code>. Dicho elemento raíz debe llevar siempre un atributo <code class="docutils literal notranslate"><span class="pre">fechaGeneración</span></code>.</li>
+<li>Dentro de la raíz puede haber uno o varios de cualquiera de los siguientes elementos: <code class="docutils literal notranslate"><span class="pre">monitor</span></code>, <code class="docutils literal notranslate"><span class="pre">teclado</span></code> o <code class="docutils literal notranslate"><span class="pre">raton</span></code>. Cualquiera de los tres elementos puede llevar un atributo <code class="docutils literal notranslate"><span class="pre">codigo</span></code> que tiene siempre la estructura «tres letras, guión, tres letras, guión, tres cifras». Además, cualquiera de los tres debe llevar dentro y en primer lugar un elemento <code class="docutils literal notranslate"><span class="pre">descripción</span></code> que contiene texto.</li>
+<li>Un monitor debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal notranslate"><span class="pre">resolución</span></code> que a su vez debe llevar dentro dos elementos y en este orden <code class="docutils literal notranslate"><span class="pre">ancho</span></code> y <code class="docutils literal notranslate"><span class="pre">alto</span></code>. Tanto <code class="docutils literal notranslate"><span class="pre">ancho</span></code>, como <code class="docutils literal notranslate"><span class="pre">alto</span></code> deben llevar siempre dentro un entero positivo.</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">ratón</span></code> debe llevar (aparte de la descripción que va en primer lugar) un elemento <code class="docutils literal notranslate"><span class="pre">peso</span></code> que siempre lleva dentro un entero positivo. Además, el <code class="docutils literal notranslate"><span class="pre">peso</span></code> lleva siempre dentro un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que solo puede valer «g» o «cg».</li>
 </ul>
 <p>En el fichero siguiente se muestra un ejemplo</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Obligatorio el tener fechaGeneracion--&gt;</span>
@@ -2074,10 +2088,10 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Las reglas son:</p>
 <ol class="arabic simple">
-<li><p>Una lista de productos puede tener dentro muchos productos.</p></li>
-<li><p>Todo producto tiene un «codigo» cuya estructura <em>dos mayúsculas seguidas de un guión seguido de dos o tres cifras</em></p></li>
-<li><p>Todo producto <em>puede tener (optativo)</em> un elemento descripción que es de tipo texto.</p></li>
-<li><p>Todo producto <strong>debe tener</strong> un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0</p></li>
+<li>Una lista de productos puede tener dentro muchos productos.</li>
+<li>Todo producto tiene un «codigo» cuya estructura <em>dos mayúsculas seguidas de un guión seguido de dos o tres cifras</em></li>
+<li>Todo producto <em>puede tener (optativo)</em> un elemento descripción que es de tipo texto.</li>
+<li>Todo producto <strong>debe tener</strong> un elemento peso que debe aceptar decimales pero que nunca puede ser negativo, es decir su valor mínimo es 0</li>
 </ol>
 <p>La solución se muestra a continuación:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
@@ -2146,14 +2160,14 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Las reglas son las siguientes:</p>
 <ol class="arabic simple">
-<li><p>El elemento raíz se llama <code class="docutils literal notranslate"><span class="pre">listacomponentes</span></code>.</p></li>
-<li><p>Dentro de él puede haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">componente</span></code></p></li>
-<li><p>Un componente puede ser una <code class="docutils literal notranslate"><span class="pre">tarjetagrafica</span></code> o un <code class="docutils literal notranslate"><span class="pre">monitor</span></code>.</p></li>
-<li><p>Un componente puede tener un atributo llamado <code class="docutils literal notranslate"><span class="pre">codigo</span></code> cuya estructura es siempre un dígito de 6 cifras.</p></li>
-<li><p>Una tarjeta gráfica siempre tiene dos elementos llamados <code class="docutils literal notranslate"><span class="pre">memoria</span></code> y <code class="docutils literal notranslate"><span class="pre">precio</span></code>.</p></li>
-<li><p>La memoria siempre es una cifra seguido de GB o TB.</p></li>
-<li><p>El tamaño del monitor siempre es un entero positivo.</p></li>
-<li><p>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que solo puede valer «euros» o «dolares» y que se utiliza para saber en qué moneda está el precio.</p></li>
+<li>El elemento raíz se llama <code class="docutils literal notranslate"><span class="pre">listacomponentes</span></code>.</li>
+<li>Dentro de él puede haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">componente</span></code></li>
+<li>Un componente puede ser una <code class="docutils literal notranslate"><span class="pre">tarjetagrafica</span></code> o un <code class="docutils literal notranslate"><span class="pre">monitor</span></code>.</li>
+<li>Un componente puede tener un atributo llamado <code class="docutils literal notranslate"><span class="pre">codigo</span></code> cuya estructura es siempre un dígito de 6 cifras.</li>
+<li>Una tarjeta gráfica siempre tiene dos elementos llamados <code class="docutils literal notranslate"><span class="pre">memoria</span></code> y <code class="docutils literal notranslate"><span class="pre">precio</span></code>.</li>
+<li>La memoria siempre es una cifra seguido de GB o TB.</li>
+<li>El tamaño del monitor siempre es un entero positivo.</li>
+<li>El precio siempre es una cantidad positiva con decimales. El precio siempre lleva un atributo <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que solo puede valer «euros» o «dolares» y que se utiliza para saber en qué moneda está el precio.</li>
 </ol>
 <p>La solución se muestra a continuación:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -2259,10 +2273,10 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Las reglas concretas son estas:</p>
 <ol class="arabic simple">
-<li><p>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;objeto&gt;</span></code> puede haber uno de estos dos elementos hijo: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code> o un elemento <code class="docutils literal notranslate"><span class="pre">&lt;silla&gt;</span></code>.</p></li>
-<li><p>Toda mesa tiene un elemento hijo <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code>. El peso siempre es un decimal positivo con dos cifras decimales.</p></li>
-<li><p>Toda mesa tiene una <code class="docutils literal notranslate"><span class="pre">&lt;superficie&gt;</span></code>. La superficie es un <code class="docutils literal notranslate"><span class="pre">unsignedInt</span></code>. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: <code class="docutils literal notranslate"><span class="pre">m2</span></code> o <code class="docutils literal notranslate"><span class="pre">cm2</span></code>.</p></li>
-<li><p>Toda silla tiene siempre un <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code> y las reglas de ese peso son exactamente las mismas que las reglas de <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code> del elemento <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code></p></li>
+<li>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;objeto&gt;</span></code> puede haber uno de estos dos elementos hijo: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code> o un elemento <code class="docutils literal notranslate"><span class="pre">&lt;silla&gt;</span></code>.</li>
+<li>Toda mesa tiene un elemento hijo <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code>. El peso siempre es un decimal positivo con dos cifras decimales.</li>
+<li>Toda mesa tiene una <code class="docutils literal notranslate"><span class="pre">&lt;superficie&gt;</span></code>. La superficie es un <code class="docutils literal notranslate"><span class="pre">unsignedInt</span></code>. La superficie siempre tiene un atributo que puede ser solo una de estas dos cadenas: <code class="docutils literal notranslate"><span class="pre">m2</span></code> o <code class="docutils literal notranslate"><span class="pre">cm2</span></code>.</li>
+<li>Toda silla tiene siempre un <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code> y las reglas de ese peso son exactamente las mismas que las reglas de <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code> del elemento <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code></li>
 </ol>
 <p>La solución podría descomponerse de la forma siguiente:</p>
 <p>Resolvamos primero el problema de crear un tipo para el elemento <code class="docutils literal notranslate"><span class="pre">&lt;peso&gt;</span></code>.</p>
@@ -2489,12 +2503,12 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Las reglas concretas son las siguientes:</p>
 <ol class="arabic simple">
-<li><p>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;productosfinancieros&gt;</span></code>. Dentro de él debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code>.</p></li>
-<li><p>Un <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> puede ser de tres tipos: <code class="docutils literal notranslate"><span class="pre">&lt;bono&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;futuro&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;acciones&gt;</span></code>.</p></li>
-<li><p>Todos los productos tienen siempre un elemento hijo llamado <code class="docutils literal notranslate"><span class="pre">&lt;beneficio&gt;</span></code> que puede ser un número con dos decimales (puede ser positivo o negativo).</p></li>
-<li><p>Todo <code class="docutils literal notranslate"><span class="pre">&lt;bono&gt;</span></code> puede tener dentro un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;valoractual&gt;</span></code> que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales. El elemento <code class="docutils literal notranslate"><span class="pre">&lt;valoractual&gt;</span></code> deberá llevar dentro un atributo llamado <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que solo puede tomar los valores <code class="docutils literal notranslate"><span class="pre">dolares</span></code>, <code class="docutils literal notranslate"><span class="pre">euros</span></code> o <code class="docutils literal notranslate"><span class="pre">yenes</span></code>.</p></li>
-<li><p>Todo <code class="docutils literal notranslate"><span class="pre">&lt;futuro&gt;</span></code> tiene un hijo llamado <code class="docutils literal notranslate"><span class="pre">&lt;elemento&gt;</span></code> que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado <code class="docutils literal notranslate"><span class="pre">idioma</span></code> que indica el idioma en el que está escrita la cadena.</p></li>
-<li><p>Las acciones siempre tienen un elemento <code class="docutils literal notranslate"><span class="pre">&lt;empresa&gt;</span></code> que indica el nombre de la empresa y un atributo llamado <code class="docutils literal notranslate"><span class="pre">país</span></code> que indica de donde es la empresa. De momento queremos limitarnos a los países <code class="docutils literal notranslate"><span class="pre">usa</span></code>, <code class="docutils literal notranslate"><span class="pre">alemania</span></code>, <code class="docutils literal notranslate"><span class="pre">japon</span></code> y <code class="docutils literal notranslate"><span class="pre">espana</span></code>.</p></li>
+<li>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;productosfinancieros&gt;</span></code>. Dentro de él debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code>.</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> puede ser de tres tipos: <code class="docutils literal notranslate"><span class="pre">&lt;bono&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;futuro&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;acciones&gt;</span></code>.</li>
+<li>Todos los productos tienen siempre un elemento hijo llamado <code class="docutils literal notranslate"><span class="pre">&lt;beneficio&gt;</span></code> que puede ser un número con dos decimales (puede ser positivo o negativo).</li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">&lt;bono&gt;</span></code> puede tener dentro un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;valoractual&gt;</span></code> que contiene un valor decimal que puede ser positivo o negativo y tener o no decimales. El elemento <code class="docutils literal notranslate"><span class="pre">&lt;valoractual&gt;</span></code> deberá llevar dentro un atributo llamado <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que solo puede tomar los valores <code class="docutils literal notranslate"><span class="pre">dolares</span></code>, <code class="docutils literal notranslate"><span class="pre">euros</span></code> o <code class="docutils literal notranslate"><span class="pre">yenes</span></code>.</li>
+<li>Todo <code class="docutils literal notranslate"><span class="pre">&lt;futuro&gt;</span></code> tiene un hijo llamado <code class="docutils literal notranslate"><span class="pre">&lt;elemento&gt;</span></code> que puede contener dentro cadenas de cualquier tipo. Para saber en qué idioma está la cadena se usa un atributo llamado <code class="docutils literal notranslate"><span class="pre">idioma</span></code> que indica el idioma en el que está escrita la cadena.</li>
+<li>Las acciones siempre tienen un elemento <code class="docutils literal notranslate"><span class="pre">&lt;empresa&gt;</span></code> que indica el nombre de la empresa y un atributo llamado <code class="docutils literal notranslate"><span class="pre">país</span></code> que indica de donde es la empresa. De momento queremos limitarnos a los países <code class="docutils literal notranslate"><span class="pre">usa</span></code>, <code class="docutils literal notranslate"><span class="pre">alemania</span></code>, <code class="docutils literal notranslate"><span class="pre">japon</span></code> y <code class="docutils literal notranslate"><span class="pre">espana</span></code>.</li>
 </ol>
 <p>Recuérdese que siempre que no nos digan nada, se supone que un elemento o atributo es <strong>obligatorio</strong>. Si algo es optativo nos dirán «puede tener dentro», «puede contener», «puede aparecer», etc…</p>
 <p>Una posible solución sería esta:</p>
@@ -2635,31 +2649,31 @@ valide la estructura de tales ficheros:</p>
 </div>
 <p>Las reglas son las siguientes:</p>
 <ul class="simple">
-<li><p>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code>.</p></li>
-<li><p>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code> debe haber una <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code> o un <code class="docutils literal notranslate"><span class="pre">&lt;ordenador&gt;</span></code>.</p></li>
-<li><p>Dentro de mesa puede haber (o no) un primer elemento <code class="docutils literal notranslate"><span class="pre">&lt;tipo&gt;</span></code>. Despues debe haber un elemento <code class="docutils literal notranslate"><span class="pre">&lt;localizacion&gt;</span></code>.</p></li>
-<li><p>Dentro de ordenador puede haber 3 elementos optativos pero que de aparecer lo hacen en el siguiente orden.</p></li>
-<li><p>Primero un elemento <code class="docutils literal notranslate"><span class="pre">&lt;procesador&gt;</span></code> que puede llevar un atributo <code class="docutils literal notranslate"><span class="pre">fabricante</span></code>.</p></li>
-<li><p>Despues un elemento <code class="docutils literal notranslate"><span class="pre">&lt;memoria&gt;</span></code> que debe llevar obligatoriamente un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code>.</p></li>
-<li><p>Despues un elemento <code class="docutils literal notranslate"><span class="pre">&lt;discoduro&gt;</span></code>.</p></li>
+<li>El elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code>.</li>
+<li>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code> debe haber una <code class="docutils literal notranslate"><span class="pre">&lt;mesa&gt;</span></code> o un <code class="docutils literal notranslate"><span class="pre">&lt;ordenador&gt;</span></code>.</li>
+<li>Dentro de mesa puede haber (o no) un primer elemento <code class="docutils literal notranslate"><span class="pre">&lt;tipo&gt;</span></code>. Despues debe haber un elemento <code class="docutils literal notranslate"><span class="pre">&lt;localizacion&gt;</span></code>.</li>
+<li>Dentro de ordenador puede haber 3 elementos optativos pero que de aparecer lo hacen en el siguiente orden.</li>
+<li>Primero un elemento <code class="docutils literal notranslate"><span class="pre">&lt;procesador&gt;</span></code> que puede llevar un atributo <code class="docutils literal notranslate"><span class="pre">fabricante</span></code>.</li>
+<li>Despues un elemento <code class="docutils literal notranslate"><span class="pre">&lt;memoria&gt;</span></code> que debe llevar obligatoriamente un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code>.</li>
+<li>Despues un elemento <code class="docutils literal notranslate"><span class="pre">&lt;discoduro&gt;</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="ejercicio-tipo-examen-iii">
 <h2>Ejercicio tipo examen (III)<a class="headerlink" href="#ejercicio-tipo-examen-iii" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:</p>
 <ul class="simple">
-<li><p>El elemento raíz se llama <code class="docutils literal notranslate"><span class="pre">portes</span></code>.</p></li>
-<li><p>Dentro de <code class="docutils literal notranslate"><span class="pre">portes</span></code>, puede haber uno o más de los elementos <code class="docutils literal notranslate"><span class="pre">recepcion</span></code> y <code class="docutils literal notranslate"><span class="pre">entrega</span></code>. Su orden puede ser aleatorio y el número de repeticiones también.</p></li>
-<li><p>Un <code class="docutils literal notranslate"><span class="pre">recepcion</span></code> lleva dentro tres elementos: un elemento <code class="docutils literal notranslate"><span class="pre">producto</span></code>, un elemento <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> y un elemento <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code>.</p></li>
-<li><p>El <code class="docutils literal notranslate"><span class="pre">producto</span></code> es obligatorio y lleva dentro texto.</p></li>
-<li><p>El elemento <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.</p></li>
-<li><p>El <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code> lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code> es optativo.</p></li>
-<li><p>Una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal notranslate"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal notranslate"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">T2</span></code> o <code class="docutils literal notranslate"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal notranslate"><span class="pre">transportista</span></code>  hay siempre un elemento <code class="docutils literal notranslate"><span class="pre">distancia</span></code> . La <code class="docutils literal notranslate"><span class="pre">distancia</span></code> es un numero mayor de 0. Es necesario que la <code class="docutils literal notranslate"><span class="pre">distancia</span></code>  tenga un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que indica la unidad en forma de cadena. Además una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> lleva un atributo <code class="docutils literal notranslate"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</p></li>
+<li>El elemento raíz se llama <code class="docutils literal notranslate"><span class="pre">portes</span></code>.</li>
+<li>Dentro de <code class="docutils literal notranslate"><span class="pre">portes</span></code>, puede haber uno o más de los elementos <code class="docutils literal notranslate"><span class="pre">recepcion</span></code> y <code class="docutils literal notranslate"><span class="pre">entrega</span></code>. Su orden puede ser aleatorio y el número de repeticiones también.</li>
+<li>Un <code class="docutils literal notranslate"><span class="pre">recepcion</span></code> lleva dentro tres elementos: un elemento <code class="docutils literal notranslate"><span class="pre">producto</span></code>, un elemento <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> y un elemento <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code>.</li>
+<li>El <code class="docutils literal notranslate"><span class="pre">producto</span></code> es obligatorio y lleva dentro texto.</li>
+<li>El elemento <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> (obligatorio) lleva dentro un número con decimales pero que debe ser siempre positivo.</li>
+<li>El <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code> lleva dentro un texto con la estructura: 3 cifras, guión, 3 letras (mayúsculas o minúsculas). Este elemento <code class="docutils literal notranslate"><span class="pre">codigoreceptor</span></code> es optativo.</li>
+<li>Una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> tiene siempre un atributo <code class="docutils literal notranslate"><span class="pre">receptor</span></code> que lleva dentro un texto. Aparte de eso, una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> tiene siempre un elemento <code class="docutils literal notranslate"><span class="pre">transportista</span></code> que solo puede valer <code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">T2</span></code> o <code class="docutils literal notranslate"><span class="pre">T3</span></code>. Despues de el elemento <code class="docutils literal notranslate"><span class="pre">transportista</span></code>  hay siempre un elemento <code class="docutils literal notranslate"><span class="pre">distancia</span></code> . La <code class="docutils literal notranslate"><span class="pre">distancia</span></code> es un numero mayor de 0. Es necesario que la <code class="docutils literal notranslate"><span class="pre">distancia</span></code>  tenga un atributo <code class="docutils literal notranslate"><span class="pre">unidad</span></code> que indica la unidad en forma de cadena. Además una <code class="docutils literal notranslate"><span class="pre">entrega</span></code> lleva un atributo <code class="docutils literal notranslate"><span class="pre">coste</span></code> que siempre es un entero mayor de 0.</li>
 </ul>
 <p>A continuación se muestra un fichero de ejemplo</p>
 <div class="admonition warning">
-<p class="admonition-title">Advertencia</p>
-<p>Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO</p>
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO</p>
 </div>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;portes&gt;</span>
     <span class="nt">&lt;recepcion&gt;</span>
@@ -2684,8 +2698,8 @@ valide la estructura de tales ficheros:</p>
 <h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El examen de este tema tendrá lugar</p>
 <ul class="simple">
-<li><p>Para DAM el viernes, 16 de marzo de 2018</p></li>
-<li><p>Para ASIR el martes, 13 de marzo de 2018</p></li>
+<li>Para DAM el viernes, 16 de marzo de 2018</li>
+<li>Para ASIR el martes, 13 de marzo de 2018</li>
 </ul>
 </div>
 </div>
@@ -2820,11 +2834,13 @@ valide la estructura de tales ficheros:</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
+  <h3>Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -2845,7 +2861,7 @@ valide la estructura de tales ficheros:</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
