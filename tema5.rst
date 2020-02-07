@@ -285,7 +285,7 @@ La DTD tiene esta estructura
 Esto significa lo siguiente:
 
 * Se establece el tipo de documento ``listaclientes`` que consta de una serie de elementos (dentro del corchete)
-* Un elemento ``listaclientes	`` consta de uno o más clientes. El signo ``+`` significa "uno o más".
+* Un elemento ``listaclientes`` consta de uno o más clientes. El signo ``+`` significa "uno o más".
 * Un cliente tiene un nombre y un cif. También puede tener un elemento ``diasentrega`` que puede o no aparecer (el signo ``?`` significa "0 o 1 veces").
 * Un ``nombre`` no tiene más elementos dentro, solo caracteres (``#PCDATA``)
 * Un ``CIF`` solo consta de caracteres.
