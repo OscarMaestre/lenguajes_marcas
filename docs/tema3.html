@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>CSS &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -42,9 +40,9 @@
 <p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS. A menudo se dice que un CSS es una «hoja de estilo».</p>
 <p>Hay tres mecanismos básicos para añadir CSS a un HTML</p>
 <ol class="arabic simple">
-<li>Usar CSS en las etiquetas HTML del cuerpo de la página.</li>
-<li>Usar CSS en la cabecera del HTML.</li>
-<li>Usar CSS cargando un archivo externo.</li>
+<li><p>Usar CSS en las etiquetas HTML del cuerpo de la página.</p></li>
+<li><p>Usar CSS en la cabecera del HTML.</p></li>
+<li><p>Usar CSS cargando un archivo externo.</p></li>
 </ol>
 <p>En el  primer caso se haría de esta manera:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color:red&quot;</span><span class="p">&gt;</span>
@@ -80,18 +78,18 @@ Este párrafo lleva fondo rojo
 </div>
 <p>Debe recordarse lo siguiente:</p>
 <ul class="simple">
-<li>Escribir CSS para cada etiqueta es <strong>MUY POCO PRÁCTICO</strong> y difícil de cambiar en el futuro.</li>
-<li>Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.</li>
-<li>Lo habitual es definirlo todo en estilos externos.</li>
+<li><p>Escribir CSS para cada etiqueta es <strong>MUY POCO PRÁCTICO</strong> y difícil de cambiar en el futuro.</p></li>
+<li><p>Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.</p></li>
+<li><p>Lo habitual es definirlo todo en estilos externos.</p></li>
 </ul>
 </div>
 <div class="section" id="recordatorio-el-modelo-dom">
 <h2>Recordatorio: el modelo DOM<a class="headerlink" href="#recordatorio-el-modelo-dom" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se debe recordar que</p>
 <ul class="simple">
-<li>Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.</li>
-<li>Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.</li>
-<li>Se dice que los nodos del árbol tienen «relaciones de parentesco» y por tanto diremos que «un nodo es hermano de otro» o que «un nodo es padre o hijo de otro nodo».</li>
+<li><p>Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.</p></li>
+<li><p>Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.</p></li>
+<li><p>Se dice que los nodos del árbol tienen «relaciones de parentesco» y por tanto diremos que «un nodo es hermano de otro» o que «un nodo es padre o hijo de otro nodo».</p></li>
 </ul>
 </div>
 <div class="section" id="sintaxis">
@@ -105,9 +103,9 @@ Este párrafo lleva fondo rojo
 </div>
 <p>En las reglas tenemos tres cosas:</p>
 <ol class="arabic simple">
-<li>Los selectores. En este caso queremos modificar como van a quedar todos los <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code></li>
-<li>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</li>
-<li>Los valores. En este caso se pone el valor <code class="docutils literal notranslate"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">background-color</span></code> y el valor <code class="docutils literal notranslate"><span class="pre">white</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">color</span></code></li>
+<li><p>Los selectores. En este caso queremos modificar como van a quedar todos los <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code></p></li>
+<li><p>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</p></li>
+<li><p>Los valores. En este caso se pone el valor <code class="docutils literal notranslate"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">background-color</span></code> y el valor <code class="docutils literal notranslate"><span class="pre">white</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
 </ol>
 <p>En el siguiente CSS se muestran los principales selectores.</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">{</span> <span class="c">/*Selecciona TODOS los h1 y les pone fondo azul*/</span>
@@ -281,43 +279,43 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <h2>Pseudo-clases<a class="headerlink" href="#pseudo-clases" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Como ya se ha indicado selecciona elementos en algún estado especial. Hay muchas pero algunas de las principales son:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">p:hover</span></code> : selector que se aplica cuando se pasa el ratón por encima del párrafo.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:first-of-type</span></code> : selector que se aplica al primero de los párrafos.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:first-child</span></code> : selector que se aplica un párrafo si es el primero de los hijos.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:last-child</span></code> : selector que se aplica al último párrafo ignorando al resto de hermanos.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:nth-child(4)</span></code> : selector que se aplica sobre el cuarto párrafo.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:nth-child(even)</span></code> : selector que se aplica a párrafos impares.</li>
-<li><code class="docutils literal notranslate"><span class="pre">p:nth-child(odd)</span></code> : selector que se aplica a párrafos pares.</li>
-<li><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</li>
-<li><code class="docutils literal notranslate"><span class="pre">a:visited</span></code> : selector para enlaces ya visitados.</li>
-<li><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</li>
-<li><code class="docutils literal notranslate"><span class="pre">input:checked</span></code> : selector para controles (radios, checkboxes) que estén marcados.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:hover</span></code> : selector que se aplica cuando se pasa el ratón por encima del párrafo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:first-of-type</span></code> : selector que se aplica al primero de los párrafos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:first-child</span></code> : selector que se aplica un párrafo si es el primero de los hijos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:last-child</span></code> : selector que se aplica al último párrafo ignorando al resto de hermanos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(4)</span></code> : selector que se aplica sobre el cuarto párrafo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(even)</span></code> : selector que se aplica a párrafos impares.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(odd)</span></code> : selector que se aplica a párrafos pares.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:visited</span></code> : selector para enlaces ya visitados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input:checked</span></code> : selector para controles (radios, checkboxes) que estén marcados.</p></li>
 </ul>
 </div>
 <div class="section" id="fondos-e-imagenes">
 <h2>Fondos e imágenes<a class="headerlink" href="#fondos-e-imagenes" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Las principales propiedades son:</p>
 <ul class="simple">
-<li>La propiedad <code class="docutils literal notranslate"><span class="pre">background-image</span></code> permite cargar una imagen de fondo: P. ej: <code class="docutils literal notranslate"><span class="pre">background-image:</span> <span class="pre">url(&quot;../img/low-res/cork-board.png&quot;);</span></code></li>
-<li>La propiedad <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> permite controlar como se repite la imagen, puede tomar los valores <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code> , <code class="docutils literal notranslate"><span class="pre">repeat-x</span></code> y <code class="docutils literal notranslate"><span class="pre">repeat-y</span></code> .</li>
-<li>La propiedad <code class="docutils literal notranslate"><span class="pre">background-position</span></code> controla donde se posicionará la imagen, puede tomar varios valores como <code class="docutils literal notranslate"><span class="pre">top</span></code> , <code class="docutils literal notranslate"><span class="pre">bottom</span></code> , <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code> y <code class="docutils literal notranslate"><span class="pre">center</span></code>, así como combinaciones. Por ejemplo <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">center</span></code> o <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">right</span></code> .</li>
-<li>La propiedad <code class="docutils literal notranslate"><span class="pre">background-size</span></code> permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.</li>
-<li>La propiedad <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> puede ponerse a <code class="docutils literal notranslate"><span class="pre">fixed</span></code> para controlar como hace «scroll» la imagen.</li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-image</span></code> permite cargar una imagen de fondo: P. ej: <code class="docutils literal notranslate"><span class="pre">background-image:</span> <span class="pre">url(&quot;../img/low-res/cork-board.png&quot;);</span></code></p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> permite controlar como se repite la imagen, puede tomar los valores <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code> , <code class="docutils literal notranslate"><span class="pre">repeat-x</span></code> y <code class="docutils literal notranslate"><span class="pre">repeat-y</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-position</span></code> controla donde se posicionará la imagen, puede tomar varios valores como <code class="docutils literal notranslate"><span class="pre">top</span></code> , <code class="docutils literal notranslate"><span class="pre">bottom</span></code> , <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code> y <code class="docutils literal notranslate"><span class="pre">center</span></code>, así como combinaciones. Por ejemplo <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">center</span></code> o <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">right</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-size</span></code> permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> puede ponerse a <code class="docutils literal notranslate"><span class="pre">fixed</span></code> para controlar como hace «scroll» la imagen.</p></li>
 </ul>
 </div>
 <div class="section" id="bordes">
 <h2>Bordes<a class="headerlink" href="#bordes" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">border-style</span></code>: permite cambiar distintos estilos de borde como <code class="docutils literal notranslate"><span class="pre">solid</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, <code class="docutils literal notranslate"><span class="pre">inset</span></code>, <code class="docutils literal notranslate"><span class="pre">outset</span></code>. Por ejemplo podemos cambiar un borde con <code class="docutils literal notranslate"><span class="pre">border-style:</span> <span class="pre">double;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">border-color</span></code> permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor <code class="docutils literal notranslate"><span class="pre">rgb</span></code>, color en hexadecimal, etc…).</li>
-<li><code class="docutils literal notranslate"><span class="pre">border-width</span></code> permite cambiar la anchura del borde.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-style</span></code>: permite cambiar distintos estilos de borde como <code class="docutils literal notranslate"><span class="pre">solid</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, <code class="docutils literal notranslate"><span class="pre">inset</span></code>, <code class="docutils literal notranslate"><span class="pre">outset</span></code>. Por ejemplo podemos cambiar un borde con <code class="docutils literal notranslate"><span class="pre">border-style:</span> <span class="pre">double;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-color</span></code> permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor <code class="docutils literal notranslate"><span class="pre">rgb</span></code>, color en hexadecimal, etc…).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-width</span></code> permite cambiar la anchura del borde.</p></li>
 </ul>
 <p>Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">border-bottom-style</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">border-bottom-color</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">border-bottom-width</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-style</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-width</span></code></p></li>
 </ul>
 <p>Pudiendo reemplazar <code class="docutils literal notranslate"><span class="pre">bottom</span></code> con otras posiciones como <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code> o <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p>
 <p>Aparte de eso se puede usar la propiedad <code class="docutils literal notranslate"><span class="pre">border-radius:</span> <span class="pre">2px</span></code> para aplicar un redondeo en las esquinas de los bordes.</p>
@@ -326,17 +324,17 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <h2>Texto<a class="headerlink" href="#texto" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Podemos modificar el alineamiento usando la propiedad <code class="docutils literal notranslate"><span class="pre">text-align</span></code> . Esta propiedad puede tomar distintos valores en función de la posición que queramos que adopten los márgenes del texto.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">left;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">right;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">center;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">justify;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">left;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">right;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">center;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">justify;</span></code></p></li>
 </ul>
 <p>Se pueden cambiar los tipos de letra usando <code class="docutils literal notranslate"><span class="pre">font-family</span></code> , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como «Google Fonts» que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta &lt;link&gt; en todos los HTML y una propiedad <code class="docutils literal notranslate"><span class="pre">font-family</span></code> a nuestro CSS).</p>
 <p>Los textos pueden llevar diversas decoraciones especificadas con la propiedad <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code>. Por ejemplo :</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline;</span></code> para subrayar.</li>
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code> para tachar.</li>
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">none;</span></code> que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline;</span></code> para subrayar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code> para tachar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">none;</span></code> que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.</p></li>
 </ul>
 <p>Se puede modificar el espacio entre letras usando <code class="docutils literal notranslate"><span class="pre">letter-spacing:2px</span></code> (usar con cuidado), modificar el espacio entre palabras con <code class="docutils literal notranslate"><span class="pre">word-spacing</span></code>  o modificar el espacio entre líneas con <code class="docutils literal notranslate"><span class="pre">line-height</span></code> .</p>
 <p>Se pueden añadir sombras a los textos usando <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code>. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos <code class="docutils literal notranslate"><span class="pre">text-shadow:2px</span> <span class="pre">3px</span> <span class="pre">blue</span></code> apreciaremos una sombra azul en un texto.</p>
@@ -347,46 +345,45 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <p>Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque <strong>no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.</strong></p>
 <p>Funcionan de manera parecida a los bordes. Todo «outline» tiene un estilo, un grosor y un color que se especifican con:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">outline-style</span></code> que puede ser <code class="docutils literal notranslate"><span class="pre">solid</span></code> , <code class="docutils literal notranslate"><span class="pre">dotted</span></code> , etc…</li>
-<li><code class="docutils literal notranslate"><span class="pre">outline-width</span></code> que puede ir en medidas o en valores como <code class="docutils literal notranslate"><span class="pre">thin</span></code> , <code class="docutils literal notranslate"><span class="pre">medium</span></code> o <code class="docutils literal notranslate"><span class="pre">thick</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">outline-color</span></code></li>
-<li>Existe una última propiedad que permite añadir un espacio extra entre nuestro <code class="docutils literal notranslate"><span class="pre">outline</span></code> y nuestro <code class="docutils literal notranslate"><span class="pre">border</span></code> . Esta propiedad se llama <code class="docutils literal notranslate"><span class="pre">outline-offset</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-style</span></code> que puede ser <code class="docutils literal notranslate"><span class="pre">solid</span></code> , <code class="docutils literal notranslate"><span class="pre">dotted</span></code> , etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-width</span></code> que puede ir en medidas o en valores como <code class="docutils literal notranslate"><span class="pre">thin</span></code> , <code class="docutils literal notranslate"><span class="pre">medium</span></code> o <code class="docutils literal notranslate"><span class="pre">thick</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-color</span></code></p></li>
+<li><p>Existe una última propiedad que permite añadir un espacio extra entre nuestro <code class="docutils literal notranslate"><span class="pre">outline</span></code> y nuestro <code class="docutils literal notranslate"><span class="pre">border</span></code> . Esta propiedad se llama <code class="docutils literal notranslate"><span class="pre">outline-offset</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="tablas">
 <h2>Tablas<a class="headerlink" href="#tablas" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se pueden modificar muchas propiedades de las tablas:</p>
 <ul class="simple">
-<li>Se pueden poner bordes a elementos <code class="docutils literal notranslate"><span class="pre">table</span></code> y <code class="docutils literal notranslate"><span class="pre">td</span></code> con cosas como <code class="docutils literal notranslate"><span class="pre">border:</span> <span class="pre">solid</span> <span class="pre">1px</span> <span class="pre">black</span></code>.</li>
-<li>Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos <code class="docutils literal notranslate"><span class="pre">border-collapse:</span> <span class="pre">collapse</span></code></li>
-<li>Se pueden cambiar propiedades filas pares o impares con <code class="docutils literal notranslate"><span class="pre">tr:nth-child(even)</span></code> o <code class="docutils literal notranslate"><span class="pre">tr:nth-child(odd)</span></code></li>
-<li>Se puede cambiar un elemento <em>solo cuando el ratón pase por encima de él con</em> cosas como <code class="docutils literal notranslate"><span class="pre">tr:hover{background-color:red;}</span></code></li>
+<li><p>Se pueden poner bordes a elementos <code class="docutils literal notranslate"><span class="pre">table</span></code> y <code class="docutils literal notranslate"><span class="pre">td</span></code> con cosas como <code class="docutils literal notranslate"><span class="pre">border:</span> <span class="pre">solid</span> <span class="pre">1px</span> <span class="pre">black</span></code>.</p></li>
+<li><p>Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos <code class="docutils literal notranslate"><span class="pre">border-collapse:</span> <span class="pre">collapse</span></code></p></li>
+<li><p>Se pueden cambiar propiedades filas pares o impares con <code class="docutils literal notranslate"><span class="pre">tr:nth-child(even)</span></code> o <code class="docutils literal notranslate"><span class="pre">tr:nth-child(odd)</span></code></p></li>
+<li><p>Se puede cambiar un elemento <em>solo cuando el ratón pase por encima de él con</em> cosas como <code class="docutils literal notranslate"><span class="pre">tr:hover{background-color:red;}</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
 <ul class="simple">
-<li>&lt;span&gt; se usa para no romper el flujo, es decir en principio todo va en la misma línea</li>
-<li>&lt;div&gt; sí rompe el flujo, por lo que va a una línea distinta</li>
+<li><p>&lt;span&gt; se usa para no romper el flujo, es decir en principio todo va en la misma línea</p></li>
+<li><p>&lt;div&gt; sí rompe el flujo, por lo que va a una línea distinta</p></li>
 </ul>
 <p>En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, recordemos que se deben utilizar los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code></p>
 <ul class="simple">
-<li>El <code class="docutils literal notranslate"><span class="pre">class</span></code> es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.</li>
-<li>El <code class="docutils literal notranslate"><span class="pre">id</span></code> es un atributo que debe tener distinto valor en todos los casos, no se puede repetir.</li>
+<li><p>El <code class="docutils literal notranslate"><span class="pre">class</span></code> es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.</p></li>
+<li><p>El <code class="docutils literal notranslate"><span class="pre">id</span></code> es un atributo que debe tener distinto valor en todos los casos, no se puede repetir.</p></li>
 </ul>
 <p>Para posicionar correctamente un span o un div, se deben tener en cuenta
 varias cosas:</p>
 <ul class="simple">
-<li>Todos deberían llevar un id o un class (o las dos cosas)</li>
-<li><dl class="first docutils">
-<dt>El posicionamiento tiene varias posibilidades:</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">fixed</span></code>: la caja va en cierta posición y no se mueve de allí</li>
-<li><code class="docutils literal notranslate"><span class="pre">absolute</span></code>: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.</li>
-<li><code class="docutils literal notranslate"><span class="pre">relative</span></code>: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador</li>
-<li><code class="docutils literal notranslate"><span class="pre">static</span></code>: dar permiso al navegador para que coloque la caja donde corresponda</li>
-<li><code class="docutils literal notranslate"><span class="pre">float</span></code>: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor</li>
+<li><p>Todos deberían llevar un id o un class (o las dos cosas)</p></li>
+<li><dl class="simple">
+<dt>El posicionamiento tiene varias posibilidades:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fixed</span></code>: la caja va en cierta posición y no se mueve de allí</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">absolute</span></code>: la caja va en cierta posición inicial y puede desaparecer al hacer scroll.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">relative</span></code>: podemos indicar una posición para indicar el desplazamiento relativo con respecto a la posición que le correspondería según el navegador</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">static</span></code>: dar permiso al navegador para que coloque la caja donde corresponda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code>: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor</p></li>
 </ul>
 </dd>
 </dl>
@@ -396,9 +393,9 @@ varias cosas:</p>
 <h3>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crea una página con la siguiente estructura.</p>
 <ul class="simple">
-<li>En la parte superior debe haber dos cajas. Una de ellas, a la izquierda, ocupa el 33% y contiene el lema. La otra, a la derecha, contiene enlaces y ocupa el 66%.</li>
-<li>En la parte central 3 cajas. La de la izquierda contiene publicidad y ocupa el 25%. La central tiene el contenido y ocupa el 50%, la de la derecha tiene más publicidad y ocupa el 25%.</li>
-<li>En la parte de abajo hay una barra <strong>que no se mueve nunca</strong> y que ocupa el 100%. Contiene el mensaje de copyright de la empresa.</li>
+<li><p>En la parte superior debe haber dos cajas. Una de ellas, a la izquierda, ocupa el 33% y contiene el lema. La otra, a la derecha, contiene enlaces y ocupa el 66%.</p></li>
+<li><p>En la parte central 3 cajas. La de la izquierda contiene publicidad y ocupa el 25%. La central tiene el contenido y ocupa el 50%, la de la derecha tiene más publicidad y ocupa el 25%.</p></li>
+<li><p>En la parte de abajo hay una barra <strong>que no se mueve nunca</strong> y que ocupa el 100%. Contiene el mensaje de copyright de la empresa.</p></li>
 </ul>
 <p>Un posible HTML sería el siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -463,10 +460,10 @@ varias cosas:</p>
 <h3>Ejercicio propuesto (II)<a class="headerlink" href="#ejercicio-propuesto-ii" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear una página con la siguiente estructura:</p>
 <ul class="simple">
-<li>En la parte izquierda hay una barra de enlaces. Ocupa el 25% y está <strong>fija</strong>.</li>
-<li>En la zona superior hay una capa con el lema de la empresa. Ocupa el 75% y no se debe ver tapada por los enlaces.</li>
-<li>En la zona central hay dos capas. Una de ellas es el contenido y ocupa aproximadamente el 50%. A su lado hay una capa con publicidad que ocupa el 20%.</li>
-<li>En la zona inferior hay una capa con el copyright de la empresa. Ocupa el 50% y se ve junto al margen derecho de la página.</li>
+<li><p>En la parte izquierda hay una barra de enlaces. Ocupa el 25% y está <strong>fija</strong>.</p></li>
+<li><p>En la zona superior hay una capa con el lema de la empresa. Ocupa el 75% y no se debe ver tapada por los enlaces.</p></li>
+<li><p>En la zona central hay dos capas. Una de ellas es el contenido y ocupa aproximadamente el 50%. A su lado hay una capa con publicidad que ocupa el 20%.</p></li>
+<li><p>En la zona inferior hay una capa con el copyright de la empresa. Ocupa el 50% y se ve junto al margen derecho de la página.</p></li>
 </ul>
 <p>Un posible HTML sería el siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -542,13 +539,13 @@ Publicidad publicidad
 <h3>Ejercicio de maquetación<a class="headerlink" href="#ejercicio-de-maquetacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear una página con la siguiente estructura:</p>
 <ul class="simple">
-<li>En el margen izquierdo debe aparecer una barra de enlaces que ocupe el 20 o 25% de la anchura de la página y no debe desaparecer aunque el usuario se mueva.</li>
-<li>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</li>
-<li>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</li>
+<li><p>En el margen izquierdo debe aparecer una barra de enlaces que ocupe el 20 o 25% de la anchura de la página y no debe desaparecer aunque el usuario se mueva.</p></li>
+<li><p>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</p></li>
+<li><p>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</p></li>
 </ul>
 <div class="figure align-center" id="id5" style="width: 50%">
 <img alt="_images/maquetacion1.png" src="_images/maquetacion1.png" />
-<p class="caption"><span class="caption-text">Resultado final</span></p>
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="section" id="html">
 <h4>HTML<a class="headerlink" href="#html" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -839,9 +836,9 @@ Publicidad publicidad
 <p>En el posicionamiento <code class="docutils literal notranslate"><span class="pre">float</span></code> solo indicaremos la anchura de una caja. El resto de los elementos se encajará automáticamente en el espacio restante dejado por dicha caja.</p>
 <p>Deben recordarse algunas cosas:</p>
 <ul class="simple">
-<li>Un elemento <code class="docutils literal notranslate"><span class="pre">float</span></code> lo que hace es <em>dar permiso a otros elementos</em> para que ocupen el espacio que le ha sobrado.</li>
-<li>Cuando se usan varios elementos <code class="docutils literal notranslate"><span class="pre">float</span></code> es posible que otros elementos tengan que hacer <code class="docutils literal notranslate"><span class="pre">clear:both;</span></code> para asegurarnos de que dejen de aprovechar el espacio sobrante.</li>
-<li>Es muy frecuente que haya que «crear contenedores extra» para conseguir colocar cajas utilizando elementos <code class="docutils literal notranslate"><span class="pre">float</span></code>.</li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">float</span></code> lo que hace es <em>dar permiso a otros elementos</em> para que ocupen el espacio que le ha sobrado.</p></li>
+<li><p>Cuando se usan varios elementos <code class="docutils literal notranslate"><span class="pre">float</span></code> es posible que otros elementos tengan que hacer <code class="docutils literal notranslate"><span class="pre">clear:both;</span></code> para asegurarnos de que dejen de aprovechar el espacio sobrante.</p></li>
+<li><p>Es muy frecuente que haya que «crear contenedores extra» para conseguir colocar cajas utilizando elementos <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
 </ul>
 <p>Por ejemplo, supongamos el siguiente HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
@@ -879,8 +876,8 @@ Publicidad publicidad
 </div>
 <p>Y ahora haríamos lo siguiente:</p>
 <ul class="simple">
-<li>El contenedor 1 flotará hacia la derecha. Dentro de él la caja 1 flotará a la izquierda y la caja 2 flotará a la derecha.</li>
-<li>El contenedor 2 flotará hacia la izquierda. Dentro de él la caja 4 flotará hacia la izquierda y la caja 3 hacia la derecha.</li>
+<li><p>El contenedor 1 flotará hacia la derecha. Dentro de él la caja 1 flotará a la izquierda y la caja 2 flotará a la derecha.</p></li>
+<li><p>El contenedor 2 flotará hacia la izquierda. Dentro de él la caja 4 flotará hacia la izquierda y la caja 3 hacia la derecha.</p></li>
 </ul>
 <p>Probemos el siguiente CSS:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span>
@@ -904,7 +901,7 @@ Publicidad publicidad
 <p>El resultado será:</p>
 <div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/cuatro_cajas_con_floats.png" src="_images/cuatro_cajas_con_floats.png" />
-<p class="caption"><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span></p>
+<p class="caption"><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="section" id="ejercicio-de-maquetacion-con-floats-i">
 <h3>Ejercicio de maquetación con floats (I)<a class="headerlink" href="#ejercicio-de-maquetacion-con-floats-i" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -973,19 +970,19 @@ Publicidad publicidad
 </div>
 <p>Conseguir que quede maquetado de la siguiente manera usando adecuadamente los elementos float. Se debe tener en cuenta lo siguientes</p>
 <ul class="simple">
-<li>La cabecera ocupa un 50% y está desplazada a la derecha.</li>
-<li>La navegación ocupa un 15% y está desplazada a la izquierda.</li>
-<li>El contenido ocupa un 80%.</li>
-<li>La caja 1 ocupa el 100%.</li>
-<li>La caja 2 un 50%, la caja3 un 25% y la caja 4 un 25%.</li>
-<li>La publicidad ocupa un 33% y está desplazada a la derecha.</li>
-<li>El copyright ocupa un 66% y está desplazado a la izquierda.</li>
-<li>Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.</li>
-<li>Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.</li>
+<li><p>La cabecera ocupa un 50% y está desplazada a la derecha.</p></li>
+<li><p>La navegación ocupa un 15% y está desplazada a la izquierda.</p></li>
+<li><p>El contenido ocupa un 80%.</p></li>
+<li><p>La caja 1 ocupa el 100%.</p></li>
+<li><p>La caja 2 un 50%, la caja3 un 25% y la caja 4 un 25%.</p></li>
+<li><p>La publicidad ocupa un 33% y está desplazada a la derecha.</p></li>
+<li><p>El copyright ocupa un 66% y está desplazado a la izquierda.</p></li>
+<li><p>Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.</p></li>
+<li><p>Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.</p></li>
 </ul>
 <div class="figure align-center" id="id7" style="width: 50%">
 <img alt="Resultado final" src="_images/maqueta5.png" />
-<p class="caption"><span class="caption-text">Resultado final</span></p>
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Una posible solución sería esta:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="p">{</span>
@@ -1046,14 +1043,14 @@ Publicidad publicidad
 <h2>Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:</p>
 <ol class="arabic simple">
-<li>Un elemento (por ejemplo un <code class="docutils literal notranslate"><span class="pre">div</span></code>) se puede dividir en forma de tabla</li>
-<li>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</li>
-<li>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</li>
+<li><p>Un elemento (por ejemplo un <code class="docutils literal notranslate"><span class="pre">div</span></code>) se puede dividir en forma de tabla</p></li>
+<li><p>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</p></li>
+<li><p>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</p></li>
 </ol>
 <p>Para poder utilizarlo necesitaremos:</p>
 <ul class="simple">
-<li>Un contenedor principal (en concreto un <code class="docutils literal notranslate"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</li>
-<li>Un conjunto de elementos (normalmente otros <code class="docutils literal notranslate"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</li>
+<li><p>Un contenedor principal (en concreto un <code class="docutils literal notranslate"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</p></li>
+<li><p>Un conjunto de elementos (normalmente otros <code class="docutils literal notranslate"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</p></li>
 </ul>
 <p>Supongamos el siguiente HTML</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
@@ -1069,7 +1066,7 @@ Publicidad publicidad
 <p>Si no le hacemos nada se verá lo siguiente:</p>
 <div class="figure align-center" id="id8" style="width: 50%">
 <img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
-<p class="caption"><span class="caption-text">Grid sin maquetar</span></p>
+<p class="caption"><span class="caption-text">Grid sin maquetar</span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">celda</span><span class="p">{</span>
@@ -1080,28 +1077,28 @@ Publicidad publicidad
 <p>El resultado queda así:</p>
 <div class="figure align-center" id="id9" style="width: 50%">
 <img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
-<p class="caption"><span class="caption-text">Celdas con borde</span></p>
+<p class="caption"><span class="caption-text">Celdas con borde</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Supongamos que queremos que el <code class="docutils literal notranslate"><span class="pre">div</span></code> cuyo class es <code class="docutils literal notranslate"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <div class="figure align-center" id="id10" style="width: 50%">
 <img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
-<p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
+<p class="caption"><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:</p>
 <div class="figure align-center" id="id11" style="width: 50%">
 <img alt="_images/resultado_5_por_5.png" src="_images/resultado_5_por_5.png" />
-<p class="caption"><span class="caption-text">Tabla de 5 x 5</span></p>
+<p class="caption"><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Analizando lo que se pide se observa que:</p>
 <ul class="simple">
-<li>La «rejilla invisible» ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)</li>
-<li>La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 <strong>que sabemos que no existe, sino que es el límite de la tabla</strong>.</li>
-<li>La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.</li>
-<li>La celda C va de la fila 1 a la 6 y está solo en la columna 1.</li>
-<li>La D va de la fila 3 a la 6 y solo ocupa la 5.</li>
-<li>La E va de la fila 1 a la 3 y de la columna 2 a la 4.</li>
-<li>La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.</li>
+<li><p>La «rejilla invisible» ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)</p></li>
+<li><p>La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 <strong>que sabemos que no existe, sino que es el límite de la tabla</strong>.</p></li>
+<li><p>La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.</p></li>
+<li><p>La celda C va de la fila 1 a la 6 y está solo en la columna 1.</p></li>
+<li><p>La D va de la fila 3 a la 6 y solo ocupa la 5.</p></li>
+<li><p>La E va de la fila 1 a la 3 y de la columna 2 a la 4.</p></li>
+<li><p>La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.</p></li>
 </ul>
 <p>Además añadiremos algún color a tales «celdas» para que podamos ver el área que ocupan.</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span>
@@ -1185,23 +1182,23 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 </div>
 <p>Este CSS puede hacer dos cosas distintas:</p>
 <ul class="simple">
-<li>Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.</li>
-<li>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</li>
+<li><p>Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.</p></li>
+<li><p>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</p></li>
 </ul>
 <p>A continuación se muestra una captura de lo que muestra el navegador:</p>
 <div class="figure align-center" id="id12" style="width: 50%">
 <img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
-<p class="caption"><span class="caption-text">HTML mostrado en pantalla</span></p>
+<p class="caption"><span class="caption-text">HTML mostrado en pantalla</span><a class="headerlink" href="#id12" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
 <div class="figure align-center" id="id13" style="width: 50%">
 <img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
-<p class="caption"><span class="caption-text">HTML para imprimir</span></p>
+<p class="caption"><span class="caption-text">HTML para imprimir</span><a class="headerlink" href="#id13" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Uno de los usos más comunes de las <em>media queries</em> es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.</p>
 <ul class="simple">
-<li>Cuando la resolución sea de 800 px o más haremos que <code class="docutils literal notranslate"><span class="pre">caja1</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja2</span></code> estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.</li>
-<li>Cuando la resolución sea de 799px o menos <code class="docutils literal notranslate"><span class="pre">caja1</span></code>, <code class="docutils literal notranslate"><span class="pre">caja2</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja3</span></code> se mostrarán una encima de otra pero con un margen entre ellas de 40px.</li>
+<li><p>Cuando la resolución sea de 800 px o más haremos que <code class="docutils literal notranslate"><span class="pre">caja1</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja2</span></code> estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.</p></li>
+<li><p>Cuando la resolución sea de 799px o menos <code class="docutils literal notranslate"><span class="pre">caja1</span></code>, <code class="docutils literal notranslate"><span class="pre">caja2</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja3</span></code> se mostrarán una encima de otra pero con un margen entre ellas de 40px.</p></li>
 </ul>
 <p>Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son <code class="docutils literal notranslate"><span class="pre">min-width</span></code> y <code class="docutils literal notranslate"><span class="pre">max-width</span></code>. Veamos como se usan para conseguir lo que nos piden:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* Si estamos en una pantalla y la anchura mínima que podemos</span>
@@ -1237,18 +1234,18 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <p>El resultado de este CSS en una pantalla grande es:</p>
 <div class="figure align-center" id="id14" style="width: 50%">
 <img alt="_images/mq_anchura_grande.png" src="_images/mq_anchura_grande.png" />
-<p class="caption"><span class="caption-text">Página para una resolución grande</span></p>
+<p class="caption"><span class="caption-text">Página para una resolución grande</span><a class="headerlink" href="#id14" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):</p>
 <div class="figure align-center" id="id15" style="width: 50%">
 <img alt="_images/mq_anchura_pequena.png" src="_images/mq_anchura_pequena.png" />
-<p class="caption"><span class="caption-text">Página para una resolución pequeña</span></p>
+<p class="caption"><span class="caption-text">Página para una resolución pequeña</span><a class="headerlink" href="#id15" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Hay diversas cosas que podemos comprobar:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">min-width:</span> <span class="pre">100px</span> <span class="pre">``</span> <span class="pre">o</span> <span class="pre">``max-width:900px</span></code> para ver las anchuras mínimas o máximas que nos ofrece un dispositivo.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">screen</span></code> , <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">print</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media:</span> <span class="pre">handheld</span></code> para comprobar si el HTML se va a mostrar en una pantalla, se va a imprimir o se muestra un dispositivo portátil como móvil o tablet. Hay otros <code class="docutils literal notranslate"><span class="pre">&#64;media</span></code> como <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">braille</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">tv</span></code>, pero se usan menos.</li>
-<li><code class="docutils literal notranslate"><span class="pre">orientation:</span>&#160; <span class="pre">portrait</span></code> u <code class="docutils literal notranslate"><span class="pre">orientation:</span> <span class="pre">landscape</span></code> para saber si la pantalla está en horizontal o en vertical.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min-width:</span> <span class="pre">100px</span> <span class="pre">``</span> <span class="pre">o</span> <span class="pre">``max-width:900px</span></code> para ver las anchuras mínimas o máximas que nos ofrece un dispositivo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">screen</span></code> , <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">print</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media:</span> <span class="pre">handheld</span></code> para comprobar si el HTML se va a mostrar en una pantalla, se va a imprimir o se muestra un dispositivo portátil como móvil o tablet. Hay otros <code class="docutils literal notranslate"><span class="pre">&#64;media</span></code> como <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">braille</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">tv</span></code>, pero se usan menos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orientation:</span>&#160; <span class="pre">portrait</span></code> u <code class="docutils literal notranslate"><span class="pre">orientation:</span> <span class="pre">landscape</span></code> para saber si la pantalla está en horizontal o en vertical.</p></li>
 </ul>
 </div>
 <div class="section" id="gestion-de-espacios">
@@ -1259,10 +1256,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <h2>Colores<a class="headerlink" href="#colores" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los colores en CSS se pueden especificar de varias maneras:</p>
 <ul class="simple">
-<li>Por nombre: <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code></li>
-<li>Mediante <code class="docutils literal notranslate"><span class="pre">rgb(rojo,</span> <span class="pre">verde,</span> <span class="pre">azul</span></code>, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, <code class="docutils literal notranslate"><span class="pre">rgb(0,0,0)</span></code> es negro y <code class="docutils literal notranslate"><span class="pre">rgb(255,255,255)</span></code> es blanco.</li>
-<li>Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.</li>
-<li>Desde hace poco se pueden indicar también con <code class="docutils literal notranslate"><span class="pre">hsl(num,</span> <span class="pre">num,</span> <span class="pre">num)</span></code></li>
+<li><p>Por nombre: <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">yellow</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code></p></li>
+<li><p>Mediante <code class="docutils literal notranslate"><span class="pre">rgb(rojo,</span> <span class="pre">verde,</span> <span class="pre">azul</span></code>, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, <code class="docutils literal notranslate"><span class="pre">rgb(0,0,0)</span></code> es negro y <code class="docutils literal notranslate"><span class="pre">rgb(255,255,255)</span></code> es blanco.</p></li>
+<li><p>Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.</p></li>
+<li><p>Desde hace poco se pueden indicar también con <code class="docutils literal notranslate"><span class="pre">hsl(num,</span> <span class="pre">num,</span> <span class="pre">num)</span></code></p></li>
 </ul>
 <p>Se pueden encontrar en Internet listas de colores denominados «seguros» (buscando por «web safe colors») que indican nombres de color que se ven igual en los distintos navegadores.</p>
 </div>
@@ -1270,9 +1267,9 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <h2>Tipografías<a class="headerlink" href="#tipografias" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En tipografía se habla de dos términos distintos: el «typeface» y la «font».</p>
 <ul class="simple">
-<li>Hay tipos «Serif», que llevan «rabito».</li>
-<li>Hay tipos «Sans-serif» que no lo llevan</li>
-<li>Hay tipos monoespaciados</li>
+<li><p>Hay tipos «Serif», que llevan «rabito».</p></li>
+<li><p>Hay tipos «Sans-serif» que no lo llevan</p></li>
+<li><p>Hay tipos monoespaciados</p></li>
 </ul>
 <p>Lo más relevante, es que cuando usamos <code class="docutils literal notranslate"><span class="pre">font-family:</span> <span class="pre">&quot;Arial&quot;;</span></code>, el navegador puede decidir poner otro tipo de letra de la misma familia.</p>
 <p>Se pueden indicar varios tipos de letra por orden de preferencia.</p>
@@ -1287,32 +1284,32 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <p>Se pueden usar otras propiedades para cambiar
 el aspecto del texto como estas:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">overline</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">overline</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="medidas">
 <h2>Medidas<a class="headerlink" href="#medidas" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1cm</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1in</span></code>: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.</li>
-<li><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1px</span></code>: muy dependiente de la resolución</li>
-<li><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1%</span></code>: es la más apropiada al modificar elementos div en pantalla.</li>
-<li><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra «m».</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1cm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1in</span></code>: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1px</span></code>: muy dependiente de la resolución</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1%</span></code>: es la más apropiada al modificar elementos div en pantalla.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra «m».</p></li>
 </ul>
 </div>
 <div class="section" id="ejercicios-comentados-sobre-selectores">
 <h2>Ejercicios comentados sobre selectores.<a class="headerlink" href="#ejercicios-comentados-sobre-selectores" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas</p>
 <ul class="simple">
-<li>p#destacado</li>
-<li>p.destacado</li>
-<li>p.destacado, span#id1</li>
-<li>p.destacado &gt; li.elemento_enumeracion</li>
-<li>p.destacado &gt; .elemento_numeracion</li>
-<li>.destacado &gt; #id1</li>
+<li><p>p#destacado</p></li>
+<li><p>p.destacado</p></li>
+<li><p>p.destacado, span#id1</p></li>
+<li><p>p.destacado &gt; li.elemento_enumeracion</p></li>
+<li><p>p.destacado &gt; .elemento_numeracion</p></li>
+<li><p>.destacado &gt; #id1</p></li>
 </ul>
 <p>Supongamos que tenemos un archivo HTML como este:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -1378,7 +1375,7 @@ el aspecto del texto como estas:</p>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal notranslate"><span class="pre">id</span></code> sea <code class="docutils literal notranslate"><span class="pre">destacado</span></code></p>
 <div class="figure align-center" id="id16" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
-<p class="caption"><span class="caption-text">Resultado</span></p>
+<p class="caption"><span class="caption-text">Resultado</span><a class="headerlink" href="#id16" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -1386,19 +1383,19 @@ el aspecto del texto como estas:</p>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal notranslate"><span class="pre">class</span></code> <em>destacado</em></p>
 <div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
-<p class="caption"><span class="caption-text">Resultado</span></p>
+<p class="caption"><span class="caption-text">Resultado</span><a class="headerlink" href="#id17" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="solucion-p-destacado-span-id1">
 <h3>Solución <code class="docutils literal notranslate"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code><a class="headerlink" href="#solucion-p-destacado-span-id1" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal notranslate"><span class="pre">class</span></code> <em>destacado</em> y también al <code class="docutils literal notranslate"><span class="pre">span</span></code> cuyo <code class="docutils literal notranslate"><span class="pre">id</span></code> sea <code class="docutils literal notranslate"><span class="pre">id1</span></code></p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
 <div class="figure align-center" id="id18" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
-<p class="caption"><span class="caption-text">Resultado</span></p>
+<p class="caption"><span class="caption-text">Resultado</span><a class="headerlink" href="#id18" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="solucion-p-destacado-li-elemento-enumeracion">
@@ -1415,7 +1412,7 @@ el aspecto del texto como estas:</p>
 <p>Ahora el resultado es este</p>
 <div class="figure align-center" id="id19" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
-<p class="caption"><span class="caption-text">Resultado</span></p>
+<p class="caption"><span class="caption-text">Resultado</span><a class="headerlink" href="#id19" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>¿Por qué ahora sí funciona?</p>
 </div>
@@ -1476,14 +1473,14 @@ el aspecto del texto como estas:</p>
 </div>
 <div class="figure align-center" id="id20" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
-<p class="caption"><span class="caption-text">Ejemplo del grid</span></p>
+<p class="caption"><span class="caption-text">Ejemplo del grid</span><a class="headerlink" href="#id20" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:</p>
 <ul class="simple">
-<li>col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «muy pequeña/extrasmall» (menos de 768)</li>
-<li>col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «pequeña/small» (más de 768 y menos de 992)</li>
-<li>col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «media» (unos 992 px)</li>
-<li>col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «grande/large» (unos 992 px)</li>
+<li><p>col-xs-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «muy pequeña/extrasmall» (menos de 768)</p></li>
+<li><p>col-sm-3: ocupa 3 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «pequeña/small» (más de 768 y menos de 992)</p></li>
+<li><p>col-md-6: ocupa 6 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «media» (unos 992 px)</p></li>
+<li><p>col-lg-9: ocupa 9 de las doce columnas de un dispositivo que se ha dividido en 12 pero tiene una anchura «grande/large» (unos 992 px)</p></li>
 </ul>
 </div>
 <div class="section" id="tipografia">
@@ -1497,7 +1494,7 @@ el aspecto del texto como estas:</p>
 </div>
 <div class="figure align-center" id="id21" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
-<p class="caption"><span class="caption-text">Párrafo destacado</span></p>
+<p class="caption"><span class="caption-text">Párrafo destacado</span><a class="headerlink" href="#id21" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Se puede destacar texto usando lo siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Texto subrayado en amarillo<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
@@ -1509,14 +1506,14 @@ el aspecto del texto como estas:</p>
 <h2>Preprocesadores CSS: <code class="docutils literal notranslate"><span class="pre">less</span></code><a class="headerlink" href="#preprocesadores-css-less" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio «cortar y pegar» definiciones CSS. Para resolver esto han surgido unos programas llamado «preprocesadores» que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:</p>
 <ul class="simple">
-<li>En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.</li>
-<li>El diseñador escribe su hoja de estilos usando este «lenguaje ampliado».</li>
-<li>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></li>
+<li><p>En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.</p></li>
+<li><p>El diseñador escribe su hoja de estilos usando este «lenguaje ampliado».</p></li>
+<li><p>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></p></li>
 </ul>
 <p>El flujo de trabajo se muestra en la figura siguiente:</p>
 <div class="figure align-center" id="id22" style="width: 50%">
 <img alt="_images/diagramaless.png" src="_images/diagramaless.png" />
-<p class="caption"><span class="caption-text">Resultado final</span></p>
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.</p>
 <div class="section" id="variables-less">
@@ -1577,22 +1574,22 @@ header{
 <h2>Ejercicio responsive I<a class="headerlink" href="#ejercicio-responsive-i" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos <code class="docutils literal notranslate"><span class="pre">id</span></code> serán A, B y C. El comportamiento de las cajas será el siguiente:</p>
 <ul class="simple">
-<li>Si la página se visualiza en una pantalla de 400px o menos las 3 cajas se limitarán a mostrarse una encima de la otra.</li>
-<li>Si la pantalla tiene un tamaño de entre 401px y 800px las cajas A y B se mostrarán al principio, cubriendo cada una una anchura del 50% (quizá haya que ajustar a un porcentaje menor). La caja C se mostrará debajo de A y B.</li>
-<li>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</li>
+<li><p>Si la página se visualiza en una pantalla de 400px o menos las 3 cajas se limitarán a mostrarse una encima de la otra.</p></li>
+<li><p>Si la pantalla tiene un tamaño de entre 401px y 800px las cajas A y B se mostrarán al principio, cubriendo cada una una anchura del 50% (quizá haya que ajustar a un porcentaje menor). La caja C se mostrará debajo de A y B.</p></li>
+<li><p>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</p></li>
 </ul>
 <p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
 <div class="figure align-center" id="id23" style="width: 50%">
 <img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span></p>
+<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="figure align-center" id="id24" style="width: 50%">
 <img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span></p>
+<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="figure align-center" id="id25" style="width: 50%">
 <img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span></p>
+<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Un posible HTML que resolviera esto sería el siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1674,17 +1671,17 @@ header{
 <h2>Ejercicio responsive II<a class="headerlink" href="#ejercicio-responsive-ii" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 4 cajas cuyos <code class="docutils literal notranslate"><span class="pre">id</span></code> serán A, B,  C y D. El comportamiento de las cajas será el siguiente:</p>
 <ul class="simple">
-<li>Para todos los casos hay una rejilla contenedora de 4 filas (todas de la misma altura) y 3 columnas (de anchos 20%, 20% y 60%).</li>
-<li>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</li>
-<li>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</li>
+<li><p>Para todos los casos hay una rejilla contenedora de 4 filas (todas de la misma altura) y 3 columnas (de anchos 20%, 20% y 60%).</p></li>
+<li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</p></li>
+<li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</p></li>
 </ul>
 <div class="figure align-center" id="id26" style="width: 50%">
 <img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
-<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span></p>
+<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="figure align-center" id="id27" style="width: 50%">
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
-<p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span></p>
+<p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id27" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>A continuación se muestra el HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
@@ -1877,13 +1874,11 @@ header{
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Búsqueda rápida</h3>
+  <h3 id="searchlabel">Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Ir a" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -1904,7 +1899,7 @@ header{
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

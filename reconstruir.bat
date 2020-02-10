@@ -8,6 +8,6 @@ cd ..
 cd ..
 copy _build\latex\*.pdf pdf
 git add docs
-call git commit -a -m"Reconstruccion"
+call git commit -a -m"Reconstruccion"	
 call git push
 

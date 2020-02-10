@@ -215,17 +215,17 @@ Calcular la mediana del vector
 
 .. code-block:: java
 
-		if (v.length%2==0) {
-            var pos1=v.length/2
-            var pos2=pos1-1
-            var elem1=v[pos1]
-            var elem2=v[pos2]
-            var mediana=(elem1+elem2)/2
-        } else {
-            var pos_central=(v.length-1)/2
-            var mediana=v[pos_central]
-        }
-        doc	ument.write("La mediana es:"+mediana)	
+    if (v.length%2==0) {
+        var pos1=v.length/2
+        var pos2=pos1-1
+        var elem1=v[pos1]
+        var elem2=v[pos2]
+        var mediana=(elem1+elem2)/2
+    } else {
+        var pos_central=(v.length-1)/2
+        var mediana=v[pos_central]
+    }
+    document.write("La mediana es:"+mediana)	
 	
 Funciones
 =========
