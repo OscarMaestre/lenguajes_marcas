@@ -9,19 +9,49 @@
 \usepackage[utf8]{inputenc}
 \ifdefined\DeclareUnicodeCharacter
 % support both utf8 and utf8x syntaxes
-\edef\sphinxdqmaybe{\ifdefined\DeclareUnicodeCharacterAsOptional\string"\fi}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe00A0}{\nobreakspace}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2500}{\sphinxunichar{2500}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2502}{\sphinxunichar{2502}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2514}{\sphinxunichar{2514}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe251C}{\sphinxunichar{251C}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2572}{\textbackslash}
+  \ifdefined\DeclareUnicodeCharacterAsOptional
+    \def\sphinxDUC#1{\DeclareUnicodeCharacter{"#1}}
+  \else
+    \let\sphinxDUC\DeclareUnicodeCharacter
+  \fi
+  \sphinxDUC{00A0}{\nobreakspace}
+  \sphinxDUC{2500}{\sphinxunichar{2500}}
+  \sphinxDUC{2502}{\sphinxunichar{2502}}
+  \sphinxDUC{2514}{\sphinxunichar{2514}}
+  \sphinxDUC{251C}{\sphinxunichar{251C}}
+  \sphinxDUC{2572}{\textbackslash}
 \fi
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amstext}
 \usepackage{babel}
+
+
+
 \usepackage{times}
+\expandafter\ifx\csname T@LGR\endcsname\relax
+\else
+% LGR was declared as font encoding
+  \substitutefont{LGR}{\rmdefault}{cmr}
+  \substitutefont{LGR}{\sfdefault}{cmss}
+  \substitutefont{LGR}{\ttdefault}{cmtt}
+\fi
+\expandafter\ifx\csname T@X2\endcsname\relax
+  \expandafter\ifx\csname T@T2A\endcsname\relax
+  \else
+  % T2A was declared as font encoding
+    \substitutefont{T2A}{\rmdefault}{cmr}
+    \substitutefont{T2A}{\sfdefault}{cmss}
+    \substitutefont{T2A}{\ttdefault}{cmtt}
+  \fi
+\else
+% X2 was declared as font encoding
+  \substitutefont{X2}{\rmdefault}{cmr}
+  \substitutefont{X2}{\sfdefault}{cmss}
+  \substitutefont{X2}{\ttdefault}{cmtt}
+\fi
+
+
 \usepackage[Sonny]{fncychap}
 \ChNameVar{\Large\normalfont\sffamily}
 \ChTitleVar{\Large\normalfont\sffamily}
@@ -37,24 +67,13 @@
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
 
-\addto\captionsspanish{\renewcommand{\figurename}{Figura}}
-\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
-\addto\captionsspanish{\renewcommand{\literalblockname}{Lista}}
-
-\addto\captionsspanish{\renewcommand{\literalblockcontinuedname}{proviene de la página anterior}}
-\addto\captionsspanish{\renewcommand{\literalblockcontinuesname}{continué en la próxima página}}
-\addto\captionsspanish{\renewcommand{\sphinxnonalphabeticalgroupname}{Non-alphabetical}}
-\addto\captionsspanish{\renewcommand{\sphinxsymbolsname}{Símbolos}}
-\addto\captionsspanish{\renewcommand{\sphinxnumbersname}{Numbers}}
-
-\addto\extrasspanish{\def\pageautorefname{página}}
-
+\usepackage{sphinxmessages}
 \setcounter{tocdepth}{2}
 
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{07 de febrero de 2020}
+\date{10 de febrero de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -123,9 +142,7 @@ Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio p
 
 \subsection{Como configurar un servidor en casa}
 \label{\detokenize{tema1:como-configurar-un-servidor-en-casa}}\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)
 
@@ -192,9 +209,7 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 
 \section{Organismos de regulación}
 \label{\detokenize{tema1:organismos-de-regulacion}}\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 La Internation Standards Organization emite estándares para la documentación.
 
@@ -1678,9 +1693,7 @@ El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a 
 
 Hay tres mecanismos básicos para añadir CSS a un HTML
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Usar CSS en las etiquetas HTML del cuerpo de la página.
 
@@ -1773,9 +1786,7 @@ CSS funciona mediante reglas, de las cuales se muestra un ejemplo a continuació
 
 En las reglas tenemos tres cosas:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Los selectores. En este caso queremos modificar como van a quedar todos los \sphinxcode{\sphinxupquote{\textless{}h1\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}h3\textgreater{}}}
 
@@ -2957,9 +2968,7 @@ Por ejemplo, supongamos que tenemos el siguiente fichero.
 \label{\detokenize{tema3:maquetacion-avanzada-con-grid-layouts}}
 La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Un elemento (por ejemplo un \sphinxcode{\sphinxupquote{div}}) se puede dividir en forma de tabla
 
@@ -4032,7 +4041,7 @@ En estos bucles hay que poner la inicialización, la condición de final y la ac
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{let} \PYG{n+nx}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{\PYGZlt{}}\PYG{n+nx}{vector\PYGZus{}numeros}\PYG{p}{.}\PYG{n+nx}{length}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)}\PYG{p}{\PYGZob{}}
-        \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}br/\PYGZgt{}\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}br/\PYGZgt{}\PYGZdq{}}\PYG{p}{)}
 \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}En la posición \PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{i}\PYG{p}{)}
 \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{write} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} está el número \PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{vector\PYGZus{}numeros}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{)}
 \PYG{p}{\PYGZcb{}}
@@ -4137,7 +4146,7 @@ Crear un programa que calcule la desviación media del vector de números.
 Calcular la mediana del vector
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-        \PYG{k}{if} \PYG{o}{(}\PYG{n}{v}\PYG{o}{.}\PYG{n+na}{length}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{2}\PYG{o}{=}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+\PYG{k}{if} \PYG{o}{(}\PYG{n}{v}\PYG{o}{.}\PYG{n+na}{length}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{2}\PYG{o}{=}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{o}{)} \PYG{o}{\PYGZob{}}
     \PYG{n}{var} \PYG{n}{pos1}\PYG{o}{=}\PYG{n}{v}\PYG{o}{.}\PYG{n+na}{length}\PYG{o}{/}\PYG{l+m+mi}{2}
     \PYG{n}{var} \PYG{n}{pos2}\PYG{o}{=}\PYG{n}{pos1}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
     \PYG{n}{var} \PYG{n}{elem1}\PYG{o}{=}\PYG{n}{v}\PYG{o}{[}\PYG{n}{pos1}\PYG{o}{]}
@@ -4147,7 +4156,7 @@ Calcular la mediana del vector
     \PYG{n}{var} \PYG{n}{pos\PYGZus{}central}\PYG{o}{=}\PYG{o}{(}\PYG{n}{v}\PYG{o}{.}\PYG{n+na}{length}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{)}\PYG{o}{/}\PYG{l+m+mi}{2}
     \PYG{n}{var} \PYG{n}{mediana}\PYG{o}{=}\PYG{n}{v}\PYG{o}{[}\PYG{n}{pos\PYGZus{}central}\PYG{o}{]}
 \PYG{o}{\PYGZcb{}}
-\PYG{n}{doc}     \PYG{n}{ument}\PYG{o}{.}\PYG{n+na}{write}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}La mediana es:\PYGZdq{}}\PYG{o}{+}\PYG{n}{mediana}\PYG{o}{)}
+\PYG{n}{document}\PYG{o}{.}\PYG{n+na}{write}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}La mediana es:\PYGZdq{}}\PYG{o}{+}\PYG{n}{mediana}\PYG{o}{)}
 \end{sphinxVerbatim}
 
 
@@ -6025,9 +6034,7 @@ En este caso, el problema es que hay más de un elemento raíz.
 
 En general, podemos asumir que un documento puede estar en uno de estos estados que de peor a mejor podríamos indicar así:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Mal formado (lo peor)
 
@@ -7323,9 +7330,7 @@ Un posible esquema sería el siguiente:
 
 ¿Qué contiene este fichero?
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 En primer lugar se indica que este fichero va a usar unas etiquetas ya definidas en un espacio de nombres (o XML Namespace, de ahí \sphinxcode{\sphinxupquote{xmlns}}). Esa definición se hace en el espacio de nombres que aparece en la URL. Nuestro validador no descargará nada, esa URL es oficial y todos los validadores la conocen. Las etiquetas de ese espacio de nombres van a usar un prefijo que en este caso será \sphinxcode{\sphinxupquote{xsd}}. Nótese que el prefijo puede ser como queramos (podría ser «abcd» o «zztop»), pero la costumbre es usar \sphinxcode{\sphinxupquote{xsd}}.
 
@@ -7411,9 +7416,7 @@ La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como
 \label{\detokenize{tema5:derivaciones}}
 Prácticamente en cualquier esquema XML crearemos tipos nuevos (por establecer un símil es como si programásemos clases Java). Todos nuestros tipos tienen que heredar de otros tipos pero a la hora de «heredar» tenemos más posibilidades que en Java (dondo solo tenemos el «extends»). En concreto podemos heredar de 4 formas:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Poniendo restricciones (\sphinxcode{\sphinxupquote{restriction}}). Consiste en tomar un tipo y crear otro nuevo en el que no se puede poner cualquier valor.
 
@@ -7580,9 +7583,7 @@ Por otro lado se puede hacer herencia ampliando cosas (extensión) o reduciendo 
 
 Se deduce por tanto que no podemos aplicar todas las «herencias» a todos los tipos:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Los tipos simples no pueden tener atributos ni subelementos, por lo tanto \sphinxstylestrong{les podremos aplicar restricciones pero nunca la extensión}.
 
@@ -7836,9 +7837,7 @@ El elemento \sphinxcode{\sphinxupquote{código}} debe llevar un atributo \sphinx
 \label{\detokenize{tema5:solucion-a-los-codigos-y-sedes}}
 Se nos piden dos cosas:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Restringir un tipo básico, en este caso el \sphinxcode{\sphinxupquote{string}}
 
@@ -8029,9 +8028,7 @@ Ahora ampliaremos el XML Schema del fichero anterior para que nadie suministre i
 
 En concreto tenemos tres datos:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 El CIF, que vamos a presuponer que siempre tiene 8 cifras y al final una letra mayúsculas. Si alguna empresa tiene 7 cifras deberá incluir un 0 extra.
 
@@ -8061,9 +8058,7 @@ Ahora, el fichero anterior no debería ser validado por el validador, pero sí d
 
 La solución a los tres problemas indicados antes sería la siguiente:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 El nombre puede ser una cadena cualquiera, por lo que tendrá que seguir siendo de tipo \sphinxcode{\sphinxupquote{xsd:string}}. Eso significa que si alguien introdujese un número en el nombre el fichero seguiría validándose. Por desgracia dicho problema no se puede resolver.
 
@@ -8128,9 +8123,7 @@ Se nos pide crear un esquema que permita validar un fichero como el siguiente:
 
 En concreto, todo código tiene la estructura siguiente:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Primero van tres mayúsculas
 
@@ -8553,9 +8546,7 @@ Se pide validar correctamente algo como esto:
 
 Las reglas son:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Una lista de productos puede tener dentro muchos productos.
 
@@ -8641,9 +8632,7 @@ Validar un fichero como este:
 
 Las reglas son las siguientes:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 El elemento raíz se llama \sphinxcode{\sphinxupquote{listacomponentes}}.
 
@@ -8778,9 +8767,7 @@ Varios administradores necesitan intercambiar información sobre inventario de m
 
 Las reglas concretas son estas:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Dentro de \sphinxcode{\sphinxupquote{\textless{}objeto\textgreater{}}} puede haber uno de estos dos elementos hijo: un elemento \sphinxcode{\sphinxupquote{\textless{}mesa\textgreater{}}} o un elemento \sphinxcode{\sphinxupquote{\textless{}silla\textgreater{}}}.
 
@@ -9032,9 +9019,7 @@ Se necesita crear un esquema que controle la correcta sintaxis de ficheros con e
 
 Las reglas concretas son las siguientes:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 El elemento raíz es \sphinxcode{\sphinxupquote{\textless{}productosfinancieros\textgreater{}}}. Dentro de él debe haber uno o más elementos \sphinxcode{\sphinxupquote{\textless{}producto\textgreater{}}}.
 
@@ -11496,9 +11481,7 @@ Encontrar todos las divisas cuya ciudad de procedencia sea «Madrid».
 
 \section{Ejercicios para preparar examen}
 \label{\detokenize{tema6:ejercicios-para-preparar-examen}}\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Indicar cuantas letras tienen un tipo de interés inferior al 3\% e indicar para cada una de ellas el país emisor.
 
@@ -11628,9 +11611,7 @@ Todo canal debe tener, al menos un título, un enlace base (la dirección del pr
 
 Resumiendo los puntos más importantes:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Usar como elemento raíz \sphinxcode{\sphinxupquote{rss}}.
 
@@ -12913,9 +12894,7 @@ Procesar la información hoy en día es muy difícil, por lo que la informática
 \label{\detokenize{tema8:niveles-en-la-empresa}}
 Toda empresa se puede ver desde tres puntos de vista temporales distintos
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Nivel estratégico: en este nivel están las personas o elementos que tienen un punto de vista más global y más largo plazo (normalmente plazos de varios años).
 
@@ -12945,9 +12924,7 @@ ERP o Enterprise Resource Planning o sistemas de planificación de recursos corp
 
 Los ERP han ganado mucho auge con el tiempo, ya que pueden hacer operaciones muy sofisticadas, entre ellas:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Optimización de procesos: implica resolver complejos problemas matemáticos que con una herramienta informática se resuelven al instante.
 
@@ -17789,9 +17766,7 @@ Dado el siguiente fichero XML
 
 Conseguir lo siguiente:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Mostrar en un HTML con lista numerada los títulos de los libros con algún autor nacido despues de 1900.
 
@@ -17824,9 +17799,7 @@ Mostrar en un HTML con lista numerada los títulos de los libros con algún auto
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \setcounter{enumi}{1}
 \item {} 
 Mostrar en un HTML la lista de los autores ordenada por orden alfabético inverso.
@@ -17855,9 +17828,7 @@ Mostrar en un HTML la lista de los autores ordenada por orden alfabético invers
 \PYG{n+nt}{\PYGZlt{}/xsl:stylesheet\PYGZgt{}}
 \end{sphinxVerbatim}
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \setcounter{enumi}{2}
 \item {} 
 Mostrar el nombre de los autores nacidos despues del año 1700.
@@ -17964,9 +17935,7 @@ Una empresa utiliza el siguiente XML para intercambiar información entre bases 
 \label{\detokenize{ejercicios/xslt/anexo_ejercicios_xslt:analisis-del-problema}}
 Es necesario hacer varios cambios:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Se ha cambiado el nombre de elemento raíz de \sphinxcode{\sphinxupquote{listado}} a \sphinxcode{\sphinxupquote{datos}}.
 
@@ -18288,9 +18257,7 @@ Que genera el resultado siguiente:
 
 Con esto, la parte de las \sphinxcode{\sphinxupquote{cuentas}} ya está hecha. Ahora queda lo siguiente
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 Hacer un elemento \sphinxcode{\sphinxupquote{fondos}} con un bucle que vaya generando elementos \sphinxcode{\sphinxupquote{fondo}}.
 

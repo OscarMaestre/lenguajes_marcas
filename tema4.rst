@@ -94,7 +94,7 @@ En estos bucles hay que poner la inicialización, la condición de final y la ac
 .. code-block:: javascript
 
 	for (let i=0; i<vector_numeros.length; i++){
-		document.write("<br/>")
+        document.write("<br/>")
         document.write ("En la posición "+i)
         document.write (" está el número " + vector_numeros[i])
 	}
