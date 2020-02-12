@@ -1772,16 +1772,14 @@ Se desea crear una calculadora en Javascript que tenga el siguiente interfaz
 
 
 
-.. figure:: ejemplos/tema4_js/calculadora/interfaz.png
-
+.. figure:: ejemplos/tema4_js/calculadora/interfazcalculadora.png
    :scale: 50%
-
    :align: center
-
    :alt: Ejemplo de interfaz
 
+   Ejemplo de interfaz de la calculadora en JS
 
-El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos ``radio`` 
+El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos ``radio`` . El resultado deberá aparecer en algún elemento ``div`` sin utilizar por tanto elementos alert ni distraer la atención del usuario.
 
 
 Interfaz HTML para la calculadora

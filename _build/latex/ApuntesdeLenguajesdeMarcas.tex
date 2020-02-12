@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{10 de febrero de 2020}
+\date{12 de febrero de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -5922,6 +5922,59 @@ Mes 3\PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PY
         \PYG{n+nx}{texto}\PYG{o}{=}\PYG{n+nx}{texto}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}Con la B el precio es:\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{coste\PYGZus{}total\PYGZus{}b}\PYG{p}{;}
         \PYG{n+nx}{zonaresultados}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{n+nx}{texto}
 \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Calculadora en Javascript}
+\label{\detokenize{tema4:calculadora-en-javascript}}
+Se desea crear una calculadora en Javascript que tenga el siguiente interfaz
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.5]{{interfazcalculadora}.png}
+\caption{Ejemplo de interfaz de la calculadora en JS}\label{\detokenize{tema4:id9}}\end{figure}
+
+El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos \sphinxcode{\sphinxupquote{radio}} . El resultado deberá aparecer en algún elemento \sphinxcode{\sphinxupquote{div}} sin utilizar por tanto elementos alert ni distraer la atención del usuario.
+
+
+\subsubsection{Interfaz HTML para la calculadora}
+\label{\detokenize{tema4:interfaz-html-para-la-calculadora}}
+En el fichero siguiente se muestra un ejemplo de interfaz
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Calculadora JS\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+            Num 1:
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}number\PYGZdq{}} \PYG{n+na}{step}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0.01\PYGZdq{}}
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}num1\PYGZdq{}} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}2\PYGZdq{}} \PYG{n+na}{onchange}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            Num 2:
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}number\PYGZdq{}} \PYG{n+na}{step}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0.01\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}num2\PYGZdq{}} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}3\PYGZdq{}} \PYG{n+na}{onchange}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calculo\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}suma\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Sumar\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calculo\PYGZdq{}}
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}resta\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Restar\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calculo\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}multiplicacion\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Multiplicación\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calculo\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}division\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Division\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calculadora.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
 \end{sphinxVerbatim}
 
 

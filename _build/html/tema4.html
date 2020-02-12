@@ -1780,6 +1780,52 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </pre></div>
 </div>
 </div>
+<div class="section" id="calculadora-en-javascript">
+<h3>Calculadora en Javascript<a class="headerlink" href="#calculadora-en-javascript" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se desea crear una calculadora en Javascript que tenga el siguiente interfaz</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="_images/interfazcalculadora.png"><img alt="Ejemplo de interfaz" src="_images/interfazcalculadora.png" style="width: 300.0px; height: 182.0px;" /></a>
+<p class="caption"><span class="caption-text">Ejemplo de interfaz de la calculadora en JS</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos <code class="docutils literal notranslate"><span class="pre">radio</span></code> . El resultado deberá aparecer en algún elemento <code class="docutils literal notranslate"><span class="pre">div</span></code> sin utilizar por tanto elementos alert ni distraer la atención del usuario.</p>
+<div class="section" id="interfaz-html-para-la-calculadora">
+<h4>Interfaz HTML para la calculadora<a class="headerlink" href="#interfaz-html-para-la-calculadora" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>En el fichero siguiente se muestra un ejemplo de interfaz</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Calculadora JS<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            Num 1:
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">onchange</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Num 2:
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">onchange</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;suma&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Sumar<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;resta&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Restar<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;multiplicacion&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Multiplicación<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;division&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Division<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultado&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;calculadora.js&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1871,6 +1917,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 <li class="toctree-l2"><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#html-del-comparador">HTML del comparador</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#js-del-comparador">JS del comparador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculadora-en-javascript">Calculadora en Javascript</a></li>
 </ul>
 </li>
 </ul>
