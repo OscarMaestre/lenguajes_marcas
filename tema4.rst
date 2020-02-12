@@ -1764,3 +1764,31 @@ JS del comparador
 		texto=texto+"Con la B el precio es:" + coste_total_b;   
 		zonaresultados.innerHTML=texto
 	}
+
+Calculadora en Javascript
+--------------------------------------------------------------------------------
+
+Se desea crear una calculadora en Javascript que tenga el siguiente interfaz
+
+
+
+.. figure:: ejemplos/tema4_js/calculadora/interfaz.png
+
+   :scale: 50%
+
+   :align: center
+
+   :alt: Ejemplo de interfaz
+
+
+El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos ``radio`` 
+
+
+Interfaz HTML para la calculadora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+En el fichero siguiente se muestra un ejemplo de interfaz
+
+.. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.html
+   :language: html
