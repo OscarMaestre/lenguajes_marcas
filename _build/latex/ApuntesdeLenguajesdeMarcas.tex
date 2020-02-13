@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{12 de febrero de 2020}
+\date{13 de febrero de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -5975,6 +5975,62 @@ En el fichero siguiente se muestra un ejemplo de interfaz
         \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
     \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
 \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Programa JS para la calculadora}
+\label{\detokenize{tema4:programa-js-para-la-calculadora}}
+El siguiente fichero muestra una posible solucion:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Esta función se ocupa de sacar un control, sacar el texto que hay dentro (recuérdese que es texto aunque \PYGZdq{}parezca\PYGZdq{} un número), convierte el texto a número y devuelve dicho número*/}
+\PYG{k+kd}{function} \PYG{n+nx}{sacar\PYGZus{}numero}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{control}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{;}
+    \PYG{c+cm}{/*Algunos controles tienen un \PYGZdq{}campo\PYGZdq{} value en el cual}
+\PYG{c+cm}{    está el valor de lo que nos interesa, pero ¡está en forma de texto*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{texto}\PYG{o}{=}\PYG{n+nx}{control}\PYG{p}{.}\PYG{n+nx}{value}\PYG{p}{;}
+    \PYG{c+cm}{/* Convirtamos ese texto a número*/}
+    \PYG{k+kd}{let} \PYG{n+nx}{numero}\PYG{o}{=}\PYG{n+nb}{parseFloat}\PYG{p}{(}\PYG{n+nx}{texto}\PYG{p}{)}\PYG{p}{;}
+    \PYG{c+cm}{/*Y devolvemos ese número a quien nos ejecutó*/}
+    \PYG{k}{return} \PYG{n+nx}{numero}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*Dado un identificador está función devuelve \PYGZdq{}true\PYGZdq{} si ese elemento está marcado y \PYGZdq{}false\PYGZdq{} si no lo está*/}
+\PYG{k+kd}{function} \PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{control}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{control}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*Esta función toma un texto y lo inserta dentro del }
+\PYG{c+cm}{div resultado*/}
+\PYG{k+kd}{function} \PYG{n+nx}{escribir\PYGZus{}resultado}\PYG{p}{(}\PYG{n+nx}{texto}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{divresultado}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{divresultado}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Resultado:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{texto}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*Esta es la función que se ejecuta cuando alguien \PYGZdq{}cambia\PYGZdq{} un número o cuando alguien \PYGZdq{}hace click en una operación\PYGZdq{}*/}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{num1}\PYG{o}{=}\PYG{n+nx}{sacar\PYGZus{}numero}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}num1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{num2}\PYG{o}{=}\PYG{n+nx}{sacar\PYGZus{}numero}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}num2\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{resultado}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}suma\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{resultado}\PYG{o}{=}\PYG{n+nx}{num1}\PYG{o}{+}\PYG{n+nx}{num2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}resta\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{resultado}\PYG{o}{=}\PYG{n+nx}{num1}\PYG{o}{\PYGZhy{}}\PYG{n+nx}{num2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}multiplicacion\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{resultado}\PYG{o}{=}\PYG{n+nx}{num1}\PYG{o}{*}\PYG{n+nx}{num2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}division\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{resultado}\PYG{o}{=}\PYG{n+nx}{num1}\PYG{o}{/}\PYG{n+nx}{num2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n+nx}{escribir\PYGZus{}resultado}\PYG{p}{(}\PYG{n+nx}{resultado}\PYG{p}{)}
+
+\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 

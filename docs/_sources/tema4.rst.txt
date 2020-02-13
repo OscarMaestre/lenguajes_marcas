@@ -1790,3 +1790,11 @@ En el fichero siguiente se muestra un ejemplo de interfaz
 
 .. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.html
    :language: html
+
+Programa JS para la calculadora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+El siguiente fichero muestra una posible solucion:
+
+.. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.js
+   :language: javascript

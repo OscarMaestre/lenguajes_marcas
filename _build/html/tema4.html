@@ -1825,6 +1825,60 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </pre></div>
 </div>
 </div>
+<div class="section" id="programa-js-para-la-calculadora">
+<h4>Programa JS para la calculadora<a class="headerlink" href="#programa-js-para-la-calculadora" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>El siguiente fichero muestra una posible solucion:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*Esta función se ocupa de sacar un control, sacar el texto que hay dentro (recuérdese que es texto aunque &quot;parezca&quot; un número), convierte el texto a número y devuelve dicho número*/</span>
+<span class="kd">function</span> <span class="nx">sacar_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="cm">/*Algunos controles tienen un &quot;campo&quot; value en el cual</span>
+<span class="cm">    está el valor de lo que nos interesa, pero ¡está en forma de texto*/</span>
+    <span class="kd">let</span> <span class="nx">texto</span><span class="o">=</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="cm">/* Convirtamos ese texto a número*/</span>
+    <span class="kd">let</span> <span class="nx">numero</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">texto</span><span class="p">);</span>
+    <span class="cm">/*Y devolvemos ese número a quien nos ejecutó*/</span>
+    <span class="k">return</span> <span class="nx">numero</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*Dado un identificador está función devuelve &quot;true&quot; si ese elemento está marcado y &quot;false&quot; si no lo está*/</span>
+<span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cm">/*Esta función toma un texto y lo inserta dentro del </span>
+<span class="cm">div resultado*/</span>
+<span class="kd">function</span> <span class="nx">escribir_resultado</span><span class="p">(</span><span class="nx">texto</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">divresultado</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resultado&quot;</span><span class="p">);</span>
+    <span class="nx">divresultado</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Resultado:&quot;</span><span class="o">+</span><span class="nx">texto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*Esta es la función que se ejecuta cuando alguien &quot;cambia&quot; un número o cuando alguien &quot;hace click en una operación&quot;*/</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">num1</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">num2</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">resultado</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;suma&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">+</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;resta&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">-</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;multiplicacion&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">*</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;division&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">/</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">escribir_resultado</span><span class="p">(</span><span class="nx">resultado</span><span class="p">)</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
