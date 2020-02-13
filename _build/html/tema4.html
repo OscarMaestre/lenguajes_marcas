@@ -1951,8 +1951,20 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </div>
 <div class="section" id="js-de-la-poliza-de-seguros">
 <h4>JS de la póliza de seguros<a class="headerlink" href="#js-de-la-poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-    
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*Dado un identificador está función devuelve &quot;true&quot; si ese elemento está marcado y &quot;false&quot; si no lo está*/</span>
+<span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="nx">divresultado</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resultado&quot;</span><span class="p">);</span>
+    <span class="nx">divresultado</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

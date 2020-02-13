@@ -6034,6 +6034,123 @@ El siguiente fichero muestra una posible solucion:
 \end{sphinxVerbatim}
 
 
+\subsection{Póliza de seguros}
+\label{\detokenize{tema4:poliza-de-seguros}}
+Se pide crear una aplicación para el cálculo de una póliza de seguros en base a distintas situaciones.
+\begin{itemize}
+\item {} 
+El precio base es 175 euros.
+
+\item {} 
+El usuario puede tener el carnet menos de 6 años. En ese caso el precio se incrementa en 280 euros.
+
+\item {} 
+El usuario puede tener el carnet 6 años o más. En ese caso la póliza se reduce en 25 euros.
+
+\item {} 
+En una lista desplegable se puede elegir el tipo de vehículo:
+\begin{itemize}
+\item {} 
+Familiar: el precio no se modifica.
+
+\item {} 
+Comercial: el precio se incrementa en 165 euros.
+
+\item {} 
+Deportivo: el precio se incrementa en 280 euros.
+
+\end{itemize}
+
+\item {} 
+Por último hay dos checkboxes para marcar distintas situaciones:
+\begin{itemize}
+\item {} 
+Si se tienen hijos a cargo el precio se reduce en un 5\%.
+
+\item {} 
+Si se tienen padres a cargo el precio se reduce en un 3\%
+
+\item {} 
+Se pueden marcar ninguna, una de ellas o las dos.
+
+\end{itemize}
+
+\end{itemize}
+
+
+\subsubsection{Interfaz de la póliza de seguros}
+\label{\detokenize{tema4:interfaz-de-la-poliza-de-seguros}}
+Debería quedar algo así:
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.5]{{polizaseguros}.png}
+\caption{Ejemplo de interfaz de la póliza en JS}\label{\detokenize{tema4:id10}}\end{figure}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Pólizas de seguros\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+            Antigüedad\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} 
+            \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}antiguedad\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}menos\PYGZdq{}}
+            \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            \PYG{n+ni}{\PYGZam{}lt;} de 6 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} 
+            \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}antiguedad\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mas\PYGZdq{}}
+            \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            \PYG{n+ni}{\PYGZam{}gt;} de 6 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            Tipo de vehículo\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{select} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}vehiculo\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}familiar\PYGZdq{}}\PYG{p}{\PYGZgt{}} Familiar \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}comercial\PYGZdq{}}\PYG{p}{\PYGZgt{}}Comercial\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}deportivo\PYGZdq{}}\PYG{p}{\PYGZgt{}}Deportivo\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{select}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            Situación familiar \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}conhijos\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Con hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}conpadres\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Con padres a cargo
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}polizaseguros.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{JS de la póliza de seguros}
+\label{\detokenize{tema4:js-de-la-poliza-de-seguros}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Dado un identificador está función devuelve \PYGZdq{}true\PYGZdq{} si ese elemento está marcado y \PYGZdq{}false\PYGZdq{} si no lo está*/}
+\PYG{k+kd}{function} \PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{control}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{control}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{precio}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{k+kd}{let} \PYG{n+nx}{divresultado}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{divresultado}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Precio:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{precio}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
 \chapter{XML}
 \label{\detokenize{tema5:xml}}\label{\detokenize{tema5::doc}}
 
