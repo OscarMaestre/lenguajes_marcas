@@ -1902,6 +1902,61 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </ul>
 </li>
 </ul>
+<div class="section" id="interfaz-de-la-poliza-de-seguros">
+<h4>Interfaz de la póliza de seguros<a class="headerlink" href="#interfaz-de-la-poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Debería quedar algo así:</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="_images/polizaseguros.png"><img alt="Ejemplo de interfaz de la póliza" src="_images/polizaseguros.png" style="width: 173.0px; height: 174.0px;" /></a>
+<p class="caption"><span class="caption-text">Ejemplo de interfaz de la póliza en JS</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pólizas de seguros<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            Antigüedad<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> 
+            <span class="na">name</span><span class="o">=</span><span class="s">&quot;antiguedad&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menos&quot;</span>
+            <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            <span class="ni">&amp;lt;</span> de 6 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> 
+            <span class="na">name</span><span class="o">=</span><span class="s">&quot;antiguedad&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mas&quot;</span>
+            <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            <span class="ni">&amp;gt;</span> de 6 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Tipo de vehículo<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;vehiculo&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;familiar&quot;</span><span class="p">&gt;</span> Familiar <span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;comercial&quot;</span><span class="p">&gt;</span>Comercial<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;deportivo&quot;</span><span class="p">&gt;</span>Deportivo<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Situación familiar <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;conhijos&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Con hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;conpadres&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Con padres a cargo
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultado&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;polizaseguros.js&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-de-la-poliza-de-seguros">
+<h4>JS de la póliza de seguros<a class="headerlink" href="#js-de-la-poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

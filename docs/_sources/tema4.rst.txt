@@ -1820,4 +1820,23 @@ Se pide crear una aplicación para el cálculo de una póliza de seguros en base
   * Si se tienen padres a cargo el precio se reduce en un 3%
   * Se pueden marcar ninguna, una de ellas o las dos.
 
-  
+Interfaz de la póliza de seguros
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Debería quedar algo así:
+
+.. figure:: ejemplos/tema4_js/polizaseguros/polizaseguros.png
+   :scale: 50%
+   :align: center
+   :alt: Ejemplo de interfaz de la póliza
+
+   Ejemplo de interfaz de la póliza en JS
+
+.. literalinclude:: ejemplos/tema4_js/polizaseguros/polizaseguros.html
+   :language: html
+
+
+JS de la póliza de seguros
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: ejemplos/tema4_js/polizaseguros/polizaseguros.js
+   :language: javascript
