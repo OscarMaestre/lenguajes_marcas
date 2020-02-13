@@ -1798,3 +1798,26 @@ El siguiente fichero muestra una posible solucion:
 
 .. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.js
    :language: javascript
+
+Póliza de seguros
+--------------------------------------------------------------------------------
+
+Se pide crear una aplicación para el cálculo de una póliza de seguros en base a distintas situaciones. 
+
+* El precio base es 175 euros.
+* El usuario puede tener el carnet menos de 6 años. En ese caso el precio se incrementa en 280 euros.
+* El usuario puede tener el carnet 6 años o más. En ese caso la póliza se reduce en 25 euros.
+
+* En una lista desplegable se puede elegir el tipo de vehículo:
+
+  * Familiar: el precio no se modifica.
+  * Comercial: el precio se incrementa en 165 euros.
+  * Deportivo: el precio se incrementa en 280 euros.
+
+* Por último hay dos checkboxes para marcar distintas situaciones:
+
+  * Si se tienen hijos a cargo el precio se reduce en un 5%.
+  * Si se tienen padres a cargo el precio se reduce en un 3%
+  * Se pueden marcar ninguna, una de ellas o las dos.
+
+  
