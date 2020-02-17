@@ -1766,7 +1766,9 @@ JS del comparador
 	}
 
 Calculadora en Javascript
---------------------------------------------------------------------------------
+================================================================================
+
+
 
 Se desea crear una calculadora en Javascript que tenga el siguiente interfaz
 
@@ -1783,7 +1785,9 @@ El usuario puede insertar números usando decimales hasta las centésimas y podr
 
 
 Interfaz HTML para la calculadora
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
+
+
 
 
 En el fichero siguiente se muestra un ejemplo de interfaz
@@ -1792,7 +1796,9 @@ En el fichero siguiente se muestra un ejemplo de interfaz
    :language: html
 
 Programa JS para la calculadora
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
+
+
 
 El siguiente fichero muestra una posible solucion:
 
@@ -1800,7 +1806,9 @@ El siguiente fichero muestra una posible solucion:
    :language: javascript
 
 Póliza de seguros
---------------------------------------------------------------------------------
+================================================================================
+
+
 
 Se pide crear una aplicación para el cálculo de una póliza de seguros en base a distintas situaciones. 
 
@@ -1821,7 +1829,9 @@ Se pide crear una aplicación para el cálculo de una póliza de seguros en base
   * Se pueden marcar ninguna, una de ellas o las dos.
 
 Interfaz de la póliza de seguros
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
+
+
 Debería quedar algo así:
 
 .. figure:: ejemplos/tema4_js/polizaseguros/polizaseguros.png
@@ -1836,7 +1846,42 @@ Debería quedar algo así:
 
 
 JS de la póliza de seguros
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
+
+
 
 .. literalinclude:: ejemplos/tema4_js/polizaseguros/polizaseguros.js
+   :language: javascript
+
+Matrícula
+================================================================================
+
+Un centro de estudios desea ofrecer a sus alumnos la posibilidad de cursar algunas materias de forma flexible.
+
+* El usuario puede cursar las horas semanales que desee. Cada hora de clase cuesta 5 euros al mes.
+* Un usuario puede ser antiguo alumno. En ese caso se le hace un descuento del 12% sobre el precio final.
+* El usuario puede elegir las materias que desee: en concreto puede elegir de primero las asignaturas de "Matemáticas I" e "Historia" y de segundo "Matemáticas II" y "Física".
+* Está permitido matricularse de "Matemáticas I" y de "Matemáticas II" a la vez pero **no está permitido elegir "Matemáticas II" sin elegir "Matemáticas I"** . Si se hace esto **no debe verse el precio, sino alguna clase de mensaje de error** 
+* El precio final mensual debe aparecer en un ``div`` .
+
+
+Interfaz de la matrícula
+--------------------------------------------------------------------------------
+
+El resultado debe ser similar a esto:
+
+.. figure:: ejemplos/tema4_js/matricula/matricula.png
+   :scale: 50%
+   :align: center
+   :alt: Ejemplo de interfaz de la matrícula
+
+   Ejemplo de interfaz de la matrícula 
+
+.. literalinclude:: ejemplos/tema4_js/matricula/matricula.html
+   :language: html
+
+JS de la matrícula
+--------------------------------------------------------------------------------
+
+.. literalinclude:: ejemplos/tema4_js/matricula/matricula.js
    :language: javascript
