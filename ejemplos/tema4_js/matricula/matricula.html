@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matrículas</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <h1>Generales</h1>
+            Horas semanales:
+            <input type="number" id="horas"
+            min="1" max="30" value="10"><br/>
+            <input type="radio" name="antalumno"
+            id="si_antiguo">
+            Antiguo alumno <br/>
+            <input type="radio" name="antalumno"
+            id="no_antiguo">
+            Nuevo alumno <br/>
+
+            <h1>Primero</h1>
+            <input type="checkbox" id="mat1">
+            Matemáticas I <br/>
+            <input type="checkbox" id="his">
+            Historia <br/>
+            <h1>Segundo</h1>
+            <input type="checkbox" id="mat2">
+            Matemáticas II <br/>
+            <input type="checkbox" id="fis">
+            Física
+            <br/>
+            <button onclick="calcular();">
+                Calcular precio
+            </button>
+        </form>
+        <div id="resultado"></div>
+    </body>
+</html>
