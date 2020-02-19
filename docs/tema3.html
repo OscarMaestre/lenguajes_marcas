@@ -1038,6 +1038,49 @@ Publicidad publicidad
 <h2>Maquetación con flexboxes<a class="headerlink" href="#maquetacion-con-flexboxes" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.</p>
 <p>Por ejemplo, supongamos que tenemos el siguiente fichero.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo con Flexboxes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navegacion&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;principal&quot;</span><span class="p">&gt;</span>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis arcu orci, id vestibulum ante hendrerit nec. Aenean convallis quis lacus ut porttitor. Nam non elit dapibus diam vehicula tincidunt at a ipsum. Phasellus ut hendrerit felis. Sed placerat, nulla quis facilisis aliquet, lectus metus elementum leo, venenatis mattis elit tortor sit amet elit. Etiam gravida maximus nibh sit amet bibendum. Ut vitae justo et massa varius consectetur vel vel augue. Aenean id nisi feugiat, pretium dui ut, pulvinar neque. Nullam velit arcu, mollis vel elementum sit amet, ultricies non ipsum. Nam suscipit nisl vel viverra pellentesque. Integer at ipsum vitae risus molestie molestie. Curabitur neque nibh, placerat nec interdum in, ultrices laoreet dui. 
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publicidad&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://marca.es&quot;</span><span class="p">&gt;</span>Marca<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.es&quot;</span><span class="p">&gt;</span>Coca-Cola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="maquetacion-avanzada-con-grid-layouts">
 <h2>Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlazar permanentemente con este título">¶</a></h2>
