@@ -43,16 +43,17 @@
 </div>
 <div class="section" id="un-ejemplo-sencillo">
 <h2>Un ejemplo sencillo<a class="headerlink" href="#un-ejemplo-sencillo" title="Enlazar permanentemente con este título">¶</a></h2>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;clientes&gt;</span>
-        <span class="nt">&lt;cliente&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>AcerSA<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;cif&gt;</span>5664332<span class="nt">&lt;/cif&gt;</span>
-        <span class="nt">&lt;/cliente&gt;</span>
-        <span class="nt">&lt;cliente&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>Mer SL<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;cif&gt;</span>5111444<span class="nt">&lt;/cif&gt;</span>
-        <span class="nt">&lt;/cliente&gt;</span>
-<span class="nt">&lt;/clientes&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+    <span class="nt">&lt;clientes&gt;</span>
+            <span class="nt">&lt;cliente&gt;</span>
+                    <span class="nt">&lt;nombre&gt;</span>AcerSA<span class="nt">&lt;/nombre&gt;</span>
+                    <span class="nt">&lt;cif&gt;</span>5664332<span class="nt">&lt;/cif&gt;</span>
+            <span class="nt">&lt;/cliente&gt;</span>
+            <span class="nt">&lt;cliente&gt;</span>
+                    <span class="nt">&lt;nombre&gt;</span>Mer SL<span class="nt">&lt;/nombre&gt;</span>
+                    <span class="nt">&lt;cif&gt;</span>5111444<span class="nt">&lt;/cif&gt;</span>
+            <span class="nt">&lt;/cliente&gt;</span>
+    <span class="nt">&lt;/clientes&gt;</span>
 </pre></div>
 </div>
 <p>Lo fundamental es que podemos crear nuestros propios «vocabularios» XML.</p>
@@ -66,6 +67,7 @@
 <li><p>En general, la costumbre es poner todo en minúsculas.</p></li>
 <li><p>Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas <code class="docutils literal notranslate"><span class="pre">&lt;12Cliente&gt;</span></code>.</p></li>
 <li><p>Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida <code class="docutils literal notranslate"><span class="pre">&lt;Cliente12&gt;</span></code>.</p></li>
+<li><p>Aunque no es obligatorio a menudo se suele poner en la primera línea un <strong>prólogo</strong> que indica la versión de XML que estamos usando y la codificación con la que nuestro editor almacena los archivos.</p></li>
 </ul>
 </div>
 <div class="section" id="validez">

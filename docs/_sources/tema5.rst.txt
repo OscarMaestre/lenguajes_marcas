@@ -15,7 +15,8 @@ Un ejemplo sencillo
 ===================
 
 .. code-block:: xml
-
+    
+    <?xml version="1.0" encoding="UTF-8"?> 
 	<clientes>
 		<cliente>
 			<nombre>AcerSA</nombre>
@@ -46,6 +47,8 @@ Para crear XML es importante recordar una serie de reglas:
 * Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas ``<12Cliente>``.
 
 * Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida ``<Cliente12>``.
+
+* Aunque no es obligatorio a menudo se suele poner en la primera línea un **prólogo** que indica la versión de XML que estamos usando y la codificación con la que nuestro editor almacena los archivos.
 
 Validez
 =======

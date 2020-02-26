@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{17 de febrero de 2020}
+\date{26 de febrero de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2962,6 +2962,50 @@ Una posible solución sería esta:
 Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.
 
 Por ejemplo, supongamos que tenemos el siguiente fichero.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Ejemplo con Flexboxes\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{link} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/css\PYGZdq{}} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}estilo.css\PYGZdq{}} \PYG{n+na}{rel}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}stylesheet\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}contenido\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{nav} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}navegacion\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://google.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Producto 1\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://google.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Producto 2\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://google.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Producto 3\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{nav}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}principal\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis arcu orci, id vestibulum ante hendrerit nec. Aenean convallis quis lacus ut porttitor. Nam non elit dapibus diam vehicula tincidunt at a ipsum. Phasellus ut hendrerit felis. Sed placerat, nulla quis facilisis aliquet, lectus metus elementum leo, venenatis mattis elit tortor sit amet elit. Etiam gravida maximus nibh sit amet bibendum. Ut vitae justo et massa varius consectetur vel vel augue. Aenean id nisi feugiat, pretium dui ut, pulvinar neque. Nullam velit arcu, mollis vel elementum sit amet, ultricies non ipsum. Nam suscipit nisl vel viverra pellentesque. Integer at ipsum vitae risus molestie molestie. Curabitur neque nibh, placerat nec interdum in, ultrices laoreet dui. 
+            \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}publicidad\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://marca.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Marca\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://google.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Google\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}http://cocacola.es\PYGZdq{}}\PYG{p}{\PYGZgt{}}Coca\PYGZhy{}Cola\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+                    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 \section{Maquetación avanzada con \sphinxstyleliteralintitle{\sphinxupquote{grid-layouts}}}
@@ -6086,12 +6130,70 @@ Debería quedar algo así:
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[scale=0.5]{{ejemplos/tema4_js/polizaseguros/polizaseguros}.png}
+\noindent\sphinxincludegraphics[scale=0.5]{{polizaseguros}.png}
 \caption{Ejemplo de interfaz de la póliza en JS}\label{\detokenize{tema4:id10}}\end{figure}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}!DOCTYPE html\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}Pólizas de seguros\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{title}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{meta} \PYG{n+na}{charset}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{head}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+            Antigüedad\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} 
+            \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}antiguedad\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}menos\PYGZdq{}}
+            \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            \PYG{n+ni}{\PYGZam{}lt;} de 6 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}radio\PYGZdq{}} 
+            \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}antiguedad\PYGZdq{}} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mas\PYGZdq{}}
+            \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            \PYG{n+ni}{\PYGZam{}gt;} de 6 \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            Tipo de vehículo\PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{select} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}vehiculo\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}familiar\PYGZdq{}}\PYG{p}{\PYGZgt{}} Familiar \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}comercial\PYGZdq{}}\PYG{p}{\PYGZgt{}}Comercial\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}deportivo\PYGZdq{}}\PYG{p}{\PYGZgt{}}Deportivo\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{select}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            Situación familiar \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}conhijos\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Con hijos a cargo \PYG{p}{\PYGZlt{}}\PYG{n+nt}{br}\PYG{p}{/}\PYG{p}{\PYGZgt{}}
+            \PYG{p}{\PYGZlt{}}\PYG{n+nt}{input} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}checkbox\PYGZdq{}} 
+            \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}conpadres\PYGZdq{}} \PYG{n+na}{onclick}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}calcular();\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+            Con padres a cargo
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{form}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{\PYGZgt{}}\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{type}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}text/javascript\PYGZdq{}} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}polizaseguros.js\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+    \PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{body}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{p}{/}\PYG{n+nt}{html}\PYG{p}{\PYGZgt{}}
+\end{sphinxVerbatim}
 
 
 \subsection{JS de la póliza de seguros}
 \label{\detokenize{tema4:js-de-la-poliza-de-seguros}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*Dado un identificador está función devuelve \PYGZdq{}true\PYGZdq{} si ese elemento está marcado y \PYGZdq{}false\PYGZdq{} si no lo está*/}
+\PYG{k+kd}{function} \PYG{n+nx}{esta\PYGZus{}checked}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{control}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{control}\PYG{p}{.}\PYG{n+nx}{checked}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{function} \PYG{n+nx}{calcular}\PYG{p}{(}\PYG{p}{)}\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{precio}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{k+kd}{let} \PYG{n+nx}{divresultado}\PYG{o}{=}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}resultado\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n+nx}{divresultado}\PYG{p}{.}\PYG{n+nx}{innerHTML}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Precio:\PYGZdq{}}\PYG{o}{+}\PYG{n+nx}{precio}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
 
 \section{Matrícula}
 \label{\detokenize{tema4:matricula}}
@@ -6191,16 +6293,17 @@ XML es un conjunto de tecnologías orientadas a crear nuestros propios lenguajes
 \section{Un ejemplo sencillo}
 \label{\detokenize{tema5:un-ejemplo-sencillo}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n+nt}{\PYGZlt{}clientes}\PYG{n+nt}{\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}AcerSA\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5664332\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Mer SL\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5111444\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
-        \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
-\PYG{n+nt}{\PYGZlt{}/clientes\PYGZgt{}}
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}UTF\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}clientes}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}AcerSA\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5664332\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Mer SL\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5111444\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/clientes\PYGZgt{}}
 \end{sphinxVerbatim}
 
 Lo fundamental es que podemos crear nuestros propios «vocabularios» XML.
@@ -6224,6 +6327,9 @@ Solo se puede poner una etiqueta que empiece por letra o \_. Es decir, esta etiq
 
 \item {} 
 Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida \sphinxcode{\sphinxupquote{\textless{}Cliente12\textgreater{}}}.
+
+\item {} 
+Aunque no es obligatorio a menudo se suele poner en la primera línea un \sphinxstylestrong{prólogo} que indica la versión de XML que estamos usando y la codificación con la que nuestro editor almacena los archivos.
 
 \end{itemize}
 
