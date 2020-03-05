@@ -547,6 +547,28 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 * Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code> lleva dentro dos cosas: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;divisa&gt;</span></code> que también es obligatorio.</p>
 <div class="section" id="solucion-al-ejercicio-v">
 <h3>Solución al ejercicio V<a class="headerlink" href="#solucion-al-ejercicio-v" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Puedes usar este ejemplo para hacer la validación:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listacompras&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventaacredito&gt;</span>
+            <span class="nt">&lt;fechafinpago&gt;</span>22-10-2021<span class="nt">&lt;/fechafinpago&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>21000<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/ventaacredito&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventainmediata&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>1800<span class="nt">&lt;/cantidad&gt;</span>
+            <span class="nt">&lt;divisa&gt;</span>euros<span class="nt">&lt;/divisa&gt;</span>
+        <span class="nt">&lt;/ventainmediata&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventaacredito&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>21000<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/ventaacredito&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+<span class="nt">&lt;/listacompras&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="ejercicio-con-atributos">

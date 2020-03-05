@@ -625,7 +625,29 @@ En un departamento se ha decidido la siguiente estructura para ficheros de datos
 Solución al ejercicio V
 --------------------------------------------------------------------------------
 
+Puedes usar este ejemplo para hacer la validación:
 
+.. code-block:: xml
+
+    <listacompras>
+        <venta>
+            <ventaacredito>
+                <fechafinpago>22-10-2021</fechafinpago>
+                <cantidad>21000</cantidad>
+            </ventaacredito>
+        </venta>
+        <venta>
+            <ventainmediata>
+                <cantidad>1800</cantidad>
+                <divisa>euros</divisa>
+            </ventainmediata>
+        </venta>
+        <venta>
+            <ventaacredito>
+                <cantidad>21000</cantidad>
+            </ventaacredito>
+        </venta>
+    </listacompras>
 
 
 Ejercicio (con atributos)
