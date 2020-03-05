@@ -17,16 +17,16 @@ Un ejemplo sencillo
 .. code-block:: xml
     
     <?xml version="1.0" encoding="UTF-8"?> 
-	<clientes>
-		<cliente>
-			<nombre>AcerSA</nombre>
-			<cif>5664332</cif>
-		</cliente>
-		<cliente>
-			<nombre>Mer SL</nombre>
-			<cif>5111444</cif>
-		</cliente>
-	</clientes>
+    <clientes>
+        <cliente>
+            <nombre>AcerSA</nombre>
+            <cif>5664332</cif>
+        </cliente>
+        <cliente>
+            <nombre>Mer SL</nombre>
+            <cif>5111444</cif>
+        </cliente>
+    </clientes>
 	
 	
 	
@@ -551,6 +551,82 @@ Este documento **sí es válido**. Las DTD solo se ocupan de determinar qué ele
 			<cantidad>ññlñ</cantidad>
 		</pedido>
 	</listapedidos>
+
+
+Ejercicio III
+================================================================================
+Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+* El fichero debe llevar una raíz ``<productos>`` 
+* Dentro de productos debe haber alguno de estos ``<producto>`` , ``<raton>`` , ``<teclado>`` o ``<monitor>`` 
+* Todo ratón, teclado o monitor tiene siempre un código.
+* Todo ratón, teclado o monitor puede llevar un nombre.
+* Todo ratón, teclado o monitor puede llevar una descripción.
+
+.. code-block:: xml
+
+    <productos>
+        <producto>
+            <raton>
+                <codigo>27A</codigo>
+            </raton>
+        </producto>
+        <producto>
+            <teclado>
+                <codigo>28D</codigo>
+                <descripcion>Teclado en Español</descripcion>
+            </teclado>
+        </producto>
+    </productos>
+
+Solución al ejercicio III
+--------------------------------------------------------------------------------
+
+
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (producto+)>
+    <!ELEMENT producto  (raton|teclado|monitor)>
+    <!ELEMENT raton     (codigo, nombre?, descripcion?)>
+    <!ELEMENT teclado   (codigo, nombre?, descripcion?)>    <!ELEMENT monitor   (codigo, nombre?, descripcion?)>
+    <!ELEMENT codigo    (#PCDATA)>
+    <!ELEMENT nombre    (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+
+Ejercicio IV
+================================================================================
+
+Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
+* El elemento raíz será <listaventas>
+* Toda <listaventas> tiene una o más <venta>.
+* Toda <venta> tiene los siguientes datos:
+   
+    ** Importe.
+    ** Comprador.
+    ** Vendedor.
+    ** Fecha (optativa).
+    ** Un codigo de factura.
+
+Solución al ejercicio IV
+--------------------------------------------------------------------------------
+
+Por ahora no se dará la solución de este ejercicio. Inténtalo y si no puedes pide ayuda al profesor o escríbele un email para averiguar como resolverlo.
+
+Ejercicio V DTD
+================================================================================
+
+En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.
+* La raíz debe ser el elemento ``<listacompras>`` 
+* Dentro de ``<listacompras>`` debe haber uno o más elementos ``<venta>`` 
+* Una ``venta`` puede llevar dentro uno de dos: ``<ventaacredito>`` o ``<ventainmediata>`` 
+* Un elemento ``<ventaacredito>`` consta de : un elemento ``<fechafinpago>`` que es optativo y un elemento ``<cantidad>`` que es obligatorio.
+* Un elemento ``<ventainmediata>`` lleva dentro dos cosas: un elemento ``<cantidad>`` que es obligatorio y un elemento ``<divisa>`` que también es obligatorio.
+
+Solución al ejercicio V
+--------------------------------------------------------------------------------
+
+
+
 
 Ejercicio (con atributos)
 ===========================
@@ -2998,24 +3074,6 @@ A continuación se muestra un fichero de ejemplo
             <!--El codigo de receptor no se usó aquí-->
         </recepcion>
     </portes>
-
-
-
-
-Examen
-===========================================
-
-El examen de este tema tendrá lugar
-
-* Para DAM el viernes, 16 de marzo de 2018
-* Para ASIR el martes, 13 de marzo de 2018
-
-
-
-
-
-
-
 
 
 
