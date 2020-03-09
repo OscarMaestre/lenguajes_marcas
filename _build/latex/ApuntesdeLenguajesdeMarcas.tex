@@ -6979,11 +6979,23 @@ Puedes usar este ejemplo para hacer la validación:
 \section{Ejercicio VI DTD}
 \label{\detokenize{tema5:ejercicio-vi-dtd}}
 Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.
-* El elemento raíz debe ser \sphinxcode{\sphinxupquote{\textless{}inventario\textgreater{}}}
-* Dentro de inventario pueden ir elementos \sphinxcode{\sphinxupquote{\textless{}lapiz\textgreater{}}}, \sphinxcode{\sphinxupquote{\textless{}cuaderno\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}boligrafo\textgreater{}}} repetidos y en cualquier orden.
-* Todo \sphinxcode{\sphinxupquote{\textless{}lapiz\textgreater{}}} puede tener un elemento \sphinxcode{\sphinxupquote{\textless{}dureza\textgreater{}}}
-* Todo cuaderno debe llevar dos elementos: \sphinxcode{\sphinxupquote{\textless{}numhojas\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}estilo\textgreater{}}}
-* Todo boligrafo lleva un \sphinxcode{\sphinxupquote{\textless{}precio\textgreater{}}} y puede o no llevar un elemento \sphinxcode{\sphinxupquote{\textless{}color\textgreater{}}}
+\begin{itemize}
+\item {} 
+El elemento raíz debe ser \sphinxcode{\sphinxupquote{\textless{}inventario\textgreater{}}}
+
+\item {} 
+Dentro de inventario pueden ir elementos \sphinxcode{\sphinxupquote{\textless{}lapiz\textgreater{}}}, \sphinxcode{\sphinxupquote{\textless{}cuaderno\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}boligrafo\textgreater{}}} repetidos y en cualquier orden.
+
+\item {} 
+Todo \sphinxcode{\sphinxupquote{\textless{}lapiz\textgreater{}}} puede tener un elemento \sphinxcode{\sphinxupquote{\textless{}dureza\textgreater{}}}
+
+\item {} 
+Todo cuaderno debe llevar dos elementos: \sphinxcode{\sphinxupquote{\textless{}numhojas\textgreater{}}} y \sphinxcode{\sphinxupquote{\textless{}estilo\textgreater{}}}
+
+\item {} 
+Todo boligrafo lleva un \sphinxcode{\sphinxupquote{\textless{}precio\textgreater{}}} y puede o no llevar un elemento \sphinxcode{\sphinxupquote{\textless{}color\textgreater{}}}
+
+\end{itemize}
 
 El siguiente fichero debería ser validado por la DTD:
 
@@ -7026,7 +7038,7 @@ El siguiente fichero debería ser validado por la DTD:
 
 \section{Ejercicio (con atributos)}
 \label{\detokenize{tema5:ejercicio-con-atributos}}
-Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:
+Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes.
 \begin{itemize}
 \item {} 
 Los ficheros deben tener un elemento \sphinxcode{\sphinxupquote{\textless{}listafacturas\textgreater{}}}
