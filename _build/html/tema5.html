@@ -573,12 +573,14 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <div class="section" id="ejercicio-vi-dtd">
 <h2>Ejercicio VI DTD<a class="headerlink" href="#ejercicio-vi-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.
-* El elemento raíz debe ser <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code>
-* Dentro de inventario pueden ir elementos <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cuaderno&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;boligrafo&gt;</span></code> repetidos y en cualquier orden.
-* Todo <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code> puede tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;dureza&gt;</span></code>
-* Todo cuaderno debe llevar dos elementos: <code class="docutils literal notranslate"><span class="pre">&lt;numhojas&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;estilo&gt;</span></code>
-* Todo boligrafo lleva un <code class="docutils literal notranslate"><span class="pre">&lt;precio&gt;</span></code> y puede o no llevar un elemento <code class="docutils literal notranslate"><span class="pre">&lt;color&gt;</span></code></p>
+<p>Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.</p>
+<ul class="simple">
+<li><p>El elemento raíz debe ser <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code></p></li>
+<li><p>Dentro de inventario pueden ir elementos <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cuaderno&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;boligrafo&gt;</span></code> repetidos y en cualquier orden.</p></li>
+<li><p>Todo <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code> puede tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;dureza&gt;</span></code></p></li>
+<li><p>Todo cuaderno debe llevar dos elementos: <code class="docutils literal notranslate"><span class="pre">&lt;numhojas&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;estilo&gt;</span></code></p></li>
+<li><p>Todo boligrafo lleva un <code class="docutils literal notranslate"><span class="pre">&lt;precio&gt;</span></code> y puede o no llevar un elemento <code class="docutils literal notranslate"><span class="pre">&lt;color&gt;</span></code></p></li>
+</ul>
 <p>El siguiente fichero debería ser validado por la DTD:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
     <span class="nt">&lt;lapiz&gt;&lt;/lapiz&gt;</span>
@@ -617,7 +619,7 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <div class="section" id="ejercicio-con-atributos">
 <h2>Ejercicio (con atributos)<a class="headerlink" href="#ejercicio-con-atributos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:</p>
+<p>Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes.</p>
 <ul class="simple">
 <li><p>Los ficheros deben tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;listafacturas&gt;</span></code></p></li>
 <li><p>Dentro de la lista debe haber una o más facturas.</p></li>
