@@ -684,8 +684,19 @@ El siguiente fichero debería ser validado por la DTD:
             <precio>0.80</precio>
             <color>Rojo</color>
         </boligrafo>
-        
     </inventario>
+
+.. code-block:: dtd
+
+    <!ELEMENT inventario (cuaderno|lapiz|boligrafo)+>
+    <!ELEMENT cuaderno   (numhojas,estilo)>
+    <!ELEMENT numhojas   (#PCDATA)>
+    <!ELEMENT estilo     (#PCDATA)>
+    <!ELEMENT lapiz      (dureza?)>
+    <!ELEMENT dureza     (#PCDATA)>
+    <!ELEMENT boligrafo  (precio, color?)>
+    <!ELEMENT precio     (#PCDATA)>
+    <!ELEMENT color      (#PCDATA)>
 
 Ejercicio (con atributos)
 ===========================

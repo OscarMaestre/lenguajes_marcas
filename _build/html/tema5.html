@@ -600,8 +600,18 @@ un ratón y despues un teclado, y solo uno de cada.</p>
         <span class="nt">&lt;precio&gt;</span>0.80<span class="nt">&lt;/precio&gt;</span>
         <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
     <span class="nt">&lt;/boligrafo&gt;</span>
-
 <span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">inventario</span> <span class="o">(</span><span class="nt">cuaderno</span><span class="o">|</span><span class="nt">lapiz</span><span class="o">|</span><span class="nt">boligrafo</span><span class="o">)+</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cuaderno</span>   <span class="o">(</span><span class="nt">numhojas</span><span class="o">,</span><span class="nt">estilo</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">numhojas</span>   <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">estilo</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">lapiz</span>      <span class="o">(</span><span class="nt">dureza</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">dureza</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">boligrafo</span>  <span class="o">(</span><span class="nt">precio</span><span class="o">,</span> <span class="nt">color</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">precio</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">color</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
 </pre></div>
 </div>
 </div>
