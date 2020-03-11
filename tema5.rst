@@ -652,6 +652,7 @@ Puedes usar este ejemplo para hacer la validación:
     </listacompras>
 
 
+<<<<<<< HEAD
 Una posible solución sería:
 
 .. code-block:: dtd
@@ -666,14 +667,66 @@ Una posible solución sería:
 
 
 
+=======
+Ejercicio VI DTD
+================================================================================
+
+Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.
+
+* El elemento raíz debe ser ``<inventario>`` 
+* Dentro de inventario pueden ir elementos ``<lapiz>``, ``<cuaderno>`` o ``<boligrafo>`` repetidos y en cualquier orden.
+* Todo ``<lapiz>`` puede tener un elemento ``<dureza>``
+* Todo cuaderno debe llevar dos elementos: ``<numhojas>`` y ``<estilo>`` 
+* Todo boligrafo lleva un ``<precio>`` y puede o no llevar un elemento ``<color>`` 
+
+El siguiente fichero debería ser validado por la DTD:
+
+.. code-block:: xml
+
+    <inventario>
+        <lapiz></lapiz>
+        <lapiz>
+            <dureza>H2</dureza>
+        </lapiz>
+        <cuaderno>
+            <numhojas>80</numhojas>
+            <estilo>2 rayas</estilo>
+        </cuaderno>
+        <boligrafo>
+            <precio>0.80</precio>
+        </boligrafo>
+        <cuaderno>
+            <numhojas>100</numhojas>
+            <estilo>Cuadriculado</estilo>
+        </cuaderno>
+        <boligrafo>
+            <precio>0.80</precio>
+            <color>Rojo</color>
+        </boligrafo>
+    </inventario>
+
+.. code-block:: dtd
+
+    <!ELEMENT inventario (cuaderno|lapiz|boligrafo)+>
+    <!ELEMENT cuaderno   (numhojas,estilo)>
+    <!ELEMENT numhojas   (#PCDATA)>
+    <!ELEMENT estilo     (#PCDATA)>
+    <!ELEMENT lapiz      (dureza?)>
+    <!ELEMENT dureza     (#PCDATA)>
+    <!ELEMENT boligrafo  (precio, color?)>
+    <!ELEMENT precio     (#PCDATA)>
+    <!ELEMENT color      (#PCDATA)>
+>>>>>>> c134e8fcce9925af91224e6a059a6135f2bf26f7
 
 Ejercicio (con atributos)
 ===========================
 
-Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:
+Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes.
 
 * Los ficheros deben tener un elemento ``<listafacturas>``
+
 * Dentro de la lista debe haber una o más facturas.
+
 * Las facturas tienen un atributo ``fecha`` que es optativo.
 * Toda factura tiene un ``emisor``, que es un elemento obligatorio y que debe tener un atributo ``cif`` que es obligatorio. Dentro de ``emisor`` debe haber un elemento ``nombre``, que es obligatorio y puede o no haber un elemento ``volumenventas``.
 * Toda factura debe tener un elemento ``pagador``, el cual tiene exactamente la misma estructura que ``emisor``.
