@@ -597,6 +597,7 @@ Ejercicio IV
 ================================================================================
 
 Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
+
 * El elemento raíz será <listaventas>
 * Toda <listaventas> tiene una o más <venta>.
 * Toda <venta> tiene los siguientes datos:
@@ -616,6 +617,7 @@ Ejercicio V DTD
 ================================================================================
 
 En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.
+
 * La raíz debe ser el elemento ``<listacompras>`` 
 * Dentro de ``<listacompras>`` debe haber uno o más elementos ``<venta>`` 
 * Una ``venta`` puede llevar dentro uno de dos: ``<ventaacredito>`` o ``<ventainmediata>`` 
@@ -648,6 +650,21 @@ Puedes usar este ejemplo para hacer la validación:
             </ventaacredito>
         </venta>
     </listacompras>
+
+
+Una posible solución sería:
+
+.. code-block:: dtd
+
+    <!ELEMENT listacompras   (venta+)>
+    <!ELEMENT venta          (ventaacredito|ventainmediata)>
+    <!ELEMENT ventaacredito  (fechafinpago?, cantidad)>
+    <!ELEMENT ventainmediata (cantidad, divisa)>
+    <!ELEMENT fechafinpago   (#PCDATA)>
+    <!ELEMENT cantidad       (#PCDATA)>
+    <!ELEMENT divisa         (#PCDATA)>
+
+
 
 
 Ejercicio (con atributos)
@@ -719,8 +736,9 @@ Solución completa
     <!ELEMENT listacursos (curso)+>
     <!ELEMENT curso (alumno)+>
     <!ELEMENT alumno (dni, nombre,
-                        ap1, ap2?, asignatura+)>
+                        ap1, ap2?, listaasignaturas)>
         
+    <!ELEMENT listaasignaturas (asignatura+)>
     <!ELEMENT asignatura (nombre, profesor)>
     <!ATTLIST asignatura codigo CDATA #REQUIRED>
         
@@ -743,14 +761,16 @@ Un ejemplo de fichero válido:
                 <dni>44e</dni>
                 <nombre>Juan</nombre>
                 <ap1>Sanchez</ap1>
-                <asignatura codigo="LM1">
-                    <nombre>Leng marcas</nombre>
-                    <profesor>
-                        <nrp>8</nrp>
-                        <nombre>Oscar</nombre>
-                        <ap1>Gomez</ap1>
-                    </profesor>
-                </asignatura>
+                <listaasignaturas>
+                    <asignatura codigo="LM1">
+                        <nombre>Leng marcas</nombre>
+                        <profesor>
+                            <nrp>8</nrp>
+                            <nombre>Oscar</nombre>
+                            <ap1>Gomez</ap1>
+                        </profesor>
+                    </asignatura>
+                </listaasignaturas>
             </alumno>
         </curso>
     </listacursos>

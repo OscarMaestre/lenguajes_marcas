@@ -73,7 +73,7 @@
 
 
 \title{Apuntes de Lenguajes de Marcas Documentation}
-\date{26 de febrero de 2020}
+\date{11 de marzo de 2020}
 \release{1.3}
 \author{Oscar Gomez}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -6294,16 +6294,16 @@ XML es un conjunto de tecnologías orientadas a crear nuestros propios lenguajes
 \label{\detokenize{tema5:un-ejemplo-sencillo}}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}UTF\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
-    \PYG{n+nt}{\PYGZlt{}clientes}\PYG{n+nt}{\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}AcerSA\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5664332\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Mer SL\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5111444\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
-    \PYG{n+nt}{\PYGZlt{}/clientes\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}clientes}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}AcerSA\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5664332\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}cliente}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Mer SL\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}cif}\PYG{n+nt}{\PYGZgt{}}5111444\PYG{n+nt}{\PYGZlt{}/cif\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/cliente\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/clientes\PYGZgt{}}
 \end{sphinxVerbatim}
 
 Lo fundamental es que podemos crear nuestros propios «vocabularios» XML.
@@ -6879,6 +6879,135 @@ Este documento \sphinxstylestrong{sí es válido}. Las DTD solo se ocupan de det
 \end{sphinxVerbatim}
 
 
+\section{Ejercicio III}
+\label{\detokenize{tema5:ejercicio-iii}}
+Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+* El fichero debe llevar una raíz \sphinxcode{\sphinxupquote{\textless{}productos\textgreater{}}}
+* Dentro de productos debe haber alguno de estos \sphinxcode{\sphinxupquote{\textless{}producto\textgreater{}}} , \sphinxcode{\sphinxupquote{\textless{}raton\textgreater{}}} , \sphinxcode{\sphinxupquote{\textless{}teclado\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}monitor\textgreater{}}}
+* Todo ratón, teclado o monitor tiene siempre un código.
+* Todo ratón, teclado o monitor puede llevar un nombre.
+* Todo ratón, teclado o monitor puede llevar una descripción.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}productos}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}raton}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}27A\PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/raton\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}producto}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}teclado}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}codigo}\PYG{n+nt}{\PYGZgt{}}28D\PYG{n+nt}{\PYGZlt{}/codigo\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}descripcion}\PYG{n+nt}{\PYGZgt{}}Teclado en Español\PYG{n+nt}{\PYGZlt{}/descripcion\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/teclado\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/producto\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/productos\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Solución al ejercicio III}
+\label{\detokenize{tema5:solucion-al-ejercicio-iii}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{productos} \PYG{o}{(}\PYG{n+nt}{producto}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{producto}  \PYG{o}{(}\PYG{n+nt}{raton}\PYG{o}{\textbar{}}\PYG{n+nt}{teclado}\PYG{o}{\textbar{}}\PYG{n+nt}{monitor}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{raton}     \PYG{o}{(}\PYG{n+nt}{codigo}\PYG{o}{,} \PYG{n+nt}{nombre}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{descripcion}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{teclado}   \PYG{o}{(}\PYG{n+nt}{codigo}\PYG{o}{,} \PYG{n+nt}{nombre}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{descripcion}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}    \PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{monitor}   \PYG{o}{(}\PYG{n+nt}{codigo}\PYG{o}{,} \PYG{n+nt}{nombre}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{descripcion}\PYG{o}{?}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{codigo}    \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{nombre}    \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{descripcion} \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
+\section{Ejercicio IV}
+\label{\detokenize{tema5:ejercicio-iv}}
+Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
+\begin{itemize}
+\item {} 
+El elemento raíz será \textless{}listaventas\textgreater{}
+
+\item {} 
+Toda \textless{}listaventas\textgreater{} tiene una o más \textless{}venta\textgreater{}.
+
+\item {} 
+Toda \textless{}venta\textgreater{} tiene los siguientes datos:
+\begin{quote}
+
+** Importe.
+** Comprador.
+** Vendedor.
+** Fecha (optativa).
+** Un codigo de factura.
+\end{quote}
+
+\end{itemize}
+
+
+\subsection{Solución al ejercicio IV}
+\label{\detokenize{tema5:solucion-al-ejercicio-iv}}
+Por ahora no se dará la solución de este ejercicio. Inténtalo y si no puedes pide ayuda al profesor o escríbele un email para averiguar como resolverlo.
+
+
+\section{Ejercicio V DTD}
+\label{\detokenize{tema5:ejercicio-v-dtd}}
+En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.
+\begin{itemize}
+\item {} 
+La raíz debe ser el elemento \sphinxcode{\sphinxupquote{\textless{}listacompras\textgreater{}}}
+
+\item {} 
+Dentro de \sphinxcode{\sphinxupquote{\textless{}listacompras\textgreater{}}} debe haber uno o más elementos \sphinxcode{\sphinxupquote{\textless{}venta\textgreater{}}}
+
+\item {} 
+Una \sphinxcode{\sphinxupquote{venta}} puede llevar dentro uno de dos: \sphinxcode{\sphinxupquote{\textless{}ventaacredito\textgreater{}}} o \sphinxcode{\sphinxupquote{\textless{}ventainmediata\textgreater{}}}
+
+\item {} 
+Un elemento \sphinxcode{\sphinxupquote{\textless{}ventaacredito\textgreater{}}} consta de : un elemento \sphinxcode{\sphinxupquote{\textless{}fechafinpago\textgreater{}}} que es optativo y un elemento \sphinxcode{\sphinxupquote{\textless{}cantidad\textgreater{}}} que es obligatorio.
+
+\item {} 
+Un elemento \sphinxcode{\sphinxupquote{\textless{}ventainmediata\textgreater{}}} lleva dentro dos cosas: un elemento \sphinxcode{\sphinxupquote{\textless{}cantidad\textgreater{}}} que es obligatorio y un elemento \sphinxcode{\sphinxupquote{\textless{}divisa\textgreater{}}} que también es obligatorio.
+
+\end{itemize}
+
+
+\subsection{Solución al ejercicio V}
+\label{\detokenize{tema5:solucion-al-ejercicio-v}}
+Puedes usar este ejemplo para hacer la validación:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}listacompras}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ventaacredito}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}fechafinpago}\PYG{n+nt}{\PYGZgt{}}22\PYGZhy{}10\PYGZhy{}2021\PYG{n+nt}{\PYGZlt{}/fechafinpago\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}21000\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ventaacredito\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ventainmediata}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}1800\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}divisa}\PYG{n+nt}{\PYGZgt{}}euros\PYG{n+nt}{\PYGZlt{}/divisa\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ventainmediata\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}venta}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}ventaacredito}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}cantidad}\PYG{n+nt}{\PYGZgt{}}21000\PYG{n+nt}{\PYGZlt{}/cantidad\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ventaacredito\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/venta\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/listacompras\PYGZgt{}}
+\end{sphinxVerbatim}
+
+Una posible solución sería:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{listacompras}   \PYG{o}{(}\PYG{n+nt}{venta}\PYG{o}{+}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{venta}          \PYG{o}{(}\PYG{n+nt}{ventaacredito}\PYG{o}{\textbar{}}\PYG{n+nt}{ventainmediata}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{ventaacredito}  \PYG{o}{(}\PYG{n+nt}{fechafinpago}\PYG{o}{?}\PYG{o}{,} \PYG{n+nt}{cantidad}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{ventainmediata} \PYG{o}{(}\PYG{n+nt}{cantidad}\PYG{o}{,} \PYG{n+nt}{divisa}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{fechafinpago}   \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{cantidad}       \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\PYG{k}{\PYGZlt{}!ELEMENT} \PYG{n+nt}{divisa}         \PYG{o}{(}\PYG{k+kc}{\PYGZsh{}PCDATA}\PYG{o}{)}\PYG{k}{\PYGZgt{}}
+\end{sphinxVerbatim}
+
+
 \section{Ejercicio (con atributos)}
 \label{\detokenize{tema5:ejercicio-con-atributos}}
 Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:
@@ -6969,8 +7098,9 @@ Un profesor tiene un NRP (Número de Registro Personal), un nombre y un apellido
 \PYG{c+cp}{\PYGZlt{}!ELEMENT listacursos (curso)+\PYGZgt{}}
 \PYG{c+cp}{\PYGZlt{}!ELEMENT curso (alumno)+\PYGZgt{}}
 \PYG{c+cp}{\PYGZlt{}!ELEMENT alumno (dni, nombre,}
-\PYG{c+cp}{                    ap1, ap2?, asignatura+)\PYGZgt{}}
+\PYG{c+cp}{                    ap1, ap2?, listaasignaturas)\PYGZgt{}}
 
+\PYG{c+cp}{\PYGZlt{}!ELEMENT listaasignaturas (asignatura+)\PYGZgt{}}
 \PYG{c+cp}{\PYGZlt{}!ELEMENT asignatura (nombre, profesor)\PYGZgt{}}
 \PYG{c+cp}{\PYGZlt{}!ATTLIST asignatura codigo CDATA \PYGZsh{}REQUIRED\PYGZgt{}}
 
@@ -6992,14 +7122,16 @@ Un ejemplo de fichero válido:
             \PYG{n+nt}{\PYGZlt{}dni}\PYG{n+nt}{\PYGZgt{}}44e\PYG{n+nt}{\PYGZlt{}/dni\PYGZgt{}}
             \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Juan\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
             \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Sanchez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}asignatura} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}LM1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Leng marcas\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}profesor}\PYG{n+nt}{\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}nrp}\PYG{n+nt}{\PYGZgt{}}8\PYG{n+nt}{\PYGZlt{}/nrp\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Oscar\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
-                    \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Gomez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
-                \PYG{n+nt}{\PYGZlt{}/profesor\PYGZgt{}}
-            \PYG{n+nt}{\PYGZlt{}/asignatura\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}listaasignaturas}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}asignatura} \PYG{n+na}{codigo=}\PYG{l+s}{\PYGZdq{}LM1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Leng marcas\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}profesor}\PYG{n+nt}{\PYGZgt{}}
+                        \PYG{n+nt}{\PYGZlt{}nrp}\PYG{n+nt}{\PYGZgt{}}8\PYG{n+nt}{\PYGZlt{}/nrp\PYGZgt{}}
+                        \PYG{n+nt}{\PYGZlt{}nombre}\PYG{n+nt}{\PYGZgt{}}Oscar\PYG{n+nt}{\PYGZlt{}/nombre\PYGZgt{}}
+                        \PYG{n+nt}{\PYGZlt{}ap1}\PYG{n+nt}{\PYGZgt{}}Gomez\PYG{n+nt}{\PYGZlt{}/ap1\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}/profesor\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/asignatura\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/listaasignaturas\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/alumno\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}/curso\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/listacursos\PYGZgt{}}
@@ -9616,19 +9748,6 @@ Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO
     \PYG{n+nt}{\PYGZlt{}/recepcion\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/portes\PYGZgt{}}
 \end{sphinxVerbatim}
-
-
-\section{Examen}
-\label{\detokenize{tema5:examen}}
-El examen de este tema tendrá lugar
-\begin{itemize}
-\item {} 
-Para DAM el viernes, 16 de marzo de 2018
-
-\item {} 
-Para ASIR el martes, 13 de marzo de 2018
-
-\end{itemize}
 
 
 \chapter{Recuperación de información}

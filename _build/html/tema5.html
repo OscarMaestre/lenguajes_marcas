@@ -521,10 +521,11 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <div class="section" id="ejercicio-iv">
 <h2>Ejercicio IV<a class="headerlink" href="#ejercicio-iv" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
-* El elemento raíz será &lt;listaventas&gt;
-* Toda &lt;listaventas&gt; tiene una o más &lt;venta&gt;.
-* Toda &lt;venta&gt; tiene los siguientes datos:</p>
+<p>Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:</p>
+<ul>
+<li><p>El elemento raíz será &lt;listaventas&gt;</p></li>
+<li><p>Toda &lt;listaventas&gt; tiene una o más &lt;venta&gt;.</p></li>
+<li><p>Toda &lt;venta&gt; tiene los siguientes datos:</p>
 <blockquote>
 <div><p>** Importe.
 ** Comprador.
@@ -532,6 +533,8 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 ** Fecha (optativa).
 ** Un codigo de factura.</p>
 </div></blockquote>
+</li>
+</ul>
 <div class="section" id="solucion-al-ejercicio-iv">
 <h3>Solución al ejercicio IV<a class="headerlink" href="#solucion-al-ejercicio-iv" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Por ahora no se dará la solución de este ejercicio. Inténtalo y si no puedes pide ayuda al profesor o escríbele un email para averiguar como resolverlo.</p>
@@ -539,12 +542,14 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <div class="section" id="ejercicio-v-dtd">
 <h2>Ejercicio V DTD<a class="headerlink" href="#ejercicio-v-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.
-* La raíz debe ser el elemento <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code>
-* Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code> debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;venta&gt;</span></code>
-* Una <code class="docutils literal notranslate"><span class="pre">venta</span></code> puede llevar dentro uno de dos: <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code>
-* Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> consta de : un elemento <code class="docutils literal notranslate"><span class="pre">&lt;fechafinpago&gt;</span></code> que es optativo y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio.
-* Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code> lleva dentro dos cosas: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;divisa&gt;</span></code> que también es obligatorio.</p>
+<p>En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.</p>
+<ul class="simple">
+<li><p>La raíz debe ser el elemento <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code></p></li>
+<li><p>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code> debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;venta&gt;</span></code></p></li>
+<li><p>Una <code class="docutils literal notranslate"><span class="pre">venta</span></code> puede llevar dentro uno de dos: <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code></p></li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> consta de : un elemento <code class="docutils literal notranslate"><span class="pre">&lt;fechafinpago&gt;</span></code> que es optativo y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio.</p></li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code> lleva dentro dos cosas: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;divisa&gt;</span></code> que también es obligatorio.</p></li>
+</ul>
 <div class="section" id="solucion-al-ejercicio-v">
 <h3>Solución al ejercicio V<a class="headerlink" href="#solucion-al-ejercicio-v" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Puedes usar este ejemplo para hacer la validación:</p>
@@ -567,6 +572,16 @@ un ratón y despues un teclado, y solo uno de cada.</p>
         <span class="nt">&lt;/ventaacredito&gt;</span>
     <span class="nt">&lt;/venta&gt;</span>
 <span class="nt">&lt;/listacompras&gt;</span>
+</pre></div>
+</div>
+<p>Una posible solución sería:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listacompras</span>   <span class="o">(</span><span class="nt">venta</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">venta</span>          <span class="o">(</span><span class="nt">ventaacredito</span><span class="o">|</span><span class="nt">ventainmediata</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventaacredito</span>  <span class="o">(</span><span class="nt">fechafinpago</span><span class="o">?,</span> <span class="nt">cantidad</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventainmediata</span> <span class="o">(</span><span class="nt">cantidad</span><span class="o">,</span> <span class="nt">divisa</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">fechafinpago</span>   <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cantidad</span>       <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">divisa</span>         <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -631,8 +646,9 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!ELEMENT listacursos (curso)+&gt;</span>
 <span class="cp">&lt;!ELEMENT curso (alumno)+&gt;</span>
 <span class="cp">&lt;!ELEMENT alumno (dni, nombre,</span>
-<span class="cp">                    ap1, ap2?, asignatura+)&gt;</span>
+<span class="cp">                    ap1, ap2?, listaasignaturas)&gt;</span>
 
+<span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)&gt;</span>
 <span class="cp">&lt;!ELEMENT asignatura (nombre, profesor)&gt;</span>
 <span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
 
@@ -652,14 +668,16 @@ un ratón y despues un teclado, y solo uno de cada.</p>
             <span class="nt">&lt;dni&gt;</span>44e<span class="nt">&lt;/dni&gt;</span>
             <span class="nt">&lt;nombre&gt;</span>Juan<span class="nt">&lt;/nombre&gt;</span>
             <span class="nt">&lt;ap1&gt;</span>Sanchez<span class="nt">&lt;/ap1&gt;</span>
-            <span class="nt">&lt;asignatura</span> <span class="na">codigo=</span><span class="s">&quot;LM1&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>Leng marcas<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;profesor&gt;</span>
-                    <span class="nt">&lt;nrp&gt;</span>8<span class="nt">&lt;/nrp&gt;</span>
-                    <span class="nt">&lt;nombre&gt;</span>Oscar<span class="nt">&lt;/nombre&gt;</span>
-                    <span class="nt">&lt;ap1&gt;</span>Gomez<span class="nt">&lt;/ap1&gt;</span>
-                <span class="nt">&lt;/profesor&gt;</span>
-            <span class="nt">&lt;/asignatura&gt;</span>
+            <span class="nt">&lt;listaasignaturas&gt;</span>
+                <span class="nt">&lt;asignatura</span> <span class="na">codigo=</span><span class="s">&quot;LM1&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;nombre&gt;</span>Leng marcas<span class="nt">&lt;/nombre&gt;</span>
+                    <span class="nt">&lt;profesor&gt;</span>
+                        <span class="nt">&lt;nrp&gt;</span>8<span class="nt">&lt;/nrp&gt;</span>
+                        <span class="nt">&lt;nombre&gt;</span>Oscar<span class="nt">&lt;/nombre&gt;</span>
+                        <span class="nt">&lt;ap1&gt;</span>Gomez<span class="nt">&lt;/ap1&gt;</span>
+                    <span class="nt">&lt;/profesor&gt;</span>
+                <span class="nt">&lt;/asignatura&gt;</span>
+            <span class="nt">&lt;/listaasignaturas&gt;</span>
         <span class="nt">&lt;/alumno&gt;</span>
     <span class="nt">&lt;/curso&gt;</span>
 <span class="nt">&lt;/listacursos&gt;</span>
