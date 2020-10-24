@@ -1,37 +1,189 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Introducción &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html4" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introducción &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="HTML5" href="tema2.html" />
-    <link rel="prev" title="Apuntes de Lenguajes de marcas" href="index.html" />
+    <link rel="prev" title="Apuntes de Lenguajes de marcas" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducción</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#historia">Historia</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#el-pasado">El pasado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#el-presente">El presente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#el-futuro">El futuro</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#servidores-web">Servidores web</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#como-configurar-un-servidor-en-casa">Como configurar un servidor en casa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#los-nombres-de-dominio">Los nombres de dominio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#los-sistemas-de-gestion-de-informacion">Los sistemas de gestión de información</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tipos-de-lenguajes">Tipos de lenguajes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organismos-de-regulacion">Organismos de regulación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gramaticas-y-dtds">Gramáticas y DTD’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-schemas">XML Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definiciones">Definiciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introducción</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema1.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="introduccion">
 <h1>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h1>
@@ -55,24 +207,24 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 <div class="section" id="servidores-web">
 <h2>Servidores web<a class="headerlink" href="#servidores-web" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos «<a class="reference external" href="http://www.google.es">http://www.google.es</a>» contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre «www.google.es» y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200</p>
-<div class="figure align-default" id="id1">
+<div class="figure" id="id1">
 <a class="reference internal image-reference" href="_images/http_get_y_post.png"><img alt="_images/http_get_y_post.png" src="_images/http_get_y_post.png" style="width: 344.5px; height: 179.5px;" /></a>
-<p class="caption"><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span></p>
 </div>
 <p>Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
 <ul class="simple">
-<li><p>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</p></li>
-<li><p>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</p></li>
+<li>Uno privado, tiene la ventaja de ofrecer un control absoluto. No siempre es fácil mantener un ordenador doméstico conectado 24x7. En especial, en España, las  conexiones ADSL no suelen ofrecer las capacidades necesarias para un sitio web de tamaño mediano.</li>
+<li>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</li>
 </ul>
 <div class="section" id="como-configurar-un-servidor-en-casa">
 <h3>Como configurar un servidor en casa<a class="headerlink" href="#como-configurar-un-servidor-en-casa" title="Enlazar permanentemente con este título">¶</a></h3>
 <ol class="arabic simple">
-<li><p>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</p></li>
-<li><p>Apuntar la IP del equipo en el que se instala Apache.</p></li>
-<li><p>Entrar en el router y <strong>abrir el puerto 80</strong> indicando que se debe reenviar el tráfico a la IP que se apuntó.</p></li>
-<li><p>Se debe averiguar la IP pública del router (por ejemplo podemos visitar <a class="reference external" href="http://whatsmyip.org">WhatsMyIp</a> ,</p></li>
-<li><p>La IP que aparece es la que se puede dar a clientes o amigos para que naveguen por nuestro sitio web.</p></li>
-<li><p>(Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.</p></li>
+<li>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</li>
+<li>Apuntar la IP del equipo en el que se instala Apache.</li>
+<li>Entrar en el router y <strong>abrir el puerto 80</strong> indicando que se debe reenviar el tráfico a la IP que se apuntó.</li>
+<li>Se debe averiguar la IP pública del router (por ejemplo podemos visitar <a class="reference external" href="http://whatsmyip.org">WhatsMyIp</a> ,</li>
+<li>La IP que aparece es la que se puede dar a clientes o amigos para que naveguen por nuestro sitio web.</li>
+<li>(Optativo) se puede alquilar un nombre de dominio y solicitar que ese nombre (loquesea.com) sea redirigido a nuestra IP pública.</li>
 </ol>
 </div>
 </div>
@@ -85,9 +237,9 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 <h2>Los sistemas de gestión de información<a class="headerlink" href="#los-sistemas-de-gestion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Definamos primero algunos términos:</p>
 <ul class="simple">
-<li><p>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</p></li>
-<li><p>Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.</p></li>
-<li><p>Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.</p></li>
+<li>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</li>
+<li>Gestión: conjunto de operaciones que resultan de relevancia para una persona o empresa.</li>
+<li>Información: conjunto de datos que resultan de utilidad a las funciones de la empresa.</li>
 </ul>
 <p>Un SGI no tiene por qué estar informatizado.</p>
 <p>Son programas que se pueden adaptar las necesidades de la empresa y que a veces necesitan
@@ -106,8 +258,8 @@ PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Lat
 <div class="section" id="organismos-de-regulacion">
 <h2>Organismos de regulación<a class="headerlink" href="#organismos-de-regulacion" title="Enlazar permanentemente con este título">¶</a></h2>
 <ol class="arabic simple">
-<li><p>La Internation Standards Organization emite estándares para la documentación.</p></li>
-<li><p>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></p></li>
+<li>La Internation Standards Organization emite estándares para la documentación.</li>
+<li>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></li>
 </ol>
 </div>
 <div class="section" id="gramaticas-y-dtds">
@@ -137,9 +289,9 @@ A modo de ejemplo, esto es una página válida</p>
 y tales documentos deben llevar en la cabecera algo que diga a qué estándar se ciñen.</p>
 <p>Las tres últimas familias de estándares han sido</p>
 <ul class="simple">
-<li><p>HTML4: muy permisivo, lo que dificulta a los navegadores el procesar el HTML dando lugar a que fuera bastante difícil para ellos el mostrar correctamente y de igual forma todos los HTML</p></li>
-<li><p>XHTML: es HTML con las estrictas reglas que impuso XML. Esto simplificó el desarrollo de navegadores y se avanzó en facilidad para mostrar páginas en distintos navegadores.</p></li>
-<li><p>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</p></li>
+<li>HTML4: muy permisivo, lo que dificulta a los navegadores el procesar el HTML dando lugar a que fuera bastante difícil para ellos el mostrar correctamente y de igual forma todos los HTML</li>
+<li>XHTML: es HTML con las estrictas reglas que impuso XML. Esto simplificó el desarrollo de navegadores y se avanzó en facilidad para mostrar páginas en distintos navegadores.</li>
+<li>HTML5: es una nueva revisión de XHTML en el que se han incluido nuevas posibilidades como etiquetas &lt;audio&gt; y &lt;video&gt; así como posibilidad de hacer muchas cosas desde JavaScript.</li>
 </ul>
 <p>Un ejemplo de DTD, sería esto:</p>
 <div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">lista_de_personas</span> <span class="o">(</span><span class="nt">persona</span><span class="o">*)</span><span class="k">&gt;</span>
@@ -214,102 +366,59 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navegación</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducción</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#historia">Historia</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#el-pasado">El pasado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#el-presente">El presente</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#el-futuro">El futuro</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#servidores-web">Servidores web</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#como-configurar-un-servidor-en-casa">Como configurar un servidor en casa</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#los-nombres-de-dominio">Los nombres de dominio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#los-sistemas-de-gestion-de-informacion">Los sistemas de gestión de información</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tipos-de-lenguajes">Tipos de lenguajes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#organismos-de-regulacion">Organismos de regulación</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gramaticas-y-dtds">Gramáticas y DTD’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#xml-schemas">XML Schemas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#definiciones">Definiciones</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="capítulo anterior">Apuntes de Lenguajes de marcas</a></li>
-      <li>Next: <a href="tema2.html" title="próximo capítulo">HTML5</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Ir a" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema2.html" class="btn btn-neutral float-right" title="HTML5" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Apuntes de Lenguajes de marcas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema1.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

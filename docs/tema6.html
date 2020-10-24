@@ -1,37 +1,234 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Recuperación de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html4" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recuperación de información &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Sindicación y transformación de contenidos" href="tema7.html" />
-    <link rel="prev" title="XML" href="tema5.html" />
+    <link rel="prev" title="XML" href="tema5.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Recuperación de información</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xquery">XQuery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-en-xquery">Funciones en XQuery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#consultas-de-ejemplo">Consultas de ejemplo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#suministros-grandes">Suministros grandes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renombrado-de-etiquetas">Renombrado de etiquetas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cruces-o-joins">Cruces o joins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-base">Ejemplo de base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#la-clase-document">La clase Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-extraccion-de-informacion-financiera">Ejercicio: extracción de información financiera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Ejercicio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion">Solución</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Ejercicio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analisis">Análisis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#diseno">Diseño</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Ejercicio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Análisis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Diseño</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementacion">Implementación</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Ejercicio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Análisis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Diseño</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-1">Solución 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-2">Solución 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#anexo">Anexo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#codigo-java">Código Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archivo-xml">Archivo XML</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#procesamiento-con-sax">Procesamiento con SAX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-encontrar-producto">Ejercicio: encontrar producto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-precios">Ejercicio: precios</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-para-preparar-examen">Ejercicios para preparar examen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Recuperación de información</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema6.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="recuperacion-de-informacion">
 <h1>Recuperación de información<a class="headerlink" href="#recuperacion-de-informacion" title="Enlazar permanentemente con este título">¶</a></h1>
@@ -39,13 +236,13 @@
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En este tema veremos que podemos recuperar información de archivos XML <em>igual</em> que si fuesen bases de datos. Para ello podemos usar dos cosas:</p>
 <ul class="simple">
-<li><p>Un lenguaje de programación de propósito general, como es Java.</p></li>
-<li><p>O un lenguaje de programación especializado como es XQuery.</p></li>
+<li>Un lenguaje de programación de propósito general, como es Java.</li>
+<li>O un lenguaje de programación especializado como es XQuery.</li>
 </ul>
 <p>En líneas generales hay dos grandes formas de usar un lenguaje de programación como Java para leer o escribir archivos XML.</p>
 <ul class="simple">
-<li><p>DOM: significa Document Object Model (o Modelo del objeto documento). DOM en general almacena los archivos en memoria lo que es mucho más rápido y eficiente.</p></li>
-<li><p>SAX: en algunos casos, los archivos muy grandes, pueden no caber en memoria. SAX proporciona otras clases y métodos distintos para ir procesando un archivo por partes. SAX significa Simple Access for XML, pero en general es un poco más complicado. En este módulo, no lo veremos.</p></li>
+<li>DOM: significa Document Object Model (o Modelo del objeto documento). DOM en general almacena los archivos en memoria lo que es mucho más rápido y eficiente.</li>
+<li>SAX: en algunos casos, los archivos muy grandes, pueden no caber en memoria. SAX proporciona otras clases y métodos distintos para ir procesando un archivo por partes. SAX significa Simple Access for XML, pero en general es un poco más complicado. En este módulo, no lo veremos.</li>
 </ul>
 <p>DOM es un estándar y sus clases y métodos existen en muchos otros lenguajes.</p>
 </div>
@@ -292,9 +489,9 @@
 </pre></div>
 </div>
 <p>En el esquema siguiente se muestra el mismo fichero en forma de tablas.</p>
-<div class="figure align-default" id="id16">
+<div class="figure" id="id16">
 <a class="reference internal image-reference" href="_images/BaseDatosProveedoresPartesProyectos.png"><img alt="_images/BaseDatosProveedoresPartesProyectos.png" src="_images/BaseDatosProveedoresPartesProyectos.png" style="width: 706.3px; height: 385.7px;" /></a>
-<p class="caption"><span class="caption-text">Estructura de tablas del XML de la base de datos de proveedores, partes y proyectos</span><a class="headerlink" href="#id16" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Estructura de tablas del XML de la base de datos de proveedores, partes y proyectos</span></p>
 </div>
 <p>En él podríamos ejecutar consultas como estas:
 * Recuperar todos los proveedores con <code class="docutils literal notranslate"><span class="pre">doc(&quot;datos.xml&quot;)/datos/proveedores</span></code>
@@ -436,10 +633,10 @@
 <h3>Funciones en XQuery<a class="headerlink" href="#funciones-en-xquery" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>XQuery y XPath comparten funciones que permiten aplicar procesamiento extra a los nodos de un XML. A continuación se nombran algunas muy usadas:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal notranslate"><span class="pre">fila</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</p></li>
-<li><p>XQuery también tiene «funciones de agregación» al estilo de SQL como <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> y <code class="docutils literal notranslate"><span class="pre">avg</span></code>. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
-<li><p>En XQuery se usa <code class="docutils literal notranslate"><span class="pre">distinct-values</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">distinct</span></code> como hace SQL.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">concat($fila,</span> <span class="pre">'</span> <span class="pre">')</span></code> concatena dos elementos, en este caso pone un espacio tras los datos de <code class="docutils literal notranslate"><span class="pre">fila</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">string-length($elemento)</span></code> devuelve la longitud de una cadena.</li>
+<li>XQuery también tiene «funciones de agregación» al estilo de SQL como <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> y <code class="docutils literal notranslate"><span class="pre">avg</span></code>. Además se pueden aplicar directamente a un conjunto sin necesidad de hacer un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</li>
+<li>En XQuery se usa <code class="docutils literal notranslate"><span class="pre">distinct-values</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">distinct</span></code> como hace SQL.</li>
 </ul>
 </div>
 <div class="section" id="consultas-de-ejemplo">
@@ -477,9 +674,9 @@ return <span class="nt">&lt;numpartes&gt;</span>
 <h4>Cruces o joins<a class="headerlink" href="#cruces-o-joins" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Recuperar la ciudad de los proveedores que suministran mas de 450 partes. Devolverlo todo dentro de un elemento raíz <code class="docutils literal notranslate"><span class="pre">resultados</span></code> haciendo que en cada fila haya un elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code> que tenga a su vez tres hijos:</p>
 <ul class="simple">
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">numprov</span></code> donde se vea el numero de proveedor.</p></li>
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> donde se vea el nombre del proveedor.</p></li>
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">cantidadpartes</span></code> donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)</p></li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">numprov</span></code> donde se vea el numero de proveedor.</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">nombre</span></code> donde se vea el nombre del proveedor.</li>
+<li>Un elemento <code class="docutils literal notranslate"><span class="pre">cantidadpartes</span></code> donde vaya la cantidad de partes suministradas (que evidentemente debería ser siempre mayor de 450)</li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;resultados&gt;</span>
 {
@@ -563,18 +760,18 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <p>La clase principal que nos interesa es la clase <code class="docutils literal notranslate"><span class="pre">Node</span></code>, siendo <code class="docutils literal notranslate"><span class="pre">Document</span></code> su clase Hija. Algunos métodos de interés son estos:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a «navegar» a través de los elementos.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getFirstChild()</span></code> obtiene el primer elemento hijo del nodo que estemos visitando.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getParentNode()</span></code> nos permite obtener el nodo padre de un cierto nodo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> obtiene todos los nodos hijo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getNextSibling()</span></code> obtiene el siguiente nodo hermano.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> devuelve un <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> con todos los hijos de un elemento. Esta <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> se puede recorrer con un <code class="docutils literal notranslate"><span class="pre">for</span></code>, obteniendo el tamaño de la lista con <code class="docutils literal notranslate"><span class="pre">getLength()</span></code> y extrayendo los elementos con el método <code class="docutils literal notranslate"><span class="pre">item(posicion)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> es un método que nos indica el tipo de nodo (devuelve un <code class="docutils literal notranslate"><span class="pre">short</span></code>). Podemos comparar con <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code> para ver si el nodo es realmente un elemento.</p></li>
-<li><p>Otro método de utilidad es <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que extrae todos los subelementos que tengan un cierto nombre de etiqueta.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">getDocumentElement()</span></code> obtiene el elemento raíz, a partir del cual podremos empezar a «navegar» a través de los elementos.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getFirstChild()</span></code> obtiene el primer elemento hijo del nodo que estemos visitando.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getParentNode()</span></code> nos permite obtener el nodo padre de un cierto nodo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> obtiene todos los nodos hijo.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getNextSibling()</span></code> obtiene el siguiente nodo hermano.</li>
+<li><code class="docutils literal notranslate"><span class="pre">getChildNodes()</span></code> devuelve un <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> con todos los hijos de un elemento. Esta <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> se puede recorrer con un <code class="docutils literal notranslate"><span class="pre">for</span></code>, obteniendo el tamaño de la lista con <code class="docutils literal notranslate"><span class="pre">getLength()</span></code> y extrayendo los elementos con el método <code class="docutils literal notranslate"><span class="pre">item(posicion)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> es un método que nos indica el tipo de nodo (devuelve un <code class="docutils literal notranslate"><span class="pre">short</span></code>). Podemos comparar con <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code> para ver si el nodo es realmente un elemento.</li>
+<li>Otro método de utilidad es <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que extrae todos los subelementos que tengan un cierto nombre de etiqueta.</li>
 </ul>
 <div class="admonition hint">
-<p class="admonition-title">Consejo</p>
-<p>En general, hay muchas clases que proporcionan más métodos de utilidad, como por ejemplo la clase <code class="docutils literal notranslate"><span class="pre">Element</span></code>. En muchas ocasiones, podremos hacer un <code class="docutils literal notranslate"><span class="pre">cast</span></code> y aprovecharnos de ellos.</p>
+<p class="first admonition-title">Consejo</p>
+<p class="last">En general, hay muchas clases que proporcionan más métodos de utilidad, como por ejemplo la clase <code class="docutils literal notranslate"><span class="pre">Element</span></code>. En muchas ocasiones, podremos hacer un <code class="docutils literal notranslate"><span class="pre">cast</span></code> y aprovecharnos de ellos.</p>
 </div>
 <p>Cuando se procesan archivos, se debe tener especial importancia a los espacios en blanco que pueda haber. Estos dos archivos no son iguales:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>El primer hijo de listado es <span class="nt">&lt;futuro&gt;</span>
@@ -663,9 +860,9 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <p>Ampliaciones:</p>
 <ul class="simple">
-<li><p>Añadir uno que devuelva todas las edades.</p></li>
-<li><p>Añadir uno que devuelva los nombres de los empleados mayores de 30 (mostrando los nombres pero no las edades).</p></li>
-<li><p>Añadir un método que diga cuantos empleados hay. El método debe ser capaz de tolerar que haya muchas líneas en blanco seguidas.</p></li>
+<li>Añadir uno que devuelva todas las edades.</li>
+<li>Añadir uno que devuelva los nombres de los empleados mayores de 30 (mostrando los nombres pero no las edades).</li>
+<li>Añadir un método que diga cuantos empleados hay. El método debe ser capaz de tolerar que haya muchas líneas en blanco seguidas.</li>
 </ul>
 <p>El siguiente código resuelve el problema de mostrar los mayores de cierta edad:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">mostrarMayoresDe</span><span class="o">(</span><span class="kt">int</span> <span class="n">edadMinima</span><span class="o">)</span>
@@ -735,8 +932,8 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>Imprimir todos los elementos hijo del archivo XML.</p>
 <p>Una posibilidad es la siguiente:</p>
 <ul class="simple">
-<li><p>Usar <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir recorriendo hermano a hermano hasta que se encuentre un <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
-<li><p>Para evitar los nodos texto, solo imprimiremos cosas cuando el <code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> nos devuelva un tipo <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code></p></li>
+<li>Usar <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir recorriendo hermano a hermano hasta que se encuentre un <code class="docutils literal notranslate"><span class="pre">null</span></code></li>
+<li>Para evitar los nodos texto, solo imprimiremos cosas cuando el <code class="docutils literal notranslate"><span class="pre">getNodeType()</span></code> nos devuelva un tipo <code class="docutils literal notranslate"><span class="pre">Node.ELEMENT_NODE</span></code></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">imprimirHijos</span><span class="o">(</span><span class="n">Node</span> <span class="n">nodoRaiz</span><span class="o">){</span>
                 <span class="k">if</span> <span class="o">(</span><span class="n">nodoRaiz</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
@@ -816,11 +1013,11 @@ return <span class="nt">&lt;datos&gt;</span>
 </div>
 <p>…crear un programa XML que:</p>
 <ul class="simple">
-<li><p>Busque todos los elementos cuya ciudad de procedencia sea «Madrid».</p></li>
-<li><p>Si el elemento es un futuro mostrará el contenido de la etiqueta «producto».</p></li>
-<li><p>Si el elemento es una divisa se mostrará el contenido de la etiqueta «nombre».</p></li>
-<li><p>Si el elemento es una letra  se mostrará el contenido de la etiqueta «pais_emisor».</p></li>
-<li><p>Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais_de_procedencia».</p></li>
+<li>Busque todos los elementos cuya ciudad de procedencia sea «Madrid».</li>
+<li>Si el elemento es un futuro mostrará el contenido de la etiqueta «producto».</li>
+<li>Si el elemento es una divisa se mostrará el contenido de la etiqueta «nombre».</li>
+<li>Si el elemento es una letra  se mostrará el contenido de la etiqueta «pais_emisor».</li>
+<li>Si el elemento es un bono  se mostrará el contenido de la etiqueta «pais_de_procedencia».</li>
 </ul>
 <p>Una posibilidad (incompleta) sería esta:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProcesadorFinanzas</span> <span class="o">{</span>
@@ -1013,13 +1210,14 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>Contar cuantos productos financieros tienen algo que ver con el país «Islandia»</p>
 <p>Se deben tener presentes varias cosas:</p>
 <ul>
-<li><p>Si no se tiene claro lo que nos piden, preguntar.</p></li>
-<li><p>En cualquier caso, si se tiene DTD, hay una buena pista.</p>
+<li><p class="first">Si no se tiene claro lo que nos piden, preguntar.</p>
+</li>
+<li><p class="first">En cualquier caso, si se tiene DTD, hay una buena pista.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_de_procedencia&gt;</span></code>, que puede contener cualquier cosa (incluido Islandia)</p></li>
-<li><p>La ciudad de procedencia no incluye la capital o ninguna ciudad de dicho país, así que podemos ignorar eso.</p></li>
-<li><p>También aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_emisor&gt;</span></code>, pero tampoco incluye Islandia, en principio también podemos saltarlo.</p></li>
+<li>Aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_de_procedencia&gt;</span></code>, que puede contener cualquier cosa (incluido Islandia)</li>
+<li>La ciudad de procedencia no incluye la capital o ninguna ciudad de dicho país, así que podemos ignorar eso.</li>
+<li>También aparece un elemento llamado <code class="docutils literal notranslate"><span class="pre">&lt;pais_emisor&gt;</span></code>, pero tampoco incluye Islandia, en principio también podemos saltarlo.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -1031,10 +1229,10 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="solucion">
 <h4>Solución<a class="headerlink" href="#solucion" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li><p>La clase <code class="docutils literal notranslate"><span class="pre">Element</span></code> tiene un método llamado <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que nos permite recuperar de una sola vez todos los elementos con el nombre <code class="docutils literal notranslate"><span class="pre">bono</span></code>.</p></li>
-<li><p>Se debe tener en cuenta que para llegar al elemento que nos interesa podemos seguir usando los métodos <code class="docutils literal notranslate"><span class="pre">getFirstChild</span></code> o <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir al primer hijo o para ir al siguiente hermano.</p></li>
-<li><p>El contenido textual de un nodo se puede extraer con <code class="docutils literal notranslate"><span class="pre">getTextContent</span></code></p></li>
-<li><p>Al procesar un contenido textual, podríamos encontrar muchos espacios en blanco, tabuladores u otros elementos que alteren las comparaciones entre cadenas, por lo que deberemos usar métodos como <code class="docutils literal notranslate"><span class="pre">trim()</span></code> que limpian los espacios en blanco.</p></li>
+<li>La clase <code class="docutils literal notranslate"><span class="pre">Element</span></code> tiene un método llamado <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> que nos permite recuperar de una sola vez todos los elementos con el nombre <code class="docutils literal notranslate"><span class="pre">bono</span></code>.</li>
+<li>Se debe tener en cuenta que para llegar al elemento que nos interesa podemos seguir usando los métodos <code class="docutils literal notranslate"><span class="pre">getFirstChild</span></code> o <code class="docutils literal notranslate"><span class="pre">getNextSibling</span></code> para ir al primer hijo o para ir al siguiente hermano.</li>
+<li>El contenido textual de un nodo se puede extraer con <code class="docutils literal notranslate"><span class="pre">getTextContent</span></code></li>
+<li>Al procesar un contenido textual, podríamos encontrar muchos espacios en blanco, tabuladores u otros elementos que alteren las comparaciones entre cadenas, por lo que deberemos usar métodos como <code class="docutils literal notranslate"><span class="pre">trim()</span></code> que limpian los espacios en blanco.</li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">algoQueVerCon</span><span class="o">(</span><span class="n">Node</span> <span class="n">raiz</span><span class="o">,</span> <span class="n">String</span> <span class="n">nombrePais</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">cuantos</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
@@ -1064,10 +1262,10 @@ return <span class="nt">&lt;datos&gt;</span>
 <div class="section" id="analisis">
 <h4>Análisis<a class="headerlink" href="#analisis" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li><p>Se dispone del método anterior <code class="docutils literal notranslate"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país «España».</p></li>
-<li><p>Al analizar la DTD, se ha encontrado que la ciudad de procedencia de un elemento <code class="docutils literal notranslate"><span class="pre">futuro</span></code> puede ser Madrid.</p></li>
-<li><p>Al analizar la DTD también se ha encontrado que elemento <code class="docutils literal notranslate"><span class="pre">pais_emisor</span></code> de un elemento <code class="docutils literal notranslate"><span class="pre">letra</span></code> puede ser <code class="docutils literal notranslate"><span class="pre">espania</span></code></p></li>
-<li><p>Al analizar las divisas se debe comprobar si el elemento <code class="docutils literal notranslate"><span class="pre">ciudad_procedencia</span></code> es el elemento <code class="docutils literal notranslate"><span class="pre">madrid</span></code></p></li>
+<li>Se dispone del método anterior <code class="docutils literal notranslate"><span class="pre">algoQueVerCon</span></code> que nos permite contabilizar cuantos bonos tienen el país «España».</li>
+<li>Al analizar la DTD, se ha encontrado que la ciudad de procedencia de un elemento <code class="docutils literal notranslate"><span class="pre">futuro</span></code> puede ser Madrid.</li>
+<li>Al analizar la DTD también se ha encontrado que elemento <code class="docutils literal notranslate"><span class="pre">pais_emisor</span></code> de un elemento <code class="docutils literal notranslate"><span class="pre">letra</span></code> puede ser <code class="docutils literal notranslate"><span class="pre">espania</span></code></li>
+<li>Al analizar las divisas se debe comprobar si el elemento <code class="docutils literal notranslate"><span class="pre">ciudad_procedencia</span></code> es el elemento <code class="docutils literal notranslate"><span class="pre">madrid</span></code></li>
 </ul>
 </div>
 <div class="section" id="diseno">
@@ -1302,19 +1500,19 @@ return <span class="nt">&lt;datos&gt;</span>
 <p>El atributo <code class="docutils literal notranslate"><span class="pre">estable</span></code>, solo lo tienen los productos <code class="docutils literal notranslate"><span class="pre">bono</span></code>. Ese atributo es optativo, puede que esté o puede que no. Si existe, debemos comprobar si tiene un «no».</p>
 <p>Por otro lado, no sabemos a priori si habrá más de 2 o no.</p>
 <ul class="simple">
-<li><p>Podríamos hacer la cuenta, y si da más de 2 repetir operaciones y meter los bonos correctos en un vector.</p></li>
-<li><p>Podríamos ir haciendo las operaciones y a la vez las inserciones en un vector y ahorrarnos operaciones.</p></li>
+<li>Podríamos hacer la cuenta, y si da más de 2 repetir operaciones y meter los bonos correctos en un vector.</li>
+<li>Podríamos ir haciendo las operaciones y a la vez las inserciones en un vector y ahorrarnos operaciones.</li>
 </ul>
 <p>Optaremos por la segunda.</p>
 </div>
 <div class="section" id="id15">
 <h4>Diseño<a class="headerlink" href="#id15" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li><p>Aprovecharemos los métodos que nos permiten extraer el elemento raíz de un fichero.</p></li>
-<li><p>Necesitaremos crear vectores que tengan un cierto tamaño. Crearemos vectores muy grandes y los dejaremos con la inicialización que hace Java por defecto llenándolo con valores <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></li>
-<li><p>Podemos aprovechar métodos ofrecidos por Java como <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code>.</p></li>
-<li><p>Después recorreremos los elementos, comprobaremos si sus atributos cumplen las condiciones y si las cumplen almacenaremos en el vector a devolver la ciudad de ese bono.</p></li>
-<li><p>Nuestro método devolverá siempre algo como String[], ese vector puede que vaya lleno o no.</p></li>
+<li>Aprovecharemos los métodos que nos permiten extraer el elemento raíz de un fichero.</li>
+<li>Necesitaremos crear vectores que tengan un cierto tamaño. Crearemos vectores muy grandes y los dejaremos con la inicialización que hace Java por defecto llenándolo con valores <code class="docutils literal notranslate"><span class="pre">null</span></code>.</li>
+<li>Podemos aprovechar métodos ofrecidos por Java como <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code>.</li>
+<li>Después recorreremos los elementos, comprobaremos si sus atributos cumplen las condiciones y si las cumplen almacenaremos en el vector a devolver la ciudad de ese bono.</li>
+<li>Nuestro método devolverá siempre algo como String[], ese vector puede que vaya lleno o no.</li>
 </ul>
 </div>
 <div class="section" id="solucion-1">
@@ -2015,131 +2213,67 @@ encuentre una etiqueta. Como en nuestros documentos no estamos usando espacios d
 <div class="section" id="ejercicios-para-preparar-examen">
 <h2>Ejercicios para preparar examen<a class="headerlink" href="#ejercicios-para-preparar-examen" title="Enlazar permanentemente con este título">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Indicar cuantas letras tienen un tipo de interés inferior al 3% e indicar para cada una de ellas el país emisor.</p></li>
-<li><p>Comprobar si hay alguna divisa con nombre «Euro» cuyo precio sea mayor de 195.</p></li>
-<li><p>Indicar todos los productos que tengan la misma ciudad de procedencia.</p></li>
+<li>Indicar cuantas letras tienen un tipo de interés inferior al 3% e indicar para cada una de ellas el país emisor.</li>
+<li>Comprobar si hay alguna divisa con nombre «Euro» cuyo precio sea mayor de 195.</li>
+<li>Indicar todos los productos que tengan la misma ciudad de procedencia.</li>
 </ol>
 </div>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navegación</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Recuperación de información</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#xquery">XQuery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bucles-for-en-xquery">Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> en XQuery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ordenacion-en-xquery">Ordenación en XQuery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#funciones-en-xquery">Funciones en XQuery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#consultas-de-ejemplo">Consultas de ejemplo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#fundamentos-de-dom-con-java">Fundamentos de DOM con Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-base">Ejemplo de base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#la-clase-document">La clase Document</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-extraccion-de-informacion-financiera">Ejercicio: extracción de información financiera</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#anexo">Anexo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#codigo-java">Código Java</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#archivo-xml">Archivo XML</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#procesamiento-con-sax">Procesamiento con SAX</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-encontrar-producto">Ejercicio: encontrar producto</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-precios">Ejercicio: precios</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicios-para-preparar-examen">Ejercicios para preparar examen</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tema5.html" title="capítulo anterior">XML</a></li>
-      <li>Next: <a href="tema7.html" title="próximo capítulo">Sindicación y transformación de contenidos</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Ir a" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema7.html" class="btn btn-neutral float-right" title="Sindicación y transformación de contenidos" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tema5.html" class="btn btn-neutral float-left" title="XML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema6.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
