@@ -1,25 +1,35 @@
 #!/usr/bin/env python3
-
+import os
+from texttable import Texttable
 from random import randint
+from utilidades.genericas.Utilidades import Utilidades
+from utilidades.ficheros.GestorFicheros import GestorFicheros
 
+
+PLANTILLA_ANEXO="""
+Anexo: ejercicios sobre "grids"
+=====================================
+
+{0}
+"""
 
 PLANTILLA_HTML="""
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{0}</title>
-    <meta charset="utf-8">
-    <style>
+<head>
+<title>{0}</title>
+<meta charset="utf-8">
+<style>
 {1}
-    </style>
-  </head>  
-  <body>
-  Este ejercicio muestra una disposición de rejilla como esta ({4} filas y {5} columnas)
-  <pre>
+</style>
+</head>  
+<body>
+Este ejercicio muestra una disposición de rejilla como esta ({4} filas y {5} columnas)
+<pre>
 {3}
-  </pre>
+</pre>
 {2}  
-  </body>
+</body>
 </html>
 """
 
@@ -148,9 +158,8 @@ class Region:
         cadena=self.get_coordenadas()
         return cadena+"\n"+self.__str__()
 
-    def __str__(self):
+    def get_como_matriz(self):
         texto_region=[["X" for x in range(self.x0, self.xf)] for y in range(self.y0, self.yf)]
-        
         numero=0
         for reg in self.subregiones:
             cadena="x0:{0}, xf:{1}, y0:{2}, yf:{3}".format(reg.x0, reg.xf, reg.y0, reg.yf)
@@ -163,14 +172,44 @@ class Region:
                     formato="x0:{0}, y0:{1}"
                     #print (formato.format(x,y))
                     texto_region[y][x]=str(numero)
+        return texto_region
 
-
+    def __str__(self):
+        texto_region=self.get_como_matriz()
         filas=["".join(fila) for fila in texto_region]
         texto_tabla="\n".join(filas)
         return texto_tabla
 
+    def get_txt_como_tabla_sphinx(self):
+        print(str(self))
+        cadena="x0:{0}, xf:{1}, y0:{2}, yf:{3}".format(self.x0, self.xf, self.y0, self.yf)
+        print(cadena)
+        tabla=Texttable()
+        matriz=self.get_como_matriz()
+        pos_x=0
+        fila_encabezado=["X"]
+        ANCHO_COLUMNAS=8
+        anchuras=[ANCHO_COLUMNAS]
+        for x in range(self.x0, self.xf):
+            pos_x=pos_x+1
+            texto_encabezado_columna=" **C{0}** ".format(pos_x)
+            fila_encabezado.append(texto_encabezado_columna)
+            anchuras.append(len(texto_encabezado_columna))
+        tabla.set_cols_width(anchuras)
+        print(fila_encabezado)
+        tabla.add_row(fila_encabezado)
 
-    
+        num_fila=0
+        for y in range(self.y0, self.yf):
+            fila=[]
+            num_fila=num_fila+1
+            texto_num_fila=" **F{0}** ".format(num_fila)
+            fila.append(texto_num_fila)
+            for x in range(self.x0,self.xf):
+                fila.append(matriz[y][x])
+            print(fila)
+            tabla.add_row(fila)
+        return tabla.draw()
 
         
 
@@ -189,6 +228,30 @@ class GridHTML(object):
         self.region         =Region(0, self.columnas, 0, self.filas)
         self.regiones       =self.region.dividir_en_regiones(self.num_regiones)
         self.rellenar_regiones()
+
+    def generar_enunciado(self, nombre_ejercicio):
+
+        html=self.get_html()
+        css=self.get_css_grid()
+        rejilla=str(self.region)
+        contenido_sin_solucion=PLANTILLA_HTML.format(nombre_ejercicio, "", html, rejilla, self.filas, self.columnas)
+
+        contenido_con_solucion=PLANTILLA_HTML.format(nombre_ejercicio, css, html, rejilla, self.filas, self.columnas)
+
+        tabla_sphinx=self.region.get_txt_como_tabla_sphinx()
+
+        diccionario=dict()
+        diccionario["titulo"]       =nombre_ejercicio
+        diccionario["num_divs"]     =self.num_regiones
+        diccionario["html"]         =Utilidades.anadir_tabuladores(contenido_sin_solucion)
+        diccionario["num_filas"]    =self.filas
+        diccionario["num_columnas"] =self.columnas
+        diccionario["solucion_html"]=Utilidades.anadir_tabuladores(contenido_con_solucion)
+        diccionario["tabla_sphinx"] =tabla_sphinx
+
+        gf=GestorFicheros()
+        resultado=gf.rellenar_fichero_plantilla("plantilla_ejercicio_grids.txt", diccionario)
+        return resultado
 
     def rellenar_regiones (self):
         lista_identificadores=["caja", "columna", "bloque"]
@@ -214,15 +277,16 @@ class GridHTML(object):
         for r in self.regiones:
             identificador_div=r.nombre
             texto_region=r.texto_asociado
-            html="<div id='{0}'>\n{1}\n\t</div>".format(identificador_div, texto_region)
+            html="<div id='{0}'>\n{1}\n</div>".format(identificador_div, texto_region)
             trozos_html.append(html)
-        html_interno="\n\t".join(trozos_html)
+        html_interno="\n".join(trozos_html)
         lista_identificadores_globales=["contenedorglobal", "container", "contenedor"]
         pos_azar_id=randint(0, len(lista_identificadores_globales)-1)
         identificador=lista_identificadores_globales[pos_azar_id]
         self.identificador_contenedor=identificador;
-        html="<div id='{0}'>\n\t{1}\n</div>".format(identificador, html_interno)
-        return html
+        html="<div id='{0}'>\n{1}\n</div>".format(identificador, html_interno)
+        html_alineado=Utilidades.embellecer_html(html)
+        return html_alineado
 
     def get_css_grid(self):
         #Primero indicamos los datos del contenedor global
@@ -231,7 +295,7 @@ class GridHTML(object):
         css_filas_global="\tgrid-template-rows:   {0};".format(filas_global)
         css_cols_global ="\tgrid-template-columns:{0};".format(cols_global)
         datos_coords="\n".join([css_filas_global, css_cols_global])
-        css_global="#{0}{{\n\tdisplay:grid;\n\n{1}}}".format(self.identificador_contenedor, datos_coords)
+        css_global="#{0}{{\n\tdisplay:grid;\n{1}\n}}\n".format(self.identificador_contenedor, datos_coords)
 
         #Ahora indicamos el CSS de los trozos
         lista_css=[css_global]
@@ -248,25 +312,46 @@ class GridHTML(object):
             lista_css.append(css_region)
         return "\n".join(lista_css)
         
-    def get_contenido_archivo(self, nombre_ejercicio):
+    def get_html_con_solucion(self, nombre_ejercicio):
         html=self.get_html()
         css=self.get_css_grid()
         rejilla=str(self.region)
         contenido=PLANTILLA_HTML.format(nombre_ejercicio, css, html, rejilla, self.filas, self.columnas)
-        return contenido
+        return Utilidades.embellecer_html(contenido)
+
+    def get_html_sin_solucion(self, nombre_ejercicio):
+        html=self.get_html()
+        rejilla=str(self.region)
+        contenido=PLANTILLA_HTML.format(nombre_ejercicio, "", html, rejilla, self.filas, self.columnas)
+        return Utilidades.embellecer_html(contenido)
+        
+    
 
     def generar_archivo_solucion(self, nombre_ejercicio, nombre_archivo):
-        contenido_archivo=self.get_contenido_archivo(nombre_ejercicio)
+        contenido_archivo=self.get_html_con_solucion(nombre_ejercicio)
         with open(nombre_archivo, "w") as fichero:
             fichero.write(contenido_archivo)
     
 
 
 if __name__ == "__main__":
+    enunciados=[]
+    DIRECTORIO_SOLUCIONES="enunciados"
     for num_ejercicio in range(1, 20):
+        
         nombre_formateado="{0:02}".format(num_ejercicio)
         grid=GridHTML()
         nombre_archivo="Ejercicio-{0}.html".format(nombre_formateado)
+        #ruta_archivo=os.path.join(DIRECTORIO_SOLUCIONES, nombre_archivo)
         nombre_ejercicio="Ejercicio {0}".format(nombre_formateado)
-        grid.generar_archivo_solucion(nombre_ejercicio, nombre_archivo)
+        #grid.generar_archivo_solucion(nombre_ejercicio, ruta_archivo)
+        enunciado=grid.generar_enunciado(nombre_ejercicio)
+        enunciados.append(enunciado)
+        #print(grid.region.get_txt_como_tabla_sphinx())
+    
+    texto_enunciados="\n".join(enunciados)
+    texto_anexo=PLANTILLA_ANEXO.format(texto_enunciados)
+    ruta_anexo="anexo.rst"
+    with open(ruta_anexo, "w") as fich:
+        fich.write(texto_anexo)
 

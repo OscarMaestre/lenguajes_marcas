@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="es" >
+<html class="writer-html5" lang="es" >
 <head>
   <meta charset="utf-8">
   
@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: Ejercicios de XPath</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
@@ -195,15 +196,15 @@
 </div>
 <p>Resolver los siguientes problemas usando expresiones XPath. Si no nos dicen nada se puede asumir que las etiquetas no deben incluirse.</p>
 <ul class="simple">
-<li>Extraer todos los elementos peso (etiqueta incluida).</li>
-<li>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;).</li>
-<li>Extraer el peso del ultimo elemento.</li>
-<li>Extraer las distintas unidades en las que se han almacenado los pesos.</li>
-<li>Extraer el penúltimo codigo.</li>
-<li>Extraer el peso del elemento cuyo codigo sea AAA-111.</li>
-<li>Extraer el nombre de los productos que hayan puesto el peso en gramos.</li>
-<li>Extraer el codigo de los productos cuyo nombre sea «Monitor».</li>
-<li>Extraer el código de los productos que pesen más de un cuarto de kilo.</li>
+<li><p>Extraer todos los elementos peso (etiqueta incluida).</p></li>
+<li><p>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;).</p></li>
+<li><p>Extraer el peso del ultimo elemento.</p></li>
+<li><p>Extraer las distintas unidades en las que se han almacenado los pesos.</p></li>
+<li><p>Extraer el penúltimo codigo.</p></li>
+<li><p>Extraer el peso del elemento cuyo codigo sea AAA-111.</p></li>
+<li><p>Extraer el nombre de los productos que hayan puesto el peso en gramos.</p></li>
+<li><p>Extraer el codigo de los productos cuyo nombre sea «Monitor».</p></li>
+<li><p>Extraer el código de los productos que pesen más de un cuarto de kilo.</p></li>
 </ul>
 <div class="section" id="soluciones">
 <h2>Soluciones<a class="headerlink" href="#soluciones" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -308,8 +309,8 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <h2>Consulta: «cantidad depositada»<a class="headerlink" href="#consulta-cantidad-depositada" title="Enlazar permanentemente con este título">¶</a></h2>
 <p><em>Extraer la cantidad depositada en la cuenta 20-A</em></p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal notranslate"><span class="pre">inventario</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/listado/fondo/datos</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">datos</span></code> que sean hijos de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> los cuales a su vez deben ir dentro de <code class="docutils literal notranslate"><span class="pre">inventario</span></code>.</p></li>
 </ul>
 <p>Como nos piden una cantidad el último elemento XPath debe ser forzosamente <code class="docutils literal notranslate"><span class="pre">cantidad</span></code>. Como nos ponen una condición tendremos que usar corchetes. El elemento <code class="docutils literal notranslate"><span class="pre">cuentaasociada</span></code> es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code> así que una buena posibilidad sería poner la condicion con el elemento fondo, así tendríamos que</p>
 <p>Si añadimos la condición parece entonces que una buena posibilidad sería algo como esto:</p>
@@ -355,9 +356,9 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 <p>También es evidente que hay una condición de filtrado. Esta condición tiene dos partes:</p>
 <ul class="simple">
-<li>Por un lado la divisa debe ser «Dolares». La divisa va dentro del elemento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que es hijo de <code class="docutils literal notranslate"><span class="pre">datos</span></code> que a su vez es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code></li>
-<li>Por otro lado la cantidad debe ser inferior a 2500. Esta información está en <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</li>
-<li>Para este caso necesitamos que se cumplan ambas condiciones por lo que deberemos usar <code class="docutils literal notranslate"><span class="pre">AND</span></code></li>
+<li><p>Por un lado la divisa debe ser «Dolares». La divisa va dentro del elemento <code class="docutils literal notranslate"><span class="pre">moneda</span></code> que es hijo de <code class="docutils literal notranslate"><span class="pre">datos</span></code> que a su vez es hijo de <code class="docutils literal notranslate"><span class="pre">fondo</span></code></p></li>
+<li><p>Por otro lado la cantidad debe ser inferior a 2500. Esta información está en <code class="docutils literal notranslate"><span class="pre">cantidaddepositada</span></code>.</p></li>
+<li><p>Para este caso necesitamos que se cumplan ambas condiciones por lo que deberemos usar <code class="docutils literal notranslate"><span class="pre">AND</span></code></p></li>
 </ul>
 <p>Una posible consulta que resuelve esto es:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="p">[</span><span class="n">datos</span><span class="o">/</span><span class="n">cantidaddepositada</span><span class="o">&lt;</span><span class="mi">2500</span> <span class="ow">and</span> <span class="n">datos</span><span class="o">/</span><span class="n">moneda</span> <span class="o">=</span> <span class="s2">&quot;Dolares&quot;</span><span class="p">]</span>
