@@ -38,3 +38,70 @@ Comprobar con un fichero como el siguiente:
         <articulo ID="00A"> PC    </articulo>
         <articulo ID="00A"> Ratón </articulo>
     </listaarticulos>
+
+Catálogo de productos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+En una empresa desean almacenar su catálogo de productos en XML. Se ha definido este fichero canónico.
+
+.. code-block::
+
+    <catalogo>
+        <!--El catalogo lleva uno o más elementos producto-->
+        <producto> <!--Producto puede tener un atributo codigo-->
+            <nombre>Caja con autocierre</nombre>
+            <!--La descripción es optativa-->
+            <descripcion>Caja de seguridad...</descripcion>
+        </producto>
+        <producto aaabbbccc="jjjjj">
+            <nombre>Caja llaves</nombre>
+        </producto>
+    </catalogo>
+
+
+La solución:
+
+.. code-block:: dtd
+
+    <!ELEMENT catalogo    (producto)+>
+    <!ELEMENT producto    (nombre, descripcion?)>
+    <!ATTLIST producto    codigo CDATA #IMPLIED>
+    <!ELEMENT nombre      (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+
+Catalogo (versión v2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+En una empresa desean almacenar su catálogo de productos en XML. Se ha definido este fichero canónico.
+
+.. code-block::
+
+    <catalogo>
+        <!--El catalogo lleva uno o más elementos producto-->
+        <producto> <!--Producto puede tener un atributo codigo-->
+            <nombre>Caja con autocierre</nombre>
+            <!--La descripción es optativa-->
+            <descripcion>Caja de seguridad...</descripcion>
+            <origen>Alemania</origen>
+        </producto>
+        <producto aaabbbccc="jjjjj">
+            <nombre>Caja llaves</nombre>
+            <!-- Despues de la descripcion debe haber
+            uno de estos dos elementos :
+              a) origen
+              b) pais -->
+            <pais>Francia</pais>
+        </producto>
+    </catalogo>
+
+Solución:
+
+.. code-block:: dtd
+
+    <!ELEMENT catalogo     (producto)+>
+    <!ELEMENT producto     (nombre, descripcion?, (origen|pais))>
+    <!ATTLIST producto     codigo CDATA #IMPLIED>
+    <!ELEMENT nombre       (#PCDATA)>
+    <!ELEMENT descripcion  (#PCDATA)>
+    <!ELEMENT origen       (#PCDATA)>
+    <!ELEMENT pais         (#PCDATA)>
