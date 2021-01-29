@@ -26,7 +26,7 @@ Se desea controlar un formato como el siguiente:
 * El elemento raíz se llama "listaarticulos".
 * El elemento raíz puede llevar un atributo fecha.
 * Dentro de listaarticulos hay 0 o muchos articulos.
-* Todo artículo debe llevar un atributo ID.
+* Todo artículo debe llevar un atributo id.
 * Los artículos no se desglosan más, solo son texto.
 
 
@@ -35,8 +35,8 @@ Comprobar con un fichero como el siguiente:
 .. code-block:: xml
 
     <listaarticulos fecha="29-01-2021">
-        <articulo ID="00A"> PC    </articulo>
-        <articulo ID="00A"> Ratón </articulo>
+        <articulo id="00A"> PC    </articulo>
+        <articulo id="00A"> Ratón </articulo>
     </listaarticulos>
 
 Catálogo de productos
@@ -53,7 +53,7 @@ En una empresa desean almacenar su catálogo de productos en XML. Se ha definido
             <!--La descripción es optativa-->
             <descripcion>Caja de seguridad...</descripcion>
         </producto>
-        <producto aaabbbccc="jjjjj">
+        <producto codigo="jjjjj">
             <nombre>Caja llaves</nombre>
         </producto>
     </catalogo>

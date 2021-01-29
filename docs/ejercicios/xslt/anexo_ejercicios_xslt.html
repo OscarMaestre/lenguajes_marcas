@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Anexo: ejercicios sobre XSLT &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -36,7 +39,9 @@
 
     
     <link rel="index" title="Índice" href="../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" />
+    <link rel="prev" title="Anexo: ejercicios sobre «grids»" href="../grids/anexo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +55,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+            <a href="../../index.html" class="icon icon-home"> Apuntes de Lenguajes de Marcas
           
 
           
@@ -85,7 +90,7 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
@@ -96,6 +101,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtrado">Filtrado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-un-xml-bancario">Transformación de un XML bancario</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
 </ul>
 
             
@@ -136,6 +165,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -147,7 +178,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
           
         
@@ -1168,28 +1199,29 @@ y otra tabla separada para los productos del edificio B</p>
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../xpath/anexo_ejercicios_xpath.html" class="btn btn-neutral float-right" title="Anexo: Ejercicios de XPath" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../grids/anexo.html" class="btn btn-neutral float-left" title="Anexo: ejercicios sobre «grids»" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016, Oscar Gomez
+        &#169; Derechos de autor 2016, Oscar Gomez.
 
     </p>
   </div>
     
     
     
-    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
     
     proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

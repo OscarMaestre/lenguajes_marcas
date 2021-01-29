@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>XML &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -52,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+            <a href="index.html" class="icon icon-home"> Apuntes de Lenguajes de Marcas
           
 
           
@@ -197,6 +200,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
 </ul>
 
             
@@ -237,6 +246,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -248,7 +259,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/tema5.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
           
         
@@ -717,12 +728,14 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 <div class="section" id="ejercicio-iii">
 <h2>Ejercicio III<a class="headerlink" href="#ejercicio-iii" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
-* El fichero debe llevar una raíz <code class="docutils literal notranslate"><span class="pre">&lt;productos&gt;</span></code>
-* Dentro de productos debe haber alguno de estos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;raton&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;teclado&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;monitor&gt;</span></code>
-* Todo ratón, teclado o monitor tiene siempre un código.
-* Todo ratón, teclado o monitor puede llevar un nombre.
-* Todo ratón, teclado o monitor puede llevar una descripción.</p>
+<p>Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:</p>
+<ul class="simple">
+<li><p>El fichero debe llevar una raíz <code class="docutils literal notranslate"><span class="pre">&lt;productos&gt;</span></code></p></li>
+<li><p>Dentro de productos debe haber alguno de estos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;raton&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;teclado&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;monitor&gt;</span></code></p></li>
+<li><p>Todo ratón, teclado o monitor tiene siempre un código.</p></li>
+<li><p>Todo ratón, teclado o monitor puede llevar un nombre.</p></li>
+<li><p>Todo ratón, teclado o monitor puede llevar una descripción.</p></li>
+</ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;productos&gt;</span>
     <span class="nt">&lt;producto&gt;</span>
         <span class="nt">&lt;raton&gt;</span>
@@ -3074,37 +3087,29 @@ valide la estructura de tales ficheros:</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tema6.html" class="btn btn-neutral float-right" title="Recuperación de información" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="tema4.html" class="btn btn-neutral float-left" title="Javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
-      
+        <a href="tema6.html" class="btn btn-neutral float-right" title="Recuperación de información" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tema4.html" class="btn btn-neutral float-left" title="Javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016, Oscar Gomez
+        &#169; Derechos de autor 2016, Oscar Gomez.
 
     </p>
   </div>
     
     
     
-    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
     
     proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

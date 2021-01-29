@@ -559,6 +559,7 @@ Este documento **sí es válido**. Las DTD solo se ocupan de determinar qué ele
 Ejercicio III
 ================================================================================
 Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+
 * El fichero debe llevar una raíz ``<productos>`` 
 * Dentro de productos debe haber alguno de estos ``<producto>`` , ``<raton>`` , ``<teclado>`` o ``<monitor>`` 
 * Todo ratón, teclado o monitor tiene siempre un código.
