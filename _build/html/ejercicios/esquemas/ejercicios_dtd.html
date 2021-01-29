@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Anexo: Ejercicios DTDs &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Anexo: ejercicios sobre XSLT" href="../xslt/anexo_ejercicios_xslt.html" />
+    <link rel="prev" title="Anexo: ejercicios sobre formularios" href="../formularios/anexo_formularios.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="anexo-ejercicios-dtds">
+<h1>Anexo: Ejercicios DTDs<a class="headerlink" href="#anexo-ejercicios-dtds" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="peso-simple">
+<h2>Peso simple<a class="headerlink" href="#peso-simple" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Crear una DTD que compruebe simplemente que el elemento raíz es peso y con un atributo «unidad» (el atributo es obligatorio). Es decir, la DTD debería validar este fichero:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/peso&gt;</span>
+</pre></div>
+</div>
+<p>La solución puede ser algo así:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">peso</span>  <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">peso</span> <span class="na">unidad</span> <span class="kc">CDATA</span> <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lista-de-productos">
+<h1>Lista de productos<a class="headerlink" href="#lista-de-productos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Se desea controlar un formato como el siguiente:</p>
+<ul class="simple">
+<li><p>El elemento raíz se llama «listaarticulos».</p></li>
+<li><p>El elemento raíz puede llevar un atributo fecha.</p></li>
+<li><p>Dentro de listaarticulos hay 0 o muchos articulos.</p></li>
+<li><p>Todo artículo debe llevar un atributo ID.</p></li>
+<li><p>Los artículos no se desglosan más, solo son texto.</p></li>
+</ul>
+<p>Comprobar con un fichero como el siguiente:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listaarticulos</span> <span class="na">fecha=</span><span class="s">&quot;29-01-2021&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;articulo</span> <span class="na">ID=</span><span class="s">&quot;00A&quot;</span><span class="nt">&gt;</span> PC    <span class="nt">&lt;/articulo&gt;</span>
+    <span class="nt">&lt;articulo</span> <span class="na">ID=</span><span class="s">&quot;00A&quot;</span><span class="nt">&gt;</span> Ratón <span class="nt">&lt;/articulo&gt;</span>
+<span class="nt">&lt;/listaarticulos&gt;</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Apuntes de Lenguajes de Marcas</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: Ejercicios DTDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#peso-simple">Peso simple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../formularios/anexo_formularios.html" title="capítulo anterior">Anexo: ejercicios sobre formularios</a></li>
+      <li>Next: <a href="../xslt/anexo_ejercicios_xslt.html" title="próximo capítulo">Anexo: ejercicios sobre XSLT</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/ejercicios/esquemas/ejercicios_dtd.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
