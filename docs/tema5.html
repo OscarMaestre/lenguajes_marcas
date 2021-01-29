@@ -156,6 +156,9 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <li><p>Se puede indicar si un elemento debe aparecer de forma obligatoria.</p></li>
 <li><p>Se puede indicar si algo aparecer una o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">+</span></code>).</p></li>
 <li><p>Se puede indicar si algo aparece cero o muchas veces (usando <code class="docutils literal notranslate"><span class="pre">*</span></code>).</p></li>
+<li><p>Se puede indicar que un elemento ya no lleva nada dentro usando <code class="docutils literal notranslate"><span class="pre">&lt;!ELEMENT</span> <span class="pre">cantidad</span> <span class="pre">(#PCDATA)</span></code> .</p></li>
+<li><p>Se puede indicar que un elemento cantidad lleva obligatoriamente un atributo divisa usando <code class="docutils literal notranslate"><span class="pre">&lt;!ATTLIST</span> <span class="pre">cantidad</span> <span class="pre">divisa</span> <span class="pre">CDATA</span> <span class="pre">#REQUIRED</span></code></p></li>
+<li><p>Se puede indicar que un elemento cantidad podría llevar o no obligatoriamente un atributo moneda usando <code class="docutils literal notranslate"><span class="pre">&lt;!ATTLIST</span> <span class="pre">cantidad</span> <span class="pre">moneda</span> <span class="pre">CDATA</span> <span class="pre">#IMPLIED</span></code></p></li>
 </ul>
 <p>Supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es <code class="docutils literal notranslate"><span class="pre">&lt;listaclientes&gt;</span></code>. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;listaclientes&gt;</span></code> deseamos permitir uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code>. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code> todos deberán tener <code class="docutils literal notranslate"><span class="pre">&lt;cif&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;nombre&gt;</span></code> y en ese orden. Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;cliente&gt;</span></code> puede aparecer o no un elemento <code class="docutils literal notranslate"><span class="pre">&lt;diasentrega&gt;</span></code> para indicar que ese cliente exige un máximo de plazos. Como no todo el mundo usa plazos el <code class="docutils literal notranslate"><span class="pre">&lt;diasentrega&gt;</span></code> es optativo.</p>
 <p>Por ejemplo, este XML sí es válido:</p>
@@ -2805,6 +2808,8 @@ valide la estructura de tales ficheros:</p>
 <li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html">Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>

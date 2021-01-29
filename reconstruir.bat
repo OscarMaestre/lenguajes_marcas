@@ -2,8 +2,8 @@ call make html
 copiar.py
 call make latex
 cd _build\latex
-call pdflatex ApuntesDeLenguajesDeMarcas.tex
-call pdflatex ApuntesDeLenguajesDeMarcas.tex
+rem call pdflatex ApuntesDeLenguajesDeMarcas.tex
+rem call pdflatex ApuntesDeLenguajesDeMarcas.tex
 cd ..
 cd ..
 copy _build\latex\*.pdf pdf
