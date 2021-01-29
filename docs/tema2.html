@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="es" >
+<html class="writer-html5" lang="es" >
 <head>
   <meta charset="utf-8">
   
@@ -29,8 +29,8 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -235,43 +235,31 @@ se comentará a continuación.</p>
 <h2>Etiquetas estructurales<a class="headerlink" href="#etiquetas-estructurales" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crean la estructura para el resto de la página:,</p>
 <ul>
-<li><p class="first">doctype: identifica el estándar.</p>
-</li>
-<li><p class="first">todo documento debe ir entre las marcas &lt;html&gt; y &lt;/html&gt;.</p>
-</li>
-<li><p class="first">Todo html tiene dos partes: head y body. El primero incluye otros elementos estructurales como <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.</p>
-</li>
-<li><p class="first">Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:</p>
+<li><p>doctype: identifica el estándar.</p></li>
+<li><p>todo documento debe ir entre las marcas &lt;html&gt; y &lt;/html&gt;.</p></li>
+<li><p>Todo html tiene dos partes: head y body. El primero incluye otros elementos estructurales como <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.</p></li>
+<li><p>Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:</p>
 <blockquote>
 <div><ul class="simple">
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> permite marcar contenido de una página relacionado con un tema concreto.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> es una unidad de contenido sobre un tema específico el cual puede ser independiente de otros «artículos».</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code> se utiliza para indicar cual es la cabecera de un artículo o sección.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;footer&gt;</span></code> permite definir un «pie de página», normalmente con indicación de derechos de autor, fecha o datos similares.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;</span></code> se usa para marcar información de contacto.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;aside&gt;</span></code> se usa para definir contenido con «una relación vaga con el resto de la página» (definición tomada del estándar).</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;hgroup&gt;</span></code> permite agrupar un conjunto de encabezados y marcarlos como pertenecientes al mismo contenido.</li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> permite marcar contenido de una página relacionado con un tema concreto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> es una unidad de contenido sobre un tema específico el cual puede ser independiente de otros «artículos».</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code> se utiliza para indicar cual es la cabecera de un artículo o sección.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;footer&gt;</span></code> permite definir un «pie de página», normalmente con indicación de derechos de autor, fecha o datos similares.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;address&gt;</span></code> se usa para marcar información de contacto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;aside&gt;</span></code> se usa para definir contenido con «una relación vaga con el resto de la página» (definición tomada del estándar).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;hgroup&gt;</span></code> permite agrupar un conjunto de encabezados y marcarlos como pertenecientes al mismo contenido.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h5&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code> establecen encabezados: trozos de texto que identifican la importancia del siguiente trozo de texto.</p>
-</li>
-<li><p class="first">Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> y se cierra con <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code></p>
-</li>
-<li><p class="first">La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> permite construir enlaces.</p>
-</li>
-<li><p class="first">La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code> se utilizará para crear barras de navegación.</p>
-</li>
-<li><p class="first">La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;aside&gt;</span></code> se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo «artículos relacionados con este».</p>
-</li>
-<li><p class="first">Las etiquetas <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;noscript&gt;</span></code> se utilizan para marcar pequeños programas o la ausencia de ellos.</p>
-</li>
-<li><p class="first">El elemento <code class="docutils literal notranslate"><span class="pre">&lt;main&gt;</span></code> indica <strong>el contenido principal de una página</strong></p>
-</li>
-<li><p class="first">La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> permite crear «divisiones» en el documento y nos serán muy útiles cuando hagamos posicionamiento. Una etiqueta muy similar, pero con un comportamiento distinto es <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> que permite dividir trozos de texto en un párrafo.</p>
-</li>
-<li><p class="first">La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> junto con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;summary&gt;</span></code> permite crear controles que ofrecen al usuario la posibilidad de «ampliar información» a voluntad.</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h5&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code> establecen encabezados: trozos de texto que identifican la importancia del siguiente trozo de texto.</p></li>
+<li><p>Cualquier etiqueta puede ir comentada. Los comentarios no se muestran, son solo de interés para el programador en un futuro. Un comentario se abre con <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> y se cierra con <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code></p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> permite construir enlaces.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code> se utilizará para crear barras de navegación.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;aside&gt;</span></code> se utiliza para indicar información relacionada con el artículo o texto pero que no tiene porque ser parte del mismo. El ejemplo más común es utilizarlo para publicidad relacionada o texto del tipo «artículos relacionados con este».</p></li>
+<li><p>Las etiquetas <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;noscript&gt;</span></code> se utilizan para marcar pequeños programas o la ausencia de ellos.</p></li>
+<li><p>El elemento <code class="docutils literal notranslate"><span class="pre">&lt;main&gt;</span></code> indica <strong>el contenido principal de una página</strong></p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> permite crear «divisiones» en el documento y nos serán muy útiles cuando hagamos posicionamiento. Una etiqueta muy similar, pero con un comportamiento distinto es <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> que permite dividir trozos de texto en un párrafo.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> junto con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;summary&gt;</span></code> permite crear controles que ofrecen al usuario la posibilidad de «ampliar información» a voluntad.</p></li>
 </ul>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
@@ -282,19 +270,19 @@ se comentará a continuación.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;hr&gt;</span></code> produce una línea horizontal.</li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;hr&gt;</span></code> produce una línea horizontal.</p></li>
 </ul>
 </div>
 <div class="section" id="etiquetas-para-definir-metadatos">
 <h2>Etiquetas para definir metadatos<a class="headerlink" href="#etiquetas-para-definir-metadatos" title="Enlazar permanentemente con este título">¶</a></h2>
 <ul class="simple">
-<li>En líneas generales, los metadatos más importantes se definen con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;meta&gt;</span></code>. Para el correcto visionado de los símbolos de nuestra página usaremos el atributo <code class="docutils literal notranslate"><span class="pre">charset=&quot;....&quot;</span></code></li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.</li>
-<li>Esta etiqueta permite «intentar conseguir» que se vea bien una página antigua que no se pensó para dispositivos móviles: ´´&lt;meta name=»viewport» content=»width=device-width, initial-scale=1»&gt;´´</li>
-<li>Podemos instruir a los buscadores sobre como tratar a nuestra página en cuanto a si indexarla o no y en cuanto a seguir los enlaces que ponemos (o no) con ´´&lt;meta name=»robots» contents=»index, follow»&gt;´´ o &lt;meta name=»robots» contents=»noindex, follow»&gt; o &lt;meta name=»robots» contents=»index, nofollow»&gt;</li>
-<li>Las etiquetas siguientes permiten insertar código CSS :´´&lt;style&gt;`` y ´´&lt;/style&gt;``. Las veremos en profundidad en el tema sobre CSS.</li>
-<li>Podemos insertar una descripción de nuestra página con ´´&lt;meta name=»description» content=»Descripción.»&gt;´´</li>
-<li>Podemos insertar un icono con <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;icon&quot;</span> <span class="pre">sizes=&quot;192x192&quot;</span> <span class="pre">href=&quot;/ruta/icon.png&quot;&gt;</span></code></li>
+<li><p>En líneas generales, los metadatos más importantes se definen con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;meta&gt;</span></code>. Para el correcto visionado de los símbolos de nuestra página usaremos el atributo <code class="docutils literal notranslate"><span class="pre">charset=&quot;....&quot;</span></code></p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> define la URL raíz de toda la página. Permite cambiar fácilmente las URL de los enlaces de una página.</p></li>
+<li><p>Esta etiqueta permite «intentar conseguir» que se vea bien una página antigua que no se pensó para dispositivos móviles: ´´&lt;meta name=»viewport» content=»width=device-width, initial-scale=1»&gt;´´</p></li>
+<li><p>Podemos instruir a los buscadores sobre como tratar a nuestra página en cuanto a si indexarla o no y en cuanto a seguir los enlaces que ponemos (o no) con ´´&lt;meta name=»robots» contents=»index, follow»&gt;´´ o &lt;meta name=»robots» contents=»noindex, follow»&gt; o &lt;meta name=»robots» contents=»index, nofollow»&gt;</p></li>
+<li><p>Las etiquetas siguientes permiten insertar código CSS :´´&lt;style&gt;`` y ´´&lt;/style&gt;``. Las veremos en profundidad en el tema sobre CSS.</p></li>
+<li><p>Podemos insertar una descripción de nuestra página con ´´&lt;meta name=»description» content=»Descripción.»&gt;´´</p></li>
+<li><p>Podemos insertar un icono con <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;icon&quot;</span> <span class="pre">sizes=&quot;192x192&quot;</span> <span class="pre">href=&quot;/ruta/icon.png&quot;&gt;</span></code></p></li>
 </ul>
 <p>En realidad existen muchísimas variantes definidas por Google o Facebook pero no forman parte de ningún estándar por lo que no se comentarán (aunque eso no quita para que se utilicen muy a menudo)</p>
 </div>
@@ -302,23 +290,23 @@ se comentará a continuación.</p>
 <h2>Etiquetas de formato<a class="headerlink" href="#etiquetas-de-formato" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para el formateo elemental de textos se utilizan varias etiquetas:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code> Formatea el texto en “negrita”.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code> Lo pone en “itálica” (cursiva).</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> Subraya el texto.</li>
-<li>Las diversas etiquetas se pueden meter unas dentro de otras para obtener efectos como “cursiva, y negrita” o “subrayado y cursiva”, sin embargo las etiquetas deben cerrarse en el orden inverso al que se abrieron.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code> fabrican respectivamente superíndices y subíndices.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code> se utiliza para enfatizar un texto.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> Se utiliza para marcar el comienzo y el fin de un párrafo.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">br</span></code> se utiliza para hacer una ruptura en el flujo del texto. Se escribe en forma abreviada <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code> Formatea el texto en “negrita”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code> Lo pone en “itálica” (cursiva).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> Subraya el texto.</p></li>
+<li><p>Las diversas etiquetas se pueden meter unas dentro de otras para obtener efectos como “cursiva, y negrita” o “subrayado y cursiva”, sin embargo las etiquetas deben cerrarse en el orden inverso al que se abrieron.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code> fabrican respectivamente superíndices y subíndices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code> se utiliza para enfatizar un texto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> Se utiliza para marcar el comienzo y el fin de un párrafo.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">br</span></code> se utiliza para hacer una ruptura en el flujo del texto. Se escribe en forma abreviada <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code></p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Una de las grandes preguntas es si escribir la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que <em>«aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar»</em>. Así, en la cabecera podremos poner cosas como <code class="docutils literal notranslate"><span class="pre">&lt;meta...&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;meta...</span> <span class="pre">/&gt;</span></code></p>
+<p class="admonition-title">Nota</p>
+<p>Una de las grandes preguntas es si escribir la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que <em>«aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar»</em>. Así, en la cabecera podremos poner cosas como <code class="docutils literal notranslate"><span class="pre">&lt;meta...&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;meta...</span> <span class="pre">/&gt;</span></code></p>
 </div>
 <ul class="simple">
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> permite usar abreviaturas. Ejemplo: <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">&lt;abbr</span> <span class="pre">title=&quot;World</span> <span class="pre">Wide</span> <span class="pre">Web</span> <span class="pre">Consortiun&gt;W3C&lt;/abbr&gt;</span></code> .</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;acronym&gt;</span></code> se ha llegado a usar pero está <strong>obsoleta</strong> .</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;blockqoute&gt;</span></code> se usa para indicar citas largas, por ejemplo.</li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> permite usar abreviaturas. Ejemplo: <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">&lt;abbr</span> <span class="pre">title=&quot;World</span> <span class="pre">Wide</span> <span class="pre">Web</span> <span class="pre">Consortiun&gt;W3C&lt;/abbr&gt;</span></code> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;acronym&gt;</span></code> se ha llegado a usar pero está <strong>obsoleta</strong> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;blockqoute&gt;</span></code> se usa para indicar citas largas, por ejemplo.</p></li>
 </ul>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>En un lugar de la Mancha de cuyo nombre...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -326,25 +314,25 @@ se comentará a continuación.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;cite&gt;</span></code> permite indicar una cita breve, como en <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span> <span class="pre">Es</span> <span class="pre">habitual</span> <span class="pre">decir</span> <span class="pre">&lt;cite&gt;Alea</span> <span class="pre">jact</span> <span class="pre">est&lt;/cite&gt;&lt;/p&gt;</span></code></li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;del&gt;</span></code> permite mostrar texto tachado.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;dfn&gt;</span></code> permite mostrar una definición. Los navegadores suelen mostrar esta etiqueta igual que <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> .</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;ins&gt;</span></code> permite indicar texto que haya sido insertado a posteriori. Suele mostrarse en cursiva.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code> permite destacar texto de una manera muy llamativa.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;output&gt;</span></code> es como el control de un formulario pero se introdujo para recalcar que contiene el resultado de un cálculo.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;samp&gt;</span></code> está pensada para muestras (samples) de programas o resultado de ejecuciones.</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;tt&gt;</span></code> imita los teletipos (estilo máquina de escribir).</li>
-<li>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;wbr&gt;</span></code> está pensada para ayudar al navegador a decidir donde «romper» una palabra y poner el guión.</li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;cite&gt;</span></code> permite indicar una cita breve, como en <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span> <span class="pre">Es</span> <span class="pre">habitual</span> <span class="pre">decir</span> <span class="pre">&lt;cite&gt;Alea</span> <span class="pre">jact</span> <span class="pre">est&lt;/cite&gt;&lt;/p&gt;</span></code></p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;del&gt;</span></code> permite mostrar texto tachado.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;dfn&gt;</span></code> permite mostrar una definición. Los navegadores suelen mostrar esta etiqueta igual que <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;ins&gt;</span></code> permite indicar texto que haya sido insertado a posteriori. Suele mostrarse en cursiva.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code> permite destacar texto de una manera muy llamativa.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;output&gt;</span></code> es como el control de un formulario pero se introdujo para recalcar que contiene el resultado de un cálculo.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;samp&gt;</span></code> está pensada para muestras (samples) de programas o resultado de ejecuciones.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;tt&gt;</span></code> imita los teletipos (estilo máquina de escribir).</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;wbr&gt;</span></code> está pensada para ayudar al navegador a decidir donde «romper» una palabra y poner el guión.</p></li>
 </ul>
 </div>
 <div class="section" id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los navegadores web manejan el espacio de una forma un poco especial:</p>
 <ul class="simple">
-<li>Si se pone uno o varios espacios en blanco o si se pulsa la tecla ENTER muchas veces el navegador mostrará <em>un solo espacio en blanco</em></li>
-<li>Para poner un espacio en blanco horizontal se puede usar la entidad <code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code>.</li>
-<li>Para hacer un salto de línea se puede usar la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> (esta etiqueta no lleva asociada una etiqueta de cierra, es <em>autocerrada</em>)</li>
-<li>Se puede indicar el comienzo y el final de un párrafo con <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/p&gt;</span></code>.</li>
+<li><p>Si se pone uno o varios espacios en blanco o si se pulsa la tecla ENTER muchas veces el navegador mostrará <em>un solo espacio en blanco</em></p></li>
+<li><p>Para poner un espacio en blanco horizontal se puede usar la entidad <code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code>.</p></li>
+<li><p>Para hacer un salto de línea se puede usar la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> (esta etiqueta no lleva asociada una etiqueta de cierra, es <em>autocerrada</em>)</p></li>
+<li><p>Se puede indicar el comienzo y el final de un párrafo con <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/p&gt;</span></code>.</p></li>
 </ul>
 <p>Una pregunta habitual es «¿Cuando se debe usar <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> y cuando <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;?</span></code>. La respuesta es «depende». Una posible respuesta es que si se escriben varios párrafos relacionados es bastante habitual separarlos con <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> mientras que si se ponen varios párrafos que hablan de distintas cosas es habitual usar <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> con cada uno de ellos, sin embargo no hay una respuesta universal.,</p>
 </div>
@@ -352,12 +340,12 @@ se comentará a continuación.</p>
 <h2>Entidades<a class="headerlink" href="#entidades" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Las entidades HTML permiten escribir determinados símbolos especiales que podrían confundir al navegador, así como otros símbolos que no aparecen directamente en los teclados:</p>
 <ul class="simple">
-<li>&amp;lt; y &amp;gt; representan los símbolos &lt; y &gt;.</li>
-<li>&amp;copy;</li>
-<li>&amp;trade;</li>
-<li>&amp;reg;</li>
-<li>&amp;euro; y &amp;yen;</li>
-<li>&amp;amp;</li>
+<li><p>&amp;lt; y &amp;gt; representan los símbolos &lt; y &gt;.</p></li>
+<li><p>&amp;copy;</p></li>
+<li><p>&amp;trade;</p></li>
+<li><p>&amp;reg;</p></li>
+<li><p>&amp;euro; y &amp;yen;</p></li>
+<li><p>&amp;amp;</p></li>
 </ul>
 </div>
 <div class="section" id="texto-preformateado">
@@ -371,15 +359,15 @@ se comentará a continuación.</p>
 <h2>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Es una secuencia de elementos relacionados en torno a un mismo concepto Para abrir una lista de elementos se utilizan dos posibles marcas:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> Para crear una lista ordenada (numerada)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> Para crear una lista desordenada (no numerada)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> Para crear una lista ordenada (numerada)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> Para crear una lista desordenada (no numerada)</p></li>
 </ul>
 <p>Una vez creadas hay que etiquetar cada elemento de la lista con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>.</p>
 <p>En un plano distinto se pueden encontrar las <strong>listas de definiciones</strong>. Con estos elementos se puede especificar una secuencia de términos para los cuales proporcionamos una definición. Su estructura es la siguiente:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;dl&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dl&gt;</span></code> marcan el inicio y el final de la lista de definiciones. Dentro de estas etiquetas pondremos las dos siguientes.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;dt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dt&gt;</span></code> especifican el <em>término</em> que vamos a definir.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;dd&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dd&gt;</span></code> indican la definición asociada al término anterior.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dl&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dl&gt;</span></code> marcan el inicio y el final de la lista de definiciones. Dentro de estas etiquetas pondremos las dos siguientes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dt&gt;</span></code> especifican el <em>término</em> que vamos a definir.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dd&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;/dd&gt;</span></code> indican la definición asociada al término anterior.</p></li>
 </ul>
 <p>Ejemplo:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
@@ -441,11 +429,11 @@ se comentará a continuación.</p>
 <p>Una tabla puede tener una cabecera, un cuerpo y un pie, especificados por <code class="docutils literal notranslate"><span class="pre">&lt;thead&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;tbody&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;tfoot&gt;</span></code>. La primera etiqueta dentro de <code class="docutils literal notranslate"><span class="pre">&lt;tbody&gt;</span></code>, solo puede ser &lt;tr&gt;. <strong>Cuidado al crear tablas, todo dato, o subtablas debe ir dentro de &lt;td&gt;, es absolutamente obligatorio</strong></p>
 <p>Para ser exactos una tabla puede llevar estas etiquetas:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">caption</span></code>: permite asociar a una tabla un texto.</li>
-<li><code class="docutils literal notranslate"><span class="pre">colgroup</span></code> :permite asociar información a columnas usando dentro la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> .</li>
-<li><code class="docutils literal notranslate"><span class="pre">thead</span></code>: dentro de ella a su vez pondremos una fila (<code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>) con celdas en las que la etiqueta es <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">tbody</span></code>: utiliza las filas y columnas normales.</li>
-<li><code class="docutils literal notranslate"><span class="pre">tfooter</span></code>: también usa <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> de la forma habitual, sin embargo permite describir mejor el contenido de la tabla. Se utiliza para celdas con los valores acumulados o similares.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption</span></code>: permite asociar a una tabla un texto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colgroup</span></code> :permite asociar información a columnas usando dentro la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thead</span></code>: dentro de ella a su vez pondremos una fila (<code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>) con celdas en las que la etiqueta es <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbody</span></code>: utiliza las filas y columnas normales.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tfooter</span></code>: también usa <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> de la forma habitual, sin embargo permite describir mejor el contenido de la tabla. Se utiliza para celdas con los valores acumulados o similares.</p></li>
 </ul>
 <div class="section" id="un-ejemplo-de-tabla">
 <h3>Un ejemplo de tabla<a class="headerlink" href="#un-ejemplo-de-tabla" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -894,11 +882,11 @@ se comentará a continuación.</p>
 <h3>Campo de texto<a class="headerlink" href="#campo-de-texto" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Permite crear una zona donde el usuario puede escribir y se muestra un ejemplo a continuación. Tiene algunos atributos que se usan muy a menudo:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">type</span></code> indica el tipo de control</li>
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code> será el nombre de la variable en JS (no lo usaremos por ahora)</li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code> permitirá procesar el control de JS (no se usará por ahora)</li>
-<li><code class="docutils literal notranslate"><span class="pre">value</span></code> permite indicar un valor por defecto</li>
-<li><code class="docutils literal notranslate"><span class="pre">size</span></code> indica la anchura por defecto</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> indica el tipo de control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> será el nombre de la variable en JS (no lo usaremos por ahora)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> permitirá procesar el control de JS (no se usará por ahora)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> permite indicar un valor por defecto</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code> indica la anchura por defecto</p></li>
 </ul>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nombre_usuario&quot;</span>
         <span class="na">id</span><span class="o">=</span><span class="s">&quot;id_nombre&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Escriba su nombre aqui&quot;</span><span class="p">&gt;</span>
@@ -1054,7 +1042,7 @@ Bici
 <p><em>Crea una página HTML que produzca este resultado</em></p>
 <div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/tabla6.png" src="_images/tabla6.png" />
-<p class="caption"><span class="caption-text">Una tabla compleja</span></p>
+<p class="caption"><span class="caption-text">Una tabla compleja</span><a class="headerlink" href="#id17" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="id9">

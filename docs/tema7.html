@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="es" >
+<html class="writer-html5" lang="es" >
 <head>
   <meta charset="utf-8">
   
@@ -29,8 +29,8 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -258,26 +258,26 @@
 </div>
 <p>Las reglas serían las siguientes:</p>
 <ul class="simple">
-<li>Todo archivo de descripción de recursos en RSS utiliza el preámbulo típico de los documentos xml</li>
+<li><p>Todo archivo de descripción de recursos en RSS utiliza el preámbulo típico de los documentos xml</p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Todo RSS tiene un solo elemento raíz en el cual se puede indicar la versión RSS a la que nos ceñimos</li>
+<li><p>Todo RSS tiene un solo elemento raíz en el cual se puede indicar la versión RSS a la que nos ceñimos</p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Un RSS tiene uno o más canales</li>
+<li><p>Un RSS tiene uno o más canales</p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;channel&gt;</span>
 <span class="nt">&lt;/channel&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Todo canal debe tener, al menos un título, un enlace base (la dirección del propio sitio web) y una descripción:</li>
+<li><p>Todo canal debe tener, al menos un título, un enlace base (la dirección del propio sitio web) y una descripción:</p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;channel&gt;</span>
         <span class="nt">&lt;title&gt;</span>
@@ -297,11 +297,11 @@
 </div>
 <p>Resumiendo los puntos más importantes:</p>
 <ol class="arabic simple">
-<li>Usar como elemento raíz <code class="docutils literal notranslate"><span class="pre">rss</span></code>.</li>
-<li>Todo RSS tiene uno o más <code class="docutils literal notranslate"><span class="pre">channel</span></code></li>
-<li>Todo <code class="docutils literal notranslate"><span class="pre">channel</span></code> tiene al menos <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></li>
-<li>Despues de estos elementos, un <code class="docutils literal notranslate"><span class="pre">channel</span></code> puede tener uno o más elementos <code class="docutils literal notranslate"><span class="pre">item</span></code> (que son los que contienen las noticias)</li>
-<li>Todo <code class="docutils literal notranslate"><span class="pre">item</span></code> también debe tener un <code class="docutils literal notranslate"><span class="pre">title</span></code>, un <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></li>
+<li><p>Usar como elemento raíz <code class="docutils literal notranslate"><span class="pre">rss</span></code>.</p></li>
+<li><p>Todo RSS tiene uno o más <code class="docutils literal notranslate"><span class="pre">channel</span></code></p></li>
+<li><p>Todo <code class="docutils literal notranslate"><span class="pre">channel</span></code> tiene al menos <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></p></li>
+<li><p>Despues de estos elementos, un <code class="docutils literal notranslate"><span class="pre">channel</span></code> puede tener uno o más elementos <code class="docutils literal notranslate"><span class="pre">item</span></code> (que son los que contienen las noticias)</p></li>
+<li><p>Todo <code class="docutils literal notranslate"><span class="pre">item</span></code> también debe tener un <code class="docutils literal notranslate"><span class="pre">title</span></code>, un <code class="docutils literal notranslate"><span class="pre">link</span></code> y <code class="docutils literal notranslate"><span class="pre">description</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="ejercicio">
@@ -401,10 +401,10 @@
 <p>Según el W3C, XPath (que ya va por su versión 3.0) es un lenguaje diseñado para acceder a las distintas partes de un archivo XML. En nuestro caso nos va a resultar de mucha utilidad combinado con XSLT, que se verá un poco despues.</p>
 <p>XPath se basa en expresiones. Así, dado un archivo XML y una expresión XPath se dice que la expresión «se evalúa» y se obtiene un resultado que puede ser:</p>
 <ul class="simple">
-<li>Una lista de nodos.</li>
-<li>Un <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (true o false)</li>
-<li>Un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</li>
-<li>Una cadena.</li>
+<li><p>Una lista de nodos.</p></li>
+<li><p>Un <code class="docutils literal notranslate"><span class="pre">boolean</span></code> (true o false)</p></li>
+<li><p>Un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p>Una cadena.</p></li>
 </ul>
 <p>XPath también ofrece algunas funciones de utilidad que se asemejan a las de algunos lenguajes de programación.</p>
 <div class="section" id="acceso-a-elementos">
@@ -525,13 +525,12 @@
 </div>
 <p>En general, para poder modificar o presentar los XML se puede hacen varias cosas:</p>
 <ul>
-<li><p class="first">En primer lugar, se puede usar CSS para poder cargar los documentos XML en un navegador y mostrarlos de forma aceptable.</p>
-</li>
-<li><p class="first">Se pueden utilizar otras tecnologías para transformar por completo la estructura del XML.</p>
+<li><p>En primer lugar, se puede usar CSS para poder cargar los documentos XML en un navegador y mostrarlos de forma aceptable.</p></li>
+<li><p>Se pueden utilizar otras tecnologías para transformar por completo la estructura del XML.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Se puede usar un lenguaje llamado XSLT (Xml Stylesheet Language Transformation) para convertir el XML en otro distinto.</li>
-<li>Se puede utilizar XSL:FO (Xml Stylesheet Language: Formatting Objects) cuando se desee convertir el documento en algo que se desee imprimir (normalmente un PDF)</li>
+<li><p>Se puede usar un lenguaje llamado XSLT (Xml Stylesheet Language Transformation) para convertir el XML en otro distinto.</p></li>
+<li><p>Se puede utilizar XSL:FO (Xml Stylesheet Language: Formatting Objects) cuando se desee convertir el documento en algo que se desee imprimir (normalmente un PDF)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -985,11 +984,11 @@ esta</p>
 </div>
 <p>En general, las condiciones se escriben así:</p>
 <ul class="simple">
-<li>&gt; o mayor que o <code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code></li>
-<li>&lt; o menor que o <code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code></li>
-<li>&gt;= o mayor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;ge;</span></code></li>
-<li>&lt;= o menor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;le;</span></code></li>
-<li>&lt;&gt; o distinto o <code class="docutils literal notranslate"><span class="pre">&amp;neq;</span></code></li>
+<li><p>&gt; o mayor que o <code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code></p></li>
+<li><p>&lt; o menor que o <code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code></p></li>
+<li><p>&gt;= o mayor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;ge;</span></code></p></li>
+<li><p>&lt;= o menor o igual o <code class="docutils literal notranslate"><span class="pre">&amp;le;</span></code></p></li>
+<li><p>&lt;&gt; o distinto o <code class="docutils literal notranslate"><span class="pre">&amp;neq;</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="ejercicio-xsl-paso-a-paso">
@@ -1038,7 +1037,7 @@ esta</p>
 </div>
 <div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso1.png" src="_images/ejercicio1xslpaso1.png" />
-<p class="caption"><span class="caption-text">Paso inicial del XSL</span></p>
+<p class="caption"><span class="caption-text">Paso inicial del XSL</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Avancemos un poco más y creemos una estructura HTML válida</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -1065,7 +1064,7 @@ esta</p>
 </div>
 <div class="figure align-center" id="id7" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso2.png" src="_images/ejercicio1xslpaso2.png" />
-<p class="caption"><span class="caption-text">Extrayendo los titulos con XSL</span></p>
+<p class="caption"><span class="caption-text">Extrayendo los titulos con XSL</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Ahora vamos a procesar solo los libros cuya <code class="docutils literal notranslate"><span class="pre">fechaedicion</span></code> sea posterior al 2000. Añadamos un <code class="docutils literal notranslate"><span class="pre">if</span></code></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -1097,7 +1096,7 @@ esta</p>
 </div>
 <div class="figure align-center" id="id8" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso3.png" src="_images/ejercicio1xslpaso3.png" />
-<p class="caption"><span class="caption-text">Procesando los que son &gt; 2000</span></p>
+<p class="caption"><span class="caption-text">Procesando los que son &gt; 2000</span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Ahora para cada libro queremos también mostrar los elementos autor con su propia lista</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -1139,7 +1138,7 @@ esta</p>
 <p>Y el navegador muestra lo siguiente</p>
 <div class="figure align-center" id="id9" style="width: 50%">
 <img alt="_images/ejercicio1xslpaso4.png" src="_images/ejercicio1xslpaso4.png" />
-<p class="caption"><span class="caption-text">Mostrando también los autores</span></p>
+<p class="caption"><span class="caption-text">Mostrando también los autores</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="ejercicio-condiciones-complejas">
@@ -1269,7 +1268,7 @@ esta</p>
 <p>Crear un fichero de estilos que permita mostrar la información de los portátiles en forma de tabla.</p>
 <div class="figure align-center" id="id10" style="width: 50%">
 <img alt="_images/xsl1.png" src="_images/xsl1.png" />
-<p class="caption"><span class="caption-text">Transformacion XSL</span></p>
+<p class="caption"><span class="caption-text">Transformacion XSL</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Una posible solución sería esta:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
@@ -1318,8 +1317,8 @@ esta</p>
 <h3>Transformación de pedidos (II)<a class="headerlink" href="#transformacion-de-pedidos-ii" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Con el mismo fichero de pedidos crear una sola tabla que tenga 3 columnas y aglutine información tanto de portátiles como de tablets:</p>
 <ul class="simple">
-<li>Cuando procesemos portátiles, las columnas serán respectivamente «precio», «ram» y «disco». Solo se procesan portátiles con más de 2GB de RAM.</li>
-<li>Cuando procesemos tablets, las columnas serán «plataforma», «ram» y «batería». Solo se procesan los tablets con más de 2GB de RAM y que además tengan un tamaño superior a 7 pulgadas.</li>
+<li><p>Cuando procesemos portátiles, las columnas serán respectivamente «precio», «ram» y «disco». Solo se procesan portátiles con más de 2GB de RAM.</p></li>
+<li><p>Cuando procesemos tablets, las columnas serán «plataforma», «ram» y «batería». Solo se procesan los tablets con más de 2GB de RAM y que además tengan un tamaño superior a 7 pulgadas.</p></li>
 </ul>
 <p>El fichero siguiente ilustra una posible forma de hacerlo:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
