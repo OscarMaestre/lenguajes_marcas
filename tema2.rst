@@ -92,6 +92,27 @@ Para el formateo elemental de textos se utilizan varias etiquetas:
 .. NOTE::
    Una de las grandes preguntas es si escribir la etiqueta ``<br/>`` o ``<br>``. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que *"aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar"*. Así, en la cabecera podremos poner cosas como ``<meta...>`` o ``<meta... />``
 
+* La etiqueta ``<abbr>`` permite usar abreviaturas. Ejemplo: ``El <abbr title="World Wide Web Consortiun>W3C</abbr>`` .
+* La etiqueta ``<acronym>`` se ha llegado a usar pero está **obsoleta** .
+* La etiqueta ``<blockqoute>`` se usa para indicar citas largas, por ejemplo.
+
+.. code-block:: html
+
+    <blockquote>
+        <p>En un lugar de la Mancha de cuyo nombre...</p>
+    </blockquote>
+
+* La etiqueta ``<cite>`` permite indicar una cita breve, como en ``<p> Es habitual decir <cite>Alea jact est</cite></p>`` 
+
+* La etiqueta ``<del>`` permite mostrar texto tachado.
+* La etiqueta ``<dfn>`` permite mostrar una definición. Los navegadores suelen mostrar esta etiqueta igual que ``<abbr>`` .
+* La etiqueta ``<ins>`` permite indicar texto que haya sido insertado a posteriori. Suele mostrarse en cursiva.
+* La etiqueta ``<mark>`` permite destacar texto de una manera muy llamativa.
+* La etiqueta ``<output>`` es como el control de un formulario pero se introdujo para recalcar que contiene el resultado de un cálculo.
+* La etiqueta ``<samp>`` está pensada para muestras (samples) de programas o resultado de ejecuciones.
+* La etiqueta ``<tt>`` imita los teletipos (estilo máquina de escribir).
+* La etiqueta ``<wbr>`` está pensada para ayudar al navegador a decidir donde "romper" una palabra y poner el guión.
+
 Gestión de espacios
 ===================
 
@@ -743,6 +764,34 @@ Un campo de texto puede llevar asociada una etiqueta ``label`` que indique al na
 
 Si el type de este elemento se sustituye por ``password`` se obtiene un control igual, pero que reemplaza el texto por símbolos que ocultan el texto.
 
+Es posible ofrecer un conjunto de posibles opciones para un campo de texto usando un control llamado ``<datalist>``. Así, supongamos que pedimos el idioma al usuario pero deseamos ofrecer la posibilidad de autocompletar mostrando algunos idiomas comunes. Se puede usar este código:
+
+.. code-block:: html
+
+	<br/>
+	Introduzca su idioma:<input type="text" id="idiomascomunes">
+    <datalist id="idiomas">
+        <option value="Inglés"></option>
+        <option value="Alemán"></option>
+        <option value="Español"></option>
+        <option value="Francés"></option>
+    </datalist>
+
+
+Campo email
+--------------
+
+Si sabemos con seguridad que en un campo se va a introducir el email se puede usar este código:
+
+.. code-block:: html
+
+	<br/>
+	Introduzca su email:<input type="email" name="sexo">
+
+El navegador hará **automáticamente** la comprobación de que lo que introduce el usuario es realmente un email.
+
+
+
 Selector único (radio-button)
 ---------------------------------
 
@@ -802,6 +851,44 @@ Permiten introducir textos muy largos:
 	<textarea rows="10" cols="15">
 		Valor por defecto
 	</textarea>
+
+Otros elementos HTML: contenido embebido y multimedia
+================================================================================
+
+En HTML existen otras etiquetas que permiten insertar contenido dentro del HTML que no tiene por qué ser HTML
+
+Contenido embebido en general
+--------------------------------------------------------------------------------
+
+
+
+Podemos usar la etiqueta ``object`` para insertar contenido de otro tipo, como archivos de vídeo, de audio, documentos PDF etc... Así, por ejemplo, el siguiente HTML inserta una imagen (cosa que en realidad ya se podía hacer con la etiqueta ``img`` 
+
+.. code-block:: html
+
+    <object data= 
+    "low_res.png" width="550px" height="150px">Imagen </object> 
+
+El problema principal con la etiqueta ``object`` es que su soporte dentro de los navegadores es menos amplio que el de las etiquetas que veremos ahora. Sin embargo, su versatilidad es mayor.
+
+
+La etiqueta ``audio`` permite insertar audios dentro del documento, ofreciendo además un interfaz de control del audio con los elementos típicos: reproducción, parada, control de volumen, etc...
+
+.. code-block:: html
+
+    <audio controls="controls" src="media/cancion.mp3">
+        Su navegador no ofrece soporte para audios embebidos
+    </audio>
+
+
+La etiqueta ``video`` funciona de manera similar a ``audio`` permitiendo insertar en este caso vídeos dentro de una página.
+
+
+.. code-block:: html
+
+    <video controls="controls" src="videos/video.mp4">
+        Su navegador no ofrece soporte para vídeos embebidos.
+    </video>
 
 Ejercicios tipo examen
 ======================
@@ -1066,8 +1153,3 @@ Solución
 		</fieldset>
 	</form>
 
-Examen
-======
-
-* El grupo DAM-1 realizará el Jueves 10 de noviembre de 2016
-* El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.

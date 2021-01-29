@@ -1,11 +1,26 @@
 <form>
 <fieldset>
-  <legend>Por favor, complete estas opciones</legend>
-  <textarea rows='7' cols='46'>
-    Por favor, escriba aquí
-  </textarea>  <br/>
-  <textarea rows='6' cols='60'>
-    Inserte aqui el texto
-  </textarea>  <br/>
+  <legend>Preferencias</legend>
+  Elija una fecha:<input type="date">  <br/>
+  <input type='checkbox' name='velocidad' value='velocidad100_mbits'> 100 Mbits   <br/>
+  <input type='checkbox' name='velocidad' value='velocidad1000_mbits'> 1000 Mbits   <br/>
+  <br/>
+  <select name='escritorio' multiple='multiple'>
+    <option value='kde'>KDE</option>
+    <option value='gnome'>GNOME</option>
+    <option value='unity'>Unity</option>
+  </select>
+  <br/>
+  Elija un color:<input type="color">  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  Instituto<input type='text' name='instituto'> <br/>
+  Estudios elegidos<input type='text' name='estudios'> <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Email<input type='text' name='email'> <br/>
+  <br/>
+  <input type='radio' name='formato' value='formatojpg'> JPG   <br/>
+  <input type='radio' name='formato' value='formatopng'> PNG   <br/>
+  <br/>
 </fieldset>
 </form>

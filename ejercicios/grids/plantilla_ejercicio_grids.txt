@@ -1,0 +1,22 @@
+{{titulo}}
+--------------------------------------------------
+
+
+El siguiente archivo HTML tiene {{num_divs}} secciones y se desean maquetar según la tabla que aparece justo debajo y que tiene {{num_filas}} filas y {{num_columnas}} columnas:
+
+
+.. code-block:: html
+
+{{html}}
+
+
+{{tabla_sphinx}}
+
+Solución al grid ({{titulo}})
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: html
+
+
+{{solucion_html}}
+

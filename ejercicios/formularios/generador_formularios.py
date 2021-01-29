@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #encoding=utf-8
-from random import randint
+from random import randint, shuffle
 import sys
 import codecs
 
@@ -16,7 +16,7 @@ CHECKBOX_CON_ID     ="  <input type='checkbox' name='{0}' id='{2} value='{2}''> 
 OPTION              ="    <option value='{0}'>{1}</option>"
 SELECT              ="  <select name='{0}' {1}>"
 INPUT               ="  {0}<input type='text' name='{1}'>"
-TEXTAREA            ="  <textarea rows='{0}' cols='{1}'>\n    {2}\n  </textarea>"
+TEXTAREA            ="  <textarea rows='{0}' cols='{1}'>{2}</textarea>"
 LETRAS_PROHIBIDAS_EN_IDS                ="ÁÉÍÓÚáéíóúÑñ "
 LETRAS_SUSTITUTAS_DE_PROHIBIDAS_EN_IDS  ="AEIOUaeiouNn_"
 DICCIONARIO_REEMPLAZOS_LETRAS_PROHIBIDAS=dict()
@@ -40,19 +40,28 @@ class GeneradorFormularios(object):
     
     
     def get_trozo_formulario(self, con_fieldset=True):
+        #Algunas funciones aparecen dos veces para aumentar la posibilidad de que aparezcan
         funciones=[self.generar_checkboxes, self.generar_radios,
                    self.generar_options, self.generar_textarea,
-                   self.generar_inputs]
+                   self.generar_inputs, self.generar_control_fichero, self.generar_control_color,
+                   self.generar_fecha, self.generar_hora]
         self.html=""
-        cantidad_elementos=randint(2,5)
-        for i in range(1, cantidad_elementos):
-            pos_azar=randint(0, len(funciones)-1)
-            self.html+=funciones[pos_azar](self.get_boolean_aleatorio())
+
+        shuffle(funciones)
+        nuevo_vector=funciones
+        nueva_longitud=randint(3, len(nuevo_vector))
+        #cantidad_elementos=randint(2,5)
+        vector_final=nuevo_vector[0:nueva_longitud]
+        #for i in range(1, cantidad_elementos):
+        for f in vector_final:
+            
+            self.html+=f(self.get_boolean_aleatorio())
             self.html+="  <br/>\n"
         if con_fieldset:
             leyenda=self.get_linea_aleatoria(fichero=FICHERO_LEYENDAS)
             leyenda="  <legend>{0}</legend>\n".format(leyenda)
             self.html="<fieldset>\n" + leyenda + self.html + "</fieldset>\n"
+        print (self.html)
         return self.html
     
     def get_lineas_fichero(self, nombre_fichero):
@@ -144,6 +153,27 @@ class GeneradorFormularios(object):
     
     def get_descripcion(self):
         return self.descripcion
+
+    def generar_control_fichero(self, con_fin_linea=True):
+        self.descripcion+="* Hay un control para elegir ficheros.\n"
+        html="  Elija un fichero:<input type=\"file\">"
+        return html
+
+    def generar_control_color(self, con_fin_linea=True):
+        self.descripcion+="* Hay un control para elegir el color.\n"
+        html="  Elija un color:<input type=\"color\">"
+        return html
+    
+    def generar_fecha(self, con_fin_linea=True):
+        self.descripcion+="* Hay un control para indicar la fecha.\n"
+        html="  Elija una fecha:<input type=\"date\">"
+        return html
+
+    def generar_hora(self, con_fin_linea=True):
+        self.descripcion+="* Hay un control para indicar la hora.\n"
+        html="  Elija una hora:<input type=\"time\">"
+        return html
+
     def generar_options(self,  multiple=True):
         linea=self.get_linea_aleatoria()
         opciones=linea.split(":")
@@ -153,7 +183,7 @@ class GeneradorFormularios(object):
             self.descripcion+="* Hay una lista desplegable múltiple con el ``name`` \"{0}\" y con las siguientes opciones: ".format(opciones[0])
         else:
             html=SELECT.format(opciones[0], "")
-            self.descripcion+="* Hay una lista desplegable múltiple con el ``name`` \"{0}\" y con las siguientes opciones: ".format(opciones[0])
+            self.descripcion+="* Hay una lista desplegable con el ``name`` \"{0}\" y con las siguientes opciones: ".format(opciones[0])
         html+="\n"
         descripcion_opciones=[]
         for o in opciones[1:]:

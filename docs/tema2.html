@@ -1,37 +1,229 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>HTML5 &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTML5 &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="CSS" href="tema3.html" />
-    <link rel="prev" title="Introducción" href="tema1.html" />
+    <link rel="prev" title="Introducción" href="tema1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etiquetas-estructurales">Etiquetas estructurales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etiquetas-para-definir-metadatos">Etiquetas para definir metadatos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etiquetas-de-formato">Etiquetas de formato</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entidades">Entidades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#texto-preformateado">Texto preformateado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listas">Listas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas">Tablas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#un-ejemplo-de-tabla">Un ejemplo de tabla</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas">Ejercicio sobre tablas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-ii">Ejercicio sobre tablas (II)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-iii">Ejercicio sobre tablas (III)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-v">Ejercicio sobre tablas (V)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-vi">Ejercicio sobre tablas (VI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-vii">Ejercicio sobre tablas (VII)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-viii">Ejercicio sobre tablas (VIII)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Solución</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#formularios">Formularios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#campo-de-texto">Campo de texto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#campo-email">Campo email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selector-unico-radio-button">Selector único (radio-button)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selector-multiple-checkbox">Selector múltiple (checkbox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lista-desplegable">Lista desplegable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textareas">Textareas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#otros-elementos-html-contenido-embebido-y-multimedia">Otros elementos HTML: contenido embebido y multimedia</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contenido-embebido-en-general">Contenido embebido en general</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-tipo-examen">Ejercicios tipo examen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enunciado">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Solución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Enunciado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Solución</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>HTML5</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema2.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="html5">
 <h1>HTML5<a class="headerlink" href="#html5" title="Enlazar permanentemente con este título">¶</a></h1>
@@ -112,6 +304,27 @@ se comentará a continuación.</p>
 <p class="admonition-title">Nota</p>
 <p>Una de las grandes preguntas es si escribir la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>. La respuesta corta es que da igual. La respuesta larga es que el W3C permite que <em>«aquellos elementos que nunca lleven nada dentro pueden indistintamente escribirse de manera autocerrada o simplemente sin cerrar»</em>. Así, en la cabecera podremos poner cosas como <code class="docutils literal notranslate"><span class="pre">&lt;meta...&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;meta...</span> <span class="pre">/&gt;</span></code></p>
 </div>
+<ul class="simple">
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> permite usar abreviaturas. Ejemplo: <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">&lt;abbr</span> <span class="pre">title=&quot;World</span> <span class="pre">Wide</span> <span class="pre">Web</span> <span class="pre">Consortiun&gt;W3C&lt;/abbr&gt;</span></code> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;acronym&gt;</span></code> se ha llegado a usar pero está <strong>obsoleta</strong> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;blockqoute&gt;</span></code> se usa para indicar citas largas, por ejemplo.</p></li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>En un lugar de la Mancha de cuyo nombre...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;cite&gt;</span></code> permite indicar una cita breve, como en <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span> <span class="pre">Es</span> <span class="pre">habitual</span> <span class="pre">decir</span> <span class="pre">&lt;cite&gt;Alea</span> <span class="pre">jact</span> <span class="pre">est&lt;/cite&gt;&lt;/p&gt;</span></code></p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;del&gt;</span></code> permite mostrar texto tachado.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;dfn&gt;</span></code> permite mostrar una definición. Los navegadores suelen mostrar esta etiqueta igual que <code class="docutils literal notranslate"><span class="pre">&lt;abbr&gt;</span></code> .</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;ins&gt;</span></code> permite indicar texto que haya sido insertado a posteriori. Suele mostrarse en cursiva.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code> permite destacar texto de una manera muy llamativa.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;output&gt;</span></code> es como el control de un formulario pero se introdujo para recalcar que contiene el resultado de un cálculo.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;samp&gt;</span></code> está pensada para muestras (samples) de programas o resultado de ejecuciones.</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;tt&gt;</span></code> imita los teletipos (estilo máquina de escribir).</p></li>
+<li><p>La etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;wbr&gt;</span></code> está pensada para ayudar al navegador a decidir donde «romper» una palabra y poner el guión.</p></li>
+</ul>
 </div>
 <div class="section" id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -687,6 +900,26 @@ se comentará a continuación.</p>
 </pre></div>
 </div>
 <p>Si el type de este elemento se sustituye por <code class="docutils literal notranslate"><span class="pre">password</span></code> se obtiene un control igual, pero que reemplaza el texto por símbolos que ocultan el texto.</p>
+<p>Es posible ofrecer un conjunto de posibles opciones para un campo de texto usando un control llamado <code class="docutils literal notranslate"><span class="pre">&lt;datalist&gt;</span></code>. Así, supongamos que pedimos el idioma al usuario pero deseamos ofrecer la posibilidad de autocompletar mostrando algunos idiomas comunes. Se puede usar este código:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    Introduzca su idioma:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;idiomascomunes&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">datalist</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;idiomas&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Inglés&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Alemán&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Español&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Francés&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">datalist</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="campo-email">
+<h3>Campo email<a class="headerlink" href="#campo-email" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si sabemos con seguridad que en un campo se va a introducir el email se puede usar este código:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+Introduzca su email:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;sexo&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El navegador hará <strong>automáticamente</strong> la comprobación de que lo que introduce el usuario es realmente un email.</p>
 </div>
 <div class="section" id="selector-unico-radio-button">
 <h3>Selector único (radio-button)<a class="headerlink" href="#selector-unico-radio-button" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -733,6 +966,31 @@ Bici
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;15&quot;</span><span class="p">&gt;</span>
         Valor por defecto
 <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="otros-elementos-html-contenido-embebido-y-multimedia">
+<h2>Otros elementos HTML: contenido embebido y multimedia<a class="headerlink" href="#otros-elementos-html-contenido-embebido-y-multimedia" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En HTML existen otras etiquetas que permiten insertar contenido dentro del HTML que no tiene por qué ser HTML</p>
+<div class="section" id="contenido-embebido-en-general">
+<h3>Contenido embebido en general<a class="headerlink" href="#contenido-embebido-en-general" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Podemos usar la etiqueta <code class="docutils literal notranslate"><span class="pre">object</span></code> para insertar contenido de otro tipo, como archivos de vídeo, de audio, documentos PDF etc… Así, por ejemplo, el siguiente HTML inserta una imagen (cosa que en realidad ya se podía hacer con la etiqueta <code class="docutils literal notranslate"><span class="pre">img</span></code></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span>
+<span class="s">&quot;low_res.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;550px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;150px&quot;</span><span class="p">&gt;</span>Imagen <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El problema principal con la etiqueta <code class="docutils literal notranslate"><span class="pre">object</span></code> es que su soporte dentro de los navegadores es menos amplio que el de las etiquetas que veremos ahora. Sin embargo, su versatilidad es mayor.</p>
+<p>La etiqueta <code class="docutils literal notranslate"><span class="pre">audio</span></code> permite insertar audios dentro del documento, ofreciendo además un interfaz de control del audio con los elementos típicos: reproducción, parada, control de volumen, etc…</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="o">=</span><span class="s">&quot;controls&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;media/cancion.mp3&quot;</span><span class="p">&gt;</span>
+    Su navegador no ofrece soporte para audios embebidos
+<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>La etiqueta <code class="docutils literal notranslate"><span class="pre">video</span></code> funciona de manera similar a <code class="docutils literal notranslate"><span class="pre">audio</span></code> permitiendo insertar en este caso vídeos dentro de una página.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="o">=</span><span class="s">&quot;controls&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;videos/video.mp4&quot;</span><span class="p">&gt;</span>
+    Su navegador no ofrece soporte para vídeos embebidos.
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1053,147 +1311,62 @@ Bici
 </div>
 </div>
 </div>
-<div class="section" id="examen">
-<h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
-<ul class="simple">
-<li><p>El grupo DAM-1 realizará el Jueves 10 de noviembre de 2016</p></li>
-<li><p>El grupo ASIR-1 realizará el examen el Jueves 17 de noviembre de 2016.</p></li>
-</ul>
-</div>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navegación</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML5</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#etiquetas-estructurales">Etiquetas estructurales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#etiquetas-para-definir-metadatos">Etiquetas para definir metadatos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#etiquetas-de-formato">Etiquetas de formato</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#entidades">Entidades</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#texto-preformateado">Texto preformateado</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#listas">Listas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#tablas">Tablas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#un-ejemplo-de-tabla">Un ejemplo de tabla</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas">Ejercicio sobre tablas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-ii">Ejercicio sobre tablas (II)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-iii">Ejercicio sobre tablas (III)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-v">Ejercicio sobre tablas (V)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-vi">Ejercicio sobre tablas (VI)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-vii">Ejercicio sobre tablas (VII)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-sobre-tablas-viii">Ejercicio sobre tablas (VIII)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Solución</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#formularios">Formularios</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#campo-de-texto">Campo de texto</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#selector-unico-radio-button">Selector único (radio-button)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#selector-multiple-checkbox">Selector múltiple (checkbox)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lista-desplegable">Lista desplegable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#textareas">Textareas</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicios-tipo-examen">Ejercicios tipo examen</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#enunciado">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Solución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">Enunciado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">Solución</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#examen">Examen</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tema1.html" title="capítulo anterior">Introducción</a></li>
-      <li>Next: <a href="tema3.html" title="próximo capítulo">CSS</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Ir a" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema3.html" class="btn btn-neutral float-right" title="CSS" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tema1.html" class="btn btn-neutral float-left" title="Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema2.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

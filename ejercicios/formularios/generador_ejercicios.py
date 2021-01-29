@@ -31,7 +31,7 @@ TEXTO="""
 
 Anexo: ejercicios sobre formularios
 =====================================
-En los ejercicios siguientes se han muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
+En los ejercicios siguientes se muestra el diseño básico de algunos formularios junto con el HTML que los resuelve.
 
 
 {0}
@@ -58,7 +58,7 @@ def capturar_pantalla(nombre_fichero_imagen):
 
 def generar_ejercicio(archivo_html, archivo_png, foto_png):
     #subprocess.call(["./generador_formularios.py", archivo_html])
-    subprocess.call(["abrowser", archivo_html])
+    subprocess.call(["firefox", archivo_html])
     time.sleep(2)
     capturar_pantalla(archivo_png)
     recortar_imagen(archivo_png, foto_png)
@@ -69,7 +69,7 @@ def recortar_imagen(archivo, archivo_cortado):
 def generar_tablas():
     secciones=""
     g=GeneradorFormularios()
-    for i in range(1, 21):
+    for i in range(1, 41):
         print("Generando "+str(i))
         
         cad_numero=str(i)

@@ -1,29 +1,26 @@
 <form>
 <fieldset>
-  <legend>Opciones</legend>
-  <input type='radio' name='procesador' value='procesadoramd'> AMD 
-  <input type='radio' name='procesador' value='procesadorintel_i5'> Intel i5 
-  <input type='radio' name='procesador' value='procesadorintel_i7'> Intel i7 
+  <legend>Preferencias</legend>
+  Elija una hora:<input type="time">  <br/>
+  Elija un color:<input type="color">  <br/>
+  Instituto<input type='text' name='instituto'>
+  Estudios elegidos<input type='text' name='estudios'>
+  Nombre<input type='text' name='nombre'>
+  Apellidos<input type='text' name='apellidos'>
+  Email<input type='text' name='email'>
   <br/>
-</fieldset>
-<fieldset>
-  <legend>Rellene las opciones siguientes</legend>
-  Nombre<input type='text' name='nombre'> <br/>
-  Apellidos<input type='text' name='apellidos'> <br/>
-  Direccion<input type='text' name='direccion'> <br/>
+  <select name='idioma' multiple='multiple'>
+    <option value='ingles'>Inglés</option>
+    <option value='aleman'>Alemán</option>
+    <option value='frances'>Francés</option>
+  </select>
   <br/>
-  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
-  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
+  Elija un fichero:<input type="file">  <br/>
+  <textarea rows='7' cols='53'>Inserte aqui el texto</textarea>  <br/>
+  <input type='checkbox' name='procesador' value='procesadoramd'> AMD 
+  <input type='checkbox' name='procesador' value='procesadorintel_i5'> Intel i5 
+  <input type='checkbox' name='procesador' value='procesadorintel_i7'> Intel i7 
   <br/>
-  <input type='checkbox' name='ciclo' value='ciclosmir'> SMIR 
-  <input type='checkbox' name='ciclo' value='cicloasir'> ASIR 
-  <input type='checkbox' name='ciclo' value='ciclodam'> DAM 
-  <input type='checkbox' name='ciclo' value='ciclodaw'> DAW 
-  <br/>
-  <input type='radio' name='navegador' value='navegadorfirefox'> Firefox 
-  <input type='radio' name='navegador' value='navegadorchrome'> Chrome 
-  <input type='radio' name='navegador' value='navegadoropera'> Opera 
-  <input type='radio' name='navegador' value='navegadorie'> IE 
-  <br/>
+  Elija una fecha:<input type="date">  <br/>
 </fieldset>
 </form>

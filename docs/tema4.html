@@ -1,37 +1,276 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Javascript &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Javascript &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="XML" href="tema5.html" />
-    <link rel="prev" title="CSS" href="tema3.html" />
+    <link rel="prev" title="CSS" href="tema3.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tipos-de-datos">Tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incrustando-javascript">Incrustando Javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decisiones">Decisiones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vectores-o-arrays">Vectores o Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bucles">Bucles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bucles-for">Bucles for</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bucles-for-estilo-clasico">Bucles for estilo clásico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bucles-foreach">Bucles foreach</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bucles-while">Bucles while</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-media-aritmetica">Ejercicio: media aritmética</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-desviacion-media">Ejercicio: desviación media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-la-mediana">Ejercicio: la mediana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funciones">Funciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#programacion-oo">Programación OO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#programacion-con-jquery">Programación con JQuery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inicio">Inicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-funcion">La función $</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-de-eventos">Gestión de eventos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-html-parrafos">Solución HTML (párrafos)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-javascript-parrafos">Solución Javascript (párrafos)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#procesado-de-atributos">Procesado de atributos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-recuento-de-medios-de-locomocion">Ejercicio: recuento de medios de locomoción</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-recuento-de-medios-html">Solución: recuento de medios (HTML)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-recuento-de-medios-js">Solución: recuento de medios (JS)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-configurador">Ejercicio configurador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-html-configurador">Solución HTML configurador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-js-configurador">Solución JS configurador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-configurador-de-pcs-ampliado">Ejercicio configurador de PCs ampliado</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#html-del-configurador">HTML del configurador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-sin-jquery">JS del configurador (sin JQuery)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dinamismo-con-google-maps">Dinamismo con Google Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#html-de-gmaps">HTML de GMaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-de-gmaps">Javascript de GMaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Ejercicio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Ejercicio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#especificaciones">Especificaciones</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ampliacion">Ampliación</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-html">Solución HTML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solucion-js">Solución JS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#otro-configurador-de-coches">Otro configurador de coches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configurador-en-html">Configurador en HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurador-en-js">Configurador en JS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#calculo-de-impuestos">Calculo de impuestos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#html-calculador">HTML calculador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-calculador-con-jquery-dam">JS Calculador (con JQuery (DAM))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-calculador-sin-jquery-asir">JS Calculador (sin JQuery (ASIR))</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#html-del-comparador">HTML del comparador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-del-comparador">JS del comparador</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#calculadora-en-javascript">Calculadora en Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interfaz-html-para-la-calculadora">Interfaz HTML para la calculadora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programa-js-para-la-calculadora">Programa JS para la calculadora</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#poliza-de-seguros">Póliza de seguros</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interfaz-de-la-poliza-de-seguros">Interfaz de la póliza de seguros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-de-la-poliza-de-seguros">JS de la póliza de seguros</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#matricula">Matrícula</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interfaz-de-la-matricula">Interfaz de la matrícula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#js-de-la-matricula">JS de la matrícula</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Javascript</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema4.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="javascript">
 <h1>Javascript<a class="headerlink" href="#javascript" title="Enlazar permanentemente con este título">¶</a></h1>
@@ -60,7 +299,7 @@
 <h2>Incrustando Javascript<a class="headerlink" href="#incrustando-javascript" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Javascript se inserta en HTML con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. Esta etiqueta puede ir en cualquier sitio del HTML, dentro de <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> o dentro de <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code>.</p>
 <p>Un programa muy simple sería este:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">una_variable</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">let</span> <span class="nx">una_variable</span>
 <span class="nx">una_variable</span><span class="o">=</span><span class="mi">42</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">una_variable</span><span class="p">)</span>
 </pre></div>
@@ -101,8 +340,8 @@
 <div class="section" id="bucles-for-estilo-clasico">
 <h4>Bucles for estilo clásico<a class="headerlink" href="#bucles-for-estilo-clasico" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>En estos bucles hay que poner la inicialización, la condición de final y la actualización:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot; está el número &quot;</span> <span class="o">+</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
 <span class="p">}</span>
@@ -195,7 +434,7 @@
 <div class="section" id="ejercicio-la-mediana">
 <h2>Ejercicio: la mediana<a class="headerlink" href="#ejercicio-la-mediana" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Calcular la mediana del vector</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">var</span> <span class="n">pos1</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span>
     <span class="n">var</span> <span class="n">pos2</span><span class="o">=</span><span class="n">pos1</span><span class="o">-</span><span class="mi">1</span>
     <span class="n">var</span> <span class="n">elem1</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos1</span><span class="o">]</span>
@@ -205,7 +444,7 @@
     <span class="n">var</span> <span class="n">pos_central</span><span class="o">=(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">)/</span><span class="mi">2</span>
     <span class="n">var</span> <span class="n">mediana</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos_central</span><span class="o">]</span>
 <span class="o">}</span>
-<span class="n">doc</span>     <span class="n">ument</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;La mediana es:&quot;</span><span class="o">+</span><span class="n">mediana</span><span class="o">)</span>
+<span class="n">document</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;La mediana es:&quot;</span><span class="o">+</span><span class="n">mediana</span><span class="o">)</span>
 </pre></div>
 </div>
 </div>
@@ -917,9 +1156,145 @@
 <p>Crear la aplicación que respete las restricciones exigidas por el cliente.</p>
 <div class="section" id="html-del-configurador">
 <h3>HTML del configurador<a class="headerlink" href="#html-del-configurador" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>Tipo de motor<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;gasolina&quot;</span><span class="p">&gt;</span>Gasolina <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;motor&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;diesel&quot;</span><span class="p">&gt;</span>Diésel<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span> Cubicaje<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;1100&quot;</span><span class="p">&gt;</span>1100m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;1800&quot;</span><span class="p">&gt;</span>1800m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cubicaje&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;2300&quot;</span><span class="p">&gt;</span>2300m3<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Pinturas<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pintura&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;normal&quot;</span><span class="p">&gt;</span>Normal<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pintura&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;metalizada&quot;</span><span class="p">&gt;</span>Metaliz.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Colores<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;negro&quot;</span><span class="p">&gt;</span>Negro
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;blanco&quot;</span><span class="p">&gt;</span>Blanco
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;rojo&quot;</span><span class="p">&gt;</span>Rojo
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;azulpolar&quot;</span><span class="p">&gt;</span>Azul polar
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;verde&quot;</span><span class="p">&gt;</span>Verde
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+           <span class="na">id</span><span class="o">=</span><span class="s">&quot;gris&quot;</span><span class="p">&gt;</span>Gris
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>Extras<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;aleron&quot;</span><span class="p">&gt;</span>
+    Alerón
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;radiocd&quot;</span><span class="p">&gt;</span>
+    radiocd
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;altavoces&quot;</span><span class="p">&gt;</span>
+    Altavoces
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;gps&quot;</span><span class="p">&gt;</span>
+    GPS
+    <span class="p">&lt;</span><span class="nt">button</span>
+      <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();return false&quot;</span><span class="p">&gt;</span>
+        Calcular precio
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="js-del-configurador-con-jquery-dam">
-<h3>JS del configurador (con JQuery (DAM))<a class="headerlink" href="#js-del-configurador-con-jquery-dam" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="js-del-configurador-sin-jquery">
+<h3>JS del configurador (sin JQuery)<a class="headerlink" href="#js-del-configurador-sin-jquery" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">identificador</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="p">;</span>
+    <span class="nx">control</span><span class="o">=</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+            <span class="nx">identificador</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">hay_errores</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">error</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+    <span class="cm">/* Si detectamos un error</span>
+<span class="cm">    ponemos error a true*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;2300&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible diesel de 2300, por favor modifique sus opciones.&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;azulpolar&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+azul&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gris&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+gris&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;verde&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+verde&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Imposible normal+aleron. Elija pintura metalizada&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">))){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;No puede pedir altavoces sin pedir el RadioCD&quot;</span><span class="p">);</span>
+        <span class="nx">error</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">hay_errores</span><span class="p">()){</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Si llegamos aquí es que</span>
+<span class="cm">    no hay errores y el precio se puede calcular*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">7000</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">8200</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1100&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">800</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1800&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1900</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;2300&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">2500</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">750</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1580</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*Obsérvese que el precio</span>
+<span class="cm">    no ha cambiado dependiendo del color*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">190</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">230</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">320</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gps&quot;</span><span class="p">)){</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">520</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Su precio es:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="dinamismo-con-google-maps">
@@ -1645,156 +2020,318 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 </div>
 </div>
 </div>
+<div class="section" id="calculadora-en-javascript">
+<h2>Calculadora en Javascript<a class="headerlink" href="#calculadora-en-javascript" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se desea crear una calculadora en Javascript que tenga el siguiente interfaz</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="_images/interfazcalculadora.png"><img alt="Ejemplo de interfaz" src="_images/interfazcalculadora.png" style="width: 300.0px; height: 182.0px;" /></a>
+<p class="caption"><span class="caption-text">Ejemplo de interfaz de la calculadora en JS</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
+<p>El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos <code class="docutils literal notranslate"><span class="pre">radio</span></code> . El resultado deberá aparecer en algún elemento <code class="docutils literal notranslate"><span class="pre">div</span></code> sin utilizar por tanto elementos alert ni distraer la atención del usuario.</p>
+<div class="section" id="interfaz-html-para-la-calculadora">
+<h3>Interfaz HTML para la calculadora<a class="headerlink" href="#interfaz-html-para-la-calculadora" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En el fichero siguiente se muestra un ejemplo de interfaz</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Calculadora JS<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            Num 1:
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">onchange</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Num 2:
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">onchange</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;suma&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Sumar<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;resta&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Restar<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;multiplicacion&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Multiplicación<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;calculo&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;division&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Division<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultado&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;calculadora.js&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="programa-js-para-la-calculadora">
+<h3>Programa JS para la calculadora<a class="headerlink" href="#programa-js-para-la-calculadora" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El siguiente fichero muestra una posible solucion:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*Esta función se ocupa de sacar un control, sacar el texto que hay dentro (recuérdese que es texto aunque &quot;parezca&quot; un número), convierte el texto a número y devuelve dicho número*/</span>
+<span class="kd">function</span> <span class="nx">sacar_numero</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="cm">/*Algunos controles tienen un &quot;campo&quot; value en el cual</span>
+<span class="cm">    está el valor de lo que nos interesa, pero ¡está en forma de texto*/</span>
+    <span class="kd">let</span> <span class="nx">texto</span><span class="o">=</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="cm">/* Convirtamos ese texto a número*/</span>
+    <span class="kd">let</span> <span class="nx">numero</span><span class="o">=</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">texto</span><span class="p">);</span>
+    <span class="cm">/*Y devolvemos ese número a quien nos ejecutó*/</span>
+    <span class="k">return</span> <span class="nx">numero</span><span class="p">;</span>
+<span class="p">}</span>
 
+<span class="cm">/*Dado un identificador está función devuelve &quot;true&quot; si ese elemento está marcado y &quot;false&quot; si no lo está*/</span>
+<span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cm">/*Esta función toma un texto y lo inserta dentro del </span>
+<span class="cm">div resultado*/</span>
+<span class="kd">function</span> <span class="nx">escribir_resultado</span><span class="p">(</span><span class="nx">texto</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">divresultado</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resultado&quot;</span><span class="p">);</span>
+    <span class="nx">divresultado</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Resultado:&quot;</span><span class="o">+</span><span class="nx">texto</span><span class="p">;</span>
+<span class="p">}</span>
 
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
+<span class="cm">/*Esta es la función que se ejecuta cuando alguien &quot;cambia&quot; un número o cuando alguien &quot;hace click en una operación&quot;*/</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">num1</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">num2</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">resultado</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;suma&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">+</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;resta&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">-</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;multiplicacion&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">*</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;division&quot;</span><span class="p">)){</span>
+        <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">/</span><span class="nx">num2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">escribir_resultado</span><span class="p">(</span><span class="nx">resultado</span><span class="p">)</span>
 
-
-
-
-
-
-
-
-<h3>Navegación</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Javascript</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tipos-de-datos">Tipos de datos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#incrustando-javascript">Incrustando Javascript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#decisiones">Decisiones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vectores-o-arrays">Vectores o Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bucles">Bucles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bucles-for">Bucles for</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bucles-while">Bucles while</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-media-aritmetica">Ejercicio: media aritmética</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-desviacion-media">Ejercicio: desviación media</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-la-mediana">Ejercicio: la mediana</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#funciones">Funciones</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#programacion-oo">Programación OO</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#programacion-con-jquery">Programación con JQuery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#inicio">Inicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#la-funcion">La función $</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-de-eventos">Gestión de eventos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#procesado-de-atributos">Procesado de atributos</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-recuento-de-medios-de-locomocion">Ejercicio: recuento de medios de locomoción</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-configurador">Ejercicio configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-html-configurador">Solución HTML configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-js-configurador">Solución JS configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-configurador-de-pcs-ampliado">Ejercicio configurador de PCs ampliado</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#configurador-de-coches">Configurador de coches</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#html-del-configurador">HTML del configurador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-del-configurador-con-jquery-dam">JS del configurador (con JQuery (DAM))</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#dinamismo-con-google-maps">Dinamismo con Google Maps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#html-de-gmaps">HTML de GMaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#javascript-de-gmaps">Javascript de GMaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Ejercicio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ampliacion">Ampliación</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#otro-configurador-de-coches">Otro configurador de coches</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configurador-en-html">Configurador en HTML</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configurador-en-js">Configurador en JS</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#calculo-de-impuestos">Calculo de impuestos</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#html-calculador">HTML calculador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-calculador-con-jquery-dam">JS Calculador (con JQuery (DAM))</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-calculador-sin-jquery-asir">JS Calculador (sin JQuery (ASIR))</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#comparador-de-telefonia">Comparador de telefonía</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#html-del-comparador">HTML del comparador</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#js-del-comparador">JS del comparador</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="poliza-de-seguros">
+<h2>Póliza de seguros<a class="headerlink" href="#poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pide crear una aplicación para el cálculo de una póliza de seguros en base a distintas situaciones.</p>
+<ul class="simple">
+<li><p>El precio base es 175 euros.</p></li>
+<li><p>El usuario puede tener el carnet menos de 6 años. En ese caso el precio se incrementa en 280 euros.</p></li>
+<li><p>El usuario puede tener el carnet 6 años o más. En ese caso la póliza se reduce en 25 euros.</p></li>
+<li><p>En una lista desplegable se puede elegir el tipo de vehículo:</p>
 <ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tema3.html" title="capítulo anterior">CSS</a></li>
-      <li>Next: <a href="tema5.html" title="próximo capítulo">XML</a></li>
-  </ul></li>
+<li><p>Familiar: el precio no se modifica.</p></li>
+<li><p>Comercial: el precio se incrementa en 165 euros.</p></li>
+<li><p>Deportivo: el precio se incrementa en 280 euros.</p></li>
 </ul>
+</li>
+<li><p>Por último hay dos checkboxes para marcar distintas situaciones:</p>
+<ul>
+<li><p>Si se tienen hijos a cargo el precio se reduce en un 5%.</p></li>
+<li><p>Si se tienen padres a cargo el precio se reduce en un 3%</p></li>
+<li><p>Se pueden marcar ninguna, una de ellas o las dos.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="interfaz-de-la-poliza-de-seguros">
+<h3>Interfaz de la póliza de seguros<a class="headerlink" href="#interfaz-de-la-poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Debería quedar algo así:</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="_images/polizaseguros.png"><img alt="Ejemplo de interfaz de la póliza" src="_images/polizaseguros.png" style="width: 173.0px; height: 174.0px;" /></a>
+<p class="caption"><span class="caption-text">Ejemplo de interfaz de la póliza en JS</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Ir a" />
-    </form>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pólizas de seguros<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            Antigüedad<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> 
+            <span class="na">name</span><span class="o">=</span><span class="s">&quot;antiguedad&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menos&quot;</span>
+            <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            <span class="ni">&amp;lt;</span> de 6 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> 
+            <span class="na">name</span><span class="o">=</span><span class="s">&quot;antiguedad&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mas&quot;</span>
+            <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            <span class="ni">&amp;gt;</span> de 6 <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Tipo de vehículo<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;vehiculo&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;familiar&quot;</span><span class="p">&gt;</span> Familiar <span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;comercial&quot;</span><span class="p">&gt;</span>Comercial<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;deportivo&quot;</span><span class="p">&gt;</span>Deportivo<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            Situación familiar <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;conhijos&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Con hijos a cargo <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> 
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;conpadres&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+            Con padres a cargo
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultado&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;polizaseguros.js&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-de-la-poliza-de-seguros">
+<h3>JS de la póliza de seguros<a class="headerlink" href="#js-de-la-poliza-de-seguros" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*Dado un identificador está función devuelve &quot;true&quot; si ese elemento está marcado y &quot;false&quot; si no lo está*/</span>
+<span class="kd">function</span> <span class="nx">esta_checked</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">control</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">checked</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="nx">divresultado</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resultado&quot;</span><span class="p">);</span>
+    <span class="nx">divresultado</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matricula">
+<h2>Matrícula<a class="headerlink" href="#matricula" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un centro de estudios desea ofrecer a sus alumnos la posibilidad de cursar algunas materias de forma flexible.</p>
+<ul class="simple">
+<li><p>El usuario puede cursar las horas semanales que desee. Cada hora de clase cuesta 5 euros al mes.</p></li>
+<li><p>Un usuario puede ser antiguo alumno. En ese caso se le hace un descuento del 12% sobre el precio final.</p></li>
+<li><p>El usuario puede elegir las materias que desee: en concreto puede elegir de primero las asignaturas de «Matemáticas I» e «Historia» y de segundo «Matemáticas II» y «Física».</p></li>
+<li><p>Está permitido matricularse de «Matemáticas I» y de «Matemáticas II» a la vez pero <strong>no está permitido elegir «Matemáticas II» sin elegir «Matemáticas I»</strong> . Si se hace esto <strong>no debe verse el precio, sino alguna clase de mensaje de error</strong></p></li>
+<li><p>El precio final mensual debe aparecer en un <code class="docutils literal notranslate"><span class="pre">div</span></code> .</p></li>
+</ul>
+<div class="section" id="interfaz-de-la-matricula">
+<h3>Interfaz de la matrícula<a class="headerlink" href="#interfaz-de-la-matricula" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El resultado debe ser similar a esto:</p>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="_images/matricula.png"><img alt="Ejemplo de interfaz de la matrícula" src="_images/matricula.png" style="width: 248.5px; height: 329.5px;" /></a>
+<p class="caption"><span class="caption-text">Ejemplo de interfaz de la matrícula</span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Matrículas<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Generales<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            Horas semanales:
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;horas&quot;</span>
+            <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;antalumno&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;si_antiguo&quot;</span><span class="p">&gt;</span>
+            Antiguo alumno <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;antalumno&quot;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&quot;no_antiguo&quot;</span><span class="p">&gt;</span>
+            Nuevo alumno <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Primero<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mat1&quot;</span><span class="p">&gt;</span>
+            Matemáticas I <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;his&quot;</span><span class="p">&gt;</span>
+            Historia <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Segundo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mat2&quot;</span><span class="p">&gt;</span>
+            Matemáticas II <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fis&quot;</span><span class="p">&gt;</span>
+            Física
+            <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;calcular();&quot;</span><span class="p">&gt;</span>
+                Calcular precio
+            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;resultado&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="js-de-la-matricula">
+<h3>JS de la matrícula<a class="headerlink" href="#js-de-la-matricula" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema5.html" class="btn btn-neutral float-right" title="XML" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tema3.html" class="btn btn-neutral float-left" title="CSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema4.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

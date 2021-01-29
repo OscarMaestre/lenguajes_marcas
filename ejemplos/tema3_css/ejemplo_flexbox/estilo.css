@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(220, 230, 220);
+}
+div#contenido{
+    display: flex;
+}
+
+#navegacion, #principal, #publicidad{
+    border: solid 1px black;
+    padding: 10px;
+    width: 25%;
+}
+
+#navegacion{
+    flex-grow: 4;
+}
+#principal{
+    flex-grow: 1;
+}
+#publicidad{
+    flex-grow:1;
+}

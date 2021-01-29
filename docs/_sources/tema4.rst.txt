@@ -40,7 +40,7 @@ Un programa muy simple sería este:
 
 .. code-block:: javascript
 
-	var una_variable
+	let una_variable
     una_variable=42
     document.write(una_variable)
 	
@@ -93,8 +93,8 @@ En estos bucles hay que poner la inicialización, la condición de final y la ac
 
 .. code-block:: javascript
 
-	for (var i=0; i<vector_numeros.length; i++){
-		document.write("<br/>")
+	for (let i=0; i<vector_numeros.length; i++){
+        document.write("<br/>")
         document.write ("En la posición "+i)
         document.write (" está el número " + vector_numeros[i])
 	}
@@ -215,17 +215,17 @@ Calcular la mediana del vector
 
 .. code-block:: java
 
-		if (v.length%2==0) {
-            var pos1=v.length/2
-            var pos2=pos1-1
-            var elem1=v[pos1]
-            var elem2=v[pos2]
-            var mediana=(elem1+elem2)/2
-        } else {
-            var pos_central=(v.length-1)/2
-            var mediana=v[pos_central]
-        }
-        doc	ument.write("La mediana es:"+mediana)	
+    if (v.length%2==0) {
+        var pos1=v.length/2
+        var pos2=pos1-1
+        var elem1=v[pos1]
+        var elem2=v[pos2]
+        var mediana=(elem1+elem2)/2
+    } else {
+        var pos_central=(v.length-1)/2
+        var mediana=v[pos_central]
+    }
+    document.write("La mediana es:"+mediana)	
 	
 Funciones
 =========
@@ -1023,10 +1023,147 @@ Crear la aplicación que respete las restricciones exigidas por el cliente.
 HTML del configurador
 ----------------------
 
-JS del configurador (con JQuery (DAM))
+.. code-block:: html
+    
+        <form>Tipo de motor<br/>
+            <input type="radio" name="motor"
+                   id="gasolina">Gasolina <br/>
+            <input type="radio" name="motor"
+                   id="diesel">Diésel<br/>
+            <br/> Cubicaje<br/>
+            <input type="radio" name="cubicaje"
+                   id="1100">1100m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="1800">1800m3<br/>
+            <input type="radio" name="cubicaje"
+                   id="2300">2300m3<br/>
+            <br/>Pinturas<br/>
+            <input type="radio" name="pintura"
+                   id="normal">Normal<br/>
+            <input type="radio" name="pintura"
+                   id="metalizada">Metaliz.<br/>
+            <br/>Colores<br/>
+            <input type="radio" name="color"
+                   id="negro">Negro 
+            <input type="radio" name="color"
+                   id="blanco">Blanco 
+            <input type="radio" name="color"
+                   id="rojo">Rojo 
+            <br/>
+            <input type="radio" name="color"
+                   id="azulpolar">Azul polar
+            <input type="radio" name="color"
+                   id="verde">Verde
+            <input type="radio" name="color"
+                   id="gris">Gris
+            <br/>Extras<br/>
+            <input type="checkbox" id="aleron">
+            Alerón
+            <input type="checkbox" id="radiocd">
+            radiocd
+            <input type="checkbox" id="altavoces">
+            Altavoces
+            <input type="checkbox" id="gps">
+            GPS
+            <button 
+              onclick="calcular();return false">
+                Calcular precio
+            </button>
+        </form>
+
+JS del configurador (sin JQuery)
 -----------------------------------------
 
 
+.. code-block:: javascript
+
+    function esta_checked(identificador){
+        let control;
+        control=
+            document.getElementById(
+                identificador);
+        if (control.checked){
+            return true;
+        }
+        return false;
+    }
+    function hay_errores(){
+        let error=false;
+        /* Si detectamos un error
+        ponemos error a true*/
+        if (esta_checked("diesel") && (esta_checked("2300"))){
+            alert("Imposible diesel de 2300, por favor modifique sus opciones.");
+            error=true;
+            
+        }
+        if (esta_checked("normal") && (esta_checked("azulpolar"))){
+            alert("Imposible normal+azul");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("gris"))){
+            alert("Imposible normal+gris");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("verde"))){
+            alert("Imposible normal+verde");
+            error=true;
+        }
+        if (esta_checked("normal") && (esta_checked("aleron"))){
+            alert("Imposible normal+aleron. Elija pintura metalizada");
+            error=true;
+        }
+        /*Cuidado, aquí comprobamos si el altavoz está marcado pero sin haber marcado el radioCD*/
+        if (esta_checked("altavoces") && (!esta_checked("radiocd"))){
+            alert("No puede pedir altavoces sin pedir el RadioCD");
+            error=true;
+        }
+        
+        return error;
+    }
+    function calcular(){
+        let precio=0;
+        if (hay_errores()){
+            return false;
+        }
+        /* Si llegamos aquí es que
+        no hay errores y el precio se puede calcular*/
+        if (esta_checked("gasolina")){
+            precio=precio+7000;
+        }
+        if (esta_checked("diesel")){
+            precio=precio+8200;
+        }
+        if (esta_checked("1100")){
+            precio=precio+800;
+        }
+        if (esta_checked("1800")){
+            precio=precio+1900;
+        }
+        if (esta_checked("2300")){
+            precio=precio+2500;
+        }
+        if (esta_checked("normal")){
+            precio=precio+750;
+        }
+        if (esta_checked("metalizada")){
+            precio=precio+1580;
+        }
+        /*Obsérvese que el precio
+        no ha cambiado dependiendo del color*/
+        if (esta_checked("aleron")){
+            precio=precio+190;
+        }
+        if (esta_checked("radiocd")){
+            precio=precio+230;
+        }
+        if (esta_checked("altavoces")){
+            precio=precio+320;
+        }
+        if (esta_checked("gps")){
+            precio=precio+520;
+        }
+        alert("Su precio es:"+precio);
+    }
 
 Dinamismo con Google Maps
 =========================
@@ -1627,3 +1764,124 @@ JS del comparador
 		texto=texto+"Con la B el precio es:" + coste_total_b;   
 		zonaresultados.innerHTML=texto
 	}
+
+Calculadora en Javascript
+================================================================================
+
+
+
+Se desea crear una calculadora en Javascript que tenga el siguiente interfaz
+
+
+
+.. figure:: ejemplos/tema4_js/calculadora/interfazcalculadora.png
+   :scale: 50%
+   :align: center
+   :alt: Ejemplo de interfaz
+
+   Ejemplo de interfaz de la calculadora en JS
+
+El usuario puede insertar números usando decimales hasta las centésimas y podrá seleccionar el cálculo que quiere hacer usando los elementos ``radio`` . El resultado deberá aparecer en algún elemento ``div`` sin utilizar por tanto elementos alert ni distraer la atención del usuario.
+
+
+Interfaz HTML para la calculadora
+--------------------------------------------------------------------------------
+
+
+
+
+En el fichero siguiente se muestra un ejemplo de interfaz
+
+.. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.html
+   :language: html
+
+Programa JS para la calculadora
+--------------------------------------------------------------------------------
+
+
+
+El siguiente fichero muestra una posible solucion:
+
+.. literalinclude:: ejemplos/tema4_js/calculadora/calculadora.js
+   :language: javascript
+
+Póliza de seguros
+================================================================================
+
+
+
+Se pide crear una aplicación para el cálculo de una póliza de seguros en base a distintas situaciones. 
+
+* El precio base es 175 euros.
+* El usuario puede tener el carnet menos de 6 años. En ese caso el precio se incrementa en 280 euros.
+* El usuario puede tener el carnet 6 años o más. En ese caso la póliza se reduce en 25 euros.
+
+* En una lista desplegable se puede elegir el tipo de vehículo:
+
+  * Familiar: el precio no se modifica.
+  * Comercial: el precio se incrementa en 165 euros.
+  * Deportivo: el precio se incrementa en 280 euros.
+
+* Por último hay dos checkboxes para marcar distintas situaciones:
+
+  * Si se tienen hijos a cargo el precio se reduce en un 5%.
+  * Si se tienen padres a cargo el precio se reduce en un 3%
+  * Se pueden marcar ninguna, una de ellas o las dos.
+
+Interfaz de la póliza de seguros
+--------------------------------------------------------------------------------
+
+
+Debería quedar algo así:
+
+.. figure:: ejemplos/tema4_js/polizaseguros/polizaseguros.png
+   :scale: 50%
+   :align: center
+   :alt: Ejemplo de interfaz de la póliza
+
+   Ejemplo de interfaz de la póliza en JS
+
+.. literalinclude:: ejemplos/tema4_js/polizaseguros/polizaseguros.html
+   :language: html
+
+
+JS de la póliza de seguros
+--------------------------------------------------------------------------------
+
+
+
+.. literalinclude:: ejemplos/tema4_js/polizaseguros/polizaseguros.js
+   :language: javascript
+
+Matrícula
+================================================================================
+
+Un centro de estudios desea ofrecer a sus alumnos la posibilidad de cursar algunas materias de forma flexible.
+
+* El usuario puede cursar las horas semanales que desee. Cada hora de clase cuesta 5 euros al mes.
+* Un usuario puede ser antiguo alumno. En ese caso se le hace un descuento del 12% sobre el precio final.
+* El usuario puede elegir las materias que desee: en concreto puede elegir de primero las asignaturas de "Matemáticas I" e "Historia" y de segundo "Matemáticas II" y "Física".
+* Está permitido matricularse de "Matemáticas I" y de "Matemáticas II" a la vez pero **no está permitido elegir "Matemáticas II" sin elegir "Matemáticas I"** . Si se hace esto **no debe verse el precio, sino alguna clase de mensaje de error** 
+* El precio final mensual debe aparecer en un ``div`` .
+
+
+Interfaz de la matrícula
+--------------------------------------------------------------------------------
+
+El resultado debe ser similar a esto:
+
+.. figure:: ejemplos/tema4_js/matricula/matricula.png
+   :scale: 50%
+   :align: center
+   :alt: Ejemplo de interfaz de la matrícula
+
+   Ejemplo de interfaz de la matrícula 
+
+.. literalinclude:: ejemplos/tema4_js/matricula/matricula.html
+   :language: html
+
+JS de la matrícula
+--------------------------------------------------------------------------------
+
+.. literalinclude:: ejemplos/tema4_js/matricula/matricula.js
+   :language: javascript

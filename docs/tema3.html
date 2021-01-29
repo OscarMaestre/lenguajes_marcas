@@ -1,43 +1,297 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>CSS &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CSS &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Javascript" href="tema4.html" />
-    <link rel="prev" title="HTML5" href="tema2.html" />
+    <link rel="prev" title="HTML5" href="tema2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recordatorio-el-modelo-dom">Recordatorio: el modelo DOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sintaxis">Sintaxis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#un-fichero-para-hacer-pruebas-con-selectores">Un fichero para hacer pruebas con selectores</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pseudo-clases">Pseudo-clases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fondos-e-imagenes">Fondos e imágenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bordes">Bordes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#texto">Texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#border-externos-outlines">Border externos (Outlines)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas">Tablas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion">Ejercicio de maquetación</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#html">HTML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-2-de-maquetacion">Ejercicio 2 de maquetación</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">HTML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-barra-de-herramientas">Ejercicio: barra de herramientas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-ampliacion">Ejercicio: ampliación</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#posicionamiento-float">Posicionamiento float</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion-con-floats-i">Ejercicio de maquetación con floats (I)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion-con-floats-ii">Ejercicio de maquetación con floats (II)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maquetacion-con-flexboxes">Maquetación con flexboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#media-queries">Media queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#colores">Colores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tipografias">Tipografías</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alineacion-del-texto">Alineación del texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decoracion-del-texto">Decoración del texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#medidas">Medidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-comentados-sobre-selectores">Ejercicios comentados sobre selectores.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado">Solución <code class="docutils literal notranslate"><span class="pre">p#destacado</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-span-id1">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-li-elemento-enumeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">li.elemento_enumeracion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-elemento-numeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">.elemento_numeracion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-destacado-id1">Solución <code class="docutils literal notranslate"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bootstrap">Bootstrap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#estructura-basica">Estructura básica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rejilla-o-grid">Rejilla o <em>grid</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tipografia">Tipografía</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocesadores-css-less">Preprocesadores CSS: <code class="docutils literal notranslate"><span class="pre">less</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables-less">Variables <code class="docutils literal notranslate"><span class="pre">less</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixins">«Mixins»</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-responsive-i">Ejercicio responsive I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-responsive-ii">Ejercicio responsive II</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CSS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema3.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="css">
 <h1>CSS<a class="headerlink" href="#css" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS.</p>
+<p>El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML’s modificando un solo CSS. A menudo se dice que un CSS es una «hoja de estilo».</p>
+<p>Hay tres mecanismos básicos para añadir CSS a un HTML</p>
+<ol class="arabic simple">
+<li><p>Usar CSS en las etiquetas HTML del cuerpo de la página.</p></li>
+<li><p>Usar CSS en la cabecera del HTML.</p></li>
+<li><p>Usar CSS cargando un archivo externo.</p></li>
+</ol>
+<p>En el  primer caso se haría de esta manera:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color:red&quot;</span><span class="p">&gt;</span>
+Este párrafo lleva fondo rojo
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>En el segundo caso haríamos algo como esto.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+        <span class="nt">p</span><span class="p">{</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Todos los párrafos van en rojo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>En el tercero haríamos esto:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Todos los párrafos van en rojo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Debe recordarse lo siguiente:</p>
+<ul class="simple">
+<li><p>Escribir CSS para cada etiqueta es <strong>MUY POCO PRÁCTICO</strong> y difícil de cambiar en el futuro.</p></li>
+<li><p>Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.</p></li>
+<li><p>Lo habitual es definirlo todo en estilos externos.</p></li>
+</ul>
+</div>
+<div class="section" id="recordatorio-el-modelo-dom">
+<h2>Recordatorio: el modelo DOM<a class="headerlink" href="#recordatorio-el-modelo-dom" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se debe recordar que</p>
+<ul class="simple">
+<li><p>Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.</p></li>
+<li><p>Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.</p></li>
+<li><p>Se dice que los nodos del árbol tienen «relaciones de parentesco» y por tanto diremos que «un nodo es hermano de otro» o que «un nodo es padre o hijo de otro nodo».</p></li>
+</ul>
 </div>
 <div class="section" id="sintaxis">
 <h2>Sintaxis<a class="headerlink" href="#sintaxis" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -54,10 +308,114 @@
 <li><p>Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.</p></li>
 <li><p>Los valores. En este caso se pone el valor <code class="docutils literal notranslate"><span class="pre">blue</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">background-color</span></code> y el valor <code class="docutils literal notranslate"><span class="pre">white</span></code> para la propiedad <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
 </ol>
+<p>En el siguiente CSS se muestran los principales selectores.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">{</span> <span class="c">/*Selecciona TODOS los h1 y les pone fondo azul*/</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="p">{</span> <span class="c">/*Selecciona TODOS LOS H1 Y TODOS LOS H2 y les pone fondo azul*/</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span><span class="p">.</span><span class="nc">titular</span><span class="p">{</span> <span class="c">/*Selecciona TODOS LOS H1 con el class &quot;titular&quot;*/</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span><span class="p">#</span><span class="nn">titulonoticia</span><span class="p">{</span> <span class="c">/*Selecciona SOLO UN H1, el que tenga el id indicado*/</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Selecciona todos los elementos li que sean hijos de un ul*/</span>
+<span class="nt">ul</span><span class="o">&gt;</span><span class="nt">li</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Selecciona los párrafos que vayan justo detrás de un div*/</span>
+<span class="nt">div</span> <span class="o">+</span> <span class="nt">p</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Selecciona todos los elementos li que estén dentro de algun ul,</span>
+<span class="c">INCLUSO AUNQUE NO SEAN HIJOS DIRECTOS, sino &quot;nietos&quot;, &quot;bisnietos&quot;...*/</span>
+<span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* Esto es una &quot;pseudo-clase&quot; selecciona los enlaces no visitados</span>
+<span class="c">y los pone con fondo azul*/</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">link</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Pone en fondo rojo los enlaces ya visitados*/</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="un-fichero-para-hacer-pruebas-con-selectores">
+<h3>Un fichero para hacer pruebas con selectores<a class="headerlink" href="#un-fichero-para-hacer-pruebas-con-selectores" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;noticia1&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;introduccion&quot;</span><span class="p">&gt;</span>
+                Soy la introducción de la noticia
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Párrafo 2 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nucleonoticia1&quot;</span><span class="p">&gt;</span>Párrafo 3 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Párrafo 4 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                Párrafo 5 de la noticia 2. Aquí desgloso
+                algunos elementos importantes.
+                <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;listaimportantes&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+                Además ocurre que
+
+                <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="c">&lt;!--Fin de la noticia 2--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;noticia2&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;introduccion&quot;</span><span class="p">&gt;</span>
+                    Soy la introducción de la noticia 2
+                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Párrafo 2 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nucleonoticia2&quot;</span><span class="p">&gt;</span>Párrafo 3 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Párrafo 4 de la noticia 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                    Párrafo 5 de la noticia 2. Aquí desgloso
+                    algunos elementos importantes.
+                    <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;listaimportantes&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Elemento 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+                    Además ocurre que
+
+                    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Razón 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="c">&lt;!--Fin de la noticia 2--&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="los-atributos-class-e-id">
 <h2>Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code><a class="headerlink" href="#los-atributos-class-e-id" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal notranslate"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
+<p>A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios <em>a un solo elemento</em> tendremos que haber puesto el atributo <code class="docutils literal notranslate"><span class="pre">id</span></code> como muestra el ejemplo siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Encabezamiento<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 .... texto ...
 
@@ -117,6 +475,92 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 </pre></div>
 </div>
 <p>Esta regla dice «seleccionar todos los elementos cuyo class sea titular_economia»  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.</p>
+</div>
+<div class="section" id="pseudo-clases">
+<h2>Pseudo-clases<a class="headerlink" href="#pseudo-clases" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como ya se ha indicado selecciona elementos en algún estado especial. Hay muchas pero algunas de las principales son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p:hover</span></code> : selector que se aplica cuando se pasa el ratón por encima del párrafo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:first-of-type</span></code> : selector que se aplica al primero de los párrafos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:first-child</span></code> : selector que se aplica un párrafo si es el primero de los hijos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:last-child</span></code> : selector que se aplica al último párrafo ignorando al resto de hermanos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(4)</span></code> : selector que se aplica sobre el cuarto párrafo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(even)</span></code> : selector que se aplica a párrafos impares.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p:nth-child(odd)</span></code> : selector que se aplica a párrafos pares.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:visited</span></code> : selector para enlaces ya visitados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a:active</span></code> : selector para enlaces que están siendo pulsados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input:checked</span></code> : selector para controles (radios, checkboxes) que estén marcados.</p></li>
+</ul>
+</div>
+<div class="section" id="fondos-e-imagenes">
+<h2>Fondos e imágenes<a class="headerlink" href="#fondos-e-imagenes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las principales propiedades son:</p>
+<ul class="simple">
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-image</span></code> permite cargar una imagen de fondo: P. ej: <code class="docutils literal notranslate"><span class="pre">background-image:</span> <span class="pre">url(&quot;../img/low-res/cork-board.png&quot;);</span></code></p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-repeat</span></code> permite controlar como se repite la imagen, puede tomar los valores <code class="docutils literal notranslate"><span class="pre">no-repeat</span></code> , <code class="docutils literal notranslate"><span class="pre">repeat-x</span></code> y <code class="docutils literal notranslate"><span class="pre">repeat-y</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-position</span></code> controla donde se posicionará la imagen, puede tomar varios valores como <code class="docutils literal notranslate"><span class="pre">top</span></code> , <code class="docutils literal notranslate"><span class="pre">bottom</span></code> , <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code> y <code class="docutils literal notranslate"><span class="pre">center</span></code>, así como combinaciones. Por ejemplo <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">center</span></code> o <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">right</span></code> .</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-size</span></code> permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.</p></li>
+<li><p>La propiedad <code class="docutils literal notranslate"><span class="pre">background-attachment</span></code> puede ponerse a <code class="docutils literal notranslate"><span class="pre">fixed</span></code> para controlar como hace «scroll» la imagen.</p></li>
+</ul>
+</div>
+<div class="section" id="bordes">
+<h2>Bordes<a class="headerlink" href="#bordes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">border-style</span></code>: permite cambiar distintos estilos de borde como <code class="docutils literal notranslate"><span class="pre">solid</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, <code class="docutils literal notranslate"><span class="pre">inset</span></code>, <code class="docutils literal notranslate"><span class="pre">outset</span></code>. Por ejemplo podemos cambiar un borde con <code class="docutils literal notranslate"><span class="pre">border-style:</span> <span class="pre">double;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-color</span></code> permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor <code class="docutils literal notranslate"><span class="pre">rgb</span></code>, color en hexadecimal, etc…).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-width</span></code> permite cambiar la anchura del borde.</p></li>
+</ul>
+<p>Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-style</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border-bottom-width</span></code></p></li>
+</ul>
+<p>Pudiendo reemplazar <code class="docutils literal notranslate"><span class="pre">bottom</span></code> con otras posiciones como <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code> o <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p>
+<p>Aparte de eso se puede usar la propiedad <code class="docutils literal notranslate"><span class="pre">border-radius:</span> <span class="pre">2px</span></code> para aplicar un redondeo en las esquinas de los bordes.</p>
+</div>
+<div class="section" id="texto">
+<h2>Texto<a class="headerlink" href="#texto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Podemos modificar el alineamiento usando la propiedad <code class="docutils literal notranslate"><span class="pre">text-align</span></code> . Esta propiedad puede tomar distintos valores en función de la posición que queramos que adopten los márgenes del texto.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">left;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">right;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">center;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">justify;</span></code></p></li>
+</ul>
+<p>Se pueden cambiar los tipos de letra usando <code class="docutils literal notranslate"><span class="pre">font-family</span></code> , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como «Google Fonts» que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta &lt;link&gt; en todos los HTML y una propiedad <code class="docutils literal notranslate"><span class="pre">font-family</span></code> a nuestro CSS).</p>
+<p>Los textos pueden llevar diversas decoraciones especificadas con la propiedad <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code>. Por ejemplo :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">underline;</span></code> para subrayar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code> para tachar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">none;</span></code> que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.</p></li>
+</ul>
+<p>Se puede modificar el espacio entre letras usando <code class="docutils literal notranslate"><span class="pre">letter-spacing:2px</span></code> (usar con cuidado), modificar el espacio entre palabras con <code class="docutils literal notranslate"><span class="pre">word-spacing</span></code>  o modificar el espacio entre líneas con <code class="docutils literal notranslate"><span class="pre">line-height</span></code> .</p>
+<p>Se pueden añadir sombras a los textos usando <code class="docutils literal notranslate"><span class="pre">text-shadow</span></code>. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos <code class="docutils literal notranslate"><span class="pre">text-shadow:2px</span> <span class="pre">3px</span> <span class="pre">blue</span></code> apreciaremos una sombra azul en un texto.</p>
+<p>Es posible convertir las mayúsculas o minúsculas de un texto con CSS como <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">uppercase</span></code> , <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">lowercase</span></code> o <code class="docutils literal notranslate"><span class="pre">text-transform:</span> <span class="pre">capitalize</span></code> (esto último muy usado en el mundo anglosajón).</p>
+</div>
+<div class="section" id="border-externos-outlines">
+<h2>Border externos (Outlines)<a class="headerlink" href="#border-externos-outlines" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque <strong>no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.</strong></p>
+<p>Funcionan de manera parecida a los bordes. Todo «outline» tiene un estilo, un grosor y un color que se especifican con:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-style</span></code> que puede ser <code class="docutils literal notranslate"><span class="pre">solid</span></code> , <code class="docutils literal notranslate"><span class="pre">dotted</span></code> , etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-width</span></code> que puede ir en medidas o en valores como <code class="docutils literal notranslate"><span class="pre">thin</span></code> , <code class="docutils literal notranslate"><span class="pre">medium</span></code> o <code class="docutils literal notranslate"><span class="pre">thick</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-color</span></code></p></li>
+<li><p>Existe una última propiedad que permite añadir un espacio extra entre nuestro <code class="docutils literal notranslate"><span class="pre">outline</span></code> y nuestro <code class="docutils literal notranslate"><span class="pre">border</span></code> . Esta propiedad se llama <code class="docutils literal notranslate"><span class="pre">outline-offset</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="tablas">
+<h2>Tablas<a class="headerlink" href="#tablas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se pueden modificar muchas propiedades de las tablas:</p>
+<ul class="simple">
+<li><p>Se pueden poner bordes a elementos <code class="docutils literal notranslate"><span class="pre">table</span></code> y <code class="docutils literal notranslate"><span class="pre">td</span></code> con cosas como <code class="docutils literal notranslate"><span class="pre">border:</span> <span class="pre">solid</span> <span class="pre">1px</span> <span class="pre">black</span></code>.</p></li>
+<li><p>Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos <code class="docutils literal notranslate"><span class="pre">border-collapse:</span> <span class="pre">collapse</span></code></p></li>
+<li><p>Se pueden cambiar propiedades filas pares o impares con <code class="docutils literal notranslate"><span class="pre">tr:nth-child(even)</span></code> o <code class="docutils literal notranslate"><span class="pre">tr:nth-child(odd)</span></code></p></li>
+<li><p>Se puede cambiar un elemento <em>solo cuando el ratón pase por encima de él con</em> cosas como <code class="docutils literal notranslate"><span class="pre">tr:hover{background-color:red;}</span></code></p></li>
+</ul>
 </div>
 <div class="section" id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -300,9 +744,9 @@ Publicidad publicidad
 <li><p>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</p></li>
 <li><p>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</p></li>
 </ul>
-<div class="figure align-center" id="id6" style="width: 50%">
+<div class="figure align-center" id="id5" style="width: 50%">
 <img alt="_images/maquetacion1.png" src="_images/maquetacion1.png" />
-<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="section" id="html">
 <h4>HTML<a class="headerlink" href="#html" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -656,13 +1100,187 @@ Publicidad publicidad
 </pre></div>
 </div>
 <p>El resultado será:</p>
-<div class="figure align-center" id="id7" style="width: 50%">
+<div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/cuatro_cajas_con_floats.png" src="_images/cuatro_cajas_con_floats.png" />
-<p class="caption"><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<div class="section" id="id4">
-<h3>Ejercicio<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="ejercicio-de-maquetacion-con-floats-i">
+<h3>Ejercicio de maquetación con floats (I)<a class="headerlink" href="#ejercicio-de-maquetacion-con-floats-i" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.</p>
+</div>
+<div class="section" id="ejercicio-de-maquetacion-con-floats-ii">
+<h3>Ejercicio de maquetación con floats (II)<a class="headerlink" href="#ejercicio-de-maquetacion-con-floats-ii" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Dado el HTML siguiente:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo de maquetación<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo2.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Practicando maquetación CSS<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Bienvenido a nuestra web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navegacion&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 4<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit.
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare c    ondimentum.
+
+                Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit.
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit.
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja4&quot;</span><span class="p">&gt;</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit.
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publicidad&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enlace 4<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;copyright&quot;</span><span class="p">&gt;</span>
+            <span class="ni">&amp;copy;</span> IES Maestre de Calatrava 2019
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Conseguir que quede maquetado de la siguiente manera usando adecuadamente los elementos float. Se debe tener en cuenta lo siguientes</p>
+<ul class="simple">
+<li><p>La cabecera ocupa un 50% y está desplazada a la derecha.</p></li>
+<li><p>La navegación ocupa un 15% y está desplazada a la izquierda.</p></li>
+<li><p>El contenido ocupa un 80%.</p></li>
+<li><p>La caja 1 ocupa el 100%.</p></li>
+<li><p>La caja 2 un 50%, la caja3 un 25% y la caja 4 un 25%.</p></li>
+<li><p>La publicidad ocupa un 33% y está desplazada a la derecha.</p></li>
+<li><p>El copyright ocupa un 66% y está desplazado a la izquierda.</p></li>
+<li><p>Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.</p></li>
+<li><p>Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.</p></li>
+</ul>
+<div class="figure align-center" id="id7" style="width: 50%">
+<img alt="Resultado final" src="_images/maqueta5.png" />
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">lightcyan</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span><span class="mi">2</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">header</span><span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span><span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="p">#</span><span class="nn">navegacion</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">lightgoldenrodyellow</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">contenido</span><span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span><span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">lime</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja1</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">mediumturquoise</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja2</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">mediumvioletred</span><span class="p">;</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span><span class="mi">49</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja3</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">palegoldenrod</span><span class="p">;</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span><span class="mi">24</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="p">:</span><span class="mi">1</span><span class="kt">%</span><span class="p">;</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">1</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">caja4</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span><span class="kc">pink</span><span class="p">;</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span><span class="mi">24</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">publicidad</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span><span class="k">width</span><span class="p">:</span><span class="mi">33</span><span class="kt">%</span><span class="p">;</span> <span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">paleturquoise</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">copyright</span><span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span><span class="mi">66</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">palevioletred</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="maquetacion-con-flexboxes">
+<h2>Maquetación con flexboxes<a class="headerlink" href="#maquetacion-con-flexboxes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.</p>
+<p>Por ejemplo, supongamos que tenemos el siguiente fichero.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo con Flexboxes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navegacion&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;principal&quot;</span><span class="p">&gt;</span>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis arcu orci, id vestibulum ante hendrerit nec. Aenean convallis quis lacus ut porttitor. Nam non elit dapibus diam vehicula tincidunt at a ipsum. Phasellus ut hendrerit felis. Sed placerat, nulla quis facilisis aliquet, lectus metus elementum leo, venenatis mattis elit tortor sit amet elit. Etiam gravida maximus nibh sit amet bibendum. Ut vitae justo et massa varius consectetur vel vel augue. Aenean id nisi feugiat, pretium dui ut, pulvinar neque. Nullam velit arcu, mollis vel elementum sit amet, ultricies non ipsum. Nam suscipit nisl vel viverra pellentesque. Integer at ipsum vitae risus molestie molestie. Curabitur neque nibh, placerat nec interdum in, ultrices laoreet dui. 
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publicidad&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://marca.es&quot;</span><span class="p">&gt;</span>Marca<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.es&quot;</span><span class="p">&gt;</span>Coca-Cola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="maquetacion-avanzada-con-grid-layouts">
@@ -926,8 +1544,8 @@ el aspecto del texto como estas:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">1em</span></code>: equivale aproximadamente a la anchura de una letra «m».</p></li>
 </ul>
 </div>
-<div class="section" id="selectores">
-<h2>Selectores<a class="headerlink" href="#selectores" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicios-comentados-sobre-selectores">
+<h2>Ejercicios comentados sobre selectores.<a class="headerlink" href="#ejercicios-comentados-sobre-selectores" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas</p>
 <ul class="simple">
 <li><p>p#destacado</p></li>
@@ -1004,8 +1622,8 @@ el aspecto del texto como estas:</p>
 <p class="caption"><span class="caption-text">Resultado</span><a class="headerlink" href="#id16" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id4">
+<h3>Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal notranslate"><span class="pre">class</span></code> <em>destacado</em></p>
 <div class="figure align-center" id="id17" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
@@ -1128,6 +1746,74 @@ el aspecto del texto como estas:</p>
 </div>
 </div>
 </div>
+<div class="section" id="preprocesadores-css-less">
+<h2>Preprocesadores CSS: <code class="docutils literal notranslate"><span class="pre">less</span></code><a class="headerlink" href="#preprocesadores-css-less" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio «cortar y pegar» definiciones CSS. Para resolver esto han surgido unos programas llamado «preprocesadores» que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:</p>
+<ul class="simple">
+<li><p>En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.</p></li>
+<li><p>El diseñador escribe su hoja de estilos usando este «lenguaje ampliado».</p></li>
+<li><p>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></p></li>
+</ul>
+<p>El flujo de trabajo se muestra en la figura siguiente:</p>
+<div class="figure align-center" id="id22" style="width: 50%">
+<img alt="_images/diagramaless.png" src="_images/diagramaless.png" />
+<p class="caption"><span class="caption-text">Resultado final</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.</p>
+<div class="section" id="variables-less">
+<h3>Variables <code class="docutils literal notranslate"><span class="pre">less</span></code><a class="headerlink" href="#variables-less" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En <code class="docutils literal notranslate"><span class="pre">less</span></code> las variables se definen usando el símbolo arroba (&#64;). En <code class="docutils literal notranslate"><span class="pre">less</span></code> se pueden hacer operaciones matemáticas con variables:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+/*En una variable podemos meter cualquier cosa que aparezca
+en la parte derecha de una propiedad CSS: medidas, colores, tipos de
+letra...*/
+@colorbordes:black;
+#caja1, #caja2, #caja3{
+    border: solid @grosorbordesnoticias @colorbordes;
+}
+
+header{
+    border: solid @grosorbordescabeceras @colorbordes;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="mixins">
+<h3>«Mixins»<a class="headerlink" href="#mixins" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Un «mixin» es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS…</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>@grosorbordesnoticias: 3px;
+@grosorbordescabeceras:@grosorbordesnoticias + 2px;
+@colorbordes:black;
+
+
+/*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
+que en el HTML alguién use class=&quot;margenesnoticias&quot;*/
+.margenesnoticias{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:5px;
+    padding-left:5px;
+    /*Recordemos que esto se lee &quot;top&quot;, &quot;left&quot;,&quot;bottom&quot;, &quot;right&quot;*/
+    margin: 20px 10px 20px 10px;
+}
+#caja1, #caja2, #caja3{
+    border: solid @grosorbordesnoticias @colorbordes;
+    /*Obsérvese que llamamos a esta definición
+    COMO SI FUESE UNA FUNCIÓN. De hecho, si
+    queremos volver a aplicar unos márgenes en otro elemento
+    bastará con que llamemos a esta función o &quot;mixin&quot;*/
+    .margenesnoticias();
+}
+
+header{
+    border: solid @grosorbordescabeceras @colorbordes;
+}
+</pre></div>
+</div>
+<p>Y veamos que hemos podido «llamar a una función» para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el «copiado y pegado»</p>
+</div>
+</div>
 <div class="section" id="ejercicio-responsive-i">
 <h2>Ejercicio responsive I<a class="headerlink" href="#ejercicio-responsive-i" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Hacer una página cuyo diseño se adapte automáticamente en función de la resolución. Dicha página tendrá 3 cajas cuyos <code class="docutils literal notranslate"><span class="pre">id</span></code> serán A, B y C. El comportamiento de las cajas será el siguiente:</p>
@@ -1137,17 +1823,17 @@ el aspecto del texto como estas:</p>
 <li><p>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</p></li>
 </ul>
 <p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
-<div class="figure align-center" id="id22" style="width: 50%">
-<img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
 <div class="figure align-center" id="id23" style="width: 50%">
-<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
+<img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
+<p class="caption"><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="figure align-center" id="id24" style="width: 50%">
+<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
+<p class="caption"><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-center" id="id25" style="width: 50%">
 <img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
-<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Un posible HTML que resolviera esto sería el siguiente:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1233,13 +1919,13 @@ el aspecto del texto como estas:</p>
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</p></li>
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</p></li>
 </ul>
-<div class="figure align-center" id="id25" style="width: 50%">
-<img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
-<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
 <div class="figure align-center" id="id26" style="width: 50%">
+<img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
+<p class="caption"><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-center" id="id27" style="width: 50%">
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
-<p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id27" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>A continuación se muestra el HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
@@ -1327,129 +2013,59 @@ el aspecto del texto como estas:</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navegación</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CSS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sintaxis">Sintaxis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#los-atributos-class-e-id">Los atributos <code class="docutils literal notranslate"><span class="pre">class</span></code> e <code class="docutils literal notranslate"><span class="pre">id</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion">Ejercicio de maquetación</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-2-de-maquetacion">Ejercicio 2 de maquetación</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">HTML</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">CSS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-barra-de-herramientas">Ejercicio: barra de herramientas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio-ampliacion">Ejercicio: ampliación</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#posicionamiento-float">Posicionamiento float</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Ejercicio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#media-queries">Media queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#colores">Colores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tipografias">Tipografías</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#alineacion-del-texto">Alineación del texto</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#decoracion-del-texto">Decoración del texto</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#medidas">Medidas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#selectores">Selectores</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado">Solución <code class="docutils literal notranslate"><span class="pre">p#destacado</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-span-id1">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado,</span> <span class="pre">span#id1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-li-elemento-enumeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">li.elemento_enumeracion</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado-elemento-numeracion">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span> <span class="pre">&gt;</span> <span class="pre">.elemento_numeracion</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-destacado-id1">Solución <code class="docutils literal notranslate"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#bootstrap">Bootstrap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#estructura-basica">Estructura básica</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rejilla-o-grid">Rejilla o <em>grid</em></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tipografia">Tipografía</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-responsive-i">Ejercicio responsive I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-responsive-ii">Ejercicio responsive II</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tema2.html" title="capítulo anterior">HTML5</a></li>
-      <li>Next: <a href="tema4.html" title="próximo capítulo">Javascript</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Búsqueda rápida</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Ir a" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema4.html" class="btn btn-neutral float-right" title="Javascript" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tema2.html" class="btn btn-neutral float-left" title="HTML5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema3.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

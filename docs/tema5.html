@@ -1,37 +1,270 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>XML &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>XML &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Recuperación de información" href="tema6.html" />
-    <link rel="prev" title="Javascript" href="tema4.html" />
+    <link rel="prev" title="Javascript" href="tema4.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#un-ejemplo-sencillo">Un ejemplo sencillo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#construccion-de-xml">Construcción de XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validez">Validez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gramaticas">Gramáticas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sintaxis-dtd">Sintaxis DTD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejemplo-de-dtd-productos">Ejemplo de DTD (productos)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-i-dtd">Ejercicio I (DTD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-ii-dtd">Ejercicio II (DTD)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion">Solución</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-iii">Ejercicio III</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-al-ejercicio-iii">Solución al ejercicio III</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-iv">Ejercicio IV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-al-ejercicio-iv">Solución al ejercicio IV</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-v-dtd">Ejercicio V DTD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-al-ejercicio-v">Solución al ejercicio V</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-vi-dtd">Ejercicio VI DTD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-con-atributos">Ejercicio (con atributos)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-ejercicio-con-atributos">Solución ejercicio con atributos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio">Ejercicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-completa">Solución completa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#otras-caracteristicas-de-xml">Otras características de XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#atributos">Atributos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elementos-vacios">Elementos vacíos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alternativas">Alternativas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Ejercicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Solución</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-mayorista-de-libros">Ejercicio: mayorista de libros</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-al-mayorista-de-libros">Solución al mayorista de libros</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-fabricante-de-tractores">Ejercicio: fabricante de tractores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-dtd-fabricante-tractores">Solución: DTD fabricante tractores</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-repeticiones-de-opciones">Ejercicio: repeticiones de opciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-multinacional">Ejercicio: multinacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Ejercicio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esquemas-xml">Esquemas XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#un-ejemplo">Un ejemplo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-de-datos-basicos">Tipos de datos básicos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#derivaciones">Derivaciones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-simples-y-complejos">Tipos simples y complejos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-edad-de-los-trabajadores">Ejercicio:edad de los trabajadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-peso-de-productos">Ejercicio: peso de productos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-pagos-validados">Ejercicio: pagos validados</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-validacion-de-dnis">Ejercicio: validación de DNIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uniendo-la-herencia-y-el-sistema-de-tipos">Uniendo la herencia y el sistema de tipos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restricciones">Restricciones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Atributos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-de-xml-schemas">Ejercicios de XML Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cantidades-limitades">Cantidades limitades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-a-las-cantidades-limitadas">Solución a las cantidades limitadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cantidades-limitadas-con-atributo-divisa">Cantidades limitadas con atributo divisa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-a-las-cantidades-limitadas-con-atributo-divisa">Solución a las cantidades limitadas con atributo divisa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cantidades-limitadas-con-atributo-divisa-con-solo-ciertos-valores">Cantidades limitadas con atributo divisa con solo ciertos valores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-al-atributo-con-solo-ciertos-valores">Solución al atributo con solo ciertos valores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-codigos-y-sedes">Ejercicio: codigos y sedes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-a-los-codigos-y-sedes">Solución a los códigos y sedes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-productos-con-atributos">Ejercicio: productos con atributos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-clientes-con-informacion-adicional">Ejercicio: clientes con información adicional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lista-de-clientes-como-xml-schemas">Lista de clientes como XML Schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ampliacion-del-esquema-para-clientes">Ampliación del esquema para clientes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-lista-de-codigos">Ejercicio: lista de códigos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-otra-lista-de-clientes">Ejercicio: otra lista de clientes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-lista-de-alumnos">Ejercicio: lista de alumnos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-lista-de-articulos-con-atributos-optativos">Ejercicio: lista de articulos (con atributos optativos)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-lista-de-componentes-un-enfoque-distinto">Ejercicio: lista de componentes (un enfoque distinto)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-listas-con-choice">Ejercicio: listas con choice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-listas-de-productos">Ejercicio: listas de productos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-validacion-de-componentes">Ejercicio: validación de componentes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen-ii">Ejercicio tipo examen (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen-iii">Ejercicio tipo examen (III)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apuntes de Lenguajes de Marcas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>XML</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tema5.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="xml">
 <h1>XML<a class="headerlink" href="#xml" title="Enlazar permanentemente con este título">¶</a></h1>
@@ -43,15 +276,16 @@
 </div>
 <div class="section" id="un-ejemplo-sencillo">
 <h2>Un ejemplo sencillo<a class="headerlink" href="#un-ejemplo-sencillo" title="Enlazar permanentemente con este título">¶</a></h2>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;clientes&gt;</span>
-        <span class="nt">&lt;cliente&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>AcerSA<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;cif&gt;</span>5664332<span class="nt">&lt;/cif&gt;</span>
-        <span class="nt">&lt;/cliente&gt;</span>
-        <span class="nt">&lt;cliente&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>Mer SL<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;cif&gt;</span>5111444<span class="nt">&lt;/cif&gt;</span>
-        <span class="nt">&lt;/cliente&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;clientes&gt;</span>
+    <span class="nt">&lt;cliente&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>AcerSA<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;cif&gt;</span>5664332<span class="nt">&lt;/cif&gt;</span>
+    <span class="nt">&lt;/cliente&gt;</span>
+    <span class="nt">&lt;cliente&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Mer SL<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;cif&gt;</span>5111444<span class="nt">&lt;/cif&gt;</span>
+    <span class="nt">&lt;/cliente&gt;</span>
 <span class="nt">&lt;/clientes&gt;</span>
 </pre></div>
 </div>
@@ -66,6 +300,7 @@
 <li><p>En general, la costumbre es poner todo en minúsculas.</p></li>
 <li><p>Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas <code class="docutils literal notranslate"><span class="pre">&lt;12Cliente&gt;</span></code>.</p></li>
 <li><p>Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida <code class="docutils literal notranslate"><span class="pre">&lt;Cliente12&gt;</span></code>.</p></li>
+<li><p>Aunque no es obligatorio a menudo se suele poner en la primera línea un <strong>prólogo</strong> que indica la versión de XML que estamos usando y la codificación con la que nuestro editor almacena los archivos.</p></li>
 </ul>
 </div>
 <div class="section" id="validez">
@@ -256,7 +491,7 @@ que no es XML y el fichero se muestra de manera literal)</p>
 <p>Esto significa lo siguiente:</p>
 <ul class="simple">
 <li><p>Se establece el tipo de documento <code class="docutils literal notranslate"><span class="pre">listaclientes</span></code> que consta de una serie de elementos (dentro del corchete)</p></li>
-<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">listaclientes</span>&#160;&#160; <span class="pre">``</span> <span class="pre">consta</span> <span class="pre">de</span> <span class="pre">uno</span> <span class="pre">o</span> <span class="pre">más</span> <span class="pre">clientes.</span> <span class="pre">El</span> <span class="pre">signo</span> <span class="pre">``+</span></code> significa «uno o más».</p></li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">listaclientes</span></code> consta de uno o más clientes. El signo <code class="docutils literal notranslate"><span class="pre">+</span></code> significa «uno o más».</p></li>
 <li><p>Un cliente tiene un nombre y un cif. También puede tener un elemento <code class="docutils literal notranslate"><span class="pre">diasentrega</span></code> que puede o no aparecer (el signo <code class="docutils literal notranslate"><span class="pre">?</span></code> significa «0 o 1 veces»).</p></li>
 <li><p>Un <code class="docutils literal notranslate"><span class="pre">nombre</span></code> no tiene más elementos dentro, solo caracteres (<code class="docutils literal notranslate"><span class="pre">#PCDATA</span></code>)</p></li>
 <li><p>Un <code class="docutils literal notranslate"><span class="pre">CIF</span></code> solo consta de caracteres.</p></li>
@@ -484,9 +719,159 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 </div>
 </div>
 </div>
+<div class="section" id="ejercicio-iii">
+<h2>Ejercicio III<a class="headerlink" href="#ejercicio-iii" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+* El fichero debe llevar una raíz <code class="docutils literal notranslate"><span class="pre">&lt;productos&gt;</span></code>
+* Dentro de productos debe haber alguno de estos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;raton&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;teclado&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;monitor&gt;</span></code>
+* Todo ratón, teclado o monitor tiene siempre un código.
+* Todo ratón, teclado o monitor puede llevar un nombre.
+* Todo ratón, teclado o monitor puede llevar una descripción.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;productos&gt;</span>
+    <span class="nt">&lt;producto&gt;</span>
+        <span class="nt">&lt;raton&gt;</span>
+            <span class="nt">&lt;codigo&gt;</span>27A<span class="nt">&lt;/codigo&gt;</span>
+        <span class="nt">&lt;/raton&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+    <span class="nt">&lt;producto&gt;</span>
+        <span class="nt">&lt;teclado&gt;</span>
+            <span class="nt">&lt;codigo&gt;</span>28D<span class="nt">&lt;/codigo&gt;</span>
+            <span class="nt">&lt;descripcion&gt;</span>Teclado en Español<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="nt">&lt;/teclado&gt;</span>
+    <span class="nt">&lt;/producto&gt;</span>
+<span class="nt">&lt;/productos&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="solucion-al-ejercicio-iii">
+<h3>Solución al ejercicio III<a class="headerlink" href="#solucion-al-ejercicio-iii" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">productos</span> <span class="o">(</span><span class="nt">producto</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">producto</span>  <span class="o">(</span><span class="nt">raton</span><span class="o">|</span><span class="nt">teclado</span><span class="o">|</span><span class="nt">monitor</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">raton</span>     <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span> <span class="nt">nombre</span><span class="o">?,</span> <span class="nt">descripcion</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">teclado</span>   <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span> <span class="nt">nombre</span><span class="o">?,</span> <span class="nt">descripcion</span><span class="o">?)</span><span class="k">&gt;</span>    <span class="k">&lt;!ELEMENT</span> <span class="nt">monitor</span>   <span class="o">(</span><span class="nt">codigo</span><span class="o">,</span> <span class="nt">nombre</span><span class="o">?,</span> <span class="nt">descripcion</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">codigo</span>    <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">nombre</span>    <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">descripcion</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-iv">
+<h2>Ejercicio IV<a class="headerlink" href="#ejercicio-iv" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:</p>
+<ul>
+<li><p>El elemento raíz será &lt;listaventas&gt;</p></li>
+<li><p>Toda &lt;listaventas&gt; tiene una o más &lt;venta&gt;.</p></li>
+<li><p>Toda &lt;venta&gt; tiene los siguientes datos:</p>
+<blockquote>
+<div><p>** Importe.
+** Comprador.
+** Vendedor.
+** Fecha (optativa).
+** Un codigo de factura.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="solucion-al-ejercicio-iv">
+<h3>Solución al ejercicio IV<a class="headerlink" href="#solucion-al-ejercicio-iv" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Por ahora no se dará la solución de este ejercicio. Inténtalo y si no puedes pide ayuda al profesor o escríbele un email para averiguar como resolverlo.</p>
+</div>
+</div>
+<div class="section" id="ejercicio-v-dtd">
+<h2>Ejercicio V DTD<a class="headerlink" href="#ejercicio-v-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.</p>
+<ul class="simple">
+<li><p>La raíz debe ser el elemento <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code></p></li>
+<li><p>Dentro de <code class="docutils literal notranslate"><span class="pre">&lt;listacompras&gt;</span></code> debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;venta&gt;</span></code></p></li>
+<li><p>Una <code class="docutils literal notranslate"><span class="pre">venta</span></code> puede llevar dentro uno de dos: <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code></p></li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventaacredito&gt;</span></code> consta de : un elemento <code class="docutils literal notranslate"><span class="pre">&lt;fechafinpago&gt;</span></code> que es optativo y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio.</p></li>
+<li><p>Un elemento <code class="docutils literal notranslate"><span class="pre">&lt;ventainmediata&gt;</span></code> lleva dentro dos cosas: un elemento <code class="docutils literal notranslate"><span class="pre">&lt;cantidad&gt;</span></code> que es obligatorio y un elemento <code class="docutils literal notranslate"><span class="pre">&lt;divisa&gt;</span></code> que también es obligatorio.</p></li>
+</ul>
+<div class="section" id="solucion-al-ejercicio-v">
+<h3>Solución al ejercicio V<a class="headerlink" href="#solucion-al-ejercicio-v" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Puedes usar este ejemplo para hacer la validación:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listacompras&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventaacredito&gt;</span>
+            <span class="nt">&lt;fechafinpago&gt;</span>22-10-2021<span class="nt">&lt;/fechafinpago&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>21000<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/ventaacredito&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventainmediata&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>1800<span class="nt">&lt;/cantidad&gt;</span>
+            <span class="nt">&lt;divisa&gt;</span>euros<span class="nt">&lt;/divisa&gt;</span>
+        <span class="nt">&lt;/ventainmediata&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+    <span class="nt">&lt;venta&gt;</span>
+        <span class="nt">&lt;ventaacredito&gt;</span>
+            <span class="nt">&lt;cantidad&gt;</span>21000<span class="nt">&lt;/cantidad&gt;</span>
+        <span class="nt">&lt;/ventaacredito&gt;</span>
+    <span class="nt">&lt;/venta&gt;</span>
+<span class="nt">&lt;/listacompras&gt;</span>
+</pre></div>
+</div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Una posible solución sería:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listacompras</span>   <span class="o">(</span><span class="nt">venta</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">venta</span>          <span class="o">(</span><span class="nt">ventaacredito</span><span class="o">|</span><span class="nt">ventainmediata</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventaacredito</span>  <span class="o">(</span><span class="nt">fechafinpago</span><span class="o">?,</span> <span class="nt">cantidad</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventainmediata</span> <span class="o">(</span><span class="nt">cantidad</span><span class="o">,</span> <span class="nt">divisa</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">fechafinpago</span>   <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cantidad</span>       <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">divisa</span>         <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-vi-dtd">
+<h2>Ejercicio VI DTD<a class="headerlink" href="#ejercicio-vi-dtd" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.</p>
+<ul class="simple">
+<li><p>El elemento raíz debe ser <code class="docutils literal notranslate"><span class="pre">&lt;inventario&gt;</span></code></p></li>
+<li><p>Dentro de inventario pueden ir elementos <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cuaderno&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;boligrafo&gt;</span></code> repetidos y en cualquier orden.</p></li>
+<li><p>Todo <code class="docutils literal notranslate"><span class="pre">&lt;lapiz&gt;</span></code> puede tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;dureza&gt;</span></code></p></li>
+<li><p>Todo cuaderno debe llevar dos elementos: <code class="docutils literal notranslate"><span class="pre">&lt;numhojas&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;estilo&gt;</span></code></p></li>
+<li><p>Todo boligrafo lleva un <code class="docutils literal notranslate"><span class="pre">&lt;precio&gt;</span></code> y puede o no llevar un elemento <code class="docutils literal notranslate"><span class="pre">&lt;color&gt;</span></code></p></li>
+</ul>
+<p>El siguiente fichero debería ser validado por la DTD:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
+    <span class="nt">&lt;lapiz&gt;&lt;/lapiz&gt;</span>
+    <span class="nt">&lt;lapiz&gt;</span>
+        <span class="nt">&lt;dureza&gt;</span>H2<span class="nt">&lt;/dureza&gt;</span>
+    <span class="nt">&lt;/lapiz&gt;</span>
+    <span class="nt">&lt;cuaderno&gt;</span>
+        <span class="nt">&lt;numhojas&gt;</span>80<span class="nt">&lt;/numhojas&gt;</span>
+        <span class="nt">&lt;estilo&gt;</span>2 rayas<span class="nt">&lt;/estilo&gt;</span>
+    <span class="nt">&lt;/cuaderno&gt;</span>
+    <span class="nt">&lt;boligrafo&gt;</span>
+        <span class="nt">&lt;precio&gt;</span>0.80<span class="nt">&lt;/precio&gt;</span>
+    <span class="nt">&lt;/boligrafo&gt;</span>
+    <span class="nt">&lt;cuaderno&gt;</span>
+        <span class="nt">&lt;numhojas&gt;</span>100<span class="nt">&lt;/numhojas&gt;</span>
+        <span class="nt">&lt;estilo&gt;</span>Cuadriculado<span class="nt">&lt;/estilo&gt;</span>
+    <span class="nt">&lt;/cuaderno&gt;</span>
+    <span class="nt">&lt;boligrafo&gt;</span>
+        <span class="nt">&lt;precio&gt;</span>0.80<span class="nt">&lt;/precio&gt;</span>
+        <span class="nt">&lt;color&gt;</span>Rojo<span class="nt">&lt;/color&gt;</span>
+    <span class="nt">&lt;/boligrafo&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">inventario</span> <span class="o">(</span><span class="nt">cuaderno</span><span class="o">|</span><span class="nt">lapiz</span><span class="o">|</span><span class="nt">boligrafo</span><span class="o">)+</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cuaderno</span>   <span class="o">(</span><span class="nt">numhojas</span><span class="o">,</span><span class="nt">estilo</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">numhojas</span>   <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">estilo</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">lapiz</span>      <span class="o">(</span><span class="nt">dureza</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">dureza</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">boligrafo</span>  <span class="o">(</span><span class="nt">precio</span><span class="o">,</span> <span class="nt">color</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">precio</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">color</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="ejercicio-con-atributos">
 <h2>Ejercicio (con atributos)<a class="headerlink" href="#ejercicio-con-atributos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:</p>
+<p>Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes.</p>
 <ul class="simple">
 <li><p>Los ficheros deben tener un elemento <code class="docutils literal notranslate"><span class="pre">&lt;listafacturas&gt;</span></code></p></li>
 <li><p>Dentro de la lista debe haber una o más facturas.</p></li>
@@ -544,8 +929,9 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!ELEMENT listacursos (curso)+&gt;</span>
 <span class="cp">&lt;!ELEMENT curso (alumno)+&gt;</span>
 <span class="cp">&lt;!ELEMENT alumno (dni, nombre,</span>
-<span class="cp">                    ap1, ap2?, asignatura+)&gt;</span>
+<span class="cp">                    ap1, ap2?, listaasignaturas)&gt;</span>
 
+<span class="cp">&lt;!ELEMENT listaasignaturas (asignatura+)&gt;</span>
 <span class="cp">&lt;!ELEMENT asignatura (nombre, profesor)&gt;</span>
 <span class="cp">&lt;!ATTLIST asignatura codigo CDATA #REQUIRED&gt;</span>
 
@@ -565,14 +951,16 @@ un ratón y despues un teclado, y solo uno de cada.</p>
             <span class="nt">&lt;dni&gt;</span>44e<span class="nt">&lt;/dni&gt;</span>
             <span class="nt">&lt;nombre&gt;</span>Juan<span class="nt">&lt;/nombre&gt;</span>
             <span class="nt">&lt;ap1&gt;</span>Sanchez<span class="nt">&lt;/ap1&gt;</span>
-            <span class="nt">&lt;asignatura</span> <span class="na">codigo=</span><span class="s">&quot;LM1&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span>Leng marcas<span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;profesor&gt;</span>
-                    <span class="nt">&lt;nrp&gt;</span>8<span class="nt">&lt;/nrp&gt;</span>
-                    <span class="nt">&lt;nombre&gt;</span>Oscar<span class="nt">&lt;/nombre&gt;</span>
-                    <span class="nt">&lt;ap1&gt;</span>Gomez<span class="nt">&lt;/ap1&gt;</span>
-                <span class="nt">&lt;/profesor&gt;</span>
-            <span class="nt">&lt;/asignatura&gt;</span>
+            <span class="nt">&lt;listaasignaturas&gt;</span>
+                <span class="nt">&lt;asignatura</span> <span class="na">codigo=</span><span class="s">&quot;LM1&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;nombre&gt;</span>Leng marcas<span class="nt">&lt;/nombre&gt;</span>
+                    <span class="nt">&lt;profesor&gt;</span>
+                        <span class="nt">&lt;nrp&gt;</span>8<span class="nt">&lt;/nrp&gt;</span>
+                        <span class="nt">&lt;nombre&gt;</span>Oscar<span class="nt">&lt;/nombre&gt;</span>
+                        <span class="nt">&lt;ap1&gt;</span>Gomez<span class="nt">&lt;/ap1&gt;</span>
+                    <span class="nt">&lt;/profesor&gt;</span>
+                <span class="nt">&lt;/asignatura&gt;</span>
+            <span class="nt">&lt;/listaasignaturas&gt;</span>
         <span class="nt">&lt;/alumno&gt;</span>
     <span class="nt">&lt;/curso&gt;</span>
 <span class="nt">&lt;/listacursos&gt;</span>
@@ -2683,18 +3071,13 @@ valide la estructura de tales ficheros:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="examen">
-<h2>Examen<a class="headerlink" href="#examen" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El examen de este tema tendrá lugar</p>
-<ul class="simple">
-<li><p>Para DAM el viernes, 16 de marzo de 2018</p></li>
-<li><p>Para ASIR el martes, 13 de marzo de 2018</p></li>
-</ul>
-</div>
 </div>
 
 
+           </div>
+           
           </div>
+<<<<<<< HEAD
           
         </div>
       </div>
@@ -2831,35 +3214,58 @@ valide la estructura de tales ficheros:</p>
       <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Ir a" />
     </form>
+=======
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tema6.html" class="btn btn-neutral float-right" title="Recuperación de información" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tema4.html" class="btn btn-neutral float-left" title="Javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+      
+>>>>>>> 2fddc8c80f7ef2326408a35574b937a46ead8fa4
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Oscar Gomez
 
+    </p>
+  </div>
+    
+    
+    
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
+    
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2016, Oscar Gomez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tema5.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

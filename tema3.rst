@@ -5,7 +5,70 @@ CSS
 Introducción
 ============
 
-El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML's modificando un solo CSS.
+El lenguaje CSS permite cambiar el aspecto de páginas web utilizando enlaces a archivos de hojas de estilo. Si todos los HTML de un portal web cargan el mismo archivo CSS se puede cambiar todo un conjunto de HTML's modificando un solo CSS. A menudo se dice que un CSS es una "hoja de estilo".
+
+Hay tres mecanismos básicos para añadir CSS a un HTML
+
+1. Usar CSS en las etiquetas HTML del cuerpo de la página.
+2. Usar CSS en la cabecera del HTML.
+3. Usar CSS cargando un archivo externo.
+
+
+
+En el  primer caso se haría de esta manera:
+
+.. code-block:: html
+
+    <p style="background-color:red">
+    Este párrafo lleva fondo rojo
+    </p>
+
+En el segundo caso haríamos algo como esto.
+
+.. code-block:: html
+
+    <html>
+        <head>
+            <style type="text/css">
+            p{
+                background-color: red;
+            }
+            </style>
+        </head>
+        <body>
+            <p>Todos los párrafos van en rojo</p>
+        </body>
+    </html>
+
+
+En el tercero haríamos esto:
+
+.. code-block:: html
+
+    <html>
+        <head>
+            <link type="text/css" href="estilo.css" rel="stylesheet">
+        </head>
+        <body>
+            <p>Todos los párrafos van en rojo</p>
+        </body>
+    </html>
+
+
+Debe recordarse lo siguiente:
+
+* Escribir CSS para cada etiqueta es **MUY POCO PRÁCTICO** y difícil de cambiar en el futuro.
+* Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.
+* Lo habitual es definirlo todo en estilos externos.
+
+Recordatorio: el modelo DOM
+================================================================================
+
+Se debe recordar que 
+
+* Un elemento es todo lo contenido entre una etiqueta de apertura y una de cierre.
+* Un documento HTML (y uno XML, se hablará de ello en el futuro) se representa en forma de árbol.
+* Se dice que los nodos del árbol tienen "relaciones de parentesco" y por tanto diremos que "un nodo es hermano de otro" o que "un nodo es padre o hijo de otro nodo".
 
 Sintaxis
 ===========
@@ -25,10 +88,120 @@ En las reglas tenemos tres cosas:
 2. Las propiedades. En el ejemplo se pretende cambiar el color de fondo y el color de las letras.
 3. Los valores. En este caso se pone el valor ``blue`` para la propiedad ``background-color`` y el valor ``white`` para la propiedad ``color``
 
+
+En el siguiente CSS se muestran los principales selectores.
+
+.. code-block:: css
+
+    h1{ /*Selecciona TODOS los h1 y les pone fondo azul*/
+        background-color: blue;
+    }
+    h1, h2{ /*Selecciona TODOS LOS H1 Y TODOS LOS H2 y les pone fondo azul*/
+        background-color: blue;
+    }
+    h1.titular{ /*Selecciona TODOS LOS H1 con el class "titular"*/
+        background-color: blue;
+    }
+    h1#titulonoticia{ /*Selecciona SOLO UN H1, el que tenga el id indicado*/
+        background-color: blue;
+    }
+
+    /* Selecciona todos los elementos li que sean hijos de un ul*/
+    ul>li {
+        background-color: blue;
+    }
+
+    /* Selecciona los párrafos que vayan justo detrás de un div*/
+    div + p{
+        background-color: blue;
+    }
+    
+    /* Selecciona todos los elementos li que estén dentro de algun ul,
+    INCLUSO AUNQUE NO SEAN HIJOS DIRECTOS, sino "nietos", "bisnietos"...*/
+    ul li {
+        background-color: blue;
+    }
+
+
+    /* Esto es una "pseudo-clase" selecciona los enlaces no visitados
+    y los pone con fondo azul*/
+    a:link{ 
+        background-color: blue;
+    }
+
+    /* Pone en fondo rojo los enlaces ya visitados*/
+    a:visited{
+        background-color: blue;
+    }
+
+Un fichero para hacer pruebas con selectores
+--------------------------------------------------------------------------------
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <div class="noticia1">
+                <p class="introduccion">
+                    Soy la introducción de la noticia
+                </p>
+                <p>Párrafo 2 de la noticia 2</p>
+                <p id="nucleonoticia1">Párrafo 3 de la noticia 2</p>
+                <p>Párrafo 4 de la noticia 2</p>
+                <p>
+                    Párrafo 5 de la noticia 2. Aquí desgloso
+                    algunos elementos importantes.
+                    <ul class="listaimportantes">
+                        <li>Elemento 1</li>
+                        <li>Elemento 2</li>
+                        <li>Elemento 3</li>
+                    </ul>
+                    Además ocurre que
+
+                    <ol>
+                        <li>Razón 1</li>
+                        <li>Razón 2</li>
+                        <li>Razón 3</li>
+                    </ol>
+                </p>
+            </div><!--Fin de la noticia 2-->
+            <div class="noticia2">
+                    <p class="introduccion">
+                        Soy la introducción de la noticia 2
+                    </p>
+                    <p>Párrafo 2 de la noticia 2</p>
+                    <p id="nucleonoticia2">Párrafo 3 de la noticia 2</p>
+                    <p>Párrafo 4 de la noticia 2</p>
+                    <p>
+                        Párrafo 5 de la noticia 2. Aquí desgloso
+                        algunos elementos importantes.
+                        <ol class="listaimportantes">
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                        </ol>
+                        Además ocurre que
+        
+                        <ol>
+                            <li>Razón 1</li>
+                            <li>Razón 2</li>
+                            <li>Razón 3</li>
+                        </ol>
+                    </p>
+                </div><!--Fin de la noticia 2-->
+        </body>
+    </html>
+
+
+
 Los atributos ``class`` e ``id``
 =====================================
 
-A menudo tendremos que hacer en cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
+A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios *a un solo elemento* tendremos que haber puesto el atributo ``id`` como muestra el ejemplo siguiente:
 
 .. code-block:: html
 
@@ -106,7 +279,102 @@ Este último CSS **se puede resumir**
 Esta regla dice "seleccionar todos los elementos cuyo class sea titular_economia"  y ponerlos en negrita. Estos mecanismos de resumen son muy útiles y facilitan mucho la tarea del diseñador CSS.
 
 
+Pseudo-clases
+================================================================================
 
+Como ya se ha indicado selecciona elementos en algún estado especial. Hay muchas pero algunas de las principales son:
+
+* ``p:hover`` : selector que se aplica cuando se pasa el ratón por encima del párrafo.
+* ``p:first-of-type`` : selector que se aplica al primero de los párrafos.
+* ``p:first-child`` : selector que se aplica un párrafo si es el primero de los hijos.
+* ``p:last-child`` : selector que se aplica al último párrafo ignorando al resto de hermanos.
+* ``p:nth-child(4)`` : selector que se aplica sobre el cuarto párrafo.
+* ``p:nth-child(even)`` : selector que se aplica a párrafos impares.
+* ``p:nth-child(odd)`` : selector que se aplica a párrafos pares.
+* ``a:active`` : selector para enlaces que están siendo pulsados.
+* ``a:visited`` : selector para enlaces ya visitados.
+* ``a:active`` : selector para enlaces que están siendo pulsados.
+* ``input:checked`` : selector para controles (radios, checkboxes) que estén marcados.
+
+
+Fondos e imágenes
+================================================================================
+
+Las principales propiedades son:
+
+* La propiedad ``background-image`` permite cargar una imagen de fondo: P. ej: ``background-image: url("../img/low-res/cork-board.png");``
+* La propiedad ``background-repeat`` permite controlar como se repite la imagen, puede tomar los valores ``no-repeat`` , ``repeat-x`` y ``repeat-y`` .
+* La propiedad ``background-position`` controla donde se posicionará la imagen, puede tomar varios valores como ``top`` , ``bottom`` , ``left``, ``right`` y ``center``, así como combinaciones. Por ejemplo ``top center`` o ``bottom right`` .
+* La propiedad ``background-size`` permite controlar el ancho y el alto. Se hablará más sobre las medidas en otro apartado de los apuntes.
+* La propiedad ``background-attachment`` puede ponerse a ``fixed`` para controlar como hace "scroll" la imagen.
+
+
+Bordes
+================================================================================
+
+Se pueden configurar los bordes de cualquier elementos usando algunas propiedades básicas:
+
+* ``border-style``: permite cambiar distintos estilos de borde como ``solid``, ``double``, ``dashed``, ``dotted``, ``inset``, ``outset``. Por ejemplo podemos cambiar un borde con ``border-style: double;`` 
+* ``border-color`` permite cambiar el color del borde. Se pueden usar colores usando cualquier mecanismo CSS (nombre de color, valor ``rgb``, color en hexadecimal, etc...).
+* ``border-width`` permite cambiar la anchura del borde.
+
+Los bordes pueden cambiarse individualmente y, por ejemplo, añadir un borde solo a la parte de abajo con estas variantes:
+
+* ``border-bottom-style``
+* ``border-bottom-color``
+* ``border-bottom-width``
+
+Pudiendo reemplazar ``bottom`` con otras posiciones como ``top``, ``left`` o ``right``.
+
+Aparte de eso se puede usar la propiedad ``border-radius: 2px`` para aplicar un redondeo en las esquinas de los bordes.
+
+
+Texto
+================================================================================
+
+Podemos modificar el alineamiento usando la propiedad ``text-align`` . Esta propiedad puede tomar distintos valores en función de la posición que queramos que adopten los márgenes del texto.
+
+* ``text-align: left;`` 
+* ``text-align: right;`` 
+* ``text-align: center;`` 
+* ``text-align: justify;`` 
+
+Se pueden cambiar los tipos de letra usando ``font-family`` , pero ¡cuidado!, es posible que no todos los usuarios tengan los mismos tipos de letra que tenemos en nuestro equipo. Existen servicios como "Google Fonts" que ofrece fuentes de libre distribución de una manera muy cómoda (solo hay que añadir una etiqueta <link> en todos los HTML y una propiedad ``font-family`` a nuestro CSS).
+
+Los textos pueden llevar diversas decoraciones especificadas con la propiedad ``text-decoration``. Por ejemplo :
+
+* ``text-decoration: underline;`` para subrayar.
+* ``text-decoration: line-through;`` para tachar.
+* ``text-decoration: none;`` que elimina cualquier decoración (es útil para quitar el subrayado de los enlaces.
+
+Se puede modificar el espacio entre letras usando ``letter-spacing:2px`` (usar con cuidado), modificar el espacio entre palabras con ``word-spacing``  o modificar el espacio entre líneas con ``line-height`` .
+
+Se pueden añadir sombras a los textos usando ``text-shadow``. Esta propiedad implica indicar siempre tres cosas : desplazamiento de la sombra en horizonta, desplazamiento en vertical y color. Así, por ejemplo si usamos ``text-shadow:2px 3px blue`` apreciaremos una sombra azul en un texto.
+
+Es posible convertir las mayúsculas o minúsculas de un texto con CSS como ``text-transform: uppercase`` , ``text-transform: lowercase`` o ``text-transform: capitalize`` (esto último muy usado en el mundo anglosajón).
+
+Border externos (Outlines)
+================================================================================
+
+Son distintos e independientes de los bordes. Se utilizan para destacar aún más un elementos.   Son complejos de usar porque **no pertenecen al elemento y no forman parte de sus medidas, así que es fácil hacer que se solapen con otro elemento sin querer.** 
+
+Funcionan de manera parecida a los bordes. Todo "outline" tiene un estilo, un grosor y un color que se especifican con:
+
+* ``outline-style`` que puede ser ``solid`` , ``dotted`` , etc...
+* ``outline-width`` que puede ir en medidas o en valores como ``thin`` , ``medium`` o ``thick`` 
+* ``outline-color`` 
+* Existe una última propiedad que permite añadir un espacio extra entre nuestro ``outline`` y nuestro ``border`` . Esta propiedad se llama ``outline-offset`` 
+
+
+Tablas
+================================================================================
+
+Se pueden modificar muchas propiedades de las tablas:
+
+* Se pueden poner bordes a elementos ``table`` y ``td`` con cosas como ``border: solid 1px black``.
+* Por definición, cada elemento tiene su propio borde. Si queremos que se unan usaremos ``border-collapse: collapse``
+* Se pueden cambiar propiedades filas pares o impares con ``tr:nth-child(even)`` o ``tr:nth-child(odd)`` 
+* Se puede cambiar un elemento *solo cuando el ratón pase por encima de él con* cosas como ``tr:hover{background-color:red;}`` 
 
 Posicionamiento
 ===============
@@ -601,10 +869,160 @@ El resultado será:
    
    Cuatro cajas manipuladas con ``float``
 
-Ejercicio
----------
+Ejercicio de maquetación con floats (I)
+--------------------------------------------------------------------------------
+
+
 
 Crear una página con una cabecera que ocupe el 100%, que tenga el texto centrado y una zona debajo que tenga 3 partes: contenido (60%), enlaces_relacionados (20%) y publicidad(20% restante). Crear un pie de página con una anchura del 100%.
+
+Ejercicio de maquetación con floats (II)
+--------------------------------------------------------------------------------
+
+Dado el HTML siguiente:
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Ejemplo de maquetación</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link type="text/css" href="estilo2.css" rel="stylesheet">
+        </head>
+        <body>
+            <header>
+            <h2>Practicando maquetación CSS</h2>
+            <h1>Bienvenido a nuestra web</h1>
+            </header>
+            <section id="navegacion">
+            <ul>
+                <li>Enlace 1</li>
+                <li>Enlace 2</li>
+                <li>Enlace 3</li>
+                <li>Enlace 4</li>
+            </ul>
+            </section>
+            <section id="contenido">
+            <div id="caja1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare c    ondimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            <div id="caja4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis malesuada auctor. Sed vel blandit mi. Nunc at nibh a quam auctor imperdiet. Vivamus vestibulum dolor in ligula venenatis dapibus. Nullam sit amet consequat urna. Aliquam mattis tellus in hendrerit tempor. Donec non velit turpis. Vestibulum tellus enim, volutpat vel auctor fermentum, tincidunt eget urna. Donec interdum ipsum quis pretium tincidunt. Nunc cursus in lorem id ornare. Integer dignissim enim eu turpis congue consectetur. Nam suscipit ac metus nec vehicula. Donec finibus in turpis non porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed vitae sem quis ante ornare condimentum.
+
+                    Donec pharetra mollis eleifend. Cras eget tortor aliquam, porta tortor varius, suscipit magna. Pellentesque arcu enim, iaculis nec dui ac, viverra gravida odio. Maecenas a odio vulputate, mattis velit ac, pulvinar purus. Proin non tellus nec felis bibendum interdum. In vulputate ante augue, non blandit ante maximus et. Nunc congue vitae odio vitae bibendum. Nam ut ex in nisi egestas vestibulum. Nullam facilisis turpis nec quam cursus, eu condimentum enim sagittis. Aliquam nisi eros, iaculis quis est vel, tincidunt ultrices eros. Fusce sed ex nec elit dictum pulvinar a ac mi. Donec bibendum sem vel volutpat mattis. Pellentesque euismod pulvinar laoreet. Proin efficitur egestas orci, vel ultrices turpis facilisis eget. Aliquam vel dapibus erat. Maecenas lectus justo, elementum et dictum at, laoreet sed elit. 
+            </div>
+            </section>
+            <section id="publicidad">
+                    <ul>
+                        <li>Enlace 1</li>
+                        <li>Enlace 2</li>
+                        <li>Enlace 3</li>
+                        <li>Enlace 4</li>
+                    </ul>     
+            </section>
+            <section id="copyright">
+                &copy; IES Maestre de Calatrava 2019
+            </section>
+        </body>
+    </html>
+
+Conseguir que quede maquetado de la siguiente manera usando adecuadamente los elementos float. Se debe tener en cuenta lo siguientes
+
+* La cabecera ocupa un 50% y está desplazada a la derecha.
+* La navegación ocupa un 15% y está desplazada a la izquierda.
+* El contenido ocupa un 80%.
+* La caja 1 ocupa el 100%.
+* La caja 2 un 50%, la caja3 un 25% y la caja 4 un 25%.
+* La publicidad ocupa un 33% y está desplazada a la derecha.
+* El copyright ocupa un 66% y está desplazado a la izquierda.
+* Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.
+* Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.
+
+
+
+
+.. figure:: maqueta5.png
+   :figwidth: 50%
+   :align: center
+   :alt: Resultado final  
+     
+   Resultado final
+
+
+Una posible solución sería esta:
+
+.. code-block:: css
+
+    body{
+        background-color: lightcyan;
+        margin:2%;
+    }
+    header{
+        width: 50%;
+        margin-left: auto;
+        border:solid 1px black;
+    }
+    section#navegacion{
+        float:left;
+        width:15%;
+        background-color: lightgoldenrodyellow;
+    }
+
+    #contenido{
+        width:80%;
+        float:right;
+        background-color: lime;
+    }
+    #caja1{
+        background-color: mediumturquoise;
+    }
+    #caja2{
+        background-color: mediumvioletred;
+        float:left; width:49%;
+    }
+    #caja3{
+        background-color: palegoldenrod;
+        float:left; width:24%; 
+        margin-left:1%;margin-right:1%;
+    }
+    #caja4{
+        background-color:pink;
+        float:left; width:24%;
+    }
+
+    #publicidad{
+        float:right;width:33%; clear:both;
+        background-color: paleturquoise;
+    }
+    #copyright{
+        float:left; width:66%;
+        background-color: palevioletred;
+    }
+
+
+
+Maquetación con flexboxes
+================================================================================
+Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
+
+Por ejemplo, supongamos que tenemos el siguiente fichero.
+
+.. literalinclude:: ejemplos/tema3_css/ejemplo_flexbox/index.html
+   :language: html
 
 
 Maquetación avanzada con ``grid-layouts``
@@ -903,8 +1321,10 @@ Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay ot
 * ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
 
 	
-Selectores
-==========
+Ejercicios comentados sobre selectores.
+================================================================================
+
+
 
 
 
@@ -1166,7 +1586,89 @@ Se puede destacar texto usando lo siguiente:
 .. code-block:: html
 
 	<mark>Texto subrayado en amarillo</mark>
-    
+
+
+Preprocesadores CSS: ``less`` 
+================================================================================
+
+CSS tiene algunas carencias importantes, lo que obliga a que a veces nuestras hojas de estilo lleven una y otra vez las mismas definiciones. Es decir, es casi obligatorio "cortar y pegar" definiciones CSS. Para resolver esto han surgido unos programas llamado "preprocesadores" que facilitan la tarea de crear una hoja de estilos. Estos programas funcionan de la siguiente manera:
+
+* En primer lugar definen un lenguaje distinto que es un superconjunto de CSS. Este lenguaje hay operaciones como variables o funciones.
+* El diseñador escribe su hoja de estilos usando este "lenguaje ampliado".
+* El archivo de hoja de estilos se "preprocesa" y el programa **genera un archivo CSS válido** 
+
+El flujo de trabajo se muestra en la figura siguiente:
+
+.. figure:: graficos/diagramaless.png
+   :figwidth: 50%
+   :align: center
+	
+   Resultado final
+
+
+Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.
+
+Variables ``less`` 
+--------------------------------------------------------------------------------
+
+En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` se pueden hacer operaciones matemáticas con variables:
+
+.. code-block:: css
+
+    @grosorbordesnoticias: 3px;
+    @grosorbordescabeceras:@grosorbordesnoticias + 2px;
+    /*En una variable podemos meter cualquier cosa que aparezca
+    en la parte derecha de una propiedad CSS: medidas, colores, tipos de
+    letra...*/
+    @colorbordes:black;
+    #caja1, #caja2, #caja3{
+        border: solid @grosorbordesnoticias @colorbordes;
+    }
+
+    header{
+        border: solid @grosorbordescabeceras @colorbordes;
+    }
+
+
+"Mixins"
+--------------------------------------------------------------------------------
+
+Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS...
+
+.. code-block:: css
+
+    @grosorbordesnoticias: 3px;
+    @grosorbordescabeceras:@grosorbordesnoticias + 2px;
+    @colorbordes:black;
+
+
+    /*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
+    que en el HTML alguién use class="margenesnoticias"*/
+    .margenesnoticias{
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:5px;
+        padding-left:5px;
+        /*Recordemos que esto se lee "top", "left","bottom", "right"*/
+        margin: 20px 10px 20px 10px;
+    }
+    #caja1, #caja2, #caja3{
+        border: solid @grosorbordesnoticias @colorbordes;
+        /*Obsérvese que llamamos a esta definición 
+        COMO SI FUESE UNA FUNCIÓN. De hecho, si 
+        queremos volver a aplicar unos márgenes en otro elemento
+        bastará con que llamemos a esta función o "mixin"*/
+        .margenesnoticias();
+    }
+
+    header{
+        border: solid @grosorbordescabeceras @colorbordes;
+    }
+
+
+Y veamos que hemos podido "llamar a una función" para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el "copiado y pegado"
+
+
 Ejercicio responsive I
 ============================
 

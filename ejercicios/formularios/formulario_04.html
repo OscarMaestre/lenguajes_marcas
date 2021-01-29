@@ -1,8 +1,21 @@
 <form>
 <fieldset>
-  <legend>Complete, por favor</legend>
-  Nombre<input type='text' name='nombre'>
-  Apellidos<input type='text' name='apellidos'>
+  <legend>Rellenar</legend>
+  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua   <br/>
+  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas   <br/>
+  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia   <br/>
+  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía   <br/>
+  <br/>
+  <input type='checkbox' name='editor' value='editornotepad'> Notepad 
+  <input type='checkbox' name='editor' value='editoremacs'> Emacs 
+  <input type='checkbox' name='editor' value='editorotro'> Otro 
+  <br/>
+  <textarea rows='5' cols='59'>Escriba aquí, por favor</textarea>  <br/>
+  <select name='procesador' >
+    <option value='amd'>AMD</option>
+    <option value='intel_i5'>Intel i5</option>
+    <option value='intel_i7'>Intel i7</option>
+  </select>
   <br/>
 </fieldset>
 </form>

@@ -1,0 +1,11 @@
+#contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+#contenedor>div{
+    border: solid 1px black;
+    width:30%;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pólizas de seguros</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            Antigüedad<br/>
+            <input type="radio" 
+            name="antiguedad" id="menos"
+            onclick="calcular();">
+            &lt; de 6 <br/>
+            <input type="radio" 
+            name="antiguedad" id="mas"
+            onclick="calcular();">
+            &gt; de 6 <br/>
+            Tipo de vehículo<br/>
+            <select id="vehiculo" onclick="calcular();">
+                <option value="familiar"> Familiar </option>
+                <option value="comercial">Comercial</option>
+                <option value="deportivo">Deportivo</option>
+            </select>
+            <br/>
+            Situación familiar <br/>
+            <input type="checkbox" 
+            id="conhijos" onclick="calcular();">
+            Con hijos a cargo <br/>
+            <input type="checkbox" 
+            id="conpadres" onclick="calcular();">
+            Con padres a cargo
+        </form>
+        <div id="resultado"></div>
+        <script type="text/javascript" src="polizaseguros.js">
+        </script>
+    </body>
+</html>

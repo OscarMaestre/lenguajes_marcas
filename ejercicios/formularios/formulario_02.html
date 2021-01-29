@@ -1,13 +1,37 @@
 <form>
 <fieldset>
-  <legend>Indique</legend>
-  Instituto<input type='text' name='instituto'>
-  Estudios elegidos<input type='text' name='estudios'>
+  <legend>Indique sus preferencias por favor</legend>
+  Elija una fecha:<input type="date">  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <input type='radio' name='procesador' value='procesadoramd'> AMD 
+  <input type='radio' name='procesador' value='procesadorintel_i5'> Intel i5 
+  <input type='radio' name='procesador' value='procesadorintel_i7'> Intel i7 
   <br/>
-  <select name='sexo' multiple='multiple'>
-    <option value='mujer'>Mujer</option>
-    <option value='hombre'>Hombre</option>
+</fieldset>
+<fieldset>
+  <legend>Indique sus preferencias por favor</legend>
+  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas 
+  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia 
+  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía 
+  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua 
+  <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Direccion<input type='text' name='direccion'> <br/>
+  <br/>
+  Elija un color:<input type="color">  <br/>
+  <textarea rows='6' cols='59'>Utilice este cuadro para escribir</textarea>  <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <select name='idioma' >
+    <option value='ingles'>Inglés</option>
+    <option value='aleman'>Alemán</option>
+    <option value='frances'>Francés</option>
   </select>
+  <br/>
+  Elija una hora:<input type="time">  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
+  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
   <br/>
 </fieldset>
 </form>

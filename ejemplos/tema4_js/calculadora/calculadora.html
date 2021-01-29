@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora JS</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            Num 1:
+            <input type="number" step="0.01"
+            id="num1" value="2" onchange="calcular();"> <br/>
+            Num 2:
+            <input type="number" step="0.01" 
+            id="num2" value="3" onchange="calcular();"> <br/>
+            <input type="radio" name="calculo" 
+            id="suma" onclick="calcular();">
+            Sumar<br/>
+            <input type="radio" name="calculo"
+            id="resta" onclick="calcular();">
+            Restar<br/>
+            <input type="radio" name="calculo" id="multiplicacion" onclick="calcular();">
+            Multiplicación<br/>
+            <input type="radio" name="calculo" 
+            id="division" onclick="calcular();">
+            Division<br/>
+        </form>
+        <div id="resultado"></div>
+        <script type="text/javascript" src="calculadora.js">
+        </script>
+    </body>
+</html>

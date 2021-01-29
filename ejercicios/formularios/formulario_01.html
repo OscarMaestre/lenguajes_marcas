@@ -1,9 +1,30 @@
 <form>
 <fieldset>
-  <legend>Complete, por favor</legend>
-  <input type='checkbox' name='escritorio' value='escritoriokde'> KDE   <br/>
-  <input type='checkbox' name='escritorio' value='escritoriognome'> GNOME   <br/>
-  <input type='checkbox' name='escritorio' value='escritoriounity'> Unity   <br/>
+  <legend>Rellenar</legend>
+  <input type='radio' name='idioma' value='idiomaingles'> Inglés   <br/>
+  <input type='radio' name='idioma' value='idiomaaleman'> Alemán   <br/>
+  <input type='radio' name='idioma' value='idiomafrances'> Francés   <br/>
   <br/>
+  <select name='conector' >
+    <option value='usb'>USB</option>
+    <option value='paralelo'>Paralelo</option>
+    <option value='ps2'>PS2</option>
+  </select>
+  <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  <br/>
+</fieldset>
+<fieldset>
+  <legend>Indique sus preferencias por favor</legend>
+  <select name='sexo' multiple='multiple'>
+    <option value='hombre'>Hombre</option>
+    <option value='mujer'>Mujer</option>
+  </select>
+  <br/>
+  <input type='checkbox' name='sexo' value='sexomujer'> Mujer   <br/>
+  <input type='checkbox' name='sexo' value='sexohombre'> Hombre   <br/>
+  <br/>
+  Elija una fecha:<input type="date">  <br/>
 </fieldset>
 </form>
