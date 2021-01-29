@@ -15,17 +15,18 @@ Un ejemplo sencillo
 ===================
 
 .. code-block:: xml
-
-	<clientes>
-		<cliente>
-			<nombre>AcerSA</nombre>
-			<cif>5664332</cif>
-		</cliente>
-		<cliente>
-			<nombre>Mer SL</nombre>
-			<cif>5111444</cif>
-		</cliente>
-	</clientes>
+    
+    <?xml version="1.0" encoding="UTF-8"?> 
+    <clientes>
+        <cliente>
+            <nombre>AcerSA</nombre>
+            <cif>5664332</cif>
+        </cliente>
+        <cliente>
+            <nombre>Mer SL</nombre>
+            <cif>5111444</cif>
+        </cliente>
+    </clientes>
 	
 	
 	
@@ -46,6 +47,8 @@ Para crear XML es importante recordar una serie de reglas:
 * Solo se puede poner una etiqueta que empiece por letra o _. Es decir, esta etiqueta no funcionará en los programas ``<12Cliente>``.
 
 * Aparte de eso, una etiqueta sí puede contener números, por lo que esta etiqueta sí es válida ``<Cliente12>``.
+
+* Aunque no es obligatorio a menudo se suele poner en la primera línea un **prólogo** que indica la versión de XML que estamos usando y la codificación con la que nuestro editor almacena los archivos.
 
 Validez
 =======
@@ -288,7 +291,7 @@ La DTD tiene esta estructura
 Esto significa lo siguiente:
 
 * Se establece el tipo de documento ``listaclientes`` que consta de una serie de elementos (dentro del corchete)
-* Un elemento ``listaclientes	`` consta de uno o más clientes. El signo ``+`` significa "uno o más".
+* Un elemento ``listaclientes`` consta de uno o más clientes. El signo ``+`` significa "uno o más".
 * Un cliente tiene un nombre y un cif. También puede tener un elemento ``diasentrega`` que puede o no aparecer (el signo ``?`` significa "0 o 1 veces").
 * Un ``nombre`` no tiene más elementos dentro, solo caracteres (``#PCDATA``)
 * Un ``CIF`` solo consta de caracteres.
@@ -552,13 +555,180 @@ Este documento **sí es válido**. Las DTD solo se ocupan de determinar qué ele
 		</pedido>
 	</listapedidos>
 
+
+Ejercicio III
+================================================================================
+Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+* El fichero debe llevar una raíz ``<productos>`` 
+* Dentro de productos debe haber alguno de estos ``<producto>`` , ``<raton>`` , ``<teclado>`` o ``<monitor>`` 
+* Todo ratón, teclado o monitor tiene siempre un código.
+* Todo ratón, teclado o monitor puede llevar un nombre.
+* Todo ratón, teclado o monitor puede llevar una descripción.
+
+.. code-block:: xml
+
+    <productos>
+        <producto>
+            <raton>
+                <codigo>27A</codigo>
+            </raton>
+        </producto>
+        <producto>
+            <teclado>
+                <codigo>28D</codigo>
+                <descripcion>Teclado en Español</descripcion>
+            </teclado>
+        </producto>
+    </productos>
+
+Solución al ejercicio III
+--------------------------------------------------------------------------------
+
+
+
+.. code-block:: dtd
+
+    <!ELEMENT productos (producto+)>
+    <!ELEMENT producto  (raton|teclado|monitor)>
+    <!ELEMENT raton     (codigo, nombre?, descripcion?)>
+    <!ELEMENT teclado   (codigo, nombre?, descripcion?)>    <!ELEMENT monitor   (codigo, nombre?, descripcion?)>
+    <!ELEMENT codigo    (#PCDATA)>
+    <!ELEMENT nombre    (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+
+Ejercicio IV
+================================================================================
+
+Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:
+
+* El elemento raíz será <listaventas>
+* Toda <listaventas> tiene una o más <venta>.
+* Toda <venta> tiene los siguientes datos:
+   
+    ** Importe.
+    ** Comprador.
+    ** Vendedor.
+    ** Fecha (optativa).
+    ** Un codigo de factura.
+
+Solución al ejercicio IV
+--------------------------------------------------------------------------------
+
+Por ahora no se dará la solución de este ejercicio. Inténtalo y si no puedes pide ayuda al profesor o escríbele un email para averiguar como resolverlo.
+
+Ejercicio V DTD
+================================================================================
+
+En un departamento se ha decidido la siguiente estructura para ficheros de datos que se tengan que mover de unos software a otros.
+
+* La raíz debe ser el elemento ``<listacompras>`` 
+* Dentro de ``<listacompras>`` debe haber uno o más elementos ``<venta>`` 
+* Una ``venta`` puede llevar dentro uno de dos: ``<ventaacredito>`` o ``<ventainmediata>`` 
+* Un elemento ``<ventaacredito>`` consta de : un elemento ``<fechafinpago>`` que es optativo y un elemento ``<cantidad>`` que es obligatorio.
+* Un elemento ``<ventainmediata>`` lleva dentro dos cosas: un elemento ``<cantidad>`` que es obligatorio y un elemento ``<divisa>`` que también es obligatorio.
+
+Solución al ejercicio V
+--------------------------------------------------------------------------------
+
+Puedes usar este ejemplo para hacer la validación:
+
+.. code-block:: xml
+
+    <listacompras>
+        <venta>
+            <ventaacredito>
+                <fechafinpago>22-10-2021</fechafinpago>
+                <cantidad>21000</cantidad>
+            </ventaacredito>
+        </venta>
+        <venta>
+            <ventainmediata>
+                <cantidad>1800</cantidad>
+                <divisa>euros</divisa>
+            </ventainmediata>
+        </venta>
+        <venta>
+            <ventaacredito>
+                <cantidad>21000</cantidad>
+            </ventaacredito>
+        </venta>
+    </listacompras>
+
+
+<<<<<<< HEAD
+Una posible solución sería:
+
+.. code-block:: dtd
+
+    <!ELEMENT listacompras   (venta+)>
+    <!ELEMENT venta          (ventaacredito|ventainmediata)>
+    <!ELEMENT ventaacredito  (fechafinpago?, cantidad)>
+    <!ELEMENT ventainmediata (cantidad, divisa)>
+    <!ELEMENT fechafinpago   (#PCDATA)>
+    <!ELEMENT cantidad       (#PCDATA)>
+    <!ELEMENT divisa         (#PCDATA)>
+
+
+
+Ejercicio VI DTD
+================================================================================
+
+Un mayorista de productos de librería desea tener un formato de almacenamiento de datos para reflejar la información de su inventario.
+
+* El elemento raíz debe ser ``<inventario>`` 
+* Dentro de inventario pueden ir elementos ``<lapiz>``, ``<cuaderno>`` o ``<boligrafo>`` repetidos y en cualquier orden.
+* Todo ``<lapiz>`` puede tener un elemento ``<dureza>``
+* Todo cuaderno debe llevar dos elementos: ``<numhojas>`` y ``<estilo>`` 
+* Todo boligrafo lleva un ``<precio>`` y puede o no llevar un elemento ``<color>`` 
+
+El siguiente fichero debería ser validado por la DTD:
+
+.. code-block:: xml
+
+    <inventario>
+        <lapiz></lapiz>
+        <lapiz>
+            <dureza>H2</dureza>
+        </lapiz>
+        <cuaderno>
+            <numhojas>80</numhojas>
+            <estilo>2 rayas</estilo>
+        </cuaderno>
+        <boligrafo>
+            <precio>0.80</precio>
+        </boligrafo>
+        <cuaderno>
+            <numhojas>100</numhojas>
+            <estilo>Cuadriculado</estilo>
+        </cuaderno>
+        <boligrafo>
+            <precio>0.80</precio>
+            <color>Rojo</color>
+        </boligrafo>
+    </inventario>
+
+.. code-block:: dtd
+
+    <!ELEMENT inventario (cuaderno|lapiz|boligrafo)+>
+    <!ELEMENT cuaderno   (numhojas,estilo)>
+    <!ELEMENT numhojas   (#PCDATA)>
+    <!ELEMENT estilo     (#PCDATA)>
+    <!ELEMENT lapiz      (dureza?)>
+    <!ELEMENT dureza     (#PCDATA)>
+    <!ELEMENT boligrafo  (precio, color?)>
+    <!ELEMENT precio     (#PCDATA)>
+    <!ELEMENT color      (#PCDATA)>
+
+
 Ejercicio (con atributos)
 ===========================
 
-Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes:
+Unos programadores necesitan estructurar la información que intercambiarán los ficheros de sus aplicaciones para lo cual han determinado los requisitos siguientes.
 
 * Los ficheros deben tener un elemento ``<listafacturas>``
+
 * Dentro de la lista debe haber una o más facturas.
+
 * Las facturas tienen un atributo ``fecha`` que es optativo.
 * Toda factura tiene un ``emisor``, que es un elemento obligatorio y que debe tener un atributo ``cif`` que es obligatorio. Dentro de ``emisor`` debe haber un elemento ``nombre``, que es obligatorio y puede o no haber un elemento ``volumenventas``.
 * Toda factura debe tener un elemento ``pagador``, el cual tiene exactamente la misma estructura que ``emisor``.
@@ -621,8 +791,9 @@ Solución completa
     <!ELEMENT listacursos (curso)+>
     <!ELEMENT curso (alumno)+>
     <!ELEMENT alumno (dni, nombre,
-                        ap1, ap2?, asignatura+)>
+                        ap1, ap2?, listaasignaturas)>
         
+    <!ELEMENT listaasignaturas (asignatura+)>
     <!ELEMENT asignatura (nombre, profesor)>
     <!ATTLIST asignatura codigo CDATA #REQUIRED>
         
@@ -645,14 +816,16 @@ Un ejemplo de fichero válido:
                 <dni>44e</dni>
                 <nombre>Juan</nombre>
                 <ap1>Sanchez</ap1>
-                <asignatura codigo="LM1">
-                    <nombre>Leng marcas</nombre>
-                    <profesor>
-                        <nrp>8</nrp>
-                        <nombre>Oscar</nombre>
-                        <ap1>Gomez</ap1>
-                    </profesor>
-                </asignatura>
+                <listaasignaturas>
+                    <asignatura codigo="LM1">
+                        <nombre>Leng marcas</nombre>
+                        <profesor>
+                            <nrp>8</nrp>
+                            <nombre>Oscar</nombre>
+                            <ap1>Gomez</ap1>
+                        </profesor>
+                    </asignatura>
+                </listaasignaturas>
             </alumno>
         </curso>
     </listacursos>
@@ -2998,24 +3171,6 @@ A continuación se muestra un fichero de ejemplo
             <!--El codigo de receptor no se usó aquí-->
         </recepcion>
     </portes>
-
-
-
-
-Examen
-===========================================
-
-El examen de este tema tendrá lugar
-
-* Para DAM el viernes, 16 de marzo de 2018
-* Para ASIR el martes, 13 de marzo de 2018
-
-
-
-
-
-
-
 
 
 
