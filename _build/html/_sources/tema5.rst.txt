@@ -353,6 +353,7 @@ Y este fichero no debería aceptarse:
 
 
 Pues bien, la regla sería esta: en ella se pone **una secuencia SEGUIDA DE otra secuencia** 
+
 .. code-block:: dtd
 
     <!ELEMENT listaventas (ventapc+,ventamonitor+)>
@@ -429,6 +430,49 @@ Está mal porque obliga a "escribir secuencias de parejas ventapc, ventamonitor 
     </listaventas>
 
 Y esto NO ERA LO QUE SE PEDÍA.
+
+
+Ahora se exige un fichero en el que pase una de estas dos cosas de acuerdo a esta descripción: "los elementos pueden aparecer en cualquier orden, pero en en fichero solo pueden aparecer ventas o compras". 
+
+O sea, que esto sí es válido
+
+.. code-block::
+
+    <listaventas>
+        <ventapc>800</ventapc>
+        <ventamonitor>800</ventamonitor>
+    </listaventas>
+
+Y esto otro también es válido:
+
+.. code-block:: 
+
+    <listaventas>
+        <comprapc>100</comprapc>
+        <compramonitor>3000</compramonitor>
+    </listaventas>
+
+**Pero esto no está permitido** 
+
+.. code-block::
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <compramonitor>3000</compramonitor>
+    </listaventas>
+
+Pues bien, la regla es esta:
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas  ( (ventapc |ventamonitor )+ |
+                             (comprapc|compramonitor)+ )
+    <!ELEMENT ventapc       (#PCDATA)>
+    <!ELEMENT ventamonitor  (#PCDATA)>
+    <!ELEMENT comprapc      (#PCDATA)>
+    <!ELEMENT compramonitor (#PCDATA)>
+
+
 
 Ejemplo de DTD (productos)
 ---------------------------------

@@ -542,13 +542,12 @@ elementos ventapc y despues ventamonitor» entonces este fichero <em>sí deberí
 </pre></div>
 </div>
 <p>Y este fichero no debería aceptarse:</p>
-<p>Pues bien, la regla sería esta: en ella se pone <strong>una secuencia SEGUIDA DE otra secuencia</strong>
-.. code-block:: dtd</p>
-<blockquote>
-<div><p>&lt;!ELEMENT listaventas (ventapc+,ventamonitor+)&gt;
-&lt;!ELEMENT ventapc      (#PCDATA)&gt;
-&lt;!ELEMENT ventamonitor (#PCDATA)&gt;</p>
-</div></blockquote>
+<p>Pues bien, la regla sería esta: en ella se pone <strong>una secuencia SEGUIDA DE otra secuencia</strong></p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listaventas</span> <span class="o">(</span><span class="nt">ventapc</span><span class="o">+,</span><span class="nt">ventamonitor</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventapc</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventamonitor</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
 <p>Supongamos esta otra descripción: «Dentro de listaventas, puede haber cualquier orden de elementos ventapc y ventamonitor, se pueden repetir las veces que hagan falta en cualquier orden e incluso intercalados». Es decir, esto se acepta</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">listaventas</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>100<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
@@ -601,6 +600,37 @@ elementos ventapc y despues ventamonitor» entonces este fichero <em>sí deberí
 </pre></div>
 </div>
 <p>Y esto NO ERA LO QUE SE PEDÍA.</p>
+<p>Ahora se exige un fichero en el que pase una de estas dos cosas de acuerdo a esta descripción: «los elementos pueden aparecer en cualquier orden, pero en en fichero solo pueden aparecer ventas o compras».</p>
+<p>O sea, que esto sí es válido</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">listaventas</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ventapc</span><span class="o">&gt;</span><span class="mi">800</span><span class="o">&lt;/</span><span class="n">ventapc</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ventamonitor</span><span class="o">&gt;</span><span class="mi">800</span><span class="o">&lt;/</span><span class="n">ventamonitor</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">listaventas</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Y esto otro también es válido:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">listaventas</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">comprapc</span><span class="o">&gt;</span><span class="mi">100</span><span class="o">&lt;/</span><span class="n">comprapc</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">compramonitor</span><span class="o">&gt;</span><span class="mi">3000</span><span class="o">&lt;/</span><span class="n">compramonitor</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">listaventas</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Pero esto no está permitido</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">listaventas</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ventapc</span><span class="o">&gt;</span><span class="mi">100</span><span class="o">&lt;/</span><span class="n">ventapc</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">compramonitor</span><span class="o">&gt;</span><span class="mi">3000</span><span class="o">&lt;/</span><span class="n">compramonitor</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">listaventas</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Pues bien, la regla es esta:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listaventas</span>  <span class="o">(</span> <span class="o">(</span><span class="nt">ventapc</span> <span class="o">|</span><span class="nt">ventamonitor</span> <span class="o">)+</span> <span class="o">|</span>
+                         <span class="o">(</span><span class="nt">comprapc</span><span class="o">|</span><span class="nt">compramonitor</span><span class="o">)+</span> <span class="o">)</span>
+<span class="nt">&lt;!ELEMENT</span> <span class="nt">ventapc</span>       <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventamonitor</span>  <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">comprapc</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">compramonitor</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ejemplo-de-dtd-productos">
 <h3>Ejemplo de DTD (productos)<a class="headerlink" href="#ejemplo-de-dtd-productos" title="Enlazar permanentemente con este título">¶</a></h3>
