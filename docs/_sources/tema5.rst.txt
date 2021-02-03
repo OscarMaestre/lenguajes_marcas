@@ -391,7 +391,6 @@ Pues bien, la DTD sería la siguiente:
 
 .. code-block:: dtd
 
-
     <!ELEMENT listaventas (ventapc|ventamonitor)+>
     <!ELEMENT ventapc      (#PCDATA)>
     <!ELEMENT ventamonitor (#PCDATA)>
