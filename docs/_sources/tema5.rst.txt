@@ -466,7 +466,7 @@ Pues bien, la regla es esta:
 .. code-block:: dtd
 
     <!ELEMENT listaventas  ( (ventapc |ventamonitor )+ |
-                             (comprapc|compramonitor)+ )
+                             (comprapc|compramonitor)+ )>
     <!ELEMENT ventapc       (#PCDATA)>
     <!ELEMENT ventamonitor  (#PCDATA)>
     <!ELEMENT comprapc      (#PCDATA)>
