@@ -321,6 +321,116 @@ La solución completa sería así:
 		</cliente>
 	</listaclientes>
 
+
+Combinaciones de cuantificadores y listas de opciones
+---------------------------------------------------------
+Hay un problema cuando algunas reglas involucran estructuras complejas. Por ejemplo, sin pensamos en una descripción como : "Dentro de listaventas, primero habrá una secuencia de
+elementos ventapc y despues ventamonitor" entonces este fichero *sí debería aceptarse* 
+
+
+.. code-block:: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventamonitor>400</ventamonitor>
+        <ventamonitor>500</ventamonitor>
+    </listaventas>
+
+Y este fichero no debería aceptarse:
+
+.. code-block: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+
+Pues bien, la regla sería esta: en ella se pone **una secuencia SEGUIDA DE otra secuencia** 
+.. code-block:: dtd
+
+    <!ELEMENT listaventas (ventapc+,ventamonitor+)>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+
+Supongamos esta otra descripción: "Dentro de listaventas, puede haber cualquier orden de elementos ventapc y ventamonitor, se pueden repetir las veces que hagan falta en cualquier orden e incluso intercalados". Es decir, esto se acepta
+
+.. code-block:: html
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventamonitor>400</ventamonitor>
+        <ventamonitor>500</ventamonitor>
+    </listaventas>
+
+
+Pero esto también
+
+.. code-block:: html
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+Pues bien, la DTD sería la siguiente:
+
+
+.. code-block:: dtd
+
+
+    <!ELEMENT listaventas (ventapc|ventamonitor)+>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+
+
+Compárese con el anterior
+
+.. code-block:: 
+
+    <!ELEMENT listaventas (ventapc+, ventamonitor+)>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+El anterior obliga a llevar un orden, pero en el ejercicio se aceptaba el "desorden".
+
+Pregunta: **¿Por qué esto está mal?**
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas (ventapc,ventamonitor)+>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+    
+Está mal porque obliga a "escribir secuencias de parejas ventapc, ventamonitor como en el fichero siguiente".
+
+.. code-block:: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+Y esto NO ERA LO QUE SE PEDÍA.
+
 Ejemplo de DTD (productos)
 ---------------------------------
 
@@ -561,6 +671,7 @@ Ejercicio III
 Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
 
 * El fichero debe llevar una raíz ``<productos>`` 
+* Dentro debe haber uno o más elementos ``<producto>`` 
 * Dentro de productos debe haber alguno de estos ``<producto>`` , ``<raton>`` , ``<teclado>`` o ``<monitor>`` 
 * Todo ratón, teclado o monitor tiene siempre un código.
 * Todo ratón, teclado o monitor puede llevar un nombre.
@@ -605,12 +716,11 @@ Unos programadores necesitan un formato de fichero para que sus distintos progra
 * El elemento raíz será <listaventas>
 * Toda <listaventas> tiene una o más <venta>.
 * Toda <venta> tiene los siguientes datos:
-   
-    ** Importe.
-    ** Comprador.
-    ** Vendedor.
-    ** Fecha (optativa).
-    ** Un codigo de factura.
+    * Importe.
+    * Comprador.
+    * Vendedor.
+    * Fecha (optativa).
+    * Un codigo de factura.
 
 Solución al ejercicio IV
 --------------------------------------------------------------------------------

@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#validez">Validez</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gramaticas">Gramáticas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sintaxis-dtd">Sintaxis DTD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combinaciones-de-cuantificadores-y-listas-de-opciones">Combinaciones de cuantificadores y listas de opciones</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejemplo-de-dtd-productos">Ejemplo de DTD (productos)</a></li>
 </ul>
 </li>
@@ -526,6 +527,81 @@ que no es XML y el fichero se muestra de manera literal)</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="combinaciones-de-cuantificadores-y-listas-de-opciones">
+<h3>Combinaciones de cuantificadores y listas de opciones<a class="headerlink" href="#combinaciones-de-cuantificadores-y-listas-de-opciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hay un problema cuando algunas reglas involucran estructuras complejas. Por ejemplo, sin pensamos en una descripción como : «Dentro de listaventas, primero habrá una secuencia de
+elementos ventapc y despues ventamonitor» entonces este fichero <em>sí debería aceptarse</em></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listaventas&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>100<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>300<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>400<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>200<span class="nt">&lt;/ventamonitor&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>400<span class="nt">&lt;/ventamonitor&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>500<span class="nt">&lt;/ventamonitor&gt;</span>
+<span class="nt">&lt;/listaventas&gt;</span>
+</pre></div>
+</div>
+<p>Y este fichero no debería aceptarse:</p>
+<p>Pues bien, la regla sería esta: en ella se pone <strong>una secuencia SEGUIDA DE otra secuencia</strong>
+.. code-block:: dtd</p>
+<blockquote>
+<div><p>&lt;!ELEMENT listaventas (ventapc+,ventamonitor+)&gt;
+&lt;!ELEMENT ventapc      (#PCDATA)&gt;
+&lt;!ELEMENT ventamonitor (#PCDATA)&gt;</p>
+</div></blockquote>
+<p>Supongamos esta otra descripción: «Dentro de listaventas, puede haber cualquier orden de elementos ventapc y ventamonitor, se pueden repetir las veces que hagan falta en cualquier orden e incluso intercalados». Es decir, esto se acepta</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">listaventas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>100<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>300<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>400<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>200<span class="p">&lt;/</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>400<span class="p">&lt;/</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>500<span class="p">&lt;/</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">listaventas</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pero esto también</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">listaventas</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>100<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>200<span class="p">&lt;/</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>300<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventapc</span><span class="p">&gt;</span>400<span class="p">&lt;/</span><span class="nt">ventapc</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>400<span class="p">&lt;/</span><span class="nt">ventamonitor</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">listaventas</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pues bien, la DTD sería la siguiente:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listaventas</span> <span class="o">(</span><span class="nt">ventapc</span><span class="o">|</span><span class="nt">ventamonitor</span><span class="o">)+</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventapc</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventamonitor</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Compárese con el anterior</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!ELEMENT listaventas (ventapc+, ventamonitor+)&gt;
+&lt;!ELEMENT ventapc      (#PCDATA)&gt;
+&lt;!ELEMENT ventamonitor (#PCDATA)&gt;
+</pre></div>
+</div>
+<p>El anterior obliga a llevar un orden, pero en el ejercicio se aceptaba el «desorden».</p>
+<p>Pregunta: <strong>¿Por qué esto está mal?</strong></p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">listaventas</span> <span class="o">(</span><span class="nt">ventapc</span><span class="o">,</span><span class="nt">ventamonitor</span><span class="o">)+</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventapc</span>      <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">ventamonitor</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+<p>Está mal porque obliga a «escribir secuencias de parejas ventapc, ventamonitor como en el fichero siguiente».</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listaventas&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>100<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>400<span class="nt">&lt;/ventamonitor&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>100<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>400<span class="nt">&lt;/ventamonitor&gt;</span>
+    <span class="nt">&lt;ventapc&gt;</span>100<span class="nt">&lt;/ventapc&gt;</span>
+    <span class="nt">&lt;ventamonitor&gt;</span>400<span class="nt">&lt;/ventamonitor&gt;</span>
+<span class="nt">&lt;/listaventas&gt;</span>
+</pre></div>
+</div>
+<p>Y esto NO ERA LO QUE SE PEDÍA.</p>
+</div>
 <div class="section" id="ejemplo-de-dtd-productos">
 <h3>Ejemplo de DTD (productos)<a class="headerlink" href="#ejemplo-de-dtd-productos" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Se pide un conjunto de reglas en forma de DTD para definir qué se permitirá en los archivos XML de datos de una empresa de fabricación:</p>
@@ -731,6 +807,7 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <p>Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:</p>
 <ul class="simple">
 <li><p>El fichero debe llevar una raíz <code class="docutils literal notranslate"><span class="pre">&lt;productos&gt;</span></code></p></li>
+<li><p>Dentro debe haber uno o más elementos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code></p></li>
 <li><p>Dentro de productos debe haber alguno de estos <code class="docutils literal notranslate"><span class="pre">&lt;producto&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;raton&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;teclado&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;monitor&gt;</span></code></p></li>
 <li><p>Todo ratón, teclado o monitor tiene siempre un código.</p></li>
 <li><p>Todo ratón, teclado o monitor puede llevar un nombre.</p></li>
@@ -767,17 +844,19 @@ un ratón y despues un teclado, y solo uno de cada.</p>
 <div class="section" id="ejercicio-iv">
 <h2>Ejercicio IV<a class="headerlink" href="#ejercicio-iv" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Unos programadores necesitan un formato de fichero para que sus distintos programas intercambien información sobre ventas. El acuerdo al que han llegado es que su XML debería tener esta estructura:</p>
-<ul>
+<ul class="simple">
 <li><p>El elemento raíz será &lt;listaventas&gt;</p></li>
 <li><p>Toda &lt;listaventas&gt; tiene una o más &lt;venta&gt;.</p></li>
-<li><p>Toda &lt;venta&gt; tiene los siguientes datos:</p>
-<blockquote>
-<div><p>** Importe.
-** Comprador.
-** Vendedor.
-** Fecha (optativa).
-** Un codigo de factura.</p>
-</div></blockquote>
+<li><dl class="simple">
+<dt>Toda &lt;venta&gt; tiene los siguientes datos:</dt><dd><ul>
+<li><p>Importe.</p></li>
+<li><p>Comprador.</p></li>
+<li><p>Vendedor.</p></li>
+<li><p>Fecha (optativa).</p></li>
+<li><p>Un codigo de factura.</p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 <div class="section" id="solucion-al-ejercicio-iv">
