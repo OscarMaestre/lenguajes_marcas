@@ -163,6 +163,9 @@ Por ejemplo, supongamos el mismo ejemplo ejemplo anterior en el que queremos for
 * Se puede indicar si un elemento debe aparecer de forma obligatoria.
 * Se puede indicar si algo aparecer una o muchas veces (usando ``+``).
 * Se puede indicar si algo aparece cero o muchas veces (usando ``*``).
+* Se puede indicar que un elemento ya no lleva nada dentro usando ``<!ELEMENT cantidad (#PCDATA)`` .
+* Se puede indicar que un elemento cantidad lleva obligatoriamente un atributo divisa usando ``<!ATTLIST cantidad divisa CDATA #REQUIRED`` 
+* Se puede indicar que un elemento cantidad podría llevar o no obligatoriamente un atributo moneda usando ``<!ATTLIST cantidad moneda CDATA #IMPLIED`` 
 
 
 Supongamos que en nuestros ficheros deseamos indicar que el elemento raíz es ``<listaclientes>``. Dentro de ``<listaclientes>`` deseamos permitir uno o más elementos ``<cliente>``. Dentro de ``<cliente>`` todos deberán tener ``<cif>`` y ``<nombre>`` y en ese orden. Dentro de ``<cliente>`` puede aparecer o no un elemento ``<diasentrega>`` para indicar que ese cliente exige un máximo de plazos. Como no todo el mundo usa plazos el ``<diasentrega>`` es optativo.
@@ -317,6 +320,159 @@ La solución completa sería así:
 			<cif>5121554</cif>
 		</cliente>
 	</listaclientes>
+
+
+Combinaciones de cuantificadores y listas de opciones
+---------------------------------------------------------
+Hay un problema cuando algunas reglas involucran estructuras complejas. Por ejemplo, sin pensamos en una descripción como : "Dentro de listaventas, primero habrá una secuencia de
+elementos ventapc y despues ventamonitor" entonces este fichero *sí debería aceptarse* 
+
+
+.. code-block:: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventamonitor>400</ventamonitor>
+        <ventamonitor>500</ventamonitor>
+    </listaventas>
+
+Y este fichero no debería aceptarse:
+
+.. code-block: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+
+Pues bien, la regla sería esta: en ella se pone **una secuencia SEGUIDA DE otra secuencia** 
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas (ventapc+,ventamonitor+)>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+
+Supongamos esta otra descripción: "Dentro de listaventas, puede haber cualquier orden de elementos ventapc y ventamonitor, se pueden repetir las veces que hagan falta en cualquier orden e incluso intercalados". Es decir, esto se acepta
+
+.. code-block:: html
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventamonitor>400</ventamonitor>
+        <ventamonitor>500</ventamonitor>
+    </listaventas>
+
+
+Pero esto también
+
+.. code-block:: html
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>200</ventamonitor>
+        <ventapc>300</ventapc>
+        <ventapc>400</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+Pues bien, la DTD sería la siguiente:
+
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas (ventapc|ventamonitor)+>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+
+
+Compárese con el anterior
+
+.. code-block:: 
+
+    <!ELEMENT listaventas (ventapc+, ventamonitor+)>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+
+El anterior obliga a llevar un orden, pero en el ejercicio se aceptaba el "desorden".
+
+Pregunta: **¿Por qué esto está mal?**
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas (ventapc,ventamonitor)+>
+    <!ELEMENT ventapc      (#PCDATA)>
+    <!ELEMENT ventamonitor (#PCDATA)>
+    
+Está mal porque obliga a "escribir secuencias de parejas ventapc, ventamonitor como en el fichero siguiente".
+
+.. code-block:: xml
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+        <ventapc>100</ventapc>
+        <ventamonitor>400</ventamonitor>
+    </listaventas>
+
+Y esto NO ERA LO QUE SE PEDÍA.
+
+
+Ahora se exige un fichero en el que pase una de estas dos cosas de acuerdo a esta descripción: "los elementos pueden aparecer en cualquier orden, pero en en fichero solo pueden aparecer ventas o compras". 
+
+O sea, que esto sí es válido
+
+.. code-block::
+
+    <listaventas>
+        <ventapc>800</ventapc>
+        <ventamonitor>800</ventamonitor>
+    </listaventas>
+
+Y esto otro también es válido:
+
+.. code-block:: 
+
+    <listaventas>
+        <comprapc>100</comprapc>
+        <compramonitor>3000</compramonitor>
+    </listaventas>
+
+**Pero esto no está permitido** 
+
+.. code-block::
+
+    <listaventas>
+        <ventapc>100</ventapc>
+        <compramonitor>3000</compramonitor>
+    </listaventas>
+
+Pues bien, la regla es esta:
+
+.. code-block:: dtd
+
+    <!ELEMENT listaventas  ( (ventapc |ventamonitor )+ |
+                             (comprapc|compramonitor)+ )>
+    <!ELEMENT ventapc       (#PCDATA)>
+    <!ELEMENT ventamonitor  (#PCDATA)>
+    <!ELEMENT comprapc      (#PCDATA)>
+    <!ELEMENT compramonitor (#PCDATA)>
+
+
 
 Ejemplo de DTD (productos)
 ---------------------------------
@@ -556,7 +712,9 @@ Este documento **sí es válido**. Las DTD solo se ocupan de determinar qué ele
 Ejercicio III
 ================================================================================
 Se desea crear una gramática para ficheros de datos en los que se ha decidido contemplar lo siguiente:
+
 * El fichero debe llevar una raíz ``<productos>`` 
+* Dentro debe haber uno o más elementos ``<producto>`` 
 * Dentro de productos debe haber alguno de estos ``<producto>`` , ``<raton>`` , ``<teclado>`` o ``<monitor>`` 
 * Todo ratón, teclado o monitor tiene siempre un código.
 * Todo ratón, teclado o monitor puede llevar un nombre.
@@ -601,12 +759,11 @@ Unos programadores necesitan un formato de fichero para que sus distintos progra
 * El elemento raíz será <listaventas>
 * Toda <listaventas> tiene una o más <venta>.
 * Toda <venta> tiene los siguientes datos:
-   
-    ** Importe.
-    ** Comprador.
-    ** Vendedor.
-    ** Fecha (optativa).
-    ** Un codigo de factura.
+    * Importe.
+    * Comprador.
+    * Vendedor.
+    * Fecha (optativa).
+    * Un codigo de factura.
 
 Solución al ejercicio IV
 --------------------------------------------------------------------------------

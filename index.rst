@@ -20,6 +20,8 @@ Apuntes de Lenguajes de marcas
    tema8
    ejercicios/html/anexo_tablas.rst
    ejercicios/formularios/anexo_formularios.rst
+   ejercicios/esquemas/ejercicios_dtd.rst
+   ejercicios/grids/anexo.rst
    ejercicios/xslt/anexo_ejercicios_xslt.rst
    ejercicios/xpath/anexo_ejercicios_xpath.rst
    ejercicios/xquery/anexo_ejercicios_xquery.rst
