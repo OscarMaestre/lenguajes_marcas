@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -1275,24 +1275,23 @@ Una posible solución sería:</p>
 <h2>Ejercicio: mayorista de libros<a class="headerlink" href="#ejercicio-mayorista-de-libros" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se desea crear un formato de intercambio de datos para una empresa mayorista de libros con el fin de que sus distintos programas puedan manejar la información interna. El formato de archivo debe tener la siguiente estructura:</p>
 <ul>
-<li><p>El elemento raíz es «operaciones».</p></li>
-<li><p>Dentro de «operaciones» hay uno o más elementos «operacion».</p></li>
-<li><p>Una «operacion» puede ser «venta», «compra», o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p></li>
-<li><p>Una venta tiene dentro un elemento «titulosvendidos». Dentro de «titulosvendidos» se almacenan estos datos:</p>
+<li><p>Un archivo tiene una serie de operaciones dentro.</p></li>
+<li><p>Las operaciones pueden ser «venta», «compra», o cualquier combinación y secuencia de ellas, pero debe haber al menos una.</p></li>
+<li><p>Una venta tiene:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Uno o más elementos «título».</p></li>
+<li><p>Uno o más títulos vendidos.</p></li>
 <li><p>La cantidad total de libros vendidos.</p></li>
 <li><p>Puede haber un elemento «entregado» que indique si la entrega se ha realizado.</p></li>
 <li><p>Debe haber un elemento importe con un atributo obligatorio llamado «moneda».</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Una compra tiene dentro un elemento «tituloscomprados». Dentro de él hay esto:</p>
+<li><p>Una compra tiene:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Uno o más elementos «titulo»</p></li>
-<li><p>Un «proveedor».</p></li>
+<li><p>Uno o más títulos comprados.</p></li>
+<li><p>Nombre de proveedor.</p></li>
 <li><p>Una fecha de compra, que debe desglosarse en elementos día, mes y año</p></li>
 </ul>
 </div></blockquote>
