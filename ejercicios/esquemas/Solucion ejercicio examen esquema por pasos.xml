@@ -1,0 +1,388 @@
+<!--Primero resolvemos la etiqueta beneficio-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="beneficio" type="xs:float" />
+    
+</xs:schema>
+
+<!-- Esto debería darse por bueno -->
+<beneficio>20.81</beneficio>
+<!-- Pero esto no -->
+<beneficio>jjj</beneficio>
+
+
+<!--Ahora intentamos resolver la etiqueta "valoractual"-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="valoractual" type="tipoValorActual"/>
+    <xs:complexType name="tipoValorActual">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="moneda" type="tipoMoneda" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dolares"/>
+            <xs:enumeration value="euros"/>
+            <xs:enumeration value="yenes"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
+<!--Esto debe validarse-->
+<valoractual moneda="yenes">2.21</valoractual>
+<!--Pero esto no-->
+<valoractual moneda="yenes">zzz</valoractual>
+<!--Y esto tampoco-->
+<valoractual>2.21</valoractual>
+
+
+<!-- Ahora fabricamos la etiqueta "bono". Esta etiqueta va a ser
+muy fácil de resolver utilizando los tipos que ya hemos definido
+en los pasos anteriores -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="bono" type="tipoBono"/>
+    <xs:complexType name="tipoBono">
+        <xs:sequence>
+            <xs:element name="valoractual" type="tipoValorActual"/>
+            <xs:element name="beneficio"   type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--Este tipo lo hemos cogido de más arriba, es un copy-paste-->
+    <xs:complexType name="tipoValorActual">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="moneda" type="tipoMoneda" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dolares"/>
+            <xs:enumeration value="euros"/>
+            <xs:enumeration value="yenes"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
+<!-- Esto debería darlo por bueno -->
+<bono>
+    <valoractual moneda="yenes">2.212</valoractual>
+    <beneficio>-2.83</beneficio>
+</bono>
+
+<!--Esto no, falta el atributo moneda-->
+<bono>
+    <valoractual>2.212</valoractual>
+    <beneficio>-2.83</beneficio>
+</bono>
+<!--Esto tampoco valida, el beneficio está mal-->
+<bono>
+    <valoractual moneda="yenes">2.212</valoractual>
+    <beneficio>zzzz</beneficio>
+</bono>
+
+Ahora que ya tenemos resuelto el bono, vamos a resolver las etiquetas del
+elemento "futuro". La etiqueta beneficio no tiene dificultad, es un xs:string.
+Sin embargo, la etiqueta "elemento" debe llevar un atributo, hay que crear
+un tipo aparte.
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="elemento" type="tipoElemento"/>
+    <xs:complexType name="tipoElemento">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idioma" 
+                              type="xs:string"
+                              use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
+
+
+<!-- Esto debería funcionar -->
+<elemento idioma="espanol">Petroleo</elemento>
+<!-- Pero esto no -->
+<elemento>Petroleo</elemento>
+
+
+Ahora que tenemos como es un "beneficio" y tenemos un tipo para "elemento", 
+podemos intentar componer un tipo para "futuro"
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="futuro" type="tipoFuturo"/>
+    <xs:complexType name="tipoFuturo">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="elemento"  type="tipoElemento"/>
+                    <xs:element name="beneficio" type="xs:float" />
+                </xs:sequence>        
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoElemento">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idioma" 
+                              type="xs:string"
+                              use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
+
+
+
+
+Resolvemos la etiqueta empresa
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="empresa" type="tipoEmpresa"/>
+    <xs:complexType name="tipoEmpresa">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="pais" type="tipoPais" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoPais">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="usa"/>
+            <xs:enumeration value="alemania"/>
+            <xs:enumeration value="japon"/>
+            <xs:enumeration value="espana"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
+<!-- Esto debería funcionar -->
+<empresa pais="usa">ENRON</empresa>
+<!-- Esto no, no es uno de los países de la lista -->
+<empresa pais="china">ENRON</empresa>
+<!-- Esto tampoco, nos falta el atributo -->
+<empresa>ENRON</empresa>
+
+Ahora que tenemos la etiqueta empresa, podemos resolver correctamente
+la etiqueta "acciones"
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="acciones" type="tipoAcciones"/>
+    <xs:complexType name="tipoAcciones">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="empresa"   type="tipoEmpresa"/>
+                    <xs:element name="beneficio" type="xs:float"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoEmpresa">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="pais" type="tipoPais" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoPais">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="usa"/>
+            <xs:enumeration value="alemania"/>
+            <xs:enumeration value="japon"/>
+            <xs:enumeration value="espana"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
+
+Ahora hay que resolver la etiqueta "producto", que lleva dentro uno de estos tres
+(que ya tenemos resueltos): bono, futuro, acciones
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="producto" type="tipoProducto"/>
+    <xs:complexType name="tipoProducto">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:choice>
+                    <xs:element name="bono"     type="tipoBono"     />
+                    <xs:element name="futuro"   type="tipoFuturo"   />
+                    <xs:element name="acciones" type="tipoAcciones" />
+                </xs:choice>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Esto está copiado y pegado del bono resuelto antes -->
+    <xs:complexType name="tipoBono">
+        <xs:sequence>
+            <xs:element name="valoractual" type="tipoValorActual"/>
+            <xs:element name="beneficio"   type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--Este tipo lo hemos cogido de más arriba, es un copy-paste-->
+    <xs:complexType name="tipoValorActual">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="moneda" type="tipoMoneda" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dolares"/>
+            <xs:enumeration value="euros"/>
+            <xs:enumeration value="yenes"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Esto está copiado y pegado del futuro resuelto antes -->
+    <xs:complexType name="tipoFuturo">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="elemento"  type="tipoElemento"/>
+                    <xs:element name="beneficio" type="xs:float" />
+                </xs:sequence>        
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoElemento">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idioma" 
+                              type="xs:string"
+                              use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Esto está copiado y pegado del "acciones" resuelto antes -->
+    <xs:complexType name="tipoAcciones">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="empresa"   type="tipoEmpresa"/>
+                    <xs:element name="beneficio" type="xs:float"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoEmpresa">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="pais" type="tipoPais" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoPais">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="usa"/>
+            <xs:enumeration value="alemania"/>
+            <xs:enumeration value="japon"/>
+            <xs:enumeration value="espana"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+
+
+Finalmente, podemos construir el elemento "productosfinancieros"
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="productosfinancieros" type="tipoProductosFinancieros"/>
+    <xs:complexType name="tipoProductosFinancieros">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="producto" 
+                                type="tipoProducto"
+                                maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Esto es un copia y pega del tipo producto resuelto antes -->
+    <xs:complexType name="tipoProducto">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:choice>
+                    <xs:element name="bono"     type="tipoBono"     />
+                    <xs:element name="futuro"   type="tipoFuturo"   />
+                    <xs:element name="acciones" type="tipoAcciones" />
+                </xs:choice>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Esto está copiado y pegado del bono resuelto antes -->
+    <xs:complexType name="tipoBono">
+        <xs:sequence>
+            <xs:element name="valoractual" type="tipoValorActual"/>
+            <xs:element name="beneficio"   type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--Este tipo lo hemos cogido de más arriba, es un copy-paste-->
+    <xs:complexType name="tipoValorActual">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="moneda" type="tipoMoneda" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dolares"/>
+            <xs:enumeration value="euros"/>
+            <xs:enumeration value="yenes"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Esto está copiado y pegado del futuro resuelto antes -->
+    <xs:complexType name="tipoFuturo">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="elemento"  type="tipoElemento"/>
+                    <xs:element name="beneficio" type="xs:float" />
+                </xs:sequence>        
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoElemento">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idioma" 
+                              type="xs:string"
+                              use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Esto está copiado y pegado del "acciones" resuelto antes -->
+    <xs:complexType name="tipoAcciones">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="empresa"   type="tipoEmpresa"/>
+                    <xs:element name="beneficio" type="xs:float"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoEmpresa">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="pais" type="tipoPais" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoPais">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="usa"/>
+            <xs:enumeration value="alemania"/>
+            <xs:enumeration value="japon"/>
+            <xs:enumeration value="espana"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
