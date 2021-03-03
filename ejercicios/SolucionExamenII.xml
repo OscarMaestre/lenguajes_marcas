@@ -1,0 +1,57 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="inventario" type="tipoInventario"/>
+    <xs:complexType name="tipoInventario">
+        <xs:sequence>
+            <xs:element name="objeto" 
+                        type="tipoObjeto" maxOccurs="unbounded"/>
+        </xs:sequence>        
+    </xs:complexType> <!--Fin del tipoInventario-->
+    <xs:complexType name="tipoObjeto">
+        <xs:choice>
+            <xs:element name="mesa" type="tipoMesa"/>
+            <xs:element name="ordenador" type="tipoOrdenador"/>
+        </xs:choice>
+        <xs:attribute name="codigo" type="tipoCodigo"/>
+    </xs:complexType>
+    <xs:complexType name="tipoMesa">
+        <xs:sequence>
+            <xs:element name="tipo" type="xs:string" minOccurs="0"/>
+            <xs:element name="localizacion" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="tipoCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{2}[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipoOrdenador">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="procesador" 
+                                type="tipoProcesador" 
+                                minOccurs="0"/>
+                    <xs:element name="memoria"
+                                type="tipoMemoria"
+                                minOccurs="0"/>
+                    <xs:element name="discoduro" type="xs:nonNegativeInteger"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="tipoProcesador">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="fabricante" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="tipoMemoria">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="unidad" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
