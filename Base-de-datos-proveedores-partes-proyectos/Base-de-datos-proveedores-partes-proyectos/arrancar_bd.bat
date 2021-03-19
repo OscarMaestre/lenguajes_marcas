@@ -1,0 +1,1 @@
+sqlite3 proveedores.sqlite3

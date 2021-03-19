@@ -1,0 +1,65 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="portes" type="tipoPortes"/>
+    <xs:complexType name="tipoPortes">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="recepcion"
+                        type="tipoRecepcion"/>
+            <xs:element name="entrega"
+                        type="tipoEntrega"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="tipoRecepcion">
+        <xs:sequence>
+            <xs:element name="producto" type="xs:string"/>
+            <xs:element name="cantidad" type="tipoCantidad"/>
+            <xs:element name="codigoreceptor"
+                        type="tipoCodigoReceptor"
+                        minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="tipoCantidad">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0.01"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoCodigoReceptor">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}-[A-Za-z]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipoEntrega">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="transportista"
+                                type="tipoTransportista"/>
+                    <xs:element name="distancia"
+                                type="tipoDistancia"/>
+                </xs:sequence>
+                <xs:attribute name="receptor" 
+                              type="xs:string"
+                              use="required"/>
+                <xs:attribute name="coste"    
+                              type="xs:nonNegativeInteger"
+                              use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="tipoDistancia">
+        <xs:simpleContent>
+            <xs:extension base="xs:nonNegativeInteger">
+                <xs:attribute name="unidad" 
+                              type="xs:string"
+                              use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoTransportista">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="T1"/>
+            <xs:enumeration value="T2"/>
+            <xs:enumeration value="T3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
