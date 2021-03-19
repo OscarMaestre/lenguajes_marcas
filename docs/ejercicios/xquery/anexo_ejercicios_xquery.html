@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Anexo: Ejercicios de XQuery &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
   
@@ -16,10 +16,7 @@
 
   
   
-
   
-  
-
   
 
   
@@ -39,8 +36,7 @@
 
     
     <link rel="index" title="Índice" href="../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="prev" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" /> 
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -54,7 +50,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Apuntes de Lenguajes de Marcas
+            <a href="../../index.html" class="icon icon-home" alt="Inicio de Documentación"> Apuntes de Lenguajes de Marcas
           
 
           
@@ -89,7 +85,7 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
@@ -100,34 +96,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: Ejercicios de XQuery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudad-de-los-proveedores">Consulta: ciudad de los proveedores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-filas-de-la-tabla-partes">Consulta: filas de la tabla partes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-con-join-s">Consulta con join’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-0-analisis">Paso 0: análisis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-1-hacemos-el-cruce">Paso 1: hacemos el cruce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-2-anadir-condiciones">Paso 2: añadir condiciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudades-iguales">Consulta: ciudades iguales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-partes-con-colores-iguales">Consulta: partes con colores iguales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-partes-rojas">Consulta: media de partes rojas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#paso-1-cruce-de-tablas">Paso 1: cruce de tablas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paso-2-anadir-condicion-de-filtrado">Paso 2: añadir condicion de filtrado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paso-3-calcular-la-media">Paso 3: calcular la media</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comprobacion">Comprobación</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-individual-de-partes-rojas">Consulta: media individual de partes rojas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -168,8 +136,6 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -181,7 +147,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/ejercicios/xquery/anexo_ejercicios_xquery.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
           
         
@@ -910,28 +876,28 @@ nombres de parte. Obsérvese que concatenamos las siguientes cosas:</p>
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../xpath/anexo_ejercicios_xpath.html" class="btn btn-neutral float-left" title="Anexo: Ejercicios de XPath" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Derechos de autor 2016, Oscar Gomez.
+        
+        &copy; Copyright 2016, Oscar Gomez
 
     </p>
   </div>
     
     
     
-    Construido con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    Construido con <a href="http://sphinx-doc.org/">Sphinx</a> usando un
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">tema</a>
     
     proporcionado por <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 

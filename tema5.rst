@@ -3312,8 +3312,6 @@ Un distribuidor de alimentación necesita un fichero XML que almacene la informa
 A continuación se muestra un fichero de ejemplo
 
 
-.. WARNING::
-   Por ahora NO SE DARÁ LA SOLUCIÓN DE ESTE EJERCICIO
 
 .. code-block:: xml
     
@@ -3337,3 +3335,7 @@ A continuación se muestra un fichero de ejemplo
 
 
 
+Una posible solución sería esta:
+
+.. literalinclude:: ejercicios/SolucionExamenIII.xml
+   :language: xml
