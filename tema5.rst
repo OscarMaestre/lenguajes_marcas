@@ -3100,8 +3100,8 @@ Y ya solo queda indicar que un inventario es una lista de objetos (pondremos el 
 
 
 
-Ejercicio tipo examen
-===============================
+Ejercicio XML Schemas tipo examen (I)
+=======================================
 
 Se necesita crear un esquema que controle la correcta sintaxis de ficheros con este estilo:
 
@@ -3255,8 +3255,8 @@ Una posible solución sería esta:
         </xsd:simpleType>
     </xsd:schema>
 
-Ejercicio tipo examen (II)
-===============================
+Ejercicio XML Schemas tipo examen (II)
+===========================================
 Crear una DTD que permita validar un fichero como el siguiente:
 
 .. code-block:: xml
@@ -3296,7 +3296,7 @@ Una posible solución sería esta:
    :language: xml
 
 
-Ejercicio tipo examen (III)
+Ejercicio XML Schemas tipo examen (III)
 =======================================
 Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:
 
@@ -3339,3 +3339,175 @@ Una posible solución sería esta:
 
 .. literalinclude:: ejercicios/SolucionExamenIII.xml
    :language: xml
+
+Ejercicio XML Schemas tipo examen (IV)
+========================================
+
+Se propone el siguiente archivo de datos para una biblioteca:
+
+.. code-block:: xml
+
+    <!--Dentro de inventario hay uno o muchos libros-->
+    <inventario>
+        <!--Dentro de libro, SIEMPRE hay un elemento
+            titulo y un elemento autor-->
+        <libro>
+            <!--Todos los titulos tienen un atributo idioma-->
+            <titulo idioma="ES">Don Quijote de la Mancha</titulo>
+            <autor>Miguel de Cervantes</autor>
+        </libro>
+        <libro>
+            <titulo idioma="EN">Hamlet</titulo>
+            <autor>William Shakespeare</autor>
+        </libro>
+    </inventario>
+
+Se desea un XML Schema que pueda hacer cumplir estas reglas. Una posible solución sería esta.
+
+.. code-block:: html
+
+    <!--Solución-->
+
+    <xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="inventario"
+                type="tipoInventario"/>
+    <xsd:complexType name="tipoInventario">
+    <xsd:complexContent>
+    <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+        <xsd:element name="libro"
+                    type="tipoLibro"
+                    minOccurs="1"
+                    maxOccurs="unbounded"/>
+        </xsd:sequence>       
+    </xsd:restriction>
+    </xsd:complexContent>    
+    </xsd:complexType>             
+    <xsd:complexType name="tipoLibro">
+    <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+            <xsd:element name="titulo"
+                    type="tipoTitulo"/>
+            <xsd:element name="autor"
+                    type="xsd:string"/>
+        </xsd:sequence>        
+        </xsd:restriction>
+    </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoTitulo">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="idioma"
+                        type="xsd:string"
+                        use="required"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+    </xsd:schema>
+
+Ejercicio XML Schemas tipo examen (IV)
+========================================
+
+Se propone el siguiente fichero para el inventario de una empresa.
+
+.. code-block:: xml
+
+    <!--Dentro de listaarticulos hay entre 2 y 6 articulos-->
+    <listaarticulos>
+        <!--Todo articulo lleva un código, a veces una descripción
+        y siempre un peso-->
+        <articulo>
+            <!--El código siempre es 3 cifras y dos minúsculas-->
+            <codigo>719cf</codigo>
+            <!--La descripción siempre lleva un atributo
+                idioma que solo puede ser ES, EN o FR-->
+            <descripcion idioma="ES">Libro electrónico</descripcion>
+            <!--El peso siempre está entre 50 y 1500-->
+            <peso>640</peso>
+        </articulo>
+        <articulo>
+            <codigo>904ps</codigo>
+            <peso>1499</peso>
+        </articulo>
+
+    </listaarticulos>
+
+Una posible solución sería esta:
+
+.. code-block:: xml
+
+    <xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--Recordad que este elemento
+        lo ponemos siempre con "autocierre"
+        por brevedad-->
+    <xsd:element name="listaarticulos"
+                type="tipoListaArticulos"/>
+    <!--Esto explica como funciona el elemento
+        "listaarticulos"-->
+    <xsd:complexType name="tipoListaArticulos">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="articulo"
+                        type="tipoArticulo"
+                        minOccurs="2"
+                        maxOccurs="7"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <!--Esto explica como funciona
+        la etiqueta "articulo"-->
+    <xsd:complexType name="tipoArticulo">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="codigo"
+                        type="tipoCodigo"/>
+                    <xsd:element name="descripcion"
+                        type="tipoDescripcion"
+                        minOccurs="0"/>
+                    <xsd:element name="peso"
+                        type="tipoPeso"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <!--Esto explica como funciona la
+        etiqueta "codigo"-->
+    <xsd:simpleType name="tipoCodigo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{3}[a-z]{2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--Desarrollamos el funcionamiento de la
+        etiqueta "descripcion"-->
+    <xsd:complexType name="tipoDescripcion">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="idioma"
+                        type="tipoIdioma"
+                        use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <!--Esto desarrolla el idioma de la descripción-->
+    <xsd:simpleType name="tipoIdioma">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ES"/>
+            <xsd:enumeration value="FR"/>
+            <xsd:enumeration value="EN"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoPeso">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="50"/>
+            <xsd:maxInclusive value="1500"/>
+        </xsd:restriction>      
+    </xsd:simpleType>
+    </xsd:schema>
