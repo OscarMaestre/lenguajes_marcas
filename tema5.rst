@@ -3408,7 +3408,7 @@ Se desea un XML Schema que pueda hacer cumplir estas reglas. Una posible soluci�
     </xsd:complexType>
     </xsd:schema>
 
-Ejercicio XML Schemas tipo examen (IV)
+Ejercicio XML Schemas tipo examen (V)
 ========================================
 
 Se propone el siguiente fichero para el inventario de una empresa.
@@ -3511,3 +3511,45 @@ Una posible solución sería esta:
         </xsd:restriction>      
     </xsd:simpleType>
     </xsd:schema>
+
+
+Ejercicio XML Schemas tipo examen (V)
+========================================
+
+Un puerto necesita controlar las entradas y salidas de los muelles y para ello va a usar un fichero XML con unas reglas como estas.
+
+.. code-block:: xml
+
+    <!--El elemento raíz es movimientos y siempre lleva un atributo
+        fecha-->
+    <movimientos fecha="2022-03-01">
+        <!--Dentro de movimiento hay infinitos elementos "entrada" o
+            "salida" que pueden repetirse y/o ir en cualquier orden-->
+        <entrada>
+            <!--El codigo de barco siempre lleva un atributo "país"
+                que contiene cadenas. El codigo de barco siempre es
+                una B seguida un número de entre 4 y 6 cifras-->
+            <codigobarco país="Panamá">B0143</codigobarco>
+            <!--Siempre hay un elemento origen que acepta cadenas-->
+            <origen>Atenas</origen>
+            <!--Puede haber 0 o muchos elementos "pasa_por" y que
+            lleva dentro cadenas-->
+            <pasa_por>Algeciras</pasa_por>
+            <pasa_por>Oporto</pasa_por>
+            <!--Siempre hay un destino que lleva dentro cadenas-->
+            <destino>Amberes</destino>
+        </entrada>
+        <!--La salida siempre lleva un codigo que puede ser "01",
+            "49" o "DESC"-->
+        <salida codigo="01">
+            <codigobarco>B0143</codigobarco>
+            <!--Puede llevar o no un elemento VACÍO llamado
+                "tasaspagadas"-->
+            <tasaspagadas/>
+        </salida>
+    </movimientos>
+
+
+Una posible solución sería esta:
+
+.. code-block:: xml
