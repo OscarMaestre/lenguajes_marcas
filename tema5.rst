@@ -3553,3 +3553,84 @@ Un puerto necesita controlar las entradas y salidas de los muelles y para ello v
 Una posible solución sería esta:
 
 .. code-block:: xml
+
+    <xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:element name="movimientos" type="tipoMovimientos"/>
+    <xsd:complexType name="tipoMovimientos">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="entrada"
+                                type="tipoEntrada"/>
+                    <xsd:element name="salida"
+                                type="tipoSalida"/>
+                </xsd:choice>
+                <xsd:attribute name="fecha" type="xsd:date"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="tipoSalida">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="codigobarco"
+                                type="tipoCodigoBarco"/>
+                    <xsd:element name="tasaspagadas"
+                                type="tipoVacio"/>
+                </xsd:sequence>
+                <xsd:attribute name="codigo" type="tipoCodigo"
+                                use="required"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="tipoCodigo">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="01"/>
+            <xsd:enumeration value="49"/>
+            <xsd:enumeration value="DESC"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoVacio">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="tipoEntrada">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="codigobarco"
+                                    type="tipoCodigoBarco"/>
+                    <xsd:element name="origen"  type="xsd:string"/>
+                    <xsd:element name="pasa_por" 
+                                    type="xsd:string"
+                                    minOccurs="0" 
+                                    maxOccurs="unbounded"/>
+                    <xsd:element name="destino"  type="xsd:string"/>                    
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <!-- Explicamos como es la cadena B1040 -->
+    <xsd:simpleType name="tipoCadenaBarco">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="B[0-9]{4,6}"></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!--Y ahora heredamos de ella y le añadimos el atributo-->
+    <xsd:complexType name="tipoCodigoBarco">
+        <xsd:simpleContent>
+            <xsd:extension base="tipoCadenaBarco">
+                <xsd:attribute name="pais" type="xsd:string"
+                                use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    </xsd:schema>
