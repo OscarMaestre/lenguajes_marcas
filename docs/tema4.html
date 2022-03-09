@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -203,6 +203,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tema8.html">Sistemas de gestión de información</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
 </ul>
 
             
@@ -296,7 +302,7 @@
 <p>Javascript se inserta en HTML con la etiqueta <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. Esta etiqueta puede ir en cualquier sitio del HTML, dentro de <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> o dentro de <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code>.</p>
 <p>Un programa muy simple sería este:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">let</span> <span class="nx">una_variable</span>
-<span class="nx">una_variable</span><span class="o">=</span><span class="mi">42</span>
+<span class="nx">una_variable</span><span class="o">=</span><span class="mf">42</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">una_variable</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -317,15 +323,15 @@
 <p>En Javascript los arrays pueden almacenar elementos de distinto tipo. Al crearlos podemos indicar el tamaño o no, pero no habrá problemas si queremos almacenar más elementos de los previstos.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Una forma de crear un array*/</span>
 <span class="nx">vector_nombres</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
-<span class="nx">vector_nombres</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Juan Perez&quot;</span>
-<span class="nx">vector_nombres</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Pedro Diaz&quot;</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;El primer nombre es:&quot;</span><span class="o">+</span><span class="nx">vector_nombres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nx">vector_nombres</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Juan Perez&quot;</span>
+<span class="nx">vector_nombres</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Pedro Diaz&quot;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;El primer nombre es:&quot;</span><span class="o">+</span><span class="nx">vector_nombres</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
 
 <span class="cm">/* Otra forma de crearlos*/</span>
-<span class="nx">vector_numeros</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nx">vector_numeros</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">23</span>
-<span class="nx">vector_numeros</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=-</span><span class="mf">45.23</span>
-<span class="nx">vector_numeros</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">45</span><span class="nx">e2</span>
+<span class="nx">vector_numeros</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+<span class="nx">vector_numeros</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">=</span><span class="mf">23</span>
+<span class="nx">vector_numeros</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">=-</span><span class="mf">45.23</span>
+<span class="nx">vector_numeros</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="o">=</span><span class="mf">45e2</span>
 </pre></div>
 </div>
 </div>
@@ -336,7 +342,7 @@
 <div class="section" id="bucles-for-estilo-clasico">
 <h4>Bucles for estilo clásico<a class="headerlink" href="#bucles-for-estilo-clasico" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>En estos bucles hay que poner la inicialización, la condición de final y la actualización:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot; está el número &quot;</span> <span class="o">+</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
@@ -349,28 +355,28 @@
 <h4>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Crear un vector de 6 posiciones y rellenarlo con estos números: 9.98, 7.86, 4.53, 8.91, 5.76, 2.31.</p>
 <p>Ordenar el vector y mostrar el contenido del vector ordenado por pantalla.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">v</span><span class="o">=</span><span class="k">new</span> <span class="n">Array</span><span class="o">()</span>
-<span class="n">v</span><span class="o">=[</span><span class="mf">9.98</span><span class="o">,</span> <span class="mf">7.86</span><span class="o">,</span> <span class="mf">4.53</span><span class="o">,</span>
-   <span class="mf">8.91</span><span class="o">,</span> <span class="mf">5.76</span><span class="o">,</span> <span class="mf">2.31</span><span class="o">]</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="n">v</span><span class="o">=</span><span class="k">new</span> <span class="n">Array</span><span class="p">()</span>
+<span class="n">v</span><span class="o">=[</span><span class="mf">9.98</span><span class="p">,</span> <span class="mf">7.86</span><span class="p">,</span> <span class="mf">4.53</span><span class="p">,</span>
+   <span class="mf">8.91</span><span class="p">,</span> <span class="mf">5.76</span><span class="p">,</span> <span class="mf">2.31</span><span class="o">]</span>
 
 <span class="cm">/* Vamos cogiendo cada elemento...*/</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">var</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
     <span class="cm">/* Y se compara con</span>
 <span class="cm">     * todos los demas*/</span>
-    <span class="k">for</span> <span class="o">(</span><span class="n">var</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">[</span><span class="n">j</span><span class="o">]&gt;</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">[</span><span class="n">j</span><span class="o">]&gt;</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">aux</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]</span>
             <span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">v</span><span class="o">[</span><span class="n">j</span><span class="o">]</span>
             <span class="n">v</span><span class="o">[</span><span class="n">j</span><span class="o">]=</span><span class="n">aux</span>
-        <span class="o">}</span> <span class="cm">/* Fin del if*/</span>
-    <span class="o">}</span> <span class="cm">/* Fin del for interno*/</span>
-<span class="o">}</span> <span class="cm">/* fin del for externo*/</span>
+        <span class="p">}</span> <span class="cm">/* Fin del if*/</span>
+    <span class="p">}</span> <span class="cm">/* Fin del for interno*/</span>
+<span class="p">}</span> <span class="cm">/* fin del for externo*/</span>
 
 
 <span class="cm">/* Se imprime el contenido*/</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">var</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-    <span class="n">alert</span> <span class="o">(</span><span class="s">&quot;Pos &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span> <span class="s">&quot;:&quot;</span><span class="o">+</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">alert</span> <span class="p">(</span><span class="s">&quot;Pos &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span> <span class="s">&quot;:&quot;</span><span class="o">+</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -389,7 +395,7 @@
 <div class="section" id="bucles-while">
 <h3>Bucles while<a class="headerlink" href="#bucles-while" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los bucles <code class="docutils literal notranslate"><span class="pre">while</span></code> funcionan igual que en Java</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">posicion</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">posicion</span><span class="o">=</span><span class="mf">0</span>
     <span class="k">while</span> <span class="p">(</span><span class="nx">posicion</span><span class="o">&lt;</span><span class="nx">vector_numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
                     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">)</span>
                     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;En la posición &quot;</span><span class="o">+</span><span class="nx">posicion</span><span class="p">)</span>
@@ -403,7 +409,7 @@
 <div class="section" id="ejercicio-media-aritmetica">
 <h2>Ejercicio: media aritmética<a class="headerlink" href="#ejercicio-media-aritmetica" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crear un programa que calcule la media aritmética del vector de números.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mf">0</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">){</span>
         <span class="nx">suma</span><span class="o">=</span><span class="nx">suma</span><span class="o">+</span><span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
 <span class="p">}</span>
@@ -416,7 +422,7 @@
 <h2>Ejercicio: desviación media<a class="headerlink" href="#ejercicio-desviacion-media" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crear un programa que calcule la desviación media del vector de números.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Para calcular la desviación media*/</span>
-<span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
+<span class="nx">suma</span><span class="o">=</span><span class="mf">0</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_numeros</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">desviacion</span><span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span> <span class="p">(</span> <span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">-</span> <span class="nx">media</span> <span class="p">)</span>
     <span class="nx">suma</span> <span class="o">=</span> <span class="nx">suma</span> <span class="o">+</span> <span class="nx">desviacion</span>
@@ -430,17 +436,17 @@
 <div class="section" id="ejercicio-la-mediana">
 <h2>Ejercicio: la mediana<a class="headerlink" href="#ejercicio-la-mediana" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Calcular la mediana del vector</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">var</span> <span class="n">pos1</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">var</span> <span class="n">pos2</span><span class="o">=</span><span class="n">pos1</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">var</span> <span class="n">elem1</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos1</span><span class="o">]</span>
-    <span class="n">var</span> <span class="n">elem2</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos2</span><span class="o">]</span>
-    <span class="n">var</span> <span class="n">mediana</span><span class="o">=(</span><span class="n">elem1</span><span class="o">+</span><span class="n">elem2</span><span class="o">)/</span><span class="mi">2</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">var</span> <span class="n">pos_central</span><span class="o">=(</span><span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">)/</span><span class="mi">2</span>
-    <span class="n">var</span> <span class="n">mediana</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos_central</span><span class="o">]</span>
-<span class="o">}</span>
-<span class="n">document</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;La mediana es:&quot;</span><span class="o">+</span><span class="n">mediana</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="n">pos1</span><span class="o">=</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span>
+    <span class="kd">var</span> <span class="n">pos2</span><span class="o">=</span><span class="n">pos1</span><span class="o">-</span><span class="mi">1</span>
+    <span class="kd">var</span> <span class="n">elem1</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos1</span><span class="o">]</span>
+    <span class="kd">var</span> <span class="n">elem2</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos2</span><span class="o">]</span>
+    <span class="kd">var</span> <span class="n">mediana</span><span class="o">=</span><span class="p">(</span><span class="n">elem1</span><span class="o">+</span><span class="n">elem2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="n">pos_central</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="kd">var</span> <span class="n">mediana</span><span class="o">=</span><span class="n">v</span><span class="o">[</span><span class="n">pos_central</span><span class="o">]</span>
+<span class="p">}</span>
+<span class="n">document</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;La mediana es:&quot;</span><span class="o">+</span><span class="n">mediana</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -451,18 +457,18 @@
 <span class="cm"> * nos devuelve la media de sus valores*/</span>
 
 <span class="kd">function</span> <span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
+    <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mf">0</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_valores</span><span class="p">){</span>
         <span class="nx">suma</span> <span class="o">=</span> <span class="nx">suma</span> <span class="o">+</span> <span class="nx">vector_valores</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">suma</span> <span class="o">/</span> <span class="nx">vector_valores</span><span class="p">.</span><span class="nx">length</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">vector</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">5</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">8</span>
+<span class="kd">var</span> <span class="nx">vector</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">4</span><span class="p">)</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">=</span><span class="mf">5</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">=</span><span class="mf">2</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="o">=</span><span class="mf">7</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span><span class="o">=</span><span class="mf">8</span>
 
 <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">vector</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;La media es:&quot;</span><span class="o">+</span><span class="nx">media</span><span class="p">)</span>
@@ -492,7 +498,7 @@
 <span class="cm">    * un vector de valores numericos*/</span>
 <span class="kd">function</span> <span class="nx">calcularDesviacionMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
+    <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mf">0</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_valores</span><span class="p">){</span>
         <span class="nx">suma</span><span class="o">=</span> <span class="nx">suma</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span> <span class="p">(</span>  <span class="nx">vector_valores</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">-</span> <span class="nx">media</span>  <span class="p">)</span>
     <span class="p">}</span>
@@ -507,7 +513,7 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/* Este vector nos dice cuantas veces aparece un número</span>
 <span class="cm"> * en un vector*/</span>
 <span class="kd">function</span> <span class="nx">calcularFrecuencia</span><span class="p">(</span><span class="nx">numero</span><span class="p">,</span> <span class="nx">vector</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">num_veces</span><span class="o">=</span><span class="mi">0</span>
+    <span class="kd">var</span> <span class="nx">num_veces</span><span class="o">=</span><span class="mf">0</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">vector</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span><span class="o">==</span><span class="nx">numero</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">num_veces</span><span class="o">++</span>
@@ -519,8 +525,8 @@
 <span class="cm">/* Dado un vector de números se nos devuelve la posición</span>
 <span class="cm"> * del número mayor*/</span>
 <span class="kd">function</span> <span class="nx">obtenerPosMayor</span><span class="p">(</span><span class="nx">vector_valores</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">posMayor</span><span class="o">=</span><span class="mi">0</span>
-    <span class="kd">var</span> <span class="nx">numMayor</span><span class="o">=</span><span class="nx">vector_valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="kd">var</span> <span class="nx">posMayor</span><span class="o">=</span><span class="mf">0</span>
+    <span class="kd">var</span> <span class="nx">numMayor</span><span class="o">=</span><span class="nx">vector_valores</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_valores</span><span class="p">){</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">vector_valores</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span><span class="o">&gt;</span><span class="nx">numMayor</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">numMayor</span><span class="o">=</span><span class="nx">vector_valores</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
@@ -540,11 +546,11 @@
     <span class="k">return</span> <span class="nx">vector_valores</span><span class="p">[</span><span class="nx">posModa</span><span class="p">]</span>
 
 <span class="p">}</span>
-<span class="kd">var</span> <span class="nx">vector</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span>
-<span class="nx">vector</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">5</span>
+<span class="kd">var</span> <span class="nx">vector</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">4</span><span class="p">)</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">=</span><span class="mf">7</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">=</span><span class="mf">7</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="o">=</span><span class="mf">7</span>
+<span class="nx">vector</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span><span class="o">=</span><span class="mf">5</span>
     <span class="kd">var</span> <span class="nx">moda</span><span class="o">=</span><span class="nx">obtenerModa</span><span class="p">(</span><span class="nx">vector</span><span class="p">)</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;br/&gt;La moda es:&quot;</span><span class="o">+</span><span class="nx">moda</span><span class="p">)</span>
 </pre></div>
@@ -557,10 +563,10 @@
 <p>En primer lugar, es posible crear objetos sin crear clases.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
-    <span class="nx">edad</span><span class="o">:</span><span class="mi">27</span><span class="p">,</span>
+    <span class="nx">edad</span><span class="o">:</span><span class="mf">27</span><span class="p">,</span>
     <span class="nx">fijo</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
     <span class="nx">estaJubilado</span><span class="o">:</span><span class="kd">function</span> <span class="p">(){</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mi">65</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mf">65</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">true</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">false</span>
@@ -584,20 +590,20 @@
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">empleado</span><span class="o">=</span><span class="p">{</span>
     <span class="nx">nombre</span><span class="o">:</span><span class="s2">&quot;Pepe Perez&quot;</span><span class="p">,</span>
-    <span class="nx">edad</span><span class="o">:</span><span class="mi">27</span><span class="p">,</span>
+    <span class="nx">edad</span><span class="o">:</span><span class="mf">27</span><span class="p">,</span>
     <span class="nx">fijo</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
     <span class="nx">estaJubilado</span><span class="o">:</span><span class="kd">function</span> <span class="p">(){</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mi">65</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mf">65</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">true</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">false</span>
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="nx">nivelExperiencia</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">)</span>  <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&lt;=</span><span class="mi">25</span><span class="p">)</span> <span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;</span><span class="mf">18</span><span class="p">)</span>  <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&lt;=</span><span class="mf">25</span><span class="p">)</span> <span class="p">){</span>
             <span class="k">return</span> <span class="s2">&quot;junior&quot;</span>
         <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;=</span><span class="mi">26</span><span class="p">)</span>  <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&lt;=</span><span class="mi">45</span><span class="p">)</span> <span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&gt;=</span><span class="mf">26</span><span class="p">)</span>  <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="o">&lt;=</span><span class="mf">45</span><span class="p">)</span> <span class="p">){</span>
             <span class="k">return</span> <span class="s2">&quot;asociado&quot;</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -616,8 +622,8 @@
         <span class="p">}</span>
         <span class="p">,</span> <span class="c1">//Importante: separar métodos y atributos con ,</span>
         <span class="nx">getMedia</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
-                <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mi">0</span>
-                <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="mi">0</span>
+                <span class="kd">var</span> <span class="nx">suma</span><span class="o">=</span><span class="mf">0</span>
+                <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="mf">0</span>
                 <span class="k">for</span> <span class="p">(</span><span class="nx">pos</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="nx">vector_numeros</span><span class="p">)</span> <span class="p">{</span>
                         <span class="nx">suma</span><span class="o">=</span><span class="nx">suma</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">vector_numeros</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
                 <span class="p">}</span>
@@ -635,10 +641,10 @@
 <span class="p">}</span>
 
 
-<span class="kd">var</span> <span class="nx">vector_prueba</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nx">vector_prueba</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">5</span>
-<span class="nx">vector_prueba</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">10</span>
-<span class="nx">vector_prueba</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">8</span>
+<span class="kd">var</span> <span class="nx">vector_prueba</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">3</span><span class="p">)</span>
+<span class="nx">vector_prueba</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">=</span><span class="mf">5</span>
+<span class="nx">vector_prueba</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">=</span><span class="mf">10</span>
+<span class="nx">vector_prueba</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="o">=</span><span class="mf">8</span>
 <span class="nx">gestor_vectores</span><span class="p">.</span><span class="nx">setDatos</span> <span class="p">(</span> <span class="nx">vector_prueba</span> <span class="p">)</span>
 <span class="kd">var</span> <span class="nx">media</span><span class="o">=</span><span class="nx">gestor_vectores</span><span class="p">.</span><span class="nx">getMedia</span><span class="p">()</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="s2">&quot;La media es:&quot;</span><span class="o">+</span><span class="nx">media</span><span class="p">)</span>
@@ -921,23 +927,23 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">medios_de_locomocion</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.medio&quot;</span><span class="p">)</span>
 <span class="nx">medios_de_locomocion</span><span class="p">.</span><span class="nx">click</span> <span class="p">(</span> <span class="nx">cuantas_pulsadas</span> <span class="p">)</span>
     <span class="kd">function</span> <span class="nx">cuantas_pulsadas</span><span class="p">(){</span>
-            <span class="kd">var</span> <span class="nx">cuantas_marcadas</span><span class="o">=</span><span class="mi">0</span>
+            <span class="kd">var</span> <span class="nx">cuantas_marcadas</span><span class="o">=</span><span class="mf">0</span>
             <span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#bus&quot;</span><span class="p">,</span> <span class="s2">&quot;#coche&quot;</span><span class="p">,</span> <span class="s2">&quot;#moto&quot;</span><span class="p">,</span> <span class="s2">&quot;#bici&quot;</span><span class="p">,</span> <span class="s2">&quot;#tren&quot;</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="p">(</span><span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_ids</span><span class="p">){</span>
                     <span class="kd">var</span> <span class="nx">objeto</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="nx">vector_ids</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="p">)</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                            <span class="nx">cuantas_marcadas</span><span class="o">=</span><span class="nx">cuantas_marcadas</span><span class="o">+</span><span class="mi">1</span>
+                            <span class="nx">cuantas_marcadas</span><span class="o">=</span><span class="nx">cuantas_marcadas</span><span class="o">+</span><span class="mf">1</span>
                     <span class="p">}</span>
             <span class="p">}</span>
 
-            <span class="k">if</span> <span class="p">((</span><span class="nx">cuantas_marcadas</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)){</span>
+            <span class="k">if</span> <span class="p">((</span><span class="nx">cuantas_marcadas</span><span class="o">&gt;=</span><span class="mf">0</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">&lt;=</span><span class="mf">2</span><span class="p">)){</span>
                     <span class="nx">alert</span> <span class="p">(</span><span class="s2">&quot;Poca variedad&quot;</span><span class="p">)</span>
             <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">==</span><span class="mf">3</span><span class="p">)</span> <span class="p">{</span>
                     <span class="nx">alert</span> <span class="p">(</span><span class="s2">&quot;Variedad media&quot;</span><span class="p">)</span>
             <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">&gt;=</span><span class="mi">4</span><span class="p">){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cuantas_marcadas</span><span class="o">&gt;=</span><span class="mf">4</span><span class="p">){</span>
                     <span class="nx">alert</span> <span class="p">(</span><span class="s2">&quot;Mucha variedad&quot;</span><span class="p">)</span>
             <span class="p">}</span>
     <span class="p">}</span>
@@ -990,15 +996,15 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">contar</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mi">0</span>
+        <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mf">0</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#coche&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span>
         <span class="p">{</span>
-                <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mi">1</span>
+                <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mf">1</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#moto&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span>
         <span class="p">{</span>
-                <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mi">1</span>
+                <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mf">1</span>
         <span class="p">}</span>
         <span class="kd">var</span> <span class="nx">mensaje</span><span class="o">=</span><span class="s2">&quot;Medios:&quot;</span><span class="o">+</span><span class="nx">contador</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#informe&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">)</span>
@@ -1018,7 +1024,7 @@
 <p>Variante 2: Con vectores</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 <span class="kd">function</span> <span class="nx">contar</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mi">0</span>
+        <span class="kd">var</span> <span class="nx">contador</span><span class="o">=</span><span class="mf">0</span>
         <span class="kd">var</span> <span class="nx">ids</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
         <span class="kd">var</span> <span class="nx">ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#coche&quot;</span><span class="p">,</span> <span class="s2">&quot;#moto&quot;</span><span class="p">,</span>
                          <span class="s2">&quot;#bus&quot;</span><span class="p">,</span> <span class="s2">&quot;#tren&quot;</span><span class="p">,</span>
@@ -1028,7 +1034,7 @@
                 <span class="kd">var</span> <span class="nx">medio</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">ids</span><span class="p">[</span><span class="nx">pos</span><span class="p">])</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">medio</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span>
                 <span class="p">{</span>
-                        <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mi">1</span>
+                        <span class="nx">contador</span><span class="o">=</span><span class="nx">contador</span><span class="o">+</span><span class="mf">1</span>
                 <span class="p">}</span>
         <span class="p">}</span>
         <span class="kd">var</span> <span class="nx">mensaje</span><span class="o">=</span><span class="s2">&quot;Medios:&quot;</span><span class="o">+</span><span class="nx">contador</span>
@@ -1091,30 +1097,30 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">main</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">calcular_precio</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span>
+        <span class="kd">var</span> <span class="nx">precio</span><span class="o">=</span><span class="mf">0</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#intel&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">250</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">250</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#amd&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">210</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">210</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#2gb&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">90</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">90</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#4gb&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">140</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">140</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#8gb&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">210</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">210</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bluray&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">190</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">190</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#aceleradora&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">430</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">430</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#monitor&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">185</span>
+                <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">185</span>
         <span class="p">}</span>
 
         <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#total&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">precio</span><span class="p">)</span>
@@ -1246,46 +1252,46 @@
     <span class="k">return</span> <span class="nx">error</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">hay_errores</span><span class="p">()){</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="cm">/* Si llegamos aquí es que</span>
 <span class="cm">    no hay errores y el precio se puede calcular*/</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">7000</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">7000</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">8200</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">8200</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1100&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">800</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">800</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;1800&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1900</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">1900</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;2300&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">2500</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">2500</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;normal&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">750</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">750</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">1580</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">1580</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="cm">/*Obsérvese que el precio</span>
 <span class="cm">    no ha cambiado dependiendo del color*/</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;aleron&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">190</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">190</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;radiocd&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">230</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">230</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;altavoces&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">320</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">320</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gps&quot;</span><span class="p">)){</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mi">520</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span><span class="o">+</span><span class="mf">520</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Su precio es:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1365,7 +1371,7 @@
 <h3>Javascript de GMaps<a class="headerlink" href="#javascript-de-gmaps" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">latitud</span><span class="o">=</span><span class="mf">38.59</span>
 <span class="kd">var</span> <span class="nx">longitud</span><span class="o">=-</span><span class="mf">3.55</span>
-<span class="kd">var</span> <span class="nx">mi_nivel_de_zoom</span><span class="o">=</span><span class="mi">8</span>
+<span class="kd">var</span> <span class="nx">mi_nivel_de_zoom</span><span class="o">=</span><span class="mf">8</span>
 <span class="kd">var</span> <span class="nx">obj_mapa</span>
 <span class="kd">function</span> <span class="nx">inicio</span><span class="p">(){</span>
         <span class="kd">var</span> <span class="nx">div_mapa</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mapa&quot;</span><span class="p">)</span>
@@ -1447,8 +1453,8 @@
 <p>Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configurados y avisar de que no se puede hacer eso. No se pueden usar <code class="docutils literal notranslate"><span class="pre">alerts</span></code></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;#berlina&quot;</span><span class="p">,</span> <span class="s2">&quot;#radiocd&quot;</span><span class="p">,</span> <span class="s2">&quot;#alerones&quot;</span><span class="p">,</span> <span class="s2">&quot;#llantas&quot;</span><span class="p">]</span>
-<span class="kd">var</span> <span class="nx">precios</span><span class="o">=</span><span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6800</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span>
-                <span class="mi">3700</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">precios</span><span class="o">=</span><span class="p">[</span><span class="mf">5000</span><span class="p">,</span> <span class="mf">6800</span><span class="p">,</span> <span class="mf">4500</span><span class="p">,</span>
+                <span class="mf">3700</span><span class="p">,</span> <span class="mf">180</span><span class="p">,</span> <span class="mf">220</span><span class="p">,</span> <span class="mf">200</span><span class="p">]</span>
 
 <span class="kd">function</span> <span class="nx">inicio</span><span class="p">(){</span>
 
@@ -1488,7 +1494,7 @@
         <span class="k">if</span> <span class="p">(</span><span class="nx">todo_bien</span><span class="o">!=</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span>
         <span class="p">}</span>
-        <span class="kd">var</span> <span class="nx">precioCoche</span><span class="o">=</span><span class="mi">0</span>
+        <span class="kd">var</span> <span class="nx">precioCoche</span><span class="o">=</span><span class="mf">0</span>
         <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">pos</span> <span class="k">in</span> <span class="nx">vector_ids</span><span class="p">){</span>
                 <span class="kd">var</span> <span class="nx">el_id</span><span class="o">=</span><span class="nx">vector_ids</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">el_id</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">))</span> <span class="p">{</span>
@@ -1589,8 +1595,8 @@
 
 <span class="kd">var</span> <span class="nx">vector_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#gasolina&quot;</span><span class="p">,</span> <span class="s2">&quot;#diesel&quot;</span><span class="p">,</span> <span class="s2">&quot;#monovolumen&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;#berlina&quot;</span><span class="p">,</span> <span class="s2">&quot;#radiocd&quot;</span><span class="p">,</span> <span class="s2">&quot;#alerones&quot;</span><span class="p">,</span> <span class="s2">&quot;#llantas&quot;</span><span class="p">]</span>
-<span class="kd">var</span> <span class="nx">precios</span><span class="o">=</span><span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6800</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span>
-                <span class="mi">3700</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">precios</span><span class="o">=</span><span class="p">[</span><span class="mf">5000</span><span class="p">,</span> <span class="mf">6800</span><span class="p">,</span> <span class="mf">4500</span><span class="p">,</span>
+                <span class="mf">3700</span><span class="p">,</span> <span class="mf">180</span><span class="p">,</span> <span class="mf">220</span><span class="p">,</span> <span class="mf">200</span><span class="p">]</span>
 
 <span class="kd">function</span> <span class="nx">inicio</span><span class="p">(){</span>
 
@@ -1674,35 +1680,35 @@
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-        <span class="kd">var</span> <span class="nx">preciototal</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">preciomodelo</span>  <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">preciomotor</span>   <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">precioextras</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciototal</span>   <span class="o">=</span><span class="mf">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomodelo</span>  <span class="o">=</span><span class="mf">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">preciomotor</span>   <span class="o">=</span><span class="mf">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">precioextras</span>  <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">))</span>
                 <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">){</span>
                 <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Debe marcar un modelo&quot;</span><span class="p">);</span>
                 <span class="k">return</span> <span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_a&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">7000</span><span class="p">;</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mf">7000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;modelo_b&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mi">9000</span><span class="p">;</span>
+                <span class="nx">preciomodelo</span><span class="o">=</span><span class="mf">9000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">2000</span><span class="p">;</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mf">2000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">)){</span>
-                <span class="nx">preciomotor</span><span class="o">=</span><span class="mi">4000</span><span class="p">;</span>
+                <span class="nx">preciomotor</span><span class="o">=</span><span class="mf">4000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;metalizada&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="mi">1000</span><span class="p">;</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="mf">1000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;sonido&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">500</span><span class="p">;</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mf">500</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;seguridad&quot;</span><span class="p">)){</span>
-                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mi">1000</span><span class="p">;</span>
+                <span class="nx">precioextras</span><span class="o">=</span><span class="nx">precioextras</span><span class="o">+</span><span class="mf">1000</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="nx">preciototal</span><span class="o">=</span><span class="nx">preciomodelo</span><span class="o">+</span><span class="nx">preciomotor</span><span class="o">+</span><span class="nx">precioextras</span><span class="p">;</span>
 
@@ -1793,26 +1799,26 @@
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
     <span class="kd">let</span> <span class="nx">salario_anual</span><span class="o">=</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;#salario&quot;</span><span class="p">);</span>    
-    <span class="kd">let</span> <span class="nx">impuestos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">impuestos</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
     
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">20000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">30000</span><span class="p">)</span> <span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mf">20000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mf">30000</span><span class="p">)</span> <span class="p">){</span>
         <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">;</span>
     <span class="p">}</span>
     
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">30001</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mi">50000</span><span class="p">)</span> <span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mf">30001</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&lt;=</span><span class="mf">50000</span><span class="p">)</span> <span class="p">){</span>
         <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mi">50001</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">salario_anual</span><span class="o">&gt;=</span><span class="mf">50001</span><span class="p">){</span>
         <span class="nx">impuestos</span><span class="o">=</span><span class="nx">salario_anual</span> <span class="o">*</span> <span class="mf">0.38</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#con_hijos&quot;</span><span class="p">)){</span>
-        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">180</span><span class="p">;</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mf">180</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#bonificacion_b1&quot;</span><span class="p">)){</span>
-        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">245</span><span class="p">;</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mf">245</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">isChecked</span><span class="p">(</span><span class="s2">&quot;#bonificacion_b2&quot;</span><span class="p">)){</span>
-        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mi">535</span><span class="p">;</span>
+        <span class="nx">impuestos</span> <span class="o">=</span> <span class="nx">impuestos</span> <span class="o">-</span> <span class="mf">535</span><span class="p">;</span>
     <span class="p">}</span>
     
     <span class="kd">let</span> <span class="nx">div_mensajes</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#mensajes&quot;</span><span class="p">);</span>
@@ -1866,28 +1872,28 @@
     
     <span class="nx">limpiar_errores</span><span class="p">();</span>
     
-    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
     
     <span class="kd">let</span> <span class="nx">objeto_gasolina</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;gasolina&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_gasolina</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">7000</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mf">7000</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kd">let</span> <span class="nx">objeto_diesel</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;diesel&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_diesel</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">8200</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mf">8200</span><span class="p">;</span>
     <span class="p">}</span>
     
     <span class="kd">let</span> <span class="nx">objeto_pot1100</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot1100&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot1100</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">800</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mf">800</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kd">let</span> <span class="nx">objeto_pot1800</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot1800&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot1800</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">1900</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mf">1900</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kd">let</span> <span class="nx">objeto_pot2300</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;pot2300&quot;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">objeto_pot2300</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mi">2500</span><span class="p">;</span>
+        <span class="nx">precio</span><span class="o">=</span><span class="nx">precio</span> <span class="o">+</span> <span class="mf">2500</span><span class="p">;</span>
     <span class="p">}</span>
     
     
@@ -1934,38 +1940,38 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 
 <span class="kd">function</span> <span class="nx">precio_mes_empresa_a</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
         <span class="c1">//Primero vemos si se pasa</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">1000</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mf">1000</span><span class="p">){</span>
                 <span class="c1">//Si no se pasa, el precio es 20</span>
-                <span class="k">return</span> <span class="mi">20</span><span class="p">;</span>
+                <span class="k">return</span> <span class="mf">20</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
 
         <span class="c1">//Calculamos cuantos minutos se pasa</span>
-        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mf">1000</span><span class="p">;</span>
         <span class="c1">//Y ese exceso es a 8 centimos/minutos</span>
         <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.08</span><span class="p">;</span>
         <span class="c1">//El precio de ese mes es</span>
         <span class="c1">//20 euros más lo que cueste el exceso</span>
-        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">20</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mf">20</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
         <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
         <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">precio_mes_empresa_b</span><span class="p">(</span><span class="nx">minutos</span><span class="p">){</span>
         <span class="c1">//Primero vemos si se pasa</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mi">500</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">minutos</span><span class="o">&lt;</span><span class="mf">500</span><span class="p">){</span>
                 <span class="c1">//Si no se pasa, el precio es 10</span>
-                <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="k">return</span> <span class="mf">10</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="c1">//Si llegamos a este punto, es porque se pasa</span>
 
         <span class="c1">//Calculamos cuantos minutos se pasa</span>
-        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mi">500</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">exceso</span><span class="o">=</span><span class="nx">minutos</span><span class="o">-</span><span class="mf">500</span><span class="p">;</span>
         <span class="c1">//Y ese exceso es a 12 centimos/minutos</span>
         <span class="kd">var</span> <span class="nx">precio_exceso</span><span class="o">=</span><span class="nx">exceso</span><span class="o">*</span><span class="mf">0.12</span><span class="p">;</span>
         <span class="c1">//El precio de ese mes es</span>
         <span class="c1">//10 euros más lo que cueste el exceso</span>
-        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mi">10</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">precio_mes</span><span class="o">=</span><span class="mf">10</span><span class="o">+</span><span class="nx">precio_exceso</span><span class="p">;</span>
         <span class="c1">//Devolvemos el calculo a quien lo pidiese</span>
         <span class="k">return</span> <span class="nx">precio_mes</span><span class="p">;</span>
 <span class="p">}</span>
@@ -2096,7 +2102,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
     <span class="kd">let</span> <span class="nx">num1</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span>
     <span class="kd">let</span> <span class="nx">num2</span><span class="o">=</span><span class="nx">sacar_numero</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span>
-    <span class="kd">let</span> <span class="nx">resultado</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">resultado</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">esta_checked</span><span class="p">(</span><span class="s2">&quot;suma&quot;</span><span class="p">)){</span>
         <span class="nx">resultado</span><span class="o">=</span><span class="nx">num1</span><span class="o">+</span><span class="nx">num2</span><span class="p">;</span>
     <span class="p">}</span>
@@ -2197,7 +2203,7 @@ Mes 3<span class="p">&lt;</span><span class="nt">input</span> <span class="na">t
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">calcular</span><span class="p">(){</span>
-    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">precio</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
 
     <span class="kd">let</span> <span class="nx">divresultado</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;resultado&quot;</span><span class="p">);</span>
     <span class="nx">divresultado</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;Precio:&quot;</span><span class="o">+</span><span class="nx">precio</span><span class="p">;</span>

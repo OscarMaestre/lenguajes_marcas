@@ -26,11 +26,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -188,9 +188,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-inventario">Ejercicio: inventario</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen">Ejercicio tipo examen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen-ii">Ejercicio tipo examen (II)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-tipo-examen-iii">Ejercicio tipo examen (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-xml-schemas-tipo-examen-i">Ejercicio XML Schemas tipo examen (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-xml-schemas-tipo-examen-ii">Ejercicio XML Schemas tipo examen (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-xml-schemas-tipo-examen-iii">Ejercicio XML Schemas tipo examen (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-xml-schemas-tipo-examen-iv">Ejercicio XML Schemas tipo examen (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-xml-schemas-tipo-examen-v">Ejercicio XML Schemas tipo examen (V)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Ejercicio XML Schemas tipo examen (V)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
@@ -1663,9 +1666,9 @@ Una posible solución sería:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">xsd:anyType</span></code>: es como la clase <code class="docutils literal notranslate"><span class="pre">Object</span></code> en Java. Será el tipo del cual heredaremos cuando no vayamos a usar ningún tipo especial como tipo padre.</p></li>
 </ul>
 <p>La figura siguiente (tomada de la web del W3C) ilustra todos los tipos así como sus relaciones de herencia:</p>
-<div class="figure align-center" id="id5" style="width: 50%">
+<div class="figure align-center" id="id6" style="width: 50%">
 <img alt="_images/tipos_xml_schema.png" src="_images/tipos_xml_schema.png" />
-<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="derivaciones">
@@ -1694,9 +1697,9 @@ Una posible solución sería:</p>
 </li>
 </ul>
 <p>El diagrama siguiente refleja como funciona la estructuración de tipos de los XML Schema.</p>
-<div class="figure align-center" id="id6" style="width: 50%">
+<div class="figure align-center" id="id7" style="width: 50%">
 <img alt="_images/Esquema-tipos.png" src="_images/Esquema-tipos.png" />
-<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-text">Tipos en los XML Schemas</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Así, por ejemplo un tipo simple que no lleve ninguna restricción se puede indicar con el campo <code class="docutils literal notranslate"><span class="pre">type</span></code> de un <code class="docutils literal notranslate"><span class="pre">element</span></code> como hacíamos antes:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
@@ -2967,8 +2970,8 @@ valide la estructura de tales ficheros:</p>
 </div>
 </div>
 </div>
-<div class="section" id="ejercicio-tipo-examen">
-<h2>Ejercicio tipo examen<a class="headerlink" href="#ejercicio-tipo-examen" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicio-xml-schemas-tipo-examen-i">
+<h2>Ejercicio XML Schemas tipo examen (I)<a class="headerlink" href="#ejercicio-xml-schemas-tipo-examen-i" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Se necesita crear un esquema que controle la correcta sintaxis de ficheros con este estilo:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;productosfinancieros&gt;</span>
     <span class="nt">&lt;producto&gt;</span>
@@ -3116,8 +3119,8 @@ valide la estructura de tales ficheros:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ejercicio-tipo-examen-ii">
-<h2>Ejercicio tipo examen (II)<a class="headerlink" href="#ejercicio-tipo-examen-ii" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicio-xml-schemas-tipo-examen-ii">
+<h2>Ejercicio XML Schemas tipo examen (II)<a class="headerlink" href="#ejercicio-xml-schemas-tipo-examen-ii" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Crear una DTD que permita validar un fichero como el siguiente:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
     <span class="nt">&lt;objeto</span> <span class="na">codigo=</span><span class="s">&quot;MM2809&quot;</span><span class="nt">&gt;</span>
@@ -3209,8 +3212,8 @@ valide la estructura de tales ficheros:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ejercicio-tipo-examen-iii">
-<h2>Ejercicio tipo examen (III)<a class="headerlink" href="#ejercicio-tipo-examen-iii" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicio-xml-schemas-tipo-examen-iii">
+<h2>Ejercicio XML Schemas tipo examen (III)<a class="headerlink" href="#ejercicio-xml-schemas-tipo-examen-iii" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Un distribuidor de alimentación necesita un fichero XML que almacene la información sobre pedidos recibidos y entregados que esté regido por un esquema XML que contemple las restricciones siguientes:</p>
 <ul class="simple">
 <li><p>El elemento raíz se llama <code class="docutils literal notranslate"><span class="pre">portes</span></code>.</p></li>
@@ -3306,6 +3309,208 @@ valide la estructura de tales ficheros:</p>
     <span class="nt">&lt;/xs:simpleType&gt;</span>
 
 <span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-xml-schemas-tipo-examen-iv">
+<h2>Ejercicio XML Schemas tipo examen (IV)<a class="headerlink" href="#ejercicio-xml-schemas-tipo-examen-iv" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se propone el siguiente archivo de datos para una biblioteca:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Dentro de inventario hay uno o muchos libros--&gt;</span>
+<span class="nt">&lt;inventario&gt;</span>
+    <span class="c">&lt;!--Dentro de libro, SIEMPRE hay un elemento</span>
+<span class="c">        titulo y un elemento autor--&gt;</span>
+    <span class="nt">&lt;libro&gt;</span>
+        <span class="c">&lt;!--Todos los titulos tienen un atributo idioma--&gt;</span>
+        <span class="nt">&lt;titulo</span> <span class="na">idioma=</span><span class="s">&quot;ES&quot;</span><span class="nt">&gt;</span>Don Quijote de la Mancha<span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;autor&gt;</span>Miguel de Cervantes<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/libro&gt;</span>
+    <span class="nt">&lt;libro&gt;</span>
+        <span class="nt">&lt;titulo</span> <span class="na">idioma=</span><span class="s">&quot;EN&quot;</span><span class="nt">&gt;</span>Hamlet<span class="nt">&lt;/titulo&gt;</span>
+        <span class="nt">&lt;autor&gt;</span>William Shakespeare<span class="nt">&lt;/autor&gt;</span>
+    <span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/inventario&gt;</span>
+</pre></div>
+</div>
+<p>Se desea un XML Schema que pueda hacer cumplir estas reglas. Una posible solución sería esta.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Solución--&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">xsd:schema</span>
+<span class="na">xmlns:xsd</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:element</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;inventario&quot;</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&quot;tipoInventario&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:complexType</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tipoInventario&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:complexContent</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:restriction</span> <span class="na">base</span><span class="o">=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">xsd:sequence</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">xsd:element</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;libro&quot;</span>
+                <span class="na">type</span><span class="o">=</span><span class="s">&quot;tipoLibro&quot;</span>
+                <span class="na">minOccurs</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+                <span class="na">maxOccurs</span><span class="o">=</span><span class="s">&quot;unbounded&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">xsd:sequence</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:restriction</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:complexContent</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:complexType</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:complexType</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tipoLibro&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:complexContent</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">xsd:restriction</span> <span class="na">base</span><span class="o">=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">xsd:sequence</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">xsd:element</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;titulo&quot;</span>
+                <span class="na">type</span><span class="o">=</span><span class="s">&quot;tipoTitulo&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">xsd:element</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;autor&quot;</span>
+                <span class="na">type</span><span class="o">=</span><span class="s">&quot;xsd:string&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">xsd:sequence</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">xsd:restriction</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:complexContent</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:complexType</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">xsd:complexType</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tipoTitulo&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">xsd:simpleContent</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">xsd:extension</span> <span class="na">base</span><span class="o">=</span><span class="s">&quot;xsd:string&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">xsd:attribute</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;idioma&quot;</span>
+                    <span class="na">type</span><span class="o">=</span><span class="s">&quot;xsd:string&quot;</span>
+                    <span class="na">use</span><span class="o">=</span><span class="s">&quot;required&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">xsd:extension</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:simpleContent</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:complexType</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">xsd:schema</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-xml-schemas-tipo-examen-v">
+<h2>Ejercicio XML Schemas tipo examen (V)<a class="headerlink" href="#ejercicio-xml-schemas-tipo-examen-v" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Se propone el siguiente fichero para el inventario de una empresa.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--Dentro de listaarticulos hay entre 2 y 6 articulos--&gt;</span>
+<span class="nt">&lt;listaarticulos&gt;</span>
+    <span class="c">&lt;!--Todo articulo lleva un código, a veces una descripción</span>
+<span class="c">    y siempre un peso--&gt;</span>
+    <span class="nt">&lt;articulo&gt;</span>
+        <span class="c">&lt;!--El código siempre es 3 cifras y dos minúsculas--&gt;</span>
+        <span class="nt">&lt;codigo&gt;</span>719cf<span class="nt">&lt;/codigo&gt;</span>
+        <span class="c">&lt;!--La descripción siempre lleva un atributo</span>
+<span class="c">            idioma que solo puede ser ES, EN o FR--&gt;</span>
+        <span class="nt">&lt;descripcion</span> <span class="na">idioma=</span><span class="s">&quot;ES&quot;</span><span class="nt">&gt;</span>Libro electrónico<span class="nt">&lt;/descripcion&gt;</span>
+        <span class="c">&lt;!--El peso siempre está entre 50 y 1500--&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>640<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/articulo&gt;</span>
+    <span class="nt">&lt;articulo&gt;</span>
+        <span class="nt">&lt;codigo&gt;</span>904ps<span class="nt">&lt;/codigo&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>1499<span class="nt">&lt;/peso&gt;</span>
+    <span class="nt">&lt;/articulo&gt;</span>
+
+<span class="nt">&lt;/listaarticulos&gt;</span>
+</pre></div>
+</div>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsd:schema</span>
+<span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!--Recordad que este elemento</span>
+<span class="c">    lo ponemos siempre con &quot;autocierre&quot;</span>
+<span class="c">    por brevedad--&gt;</span>
+<span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;listaarticulos&quot;</span>
+            <span class="na">type=</span><span class="s">&quot;tipoListaArticulos&quot;</span><span class="nt">/&gt;</span>
+<span class="c">&lt;!--Esto explica como funciona el elemento</span>
+<span class="c">    &quot;listaarticulos&quot;--&gt;</span>
+<span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoListaArticulos&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:complexContent&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:sequence&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;articulo&quot;</span>
+                    <span class="na">type=</span><span class="s">&quot;tipoArticulo&quot;</span>
+                    <span class="na">minOccurs=</span><span class="s">&quot;2&quot;</span>
+                    <span class="na">maxOccurs=</span><span class="s">&quot;7&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:complexContent&gt;</span>
+<span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="c">&lt;!--Esto explica como funciona</span>
+<span class="c">    la etiqueta &quot;articulo&quot;--&gt;</span>
+<span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoArticulo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:complexContent&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:anyType&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:sequence&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;codigo&quot;</span>
+                    <span class="na">type=</span><span class="s">&quot;tipoCodigo&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;descripcion&quot;</span>
+                    <span class="na">type=</span><span class="s">&quot;tipoDescripcion&quot;</span>
+                    <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;peso&quot;</span>
+                    <span class="na">type=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:complexContent&gt;</span>
+<span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="c">&lt;!--Esto explica como funciona la</span>
+<span class="c">    etiqueta &quot;codigo&quot;--&gt;</span>
+<span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoCodigo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:pattern</span> <span class="na">value=</span><span class="s">&quot;[0-9]{3}[a-z]{2}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:restriction&gt;</span>
+<span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="c">&lt;!--Desarrollamos el funcionamiento de la</span>
+<span class="c">    etiqueta &quot;descripcion&quot;--&gt;</span>
+<span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">&quot;tipoDescripcion&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:simpleContent&gt;</span>
+        <span class="nt">&lt;xsd:extension</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;idioma&quot;</span>
+                    <span class="na">type=</span><span class="s">&quot;tipoIdioma&quot;</span>
+                    <span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:extension&gt;</span>
+    <span class="nt">&lt;/xsd:simpleContent&gt;</span>
+<span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="c">&lt;!--Esto desarrolla el idioma de la descripción--&gt;</span>
+<span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoIdioma&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;ES&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;FR&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">&quot;EN&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:restriction&gt;</span>
+<span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">&quot;tipoPeso&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">&quot;xsd:float&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:minInclusive</span> <span class="na">value=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:maxInclusive</span> <span class="na">value=</span><span class="s">&quot;1500&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:restriction&gt;</span>
+<span class="nt">&lt;/xsd:simpleType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Ejercicio XML Schemas tipo examen (V)<a class="headerlink" href="#id5" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un puerto necesita controlar las entradas y salidas de los muelles y para ello va a usar un fichero XML con unas reglas como estas.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--El elemento raíz es movimientos y siempre lleva un atributo</span>
+<span class="c">    fecha--&gt;</span>
+<span class="nt">&lt;movimientos</span> <span class="na">fecha=</span><span class="s">&quot;2022-03-01&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--Dentro de movimiento hay infinitos elementos &quot;entrada&quot; o</span>
+<span class="c">        &quot;salida&quot; que pueden repetirse y/o ir en cualquier orden--&gt;</span>
+    <span class="nt">&lt;entrada&gt;</span>
+        <span class="c">&lt;!--El codigo de barco siempre lleva un atributo &quot;país&quot;</span>
+<span class="c">            que contiene cadenas. El codigo de barco siempre es</span>
+<span class="c">            una B seguida un número de entre 4 y 6 cifras--&gt;</span>
+        <span class="nt">&lt;codigobarco</span> <span class="na">país=</span><span class="s">&quot;Panamá&quot;</span><span class="nt">&gt;</span>B0143<span class="nt">&lt;/codigobarco&gt;</span>
+        <span class="c">&lt;!--Siempre hay un elemento origen que acepta cadenas--&gt;</span>
+        <span class="nt">&lt;origen&gt;</span>Atenas<span class="nt">&lt;/origen&gt;</span>
+        <span class="c">&lt;!--Puede haber 0 o muchos elementos &quot;pasa_por&quot; y que</span>
+<span class="c">        lleva dentro cadenas--&gt;</span>
+        <span class="nt">&lt;pasa_por&gt;</span>Algeciras<span class="nt">&lt;/pasa_por&gt;</span>
+        <span class="nt">&lt;pasa_por&gt;</span>Oporto<span class="nt">&lt;/pasa_por&gt;</span>
+        <span class="c">&lt;!--Siempre hay un destino que lleva dentro cadenas--&gt;</span>
+        <span class="nt">&lt;destino&gt;</span>Amberes<span class="nt">&lt;/destino&gt;</span>
+    <span class="nt">&lt;/entrada&gt;</span>
+    <span class="c">&lt;!--La salida siempre lleva un codigo que puede ser &quot;01&quot;,</span>
+<span class="c">        &quot;49&quot; o &quot;DESC&quot;--&gt;</span>
+    <span class="nt">&lt;salida</span> <span class="na">codigo=</span><span class="s">&quot;01&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;codigobarco&gt;</span>B0143<span class="nt">&lt;/codigobarco&gt;</span>
+        <span class="c">&lt;!--Puede llevar o no un elemento VACÍO llamado</span>
+<span class="c">            &quot;tasaspagadas&quot;--&gt;</span>
+        <span class="nt">&lt;tasaspagadas/&gt;</span>
+    <span class="nt">&lt;/salida&gt;</span>
+<span class="nt">&lt;/movimientos&gt;</span>
+</pre></div>
+</div>
+<p>Una posible solución sería esta:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
