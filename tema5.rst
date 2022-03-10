@@ -3634,3 +3634,38 @@ Una posible solución sería esta:
         </xsd:simpleContent>
     </xsd:complexType>
     </xsd:schema>
+
+Ejercicio XML Schemas tipo examen (VI)
+=========================================
+
+Se desea construir un esquema para verificar ficheros como el siguiente. Las reglas que se supone deben cumplir los datos se han adjuntado como comentarios en el propio fichero:
+
+.. code-block:: xml
+
+    <!--Construir un XML Schema que controle que los ficheros de datos
+        de un administrador de redes verifiquen esta estructura-->
+
+    <nodos>
+        <!--Puede aparecer cualquiera de estos hijos en cualquier orden
+            y repetido las veces que sea necesario-->
+        <router>
+            <!--Un router PUEDE tener una dirección IP
+                que tiene la estructura típica de una IP-->
+            <direccionip>192.168.1.10</direccionip>
+            <!--Despues de la dirección IP viene solo uno de estos
+                dos elementos <gestionado/> o <nogestionado/>-->
+            <gestionado/>
+        </router>
+        <!--Toda impresora lleva un modelo que solo puede ser "laser",
+            "tinta" o "termica".-->
+            <!--Dentro solo puede haber HP, Epson o Kyocera-->
+        <impresora modelo="laser">Epson</impresora>
+        <ordenador>
+            <!--Todo ordenador lleva un elemento
+                sistema operativo que solo puede ser
+                Windows, MacOS o Linux. Siempre hay
+                un atributo "fechainstalacion" que
+                indica la fecha-->
+            <sistemaoperativo fechainstalacion="2022-01-02">Windows</sistemaoperativo>
+        </ordenador>
+    </nodos>
