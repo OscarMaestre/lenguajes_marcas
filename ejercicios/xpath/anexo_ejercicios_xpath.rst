@@ -249,5 +249,39 @@ Una posible consulta que resuelve esto es::
 
     /listado/fondo[datos/cantidaddepositada<2500 and datos/moneda = "Dolares"]
     
-De nuevo nos encontramos con que el programa puede dar une rror, lo que tiene todo el sentido del mundo, ya que le pedimos que extraiga datos de algo que no existe.
+De nuevo nos encontramos con que el programa puede dar un error, lo que tiene todo el sentido del mundo, ya que le pedimos que extraiga datos de algo que no existe.
 
+Ejercicios resueltos sobre "proveedores/partes"
+-------------------------------------------------
+
+XPath I
+~~~~~~~~~~~~~~~~
+Recuperar el nombre de todas las partes, sin etiqueta, solo textos
+
+Solución::
+
+    /datos/partes/parte/nombreparte/text()
+    //nombreparte/text()
+
+
+XPath II
+~~~~~~~~~~~~~~~
+Recuperar el nombre de los proyectos con el numproyecto y1, y3 e y5.
+
+Tiene trampa. Al leer deprisa podemos pensar que la condición es un ``and``
+
+Solución::
+    //proyecto[@numproyecto='y1' and @numproyecto='y3' and @numproyecto='y5']/nombreproyecto
+
+Pero **nadie cumple esa condición**. Nadie puede tener los tres código a la vez. En realidad la solución es con ``or``::
+
+    //proyecto[@numproyecto='y1' or @numproyecto='y3' or @numproyecto='y5']/nombreproyecto   
+
+
+XPath III
+~~~~~~~~~~~~~~~~~
+
+Recuperar el nombre de los proyectos donde la cantidad suministrada sea mayor que 550.
+
+
+Tal y como está planteado **no se puede resolver con XPath**

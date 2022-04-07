@@ -790,9 +790,8 @@ La solución está fundamentada en el uso de la etiqueta siguiente:
 .. code-block:: xml
 
 	<xsl:for-each select="...">
-		<xsl:sort select="..." ordering="...">
-			..cosas del bucle...
-		</xsl:sort>
+		<xsl:sort select="..." order="..."/>
+		..cosas del bucle...
 	</xsl:for-each>
 
 La solución completa sería así:
