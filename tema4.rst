@@ -110,15 +110,15 @@ Ordenar el vector y mostrar el contenido del vector ordenado por pantalla.
 
 .. code-block:: java
 
-        var v=new Array()
+        let v=new Array()
         v=[9.98, 7.86, 4.53,
            8.91, 5.76, 2.31]
         
         /* Vamos cogiendo cada elemento...*/
-        for (var i=0; i<v.length; i++){
+        for (let i=0; i<v.length; i++){
             /* Y se compara con
              * todos los demas*/
-            for (var j=0; j<v.length; j++) {
+            for (let j=0; j<v.length; j++) {
                 if (v[j]>v[i]) {
                     aux=v[i]
                     v[i]=v[j]
@@ -129,7 +129,7 @@ Ordenar el vector y mostrar el contenido del vector ordenado por pantalla.
    
         
         /* Se imprime el contenido*/
-        for (var i=0; i<v.length; i++){
+        for (let i=0; i<v.length; i++){
             alert ("Pos "+i+ ":"+v[i])
         }
 	
@@ -151,7 +151,7 @@ Funciona igual que el anterior pero es mucho más corto.
 
 .. code-block:: javascript
 
-	for (var posicion in vector_numeros) {
+	for (let posicion in vector_numeros) {
 			document.write("<br/>")
 			document.write ("En la posición "+posicion)
 			document.write (" está el número " + vector_numeros[posicion])
@@ -165,7 +165,7 @@ Los bucles ``while`` funcionan igual que en Java
 
 .. code-block:: javascript
 
-	var posicion=0
+	let posicion=0
 	while (posicion<vector_numeros.length){
 			document.write("<br/>")
 			document.write ("En la posición "+posicion)
@@ -181,11 +181,11 @@ Crear un programa que calcule la media aritmética del vector de números.
 
 .. code-block:: javascript
 
-		var suma=0
+		let suma=0
 		for (var pos in vector_numeros){
 			suma=suma+vector_numeros[pos]
 		}
-		var media=suma / vector_numeros.length
+		let media=suma / vector_numeros.length
 		document.write("<br/>La media es:" + media)
 
 
@@ -199,13 +199,13 @@ Crear un programa que calcule la desviación media del vector de números.
 .. code-block:: javascript
 
 	/* Para calcular la desviación media*/
-    suma=0
-    for (var pos in vector_numeros) {
-        var desviacion= Math.abs ( vector_numeros[pos] - media )
+    let suma=0
+    for (let pos in vector_numeros) {
+        let desviacion= Math.abs ( vector_numeros[pos] - media )
         suma = suma + desviacion
     }
     /* En este punto la variable suma contiene la suma de las desviaciones*/
-    var desv_media = suma / vector_numeros.length
+    let desv_media = suma / vector_numeros.length
     document.write("<br/>La desv media es:"+desv_media)
 
 Ejercicio: la mediana
@@ -216,14 +216,14 @@ Calcular la mediana del vector
 .. code-block:: java
 
     if (v.length%2==0) {
-        var pos1=v.length/2
-        var pos2=pos1-1
-        var elem1=v[pos1]
-        var elem2=v[pos2]
-        var mediana=(elem1+elem2)/2
+        let pos1=v.length/2
+        let pos2=pos1-1
+        let elem1=v[pos1]
+        let elem2=v[pos2]
+        let mediana=(elem1+elem2)/2
     } else {
-        var pos_central=(v.length-1)/2
-        var mediana=v[pos_central]
+        let pos_central=(v.length-1)/2
+        let mediana=v[pos_central]
     }
     document.write("La mediana es:"+mediana)	
 	
@@ -238,20 +238,20 @@ Para crear una función usaremos la palabra ``function``, pondremos el nombre, l
      * nos devuelve la media de sus valores*/
     
     function calcularMedia(vector_valores){
-        var suma=0
-        for (var pos in vector_valores){
+        let suma=0
+        for (let pos in vector_valores){
             suma = suma + vector_valores[pos]
         }
         return suma / vector_valores.length
     }
     
-    var vector=new Array(4)
+    let vector=new Array(4)
     vector[0]=5
     vector[1]=2
     vector[2]=7
     vector[3]=8
     
-    var media=calcularMedia(vector)
+    let media=calcularMedia(vector)
     document.write("<br/>La media es:"+media)
 
 Una cuestión importante es que las funciones son valores asignables. Cuando queramos asignar una función a una variable **no pondremos paréntesis**. Cuando sí queramos ejecutar una función (ya sea con su nombre original o con el de la variable, sí pondremos los paréntesis con los parámetros que queramos pasar**.
@@ -270,7 +270,7 @@ Una cuestión importante es que las funciones son valores asignables. Cuando que
     despedir("Antonio")
     /* Las funciones son valores
      * asignables*/
-    var f=despedir
+    let f=despedir
     f("Tomas")
 
 	
@@ -288,9 +288,9 @@ Crear un programa que tenga una función que calcule la desviación media de val
 	/* Función que calcula la desviacion media de
 	* un vector de valores numericos*/
     function calcularDesviacionMedia(vector_valores){
-        var media=calcularMedia(vector_valores)
-        var suma=0
-        for (var pos in vector_valores){
+        let media=calcularMedia(vector_valores)
+        let suma=0
+        for (let pos in vector_valores){
             suma= suma + Math.abs (  vector_valores[pos] - media  )
         }
         return suma / vector_valores.length
@@ -303,11 +303,10 @@ Crear un programa que tenga una función que calcule la moda.
 
 .. code-block:: javascript
 
-	/* Este vector nos dice cuantas veces aparece un número
-     * en un vector*/
+	/* Este vector nos dice cuantas veces aparece un número en un vector*/
     function calcularFrecuencia(numero, vector){
         var num_veces=0
-        for (var pos in vector) {
+        for (let pos in vector) {
             if (vector[pos]==numero) {
                 num_veces++
             }
@@ -318,9 +317,9 @@ Crear un programa que tenga una función que calcule la moda.
     /* Dado un vector de números se nos devuelve la posición
      * del número mayor*/
     function obtenerPosMayor(vector_valores){
-        var posMayor=0
-        var numMayor=vector_valores[0]
-        for (var pos in vector_valores){
+        let posMayor=0
+        let numMayor=vector_valores[0]
+        for (let pos in vector_valores){
             if (vector_valores[pos]>numMayor) {
                 numMayor=vector_valores[pos]
                 posMayor=pos
@@ -330,16 +329,16 @@ Crear un programa que tenga una función que calcule la moda.
     }
     /* Función que devuelve el número "moda" de un vector*/
     function obtenerModa(vector_valores){
-        var frecuencias=new Array(vector_valores.length)
-        for (var pos in vector_valores){
-             var numero=vector_valores[pos]
+        let frecuencias=new Array(vector_valores.length)
+        for (let pos in vector_valores){
+             let numero=vector_valores[pos]
              frecuencias[pos]=calcularFrecuencia(numero, vector_valores)
         }
-        var posModa=obtenerPosMayor(frecuencias)
+        let posModa=obtenerPosMayor(frecuencias)
         return vector_valores[posModa]
         
     }
-    var vector=new Array(4)
+    let vector=new Array(4)
     vector[0]=7
     vector[1]=7
     vector[2]=7
@@ -358,7 +357,7 @@ En primer lugar, es posible crear objetos sin crear clases.
 
 .. code-block:: javascript
 
-	var empleado={
+	let empleado={
         nombre:"Pepe Perez",
         edad:27,
         fijo:true,
@@ -388,7 +387,7 @@ Añadir un método llamado ``nivelExperiencia`` que nos diga una de estas cosas:
 
 .. code-block:: javascript
 
-	var empleado={
+	let empleado={
         nombre:"Pepe Perez",
         edad:27,
         fijo:true,
@@ -426,8 +425,8 @@ Crear una clase GestorVectores que tenga los principales métodos estadísticos 
 		}
 		, //Importante: separar métodos y atributos con ,
 		getMedia:function(){
-			var suma=0
-			var media=0
+			let suma=0
+			let media=0
 			for (pos in this.vector_numeros) {
 				suma=suma + this.vector_numeros[pos]
 			}
@@ -445,12 +444,12 @@ Crear una clase GestorVectores que tenga los principales métodos estadísticos 
 	}
 
 
-	var vector_prueba=new Array(3)
+	let vector_prueba=new Array(3)
 	vector_prueba[0]=5
 	vector_prueba[1]=10
 	vector_prueba[2]=8
 	gestor_vectores.setDatos ( vector_prueba )
-	var media=gestor_vectores.getMedia()
+	let media=gestor_vectores.getMedia()
 	document.write ("La media es:"+media)
 
 	
@@ -525,7 +524,7 @@ El código Javascript asociado al HTML anterior es este.
 	/* Esperaremos hasta que el documento esté cargado y listo
 	 * para ser procesado por nuestro programa*/
 
-	var obj_documento = $(document)
+	let obj_documento = $(document)
 
 	/* Cuando esté cargado ejecutaremos la función cuyo nombre aparezca aquí*/
 	obj_documento.ready(inicio)
@@ -534,19 +533,19 @@ El código Javascript asociado al HTML anterior es este.
 	//obj_documento.ready( inicio() )
 
 	function inicio(){
-		var obj_izq=$("#botonizq")
+		let obj_izq=$("#botonizq")
 		obj_izq.click ( fn_click_izq )
-		var obj_der=$("#botonder")
+		let obj_der=$("#botonder")
 		obj_der.click ( fn_click_der )
 	}
 
 	function fn_click_izq(){
-		var obj_div=$("#texto")
+		let obj_div=$("#texto")
 		obj_div.fadeOut()
 	}
 
 	function fn_click_der(){
-		var obj_div=$("#texto")
+		let obj_div=$("#texto")
 		obj_div.fadeIn()
 	}
 
@@ -606,19 +605,19 @@ Solución Javascript (párrafos)
 	$(document).ready(main)
 
 	function mostrar_pares(){
-		var objetos=$(".p_par")
+		let objetos=$(".p_par")
 		objetos.slideDown()
 	}
 	function mostrar_impares(){
-		var objetos=$(".p_impar")
+		let objetos=$(".p_impar")
 		objetos.slideDown()
 	}
 	function ocultar_pares(){
-		var objetos=$(".p_par")
+		let objetos=$(".p_par")
 		objetos.slideUp()
 	}
 	function ocultar_impares(){
-		var objetos=$(".p_impar")
+		let objetos=$(".p_impar")
 		objetos.slideUp()
 	}
 
@@ -704,20 +703,20 @@ Podemos usar el método ``val`` para cambiar el valor de un objeto cualquiera:
 .. code-block:: javascript
 
 	function inicio(){
-		var opc_h=$("#opc_h")
+		let opc_h=$("#opc_h")
 		opc_h.click ( click_hombre )
 		
-		var opc_m=$("#opc_m")
+		let opc_m=$("#opc_m")
 		opc_m.click ( click_mujer )
 	}
 
 	function click_hombre() {
-		var cuadro_texto=$("#informe")
+		let cuadro_texto=$("#informe")
 		cuadro_texto.val("Bienvenido Sr.")
 	}
 
 	function click_mujer(){
-		var cuadro_texto=$("#informe")
+		let cuadro_texto=$("#informe")
 		cuadro_texto.val("Bienvenido Sra/Srta.")
 	}
 	
@@ -732,19 +731,19 @@ La primera:
 
 .. code-block:: javascript
 
-    var opc_coche=$("#coche")
+    let opc_coche=$("#coche")
     opc_coche.click ( cuantas_pulsadas )
     
-    var opc_moto=$("#moto")
+    let opc_moto=$("#moto")
     opc_moto.click ( cuantas_pulsadas )
     
-    var opc_bici=$("#bici")
+    let opc_bici=$("#bici")
     opc_bici.click ( cuantas_pulsadas )
     
-    var opc_bus=$("#bus")
+    let opc_bus=$("#bus")
     opc_bus.click ( cuantas_pulsadas )
     
-    var opc_tren=$("#tren")
+    let opc_tren=$("#tren")
     opc_tren.click ( cuantas_pulsadas )
 	
 	function cuantas_pulsadas(){
@@ -774,13 +773,13 @@ Y el JS sería así:
 
 .. code-block:: javascript
 
-	var medios_de_locomocion=$(".medio")
+	let medios_de_locomocion=$(".medio")
     medios_de_locomocion.click ( cuantas_pulsadas )
 	function cuantas_pulsadas(){
-		var cuantas_marcadas=0
-		var vector_ids=["#bus", "#coche", "#moto", "#bici", "#tren"]
+		let cuantas_marcadas=0
+		let vector_ids=["#bus", "#coche", "#moto", "#bici", "#tren"]
 		
-		for (pos in vector_ids){
+		for (let pos in vector_ids){
 			var objeto = $( vector_ids[pos] )
 			if (objeto.prop("checked")) {
 				cuantas_marcadas=cuantas_marcadas+1
@@ -851,7 +850,7 @@ Variante 1: Sin vectores, implica usar muchos ``if``. Aunque funcione supone cor
 	$(document).ready(main)
 
 	function contar(){
-		var contador=0
+		let contador=0
 		
 		if ($("#coche").prop("checked"))
 		{
@@ -861,7 +860,7 @@ Variante 1: Sin vectores, implica usar muchos ``if``. Aunque funcione supone cor
 		{
 			contador=contador+1
 		}
-		var mensaje="Medios:"+contador
+		let mensaje="Medios:"+contador
 		$("#informe").val(mensaje)
 		
 	}
@@ -882,20 +881,20 @@ Variante 2: Con vectores
 
 	$(document).ready(main)
 	function contar(){
-		var contador=0
-		var ids=new Array()
-		var ids=["#coche", "#moto",
+		let contador=0
+		let ids=new Array()
+		let ids=["#coche", "#moto",
 				 "#bus", "#tren",
 				 "#avion"]
 		
-		for (pos in ids){
-			var medio=$(ids[pos])
+		for (let pos in ids){
+			let medio=$(ids[pos])
 			if (medio.prop("checked"))
 			{
 				contador=contador+1
 			}
 		}
-		var mensaje="Medios:"+contador
+		let mensaje="Medios:"+contador
 		$("#informe").val(mensaje)
 		
 	}
@@ -1298,13 +1297,13 @@ Ahora una función que nos calcula la distancia sería algo como esto:
 	 * (abreviados lat_dest y lng_dest)*/
 	function distancia(lat_dest, lng_dest)
 	{
-		var latitud_cr=38.59
-		var longitud_cr=-3.55
-		var coords_origen=new google.maps.LatLng(
+		let latitud_cr=38.59
+		let longitud_cr=-3.55
+		let coords_origen=new google.maps.LatLng(
 			latitud_cr, longitud_cr)
-		var coords_destino=new google.maps.LatLng(
+		let coords_destino=new google.maps.LatLng(
 			lat_dest, lng_dest)
-		var distancia=google.maps.geometry.spherical.computeDistanceBetween(
+		let distancia=google.maps.geometry.spherical.computeDistanceBetween(
 			coords_origen, coords_destino
 		)
 		return distancia
@@ -1333,36 +1332,36 @@ Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configura
 
 .. code-block:: javascript
 
-	var vector_ids=["#gasolina", "#diesel", "#monovolumen",
+	let vector_ids=["#gasolina", "#diesel", "#monovolumen",
 			"#berlina", "#radiocd", "#alerones", "#llantas"]
-	var precios=[5000, 6800, 4500,
+	let precios=[5000, 6800, 4500,
 			3700, 180, 220, 200]
 
 	function inicio(){
 	 
-		for (var pos in vector_ids){
-			var el_id=vector_ids[pos]
+		for (let pos in vector_ids){
+			let el_id=vector_ids[pos]
 			$(el_id).click ( calcularPrecio )
 		}
 	}
 
 	function cocheEsFabricable() {
 		//Caso 1: nada de berlinas de gasolina
-		var marcada_la_berlina=$("#berlina").prop("checked")
-		var marcada_la_gasolina=$("#gasolina").prop("checked")
+		let marcada_la_berlina=$("#berlina").prop("checked")
+		let marcada_la_gasolina=$("#gasolina").prop("checked")
 		if (marcada_la_berlina && marcada_la_gasolina) {
 			alert ("No se pueden fabricar berlinas de gasolina")
 			return false
 		}
 		
-		var marcado_aleron=$("#alerones").prop("checked")
-		var marcado_monovolumen=$("#monovolumen").prop("checked")
+		let marcado_aleron=$("#alerones").prop("checked")
+		let marcado_monovolumen=$("#monovolumen").prop("checked")
 		if (marcado_aleron && marcado_monovolumen ) {
 			alert ("No podemos integrar los alerones en monovolúmenes")
 			return false
 		}
 		
-		var marcado_radiocd=$("#radiocd").prop("checked")
+		let marcado_radiocd=$("#radiocd").prop("checked")
 		if (marcado_radiocd && marcado_monovolumen) {
 			alert ("No podemos fabricar un monovol. con radio-cd")
 			return false
@@ -1372,15 +1371,15 @@ Cuando se marque cualquiera de estas opciones, hay que limpiar todo el configura
 	/* Calcula el precio del coche en función de lo que esté marcado
 	 * y lo que no.*/
 	function calcularPrecio() {
-		var todo_bien=cocheEsFabricable()
+		let todo_bien=cocheEsFabricable()
 		if (todo_bien!=true) {
 			return 
 		}
-		var precioCoche=0
+		let precioCoche=0
 		for (var pos in vector_ids){
-			var el_id=vector_ids[pos]       
+			let el_id=vector_ids[pos]       
 			if ($(el_id).prop("checked")) {
-				var precio_accesorio=precios[pos]
+				let precio_accesorio=precios[pos]
 				precioCoche=precioCoche+precio_accesorio
 			}
 		}
@@ -1476,18 +1475,18 @@ Añadiremos este código a nuestro programa anterior.
 
 .. code-block:: javascript
 
-	var obj_documento = $(document)
+	let obj_documento = $(document)
 	obj_documento.ready(inicio)
 
-	var vector_ids=["#gasolina", "#diesel", "#monovolumen",
+	let vector_ids=["#gasolina", "#diesel", "#monovolumen",
 			"#berlina", "#radiocd", "#alerones", "#llantas"]
-	var precios=[5000, 6800, 4500,
+	let precios=[5000, 6800, 4500,
 			3700, 180, 220, 200]
 
 	function inicio(){
 	 
-		for (var pos in vector_ids){
-			var el_id=vector_ids[pos]
+		for (let pos in vector_ids){
+			let el_id=vector_ids[pos]
 			$(el_id).click ( calcularPrecio )
 		}
 		$("#blanco").click ( ponerColorBlanco )
@@ -1495,9 +1494,9 @@ Añadiremos este código a nuestro programa anterior.
 		$("#gris").click (ponerGris )
 	}
 	function limpiarColores(){
-		var clases=["muestrarojo", "muestrablanco",
+		let clases=["muestrarojo", "muestrablanco",
 					"muestragris"]
-		for (var pos in clases) {
+		for (let pos in clases) {
 			$("#muestra").removeClass( clases[pos] )
 		}
 	}
@@ -1558,7 +1557,7 @@ Configurador en JS
 .. code-block:: javascript
 
 	function esta_checked(id){
-		var control;
+		let control;
 		control=document.getElementById(id);
 		if (control.checked){
 			return true;
@@ -1568,10 +1567,10 @@ Configurador en JS
 	}
 
 	function calcular(){
-		var preciototal   =0;
-		var preciomodelo  =0;
-		var preciomotor   =0;
-		var precioextras  = 0;
+		let preciototal   =0;
+		let preciomodelo  =0;
+		let preciomotor   =0;
+		let precioextras  = 0;
 		if ( (!esta_checked("modelo_a"))
 			&& (!esta_checked("modelo_b") ) ){
 			alert("Debe marcar un modelo");
@@ -1600,7 +1599,7 @@ Configurador en JS
 		}
 		preciototal=preciomodelo+preciomotor+precioextras;
 		
-		var zonaresultados;
+		let zonaresultados;
 		zonaresultados=document.getElementById(
 			"zonaresultados");
 		zonaresultados.innerHTML="Precio:"+preciototal;   
@@ -1677,10 +1676,10 @@ JS del comparador
 .. code-block:: javascript
 
 	function extraer_numero(id){
-		var control;
+		let control;
 		control=document.getElementById(id);
-		var valor=control.value;
-		var numero=parseInt(valor);
+		let valor=control.value;
+		let numero=parseInt(valor);
 		return numero;
 	}
 
@@ -1693,12 +1692,12 @@ JS del comparador
 		//Si llegamos a este punto, es porque se pasa
 		
 		//Calculamos cuantos minutos se pasa
-		var exceso=minutos-1000;
+		let exceso=minutos-1000;
 		//Y ese exceso es a 8 centimos/minutos
-		var precio_exceso=exceso*0.08;
+		let precio_exceso=exceso*0.08;
 		//El precio de ese mes es
 		//20 euros más lo que cueste el exceso
-		var precio_mes=20+precio_exceso;
+		let precio_mes=20+precio_exceso;
 		//Devolvemos el calculo a quien lo pidiese
 		return precio_mes;
 	}
@@ -1712,25 +1711,25 @@ JS del comparador
 		//Si llegamos a este punto, es porque se pasa
 		
 		//Calculamos cuantos minutos se pasa
-		var exceso=minutos-500;
+		let exceso=minutos-500;
 		//Y ese exceso es a 12 centimos/minutos
-		var precio_exceso=exceso*0.12;
+		let precio_exceso=exceso*0.12;
 		//El precio de ese mes es
 		//10 euros más lo que cueste el exceso
-		var precio_mes=10+precio_exceso;
+		let precio_mes=10+precio_exceso;
 		//Devolvemos el calculo a quien lo pidiese
 		return precio_mes;
 	}
 
 	function calcular(){
-		var minutos_mes1;
+		let minutos_mes1;
 		minutos_mes1=extraer_numero("mes1");
-		var minutos_mes2;
+		let minutos_mes2;
 		minutos_mes2=extraer_numero("mes2");
-		var minutos_mes3;
+		let minutos_mes3;
 		minutos_mes3=extraer_numero("mes3");
 		
-		var coste_mes1_empresa_a;
+		let coste_mes1_empresa_a;
 		coste_mes1_empresa_a=precio_mes_empresa_a(
 			minutos_mes1);
 		
@@ -1741,11 +1740,11 @@ JS del comparador
 		
 		//Calculamos el precio que costaria
 		//esos minutos en la empresa A
-		var coste_total_a;
+		let coste_total_a;
 		coste_total_a=coste_mes1_empresa_a+coste_mes2_empresa_a+coste_mes3_empresa_a;
 		
 		//Repetimos el proceso para la empresa B
-		var coste_mes1_empresa_b;
+		let coste_mes1_empresa_b;
 		coste_mes1_empresa_b=precio_mes_empresa_b(
 			minutos_mes1);
 		coste_mes2_empresa_b=precio_mes_empresa_b(
@@ -1754,11 +1753,11 @@ JS del comparador
 			minutos_mes3);
 		//Calculamos ahora el precio que costaria
 		//esos minutos en la empresa B
-		var coste_total_b;
+		let coste_total_b;
 		coste_total_b=coste_mes1_empresa_b+coste_mes2_empresa_b+coste_mes3_empresa_b;
-		var zonaresultados;
+		let zonaresultados;
 		zonaresultados=document.getElementById("zonaresultados");
-		var texto;
+		let texto;
 		texto="Con la A el precio es:" + coste_total_a;
 		texto=texto+"<br/>";
 		texto=texto+"Con la B el precio es:" + coste_total_b;   
