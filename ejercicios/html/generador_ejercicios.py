@@ -56,7 +56,7 @@ def capturar_pantalla(nombre_fichero_imagen):
 
 def generar_ejercicio(archivo_html, archivo_png, foto_png):
     subprocess.call(["./generador_html.py", archivo_html, GENERAR_TABLA])
-    subprocess.call(["abrowser", archivo_html])
+    subprocess.call(["firefox", archivo_html])
     time.sleep(2)
     capturar_pantalla(archivo_png)
     recortar_imagen(archivo_png, foto_png)

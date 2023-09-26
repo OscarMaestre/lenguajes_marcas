@@ -37,7 +37,7 @@ class GeneradorHTML(object):
         
     def generar_tabla(self, nivel_anidamiento=0):
         tabs=(nivel_anidamiento+1)*"\t"
-        resultado=tabs+"<table border='1'>" + FIN_LINEA
+        resultado=tabs+"<table border='1'>" + FIN_LINEA + "<tbody>"
         filas=random.randint(2,4)
         columnas=random.randint(2,4)
         for f in range(0, filas):
@@ -56,7 +56,7 @@ class GeneradorHTML(object):
                     resultado+="<td> Celda </td>"
                 resultado+=FIN_LINEA
             resultado+=tabs_fila+"</tr>" + FIN_LINEA
-        resultado+=tabs+"</table>" + FIN_LINEA
+        resultado+=tabs+"</tbody></table>" + FIN_LINEA
         return resultado
         
 g=GeneradorHTML()
