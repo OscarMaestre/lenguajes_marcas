@@ -310,5 +310,85 @@ Solución:
 	:language: html
 
     
+Tabla 20
+------------------------------------------------------------
+
+Generar la tabla siguiente
+
+.. image:: foto_20.png
+	:align: center
+	:scale: 60%
+
+    
+Solución:
+
+.. literalinclude:: ejercicio_20.html
+	:language: html
+
+    
+Tabla 21
+------------------------------------------------------------
+
+Generar la tabla siguiente
+
+.. image:: foto_21.png
+	:align: center
+	:scale: 60%
+
+    
+Solución:
+
+.. literalinclude:: ejercicio_21.html
+	:language: html
+
+    
+Tabla 22
+------------------------------------------------------------
+
+Generar la tabla siguiente
+
+.. image:: foto_22.png
+	:align: center
+	:scale: 60%
+
+    
+Solución:
+
+.. literalinclude:: ejercicio_22.html
+	:language: html
+
+    
+Tabla 23
+------------------------------------------------------------
+
+Generar la tabla siguiente
+
+.. image:: foto_23.png
+	:align: center
+	:scale: 60%
+
+    
+Solución:
+
+.. literalinclude:: ejercicio_23.html
+	:language: html
+
+    
+Tabla 24
+------------------------------------------------------------
+
+Generar la tabla siguiente
+
+.. image:: foto_24.png
+	:align: center
+	:scale: 60%
+
+    
+Solución:
+
+.. literalinclude:: ejercicio_24.html
+	:language: html
+
+    
 
 

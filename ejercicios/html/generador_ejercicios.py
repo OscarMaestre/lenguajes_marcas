@@ -4,10 +4,10 @@
 import subprocess, time, sys, platform
 
 X_INICIAL=8
-Y_INICIAL=130
+Y_INICIAL=186
 
-X_FINAL=420
-Y_FINAL=390
+X_FINAL=X_INICIAL + 460
+Y_FINAL=Y_INICIAL + 390
 
 ANCHO=X_FINAL - X_INICIAL
 ALTO =Y_FINAL - Y_INICIAL
@@ -16,6 +16,8 @@ GEOMETRIA="{0}x{1}+{2}+{3}".format(
     ANCHO, ALTO, X_INICIAL, Y_INICIAL, 
 )
 
+#Modifica esto para cambiar la cantidad de tablas que se generan
+NUM_EJERCICIOS=25
 
 if platform.system()=="Windows":
     FIN_LINEA="\r\n"
@@ -66,7 +68,7 @@ def recortar_imagen(archivo, archivo_cortado):
     
 def generar_tablas():
     secciones=""
-    for i in range(1, 20):
+    for i in range(1, NUM_EJERCICIOS):
         
         cad_numero=str(i)
         sufijo=cad_numero.zfill(2)
