@@ -5,6 +5,6 @@ make html
 ./copiar.py
 git add docs
 git commit -a -m"Reconstruccion HTML"
-#git push
+git push
 
 
