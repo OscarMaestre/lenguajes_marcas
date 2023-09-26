@@ -2,3 +2,5 @@ _build/latex/*.aux
 _build/latex/*.toc
 _build/latex/*.log
 _build/html/
+_build/
+.vscode/
