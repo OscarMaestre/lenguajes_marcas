@@ -1475,10 +1475,161 @@ Ahora el resultado es este
 
 
 
+Estilos en formularios
+================================================================================
+
+Con CSS se puede mejorar bastante el aspecto de los formularios usando las propiedades que ya hemos visto. Supongamos un fichero como este:
+
+.. literalinclude:: ejemplos/tema_3_css/ejemplo_form_css/formulario.html
+    :language: html
+
+Que en principio se ve así:
+
+.. figure:: img/tema3css/form_con_css.png
 
 
+Usando CSS podemos mejorar bastante el aspecto como veremos a continuación.
+
+Apilando controles
+--------------------
+
+Empecemos haciendo que los ``label`` y los controles se porten como "bloques" y de esa manera conseguir que se "apilen" unos encima de otros.
+
+Usando este CSS...
+
+.. code-block:: css
+
+    label, input, select{
+        display: block;
+    }
+
+... conseguiremos esto:
+
+.. figure:: img/tema3css/form_con_css2.png
+
+Separando elementos
+-------------------
+
+Los elementos están demasiado cerca entre sí, lo que produce una cierta "pesadez". Aumentamos el debajo de cada control.
+
+.. code-block:: css
 
 
+    input[type=text], select{
+        display: block;
+        margin-bottom: 50px;
+    }
+
+
+Y obtenemos esto:
+
+.. figure:: img/tema3css/form_con_css3.png
+
+
+Alineando controles
+--------------------------------------------------------------------------------
+
+Cada elemento termina en un punto vertical distinto. Los haremos de la misma anchura para que produzcan la sensación de estar agrupados.
+
+
+.. code-block:: css
+
+
+    input[type=text], select{
+        display: block;
+        margin-bottom: 50px;
+        width: 80%;
+    }
+
+
+Y obtenemos esto:
+
+.. figure:: img/tema3css/form_con_css4.png
+
+Reduciendo la carga visual
+--------------------------------------------------------------------------------
+
+Los controles están alineados, pero *ocupan demasiado*. Reducimos el tamaño global del ``form`` para que ocupe mucho menos:
+
+.. code-block:: css
+
+
+    input[type=text], select{
+        display: block;
+        margin-bottom: 50px;
+        width: 80%;
+    }
+
+    form{
+        width: 50%;
+        margin: auto;
+    }
+
+Resultado:
+
+.. figure:: img/tema3css/form_con_css5.png
+
+Márgenes internos
+--------------------------------------------------------------------------------
+
+Los campos del ``fieldset`` están demasiado pegados a los márgenes. Dejemos un poco de espacio extra por dentro.
+
+.. code-block:: css
+
+    input[type=text], select{
+        display: block;
+        margin-bottom: 50px;
+        width: 80%;
+    }
+
+    form{
+        width: 50%;
+        margin: auto;
+    }
+
+    fieldset{
+        padding: 5%;
+    }
+
+Resultado:
+
+.. figure:: img/tema3css/form_con_css6.png
+
+Márgenes internos (II)
+--------------------------------------------------------------------------------
+
+Los controles siguen pareciendo "demasiado apretados". Los rellenamos con un poco de espacio por dentro.
+
+.. code-block:: css
+
+    input[type=text], select{
+        display: block;
+        margin-bottom: 50px;
+        width: 80%;
+        padding:10px; /*Rellenamos los controles*/
+    }
+
+    form{
+        width: 50%;
+        margin: auto;
+    }
+
+    fieldset{
+        padding: 5%;
+    }
+Resultado:
+
+.. figure:: img/tema3css/form_con_css6.png
+
+
+Otras mejores
+--------------------------------------------------------------------------------
+Se deja como ejercicio el estilizar los elementos de una manera que resulte más atractiva personalmente. Aquí se ofrecen algunas ideas.
+
+* Los elementos pueden adoptar colores de fondo para ajustarse al tema de la página (uso de ``background-color`` )
+* Se puede hacer que los elementos hagan algo cuando se haga click en ellos (usando el selector ``input:focus`` )
+* Se pueden cambiar los tipos de letra usando ``font-family``
+* Etc...  
 
 Bootstrap
 =========
