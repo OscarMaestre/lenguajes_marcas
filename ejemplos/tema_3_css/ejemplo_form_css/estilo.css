@@ -1,0 +1,15 @@
+input[type=text], select{
+    display: block;
+    margin-bottom: 50px;
+    width: 80%;
+    padding:10px;
+}
+
+form{
+    width: 50%;
+    margin: auto;
+}
+
+fieldset{
+    padding: 5%;
+}
