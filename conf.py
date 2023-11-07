@@ -31,7 +31,6 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.githubpages',
 
     #Si la línea de abajo falla ejecutar "sudo pip3 install sphinx_rtd_theme"
     'sphinx_rtd_theme',
