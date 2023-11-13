@@ -26,6 +26,57 @@ Javascript acepta los siguientes tipos de datos:
 * undefined: se utiliza cuando intentamos acceder a una variable que no contiene nada porque no se ha creado.
 * null: se utiliza habitualmente para indicar algo vacío.
 
+El uso de ``use strict``
+--------------------------------------------------------------------------------
+
+Tradicionalmente Javascript permitía acceder a variables sin definir, lo que causaba infinidad de problemas. Si deseamos que Javascript sea más **estricto** en como se usa el lenguaje podemos incluir al principio de nuestros programas en Javascript la cadena "use strict".
+
+Constantes y variables
+================================================================================
+
+Podemos definir *constantes*, que son etiquetas que tienen dentro un valor que no cambia y *variables* que son etiquetas cuyo valor no cambia:
+
+.. code:: javascript
+
+	"use strict"
+	const gravedad  =9.81;
+	let   posicion  =42;
+
+¡Cuidado!, durante mucho tiempo, en lugar de ``let`` se usaba ``var`` pero el sistema de asignación de variables se modificó hace tiempo y el uso de ``var`` en general se considera **obsoleto.** 
+
+
+Concatenación de cadenas
+================================================================================
+
+Tradicionalmente en Javascript las cadenas se han concatenado de la misma manera que en otros lenguajes:
+
+.. code-block:: javascript
+
+	"use strict"
+	let nombre = "Carmen";
+	let ap1    = "Diaz";
+	let ap2    = "Sanchez";
+	//Unimos todo...
+	let nombreCompleto=nombre+ " " + ap1 + " " + ap2;
+
+Con ES6 se introdujeron las "plantillas" que permiten unir cadenas más cómodamente. 
+
+
+.. code-block:: javascript
+
+	"use strict"
+	let nombre = "Carmen";
+	let ap1    = "Diaz";
+	let ap2    = "Sanchez";
+	//Ahora usamos una plantilla para unir...
+	let nombreCompleto=``;
+
+.. warning:: 
+
+   Estas plantillas usan la "coma invertida", la que está a la derecha de la ``p`` en el teclado
+
+
+
 
 
 
@@ -40,9 +91,10 @@ Un programa muy simple sería este:
 
 .. code-block:: javascript
 
+	"use strict"
 	let una_variable
-    una_variable=42
-    document.write(una_variable)
+	una_variable=42
+	document.write(una_variable)
 	
 	
 Decisiones
@@ -52,11 +104,12 @@ Las decisiones se toman con la sentencia ``if`` que funciona exactamente igual q
 
 .. code-block:: javascript
 
+	"use strict"
 	if (una_variable > otra_variable) {
-        document.write ("La primera es mayor que la segunda")
-    } else {
-        document.write ("La segunda es mayor que la primera")
-    }
+		document.write ("La primera es mayor que la segunda")
+	} else {
+		document.write ("La segunda es mayor que la primera")
+	}
 		
 Vectores o Arrays
 =================
@@ -67,17 +120,18 @@ En Javascript los arrays pueden almacenar elementos de distinto tipo. Al crearlo
 
 .. code-block:: javascript
 
+	"use strict"
 	/* Una forma de crear un array*/
-    vector_nombres=new Array()
-    vector_nombres[0]="Juan Perez"
-    vector_nombres[1]="Pedro Diaz"
-    document.write ("El primer nombre es:"+vector_nombres[0])
-    
-    /* Otra forma de crearlos*/
-    vector_numeros=new Array(2)
-    vector_numeros[0]=23
-    vector_numeros[1]=-45.23
-    vector_numeros[2]=45e2
+	vector_nombres=new Array()
+	vector_nombres[0]="Juan Perez"
+	vector_nombres[1]="Pedro Diaz"
+	document.write ("El primer nombre es:"+vector_nombres[0])
+
+	/* Otra forma de crearlos*/
+	vector_numeros=new Array(2)
+	vector_numeros[0]=23
+	vector_numeros[1]=-45.23
+	vector_numeros[2]=45e2
 
 Bucles
 ======
@@ -93,10 +147,11 @@ En estos bucles hay que poner la inicialización, la condición de final y la ac
 
 .. code-block:: javascript
 
+	"use strict"
 	for (let i=0; i<vector_numeros.length; i++){
-        document.write("<br/>")
-        document.write ("En la posición "+i)
-        document.write (" está el número " + vector_numeros[i])
+		document.write("<br/>")
+		document.write ("En la posición "+i)
+		document.write (" está el número " + vector_numeros[i])
 	}
 
 Obsérvese que hemos introducido el atributo ``length`` de la clase ``Array`` que nos indica la longitud del vector.
@@ -151,10 +206,11 @@ Funciona igual que el anterior pero es mucho más corto.
 
 .. code-block:: javascript
 
+	"use strict"
 	for (let posicion in vector_numeros) {
-			document.write("<br/>")
-			document.write ("En la posición "+posicion)
-			document.write (" está el número " + vector_numeros[posicion])
+		document.write("<br/>")
+		document.write ("En la posición "+posicion)
+		document.write (" está el número " + vector_numeros[posicion])
 	}
 
 
@@ -165,13 +221,14 @@ Los bucles ``while`` funcionan igual que en Java
 
 .. code-block:: javascript
 
+	"use strict"
 	let posicion=0
 	while (posicion<vector_numeros.length){
-			document.write("<br/>")
-			document.write ("En la posición "+posicion)
-			document.write (" está el número " + vector_numeros[posicion])
-			posicion++
-    }
+		document.write("<br/>")
+		document.write ("En la posición "+posicion)
+		document.write (" está el número " + vector_numeros[posicion])
+		posicion++
+	}
 
 
 Ejercicio: media aritmética
@@ -181,12 +238,13 @@ Crear un programa que calcule la media aritmética del vector de números.
 
 .. code-block:: javascript
 
-		let suma=0
-		for (var pos in vector_numeros){
-			suma=suma+vector_numeros[pos]
-		}
-		let media=suma / vector_numeros.length
-		document.write("<br/>La media es:" + media)
+	"use strict"
+	let suma=0
+	for (var pos in vector_numeros){
+		suma=suma+vector_numeros[pos]
+	}
+	let media=suma / vector_numeros.length
+	document.write("<br/>La media es:" + media)
 
 
 Ejercicio: desviación media
@@ -198,15 +256,16 @@ Crear un programa que calcule la desviación media del vector de números.
 
 .. code-block:: javascript
 
+	"use strict"
 	/* Para calcular la desviación media*/
-    let suma=0
-    for (let pos in vector_numeros) {
-        let desviacion= Math.abs ( vector_numeros[pos] - media )
-        suma = suma + desviacion
-    }
-    /* En este punto la variable suma contiene la suma de las desviaciones*/
-    let desv_media = suma / vector_numeros.length
-    document.write("<br/>La desv media es:"+desv_media)
+	let suma=0
+	for (let pos in vector_numeros) {
+		let desviacion= Math.abs ( vector_numeros[pos] - media )
+		suma = suma + desviacion
+	}
+	/* En este punto la variable suma contiene la suma de las desviaciones*/
+	let desv_media = suma / vector_numeros.length
+	document.write("<br/>La desv media es:"+desv_media)
 
 Ejercicio: la mediana
 ===================================================
@@ -215,6 +274,7 @@ Calcular la mediana del vector
 
 .. code-block:: java
 
+	"use strict"
     if (v.length%2==0) {
         let pos1=v.length/2
         let pos2=pos1-1
@@ -234,47 +294,65 @@ Para crear una función usaremos la palabra ``function``, pondremos el nombre, l
 
 .. code-block:: javascript
 
+	"use strict"
 	/* Función a la que le pasamos un vector de números y que
-     * nos devuelve la media de sus valores*/
-    
-    function calcularMedia(vector_valores){
-        let suma=0
-        for (let pos in vector_valores){
-            suma = suma + vector_valores[pos]
-        }
-        return suma / vector_valores.length
-    }
-    
-    let vector=new Array(4)
-    vector[0]=5
-    vector[1]=2
-    vector[2]=7
-    vector[3]=8
-    
-    let media=calcularMedia(vector)
-    document.write("<br/>La media es:"+media)
+	* nos devuelve la media de sus valores*/
+	function calcularMedia(vector_valores){
+		let suma=0
+		for (let pos in vector_valores){
+			suma = suma + vector_valores[pos]
+		}
+		return suma / vector_valores.length
+	}
+
+	let vector=new Array(4)
+	vector[0]=5
+	vector[1]=2
+	vector[2]=7
+	vector[3]=8
+
+	let media=calcularMedia(vector)
+	document.write("<br/>La media es:"+media)
 
 Una cuestión importante es que las funciones son valores asignables. Cuando queramos asignar una función a una variable **no pondremos paréntesis**. Cuando sí queramos ejecutar una función (ya sea con su nombre original o con el de la variable, sí pondremos los paréntesis con los parámetros que queramos pasar**.
 
 .. code-block:: javascript
 
+	"use strict"
 	function saludar(nombre){
-        document.write("Hola "
-            +nombre+"<br/>")
-    }
-    function despedir(nombre){
-        document.write("Adios "
-            +nombre+"<br/>")
-    }
-    saludar("Antonio")
-    despedir("Antonio")
-    /* Las funciones son valores
-     * asignables*/
-    let f=despedir
-    f("Tomas")
+		document.write("Hola "
+			+nombre+"<br/>")
+	}
+	function despedir(nombre){
+		document.write("Adios "
+			+nombre+"<br/>")
+	}
+	saludar("Antonio")
+	despedir("Antonio")
+	/* Las funciones son valores
+		* asignables*/
+	let funcion=despedir
+	funcion("Tomas")
 
 	
-	
+Valores por defecto
+--------------------------------------------------------------------------------
+
+Desde ES6 las funciones aceptan valores por defecto. Si a la función no le pasamos un cierto argumento, entonces la función usará los asignados por defectos:
+
+
+.. code-block:: javascript
+		
+	"use strict"
+	function saludar(tipoSaludo="Hola", persona="Juan"){
+		alert(`${tipoSaludo} ${persona}`)
+	}
+	//Escribe "Hola Juan"
+	saludar() 
+	//Escribe "Bienvenido Juan"
+	saludar("Bienvenido") 
+	//Escribe "Me alegro de verte Carmen"
+	saludar("Me alegro de verte", "Carmen")  
 	
 	
 	
@@ -285,6 +363,7 @@ Crear un programa que tenga una función que calcule la desviación media de val
 
 .. code-block:: javascript
 
+	"use strict"
 	/* Función que calcula la desviacion media de
 	* un vector de valores numericos*/
     function calcularDesviacionMedia(vector_valores){
@@ -303,6 +382,7 @@ Crear un programa que tenga una función que calcule la moda.
 
 .. code-block:: javascript
 
+	"use strict"
 	/* Este vector nos dice cuantas veces aparece un número en un vector*/
     function calcularFrecuencia(numero, vector){
         var num_veces=0
@@ -357,6 +437,7 @@ En primer lugar, es posible crear objetos sin crear clases.
 
 .. code-block:: javascript
 
+	"use strict"
 	let empleado={
         nombre:"Pepe Perez",
         edad:27,
@@ -387,6 +468,7 @@ Añadir un método llamado ``nivelExperiencia`` que nos diga una de estas cosas:
 
 .. code-block:: javascript
 
+	"use strict"
 	let empleado={
         nombre:"Pepe Perez",
         edad:27,
@@ -417,6 +499,7 @@ Crear una clase GestorVectores que tenga los principales métodos estadísticos 
 
 .. code-block:: javascript
 
+	"use strict"
 	gestor_vectores={
 		vector_numeros:new Array(),
 		setDatos:function(vector){

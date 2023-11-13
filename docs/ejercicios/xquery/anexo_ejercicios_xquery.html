@@ -1,114 +1,42 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="es" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anexo: Ejercicios de XQuery &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Anexo: Ejercicios de XQuery &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="prev" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" /> 
-</head>
+    <link rel="prev" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Apuntes de Lenguajes de Marcas
-          </a>
-              <div class="version">
-                1.3
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Buscar documentos" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: Ejercicios de XQuery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudad-de-los-proveedores">Consulta: ciudad de los proveedores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-filas-de-la-tabla-partes">Consulta: filas de la tabla partes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-con-join-s">Consulta con join’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-0-analisis">Paso 0: análisis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-1-hacemos-el-cruce">Paso 1: hacemos el cruce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#paso-2-anadir-condiciones">Paso 2: añadir condiciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudades-iguales">Consulta: ciudades iguales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-partes-con-colores-iguales">Consulta: partes con colores iguales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-partes-rojas">Consulta: media de partes rojas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#paso-1-cruce-de-tablas">Paso 1: cruce de tablas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paso-2-anadir-condicion-de-filtrado">Paso 2: añadir condicion de filtrado</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paso-3-calcular-la-media">Paso 3: calcular la media</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comprobacion">Comprobación</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-individual-de-partes-rojas">Consulta: media individual de partes rojas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>
-</ul>
-</li>
-</ul>
+  </head><body>
+  
 
-        </div>
-      </div>
-    </nav>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Apuntes de Lenguajes de Marcas</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Anexo: Ejercicios de XQuery</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/ejercicios/xquery/anexo_ejercicios_xquery.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+          <div class="body" role="main">
+            
   <section id="anexo-ejercicios-de-xquery">
-<h1>Anexo: Ejercicios de XQuery<a class="headerlink" href="#anexo-ejercicios-de-xquery" title="Enlace permanente a este encabezado"></a></h1>
+<h1>Anexo: Ejercicios de XQuery<a class="headerlink" href="#anexo-ejercicios-de-xquery" title="Enlace permanente a este encabezado">¶</a></h1>
 <p>En los ejercicios siguientes se asume que se va a utilizar la siguiente base de datos XML (tomada del libro de C.J. Date «Sistemas Gestores de Bases de Datos»)</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;datos&gt;</span>
     <span class="nt">&lt;proveedores&gt;</span>
@@ -469,7 +397,7 @@
 <li><p>En la tabla <code class="docutils literal notranslate"><span class="pre">suministra</span></code> el campo <code class="docutils literal notranslate"><span class="pre">numproyecto</span></code> es el mismo que el campo <code class="docutils literal notranslate"><span class="pre">numproyecto</span></code> de la tabla <code class="docutils literal notranslate"><span class="pre">proyectos</span></code></p></li>
 </ul>
 <section id="consulta-ciudad-de-los-proveedores">
-<h2>Consulta: ciudad de los proveedores<a class="headerlink" href="#consulta-ciudad-de-los-proveedores" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: ciudad de los proveedores<a class="headerlink" href="#consulta-ciudad-de-los-proveedores" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Extraer la ciudad de los proveedores (no debe aparecer la etiqueta) que tengan un estado mayor de 15.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $proveedor in doc(&quot;datos.xml&quot;)/datos/proveedores/proveedor</span>
 <span class="x">where $proveedor/estado &gt; 15</span>
@@ -484,7 +412,7 @@
 </div>
 </section>
 <section id="consulta-filas-de-la-tabla-partes">
-<h2>Consulta: filas de la tabla partes<a class="headerlink" href="#consulta-filas-de-la-tabla-partes" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: filas de la tabla partes<a class="headerlink" href="#consulta-filas-de-la-tabla-partes" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Averiguar cuantas partes existen, es decir, el total de filas de la «tabla» partes.</p>
 <p>Para resolverlo una tentación muy común es resolverlo así:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $partes in doc(&quot;datos.xml&quot;)/datos/partes</span>
@@ -498,15 +426,15 @@
 </div>
 </section>
 <section id="consulta-con-join-s">
-<h2>Consulta con join’s<a class="headerlink" href="#consulta-con-join-s" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta con join’s<a class="headerlink" href="#consulta-con-join-s" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Obtener el nombre de los proyectos cuya ciudad sea Paris y que reciban una cantidad de partes &gt; 350</p>
 </section>
 <section id="paso-0-analisis">
-<h2>Paso 0: análisis<a class="headerlink" href="#paso-0-analisis" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Paso 0: análisis<a class="headerlink" href="#paso-0-analisis" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>La cantidad está en las filas (elementos XML) <code class="docutils literal notranslate"><span class="pre">suministra</span></code> pero el <code class="docutils literal notranslate"><span class="pre">nombreproyecto</span></code> está en las filas <code class="docutils literal notranslate"><span class="pre">proyecto</span></code>. Será necesario «cruzar» elementos <code class="docutils literal notranslate"><span class="pre">proyecto</span></code> con elementos <code class="docutils literal notranslate"><span class="pre">suministra</span></code> usando como condición que <code class="docutils literal notranslate"><span class="pre">&#64;numproyecto</span></code> de los elementos <code class="docutils literal notranslate"><span class="pre">proyecto</span></code> sea igual a los campos <code class="docutils literal notranslate"><span class="pre">numproyecto</span></code> de los elementos <code class="docutils literal notranslate"><span class="pre">suministra</span></code></p>
 </section>
 <section id="paso-1-hacemos-el-cruce">
-<h2>Paso 1: hacemos el cruce<a class="headerlink" href="#paso-1-hacemos-el-cruce" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Paso 1: hacemos el cruce<a class="headerlink" href="#paso-1-hacemos-el-cruce" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Una primera aproximación sería esta:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $suministra in</span>
 <span class="x">  doc(&quot;datos.xml&quot;)/datos/suministros/suministra</span>
@@ -520,7 +448,7 @@
 <p>Sin embargo, esto devuelve «todos los proyectos» que de alguna manera aparezcan en la tabla <code class="docutils literal notranslate"><span class="pre">suministra</span></code></p>
 </section>
 <section id="paso-2-anadir-condiciones">
-<h2>Paso 2: añadir condiciones<a class="headerlink" href="#paso-2-anadir-condiciones" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Paso 2: añadir condiciones<a class="headerlink" href="#paso-2-anadir-condiciones" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Nos han dicho que la cantidad de la tabla <code class="docutils literal notranslate"><span class="pre">suministra</span></code> debe ser mayor de 350, así que en el where o en el for de <code class="docutils literal notranslate"><span class="pre">suministra</span></code> podemos añadir una condición de filtrado:</p>
 <p>Asimismo necesitamos solamente los proyectos cuyo campo <code class="docutils literal notranslate"><span class="pre">ciudad</span></code> sea Paris.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $suministra in</span>
@@ -547,7 +475,7 @@
 </div>
 </section>
 <section id="consulta-ciudades-iguales">
-<h2>Consulta: ciudades iguales<a class="headerlink" href="#consulta-ciudades-iguales" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: ciudades iguales<a class="headerlink" href="#consulta-ciudades-iguales" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Obtener los nombres de proyecto y nombres de parte que estén en la misma ciudad.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $proyecto in</span>
 <span class="x">    doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
@@ -563,7 +491,7 @@
 </div>
 </section>
 <section id="consulta-partes-con-colores-iguales">
-<h2>Consulta: partes con colores iguales<a class="headerlink" href="#consulta-partes-con-colores-iguales" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: partes con colores iguales<a class="headerlink" href="#consulta-partes-con-colores-iguales" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Obtener parejas de partes que tengan el mismo color (indicando el nombre de ambas partes y el color que comparten)</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $p1 in</span>
 <span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
@@ -598,17 +526,17 @@
 </div>
 </section>
 <section id="consulta-cantidad-de-partes-de-londres">
-<h2>Consulta: cantidad de partes de Londres<a class="headerlink" href="#consulta-cantidad-de-partes-de-londres" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: cantidad de partes de Londres<a class="headerlink" href="#consulta-cantidad-de-partes-de-londres" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Averiguar cuantas partes existen cuya ciudad sea «Londres», es decir, el total de filas de la «tabla» partes pero teniendo en cuenta la condición de que el «campo» ciudad debe ser Londres.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">count (doc(&quot;datos.xml&quot;)/datos/partes/parte[ciudad=&#39;Londres&#39;])</span>
 </pre></div>
 </div>
 </section>
 <section id="consulta-media-de-partes-rojas">
-<h2>Consulta: media de partes rojas<a class="headerlink" href="#consulta-media-de-partes-rojas" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: media de partes rojas<a class="headerlink" href="#consulta-media-de-partes-rojas" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Crear una consulta XQuery que averigüe la media de partes suministradas cuyo color sea “Rojo”</p>
 <section id="paso-1-cruce-de-tablas">
-<h3>Paso 1: cruce de tablas<a class="headerlink" href="#paso-1-cruce-de-tablas" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Paso 1: cruce de tablas<a class="headerlink" href="#paso-1-cruce-de-tablas" title="Enlace permanente a este encabezado">¶</a></h3>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $parte in</span>
 <span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
 <span class="x">for $suministra in</span>
@@ -620,7 +548,7 @@
 </div>
 </section>
 <section id="paso-2-anadir-condicion-de-filtrado">
-<h3>Paso 2: añadir condicion de filtrado<a class="headerlink" href="#paso-2-anadir-condicion-de-filtrado" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Paso 2: añadir condicion de filtrado<a class="headerlink" href="#paso-2-anadir-condicion-de-filtrado" title="Enlace permanente a este encabezado">¶</a></h3>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $parte in</span>
 <span class="x">    doc(&quot;datos.xml&quot;)/datos/partes/parte</span>
 <span class="x">for $suministra in</span>
@@ -644,7 +572,7 @@
 </div>
 </section>
 <section id="paso-3-calcular-la-media">
-<h3>Paso 3: calcular la media<a class="headerlink" href="#paso-3-calcular-la-media" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Paso 3: calcular la media<a class="headerlink" href="#paso-3-calcular-la-media" title="Enlace permanente a este encabezado">¶</a></h3>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">avg (</span>
 <span class="x">    for $parte in</span>
 <span class="x">        doc(&quot;datos.xml&quot;)/datos/partes/parte[color=&#39;Rojo&#39;]</span>
@@ -658,7 +586,7 @@
 </div>
 </section>
 <section id="comprobacion">
-<h3>Comprobación<a class="headerlink" href="#comprobacion" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Comprobación<a class="headerlink" href="#comprobacion" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Si analizamos la tabla partes veremos que las únicas partes cuyo color es “Rojo” son las partes <code class="docutils literal notranslate"><span class="pre">p1</span></code>, <code class="docutils literal notranslate"><span class="pre">p4</span></code> y <code class="docutils literal notranslate"><span class="pre">p6</span></code>.
 Esto significa que las unicas filas de <code class="docutils literal notranslate"><span class="pre">suministra</span></code> que nos interesan son estas:</p>
 <table class="docutils align-default">
@@ -727,7 +655,7 @@ Esto significa que las unicas filas de <code class="docutils literal notranslate
 </section>
 </section>
 <section id="consulta-media-individual-de-partes-rojas">
-<h2>Consulta: media individual de partes rojas<a class="headerlink" href="#consulta-media-individual-de-partes-rojas" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: media individual de partes rojas<a class="headerlink" href="#consulta-media-individual-de-partes-rojas" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>En el ejercicio anterior hemos calculado <em>la media global</em> de
 partes rojas. Sin embargo, nos interesaría conocer la media de cada parte roja. Es decir, la media de p1, la media de p4 y la media de p6.</p>
 <p>Extraigamos primero las partes cuyo color es rojo:</p>
@@ -761,7 +689,7 @@ nombres de parte. Obsérvese que concatenamos las siguientes cosas:</p>
 </div>
 </section>
 <section id="consulta-media-de-suministros">
-<h2>Consulta: media de suministros<a class="headerlink" href="#consulta-media-de-suministros" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: media de suministros<a class="headerlink" href="#consulta-media-de-suministros" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Averiguar la media de la cantidad de partes que aparecen en la «tabla» suministra</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">avg (doc(&quot;datos.xml&quot;)/datos/suministros/suministra/cantidad)</span>
 </pre></div>
@@ -773,7 +701,7 @@ nombres de parte. Obsérvese que concatenamos las siguientes cosas:</p>
 <p>Respuesta: las funciones son capaces de «extraer el texto automáticamente» si en el elemento no hay hijos. En este caso, la cantidad no tiene hijos, por lo que podemos ahorrarnos el <code class="docutils literal notranslate"><span class="pre">text()</span></code></p>
 </section>
 <section id="consulta-media-por-proveedor">
-<h2>Consulta: media por proveedor<a class="headerlink" href="#consulta-media-por-proveedor" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: media por proveedor<a class="headerlink" href="#consulta-media-por-proveedor" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Averiguar la media de cantidades por proveedor usando los datos de la tabla suministra.</p>
 <p>Hagamos esta consulta por partes. En primer lugar, saquemos los distintos proveedores que hay en suministra</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $n in distinct-values(</span>
@@ -803,7 +731,7 @@ nombres de parte. Obsérvese que concatenamos las siguientes cosas:</p>
 </div>
 </section>
 <section id="consulta-suministros-en-grandes-cantidades">
-<h2>Consulta: suministros en grandes cantidades<a class="headerlink" href="#consulta-suministros-en-grandes-cantidades" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Consulta: suministros en grandes cantidades<a class="headerlink" href="#consulta-suministros-en-grandes-cantidades" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Averiguar el nombre de los proyectos (sin que haya repeticiones) que reciban una cantidad en la tabla suministra mayor de 650.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">for $proyecto</span>
 <span class="x">in doc(&quot;datos.xml&quot;)/datos/proyectos/proyecto</span>
@@ -818,33 +746,107 @@ nombres de parte. Obsérvese que concatenamos las siguientes cosas:</p>
 </section>
 
 
-           </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="../xpath/anexo_ejercicios_xpath.html" class="btn btn-neutral float-left" title="Anexo: Ejercicios de XPath" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Derechos de autor 2016, Oscar Gomez.</p>
-  </div>
-
-  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
-    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          
         </div>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Apuntes de Lenguajes de Marcas</a></h1>
 
-</body>
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: Ejercicios de XQuery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudad-de-los-proveedores">Consulta: ciudad de los proveedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-filas-de-la-tabla-partes">Consulta: filas de la tabla partes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-con-join-s">Consulta con join’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paso-0-analisis">Paso 0: análisis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paso-1-hacemos-el-cruce">Paso 1: hacemos el cruce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paso-2-anadir-condiciones">Paso 2: añadir condiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-ciudades-iguales">Consulta: ciudades iguales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-partes-con-colores-iguales">Consulta: partes con colores iguales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-cantidad-de-partes-de-londres">Consulta: cantidad de partes de Londres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-partes-rojas">Consulta: media de partes rojas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#paso-1-cruce-de-tablas">Paso 1: cruce de tablas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paso-2-anadir-condicion-de-filtrado">Paso 2: añadir condicion de filtrado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paso-3-calcular-la-media">Paso 3: calcular la media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comprobacion">Comprobación</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-media-individual-de-partes-rojas">Consulta: media individual de partes rojas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-media-de-suministros">Consulta: media de suministros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-media-por-proveedor">Consulta: media por proveedor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulta-suministros-en-grandes-cantidades">Consulta: suministros en grandes cantidades</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../xpath/anexo_ejercicios_xpath.html" title="capítulo anterior">Anexo: Ejercicios de XPath</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/ejercicios/xquery/anexo_ejercicios_xquery.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
 </html>

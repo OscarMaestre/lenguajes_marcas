@@ -1,113 +1,45 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="es" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anexo: ejercicios sobre XSLT &mdash; Apuntes de Lenguajes de Marcas v1.3</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/translations.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Anexo: ejercicios sobre XSLT &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Anexo: Ejercicios de XPath" href="../xpath/anexo_ejercicios_xpath.html" />
-    <link rel="prev" title="Anexo: ejercicios sobre «grids»" href="../grids/anexo.html" /> 
-</head>
+    <link rel="prev" title="Anexo: ejercicios sobre «grids»" href="../grids/anexo.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Apuntes de Lenguajes de Marcas
-          </a>
-              <div class="version">
-                1.3
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Buscar documentos" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#filtrado">Filtrado</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Productos del edificio B</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-un-xml-bancario">Transformación de un XML bancario</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
-</ul>
+  </head><body>
+  
 
-        </div>
-      </div>
-    </nav>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Apuntes de Lenguajes de Marcas</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Anexo: ejercicios sobre XSLT</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+          <div class="body" role="main">
+            
   <section id="anexo-ejercicios-sobre-xslt">
-<h1>Anexo: ejercicios sobre XSLT<a class="headerlink" href="#anexo-ejercicios-sobre-xslt" title="Enlace permanente a este encabezado"></a></h1>
+<h1>Anexo: ejercicios sobre XSLT<a class="headerlink" href="#anexo-ejercicios-sobre-xslt" title="Enlace permanente a este encabezado">¶</a></h1>
 <section id="fichero-origen">
-<h2>Fichero origen<a class="headerlink" href="#fichero-origen" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Fichero origen<a class="headerlink" href="#fichero-origen" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Para los ejercicios siguiente supondremos que se va a trabajar con el fichero que se muestra a continuación:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
     <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;P1&quot;</span><span class="nt">&gt;</span>
@@ -129,7 +61,7 @@
 </div>
 </section>
 <section id="generacion-de-lista-con-puntos">
-<h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Generación de lista con puntos<a class="headerlink" href="#generacion-de-lista-con-puntos" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Convertir el fichero origen en una lista punteada similar a la que se muestra en la figura:</p>
 <a class="reference internal image-reference" href="../../_images/lista_punteada.png"><img alt="../../_images/lista_punteada.png" class="align-center" src="../../_images/lista_punteada.png" style="width: 308.5px; height: 198.5px;" /></a>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
@@ -167,13 +99,13 @@
 </div>
 </section>
 <section id="filtrado">
-<h2>Filtrado<a class="headerlink" href="#filtrado" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Filtrado<a class="headerlink" href="#filtrado" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Replicar la estructura del fichero pero filtrando
 los elementos y haciendo que solo aparezcan los que estén
 en el aula A6</p>
 </section>
 <section id="recuperacion-de-elementos-pesados">
-<h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Recuperación de elementos pesados<a class="headerlink" href="#recuperacion-de-elementos-pesados" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Se pide un XSLT que muestre exactamente la misma información del fichero origen pero sin mostrar los elementos cuyo peso sea menor de 7.</p>
 <p>Una posible solución sería esta:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
@@ -211,7 +143,7 @@ en el aula A6</p>
 <p>Supongamos entonces que el enunciado correcto pone el peso en kg. Así, la solución entonces podría hacerse de esta manera.</p>
 </section>
 <section id="productos-del-edificio-b">
-<h2>Productos del edificio B<a class="headerlink" href="#productos-del-edificio-b" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Productos del edificio B<a class="headerlink" href="#productos-del-edificio-b" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Se pide ahora mostrar en el resultado la misma información del fichero origen pero solo en los casos en que el lugar del producto sea el edificio B</p>
 <p>La solución es muy parecida, necesitando solamente modificar la condición.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
@@ -247,7 +179,7 @@ en el aula A6</p>
 </div>
 </section>
 <section id="tabla-de-localizaciones">
-<h2>Tabla de localizaciones<a class="headerlink" href="#tabla-de-localizaciones" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Tabla de localizaciones<a class="headerlink" href="#tabla-de-localizaciones" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Generar una tabla HTML que muestre la información del fichero origen de la manera siguiente:</p>
 <a class="reference internal image-reference" href="../../_images/xslt_tabla_edificio_aula.png"><img alt="../../_images/xslt_tabla_edificio_aula.png" class="align-center" src="../../_images/xslt_tabla_edificio_aula.png" style="width: 241.5px; height: 214.0px;" /></a>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
@@ -283,7 +215,7 @@ en el aula A6</p>
 </div>
 </section>
 <section id="tablas-con-edificios-separados">
-<h2>Tablas con edificios separados<a class="headerlink" href="#tablas-con-edificios-separados" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Tablas con edificios separados<a class="headerlink" href="#tablas-con-edificios-separados" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Hacer una plantilla que fabrique una tabla
 con los datos de los productos del edificio A
 y otra tabla separada para los productos del edificio B</p>
@@ -349,7 +281,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 </section>
 <section id="productos-del-aula-6">
-<h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Productos del aula 6<a class="headerlink" href="#productos-del-aula-6" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Se pide generar un inventario en el que aparezcan solo los nombres de productos que estén en el aula 6.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
   <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
@@ -369,7 +301,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 </section>
 <section id="id1">
-<h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Productos del edificio B<a class="headerlink" href="#id1" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>El siguiente ejercicio es muy parecido al anterior, con la salvedad de que ahora solo nos piden los nombres de los productos ubicados en el edificio B.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
   <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;/inventario/producto&quot;</span><span class="nt">&gt;</span>
@@ -386,7 +318,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 </section>
 <section id="condiciones-multiples-peso-ligero-y-edificio-a">
-<h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Condiciones múltiples: peso ligero y edificio A<a class="headerlink" href="#condiciones-multiples-peso-ligero-y-edificio-a" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Se pide ahora generar un fichero HTML con una tabla pero en la que solo aparezcan los productos cuyo edificio sea el A <strong>y además</strong> pesen menos de 7kg.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span>
 <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
@@ -426,7 +358,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 </section>
 <section id="ejercicio-de-examen-xslt">
-<h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Ejercicio de examen XSLT<a class="headerlink" href="#ejercicio-de-examen-xslt" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Dado el siguiente fichero XML</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;catalogo&gt;</span>
   <span class="nt">&lt;libro</span> <span class="na">isbn=</span><span class="s">&quot;i1&quot;</span><span class="nt">&gt;</span>
@@ -533,7 +465,7 @@ y otra tabla separada para los productos del edificio B</p>
 </div>
 </section>
 <section id="transformacion-de-un-xml-bancario">
-<h2>Transformación de un XML bancario<a class="headerlink" href="#transformacion-de-un-xml-bancario" title="Enlace permanente a este encabezado"></a></h2>
+<h2>Transformación de un XML bancario<a class="headerlink" href="#transformacion-de-un-xml-bancario" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Una empresa utiliza el siguiente XML para intercambiar información entre bases de datos de distintos proveedores. Sin embargo han comprado un nuevo sistema que necesita que la información tenga una estructura siguiente. Los dos listados que se ven a continuación ilustran la estructura original y la nueva estructura que deben tener los datos. Crear el XSLT que permita convertir la información original en un formato que pueda entender el nuevo sistema.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!--Estructura original de la información--&gt;</span>
 <span class="nt">&lt;listado&gt;</span>
@@ -594,7 +526,7 @@ y otra tabla separada para los productos del edificio B</p>
 </pre></div>
 </div>
 <section id="analisis-del-problema">
-<h3>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Análisis del problema<a class="headerlink" href="#analisis-del-problema" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Es necesario hacer varios cambios:</p>
 <ol class="arabic simple">
 <li><p>Se ha cambiado el nombre de elemento raíz de <code class="docutils literal notranslate"><span class="pre">listado</span></code> a <code class="docutils literal notranslate"><span class="pre">datos</span></code>.</p></li>
@@ -607,7 +539,7 @@ y otra tabla separada para los productos del edificio B</p>
 </ol>
 </section>
 <section id="solucion-paso-a-paso">
-<h3>Solución paso a paso<a class="headerlink" href="#solucion-paso-a-paso" title="Enlace permanente a este encabezado"></a></h3>
+<h3>Solución paso a paso<a class="headerlink" href="#solucion-paso-a-paso" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Empecemos por crear una hoja muy básica, que busque el elemento raíz y devuelva como salida el elemento <code class="docutils literal notranslate"><span class="pre">datos</span></code> (que va a ser la nueva raíz)</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
@@ -1107,34 +1039,104 @@ y otra tabla separada para los productos del edificio B</p>
 </section>
 
 
-           </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="../grids/anexo.html" class="btn btn-neutral float-left" title="Anexo: ejercicios sobre «grids»" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="../xpath/anexo_ejercicios_xpath.html" class="btn btn-neutral float-right" title="Anexo: Ejercicios de XPath" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Derechos de autor 2016, Oscar Gomez.</p>
-  </div>
-
-  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
-    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          
         </div>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Apuntes de Lenguajes de Marcas</a></h1>
 
-</body>
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema8.html">Sistemas de gestión de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anexo: ejercicios sobre XSLT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fichero-origen">Fichero origen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generacion-de-lista-con-puntos">Generación de lista con puntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtrado">Filtrado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recuperacion-de-elementos-pesados">Recuperación de elementos pesados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-edificio-b">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tabla-de-localizaciones">Tabla de localizaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tablas-con-edificios-separados">Tablas con edificios separados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#productos-del-aula-6">Productos del aula 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Productos del edificio B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#condiciones-multiples-peso-ligero-y-edificio-a">Condiciones múltiples: peso ligero y edificio A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio-de-examen-xslt">Ejercicio de examen XSLT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transformacion-de-un-xml-bancario">Transformación de un XML bancario</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analisis-del-problema">Análisis del problema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solucion-paso-a-paso">Solución paso a paso</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../grids/anexo.html" title="capítulo anterior">Anexo: ejercicios sobre «grids»</a></li>
+      <li>Next: <a href="../xpath/anexo_ejercicios_xpath.html" title="próximo capítulo">Anexo: Ejercicios de XPath</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/ejercicios/xslt/anexo_ejercicios_xslt.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
 </html>
