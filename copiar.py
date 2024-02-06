@@ -8,4 +8,4 @@ print ("Borrando " + RUTA_DIRECTORIO_DESTINO)
 shutil.rmtree ( RUTA_DIRECTORIO_DESTINO , ignore_errors=True)
 
 shutil.copytree(RUTA_APUNTES, RUTA_DIRECTORIO_DESTINO, ignore=None)
-os.mknod(RUTA_DIRECTORIO_DESTINO + os.sep+".nojekyll")
+os.system ("mkdir docs")

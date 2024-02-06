@@ -1458,6 +1458,68 @@ Una posible solución sería:</p>
 </pre></div>
 </div>
 </section>
+<section id="suministros-medicos-dtd">
+<h3>Suministros médicos (DTD)<a class="headerlink" href="#suministros-medicos-dtd" title="Link to this heading">¶</a></h3>
+<p>En un centro médico se desea almacenar la información sobre el inventario usando XML. Se ha llegado a un acuerdo para almacenar la información en este formato</p>
+<ol class="arabic">
+<li><p>El elemento raíz se llama «suministrosmedicos». Dentro de él hay lo siguiente:</p>
+<blockquote>
+<div><p>1.1 Primero hay uno o muchos elementos «antibiotico». Todo antibiotico lleva dentro un elemento «nombre». Puede llevar o no un elemento llamado «nombrecomercial».
+1.2 Despues hay uno o muchos elementos «analgesico». El analgesico puede llevar dentro o no un elemento «fechadecaducidad» y despues siempre un elemento nombre. El analgesico siempre lleva un atributo llamado «pvp».
+1.3 Despues puede haber 0 o muchos elementos «antitusivo». Todo antitusivo lleva dentro dos elementos QUE PUEDEN IR EN CUALQUIER ORDEN: elemento «tiporeceta» y el elemento «presentacion». La presentacion siempre lleva un atributo «dosisrecomendada»</p>
+</div></blockquote>
+</li>
+</ol>
+<p>A continuación se da un ejemplo de fichero:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;suministrosmedicos&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antibiotico&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Penicilina<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antibiotico&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antibiotico&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Penicilina<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombrecomercial&gt;</span>Zitromax<span class="nt">&lt;/nombrecomercial&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antibiotico&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antibiotico&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Amoxicilina<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antibiotico&gt;</span>
+<span class="w">    </span><span class="nt">&lt;analgesico</span><span class="w"> </span><span class="na">pvp=</span><span class="s">&quot;14.80 euros&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Paracetamol<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/analgesico&gt;</span>
+<span class="w">    </span><span class="nt">&lt;analgesico</span><span class="w"> </span><span class="na">pvp=</span><span class="s">&quot;14.80 euros&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fechadecaducidad&gt;</span>15-02-2026<span class="nt">&lt;/fechadecaducidad&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Apiretal<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/analgesico&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antitusivo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tiporeceta&gt;</span>Innecesaria<span class="nt">&lt;/tiporeceta&gt;</span>
+<span class="w">        </span><span class="nt">&lt;presentacion</span><span class="w">  </span><span class="na">dosisrecomendada=</span><span class="s">&quot;1-1-1&quot;</span><span class="nt">&gt;</span>Jarabe<span class="nt">&lt;/presentacion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antitusivo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antitusivo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;presentacion</span><span class="w">  </span><span class="na">dosisrecomendada=</span><span class="s">&quot;1-1-1&quot;</span><span class="nt">&gt;</span>Jarabe<span class="nt">&lt;/presentacion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tiporeceta&gt;</span>Atencion<span class="w"> </span>primaria<span class="nt">&lt;/tiporeceta&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antitusivo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;antitusivo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tiporeceta&gt;</span>Atencion<span class="w"> </span>primaria<span class="nt">&lt;/tiporeceta&gt;</span>
+<span class="w">        </span><span class="nt">&lt;presentacion</span><span class="w"> </span><span class="na">dosisrecomendada=</span><span class="s">&quot;0-0-1&quot;</span><span class="nt">&gt;</span>Pastillas<span class="nt">&lt;/presentacion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/antitusivo&gt;</span>
+<span class="nt">&lt;/suministrosmedicos&gt;</span>
+</pre></div>
+</div>
+<p>Y una posible solución:</p>
+<div class="highlight-dtd notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;!ELEMENT</span> <span class="nt">suministrosmedicos</span>  <span class="o">(</span><span class="nt">antibiotico</span><span class="o">+,</span> <span class="nt">analgesico</span><span class="o">+,</span> <span class="nt">antitusivo</span><span class="o">*)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">antibiotico</span>         <span class="o">(</span><span class="nt">nombre</span><span class="o">,</span> <span class="nt">nombrecomercial</span><span class="o">?)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">nombre</span>              <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">nombrecomercial</span>     <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">analgesico</span>          <span class="o">(</span><span class="nt">fechadecaducidad</span><span class="o">?,</span> <span class="nt">nombre</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">fechadecaducidad</span>    <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">antitusivo</span>          <span class="o">(</span> <span class="o">(</span><span class="nt">tiporeceta</span><span class="o">,</span><span class="nt">presentacion</span><span class="o">)</span> <span class="o">|</span> <span class="o">(</span><span class="nt">presentacion</span><span class="o">,</span><span class="nt">tiporeceta</span><span class="o">)</span> <span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">tiporeceta</span>          <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">presentacion</span>        <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="c">&lt;!--Atributos--&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">analgesico</span>  <span class="na">pvp</span>  <span class="kc">CDATA</span>  <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">presentacion</span> <span class="na">dosisrecomendada</span> <span class="kc">CDATA</span> <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="id3">
 <h2>Ejercicio<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
@@ -3630,6 +3692,7 @@ valide la estructura de tales ficheros:</p>
 <li class="toctree-l2"><a class="reference internal" href="#otros-ejercicios-dtd">Otros ejercicios DTD</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#inventario-de-piezas">Inventario de piezas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#almacen-de-repuestos">Almacén de repuestos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suministros-medicos-dtd">Suministros médicos (DTD)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Ejercicio</a><ul>
