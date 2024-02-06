@@ -1550,8 +1550,114 @@ En general todo archivo constará de un listado de cosas como se detalla a conti
 		</letra>
 	</listado>
 
-	
-	
+Otros ejercicios DTD
+==========================
+
+Inventario de piezas
+------------------------
+
+Se desea almacenar nombres de piezas y para ello se ha llegado a este acuerdo:
+
+1.- El elemento raíz se va a llamar "listapiezas".
+2.- Dentro de "listapiezas" va a haber uno o muchos elementos "pieza"
+3.- Dentro de "pieza" hay tres elementos:
+    3.1 Un elemento llamado "peso" que contiene datos
+    3.2 Un elemento llamado "nombre" que contiene datos
+    3.3 Un elemento llamado fabricante que contiene datos. 
+        3.3.1 El fabricante lleva un atributo llamado pais que indica el pais
+
+Ejemplo de fichero válido
+
+<listapiezas>
+    <pieza>
+        <peso>20</peso>
+        <nombre>Pistón</nombre>
+        <fabricante pais="China"> Asia Electronics</fabricante>
+    </pieza>
+    <pieza>
+        <peso>15</peso>
+        <nombre>Cilindro</nombre>
+        <fabricante pais="Japón">Toyota Motors</fabricante>
+    </pieza>
+</listapiezas>
+
+
+Ejemplo de fichero que debe dar errores
+
+.. code-block:: xml
+
+    <listapiezas>
+        <pieza>
+            <peso>20</peso>
+            <nombre>Pistón</nombre>
+            <!--Aquí falta el país-->
+            <fabricante> Asia Electronics</fabricante>
+        </pieza>
+        <pieza>
+            <peso>15</peso>
+            <!--Aquí falta el nombre-->
+            <fabricante pais="Japón">Toyota Motors</fabricante>
+        </pieza>
+    </listapiezas>
+
+Una posible solución sería esta::
+
+.. code-block:: dtd
+
+    <!ELEMENT listapiezas   (pieza+)>
+    <!ELEMENT pieza         (peso, nombre,fabricante)>
+    <!ELEMENT peso          (#PCDATA)>
+    <!ELEMENT nombre        (#PCDATA)>
+    <!ELEMENT fabricante    (#PCDATA)>
+    <!ATTLIST fabricante pais CDATA #REQUIRED>
+
+
+Almacén de repuestos
+---------------------------
+
+Una empresa de repuestos desea almacenar en XML la información de su inventario:
+
+1. El elemento raíz debe ser "repuestos"
+2. Dentro de "repuestos" debe haber uno o más "repuesto".
+3. Dentro de "repuesto" debe haber una de estas dos cosas: "tornillo" o "tuerca"
+    3.1 Tornillo: lleva siempre un atributo "peso". Lleva dentro un elemento llamado "descripcion"
+    3.2 Tuerca: puede llevar un atributo "peso". Lleva dentro siempre un elemento llamado "material"
+
+Ejemplo de fichero válido
+
+.. code-block:: xml
+
+    <repuestos>
+        <repuesto>
+            <tornillo peso="5g">
+                <descripcion>Tornillo para ensamblajes metálicos</descripcion>
+            </tornillo>
+        </repuesto>
+        <repuesto>
+            <tuerca>
+                <material>Acero</material>
+            </tuerca>
+        </repuesto>
+        <repuesto>
+            <tuerca peso="12 mg">
+                <material>Aleación</material>
+            </tuerca>
+        </repuesto>
+    </repuestos>
+
+Y una posible solución:
+
+.. code-block:: dtd
+
+    <!ELEMENT repuestos   (repuesto+)>
+    <!ELEMENT repuesto    (tornillo|tuerca)>
+    <!ELEMENT tornillo    (descripcion)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT tuerca      (material)>
+    <!ELEMENT material    (#PCDATA)>
+    <!ATTLIST tornillo peso      CDATA #REQUIRED>
+    <!ATTLIST tuerca   peso      CDATA #IMPLIED>
+
 Ejercicio
 ===========================================
 
@@ -1571,6 +1677,55 @@ La Seguridad Social necesita un formato de intercambio unificado para distribuir
 		
 	* Listado de prestaciones cobradas: consta de 0 o más elementos prestación, donde se indicará la cantidad percibida (obligatorio), la fecha de inicio (obligatorio) y la fecha de final (obligatorio)
 
+Inventario de piezas (variante)
+-----------------------------------
+
+Se desea almacenar nombres de piezas y para ello se ha llegado a este acuerdo:
+
+1.- El elemento raíz se va a llamar "listapiezas".
+2.- Dentro de "listapiezas" va a haber uno o muchos elementos "pieza"
+3.- Dentro de "pieza" hay tres elementos:
+    3.1 Un elemento llamado "peso" que contiene datos. NO ES OBLIGATORIO QUE ESTÉ
+    3.2 Un elemento llamado "nombre" que contiene datos
+    3.3 Un elemento llamado fabricante que contiene datos. 
+        3.3.1 El fabricante PUEDE LLEVAR un atributo llamado pais que indica el pais. 
+
+Ejemplo de fichero válido
+
+.. code-block:: xml   
+
+    <listapiezas>
+        <pieza>
+            <!--No hay peso, pero no debe importar, debe darse como bueno-->
+            <nombre>Pistón</nombre>
+            <fabricante pais="China"> Asia Electronics</fabricante>
+        </pieza>
+        <pieza>
+            <peso>15</peso>
+            <nombre>Cilindro</nombre>
+            <!--No hay atributo pais, pero no debe pasar nada-->
+            <fabricante>Toyota Motors</fabricante>
+        </pieza>
+    </listapiezas>
+
+
+Ejemplo de fichero que debe dar errores
+
+
+.. code-block:: xml
+        
+    <listapiezas>
+        <pieza>
+            <peso>20</peso>
+            <nombre>Pistón</nombre>
+            <!--Aquí falta el fabricante-->
+        </pieza>
+        <pieza>
+            <peso>15</peso>
+            <!--Aquí falta el nombre-->
+            <fabricante pais="Japón">Toyota Motors</fabricante>
+        </pieza>
+    </listapiezas>
 
 
 Esquemas XML
