@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="es" data-content_root="./">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Sistemas de gestión de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=7ece2587"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Anexo: ejercicios sobre tablas" href="ejercicios/html/anexo_tablas.html" />
@@ -33,9 +37,9 @@
           <div class="body" role="main">
             
   <section id="sistemas-de-gestion-de-informacion">
-<h1>Sistemas de gestión de información<a class="headerlink" href="#sistemas-de-gestion-de-informacion" title="Link to this heading">¶</a></h1>
+<h1>Sistemas de gestión de información<a class="headerlink" href="#sistemas-de-gestion-de-informacion" title="Enlace permanente a este encabezado">¶</a></h1>
 <section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">¶</a></h2>
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Primero definiremos los términos:</p>
 <ul class="simple">
 <li><p>Sistema: «conjunto de elementos interrelacionados que colaboran para la consecución de un objetivo».</p></li>
@@ -51,7 +55,7 @@
 <p>¿Todos los sistemas de una empresa son informáticos? NO. Un ejemplo es el sistema postal que no requiere (y no siempre ha requerido) parte informática.</p>
 </section>
 <section id="niveles-en-la-empresa">
-<h2>Niveles en la empresa<a class="headerlink" href="#niveles-en-la-empresa" title="Link to this heading">¶</a></h2>
+<h2>Niveles en la empresa<a class="headerlink" href="#niveles-en-la-empresa" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Toda empresa se puede ver desde tres puntos de vista temporales distintos</p>
 <ol class="arabic simple">
 <li><p>Nivel estratégico: en este nivel están las personas o elementos que tienen un punto de vista más global y más largo plazo (normalmente plazos de varios años).</p></li>
@@ -60,7 +64,7 @@
 </ol>
 <p>Ejemplo: Mercadona.</p>
 <section id="tipos-de-sgi-informaticos">
-<h3>Tipos de SGI informáticos<a class="headerlink" href="#tipos-de-sgi-informaticos" title="Link to this heading">¶</a></h3>
+<h3>Tipos de SGI informáticos<a class="headerlink" href="#tipos-de-sgi-informaticos" title="Enlace permanente a este encabezado">¶</a></h3>
 <ul class="simple">
 <li><p>DSS o Decision Support System: ayudan a tomar decisiones en función de la información disponible.</p></li>
 <li><p>CRM o Customer Relationship Managements o Gestores de la relación con clientes. Son sistemas que gestionan información muy personalizada a los clientes, tales como sistemas de recomendación, sistemas de fidelización. Los CRM manejan la comunicación entre información interna y externa de la empresa.</p></li>
@@ -79,11 +83,11 @@
 </section>
 </section>
 <section id="almacenamiento-en-los-sgi">
-<h2>Almacenamiento en los SGI<a class="headerlink" href="#almacenamiento-en-los-sgi" title="Link to this heading">¶</a></h2>
+<h2>Almacenamiento en los SGI<a class="headerlink" href="#almacenamiento-en-los-sgi" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>La mayor parte de SGI se apoyan en tecnologías conocidas como SGBD con SQL e incluso XML.</p>
 <p>La mayor parte de SGBD permite procesar y extraer información en forma de SQL.</p>
 <p>En general, cualquier consulta sobre cualquier tabla puede convertirse en XML. Cuando por ejemplo hacemos</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">marcas</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">marcas</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>obtenemos un resultado como este:</p>
@@ -103,33 +107,33 @@
 </pre></div>
 </div>
 <p>El resultado será algo como esto:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;resultset</span><span class="w"> </span><span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span> <span class="nt">&lt;resultset</span> <span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
 <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
-<span class="w">   </span><span class="nt">&lt;row&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Juan<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Lopez<span class="w"> </span>Lopez<span class="nt">&lt;/field&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Juan<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Lopez Lopez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
 
-<span class="w">   </span><span class="nt">&lt;row&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Andres<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Ruiz<span class="w"> </span>Gomez<span class="nt">&lt;/field&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Andres<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Ruiz Gomez<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
 
-<span class="w">   </span><span class="nt">&lt;row&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Tomas<span class="nt">&lt;/field&gt;</span>
-<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Perez<span class="w"> </span>Diaz<span class="nt">&lt;/field&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
-<span class="w"> </span><span class="nt">&lt;/resultset&gt;</span>
+   <span class="nt">&lt;row&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Tomas<span class="nt">&lt;/field&gt;</span>
+                 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Perez Diaz<span class="nt">&lt;/field&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+ <span class="nt">&lt;/resultset&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="puntos-de-vista-en-los-sgi">
-<h2>Puntos de vista en los SGI<a class="headerlink" href="#puntos-de-vista-en-los-sgi" title="Link to this heading">¶</a></h2>
+<h2>Puntos de vista en los SGI<a class="headerlink" href="#puntos-de-vista-en-los-sgi" title="Enlace permanente a este encabezado">¶</a></h2>
 <section id="desarrollador">
-<h3>Desarrollador<a class="headerlink" href="#desarrollador" title="Link to this heading">¶</a></h3>
+<h3>Desarrollador<a class="headerlink" href="#desarrollador" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Para un desarrollador hay ciertos temas fundamentales a conocer del SGI con el que trabaje:</p>
 <ul class="simple">
 <li><p>Programable ¿qué lenguaje de programación usa? ¿usa OOP? ¿es un tipo de lenguaje distinto?.</p></li>
@@ -138,21 +142,21 @@
 </ul>
 </section>
 <section id="administrador">
-<h3>Administrador<a class="headerlink" href="#administrador" title="Link to this heading">¶</a></h3>
+<h3>Administrador<a class="headerlink" href="#administrador" title="Enlace permanente a este encabezado">¶</a></h3>
 <ul class="simple">
 <li><p>¿Se pueden controlar  los accesos?</p></li>
 <li><p>¿Como cumplir la LOPD y sus 3 niveles?</p></li>
 </ul>
 </section>
 <section id="usuario">
-<h3>Usuario<a class="headerlink" href="#usuario" title="Link to this heading">¶</a></h3>
+<h3>Usuario<a class="headerlink" href="#usuario" title="Enlace permanente a este encabezado">¶</a></h3>
 <ul class="simple">
 <li><p>¿Como se usa el SGI? En unos casos hay muchos requisitos pero cada vez más abundan los SGI con interfaz Web.</p></li>
 <li><p>La adaptación específica que ofrece el sistema a la empresa. El PGC en España es un elemento al cual un programa puede estar adaptado o no. Otra posibilidad es que el programa permita INCOTERMS.</p></li>
 </ul>
 </section>
 <section id="ejercicio">
-<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Link to this heading">¶</a></h3>
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»</p>
 </section>
 </section>
@@ -244,8 +248,8 @@
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/tema8.rst.txt"

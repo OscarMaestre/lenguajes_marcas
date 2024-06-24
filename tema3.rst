@@ -1320,7 +1320,77 @@ Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay ot
 * ``margin: 1%``: es la más apropiada al modificar elementos div en pantalla.
 * ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
 
-	
+El tamaño de las cajas y el ``box-sizing``
+--------------------------------------------
+
+Cuando se diseñan cajas siempre surge una duda al añadir bordes:
+
+    Si uso una caja con un borde de 25 px y pongo que la anchura de la caja es 200 px, ¿qué ocurrirá? ¿La caja medirá 200px de ancho + 25 px por la izquierda + 25 px por la derecha dando un total de 250? ¿O cuando pongo que la anchura debe ser 200px el navegador entenderá que me refiero a la anchura total?
+
+La respuesta correcta es la primera: si indicamos una anchura de 200px *el navegador asume que nos referimos a la anchura del contenido.* Así que si despues añadimos un borde *la caja medirá más de los 200px que teníamos pensado.*
+
+Sin embargo, si queremos que el navegador asuma que width significa *"haz este elemento de esta anchura y no te excedas. Si pongo bordes, reduce el tamaño del contenido"* podemos usar la propiedad ``box-sizing.``
+
+* Si usamos ``box-sizing: content-box`` entonces ``width`` se refiere a la anchura del contenido, por lo que añadir bordes no pasaremos de la anchura escrita.
+* Si usamos ``box-sizing: border-box`` entonces ``width`` se refiere a la anchura del contenido *sin importar si hay bordes o no.*
+
+Examinemos este fichero HTML
+
+.. literalinclude:: ejemplos/tema_3_css/maquetacion/index.html
+  :language: html
+
+Y usemos este CSS:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+Las tres cajas se mostrarán iguales. Todas ellas tienen una anchura de 400px de contenido+ 25 de borde por la izquierda + 50 de padding izquierdo + 50 de padding derecho + 25 de borde por la derecha, es decir **que en realidad miden 600px** (el margen NO se incluye, solo se usa para separar unas cajas de otras).
+
+
+.. figure:: img/tema3css/box-sizing/box-sizing-1.png
+   :figwidth: 70%
+   :align: center
+
+
+Sin embargo, si usamos este CSS, ahora las cajas se muestran de distinta manera:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+    /* El width se mide INCLUYENDO EL BORDE */
+    #caja1{
+        box-sizing: border-box;
+    }
+    /* El width se mide SOLO INCLUYENDO EL CONTENIDO
+    Así que la caja 2 mide 400px de anchura 
+        -Más 25 px de borde izquierdo
+        -Más 50 px de padding izquierdo
+        -Más 50 px de padding derecho
+        -Más 25 px de borde izquierdo
+        Y la caja 2 mide en total 500 px*/
+    #caja2{
+        box-sizing: content-box;
+    }
+
+Observa que la caja 3 no lleva nada, así que la opción por defecto es ``box-sizing: content-box`` y por tanto se comporta igual que la caja 2.
+
+.. figure:: img/tema3css/box-sizing/box-sizing-2.png
+   :figwidth: 70%
+   :align: center
+
+
 Ejercicios comentados sobre selectores.
 ================================================================================
 
@@ -1617,6 +1687,8 @@ Los controles siguen pareciendo "demasiado apretados". Los rellenamos con un poc
     fieldset{
         padding: 5%;
     }
+
+
 Resultado:
 
 .. figure:: img/tema3css/form_con_css6.png
@@ -1764,7 +1836,7 @@ Variables ``less``
 
 En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` se pueden hacer operaciones matemáticas con variables:
 
-.. code-block:: css
+.. code-block:: less
 
     @grosorbordesnoticias: 3px;
     @grosorbordescabeceras:@grosorbordesnoticias + 2px;
@@ -1784,9 +1856,9 @@ En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` 
 "Mixins"
 --------------------------------------------------------------------------------
 
-Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS...
+Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS.
 
-.. code-block:: css
+.. code-block:: less
 
     @grosorbordesnoticias: 3px;
     @grosorbordescabeceras:@grosorbordesnoticias + 2px;
