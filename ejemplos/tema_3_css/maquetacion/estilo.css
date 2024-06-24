@@ -1,0 +1,23 @@
+#caja1, #caja2, #caja3{
+    border:  solid 25px black;
+    padding: 50px;
+    margin:  50px;
+    width:   400px;
+}
+
+/* El width se mide INCLUYENDO EL BORDE */
+#caja1{
+    box-sizing: border-box;
+}
+/* El width se mide SOLO INCLUYENDO EL CONTENIDO
+   Así que la caja 2 mide 400px de anchura 
+      -Más 25 px de borde izquierdo
+      -Más 50 px de padding izquierdo
+      -Más 50 px de padding derecho
+      -Más 25 px de borde izquierdo
+    Y la caja 2 mide en total 500 px*/
+#caja2{
+    box-sizing: content-box;
+}
+
+

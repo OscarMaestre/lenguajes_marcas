@@ -376,6 +376,36 @@ Se pueden modificar muchas propiedades de las tablas:
 * Se pueden cambiar propiedades filas pares o impares con ``tr:nth-child(even)`` o ``tr:nth-child(odd)`` 
 * Se puede cambiar un elemento *solo cuando el ratón pase por encima de él con* cosas como ``tr:hover{background-color:red;}`` 
 
+El modelo de cajas
+=====================
+
+En CSS **todo es una caja** y el navegador va colocando las distintas "cajas" en la página web. Las cajas tienen:
+
+* Un margen asociado que las separa de otras cajas.
+* Un borde.
+* Un espacio interno llamado "padding"
+* Un contenido
+
+.. figure:: img/tema3css/modelo-cajas.png
+   :alt: El modelo de cajas CSS (imagen tomada de la web del W3C)
+   
+   El modelo de cajas CSS (imagen tomada de la web del W3C)
+
+
+* Algunos elementos **no generan una línea nueva** sino que se mantienen dentro de la misma línea. Como por ejemplo ``<b>``, ``<span>`` o ``<img>``. A estos elementos se les llama *elementos inline* y no se les puede cambiar la altura o la anchura. Si intentamos cambiar altura o anchura el navegador ignorará el cambio.
+* Otros elementos  **generan su propia línea antes y despues.** Esta línea puede ser más alta o menos pero forma su propio bloque o línea. Ejemplo de estas etiquetas son ``<div>`` , ``<p>`` o ``<ul>.``
+
+Podemos conseguir que un inline se porte como un block o viceverse usando el CSS siguiente:
+
+* Bloque: ``display: block;`` 
+* Inline: ``display: inline;``
+* Existe tambien un ``display:inline-block.`` Estos elementos se portan como inlines y no generan línea nueva pero *sí pueden cambiar de anchura o altura.* 
+
+En el siguiente HTML tenemos un ejemplo de como se comportan estas propiedades:
+
+.. literalinclude:: ejemplos/tema_3_css/inlines/index.html
+
+
 Posicionamiento
 ===============
 
