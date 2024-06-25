@@ -1358,36 +1358,37 @@ Una posible solución sería:</p>
 <section id="inventario-de-piezas">
 <h3>Inventario de piezas<a class="headerlink" href="#inventario-de-piezas" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Se desea almacenar nombres de piezas y para ello se ha llegado a este acuerdo:</p>
-<p>1.- El elemento raíz se va a llamar «listapiezas».
-2.- Dentro de «listapiezas» va a haber uno o muchos elementos «pieza»
-3.- Dentro de «pieza» hay tres elementos:</p>
+<ol class="arabic">
+<li><p>El elemento raíz se va a llamar «listapiezas».</p></li>
+<li><p>Dentro de «listapiezas» va a haber uno o muchos elementos «pieza»</p></li>
+<li><p>Dentro de «pieza» hay tres elementos:</p>
 <blockquote>
-<div><p>3.1 Un elemento llamado «peso» que contiene datos
-3.2 Un elemento llamado «nombre» que contiene datos
-3.3 Un elemento llamado fabricante que contiene datos.</p>
+<div><p>1.. Un elemento llamado «peso» que contiene datos
+2. Un elemento llamado «nombre» que contiene datos
+3. Un elemento llamado fabricante que contiene datos.</p>
 <blockquote>
-<div><p>3.3.1 El fabricante lleva un atributo llamado pais que indica el pais</p>
+<div><ol class="arabic simple">
+<li><p>El fabricante lleva un atributo llamado pais que indica el pais</p></li>
+</ol>
 </div></blockquote>
 </div></blockquote>
-<p>Ejemplo de fichero válido</p>
-<dl>
-<dt>&lt;listapiezas&gt;</dt><dd><dl class="simple">
-<dt>&lt;pieza&gt;</dt><dd><p>&lt;peso&gt;20&lt;/peso&gt;
-&lt;nombre&gt;Pistón&lt;/nombre&gt;
-&lt;fabricante pais=»China»&gt; Asia Electronics&lt;/fabricante&gt;</p>
-</dd>
-</dl>
-<p>&lt;/pieza&gt;
-&lt;pieza&gt;</p>
-<blockquote>
-<div><p>&lt;peso&gt;15&lt;/peso&gt;
-&lt;nombre&gt;Cilindro&lt;/nombre&gt;
-&lt;fabricante pais=»Japón»&gt;Toyota Motors&lt;/fabricante&gt;</p>
-</div></blockquote>
-<p>&lt;/pieza&gt;</p>
-</dd>
-</dl>
-<p>&lt;/listapiezas&gt;</p>
+</li>
+</ol>
+<p>Ejemplo de fichero válido:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listapiezas&gt;</span>
+    <span class="nt">&lt;pieza&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>20<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Pistón<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;fabricante</span> <span class="na">pais=</span><span class="s">&quot;China&quot;</span><span class="nt">&gt;</span> Asia Electronics<span class="nt">&lt;/fabricante&gt;</span>
+    <span class="nt">&lt;/pieza&gt;</span>
+    <span class="nt">&lt;pieza&gt;</span>
+        <span class="nt">&lt;peso&gt;</span>15<span class="nt">&lt;/peso&gt;</span>
+        <span class="nt">&lt;nombre&gt;</span>Cilindro<span class="nt">&lt;/nombre&gt;</span>
+        <span class="nt">&lt;fabricante</span> <span class="na">pais=</span><span class="s">&quot;Japón&quot;</span><span class="nt">&gt;</span>Toyota Motors<span class="nt">&lt;/fabricante&gt;</span>
+    <span class="nt">&lt;/pieza&gt;</span>
+<span class="nt">&lt;/listapiezas&gt;</span>
+</pre></div>
+</div>
 <p>Ejemplo de fichero que debe dar errores</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listapiezas&gt;</span>
     <span class="nt">&lt;pieza&gt;</span>
@@ -1553,17 +1554,25 @@ Una posible solución sería:</p>
 <section id="inventario-de-piezas-variante">
 <h3>Inventario de piezas (variante)<a class="headerlink" href="#inventario-de-piezas-variante" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Se desea almacenar nombres de piezas y para ello se ha llegado a este acuerdo:</p>
-<p>1.- El elemento raíz se va a llamar «listapiezas».
-2.- Dentro de «listapiezas» va a haber uno o muchos elementos «pieza»
-3.- Dentro de «pieza» hay tres elementos:</p>
+<ol class="arabic">
+<li><p>El elemento raíz se va a llamar «listapiezas».</p></li>
+<li><p>Dentro de «listapiezas» va a haber uno o muchos elementos «pieza»</p></li>
+<li><p>Dentro de «pieza» hay tres elementos:</p>
 <blockquote>
-<div><p>3.1 Un elemento llamado «peso» que contiene datos. NO ES OBLIGATORIO QUE ESTÉ
-3.2 Un elemento llamado «nombre» que contiene datos
-3.3 Un elemento llamado fabricante que contiene datos.</p>
+<div><ol class="arabic">
+<li><p>Un elemento llamado «peso» que contiene datos. NO ES OBLIGATORIO QUE ESTÉ</p></li>
+<li><p>Un elemento llamado «nombre» que contiene datos</p></li>
+<li><p>Un elemento llamado fabricante que contiene datos.</p>
 <blockquote>
-<div><p>3.3.1 El fabricante PUEDE LLEVAR un atributo llamado pais que indica el pais.</p>
+<div><ol class="arabic simple">
+<li><p>El fabricante PUEDE LLEVAR un atributo llamado pais que indica el pais.</p></li>
+</ol>
 </div></blockquote>
+</li>
+</ol>
 </div></blockquote>
+</li>
+</ol>
 <p>Ejemplo de fichero válido</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listapiezas&gt;</span>
     <span class="nt">&lt;pieza&gt;</span>

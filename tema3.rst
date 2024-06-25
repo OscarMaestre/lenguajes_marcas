@@ -430,6 +430,34 @@ varias cosas:
 	* ``static``: dar permiso al navegador para que coloque la caja donde corresponda 
 	* ``float``: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
 	
+Centrado de elementos
+-------------------------
+En líneas generales, usaremos poco las propiedades anteriores. Hoy en día una de las cuestiones principales que da problemas en el posicionamiento es el **centrado de elementos.** En realidad es bastante sencillo de hacer:
+
+* Centrar un elemento siempre implica centrarlo **con respecto al elemento padre.** 
+* Si un elemento se comporta como ``display:inline`` el elemento padre deberá llevar ``text-align:center``  
+* Si un elemento se comporta como ``display:block`` basta con poner ``margin:auto`` o ``margin: 40px auto`` (esto asignará por ejemplo 40px por arriba y por abajo y calculará automáticamente el espacio a los lados). También tendremos que poner anchura al elemento.
+* Si un elemento se comporta como ``display:inline-block`` debemos poner anchura al elemento y su elemento padre debe llevar la propiedad ``text-align:center``  .
+
+A continuación se muestra un archivo HTML para hacer la prueba:
+
+.. literalinclude:: ejemplos/tema_3_css/centrado/index.html
+   :language: html
+
+Y aquí vemos un posible CSS
+
+.. literalinclude:: ejemplos/tema_3_css/centrado/estilo.css
+   :language: css
+
+Y vemos el resultado:
+
+	
+.. figure:: img/tema3css/centrado-de-cajas.png
+   :figwidth: 50%
+   :align: center
+	
+   Prácticas de centrado de elementos.
+
 Ejercicio propuesto
 -----------------------------
 
@@ -1045,6 +1073,137 @@ Una posible solución sería esta:
 
 
 
+
+Gestión de espacios
+===================
+
+En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
+
+
+Colores
+=======
+
+Los colores en CSS se pueden especificar de varias maneras:
+
+* Por nombre: ``red``, ``yellow``, ``green``
+* Mediante ``rgb(rojo, verde, azul``, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, ``rgb(0,0,0)`` es negro y ``rgb(255,255,255)`` es blanco.
+* Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.
+* Desde hace poco se pueden indicar también con ``hsl(num, num, num)``
+
+Se pueden encontrar en Internet listas de colores denominados "seguros" (buscando por "web safe colors") que indican nombres de color que se ven igual en los distintos navegadores.
+
+
+Tipografías
+===========
+En tipografía se habla de dos términos distintos: el "typeface" y la "font".
+
+* Hay tipos "Serif", que llevan "rabito".
+* Hay tipos "Sans-serif" que no lo llevan
+* Hay tipos monoespaciados
+
+Lo más relevante, es que cuando usamos ``font-family: "Arial";``, el navegador puede decidir poner otro tipo de letra de la misma familia.
+
+Se pueden indicar varios tipos de letra por orden de preferencia.
+
+Google Fonts permite el "embebido" de fuentes de manera muy segura.
+
+
+Alineación del texto
+====================
+
+Se puede usar la propiedad ``text-align: left`` para modificar la alineación del texto, usando ``left``, ``center``, ``right`` o ``justify``
+
+Decoración del texto
+====================
+Se pueden usar otras propiedades para cambiar
+el aspecto del texto como estas:
+
+* ``text-decoration: underline``
+* ``text-decoration: overline``
+* ``text-decoration: line-through``
+
+Medidas
+=======
+
+Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras
+
+* ``margin: 1cm``
+* ``margin: 1in``: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.
+* ``margin: 1px``: muy dependiente de la resolución
+* ``margin: 1%``: es la más apropiada al modificar elementos div en pantalla.
+* ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
+
+El tamaño de las cajas y el ``box-sizing``
+--------------------------------------------
+
+Cuando se diseñan cajas siempre surge una duda al añadir bordes:
+
+    Si uso una caja con un borde de 25 px y pongo que la anchura de la caja es 200 px, ¿qué ocurrirá? ¿La caja medirá 200px de ancho + 25 px por la izquierda + 25 px por la derecha dando un total de 250? ¿O cuando pongo que la anchura debe ser 200px el navegador entenderá que me refiero a la anchura total?
+
+La respuesta correcta es la primera: si indicamos una anchura de 200px *el navegador asume que nos referimos a la anchura del contenido.* Así que si despues añadimos un borde *la caja medirá más de los 200px que teníamos pensado.*
+
+Sin embargo, si queremos que el navegador asuma que width significa *"haz este elemento de esta anchura y no te excedas. Si pongo bordes, reduce el tamaño del contenido"* podemos usar la propiedad ``box-sizing.``
+
+* Si usamos ``box-sizing: content-box`` entonces ``width`` se refiere a la anchura del contenido, por lo que añadir bordes no pasaremos de la anchura escrita.
+* Si usamos ``box-sizing: border-box`` entonces ``width`` se refiere a la anchura del contenido *sin importar si hay bordes o no.*
+
+Examinemos este fichero HTML
+
+.. literalinclude:: ejemplos/tema_3_css/maquetacion/index.html
+  :language: html
+
+Y usemos este CSS:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+Las tres cajas se mostrarán iguales. Todas ellas tienen una anchura de 400px de contenido+ 25 de borde por la izquierda + 50 de padding izquierdo + 50 de padding derecho + 25 de borde por la derecha, es decir **que en realidad miden 600px** (el margen NO se incluye, solo se usa para separar unas cajas de otras).
+
+
+.. figure:: img/tema3css/box-sizing/box-sizing-1.png
+   :figwidth: 70%
+   :align: center
+
+
+Sin embargo, si usamos este CSS, ahora las cajas se muestran de distinta manera:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+    /* El width se mide INCLUYENDO EL BORDE */
+    #caja1{
+        box-sizing: border-box;
+    }
+    /* El width se mide SOLO INCLUYENDO EL CONTENIDO
+    Así que la caja 2 mide 400px de anchura 
+        -Más 25 px de borde izquierdo
+        -Más 50 px de padding izquierdo
+        -Más 50 px de padding derecho
+        -Más 25 px de borde izquierdo
+        Y la caja 2 mide en total 500 px*/
+    #caja2{
+        box-sizing: content-box;
+    }
+
+Observa que la caja 3 no lleva nada, así que la opción por defecto es ``box-sizing: content-box`` y por tanto se comporta igual que la caja 2.
+
+.. figure:: img/tema3css/box-sizing/box-sizing-2.png
+   :figwidth: 70%
+   :align: center
+
+
 Maquetación con flexboxes
 ================================================================================
 Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
@@ -1291,134 +1450,8 @@ Hay diversas cosas que podemos comprobar:
 * ``orientation:  portrait`` u ``orientation: landscape`` para saber si la pantalla está en horizontal o en vertical.
 
 
-Gestión de espacios
-===================
-
-En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
 
 
-Colores
-=======
-
-Los colores en CSS se pueden especificar de varias maneras:
-
-* Por nombre: ``red``, ``yellow``, ``green``
-* Mediante ``rgb(rojo, verde, azul``, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, ``rgb(0,0,0)`` es negro y ``rgb(255,255,255)`` es blanco.
-* Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.
-* Desde hace poco se pueden indicar también con ``hsl(num, num, num)``
-
-Se pueden encontrar en Internet listas de colores denominados "seguros" (buscando por "web safe colors") que indican nombres de color que se ven igual en los distintos navegadores.
-
-
-Tipografías
-===========
-En tipografía se habla de dos términos distintos: el "typeface" y la "font".
-
-* Hay tipos "Serif", que llevan "rabito".
-* Hay tipos "Sans-serif" que no lo llevan
-* Hay tipos monoespaciados
-
-Lo más relevante, es que cuando usamos ``font-family: "Arial";``, el navegador puede decidir poner otro tipo de letra de la misma familia.
-
-Se pueden indicar varios tipos de letra por orden de preferencia.
-
-Google Fonts permite el "embebido" de fuentes de manera muy segura.
-
-
-Alineación del texto
-====================
-
-Se puede usar la propiedad ``text-align: left`` para modificar la alineación del texto, usando ``left``, ``center``, ``right`` o ``justify``
-
-Decoración del texto
-====================
-Se pueden usar otras propiedades para cambiar
-el aspecto del texto como estas:
-
-* ``text-decoration: underline``
-* ``text-decoration: overline``
-* ``text-decoration: line-through``
-
-Medidas
-=======
-
-Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras
-
-* ``margin: 1cm``
-* ``margin: 1in``: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.
-* ``margin: 1px``: muy dependiente de la resolución
-* ``margin: 1%``: es la más apropiada al modificar elementos div en pantalla.
-* ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
-
-El tamaño de las cajas y el ``box-sizing``
---------------------------------------------
-
-Cuando se diseñan cajas siempre surge una duda al añadir bordes:
-
-    Si uso una caja con un borde de 25 px y pongo que la anchura de la caja es 200 px, ¿qué ocurrirá? ¿La caja medirá 200px de ancho + 25 px por la izquierda + 25 px por la derecha dando un total de 250? ¿O cuando pongo que la anchura debe ser 200px el navegador entenderá que me refiero a la anchura total?
-
-La respuesta correcta es la primera: si indicamos una anchura de 200px *el navegador asume que nos referimos a la anchura del contenido.* Así que si despues añadimos un borde *la caja medirá más de los 200px que teníamos pensado.*
-
-Sin embargo, si queremos que el navegador asuma que width significa *"haz este elemento de esta anchura y no te excedas. Si pongo bordes, reduce el tamaño del contenido"* podemos usar la propiedad ``box-sizing.``
-
-* Si usamos ``box-sizing: content-box`` entonces ``width`` se refiere a la anchura del contenido, por lo que añadir bordes no pasaremos de la anchura escrita.
-* Si usamos ``box-sizing: border-box`` entonces ``width`` se refiere a la anchura del contenido *sin importar si hay bordes o no.*
-
-Examinemos este fichero HTML
-
-.. literalinclude:: ejemplos/tema_3_css/maquetacion/index.html
-  :language: html
-
-Y usemos este CSS:
-
-.. code-block:: css
-
-    #caja1, #caja2, #caja3{
-        border:  solid 25px black;
-        padding: 50px;
-        margin:  50px;
-        width:   400px;
-    }
-
-Las tres cajas se mostrarán iguales. Todas ellas tienen una anchura de 400px de contenido+ 25 de borde por la izquierda + 50 de padding izquierdo + 50 de padding derecho + 25 de borde por la derecha, es decir **que en realidad miden 600px** (el margen NO se incluye, solo se usa para separar unas cajas de otras).
-
-
-.. figure:: img/tema3css/box-sizing/box-sizing-1.png
-   :figwidth: 70%
-   :align: center
-
-
-Sin embargo, si usamos este CSS, ahora las cajas se muestran de distinta manera:
-
-.. code-block:: css
-
-    #caja1, #caja2, #caja3{
-        border:  solid 25px black;
-        padding: 50px;
-        margin:  50px;
-        width:   400px;
-    }
-
-    /* El width se mide INCLUYENDO EL BORDE */
-    #caja1{
-        box-sizing: border-box;
-    }
-    /* El width se mide SOLO INCLUYENDO EL CONTENIDO
-    Así que la caja 2 mide 400px de anchura 
-        -Más 25 px de borde izquierdo
-        -Más 50 px de padding izquierdo
-        -Más 50 px de padding derecho
-        -Más 25 px de borde izquierdo
-        Y la caja 2 mide en total 500 px*/
-    #caja2{
-        box-sizing: content-box;
-    }
-
-Observa que la caja 3 no lleva nada, así que la opción por defecto es ``box-sizing: content-box`` y por tanto se comporta igual que la caja 2.
-
-.. figure:: img/tema3css/box-sizing/box-sizing-2.png
-   :figwidth: 70%
-   :align: center
 
 
 Ejercicios comentados sobre selectores.
@@ -1886,9 +1919,7 @@ En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` 
 "Mixins"
 --------------------------------------------------------------------------------
 
-Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS.
-
-.. code-block:: less
+Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS::
 
     @grosorbordesnoticias: 3px;
     @grosorbordescabeceras:@grosorbordesnoticias + 2px;

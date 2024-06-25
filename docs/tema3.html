@@ -364,6 +364,62 @@ ellos un atributo <code class="docutils literal notranslate"><span class="pre">c
 <li><p>Se puede cambiar un elemento <em>solo cuando el ratón pase por encima de él con</em> cosas como <code class="docutils literal notranslate"><span class="pre">tr:hover{background-color:red;}</span></code></p></li>
 </ul>
 </section>
+<section id="el-modelo-de-cajas">
+<h2>El modelo de cajas<a class="headerlink" href="#el-modelo-de-cajas" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>En CSS <strong>todo es una caja</strong> y el navegador va colocando las distintas «cajas» en la página web. Las cajas tienen:</p>
+<ul class="simple">
+<li><p>Un margen asociado que las separa de otras cajas.</p></li>
+<li><p>Un borde.</p></li>
+<li><p>Un espacio interno llamado «padding»</p></li>
+<li><p>Un contenido</p></li>
+</ul>
+<figure class="align-default" id="id5">
+<img alt="El modelo de cajas CSS (imagen tomada de la web del W3C)" src="_images/modelo-cajas.png" />
+<figcaption>
+<p><span class="caption-text">El modelo de cajas CSS (imagen tomada de la web del W3C)</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Algunos elementos <strong>no generan una línea nueva</strong> sino que se mantienen dentro de la misma línea. Como por ejemplo <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code>. A estos elementos se les llama <em>elementos inline</em> y no se les puede cambiar la altura o la anchura. Si intentamos cambiar altura o anchura el navegador ignorará el cambio.</p></li>
+<li><p>Otros elementos  <strong>generan su propia línea antes y despues.</strong> Esta línea puede ser más alta o menos pero forma su propio bloque o línea. Ejemplo de estas etiquetas son <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> o <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;.</span></code></p></li>
+</ul>
+<p>Podemos conseguir que un inline se porte como un block o viceverse usando el CSS siguiente:</p>
+<ul class="simple">
+<li><p>Bloque: <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">block;</span></code></p></li>
+<li><p>Inline: <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">inline;</span></code></p></li>
+<li><p>Existe tambien un <code class="docutils literal notranslate"><span class="pre">display:inline-block.</span></code> Estos elementos se portan como inlines y no generan línea nueva pero <em>sí pueden cambiar de anchura o altura.</em></p></li>
+</ul>
+<p>En el siguiente HTML tenemos un ejemplo de como se comportan estas propiedades:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Página HTML básica&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;style&gt;
+        b, i{
+            border: solid 1px black;
+        }
+        b{
+            width: 400px;
+        }
+        i{
+            display: inline-block;
+            width: 400px;
+        }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p&gt;
+    Texto en &lt;b&gt;negrita que no acepta cambios de altura o anchura&lt;/b&gt;. 
+    &lt;i&gt;Esto texto en cursiva va en un 
+    inline y cambia de anchura al ponerlo como inline-block.
+    &lt;/i&gt;
+  &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</section>
 <section id="posicionamiento">
 <h2>Posicionamiento<a class="headerlink" href="#posicionamiento" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada especial, salvo actuar de contenedores. Las etiquetas &lt;span&gt; y &lt;div&gt;.</p>
@@ -392,6 +448,80 @@ varias cosas:</p>
 </dl>
 </li>
 </ul>
+<section id="centrado-de-elementos">
+<h3>Centrado de elementos<a class="headerlink" href="#centrado-de-elementos" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>En líneas generales, usaremos poco las propiedades anteriores. Hoy en día una de las cuestiones principales que da problemas en el posicionamiento es el <strong>centrado de elementos.</strong> En realidad es bastante sencillo de hacer:</p>
+<ul class="simple">
+<li><p>Centrar un elemento siempre implica centrarlo <strong>con respecto al elemento padre.</strong></p></li>
+<li><p>Si un elemento se comporta como <code class="docutils literal notranslate"><span class="pre">display:inline</span></code> el elemento padre deberá llevar <code class="docutils literal notranslate"><span class="pre">text-align:center</span></code></p></li>
+<li><p>Si un elemento se comporta como <code class="docutils literal notranslate"><span class="pre">display:block</span></code> basta con poner <code class="docutils literal notranslate"><span class="pre">margin:auto</span></code> o <code class="docutils literal notranslate"><span class="pre">margin:</span> <span class="pre">40px</span> <span class="pre">auto</span></code> (esto asignará por ejemplo 40px por arriba y por abajo y calculará automáticamente el espacio a los lados). También tendremos que poner anchura al elemento.</p></li>
+<li><p>Si un elemento se comporta como <code class="docutils literal notranslate"><span class="pre">display:inline-block</span></code> debemos poner anchura al elemento y su elemento padre debe llevar la propiedad <code class="docutils literal notranslate"><span class="pre">text-align:center</span></code>  .</p></li>
+</ul>
+<p>A continuación se muestra un archivo HTML para hacer la prueba:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página HTML básica<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>Texto normal centrado.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+        Texto NO CENTRADO EN LA CAJA. 
+        La caja sí está centrada.
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+        La caja está centrada y el texto dentro 
+        de ella también.
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Ponemos algunas subcajas vacías que </span>
+<span class="cm">     se portan como inline-block --&gt;</span>
+     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja4&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja41&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja42&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja43&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y aquí vemos un posible CSS</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">x-large</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">caja1</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">caja2</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">caja3</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/*Solo por probar, cambiamos la anchura y además</span>
+<span class="c">    aumentamos un poco el margen*/</span><span class="w"></span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">caja4</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">caja41</span><span class="o">,</span><span class="w"> </span><span class="p">#</span><span class="nn">caja42</span><span class="o">,</span><span class="w"> </span><span class="p">#</span><span class="nn">caja43</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Y vemos el resultado:</p>
+<figure class="align-center" id="id6" style="width: 50%">
+<img alt="_images/centrado-de-cajas.png" src="_images/centrado-de-cajas.png" />
+<figcaption>
+<p><span class="caption-text">Prácticas de centrado de elementos.</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+</section>
 <section id="ejercicio-propuesto">
 <h3>Ejercicio propuesto<a class="headerlink" href="#ejercicio-propuesto" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Crea una página con la siguiente estructura.</p>
@@ -546,10 +676,10 @@ Publicidad publicidad
 <li><p>En el margen derecho debe aparecer una caja con el texto y resto de información de interés que debe ocupar el 80 o 75% de la página y el texto se mueve cuando el usuario se mueve.</p></li>
 <li><p>Aplicar bordes y efectos visuales a ambas cajas para intentar que el efecto final sea estéticamente aceptable.</p></li>
 </ul>
-<figure class="align-center" id="id5" style="width: 50%">
+<figure class="align-center" id="id7" style="width: 50%">
 <img alt="_images/maquetacion1.png" src="_images/maquetacion1.png" />
 <figcaption>
-<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <section id="html">
@@ -904,10 +1034,10 @@ Publicidad publicidad
 </pre></div>
 </div>
 <p>El resultado será:</p>
-<figure class="align-center" id="id6" style="width: 50%">
+<figure class="align-center" id="id8" style="width: 50%">
 <img alt="_images/cuatro_cajas_con_floats.png" src="_images/cuatro_cajas_con_floats.png" />
 <figcaption>
-<p><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Cuatro cajas manipuladas con <code class="docutils literal notranslate"><span class="pre">float</span></code></span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <section id="ejercicio-de-maquetacion-con-floats-i">
@@ -987,10 +1117,10 @@ Publicidad publicidad
 <li><p>Puede ser útil cambiar el color de las cajas para distinguir unas de otras, pero no es obligatorio.</p></li>
 <li><p>Se recomienda no ocupar nunca el 100% de la anchura de un contenedor.</p></li>
 </ul>
-<figure class="align-center" id="id7" style="width: 50%">
+<figure class="align-center" id="id9" style="width: 50%">
 <img alt="Resultado final" src="_images/maqueta5.png" />
 <figcaption>
-<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>Una posible solución sería esta:</p>
@@ -1042,279 +1172,6 @@ Publicidad publicidad
 </pre></div>
 </div>
 </section>
-</section>
-<section id="maquetacion-con-flexboxes">
-<h2>Maquetación con flexboxes<a class="headerlink" href="#maquetacion-con-flexboxes" title="Enlace permanente a este encabezado">¶</a></h2>
-<p>Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.</p>
-<p>Por ejemplo, supongamos que tenemos el siguiente fichero.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo con Flexboxes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navegacion&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;principal&quot;</span><span class="p">&gt;</span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis arcu orci, id vestibulum ante hendrerit nec. Aenean convallis quis lacus ut porttitor. Nam non elit dapibus diam vehicula tincidunt at a ipsum. Phasellus ut hendrerit felis. Sed placerat, nulla quis facilisis aliquet, lectus metus elementum leo, venenatis mattis elit tortor sit amet elit. Etiam gravida maximus nibh sit amet bibendum. Ut vitae justo et massa varius consectetur vel vel augue. Aenean id nisi feugiat, pretium dui ut, pulvinar neque. Nullam velit arcu, mollis vel elementum sit amet, ultricies non ipsum. Nam suscipit nisl vel viverra pellentesque. Integer at ipsum vitae risus molestie molestie. Curabitur neque nibh, placerat nec interdum in, ultrices laoreet dui. 
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publicidad&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://marca.es&quot;</span><span class="p">&gt;</span>Marca<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.es&quot;</span><span class="p">&gt;</span>Coca-Cola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</section>
-<section id="maquetacion-avanzada-con-grid-layouts">
-<h2>Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlace permanente a este encabezado">¶</a></h2>
-<p>La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:</p>
-<ol class="arabic simple">
-<li><p>Un elemento (por ejemplo un <code class="docutils literal notranslate"><span class="pre">div</span></code>) se puede dividir en forma de tabla</p></li>
-<li><p>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</p></li>
-<li><p>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</p></li>
-</ol>
-<p>Para poder utilizarlo necesitaremos:</p>
-<ul class="simple">
-<li><p>Un contenedor principal (en concreto un <code class="docutils literal notranslate"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</p></li>
-<li><p>Un conjunto de elementos (normalmente otros <code class="docutils literal notranslate"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</p></li>
-</ul>
-<p>Supongamos el siguiente HTML</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>Celda A<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>Celda B<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Celda C<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Celda D<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;e&quot;</span><span class="p">&gt;</span>Celda E<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;f&quot;</span><span class="p">&gt;</span>Celda F<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>Si no le hacemos nada se verá lo siguiente:</p>
-<figure class="align-center" id="id8" style="width: 50%">
-<img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
-<figcaption>
-<p><span class="caption-text">Grid sin maquetar</span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">celda</span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>El resultado queda así:</p>
-<figure class="align-center" id="id9" style="width: 50%">
-<img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
-<figcaption>
-<p><span class="caption-text">Celdas con borde</span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Supongamos que queremos que el <code class="docutils literal notranslate"><span class="pre">div</span></code> cuyo class es <code class="docutils literal notranslate"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
-solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
-<figure class="align-center" id="id10" style="width: 50%">
-<img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
-<figcaption>
-<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:</p>
-<figure class="align-center" id="id11" style="width: 50%">
-<img alt="_images/resultado_5_por_5.png" src="_images/resultado_5_por_5.png" />
-<figcaption>
-<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Analizando lo que se pide se observa que:</p>
-<ul class="simple">
-<li><p>La «rejilla invisible» ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)</p></li>
-<li><p>La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 <strong>que sabemos que no existe, sino que es el límite de la tabla</strong>.</p></li>
-<li><p>La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.</p></li>
-<li><p>La celda C va de la fila 1 a la 6 y está solo en la columna 1.</p></li>
-<li><p>La D va de la fila 3 a la 6 y solo ocupa la 5.</p></li>
-<li><p>La E va de la fila 1 a la 3 y de la columna 2 a la 4.</p></li>
-<li><p>La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.</p></li>
-</ul>
-<p>Además añadiremos algún color a tales «celdas» para que podamos ver el área que ocupan.</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-template-rows</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="mi">640</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">.</span><span class="nc">celda</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">a</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">b</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="w">   </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">c</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">d</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="mi">5</span><span class="w">   </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">e</span><span class="p">{</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">#</span><span class="nn">f</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">4</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</section>
-<section id="media-queries">
-<h2>Media queries<a class="headerlink" href="#media-queries" title="Enlace permanente a este encabezado">¶</a></h2>
-<p>Las <em>media queries</em> (algo así como «consultas sobre el tipo de medio en el que se va a mostrar/procesar el HTML») forman parte de CSS 3, por lo que solo deben utilizarse en navegadores relativamente modernos.</p>
-<p>Las media queries permiten hacer diversas comprobaciones. Si se cumplen dichas comprobaciones se ejecutará un CSS u otro. Por ejemplo, supongamos que queremos tener dos estructuras diferentes de página en función de si se va a mostrar el HTML en pantalla o en papel.</p>
-<p>Partamos del siguiente HTML:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
-    Caja 1
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
-    Caja 2
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
-    Caja 3
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>Y ahora supongamos que cuando se muestra el HTML en pantalla queremos que tenga un color de fondo, pero que si se va a imprimir no tengan ningún fondo (para ahorrar tinta, por ejemplo). Sabiendo que existen dos tipos de medios llamados <code class="docutils literal notranslate"><span class="pre">screen</span></code> y <code class="docutils literal notranslate"><span class="pre">print</span></code> podemos usar un CSS como este:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">xx-large</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">double</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">grey</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">print</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">small</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Este CSS puede hacer dos cosas distintas:</p>
-<ul class="simple">
-<li><p>Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.</p></li>
-<li><p>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</p></li>
-</ul>
-<p>A continuación se muestra una captura de lo que muestra el navegador:</p>
-<figure class="align-center" id="id12" style="width: 50%">
-<img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
-<figcaption>
-<p><span class="caption-text">HTML mostrado en pantalla</span><a class="headerlink" href="#id12" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
-<figure class="align-center" id="id13" style="width: 50%">
-<img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
-<figcaption>
-<p><span class="caption-text">HTML para imprimir</span><a class="headerlink" href="#id13" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Uno de los usos más comunes de las <em>media queries</em> es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.</p>
-<ul class="simple">
-<li><p>Cuando la resolución sea de 800 px o más haremos que <code class="docutils literal notranslate"><span class="pre">caja1</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja2</span></code> estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.</p></li>
-<li><p>Cuando la resolución sea de 799px o menos <code class="docutils literal notranslate"><span class="pre">caja1</span></code>, <code class="docutils literal notranslate"><span class="pre">caja2</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja3</span></code> se mostrarán una encima de otra pero con un margen entre ellas de 40px.</p></li>
-</ul>
-<p>Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son <code class="docutils literal notranslate"><span class="pre">min-width</span></code> y <code class="docutils literal notranslate"><span class="pre">max-width</span></code>. Veamos como se usan para conseguir lo que nos piden:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* Si estamos en una pantalla y la anchura mínima que podemos</span>
-<span class="c"> * usar es 800px...*/</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">800px</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c">/*... entonces dividir caja 1 y caja 2 en dos mitades*/</span><span class="w"></span>
-<span class="w">    </span><span class="p">#</span><span class="nn">caja1</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">#</span><span class="nn">caja2</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">#</span><span class="nn">caja3</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="c">/* Sin embargo, si estamos en una pantalla y como máximo</span>
-<span class="c"> * tenemos 799px (es decir, una pantalla más bien estrecha)...*/</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">799px</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>El resultado de este CSS en una pantalla grande es:</p>
-<figure class="align-center" id="id14" style="width: 50%">
-<img alt="_images/mq_anchura_grande.png" src="_images/mq_anchura_grande.png" />
-<figcaption>
-<p><span class="caption-text">Página para una resolución grande</span><a class="headerlink" href="#id14" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):</p>
-<figure class="align-center" id="id15" style="width: 50%">
-<img alt="_images/mq_anchura_pequena.png" src="_images/mq_anchura_pequena.png" />
-<figcaption>
-<p><span class="caption-text">Página para una resolución pequeña</span><a class="headerlink" href="#id15" title="Enlace permanente a esta imagen">¶</a></p>
-</figcaption>
-</figure>
-<p>Hay diversas cosas que podemos comprobar:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">min-width:</span> <span class="pre">100px</span> <span class="pre">``</span> <span class="pre">o</span> <span class="pre">``max-width:900px</span></code> para ver las anchuras mínimas o máximas que nos ofrece un dispositivo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">screen</span></code> , <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">print</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media:</span> <span class="pre">handheld</span></code> para comprobar si el HTML se va a mostrar en una pantalla, se va a imprimir o se muestra un dispositivo portátil como móvil o tablet. Hay otros <code class="docutils literal notranslate"><span class="pre">&#64;media</span></code> como <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">braille</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">tv</span></code>, pero se usan menos.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">orientation:</span>&#160; <span class="pre">portrait</span></code> u <code class="docutils literal notranslate"><span class="pre">orientation:</span> <span class="pre">landscape</span></code> para saber si la pantalla está en horizontal o en vertical.</p></li>
-</ul>
 </section>
 <section id="gestion-de-espacios">
 <h2>Gestión de espacios<a class="headerlink" href="#gestion-de-espacios" title="Enlace permanente a este encabezado">¶</a></h2>
@@ -1438,6 +1295,279 @@ el aspecto del texto como estas:</p>
 </figure>
 </section>
 </section>
+<section id="maquetacion-con-flexboxes">
+<h2>Maquetación con flexboxes<a class="headerlink" href="#maquetacion-con-flexboxes" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Un «flexbox» es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar «cajas» dentro de una línea.</p>
+<p>Por ejemplo, supongamos que tenemos el siguiente fichero.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo con Flexboxes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estilo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenido&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navegacion&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Producto 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;principal&quot;</span><span class="p">&gt;</span>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis arcu orci, id vestibulum ante hendrerit nec. Aenean convallis quis lacus ut porttitor. Nam non elit dapibus diam vehicula tincidunt at a ipsum. Phasellus ut hendrerit felis. Sed placerat, nulla quis facilisis aliquet, lectus metus elementum leo, venenatis mattis elit tortor sit amet elit. Etiam gravida maximus nibh sit amet bibendum. Ut vitae justo et massa varius consectetur vel vel augue. Aenean id nisi feugiat, pretium dui ut, pulvinar neque. Nullam velit arcu, mollis vel elementum sit amet, ultricies non ipsum. Nam suscipit nisl vel viverra pellentesque. Integer at ipsum vitae risus molestie molestie. Curabitur neque nibh, placerat nec interdum in, ultrices laoreet dui. 
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;publicidad&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://marca.es&quot;</span><span class="p">&gt;</span>Marca<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.es&quot;</span><span class="p">&gt;</span>Google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cocacola.es&quot;</span><span class="p">&gt;</span>Coca-Cola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="maquetacion-avanzada-con-grid-layouts">
+<h2>Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code><a class="headerlink" href="#maquetacion-avanzada-con-grid-layouts" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>La llegada de CSS 3 ha supuesto un gran cambio en la forma de maquetar páginas, ya que esta versión ha incluido una novedad llamada «grid-layouts», que nos permiten varias características interesantes:</p>
+<ol class="arabic simple">
+<li><p>Un elemento (por ejemplo un <code class="docutils literal notranslate"><span class="pre">div</span></code>) se puede dividir en forma de tabla</p></li>
+<li><p>Dicha tabla puede tener columnas y/o filas de distinto tamaño.</p></li>
+<li><p>Un elemento hijo puede ocupar la celda que le toque o llenar un área de varias celdas.</p></li>
+</ol>
+<p>Para poder utilizarlo necesitaremos:</p>
+<ul class="simple">
+<li><p>Un contenedor principal (en concreto un <code class="docutils literal notranslate"><span class="pre">div</span></code>). Este contenedor se portará como una tabla en la que definiremos las filas y las columnas</p></li>
+<li><p>Un conjunto de elementos (normalmente otros <code class="docutils literal notranslate"><span class="pre">div</span></code>) que irán dentro del contenedor principal. Estos elementos se portarán como «celdas flexibles», ya que podremos colocar cada celda donde queramos y hacer que ocupe las filas y columnas que queramos.</p></li>
+</ul>
+<p>Supongamos el siguiente HTML</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>Celda A<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>Celda B<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Celda C<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Celda D<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;e&quot;</span><span class="p">&gt;</span>Celda E<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;celda&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;f&quot;</span><span class="p">&gt;</span>Celda F<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Si no le hacemos nada se verá lo siguiente:</p>
+<figure class="align-center" id="id10" style="width: 50%">
+<img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
+<figcaption>
+<p><span class="caption-text">Grid sin maquetar</span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">celda</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>El resultado queda así:</p>
+<figure class="align-center" id="id11" style="width: 50%">
+<img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
+<figcaption>
+<p><span class="caption-text">Celdas con borde</span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Supongamos que queremos que el <code class="docutils literal notranslate"><span class="pre">div</span></code> cuyo class es <code class="docutils literal notranslate"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
+solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
+<figure class="align-center" id="id12" style="width: 50%">
+<img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
+<figcaption>
+<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id12" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:</p>
+<figure class="align-center" id="id13" style="width: 50%">
+<img alt="_images/resultado_5_por_5.png" src="_images/resultado_5_por_5.png" />
+<figcaption>
+<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id13" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Analizando lo que se pide se observa que:</p>
+<ul class="simple">
+<li><p>La «rejilla invisible» ocupa todo el ancho de la pantalla y es más alta de lo normal (pondremos una medida vertical en pixeles que sea razonablemente grande para poder apreciar el efecto)</p></li>
+<li><p>La celda A empieza en la fila 1 y llega hasta la 3. Empieza en la columna 4 y llega hasta la 6 <strong>que sabemos que no existe, sino que es el límite de la tabla</strong>.</p></li>
+<li><p>La celda B empieza en la fila 3 y llega hasta la 4. En columnas va de la 2 a la 5.</p></li>
+<li><p>La celda C va de la fila 1 a la 6 y está solo en la columna 1.</p></li>
+<li><p>La D va de la fila 3 a la 6 y solo ocupa la 5.</p></li>
+<li><p>La E va de la fila 1 a la 3 y de la columna 2 a la 4.</p></li>
+<li><p>La celda F va de la fila 4 a la 6 y de la columna 2 a la 5.</p></li>
+</ul>
+<p>Además añadiremos algún color a tales «celdas» para que podamos ver el área que ocupan.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">contenedor</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-template-rows</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="mi">640</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">celda</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">a</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">b</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="w">   </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">c</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">d</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="mi">5</span><span class="w">   </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">230</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">e</span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">210</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">#</span><span class="nn">f</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w">  </span><span class="mi">4</span><span class="o">/</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">5</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="media-queries">
+<h2>Media queries<a class="headerlink" href="#media-queries" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Las <em>media queries</em> (algo así como «consultas sobre el tipo de medio en el que se va a mostrar/procesar el HTML») forman parte de CSS 3, por lo que solo deben utilizarse en navegadores relativamente modernos.</p>
+<p>Las media queries permiten hacer diversas comprobaciones. Si se cumplen dichas comprobaciones se ejecutará un CSS u otro. Por ejemplo, supongamos que queremos tener dos estructuras diferentes de página en función de si se va a mostrar el HTML en pantalla o en papel.</p>
+<p>Partamos del siguiente HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja1&quot;</span><span class="p">&gt;</span>
+    Caja 1
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja2&quot;</span><span class="p">&gt;</span>
+    Caja 2
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;caja3&quot;</span><span class="p">&gt;</span>
+    Caja 3
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y ahora supongamos que cuando se muestra el HTML en pantalla queremos que tenga un color de fondo, pero que si se va a imprimir no tengan ningún fondo (para ahorrar tinta, por ejemplo). Sabiendo que existen dos tipos de medios llamados <code class="docutils literal notranslate"><span class="pre">screen</span></code> y <code class="docutils literal notranslate"><span class="pre">print</span></code> podemos usar un CSS como este:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">xx-large</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">double</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">grey</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">print</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">small</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Este CSS puede hacer dos cosas distintas:</p>
+<ul class="simple">
+<li><p>Cuando el HTML se muestra en pantalla las cajas tendrán todas un borde, un fondo, un tipo de letra grande y mucho margen.</p></li>
+<li><p>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</p></li>
+</ul>
+<p>A continuación se muestra una captura de lo que muestra el navegador:</p>
+<figure class="align-center" id="id14" style="width: 50%">
+<img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
+<figcaption>
+<p><span class="caption-text">HTML mostrado en pantalla</span><a class="headerlink" href="#id14" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
+<figure class="align-center" id="id15" style="width: 50%">
+<img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
+<figcaption>
+<p><span class="caption-text">HTML para imprimir</span><a class="headerlink" href="#id15" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Uno de los usos más comunes de las <em>media queries</em> es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.</p>
+<ul class="simple">
+<li><p>Cuando la resolución sea de 800 px o más haremos que <code class="docutils literal notranslate"><span class="pre">caja1</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja2</span></code> estén una al lado de la otra ocupando cada una la mitad de la pantalla aproximadamente.</p></li>
+<li><p>Cuando la resolución sea de 799px o menos <code class="docutils literal notranslate"><span class="pre">caja1</span></code>, <code class="docutils literal notranslate"><span class="pre">caja2</span></code>  y <code class="docutils literal notranslate"><span class="pre">caja3</span></code> se mostrarán una encima de otra pero con un margen entre ellas de 40px.</p></li>
+</ul>
+<p>Para conseguir esto hay predicados de utilidad que podemos combinar con los que acabamos de ver para conseguir lo que deseamos. Dos de los más útiles son <code class="docutils literal notranslate"><span class="pre">min-width</span></code> y <code class="docutils literal notranslate"><span class="pre">max-width</span></code>. Veamos como se usan para conseguir lo que nos piden:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* Si estamos en una pantalla y la anchura mínima que podemos</span>
+<span class="c"> * usar es 800px...*/</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">800px</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c">/*... entonces dividir caja 1 y caja 2 en dos mitades*/</span><span class="w"></span>
+<span class="w">    </span><span class="p">#</span><span class="nn">caja1</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">#</span><span class="nn">caja2</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="mi">48</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">#</span><span class="nn">caja3</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">clear</span><span class="p">:</span><span class="kc">both</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c">/* Sin embargo, si estamos en una pantalla y como máximo</span>
+<span class="c"> * tenemos 799px (es decir, una pantalla más bien estrecha)...*/</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">799px</span><span class="o">)</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">div</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">border</span><span class="p">:</span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>El resultado de este CSS en una pantalla grande es:</p>
+<figure class="align-center" id="id16" style="width: 50%">
+<img alt="_images/mq_anchura_grande.png" src="_images/mq_anchura_grande.png" />
+<figcaption>
+<p><span class="caption-text">Página para una resolución grande</span><a class="headerlink" href="#id16" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):</p>
+<figure class="align-center" id="id17" style="width: 50%">
+<img alt="_images/mq_anchura_pequena.png" src="_images/mq_anchura_pequena.png" />
+<figcaption>
+<p><span class="caption-text">Página para una resolución pequeña</span><a class="headerlink" href="#id17" title="Enlace permanente a esta imagen">¶</a></p>
+</figcaption>
+</figure>
+<p>Hay diversas cosas que podemos comprobar:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min-width:</span> <span class="pre">100px</span> <span class="pre">``</span> <span class="pre">o</span> <span class="pre">``max-width:900px</span></code> para ver las anchuras mínimas o máximas que nos ofrece un dispositivo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">screen</span></code> , <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">print</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media:</span> <span class="pre">handheld</span></code> para comprobar si el HTML se va a mostrar en una pantalla, se va a imprimir o se muestra un dispositivo portátil como móvil o tablet. Hay otros <code class="docutils literal notranslate"><span class="pre">&#64;media</span></code> como <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">braille</span></code> o <code class="docutils literal notranslate"><span class="pre">&#64;media</span> <span class="pre">tv</span></code>, pero se usan menos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orientation:</span>&#160; <span class="pre">portrait</span></code> u <code class="docutils literal notranslate"><span class="pre">orientation:</span> <span class="pre">landscape</span></code> para saber si la pantalla está en horizontal o en vertical.</p></li>
+</ul>
+</section>
 <section id="ejercicios-comentados-sobre-selectores">
 <h2>Ejercicios comentados sobre selectores.<a class="headerlink" href="#ejercicios-comentados-sobre-selectores" title="Enlace permanente a este encabezado">¶</a></h2>
 <p>Explica qué hacen los siguientes selectores y crea un ejemplo HTML donde se pueda ver que realmente funcionan como esperas</p>
@@ -1511,20 +1641,20 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal notranslate"><span class="pre">id</span></code> sea <code class="docutils literal notranslate"><span class="pre">destacado</span></code></p>
-<figure class="align-center" id="id16" style="width: 50%">
+<figure class="align-center" id="id18" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id16" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id18" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id4">
 <h3>Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id4" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal notranslate"><span class="pre">class</span></code> <em>destacado</em></p>
-<figure class="align-center" id="id17" style="width: 50%">
+<figure class="align-center" id="id19" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id17" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id19" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1535,10 +1665,10 @@ el aspecto del texto como estas:</p>
 <p class="admonition-title">Advertencia</p>
 <p>Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<figure class="align-center" id="id18" style="width: 50%">
+<figure class="align-center" id="id20" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id18" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id20" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1554,10 +1684,10 @@ el aspecto del texto como estas:</p>
 <section id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal notranslate"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Enlace permanente a este encabezado">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<figure class="align-center" id="id19" style="width: 50%">
+<figure class="align-center" id="id21" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id19" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id21" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>¿Por qué ahora sí funciona?</p>
@@ -1780,10 +1910,10 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id20" style="width: 50%">
+<figure class="align-center" id="id22" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <figcaption>
-<p><span class="caption-text">Ejemplo del grid</span><a class="headerlink" href="#id20" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Ejemplo del grid</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:</p>
@@ -1803,10 +1933,10 @@ el aspecto del texto como estas:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id21" style="width: 50%">
+<figure class="align-center" id="id23" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <figcaption>
-<p><span class="caption-text">Párrafo destacado</span><a class="headerlink" href="#id21" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Párrafo destacado</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>Se puede destacar texto usando lo siguiente:</p>
@@ -1824,10 +1954,10 @@ el aspecto del texto como estas:</p>
 <li><p>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></p></li>
 </ul>
 <p>El flujo de trabajo se muestra en la figura siguiente:</p>
-<figure class="align-center" id="id22" style="width: 50%">
+<figure class="align-center" id="id24" style="width: 50%">
 <img alt="_images/diagramaless.png" src="_images/diagramaless.png" />
 <figcaption>
-<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id22" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.</p>
@@ -1852,34 +1982,34 @@ el aspecto del texto como estas:</p>
 </section>
 <section id="mixins">
 <h3>«Mixins»<a class="headerlink" href="#mixins" title="Enlace permanente a este encabezado">¶</a></h3>
-<p>Un «mixin» es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS.</p>
-<div class="highlight-less notranslate"><div class="highlight"><pre><span></span>@grosorbordesnoticias: 3px;
-@grosorbordescabeceras:@grosorbordesnoticias + 2px;
-@colorbordes:black;
+<p>Un «mixin» es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@grosorbordesnoticias</span><span class="p">:</span> <span class="mi">3</span><span class="n">px</span><span class="p">;</span>
+<span class="nd">@grosorbordescabeceras</span><span class="p">:</span><span class="nd">@grosorbordesnoticias</span> <span class="o">+</span> <span class="mi">2</span><span class="n">px</span><span class="p">;</span>
+<span class="nd">@colorbordes</span><span class="p">:</span><span class="n">black</span><span class="p">;</span>
 
 
-/*Esto es una definición cualquiera. De hecho, ni siquiera es obligatorio
-que en el HTML alguién use class=&quot;margenesnoticias&quot;*/
-.margenesnoticias{
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:5px;
-    padding-left:5px;
-    /*Recordemos que esto se lee &quot;top&quot;, &quot;left&quot;,&quot;bottom&quot;, &quot;right&quot;*/
-    margin: 20px 10px 20px 10px;
-}
-#caja1, #caja2, #caja3{
-    border: solid @grosorbordesnoticias @colorbordes;
-    /*Obsérvese que llamamos a esta definición
-    COMO SI FUESE UNA FUNCIÓN. De hecho, si
-    queremos volver a aplicar unos márgenes en otro elemento
-    bastará con que llamemos a esta función o &quot;mixin&quot;*/
-    .margenesnoticias();
-}
+<span class="o">/*</span><span class="n">Esto</span> <span class="n">es</span> <span class="n">una</span> <span class="n">definición</span> <span class="n">cualquiera</span><span class="o">.</span> <span class="n">De</span> <span class="n">hecho</span><span class="p">,</span> <span class="n">ni</span> <span class="n">siquiera</span> <span class="n">es</span> <span class="n">obligatorio</span>
+<span class="n">que</span> <span class="n">en</span> <span class="n">el</span> <span class="n">HTML</span> <span class="n">alguién</span> <span class="n">use</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;margenesnoticias&quot;</span><span class="o">*/</span>
+<span class="o">.</span><span class="n">margenesnoticias</span><span class="p">{</span>
+    <span class="n">padding</span><span class="o">-</span><span class="n">top</span><span class="p">:</span><span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">padding</span><span class="o">-</span><span class="n">bottom</span><span class="p">:</span><span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">padding</span><span class="o">-</span><span class="n">left</span><span class="p">:</span><span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">padding</span><span class="o">-</span><span class="n">left</span><span class="p">:</span><span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+    <span class="o">/*</span><span class="n">Recordemos</span> <span class="n">que</span> <span class="n">esto</span> <span class="n">se</span> <span class="n">lee</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="o">*/</span>
+    <span class="n">margin</span><span class="p">:</span> <span class="mi">20</span><span class="n">px</span> <span class="mi">10</span><span class="n">px</span> <span class="mi">20</span><span class="n">px</span> <span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">#caja1, #caja2, #caja3{</span>
+    <span class="n">border</span><span class="p">:</span> <span class="n">solid</span> <span class="nd">@grosorbordesnoticias</span> <span class="nd">@colorbordes</span><span class="p">;</span>
+    <span class="o">/*</span><span class="n">Obsérvese</span> <span class="n">que</span> <span class="n">llamamos</span> <span class="n">a</span> <span class="n">esta</span> <span class="n">definición</span>
+    <span class="n">COMO</span> <span class="n">SI</span> <span class="n">FUESE</span> <span class="n">UNA</span> <span class="n">FUNCIÓN</span><span class="o">.</span> <span class="n">De</span> <span class="n">hecho</span><span class="p">,</span> <span class="n">si</span>
+    <span class="n">queremos</span> <span class="n">volver</span> <span class="n">a</span> <span class="n">aplicar</span> <span class="n">unos</span> <span class="n">márgenes</span> <span class="n">en</span> <span class="n">otro</span> <span class="n">elemento</span>
+    <span class="n">bastará</span> <span class="n">con</span> <span class="n">que</span> <span class="n">llamemos</span> <span class="n">a</span> <span class="n">esta</span> <span class="n">función</span> <span class="n">o</span> <span class="s2">&quot;mixin&quot;</span><span class="o">*/</span>
+    <span class="o">.</span><span class="n">margenesnoticias</span><span class="p">();</span>
+<span class="p">}</span>
 
-header{
-    border: solid @grosorbordescabeceras @colorbordes;
-}
+<span class="n">header</span><span class="p">{</span>
+    <span class="n">border</span><span class="p">:</span> <span class="n">solid</span> <span class="nd">@grosorbordescabeceras</span> <span class="nd">@colorbordes</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Y veamos que hemos podido «llamar a una función» para aplicar los márgenes en una serie de elementos. Lo mejor es que esa definición se puede volver a aplicar más abajo y así ahorrarnos el «copiado y pegado»</p>
@@ -1894,22 +2024,22 @@ header{
 <li><p>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</p></li>
 </ul>
 <p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
-<figure class="align-center" id="id23" style="width: 50%">
+<figure class="align-center" id="id25" style="width: 50%">
 <img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
 <figcaption>
-<p><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id23" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id24" style="width: 50%">
+<figure class="align-center" id="id26" style="width: 50%">
 <img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
 <figcaption>
-<p><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id24" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id25" style="width: 50%">
+<figure class="align-center" id="id27" style="width: 50%">
 <img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
 <figcaption>
-<p><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id25" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id27" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>Un posible HTML que resolviera esto sería el siguiente:</p>
@@ -1996,16 +2126,16 @@ header{
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</p></li>
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</p></li>
 </ul>
-<figure class="align-center" id="id26" style="width: 50%">
+<figure class="align-center" id="id28" style="width: 50%">
 <img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
 <figcaption>
-<p><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id26" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id28" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id27" style="width: 50%">
+<figure class="align-center" id="id29" style="width: 50%">
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
 <figcaption>
-<p><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id27" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id29" title="Enlace permanente a esta imagen">¶</a></p>
 </figcaption>
 </figure>
 <p>A continuación se muestra el HTML:</p>
@@ -2127,7 +2257,9 @@ header{
 <li class="toctree-l2"><a class="reference internal" href="#texto">Texto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#border-externos-outlines">Border externos (Outlines)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tablas">Tablas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#el-modelo-de-cajas">El modelo de cajas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#posicionamiento">Posicionamiento</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#centrado-de-elementos">Centrado de elementos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto">Ejercicio propuesto</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-propuesto-ii">Ejercicio propuesto (II)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion">Ejercicio de maquetación</a></li>
@@ -2144,9 +2276,6 @@ header{
 <li class="toctree-l3"><a class="reference internal" href="#ejercicio-de-maquetacion-con-floats-ii">Ejercicio de maquetación con floats (II)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#maquetacion-con-flexboxes">Maquetación con flexboxes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#media-queries">Media queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gestion-de-espacios">Gestión de espacios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#colores">Colores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tipografias">Tipografías</a></li>
@@ -2156,6 +2285,9 @@ header{
 <li class="toctree-l3"><a class="reference internal" href="#el-tamano-de-las-cajas-y-el-box-sizing">El tamaño de las cajas y el <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#maquetacion-con-flexboxes">Maquetación con flexboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maquetacion-avanzada-con-grid-layouts">Maquetación avanzada con <code class="docutils literal notranslate"><span class="pre">grid-layouts</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#media-queries">Media queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ejercicios-comentados-sobre-selectores">Ejercicios comentados sobre selectores.</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#solucion-p-destacado">Solución <code class="docutils literal notranslate"><span class="pre">p#destacado</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code></a></li>
