@@ -430,6 +430,47 @@ varias cosas:
 	* ``static``: dar permiso al navegador para que coloque la caja donde corresponda 
 	* ``float``: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
 	
+Un caso especial: la propiedad ``position:sticky``
+--------------------------------------------------------------------------------
+
+Esta propiedad se usa a menudo para crear "barras de menús". Esta propiedad:
+
+* Siempre debe tener unas coordenadas ``top:10px`` , ``left:10px`` , ``bottom:20px`` y/o ``right:35px`` (las medidas pueden cambiar)
+* Convierte al elemento en "semifijo". Se desplaza hasta llegar a la posición mínima de *scroll* y despues se queda ``fixed``.
+
+Se muestra un ejemplo de HTML:
+
+.. code-block:: html
+
+
+    <body>
+        <div id="caja1">Sticky</div>
+        <div id="caja2">
+            Texto o contenido muy largos...
+        </div>
+    </body>
+
+Si probamos este CSS observaremos como se comporta.
+
+.. code-block:: css
+
+    div{
+        border: solid 5px black;
+        margin: 20px auto;
+        padding: 20px;
+        width: 75%;
+    }
+
+    #caja1{
+        position: sticky;
+        top:0px;
+        left:0px;
+        /*No es obligatorio el color
+        de fondo, pero si no lo ponemos la
+        caja se verá transparente*/
+        background-color: white;
+    }
+
 Centrado de elementos
 -------------------------
 En líneas generales, usaremos poco las propiedades anteriores. Hoy en día una de las cuestiones principales que da problemas en el posicionamiento es el **centrado de elementos.** En realidad es bastante sencillo de hacer:
@@ -457,6 +498,12 @@ Y vemos el resultado:
    :align: center
 	
    Prácticas de centrado de elementos.
+
+
+El centrado vertical es menos habitual pero es fácil de hacer:
+
+* Podemos dejar el mismo ``padding`` por arriba o por abajo.
+* Podemos hacer que el contenedor padre se porte como una tabla usando ``display: table;`` y que el hijo se comporte como una celda usando ``display: table-cell`` poniendo también ``vertical-align: middle;``  
 
 Ejercicio propuesto
 -----------------------------
@@ -1210,8 +1257,86 @@ Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen
 
 Por ejemplo, supongamos que tenemos el siguiente fichero.
 
-.. literalinclude:: ejemplos/tema3_css/ejemplo_flexbox/index.html
+.. literalinclude:: ejemplos/tema_3_css/flexboxes/index.html
    :language: html
+
+Este fichero tiene un contenedor y dentro 3 cajas. Si no hacemos nada, las cajas se mostrarán simplemente una encima de la otra.
+
+.. figure:: img/tema3css/flexboxes/01-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor con 3 cajas.
+
+Sin embargo al añadir al ``contenedor`` la propiedad ``display:flex;`` dicho ``contenedor`` cambia y se convierte en una caja con *flexibilidad* para alojar a otras. Por defecto este *flex* acepta a las 3 cajas e intenta colocarlas de manera horizontal y distribuyendo el espacio uniformemente.
+
+.. figure:: img/tema3css/flexboxes/02-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor *flex* con 3 cajas.
+
+Dirección en *flexboxes* 
+--------------------------------------------------------------------------------
+
+Podemos tomar el control del orden en el que aparecerán las cajas dentro de un *flexbox.* 
+
+* La propiedad ``flex-direction: row;`` coloca los elementos en fila de izquierda a derecha (es el valor por defecto, como vemos arriba).
+* La propiedad ``flex-direction: row-reverse;`` coloca los elementos en fila de derecha a izquierda.
+* La propiedad ``flex-direction: column;`` coloca los elementos en columna, de arriba a abajo.
+* La propiedad ``flex-direction: column-reverse;`` coloca los elementos en columna, de abajo a arriba.
+
+
+.. figure:: img/tema3css/flexboxes/03-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   La propiedad ``column-reverse`` en un *flexbox* .
+
+Ajuste de elementos en *flexboxes.* 
+--------------------------------------------------------------------------------
+
+Si no hacemos nada y el *flexbox* se vuelve demasiado pequeño, los elementos se saldrán. Podemos controlar lo que ocurre usando la propiedad ``flex-wrap``
+
+.. figure:: img/tema3css/flexboxes/04-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor *flex* en horizontal que se ha hecho demasiado pequeño y genera desbordamiento.
+
+* Usando ``flex-wrap: nowrap;`` los elementos no se recolocan. Es el valor por defecto.
+* Usando ``flex-wrap: wrap;`` los elementos finales se considerarán "sobrantes" e irán a otra fila o columna **posterior** .
+* Usando  ``flex-wrap: wrap-reverse``  los elementos finales irán a otra fila o columna **anterior.** 
+
+
+.. figure:: img/tema3css/flexboxes/05-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con ``flex-wrap:wrap.`` El elemento 3 va **a la fila siguiente**
+
+
+.. figure:: img/tema3css/flexboxes/06-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con ``flex-wrap:wrap.`` El elemento 3 va **a la fila anterior**
+
+La propiedad ``flex-flow`` 
+--------------------------------------------------------------------------------
+
+Podemos combinar la dirección y el **wrapping** usando la propiedad ``flex-flow.`` Así, si por ejemplo queremos que un elemento con ``display: flex;`` vaya en columnas y controle el desbordamiento podemos escribir esto:
+
+.. code-block:: css
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+O resumirlo así:
+
+.. code-block:: css
+
+    flex-flow: column wrap;
 
 
 Maquetación avanzada con ``grid-layouts``
