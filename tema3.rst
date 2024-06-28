@@ -1253,7 +1253,7 @@ Observa que la caja 3 no lleva nada, así que la opción por defecto es ``box-si
 
 Maquetación con flexboxes
 ================================================================================
-Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
+Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea. Lo más interesante es que un *flexbox* permite **controlar los elementos de dentro sin tocarlos.** 
 
 Por ejemplo, supongamos que tenemos el siguiente fichero.
 
@@ -1267,6 +1267,8 @@ Este fichero tiene un contenedor y dentro 3 cajas. Si no hacemos nada, las cajas
    :align: center
 
    Contenedor con 3 cajas.
+
+**En todos estos ejemplos hemos añadido un margen adicional a cada caja para que se vea mejor.**
 
 Sin embargo al añadir al ``contenedor`` la propiedad ``display:flex;`` dicho ``contenedor`` cambia y se convierte en una caja con *flexibilidad* para alojar a otras. Por defecto este *flex* acepta a las 3 cajas e intenta colocarlas de manera horizontal y distribuyendo el espacio uniformemente.
 
@@ -1337,6 +1339,86 @@ O resumirlo así:
 .. code-block:: css
 
     flex-flow: column wrap;
+
+Alineación horizontal con ``justify-content.`` 
+--------------------------------------------------------------------------------
+Volvamos a empezar partiendo de un ``flex`` en que solo hay 3 cajas en las cuales además  ahora no hay ningún margen. El *flexbox* usa por defecto dirección de tipo ``row`` 
+
+
+.. figure:: img/tema3css/flexboxes/07-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con 3 cajas sin margen.
+
+Usando la propiedad ``justify-content`` podemos controlar como se distribuyen los elementos horizontalmente.
+
+Flexbox con ``justify-content:flex-start``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Es la opción por defecto, las cajas se alinean todas al principio  y el espacio sobrante se queda a la derecha.
+
+Flexbox con ``justify-content:flex-end``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas se alinean a la derecha y el espacio sobrante queda a la izquierda. Observa la numeración de las cajas y no lo confundas con el uso de ``flex-direction: row-reverse`` 
+
+.. figure:: img/tema3css/flexboxes/08-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: flex-end`` 
+
+Flexbox con ``justify-content:space-between``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes y el espacio entre medias se reparte.
+
+.. figure:: img/tema3css/flexboxes/09-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-between`` 
+
+
+Flexbox con ``justify-content:space-around``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes  y el espacio entre medias se reparte **pero de una manera no uniforme.** En concreto, el principio y el final tendrán **la mitad de espacio que el espacio intermedio entre cajas.** 
+
+.. figure:: img/tema3css/flexboxes/10-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-around`` 
+
+
+Flexbox con ``justify-content:space-evenly``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes  y el espacio entre medias se reparte **de manera completamente uniforme.** 
+
+.. figure:: img/tema3css/flexboxes/11-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-evenly`` 
+   
+
+Comparando ``space-evenly`` y ``space-around``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La diferencia entre ``space-around`` y ``space-evenly`` es muy pequeña, de hecho solo se nota en los márgenes. Abajo se adjunta una imagen que compara exactamente el mismo HTML. Arriba puede verse el ``space-around`` y abajo el ``space-evenly`` 
+
+.. figure:: img/tema3css/flexboxes/12-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Comparando ``space-around``  (arriba) y ``space-evenly`` (abajo)
+
+
+
+
 
 
 Maquetación avanzada con ``grid-layouts``
