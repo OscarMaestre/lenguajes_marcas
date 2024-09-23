@@ -1,0 +1,26 @@
+div{
+    font-size: x-large;
+    border : solid 5px black;
+    padding: 20px;
+    margin : 20px;
+}
+#caja1{
+    text-align: center;
+}
+#caja2{
+    width:45%;
+    margin: 20px auto;
+}
+#caja3{
+    text-align: center;
+    /*Solo por probar, cambiamos la anchura y además
+    aumentamos un poco el margen*/
+    width:20%;
+    margin: 50px auto;
+}
+#caja4{
+    text-align: center;
+}
+#caja41, #caja42, #caja43{
+    display: inline-block;
+}

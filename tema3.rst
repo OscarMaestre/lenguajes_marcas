@@ -376,6 +376,36 @@ Se pueden modificar muchas propiedades de las tablas:
 * Se pueden cambiar propiedades filas pares o impares con ``tr:nth-child(even)`` o ``tr:nth-child(odd)`` 
 * Se puede cambiar un elemento *solo cuando el ratón pase por encima de él con* cosas como ``tr:hover{background-color:red;}`` 
 
+El modelo de cajas
+=====================
+
+En CSS **todo es una caja** y el navegador va colocando las distintas "cajas" en la página web. Las cajas tienen:
+
+* Un margen asociado que las separa de otras cajas.
+* Un borde.
+* Un espacio interno llamado "padding"
+* Un contenido
+
+.. figure:: img/tema3css/modelo-cajas.png
+   :alt: El modelo de cajas CSS (imagen tomada de la web del W3C)
+   
+   El modelo de cajas CSS (imagen tomada de la web del W3C)
+
+
+* Algunos elementos **no generan una línea nueva** sino que se mantienen dentro de la misma línea. Como por ejemplo ``<b>``, ``<span>`` o ``<img>``. A estos elementos se les llama *elementos inline* y no se les puede cambiar la altura o la anchura. Si intentamos cambiar altura o anchura el navegador ignorará el cambio.
+* Otros elementos  **generan su propia línea antes y despues.** Esta línea puede ser más alta o menos pero forma su propio bloque o línea. Ejemplo de estas etiquetas son ``<div>`` , ``<p>`` o ``<ul>.``
+
+Podemos conseguir que un inline se porte como un block o viceverse usando el CSS siguiente:
+
+* Bloque: ``display: block;`` 
+* Inline: ``display: inline;``
+* Existe tambien un ``display:inline-block.`` Estos elementos se portan como inlines y no generan línea nueva pero *sí pueden cambiar de anchura o altura.* 
+
+En el siguiente HTML tenemos un ejemplo de como se comportan estas propiedades:
+
+.. literalinclude:: ejemplos/tema_3_css/inlines/index.html
+
+
 Posicionamiento
 ===============
 
@@ -400,6 +430,81 @@ varias cosas:
 	* ``static``: dar permiso al navegador para que coloque la caja donde corresponda 
 	* ``float``: mover la caja a cierta posición permitiendo que otras cajas floten a su alrededor
 	
+Un caso especial: la propiedad ``position:sticky``
+--------------------------------------------------------------------------------
+
+Esta propiedad se usa a menudo para crear "barras de menús". Esta propiedad:
+
+* Siempre debe tener unas coordenadas ``top:10px`` , ``left:10px`` , ``bottom:20px`` y/o ``right:35px`` (las medidas pueden cambiar)
+* Convierte al elemento en "semifijo". Se desplaza hasta llegar a la posición mínima de *scroll* y despues se queda ``fixed``.
+
+Se muestra un ejemplo de HTML:
+
+.. code-block:: html
+
+
+    <body>
+        <div id="caja1">Sticky</div>
+        <div id="caja2">
+            Texto o contenido muy largos...
+        </div>
+    </body>
+
+Si probamos este CSS observaremos como se comporta.
+
+.. code-block:: css
+
+    div{
+        border: solid 5px black;
+        margin: 20px auto;
+        padding: 20px;
+        width: 75%;
+    }
+
+    #caja1{
+        position: sticky;
+        top:0px;
+        left:0px;
+        /*No es obligatorio el color
+        de fondo, pero si no lo ponemos la
+        caja se verá transparente*/
+        background-color: white;
+    }
+
+Centrado de elementos
+-------------------------
+En líneas generales, usaremos poco las propiedades anteriores. Hoy en día una de las cuestiones principales que da problemas en el posicionamiento es el **centrado de elementos.** En realidad es bastante sencillo de hacer:
+
+* Centrar un elemento siempre implica centrarlo **con respecto al elemento padre.** 
+* Si un elemento se comporta como ``display:inline`` el elemento padre deberá llevar ``text-align:center``  
+* Si un elemento se comporta como ``display:block`` basta con poner ``margin:auto`` o ``margin: 40px auto`` (esto asignará por ejemplo 40px por arriba y por abajo y calculará automáticamente el espacio a los lados). También tendremos que poner anchura al elemento.
+* Si un elemento se comporta como ``display:inline-block`` debemos poner anchura al elemento y su elemento padre debe llevar la propiedad ``text-align:center``  .
+
+A continuación se muestra un archivo HTML para hacer la prueba:
+
+.. literalinclude:: ejemplos/tema_3_css/centrado/index.html
+   :language: html
+
+Y aquí vemos un posible CSS
+
+.. literalinclude:: ejemplos/tema_3_css/centrado/estilo.css
+   :language: css
+
+Y vemos el resultado:
+
+	
+.. figure:: img/tema3css/centrado-de-cajas.png
+   :figwidth: 50%
+   :align: center
+	
+   Prácticas de centrado de elementos.
+
+
+El centrado vertical es menos habitual pero es fácil de hacer:
+
+* Podemos dejar el mismo ``padding`` por arriba o por abajo.
+* Podemos hacer que el contenedor padre se porte como una tabla usando ``display: table;`` y que el hijo se comporte como una celda usando ``display: table-cell`` poniendo también ``vertical-align: middle;``  
+
 Ejercicio propuesto
 -----------------------------
 
@@ -1015,14 +1120,305 @@ Una posible solución sería esta:
 
 
 
+
+Gestión de espacios
+===================
+
+En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
+
+
+Colores
+=======
+
+Los colores en CSS se pueden especificar de varias maneras:
+
+* Por nombre: ``red``, ``yellow``, ``green``
+* Mediante ``rgb(rojo, verde, azul``, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, ``rgb(0,0,0)`` es negro y ``rgb(255,255,255)`` es blanco.
+* Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.
+* Desde hace poco se pueden indicar también con ``hsl(num, num, num)``
+
+Se pueden encontrar en Internet listas de colores denominados "seguros" (buscando por "web safe colors") que indican nombres de color que se ven igual en los distintos navegadores.
+
+
+Tipografías
+===========
+En tipografía se habla de dos términos distintos: el "typeface" y la "font".
+
+* Hay tipos "Serif", que llevan "rabito".
+* Hay tipos "Sans-serif" que no lo llevan
+* Hay tipos monoespaciados
+
+Lo más relevante, es que cuando usamos ``font-family: "Arial";``, el navegador puede decidir poner otro tipo de letra de la misma familia.
+
+Se pueden indicar varios tipos de letra por orden de preferencia.
+
+Google Fonts permite el "embebido" de fuentes de manera muy segura.
+
+
+Alineación del texto
+====================
+
+Se puede usar la propiedad ``text-align: left`` para modificar la alineación del texto, usando ``left``, ``center``, ``right`` o ``justify``
+
+Decoración del texto
+====================
+Se pueden usar otras propiedades para cambiar
+el aspecto del texto como estas:
+
+* ``text-decoration: underline``
+* ``text-decoration: overline``
+* ``text-decoration: line-through``
+
+Medidas
+=======
+
+Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras
+
+* ``margin: 1cm``
+* ``margin: 1in``: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.
+* ``margin: 1px``: muy dependiente de la resolución
+* ``margin: 1%``: es la más apropiada al modificar elementos div en pantalla.
+* ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
+
+El tamaño de las cajas y el ``box-sizing``
+--------------------------------------------
+
+Cuando se diseñan cajas siempre surge una duda al añadir bordes:
+
+    Si uso una caja con un borde de 25 px y pongo que la anchura de la caja es 200 px, ¿qué ocurrirá? ¿La caja medirá 200px de ancho + 25 px por la izquierda + 25 px por la derecha dando un total de 250? ¿O cuando pongo que la anchura debe ser 200px el navegador entenderá que me refiero a la anchura total?
+
+La respuesta correcta es la primera: si indicamos una anchura de 200px *el navegador asume que nos referimos a la anchura del contenido.* Así que si despues añadimos un borde *la caja medirá más de los 200px que teníamos pensado.*
+
+Sin embargo, si queremos que el navegador asuma que width significa *"haz este elemento de esta anchura y no te excedas. Si pongo bordes, reduce el tamaño del contenido"* podemos usar la propiedad ``box-sizing.``
+
+* Si usamos ``box-sizing: content-box`` entonces ``width`` se refiere a la anchura del contenido, por lo que añadir bordes no pasaremos de la anchura escrita.
+* Si usamos ``box-sizing: border-box`` entonces ``width`` se refiere a la anchura del contenido *sin importar si hay bordes o no.*
+
+Examinemos este fichero HTML
+
+.. literalinclude:: ejemplos/tema_3_css/maquetacion/index.html
+  :language: html
+
+Y usemos este CSS:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+Las tres cajas se mostrarán iguales. Todas ellas tienen una anchura de 400px de contenido+ 25 de borde por la izquierda + 50 de padding izquierdo + 50 de padding derecho + 25 de borde por la derecha, es decir **que en realidad miden 600px** (el margen NO se incluye, solo se usa para separar unas cajas de otras).
+
+
+.. figure:: img/tema3css/box-sizing/box-sizing-1.png
+   :figwidth: 70%
+   :align: center
+
+
+Sin embargo, si usamos este CSS, ahora las cajas se muestran de distinta manera:
+
+.. code-block:: css
+
+    #caja1, #caja2, #caja3{
+        border:  solid 25px black;
+        padding: 50px;
+        margin:  50px;
+        width:   400px;
+    }
+
+    /* El width se mide INCLUYENDO EL BORDE */
+    #caja1{
+        box-sizing: border-box;
+    }
+    /* El width se mide SOLO INCLUYENDO EL CONTENIDO
+    Así que la caja 2 mide 400px de anchura 
+        -Más 25 px de borde izquierdo
+        -Más 50 px de padding izquierdo
+        -Más 50 px de padding derecho
+        -Más 25 px de borde izquierdo
+        Y la caja 2 mide en total 500 px*/
+    #caja2{
+        box-sizing: content-box;
+    }
+
+Observa que la caja 3 no lleva nada, así que la opción por defecto es ``box-sizing: content-box`` y por tanto se comporta igual que la caja 2.
+
+.. figure:: img/tema3css/box-sizing/box-sizing-2.png
+   :figwidth: 70%
+   :align: center
+
+
 Maquetación con flexboxes
 ================================================================================
-Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea.
+Un "flexbox" es un contenedor que permite utilizar ciertas propiedades que hacen muy cómodo el maquetar "cajas" dentro de una línea. Lo más interesante es que un *flexbox* permite **controlar los elementos de dentro sin tocarlos.** 
 
 Por ejemplo, supongamos que tenemos el siguiente fichero.
 
-.. literalinclude:: ejemplos/tema3_css/ejemplo_flexbox/index.html
+.. literalinclude:: ejemplos/tema_3_css/flexboxes/index.html
    :language: html
+
+Este fichero tiene un contenedor y dentro 3 cajas. Si no hacemos nada, las cajas se mostrarán simplemente una encima de la otra.
+
+.. figure:: img/tema3css/flexboxes/01-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor con 3 cajas.
+
+**En todos estos ejemplos hemos añadido un margen adicional a cada caja para que se vea mejor.**
+
+Sin embargo al añadir al ``contenedor`` la propiedad ``display:flex;`` dicho ``contenedor`` cambia y se convierte en una caja con *flexibilidad* para alojar a otras. Por defecto este *flex* acepta a las 3 cajas e intenta colocarlas de manera horizontal y distribuyendo el espacio uniformemente.
+
+.. figure:: img/tema3css/flexboxes/02-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor *flex* con 3 cajas.
+
+Dirección en *flexboxes* 
+--------------------------------------------------------------------------------
+
+Podemos tomar el control del orden en el que aparecerán las cajas dentro de un *flexbox.* 
+
+* La propiedad ``flex-direction: row;`` coloca los elementos en fila de izquierda a derecha (es el valor por defecto, como vemos arriba).
+* La propiedad ``flex-direction: row-reverse;`` coloca los elementos en fila de derecha a izquierda.
+* La propiedad ``flex-direction: column;`` coloca los elementos en columna, de arriba a abajo.
+* La propiedad ``flex-direction: column-reverse;`` coloca los elementos en columna, de abajo a arriba.
+
+
+.. figure:: img/tema3css/flexboxes/03-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   La propiedad ``column-reverse`` en un *flexbox* .
+
+Ajuste de elementos en *flexboxes.* 
+--------------------------------------------------------------------------------
+
+Si no hacemos nada y el *flexbox* se vuelve demasiado pequeño, los elementos se saldrán. Podemos controlar lo que ocurre usando la propiedad ``flex-wrap``
+
+.. figure:: img/tema3css/flexboxes/04-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Contenedor *flex* en horizontal que se ha hecho demasiado pequeño y genera desbordamiento.
+
+* Usando ``flex-wrap: nowrap;`` los elementos no se recolocan. Es el valor por defecto.
+* Usando ``flex-wrap: wrap;`` los elementos finales se considerarán "sobrantes" e irán a otra fila o columna **posterior** .
+* Usando  ``flex-wrap: wrap-reverse``  los elementos finales irán a otra fila o columna **anterior.** 
+
+
+.. figure:: img/tema3css/flexboxes/05-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con ``flex-wrap:wrap.`` El elemento 3 va **a la fila siguiente**
+
+
+.. figure:: img/tema3css/flexboxes/06-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con ``flex-wrap:wrap.`` El elemento 3 va **a la fila anterior**
+
+La propiedad ``flex-flow`` 
+--------------------------------------------------------------------------------
+
+Podemos combinar la dirección y el **wrapping** usando la propiedad ``flex-flow.`` Así, si por ejemplo queremos que un elemento con ``display: flex;`` vaya en columnas y controle el desbordamiento podemos escribir esto:
+
+.. code-block:: css
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+O resumirlo así:
+
+.. code-block:: css
+
+    flex-flow: column wrap;
+
+Alineación horizontal con ``justify-content.`` 
+--------------------------------------------------------------------------------
+Volvamos a empezar partiendo de un ``flex`` en que solo hay 3 cajas en las cuales además  ahora no hay ningún margen. El *flexbox* usa por defecto dirección de tipo ``row`` 
+
+
+.. figure:: img/tema3css/flexboxes/07-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Un *flexbox* en horizontal con 3 cajas sin margen.
+
+Usando la propiedad ``justify-content`` podemos controlar como se distribuyen los elementos horizontalmente.
+
+Flexbox con ``justify-content:flex-start``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Es la opción por defecto, las cajas se alinean todas al principio  y el espacio sobrante se queda a la derecha.
+
+Flexbox con ``justify-content:flex-end``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas se alinean a la derecha y el espacio sobrante queda a la izquierda. Observa la numeración de las cajas y no lo confundas con el uso de ``flex-direction: row-reverse`` 
+
+.. figure:: img/tema3css/flexboxes/08-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: flex-end`` 
+
+Flexbox con ``justify-content:space-between``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes y el espacio entre medias se reparte.
+
+.. figure:: img/tema3css/flexboxes/09-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-between`` 
+
+
+Flexbox con ``justify-content:space-around``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes  y el espacio entre medias se reparte **pero de una manera no uniforme.** En concreto, el principio y el final tendrán **la mitad de espacio que el espacio intermedio entre cajas.** 
+
+.. figure:: img/tema3css/flexboxes/10-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-around`` 
+
+
+Flexbox con ``justify-content:space-evenly``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las cajas laterales se pegan a los márgenes  y el espacio entre medias se reparte **de manera completamente uniforme.** 
+
+.. figure:: img/tema3css/flexboxes/11-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Usando ``justify-content: space-evenly`` 
+   
+
+Comparando ``space-evenly`` y ``space-around``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La diferencia entre ``space-around`` y ``space-evenly`` es muy pequeña, de hecho solo se nota en los márgenes. Abajo se adjunta una imagen que compara exactamente el mismo HTML. Arriba puede verse el ``space-around`` y abajo el ``space-evenly`` 
+
+.. figure:: img/tema3css/flexboxes/12-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Comparando ``space-around``  (arriba) y ``space-evenly`` (abajo)
+
+
+
+
 
 
 Maquetación avanzada con ``grid-layouts``
@@ -1261,66 +1657,10 @@ Hay diversas cosas que podemos comprobar:
 * ``orientation:  portrait`` u ``orientation: landscape`` para saber si la pantalla está en horizontal o en vertical.
 
 
-Gestión de espacios
-===================
-
-En CSS se puede controlar el espacio interno y externo por medio de las propiedades ``padding-`` y ``margin-`` pudiendo usar ``margin-top`` o ``padding-left``. Las cuatro posiciones son ``top``, ``bottom``, ``left`` y ``right``
 
 
-Colores
-=======
-
-Los colores en CSS se pueden especificar de varias maneras:
-
-* Por nombre: ``red``, ``yellow``, ``green``
-* Mediante ``rgb(rojo, verde, azul``, donde entre comas se pone la cantidad de cada color de 0 a 255. Así, ``rgb(0,0,0)`` es negro y ``rgb(255,255,255)`` es blanco.
-* Se puede usar directamente la nomenclatura hexadecimal #ffffff. Donde cada dos letras se indica un número hexadecimal de 00 a ff, que indica respectivamente la cantidad de color rojo, verde o azul.
-* Desde hace poco se pueden indicar también con ``hsl(num, num, num)``
-
-Se pueden encontrar en Internet listas de colores denominados "seguros" (buscando por "web safe colors") que indican nombres de color que se ven igual en los distintos navegadores.
 
 
-Tipografías
-===========
-En tipografía se habla de dos términos distintos: el "typeface" y la "font".
-
-* Hay tipos "Serif", que llevan "rabito".
-* Hay tipos "Sans-serif" que no lo llevan
-* Hay tipos monoespaciados
-
-Lo más relevante, es que cuando usamos ``font-family: "Arial";``, el navegador puede decidir poner otro tipo de letra de la misma familia.
-
-Se pueden indicar varios tipos de letra por orden de preferencia.
-
-Google Fonts permite el "embebido" de fuentes de manera muy segura.
-
-
-Alineación del texto
-====================
-
-Se puede usar la propiedad ``text-align: left`` para modificar la alineación del texto, usando ``left``, ``center``, ``right`` o ``justify``
-
-Decoración del texto
-====================
-Se pueden usar otras propiedades para cambiar
-el aspecto del texto como estas:
-
-* ``text-decoration: underline``
-* ``text-decoration: overline``
-* ``text-decoration: line-through``
-
-Medidas
-=======
-
-Normalmente, lo más seguro es usar medidas en forma de porcentajes, pero hay otras
-
-* ``margin: 1cm``
-* ``margin: 1in``: esta y la anterior son más útiles cuando creamos hojas de estilo enfocadas a que la página quede bien cuando se imprima.
-* ``margin: 1px``: muy dependiente de la resolución
-* ``margin: 1%``: es la más apropiada al modificar elementos div en pantalla.
-* ``margin: 1em``: equivale aproximadamente a la anchura de una letra "m".
-
-	
 Ejercicios comentados sobre selectores.
 ================================================================================
 
@@ -1617,6 +1957,8 @@ Los controles siguen pareciendo "demasiado apretados". Los rellenamos con un poc
     fieldset{
         padding: 5%;
     }
+
+
 Resultado:
 
 .. figure:: img/tema3css/form_con_css6.png
@@ -1764,7 +2106,7 @@ Variables ``less``
 
 En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` se pueden hacer operaciones matemáticas con variables:
 
-.. code-block:: css
+.. code-block:: less
 
     @grosorbordesnoticias: 3px;
     @grosorbordescabeceras:@grosorbordesnoticias + 2px;
@@ -1784,9 +2126,7 @@ En ``less`` las variables se definen usando el símbolo arroba (@). En ``less`` 
 "Mixins"
 --------------------------------------------------------------------------------
 
-Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS...
-
-.. code-block:: css
+Un "mixin" es una definición cualquiera. Por ejemplo, supongamos que hay una serie de márgenes que queremos aplicar a muchos elementos. Observemos como en el siguiente archivo se definen unos márgenes en una clase CSS::
 
     @grosorbordesnoticias: 3px;
     @grosorbordescabeceras:@grosorbordesnoticias + 2px;

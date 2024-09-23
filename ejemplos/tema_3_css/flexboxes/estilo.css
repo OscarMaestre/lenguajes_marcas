@@ -1,0 +1,27 @@
+div{
+    border : solid 5px black;
+    margin : 50px;
+    padding: 25px;
+}
+
+#caja1, #caja2, #caja3{
+    margin: 3px;
+    padding: 25px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+#contenedor{
+    margin: 50px 20%;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: space-around;
+}
+
+#contenedor2{
+    margin: 50px 20%;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: space-evenly;
+}

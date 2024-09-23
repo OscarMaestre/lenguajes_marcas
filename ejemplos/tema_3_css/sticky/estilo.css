@@ -1,0 +1,13 @@
+div{
+    border: solid 5px black;
+    margin: 20px auto;
+    padding: 20px;
+    width: 75%;
+}
+
+#caja1{
+    position: sticky;
+    top:0px;
+    left:0px;
+    background-color: white;
+}
