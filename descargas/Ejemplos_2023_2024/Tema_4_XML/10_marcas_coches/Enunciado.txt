@@ -1,0 +1,13 @@
+Crear un esquema que valide un fichero como este, en el que aparecen marcas de coche con la restricción de que solo pueden aparecer las marcas Ford, Seat y Opel
+
+Esto es válido
+<marca>Ford</marca>
+
+Esto también
+<marca>Opel</marca>
+
+Pero esto no es válido
+<marca>Fiat</marca>
+
+Ni esto
+<marca>Renault</marca>

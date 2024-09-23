@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <!--Cabecera-->
+  <head>
+    <title>Página HTML básica</title>
+    <meta charset="utf-8">
+  </head>
+  <!--Cuerpo-->
+  <body>
+    <h1>Abono transportes</h1>
+    <h3>Cálculo modalidad</h3>
+  <form>
+    <h4>Medios</h4>
+    <input type="checkbox" name="opciones" 
+           id="bus" onclick="calcular_precio_abono();">Autobús <br>
+    <input type="checkbox" name="opciones" 
+           id="metro" onclick="calcular_precio_abono();">Metro<br>
+    <h4>Zonas</h4>
+    <input type="radio" name="zonas" id="zona1"
+           onclick="calcular_precio_abono();">Zona 1<br>
+    <input type="radio" name="zonas" id="zona2"
+           onclick="calcular_precio_abono();">Zona 2<br>
+    <h4>Períodos</h4>
+    <select id="periodos" onchange="calcular_precio_abono();">
+        <option value="verano">Meses de verano</option>
+        <option value="invierno">Septiembre a Junio</option>
+        <option value="siempre">Todo el año</option>
+    </select>
+  </form>
+  <div id="resultados"></div>
+  <div id="errores"></div>
+  <script>
+    function hay_errores(){
+      let radiometro=     document.getElementById("metro");
+      let radioautobuses= document.getElementById("bus")
+      let radiozona2=     document.getElementById("zona2");
+      if (radiometro.checked && radioautobuses.checked && radiozona2.checked){
+        return true;
+      }
+
+      let radiozona1=document.getElementById("zona1");
+      let temporada=document.getElementById("periodos");
+
+      /* Incompatibilidad
+      No se puede escoger solo el autobús para la zona 1 du-
+       rante todo el año.
+       Es decir, si
+       -autobus.checked
+       -!metro.checked
+       -zona1.checked
+       -temporada.value=="siempre"
+      */
+      if (radioautobuses.checked && !radiometro.checked &&
+          zona1.checked && temporada.value=="siempre"){
+            /* Decimos "sí, true, había un error"*/
+            return true;
+      } /*Fin del if*/
+      /* Si no se encuentra ningún error, habrá que decir que no lo hay*/
+      return false;
+    } /* Fin de la función hay_errores*/
+    
+    function calcular_precio_abono(){
+      /* Limpiamos los "restos" de ejecuciones anteriores*/
+      let divresultados=document.getElementById("resultados");
+      divresultados.innerHTML=null;
+      let diverrores=document.getElementById("errores");
+      diverrores.innerHTML=null;
+      if (hay_errores()){
+        diverrores.innerHTML="Hay un error";
+      } else {
+        let precio=0;
+        let radioautobuses=document.getElementById("bus");
+        if (radioautobuses.checked){
+          precio=precio+165;
+        } 
+        let radiometro=document.getElementById("metro");
+        if (radiometro.checked){
+          precio=precio+140;
+        }
+        /*Comprobamos si están marcados AMBOS y en ese
+        caso BORRAMOS CUALQUIER PRECIO ANTERIOR*/
+        if (radioautobuses.checked && radiometro.checked){
+          precio=precio+230;
+        }
+        let radiozona1=document.getElementById("zona1");
+        if (radiozona1.checked){
+          precio=precio+35;
+        }
+        let radiozona2=document.getElementById("zona2");
+        if (radiozona2.checked){
+          precio=precio+45;
+        }
+        /*Comprobamos para qué períodos quiere el abono*/
+        let temporada=document.getElementById("periodos").value;
+        if (temporada.value=="verano"){
+          precio=precio+50;
+        }
+        if (temporada.value=="invierno"){
+          precio=precio+110;
+        }
+        if (temporada.value=="siempre"){
+          precio=precio+165;
+        }
+        /* En este punto tenemos el precio, lo escribimos*/
+        
+        divresultados.innerHTML="El precio es:"+precio;
+      } /*Fin del else*/
+    }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+Pago de nóminas
+---------------------
+Una empresa desea almacenar la información sobre nóminas en un fichero XML que debe tener esta estructura
+
+1. El elemento raíz se llama "listapagos". Dentro de él hay 0 o muchos elementos "pago".
+2. El elemento pago lleva dentro lo siguiente:
+
+  2.1 Puede llevar un elemento VACÍO que indica si el pago se ha hecho o no. Solo puede ser "pagado" o "nopagado".
+  2.2 Debe llevar dentro un elemento IBAN que respete la estructura de los códigos de cuenta corriente
+  2.3 Debe llevar dentro un atributo cifacreedor que indica a quien se paga.
+
+A continuación se muestran ficheros correctos
+
+<listapagos>
+</listapagos>
+
+Otro ejemplo
+
+<listapagos>
+    <pago cifacreedor="5535031N">
+        <pagado/>
+        <iban>ES27-1122-3344-5566-7788</iban>
+    </pago>
+</listapagos>
+
+Otro ejemplo
+<listapagos>
+    <pago cifacreedor="5535031N">
+        <nopagado/>
+        <iban>ES27-1122-3344-5566-7788</iban>
+    </pago>
+    <pago cifacreedor="5535031N">
+        <!--No se sabe si el pago se ha hecho, no aparece nada-->
+        <iban>ES27-2233-4455-6677-8899</iban>
+    </pago>
+</listapagos>

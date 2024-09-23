@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ejemplos de eventos</title>
+    </head>
+    <body>
+        <h1>Gestión de eventos en JS</h1>
+        <h3>Modifica el número</h3>
+        <input type="number" id="multiplicador"
+               min="1" max="100" 
+               value="3" onchange="generar_tabla();">
+        <div id="resultados"></div>
+    </body>
+    <script>
+        function get_celda(texto){
+            let resultado="<td>"+texto+"</td>";
+            return resultado;
+        }
+        function generar_tabla()
+        {
+            /* Cojo el control cuyo id tiene
+            la cadena "multiplicador"*/
+            let control=document.getElementById(
+                "multiplicador");
+            console.log("El multiplicador es:"+
+                control.value);
+            let numero=parseInt(control.value);
+            
+
+            let tabla="";
+            tabla=tabla+"<table border='1'>";
+            for (let multi=1;
+                     multi<=10;
+                     multi++) {
+                tabla=tabla+"<tr>";
+                tabla=tabla + get_celda(multi);
+                tabla=tabla + get_celda(numero);
+                let resultado=multi*numero;
+                tabla=tabla + get_celda("=");
+                tabla=tabla + get_celda(resultado);
+                tabla=tabla+"</tr>";
+            } //Fin del for
+            tabla=tabla+"</table>";
+            
+            /*Extrae el div...*/
+            let div_resultados=document.getElementById(
+                "resultados");
+            /*E "inyectamos" la tabla HTML
+            dentro del div*/
+            div_resultados.innerHTML=tabla;
+        }
+    </script>
+</html>

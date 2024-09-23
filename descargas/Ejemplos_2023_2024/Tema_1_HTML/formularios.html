@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Formularios</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Datos personales</legend>
+                Nombre:<input type="text">   <br>
+                Apellido:<input type="text"> <br>
+                Teléfono:<input type="tel">  <br>
+                Email:<input type="email">   <br>
+                Edad:
+                <input type="number" min="16" max="67">
+                <br>
+                
+                Estatura:
+                <input type="number" min="0.50" max="2.60"
+                step="0.01"> <br>
+                Suba su foto:
+                <input type="file"> <br>
+                Elija su color de perfil:
+                <input type="color">
+                <br>
+                Indique su fecha de nacimiento:
+                <input type="date"> <br>
+                ¿A qué hora le podemos llamar?
+                <input type="time">
+                <br>
+                ¿Cual es su módulo preferido?:
+                <input type="text" list="perico">
+                <datalist id="perico">
+                    <option>Lenguajes de marcas</option>
+                    <option>Programación</option>
+                    <option>Bases de datos</option>
+                </datalist>
+            </fieldset>
+            <fieldset>
+                <legend>Datos laborales</legend>
+                ¿Trabaja?<br>
+                <input type="radio" name="trabajo">Si<br>
+                <input type="radio" name="trabajo">No<br>
+                <input type="radio" name="trabajo">Soy fijo discontinuo<br>
+                <button>Guardar los datos</button> <br>
+                <input type="submit" value="Guardar los datos">
+            </fieldset>
+        </form>
+        <iframe width="1264" height="711" src="https://www.youtube.com/embed/ybFyu0ZnFEA" title="NAPOLEÓN Tráiler Español (2023) HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </body>
+</html>

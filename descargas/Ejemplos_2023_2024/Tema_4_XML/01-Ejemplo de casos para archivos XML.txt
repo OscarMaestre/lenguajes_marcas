@@ -1,0 +1,47 @@
+Caso 1: el archivo está mal formado
+====================================
+
+<cliente>
+    <nombre>Juan De las Eras
+    <cif>5.111.222Z</cif>
+</cliente>
+
+El archivo está mal: NO HAY ETIQUETA DE CIERRE </nombre>
+
+Más del caso 1
+===================================
+<cliente>
+    <nombre>Juan De las Eras</Nombre>
+    <cif>5.111.222Z</cif>
+</cliente>
+El archivo sigue estando mal formado, el cierre no es correcto.
+
+Más del caso 1
+======================================
+<cliente>
+    <1_nombre>Juan De las Eras</1_nombre>
+    <cif>5.111.222Z</cif>
+</cliente>
+Sigue estando mal formado. NO SE PUEDE EMPEZAR POR NÚMERO
+
+
+Caso 2: (algo mejor), el archivo está bien formado
+==================================================
+<cliente>
+    <nombre>Juan De las Eras</cliente>
+    <cif>5.111.222Z</cif>
+</cliente>
+
+Mucho mejor. Hay un solo elemento raíz, las etiquetas se abren y se cierran y el cierre concuerda con la apertura.
+
+Caso 3: (el mejor), el archivo es válido
+===========================================
+<?xml dtd="clientes.dtd">
+<cliente>
+    <nombre>Juan De las Eras</cliente>
+    <cif>5.111.222Z</cif>
+</cliente>
+
+El archivo 
+a) está bien formado
+b) encima nos da las reglas de lo que se permite y lo que no

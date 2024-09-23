@@ -1,0 +1,136 @@
+Solución
+============
+El cuerpo de la DTD sería este
+
+<!ELEMENT listacomponentes  (NO_SABEMOS_QUÉ_PONER_AQUÍ)>
+<!ELEMENT raton             (descripcion)>
+<!ELEMENT monitor           (tamano, resolucion)>
+<!ELEMENT teclado           (conexion)>
+<!ELEMENT descripcion       (#PCDATA)>
+<!ELEMENT tamano            (#PCDATA)>
+<!ELEMENT resolucion        (#PCDATA)>
+<!ELEMENT conexion          (#PCDATA)>
+<!--Indicamos los atributos que teníamos pendientes.
+En los atributos da igual el orden-->
+<!ATTLIST raton material CDATA #REQUIRED>
+<!ATTLIST raton peso     CDATA #REQUIRED>
+
+Análisis de una solución equivocada (I)
+-----------------------------------------
+Está claro que vamos a necesitar la | (alternativas) y * (para repeticiones o incluso "no apariciones"). Una posibilidad que se nos ocurre es esta:
+
+<!ELEMENT listacomponentes  (raton*|teclado*|monitor*)>
+<!ELEMENT raton             (descripcion)>
+<!ELEMENT monitor           (tamano, resolucion)>
+<!ELEMENT teclado           (conexion)>
+<!ELEMENT descripcion       (#PCDATA)>
+<!ELEMENT tamano            (#PCDATA)>
+<!ELEMENT resolucion        (#PCDATA)>
+<!ELEMENT conexion          (#PCDATA)>
+<!--Indicamos los atributos que teníamos pendientes.
+En los atributos da igual el orden-->
+<!ATTLIST raton material CDATA #REQUIRED>
+<!ATTLIST raton peso     CDATA #REQUIRED>
+
+Aviso, ¡¡¡ESTÁ MAL!!!
+<!ELEMENT listacomponentes  (raton*|teclado*|monitor*)>
+se lee "listacomponentes" lleva dentro "una de estas tres cosas" "o muchos elementos raton (que podrían no estar) O muchos elementos teclado o muchos elementos monitor" PERO SOLO UNO DE ESOS TRES. Esta regla obligaría a todo el mundo a hacer sus ficheros así
+
+<listacomponentes>
+    <raton material="plastico" peso="25g">
+        <descripcion>Raton estándar</descripcion>
+    </raton>
+    <raton material="plastico" peso="45g">
+        <descripcion>Raton estándar</descripcion>
+    </raton>
+    <raton material="poliestireno" peso="25g">
+        <descripcion>Raton serie</descripcion>
+    </raton>
+</listacomponentes>
+
+
+O así
+<listacomponentes>
+    <monitor>
+        <tamano>24"</tamano>
+        <resolucion>2048x1960</resolucion>
+    </monitor>
+    <raton material="resina" peso="35g">
+        <descripcion>Raton gaming</descripcion>
+    </raton>
+</listacomponentes>
+
+Análisis de una solución equivocada (II)
+-----------------------------------------
+Otra posibilidad que se nos ocurre es ésta:
+
+<!ELEMENT listacomponentes  (raton*,teclado*,monitor*)>
+<!ELEMENT raton             (descripcion)>
+<!ELEMENT monitor           (tamano, resolucion)>
+<!ELEMENT teclado           (descripcion)>
+<!ELEMENT descripcion       (#PCDATA)>
+<!ELEMENT tamano            (#PCDATA)>
+<!ELEMENT resolucion        (#PCDATA)>
+<!ELEMENT conexion          (#PCDATA)>
+<!--Indicamos los atributos que teníamos pendientes.
+En los atributos da igual el orden-->
+<!ATTLIST raton material CDATA #REQUIRED>
+<!ATTLIST raton peso     CDATA #REQUIRED>
+
+Aviso, ¡¡¡ESTÁ MAL!!!
+
+Esta regla:
+
+<!ELEMENT listacomponentes  (raton*,teclado*,monitor*)>
+
+Se lee: "listacomponentes lleva dentro tres cosas: primero cero o o muchos raton, despues cero o muchos teclado y por último cero o muchos monitor"
+
+Solución correcta
+-----------------------------------------
+<!ELEMENT listacomponentes  (raton|teclado|monitor)*>
+<!ELEMENT raton             (descripcion)>
+<!ELEMENT monitor           (tamano, resolucion)>
+<!ELEMENT teclado           (conexion)>
+<!ELEMENT descripcion       (#PCDATA)>
+<!ELEMENT tamano            (#PCDATA)>
+<!ELEMENT resolucion        (#PCDATA)>
+<!ELEMENT conexion          (#PCDATA)>
+<!ATTLIST raton material CDATA #REQUIRED>
+<!ATTLIST raton peso     CDATA #REQUIRED>
+
+¡Ahora sí!, esta regla:
+<!ELEMENT listacomponentes  (raton|teclado|monitor)*>
+Se lee "cero o  muchos de lo que haya entre paréntesis"
+
+Pregunta
+------------------------------
+¿Por qué sería incorrecta esta regla?
+
+<!ELEMENT listacomponentes  (raton,teclado,monitor)*>
+
+Estariamos obligando a que los ficheros fueran así:
+
+-listacomponentes
+   -raton
+   -teclado
+   -monitor
+   -raton
+   -teclado
+   -monitor
+   -raton
+   -teclado
+   -monitor
+   -raton
+   -teclado
+   -monitor
+   ....
+-listacomponentes
+
+
+
+
+
+
+
+
+

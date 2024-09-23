@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pruebas de estilo</title>
+    <style>
+        .borderojo{
+            border-color: red;
+        }
+        .bordeverde{
+            border-color: green;
+        }
+        .sinborde{
+            border-style: none;
+        }
+        .bordesimple{
+            border-style: solid;
+        }
+        .bordedoble{
+            border-style: double;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elija un estilo para el texto</h1>
+    <form>
+        Elige un estilo de borde:
+        <select id="tipoborde" onchange="cambiar_estilo();">
+            <option value="noborde">No hay borde</option>
+            <option value="bordesimple">Borde de una línea</option>
+            <option value="bordedoble">Borde de dos líneas</option>
+        </select><br>
+        Elige un color:
+        <select id="colorborde" onchange="cambiar_estilo();">
+            <option value="rojo">Borde rojo</option>
+            <option value="verde">Borde verde</option>
+        </select><br>
+    </form>
+    <div id="pruebaestilo">Ejemplo de bordes y colores</div>
+    <script>
+        function cambiar_estilo(){
+            let control_tipo_borde =document.getElementById("tipoborde");
+            let control_color_borde=document.getElementById("colorborde");
+            let div_prueba_estilo  =document.getElementById("pruebaestilo");
+            /* Se debe borrar cualquier resto de estilos anteriores*/
+            div_prueba_estilo.className="";
+            if (control_tipo_borde.value=="noborde"){
+                div_prueba_estilo.classList.add("noborde");
+                return ;
+            }
+            if (control_tipo_borde.value=="bordesimple"){
+                div_prueba_estilo.className="";
+                div_prueba_estilo.classList.add("bordesimple");
+            }
+            if (control_tipo_borde.value=="bordedoble"){
+                div_prueba_estilo.className="";
+                div_prueba_estilo.classList.add("bordedoble");
+            }
+            if (control_color_borde.value=="rojo"){
+                div_prueba_estilo.classList.remove("verde")
+                div_prueba_estilo.classList.add("borderojo");
+            }
+            if (control_color_borde.value=="verde"){
+                div_prueba_estilo.classList.remove("rojo")
+                div_prueba_estilo.classList.add("bordeverde");
+            }
+            
+        } /* Fin de la función cambiar_estilo*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Crear un esquema XML que procese ficheros como el siguiente:
+- El elemento raíz es "empleado" y dentro lleva:
+        -Un elemento "nombre" que contiene siempre una cadena
+        -Un elemento "apellido1" que contiene una cadena
+        -Un elemento "apellido2" que es OPTATIVO y contiene cadenas
+
+Ejemplos de ficheros válidos:
+
+<empleado>
+        <nombre>Carmen</nombre>
+        <apellido1>Diaz</apellido1>
+</empleado>
+
+<empleado>
+        <nombre>Juan</nombre>
+        <apellido1>Gomez</apellido1>
+        <apellido2>Gomez</apellido2>
+</empleado>

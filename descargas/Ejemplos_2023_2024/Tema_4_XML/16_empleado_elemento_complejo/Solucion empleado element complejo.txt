@@ -1,0 +1,18 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="empleado" type="tipoEmpleado"/>
+        <xsd:complexType name="tipoEmpleado">
+            <xsd:complexContent>
+                <xsd:restriction base="xsd:anyType">
+                    <xsd:sequence>
+                        <xsd:element name="nombre"
+                                    type="xsd:string"/>
+                        <xsd:element name="apellido1"
+                                    type="xsd:string"/>
+                        <xsd:element name="apellido2"
+                                    type="xsd:string"
+                                    minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>    
+</xsd:schema>

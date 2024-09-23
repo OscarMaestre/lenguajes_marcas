@@ -1,0 +1,14 @@
+Queremos construir un esquema que valide ISBN que consisten en una secuencia de 13 dígitos.
+
+Esto también 
+<isbn>8712398740174</isbn>
+
+Esto también sirve
+<isbn>8413358105438</isbn>
+
+Pero esto no es válido
+<isbn>20</isbn>
+
+Ni esto (tiene demasiadas cifras)
+<isbn>123456789123456789</isbn>
+

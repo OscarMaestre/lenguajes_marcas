@@ -1,0 +1,4 @@
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT cliente  (nombre)>
+<!ELEMENT nombre   (#PCDATA)>
+<!ATTLIST cliente cif CDATA #REQUIRED>

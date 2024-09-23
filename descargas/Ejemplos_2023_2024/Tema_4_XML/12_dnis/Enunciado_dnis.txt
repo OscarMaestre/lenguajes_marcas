@@ -1,0 +1,15 @@
+Crear un esquema que valide DNIs. Los DNI en España:
+-Primero PUEDE llevar una letra
+-Despues SIEMPRE hay 7 u 8
+-Despues SIEMPRE hay una letra.
+
+Esto son DNIs válidos
+
+<dni>X01234567Z</dni>
+
+<dni>01234567Z</dni>
+
+<dni>012345678Z</dni>
+
+Pero esto no
+<dni>X1010X1010</dni>

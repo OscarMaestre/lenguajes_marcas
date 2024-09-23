@@ -1,0 +1,9 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="pago" type="tipoPago"/>
+    <xsd:simpleType name="tipoPago">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="5"/>
+            <xsd:maxInclusive value="5999.99"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

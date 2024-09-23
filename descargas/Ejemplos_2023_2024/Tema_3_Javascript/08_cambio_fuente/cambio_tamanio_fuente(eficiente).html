@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cambios de tamaño</title>
+        <style>
+            .mediano{
+                font-size: 12px;
+            }
+            .grande{
+                font-size: 18px;
+            }
+            .muygrande{
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="radio" name="fuente" onclick="cambiarmediano();"
+                    id="mediano">   12px<br>
+            <input type="radio" name="fuente" onclick="cambiargrande();"
+                    id="grande">    18px<br>
+            <input type="radio" name="fuente" onclick="cambiarmuygrande()"
+                    id="muygrande"> 24px<br>
+        </form>
+        <div id="muestra">
+            texto texto texto texto texto texto 
+        </div>
+        <script>
+            function borraTodo(){
+                divmuestra.classList.remove("mediano");
+                divmuestra.classList.remove("grande");
+                divmuestra.classList.remove("muygrande");
+            }
+            function cambiarmediano(){
+                let divmuestra=document.getElementById("muestra");
+                borraTodo();
+                divmuestra.classList.add("mediano");
+            }
+            function cambiargrande(){
+                let divmuestra=document.getElementById("muestra");
+                borraTodo();
+                divmuestra.classList.add("grande");
+            }
+            function cambiarmuygrande(){
+                let divmuestra=document.getElementById("muestra");
+                borraTodo();
+                divmuestra.classList.add("muygrande");
+            }
+            
+            
+        </script>
+    </body>
+</html>

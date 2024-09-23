@@ -1,0 +1,6 @@
+<!ELEMENT listapagos (pago)*>
+<!ELEMENT pago ( (pagado|nopagado)? , iban)>
+<!ATTLIST pago cifacreedor CDATA #REQUIRED>
+<!ELEMENT pagado EMPTY>
+<!ELEMENT nopagado EMPTY>
+<!ELEMENT iban (#PCDATA)>

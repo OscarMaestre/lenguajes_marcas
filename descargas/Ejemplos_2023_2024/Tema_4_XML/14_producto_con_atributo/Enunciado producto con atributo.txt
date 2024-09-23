@@ -1,0 +1,9 @@
+Se desea crear un XML Schema que controle ficheros con una sola etiqueta que describe un producto. Dentro del producto debe haber una cadena. Sin embargo el producto tiene siempre un atributo peso que lleva dentro una cantidad de tipo float
+
+Ejemplos válidos son estos:
+
+<producto peso="2.59">CPU</producto>
+
+<producto peso="13.50">Switch</producto>
+
+<producto peso="165.20">Armario blindado</peso>

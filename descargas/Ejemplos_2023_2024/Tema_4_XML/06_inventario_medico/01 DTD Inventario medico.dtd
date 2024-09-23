@@ -1,0 +1,55 @@
+Solución
+================
+
+La DTD como tal es esta:
+
+<!ELEMENT suministrosmedicos  (antibiotico+, analgesico+, antitusivo*)>
+<!ELEMENT antibiotico         (nombre, nombrecomercial?)>
+<!ELEMENT nombre              (#PCDATA)>
+<!ELEMENT nombrecomercial     (#PCDATA)>
+<!ELEMENT analgesico          (fechadecaducidad?, nombre)>
+<!ELEMENT fechadecaducidad    (#PCDATA)>
+<!ELEMENT antitusivo          ( (tiporeceta,presentacion) | (presentacion,tiporeceta) )>
+<!ELEMENT tiporeceta          (#PCDATA)>
+<!ELEMENT presentacion        (#PCDATA)>
+<!--Atributos-->
+<!ATTLIST analgesico  pvp  CDATA  #REQUIRED>
+<!ATTLIST presentacion dosisrecomendada CDATA #REQUIRED>
+
+Algunos comentarios a la solución
+-------------------------------------
+
+Empezamos por la regla inicial
+<!ELEMENT suministrosmedicos (antibiotico+, analgesico+, antitusivo*)>
+<!--
+    Recordemos, estas opciones están MAL
+    <!ELEMENT suministrosmedicos (antibiotico, analgesico, antitusivo)*>
+    Ésta está mal porque dice que "podemos tener 0 o más del trio <antibiotico,analgesico,antitusivo>" PERO ESO NO ES LO QUE SE PIDE.
+    El ejercicio dice "primero todos los antibioticos, luego todos los
+    analgésicos y luego 0 o más antitusivos". Además, se permitiría el
+    que no hubiera antibioticos o no hubiera analgésicos.
+
+   <!ELEMENT suministrosmedicos (antibiotico|analgesico|antitusivo)*> 
+   Ésta está mal porque permite cosas como esta
+    antibiotico
+    antibiotico
+    antitusivo
+    analgesico
+    antibiotico
+    La regla se lee "0 o más de cualquiera del paréntesis" y por supuesto
+    esa regla LOS ACEPTA EN CUALQUIER ORDEN. Y el ejercicio exige un orden: primero los antibioticos, luego los analgésicos, luego los antitusivos.
+
+
+    <!ELEMENT suministrosmedicos ((antibiotico, analgesico) |antitusivo)+>
+    También está mal porque obliga a que despues de un antibiotico siempre haya un analgesico. Es decir, obliga a que los ficheros sean algo asi
+    antibiotico
+    analgesico
+    antibiotico
+    analgesico
+    antibiotico
+    analgesico
+    
+
+-->
+
+El antitusivo tiene otro problema: se pide que los elementos puedan ir en cualquier orden.
