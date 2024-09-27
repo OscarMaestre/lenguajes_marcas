@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="es" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Introducción &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=7ece2587"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="HTML5" href="tema2.html" />
@@ -37,31 +33,31 @@
           <div class="body" role="main">
             
   <section id="introduccion">
-<h1>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado">¶</a></h1>
+<h1>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">¶</a></h1>
 <section id="historia">
-<h2>Historia<a class="headerlink" href="#historia" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Historia<a class="headerlink" href="#historia" title="Link to this heading">¶</a></h2>
 <section id="el-pasado">
-<h3>El pasado<a class="headerlink" href="#el-pasado" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>El pasado<a class="headerlink" href="#el-pasado" title="Link to this heading">¶</a></h3>
 <p>Los lenguajes de marcas son bastante antiguos aunque solo se han popularizado con la llegada de Internet.  De hecho, los comienzos de los lenguajes de marcas se pueden situar en el lenguaje SGML (Standard Generalized Markup Language). Dicho lenguaje en realidad nunca llegó al gran público, aunque sigue existiendo y usándose en entornos muy específicos. Lo más usado y conocido hoy día es HTML (HyperText Markup Language).</p>
 </section>
 <section id="el-presente">
-<h3>El presente<a class="headerlink" href="#el-presente" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>El presente<a class="headerlink" href="#el-presente" title="Link to this heading">¶</a></h3>
 <p>El lenguaje HTML ha ido cambiando mucho a lo largo del tiempo. La versión más actual es la conocida como HTML5 y es la que se contará en estos apuntes.
 El fundamento de Internet y todas las tecnologías asociadas se basa en estándares abiertos e
 independientes de la tecnología. El organismo que regula estos estándares sin ninguna contrapartida a cambio es el <a class="reference external" href="http://www.w3c.org">World Wide Web Consortium (W3C)</a> . Todos sus estándares (que ellos llaman «Technical Reports») pueden descargarse gratuitamente en su web.</p>
 </section>
 <section id="el-futuro">
-<h3>El futuro<a class="headerlink" href="#el-futuro" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>El futuro<a class="headerlink" href="#el-futuro" title="Link to this heading">¶</a></h3>
 <p>El futuro de todas estas tecnologías sigue estando en sistemas abiertos, que facilitan la competencia y por tanto benefician al usuario. La web ha tenido un crecimiento exponencial debido a la existencias de las plataformas móviles, que han multiplicado los accesos a las páginas web (y que también han dificultado el diseño web, hablaremos más de ello en el tema sobre CSS).</p>
 </section>
 </section>
 <section id="servidores-web">
-<h2>Servidores web<a class="headerlink" href="#servidores-web" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Servidores web<a class="headerlink" href="#servidores-web" title="Link to this heading">¶</a></h2>
 <p>Este apartado intenta ilustrar muy por encima como funciona un servidor web. Un servidor web es un programa que “entiende” los protocolos HTTP y HTTPS y que atiende peticiones de navegadores sirviendo páginas a medida que se van solicitando. Tener un servidor no implica obligatoriamente un nombre de dominio. Es decir cuando en el navegador escribimos «<a class="reference external" href="http://www.google.es">http://www.google.es</a>» contactamos con un programa que se está ejecutando en un ordenador al que se le ha dado el nombre «www.google.es» y le pedimos establecer una conexión para intercambiar información usando el protocolo HTTP. Así, cuando un servidor recibe una petición examina sus directorios para ver si tiene ese archivo en el directorio que le han dicho, si es así, el fichero se transmite al que hizo la petición. Si no existe, el navegador devuelve un código 404 (recurso no encontrado) y nos mostrará la página web asociada a ese código 404. Si todo va bien nuestro navegador recibe un código 200</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/http_get_y_post.png"><img alt="_images/http_get_y_post.png" src="_images/http_get_y_post.png" style="width: 344.5px; height: 179.5px;" /></a>
 <figcaption>
-<p><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+<p><span class="caption-text">Intercambio de mensajes entre cliente web (o navegador) y servidor web.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Un servidor web puede ser privado o alquilado, existiendo grandes diferencias entre la forma de gestionar ambos.</p>
@@ -70,7 +66,7 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 <li><p>Los alquilados suelen conllevar un mayor precio cuando se necesita mas espacio para alojar nuestros ficheros. Ofrecen muchas garantías como por ejemplo anchos de banda muy aceptables a precios bastante competitivos y sobre todo que permiten al diseñador web liberarse de la gestión de los recursos de red</p></li>
 </ul>
 <section id="como-configurar-un-servidor-en-casa">
-<h3>Como configurar un servidor en casa<a class="headerlink" href="#como-configurar-un-servidor-en-casa" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>Como configurar un servidor en casa<a class="headerlink" href="#como-configurar-un-servidor-en-casa" title="Link to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Se necesita un servidor web instalado en un equipo (Apache del paquete XAMPP)</p></li>
 <li><p>Apuntar la IP del equipo en el que se instala Apache.</p></li>
@@ -82,12 +78,12 @@ independientes de la tecnología. El organismo que regula estos estándares sin 
 </section>
 </section>
 <section id="los-nombres-de-dominio">
-<h2>Los nombres de dominio<a class="headerlink" href="#los-nombres-de-dominio" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Los nombres de dominio<a class="headerlink" href="#los-nombres-de-dominio" title="Link to this heading">¶</a></h2>
 <p>El servicio de nombres de dominio es un sistema que convierte de direcciones tipo www.loquesea.com a direcciones IP. Esto permite que sea más fácil recordar direcciones de páginas. Sin embargo, DNS esun sistema muy complejo que funciona de forma distribuida entre distintos países.</p>
 <p>Los nombres de dominio se resuelven de final a principio. La última parte se llama TLD o Top Level Domain o dominio de primer nivel.. Estos dominios son administrados por países ocupándose cada uno de ellos de los nombres o marcas que hay dentro de dichos países.</p>
 </section>
 <section id="los-sistemas-de-gestion-de-informacion">
-<h2>Los sistemas de gestión de información<a class="headerlink" href="#los-sistemas-de-gestion-de-informacion" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Los sistemas de gestión de información<a class="headerlink" href="#los-sistemas-de-gestion-de-informacion" title="Link to this heading">¶</a></h2>
 <p>Definamos primero algunos términos:</p>
 <ul class="simple">
 <li><p>Sistema: conjunto de elementos interrelacionados que colaboran en la consecución de un objetivo.</p></li>
@@ -101,7 +97,7 @@ importar (o exportar) datos e información.</p>
 trasvases de datos.</p>
 </section>
 <section id="tipos-de-lenguajes">
-<h2>Tipos de lenguajes<a class="headerlink" href="#tipos-de-lenguajes" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Tipos de lenguajes<a class="headerlink" href="#tipos-de-lenguajes" title="Link to this heading">¶</a></h2>
 <p>Aparte de los lenguajes de marcas típicos, existen otros de uso bastante común. Siendo el caso más conocido LaTeX.</p>
 <p>Programas como LateX tienen la desventaja de obligar a aprender “marcas”. Sin embargo, los algoritmos de colocación del texto suelen ser más sofisticados que otros programas. Los programas de redacción de documentos más utilizados suelen ser los del tipo MS-Word o LibreOffice que son del tipo WYSIWYG (What You See Is What You Get).</p>
 <p>Dentro de los tipos de formatos, RTF es un mecanismo público que permite describir el aspecto de documentos. Al ser público, muchos procesadores pueden implementarlo si necesidad de pagar “royalties”.</p>
@@ -109,14 +105,14 @@ trasvases de datos.</p>
 PDF, existía un lenguaje abierto denominado PostScript. Por otro lado RTF o Latex, son lenguajes descriptivos, mientras que PostScript es un lenguaje completo</p>
 </section>
 <section id="organismos-de-regulacion">
-<h2>Organismos de regulación<a class="headerlink" href="#organismos-de-regulacion" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Organismos de regulación<a class="headerlink" href="#organismos-de-regulacion" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>La Internation Standards Organization emite estándares para la documentación.</p></li>
 <li><p>El W3C (o World Wide Web Consortium) emite “technical recommendations” (o TR’s) que los interesados en la web pueden seguir para garantizar la interoperabilidad. <a class="reference external" href="http://www.w3c.org">Su web es muy útil</a></p></li>
 </ol>
 </section>
 <section id="gramaticas-y-dtds">
-<h2>Gramáticas y DTD’s<a class="headerlink" href="#gramaticas-y-dtds" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Gramáticas y DTD’s<a class="headerlink" href="#gramaticas-y-dtds" title="Link to this heading">¶</a></h2>
 <p>Las gramáticas HTML indican el conjunto de reglas para determinar lo que se acepta o no
 se acepta. Si se elige una gramática (como por ejemplo la de HTML5) es muy recomendable
 respetar las reglas de esa gramática.
@@ -157,50 +153,50 @@ y tales documentos deben llevar en la cabecera algo que diga a qué estándar se
 </div>
 <p>Y un ejemplo de archivo aceptado por esa DTD sería este</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;lista_de_personas&gt;</span>
-        <span class="nt">&lt;persona&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span> Pepe Pérez <span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;sexo&gt;</span> Varón <span class="nt">&lt;/sexo&gt;</span>
-                <span class="nt">&lt;numeroseguridadsocial&gt;</span>555<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
-        <span class="nt">&lt;/persona&gt;</span>
-        <span class="nt">&lt;persona&gt;</span>
-                <span class="nt">&lt;nombre&gt;</span> Angela Lopez <span class="nt">&lt;/nombre&gt;</span>
-                <span class="nt">&lt;fechanacimiento&gt;</span>13-2-1995<span class="nt">&lt;/fechanacimiento&gt;</span>
-                <span class="nt">&lt;sexo&gt;</span> Mujer <span class="nt">&lt;/sexo&gt;</span>
-                <span class="nt">&lt;numeroseguridadsocial&gt;</span>355<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
-        <span class="nt">&lt;/persona&gt;</span>
+<span class="w">        </span><span class="nt">&lt;persona&gt;</span>
+<span class="w">                </span><span class="nt">&lt;nombre&gt;</span><span class="w"> </span>Pepe<span class="w"> </span>Pérez<span class="w"> </span><span class="nt">&lt;/nombre&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sexo&gt;</span><span class="w"> </span>Varón<span class="w"> </span><span class="nt">&lt;/sexo&gt;</span>
+<span class="w">                </span><span class="nt">&lt;numeroseguridadsocial&gt;</span>555<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/persona&gt;</span>
+<span class="w">        </span><span class="nt">&lt;persona&gt;</span>
+<span class="w">                </span><span class="nt">&lt;nombre&gt;</span><span class="w"> </span>Angela<span class="w"> </span>Lopez<span class="w"> </span><span class="nt">&lt;/nombre&gt;</span>
+<span class="w">                </span><span class="nt">&lt;fechanacimiento&gt;</span>13-2-1995<span class="nt">&lt;/fechanacimiento&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sexo&gt;</span><span class="w"> </span>Mujer<span class="w"> </span><span class="nt">&lt;/sexo&gt;</span>
+<span class="w">                </span><span class="nt">&lt;numeroseguridadsocial&gt;</span>355<span class="nt">&lt;/numeroseguridadsocial&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/persona&gt;</span>
 <span class="nt">&lt;/lista_de_personas&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="xml-schemas">
-<h2>XML Schemas<a class="headerlink" href="#xml-schemas" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>XML Schemas<a class="headerlink" href="#xml-schemas" title="Link to this heading">¶</a></h2>
 <p>Los XML Schemas surgen para mejorar las faltas de precisión que tenían las DTD. Sin embargo,
 la mejora en la precisión de la definición ha implicado que escribir XML Schemas sea
 mucho más complicado.</p>
 <p>Un ejemplo de XML Schema (tomado de Wikipedia):</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-        <span class="nt">&lt;xsd:schema</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Libro&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;xsd:complexType&gt;</span>
-                                <span class="nt">&lt;xsd:sequence&gt;</span>
-                                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Título&quot;</span>
-                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
-                                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&quot;Autores&quot;</span>
-                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
-                                        <span class="na">maxOccurs=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
-                                        <span class="nt">&lt;xsd:element</span>    <span class="na">name=</span><span class="s">&quot;Editorial&quot;</span>
-                                        <span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsd:sequence&gt;</span>
-                                <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&quot;precio&quot;</span>
-                                <span class="na">type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;/xsd:complexType&gt;</span>
-                <span class="nt">&lt;/xsd:element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xsd:schema</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Libro&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;xsd:complexType&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;xsd:sequence&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Título&quot;</span>
+<span class="w">                                        </span><span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Autores&quot;</span>
+<span class="w">                                        </span><span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span>
+<span class="w">                                        </span><span class="na">maxOccurs=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;xsd:element</span><span class="w">    </span><span class="na">name=</span><span class="s">&quot;Editorial&quot;</span>
+<span class="w">                                        </span><span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;/xsd:sequence&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;xsd:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;precio&quot;</span>
+<span class="w">                                </span><span class="na">type=</span><span class="s">&quot;xsd:double&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xsd:element&gt;</span>
 <span class="nt">&lt;/xsd:schema&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="definiciones">
-<h2>Definiciones<a class="headerlink" href="#definiciones" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Definiciones<a class="headerlink" href="#definiciones" title="Link to this heading">¶</a></h2>
 <p><strong>Etiqueta:</strong> Es una secuencia de texto encerrada entre &lt; y &gt;</p>
 <p><strong>Elemento:</strong> Es todo lo que va entre una cierta etiqueta de apertura y cierre. En el ejemplo siguiente
 si nos hablan de la etiqueta libro se refieren simplemente a la etiqueta entre los
@@ -271,6 +267,7 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema9descargas.html">Ficheros de ejemplo usados en clase</a></li>
 </ul>
 
 <div class="relations">
@@ -308,8 +305,8 @@ de otro si está en un nivel más arriba en el árbol DOM.</p>
       &copy;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="_sources/tema1.rst.txt"
