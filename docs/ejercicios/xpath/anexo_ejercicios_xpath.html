@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="es" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Anexo: Ejercicios de XPath &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=7ece2587"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=d190bf04"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Anexo: Ejercicios de XQuery" href="../xquery/anexo_ejercicios_xquery.html" />
@@ -23,8 +19,9 @@
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -37,21 +34,21 @@
           <div class="body" role="main">
             
   <section id="anexo-ejercicios-de-xpath">
-<h1>Anexo: Ejercicios de XPath<a class="headerlink" href="#anexo-ejercicios-de-xpath" title="Enlace permanente a este encabezado">¶</a></h1>
+<h1>Anexo: Ejercicios de XPath<a class="headerlink" href="#anexo-ejercicios-de-xpath" title="Link to this heading">¶</a></h1>
 <p>En los ejercicios siguientes se asume que se va a utilizar el fichero siguiente:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inventario&gt;</span>
-    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
-        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
-    <span class="nt">&lt;/producto&gt;</span>
-    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
-        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
-    <span class="nt">&lt;/producto&gt;</span>
-    <span class="nt">&lt;producto</span> <span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
-        <span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
-    <span class="nt">&lt;/producto&gt;</span>
+<span class="w">    </span><span class="nt">&lt;producto</span><span class="w"> </span><span class="na">codigo=</span><span class="s">&quot;AAA-111&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Teclado<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">        </span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/producto&gt;</span>
+<span class="w">    </span><span class="nt">&lt;producto</span><span class="w"> </span><span class="na">codigo=</span><span class="s">&quot;ACD-981&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Monitor<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">        </span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/producto&gt;</span>
+<span class="w">    </span><span class="nt">&lt;producto</span><span class="w"> </span><span class="na">codigo=</span><span class="s">&quot;DEZ-138&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nombre&gt;</span>Raton<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">        </span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/producto&gt;</span>
 <span class="nt">&lt;/inventario&gt;</span>
 </pre></div>
 </div>
@@ -68,11 +65,11 @@
 <li><p>Extraer el código de los productos que pesen más de un cuarto de kilo.</p></li>
 </ul>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
 <p>Para el enunciado  <em>Extraer todos los elementos peso (etiqueta incluida)</em> . La solución sería algo como esto <code class="docutils literal notranslate"><span class="pre">/inventario/producto/peso</span></code> . De hecho nos devuelve esto:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
-<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
-<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
 </pre></div>
 </div>
 <p>Enunciado: <em>Extraer las cantidades de todos los elementos peso (sin la etiqueta &lt;peso&gt;)</em>. La solución sería <code class="docutils literal notranslate"><span class="pre">/inventario/producto/peso/text()</span></code>. La expresión devuelve</p>
@@ -82,13 +79,13 @@
 </pre></div>
 </div>
 <p>Enunciado:<em>Extraer el peso del ultimo producto.</em>. Una posible solución <strong>equivocada</strong> sería esta <code class="docutils literal notranslate"><span class="pre">/inventario/producto/peso[last()]</span></code>, que en realidad recupera «el último peso de cada producto», es decir recupera muchos, como muestra el resultado siguiente:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
-<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
-<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;kg&quot;</span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
 </pre></div>
 </div>
 <p>La expresión correcta sería <code class="docutils literal notranslate"><span class="pre">/inventario/producto[last()]/peso</span></code> que devuelve esto</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
 </pre></div>
 </div>
 <p>Enunciado: <em>Extraer las distintas unidades en las que se han almacenado los pesos</em>. Una posible solución sería esta <code class="docutils literal notranslate"><span class="pre">/inventario/producto/peso/&#64;unidad</span></code>, que devuelve esto:</p>
@@ -100,14 +97,14 @@ g
 <p>Enunciado: <em>Extraer el penúltimo codigo.</em>. Una posible solucion sería esta:<code class="docutils literal notranslate"><span class="pre">/inventario/producto[last()-1]/&#64;codigo</span></code></p>
 <p>Enunciado: <em>Extraer el peso del elemento cuyo codigo sea AAA-111.</em> <code class="docutils literal notranslate"><span class="pre">/inventario/producto[&#64;codigo=&quot;AAA-111&quot;]/peso</span></code></p>
 <p>Esto devuelve como resultado:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
 </pre></div>
 </div>
 <p>Enunciado: <em>Extraer el nombre de los productos que hayan puesto el peso en gramos.</em></p>
 <p>Una idea incorrecta sería esta <code class="docutils literal notranslate"><span class="pre">/inventario/producto/peso[&#64;unidad=&quot;g&quot;]</span></code>.
 Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho recupera esto:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
-<span class="nt">&lt;peso</span> <span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>480<span class="nt">&lt;/peso&gt;</span>
+<span class="nt">&lt;peso</span><span class="w"> </span><span class="na">unidad=</span><span class="s">&quot;g&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/peso&gt;</span>
 </pre></div>
 </div>
 <p>Una correcta sería</p>
@@ -135,39 +132,39 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <span class="pre">]/&#64;codigo</span></code></p>
 </section>
 <section id="informacion-bancaria">
-<h2>Información bancaria<a class="headerlink" href="#informacion-bancaria" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Información bancaria<a class="headerlink" href="#informacion-bancaria" title="Link to this heading">¶</a></h2>
 <p>Dado el siguiente fichero XML, contestar a las preguntas que se enuncian más abajo usando XPath.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listado&gt;</span>
-    <span class="nt">&lt;cuenta&gt;</span>
-        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon Perez<span class="nt">&lt;/titular&gt;</span>
-        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>12000<span class="nt">&lt;/saldoactual&gt;</span>
-        <span class="nt">&lt;fechacreacion&gt;</span>13-abril-2012<span class="nt">&lt;/fechacreacion&gt;</span>
-    <span class="nt">&lt;/cuenta&gt;</span>
-    <span class="nt">&lt;fondo&gt;</span>
-        <span class="nt">&lt;cuentaasociada&gt;</span>20-A<span class="nt">&lt;/cuentaasociada&gt;</span>
-        <span class="nt">&lt;datos&gt;</span>
-            <span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
-            <span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
-        <span class="nt">&lt;/datos&gt;</span>
-    <span class="nt">&lt;/fondo&gt;</span>
-    <span class="nt">&lt;fondo&gt;</span>
-        <span class="nt">&lt;cuentaasociada&gt;</span>21-DX<span class="nt">&lt;/cuentaasociada&gt;</span>
-        <span class="nt">&lt;datos&gt;</span>
-            <span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
-            <span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
-        <span class="nt">&lt;/datos&gt;</span>
-    <span class="nt">&lt;/fondo&gt;</span>
-    <span class="nt">&lt;cuenta&gt;</span>
-        <span class="nt">&lt;titular</span> <span class="na">dni=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>Carmen Diaz<span class="nt">&lt;/titular&gt;</span>
-        <span class="nt">&lt;saldoactual</span> <span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>1900<span class="nt">&lt;/saldoactual&gt;</span>
-        <span class="nt">&lt;fechacreacion&gt;</span>15-febrero-2011<span class="nt">&lt;/fechacreacion&gt;</span>
-    <span class="nt">&lt;/cuenta&gt;</span>
+<span class="w">    </span><span class="nt">&lt;cuenta&gt;</span>
+<span class="w">        </span><span class="nt">&lt;titular</span><span class="w"> </span><span class="na">dni=</span><span class="s">&quot;5671001D&quot;</span><span class="nt">&gt;</span>Ramon<span class="w"> </span>Perez<span class="nt">&lt;/titular&gt;</span>
+<span class="w">        </span><span class="nt">&lt;saldoactual</span><span class="w"> </span><span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>12000<span class="nt">&lt;/saldoactual&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fechacreacion&gt;</span>13-abril-2012<span class="nt">&lt;/fechacreacion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/cuenta&gt;</span>
+<span class="w">    </span><span class="nt">&lt;fondo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cuentaasociada&gt;</span>20-A<span class="nt">&lt;/cuentaasociada&gt;</span>
+<span class="w">        </span><span class="nt">&lt;datos&gt;</span>
+<span class="w">            </span><span class="nt">&lt;cantidaddepositada&gt;</span>20000<span class="nt">&lt;/cantidaddepositada&gt;</span>
+<span class="w">            </span><span class="nt">&lt;moneda&gt;</span>Euros<span class="nt">&lt;/moneda&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/datos&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/fondo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;fondo&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cuentaasociada&gt;</span>21-DX<span class="nt">&lt;/cuentaasociada&gt;</span>
+<span class="w">        </span><span class="nt">&lt;datos&gt;</span>
+<span class="w">            </span><span class="nt">&lt;cantidaddepositada&gt;</span>4800<span class="nt">&lt;/cantidaddepositada&gt;</span>
+<span class="w">            </span><span class="nt">&lt;moneda&gt;</span>Dolares<span class="nt">&lt;/moneda&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/datos&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/fondo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;cuenta&gt;</span>
+<span class="w">        </span><span class="nt">&lt;titular</span><span class="w"> </span><span class="na">dni=</span><span class="s">&quot;39812341C&quot;</span><span class="nt">&gt;</span>Carmen<span class="w"> </span>Diaz<span class="nt">&lt;/titular&gt;</span>
+<span class="w">        </span><span class="nt">&lt;saldoactual</span><span class="w"> </span><span class="na">moneda=</span><span class="s">&quot;euros&quot;</span><span class="nt">&gt;</span>1900<span class="nt">&lt;/saldoactual&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fechacreacion&gt;</span>15-febrero-2011<span class="nt">&lt;/fechacreacion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/cuenta&gt;</span>
 <span class="nt">&lt;/listado&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="consulta-cantidad-depositada">
-<h2>Consulta: «cantidad depositada»<a class="headerlink" href="#consulta-cantidad-depositada" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Consulta: «cantidad depositada»<a class="headerlink" href="#consulta-cantidad-depositada" title="Link to this heading">¶</a></h2>
 <p><em>Extraer la cantidad depositada en la cuenta 20-A</em></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/listado/fondo</span></code> nos devolvería todos los elementos <code class="docutils literal notranslate"><span class="pre">fondo</span></code></p></li>
@@ -184,7 +181,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 </section>
 <section id="consulta-monedas-usadas">
-<h2>Consulta: «monedas usadas»<a class="headerlink" href="#consulta-monedas-usadas" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Consulta: «monedas usadas»<a class="headerlink" href="#consulta-monedas-usadas" title="Link to this heading">¶</a></h2>
 <p><em>Extraer un listado sin etiquetas de todas las monedas usadas por los distintos fondos</em></p>
 <p>La consulta sería simplemente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">listado</span><span class="o">/</span><span class="n">fondo</span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">moneda</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
@@ -192,7 +189,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 </section>
 <section id="consulta-dnis-con-dolares">
-<h2>Consulta: «dnis con dólares»<a class="headerlink" href="#consulta-dnis-con-dolares" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Consulta: «dnis con dólares»<a class="headerlink" href="#consulta-dnis-con-dolares" title="Link to this heading">¶</a></h2>
 <p><em>Extraer el DNI de las cuentas que usen dolares como moneda de base</em></p>
 <p>En las cuentas la moneda es un atributo de <code class="docutils literal notranslate"><span class="pre">saldoactual</span></code>, por lo que la condición debería ser:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span><span class="p">[</span><span class="nd">@moneda</span><span class="o">=</span><span class="s2">&quot;dolares&quot;</span><span class="p">]</span><span class="o">...</span>
@@ -209,7 +206,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <p>Obsérvese que para el ejemplo dado <strong>no hay ningún resultado</strong> (de hecho el evaluador dará error porque nadie cumple la condición). Si se desea comprobar que el XPath está bien se invita al lector a añadir datos al conjunto para verificar que la expresión XPath funciona correctamente.</p>
 </section>
 <section id="consulta-fondos-con-menos-de-2500-euros">
-<h2>Consulta: «fondos con menos de 2500 euros»<a class="headerlink" href="#consulta-fondos-con-menos-de-2500-euros" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Consulta: «fondos con menos de 2500 euros»<a class="headerlink" href="#consulta-fondos-con-menos-de-2500-euros" title="Link to this heading">¶</a></h2>
 <p><em>Extraer toda la información de los fondos que usen «euros» por un valor inferior a 2500</em></p>
 <p>Por el texto del enunciado es evidente que el último elemento del XPath debe ser <code class="docutils literal notranslate"><span class="pre">fondo</span></code>, por lo que de momento podemos saber que la expresión tendría este aspecto:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.../</span><span class="n">fondo</span>
@@ -228,9 +225,9 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 <p>De nuevo nos encontramos con que el programa puede dar un error, lo que tiene todo el sentido del mundo, ya que le pedimos que extraiga datos de algo que no existe.</p>
 </section>
 <section id="ejercicios-resueltos-sobre-proveedores-partes">
-<h2>Ejercicios resueltos sobre «proveedores/partes»<a class="headerlink" href="#ejercicios-resueltos-sobre-proveedores-partes" title="Enlace permanente a este encabezado">¶</a></h2>
+<h2>Ejercicios resueltos sobre «proveedores/partes»<a class="headerlink" href="#ejercicios-resueltos-sobre-proveedores-partes" title="Link to this heading">¶</a></h2>
 <section id="xpath-i">
-<h3>XPath I<a class="headerlink" href="#xpath-i" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>XPath I<a class="headerlink" href="#xpath-i" title="Link to this heading">¶</a></h3>
 <p>Recuperar el nombre de todas las partes, sin etiqueta, solo textos</p>
 <p>Solución:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datos</span><span class="o">/</span><span class="n">partes</span><span class="o">/</span><span class="n">parte</span><span class="o">/</span><span class="n">nombreparte</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
@@ -239,7 +236,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 </section>
 <section id="xpath-ii">
-<h3>XPath II<a class="headerlink" href="#xpath-ii" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>XPath II<a class="headerlink" href="#xpath-ii" title="Link to this heading">¶</a></h3>
 <p>Recuperar el nombre de los proyectos con el numproyecto y1, y3 e y5.</p>
 <p>Tiene trampa. Al leer deprisa podemos pensar que la condición es un <code class="docutils literal notranslate"><span class="pre">and</span></code></p>
 <dl class="simple">
@@ -252,7 +249,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </div>
 </section>
 <section id="xpath-iii">
-<h3>XPath III<a class="headerlink" href="#xpath-iii" title="Enlace permanente a este encabezado">¶</a></h3>
+<h3>XPath III<a class="headerlink" href="#xpath-iii" title="Link to this heading">¶</a></h3>
 <p>Recuperar el nombre de los proyectos donde la cantidad suministrada sea mayor que 550.</p>
 <p>Tal y como está planteado <strong>no se puede resolver con XPath</strong></p>
 </section>
@@ -264,7 +261,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">Apuntes de Lenguajes de Marcas</a></h1>
 
@@ -307,6 +304,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tema9descargas.html">Ficheros de ejemplo usados en clase</a></li>
 </ul>
 
 <div class="relations">
@@ -318,7 +316,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Búsqueda rápida</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -326,7 +324,7 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
       <input type="submit" value="Ir a" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
 
 
@@ -341,11 +339,11 @@ Esta está mal, porque recupera «pesos» en lugar de «nombres» . De hecho rec
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2016, Oscar Gomez.
+      &#169;2016, Oscar Gomez.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="../../_sources/ejercicios/xpath/anexo_ejercicios_xpath.rst.txt"
