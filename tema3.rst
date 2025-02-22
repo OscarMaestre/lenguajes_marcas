@@ -1417,7 +1417,75 @@ La diferencia entre ``space-around`` y ``space-evenly`` es muy pequeña, de hech
    Comparando ``space-around``  (arriba) y ``space-evenly`` (abajo)
 
 
+Alineación vertical en *flexboxes* 
+--------------------------------------------------------------------------------
+Volvemos a partir de un contenedor *flexbox* en el que hemos aumentado un poco la altura de cada caja para apreciar mejor como funciona la alineación vertical. Para ello usaremos la propiedad ``align-content`` 
 
+
+.. figure:: img/tema3css/flexboxes/13-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineando verticalmente elementos de un *flexbox* 
+
+Alineación vertical con ``flex-start``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Los elementos alinean su "techo" con el "techo" del contenedor. Es la opción por defecto.
+
+.. figure:: img/tema3css/flexboxes/13-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineación vertical con ``align-content: flex-start;``  
+
+Alineación vertical con ``flex-end``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Los elementos alinean su "suelo" con el "suelo" del contenedor. Si hay varios, el suelo del más alto marca el punto de alineación
+
+.. figure:: img/tema3css/flexboxes/14-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineación vertical con ``align-content: flex-end;``  
+
+
+Alineación vertical con ``center``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Los elementos alinean su "centro vertical" con el "centro vertical" del contenedor. Si hay varios, el centro del más alto marca el punto de alineación.
+
+.. figure:: img/tema3css/flexboxes/15-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineación vertical con ``align-content: center;``  
+
+
+Alineación vertical con ``stretch``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Si los elementos no tienen definida una altura** se "estirarán" hasta llenar toda la altura de la caja.
+
+
+.. figure:: img/tema3css/flexboxes/16-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineación vertical con ``align-content: stretch;``  
+
+
+Alineación vertical con ``baseline``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La línea base del texto se centra en el centro vertical de la caja contenedora.
+
+.. figure:: img/tema3css/flexboxes/17-flexboxes.png
+   :figwidth: 70%
+   :align: center
+
+   Alineación vertical con ``align-content: baseline;``  
 
 
 

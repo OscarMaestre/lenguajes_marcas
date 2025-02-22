@@ -13,15 +13,19 @@ div{
 
 
 #contenedor{
-    margin: 50px 20%;
+    margin: 50px 30%;
     display: flex;
-    flex-flow: row wrap-reverse;
-    justify-content: space-around;
+    flex-flow: row wrap ;
+    height:500px;
+    align-items: baseline;
 }
 
-#contenedor2{
-    margin: 50px 20%;
-    display: flex;
-    flex-flow: row wrap-reverse;
-    justify-content: space-evenly;
+#caja1{
+    height: 150px;
+}
+#caja2{
+    height: 250px;
+}
+#caja3{
+    height: 100px;
 }
