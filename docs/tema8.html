@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistemas de gestión de información &#8212; Apuntes de Lenguajes de Marcas v1.3</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=7ece2587"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Anexo: ejercicios sobre tablas" href="ejercicios/html/anexo_tablas.html" />
+    <link rel="prev" title="Sindicación y transformación de contenidos" href="tema7.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sistemas-de-gestion-de-informacion">
+<h1>Sistemas de gestión de información<a class="headerlink" href="#sistemas-de-gestion-de-informacion" title="Link to this heading">¶</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">¶</a></h2>
+<p>Primero definiremos los términos:</p>
+<ul class="simple">
+<li><p>Sistema: «conjunto de elementos interrelacionados que colaboran para la consecución de un objetivo».</p></li>
+<li><p>Gestión de información: movimientos de información que facilitan la consecución de los objetivos de la empresa.</p></li>
+</ul>
+<p>Entre los objetivos más habituales están:</p>
+<ul class="simple">
+<li><p>Objetivos económicos.</p></li>
+<li><p>Objetivos temporales (supervivencia).</p></li>
+<li><p>Objetivos legales, entre los que destacan los fiscales.</p></li>
+</ul>
+<p>Procesar la información hoy en día es muy difícil, por lo que la informática es de gran ayuda en dicho procesamiento: (INFORmación+autoMÁTICA).</p>
+<p>¿Todos los sistemas de una empresa son informáticos? NO. Un ejemplo es el sistema postal que no requiere (y no siempre ha requerido) parte informática.</p>
+</section>
+<section id="niveles-en-la-empresa">
+<h2>Niveles en la empresa<a class="headerlink" href="#niveles-en-la-empresa" title="Link to this heading">¶</a></h2>
+<p>Toda empresa se puede ver desde tres puntos de vista temporales distintos</p>
+<ol class="arabic simple">
+<li><p>Nivel estratégico: en este nivel están las personas o elementos que tienen un punto de vista más global y más largo plazo (normalmente plazos de varios años).</p></li>
+<li><p>Nivel táctico: en este nivel están los mandos intermedios de la empresa con plazos medios (máximo un año)</p></li>
+<li><p>Nivel operativo: está el personal «de a pie», que recoge la información a diario y la procesa a diario.</p></li>
+</ol>
+<p>Ejemplo: Mercadona.</p>
+<section id="tipos-de-sgi-informaticos">
+<h3>Tipos de SGI informáticos<a class="headerlink" href="#tipos-de-sgi-informaticos" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>DSS o Decision Support System: ayudan a tomar decisiones en función de la información disponible.</p></li>
+<li><p>CRM o Customer Relationship Managements o Gestores de la relación con clientes. Son sistemas que gestionan información muy personalizada a los clientes, tales como sistemas de recomendación, sistemas de fidelización. Los CRM manejan la comunicación entre información interna y externa de la empresa.</p></li>
+<li><p>ERP o Enterprise Resource Planning o sistemas de planificación de recursos corporativos gestionan toda la información interna de la empresa.</p></li>
+</ul>
+<p>Los ERP han ganado mucho auge con el tiempo, ya que pueden hacer operaciones muy sofisticadas, entre ellas:</p>
+<ol class="arabic simple">
+<li><p>Optimización de procesos: implica resolver complejos problemas matemáticos que con una herramienta informática se resuelven al instante.</p></li>
+<li><p>Logística: implica resolver problemas de transporte de productos en base a diversas restricciones (no todas matemáticas). Un problema muy común es la optimización de rutas que implica resolver el «problema del viajante».</p></li>
+<li><p>Fiscalidad: permite aprovechar las diferentes ventajas que en materia de fiscalidad se ofrecen en distintos casos, en distintos territorios…</p></li>
+<li><p>Contabilidad: la participación en diversas sociedades empresariales puede complicar las operaciones de contabilidad, operaciones que un ERP puede registrar.</p></li>
+<li><p>Optimización de recursos humanos: optimizar el volumen de contrataciones y despidos, nóminas, etc…</p></li>
+<li><p>Operaciones de informes y estadística: para conocer el estado real de la empresa en sus distintos departamentos y períodos.</p></li>
+<li><p>Trazabilidad: permite conocer el punto exacto de ubicación de un producto a lo largo de toda la cadena de abastecimiento (supply chain).</p></li>
+</ol>
+</section>
+</section>
+<section id="almacenamiento-en-los-sgi">
+<h2>Almacenamiento en los SGI<a class="headerlink" href="#almacenamiento-en-los-sgi" title="Link to this heading">¶</a></h2>
+<p>La mayor parte de SGI se apoyan en tecnologías conocidas como SGBD con SQL e incluso XML.</p>
+<p>La mayor parte de SGBD permite procesar y extraer información en forma de SQL.</p>
+<p>En general, cualquier consulta sobre cualquier tabla puede convertirse en XML. Cuando por ejemplo hacemos</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">marcas</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>obtenemos un resultado como este:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+----+--------+-------------+</span>
+<span class="o">|</span> <span class="nb">id</span> <span class="o">|</span> <span class="n">nombre</span> <span class="o">|</span> <span class="n">ap</span>          <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Juan</span>   <span class="o">|</span> <span class="n">Lopez</span> <span class="n">Lopez</span> <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span> <span class="n">Andres</span> <span class="o">|</span> <span class="n">Ruiz</span> <span class="n">Gomez</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">3</span> <span class="o">|</span> <span class="n">Tomas</span>  <span class="o">|</span> <span class="n">Perez</span> <span class="n">Diaz</span>  <span class="o">|</span>
+<span class="o">+----+--------+-------------+</span>
+
+<span class="mi">3</span> <span class="n">rows</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sin embargo, podemos ejecutar el siguiente comando que se conecta a MySQL ejecuta la consulta dada y devuelve un fichero XML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">Ddatos</span> <span class="o">-</span><span class="n">e</span><span class="s2">&quot;select * from usuarios&quot;</span> <span class="o">--</span><span class="n">xml</span>
+</pre></div>
+</div>
+<p>El resultado será algo como esto:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;resultset</span><span class="w"> </span><span class="na">statement=</span><span class="s">&quot;select * from usuarios&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;row&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Juan<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Lopez<span class="w"> </span>Lopez<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
+
+<span class="w">   </span><span class="nt">&lt;row&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Andres<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Ruiz<span class="w"> </span>Gomez<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
+
+<span class="w">   </span><span class="nt">&lt;row&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="nt">&gt;</span>Tomas<span class="nt">&lt;/field&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ap&quot;</span><span class="nt">&gt;</span>Perez<span class="w"> </span>Diaz<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/row&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/resultset&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="puntos-de-vista-en-los-sgi">
+<h2>Puntos de vista en los SGI<a class="headerlink" href="#puntos-de-vista-en-los-sgi" title="Link to this heading">¶</a></h2>
+<section id="desarrollador">
+<h3>Desarrollador<a class="headerlink" href="#desarrollador" title="Link to this heading">¶</a></h3>
+<p>Para un desarrollador hay ciertos temas fundamentales a conocer del SGI con el que trabaje:</p>
+<ul class="simple">
+<li><p>Programable ¿qué lenguaje de programación usa? ¿usa OOP? ¿es un tipo de lenguaje distinto?.</p></li>
+<li><p>¿Se puede conectar desde algún lenguaje general?</p></li>
+<li><p>¿Se pueden usar otras bibliotecas de uso general? (Hibernate)</p></li>
+</ul>
+</section>
+<section id="administrador">
+<h3>Administrador<a class="headerlink" href="#administrador" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>¿Se pueden controlar  los accesos?</p></li>
+<li><p>¿Como cumplir la LOPD y sus 3 niveles?</p></li>
+</ul>
+</section>
+<section id="usuario">
+<h3>Usuario<a class="headerlink" href="#usuario" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>¿Como se usa el SGI? En unos casos hay muchos requisitos pero cada vez más abundan los SGI con interfaz Web.</p></li>
+<li><p>La adaptación específica que ofrece el sistema a la empresa. El PGC en España es un elemento al cual un programa puede estar adaptado o no. Otra posibilidad es que el programa permita INCOTERMS.</p></li>
+</ul>
+</section>
+<section id="ejercicio">
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Link to this heading">¶</a></h3>
+<p>Modelar el diagrama de estados para el cajero en el caso «Sacar dinero»</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Apuntes de Lenguajes de Marcas</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tema1.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema2.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema6.html">Recuperación de información</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema7.html">Sindicación y transformación de contenidos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sistemas de gestión de información</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#niveles-en-la-empresa">Niveles en la empresa</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-de-sgi-informaticos">Tipos de SGI informáticos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#almacenamiento-en-los-sgi">Almacenamiento en los SGI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#puntos-de-vista-en-los-sgi">Puntos de vista en los SGI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#desarrollador">Desarrollador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#administrador">Administrador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usuario">Usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/html/anexo_tablas.html">Anexo: ejercicios sobre tablas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/formularios/anexo_formularios.html">Anexo: ejercicios sobre formularios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html">Anexo: Ejercicios DTDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/esquemas/ejercicios_dtd.html#lista-de-productos">Lista de productos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/grids/anexo.html">Anexo: ejercicios sobre «grids»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xslt/anexo_ejercicios_xslt.html">Anexo: ejercicios sobre XSLT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xpath/anexo_ejercicios_xpath.html">Anexo: Ejercicios de XPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios/xquery/anexo_ejercicios_xquery.html">Anexo: Ejercicios de XQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema9descargas.html">Ficheros de ejemplo usados en clase</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tema7.html" title="capítulo anterior">Sindicación y transformación de contenidos</a></li>
+      <li>Next: <a href="ejercicios/html/anexo_tablas.html" title="próximo capítulo">Anexo: ejercicios sobre tablas</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2016, Oscar Gomez.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/tema8.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
