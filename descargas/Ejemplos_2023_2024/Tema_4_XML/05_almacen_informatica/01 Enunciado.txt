@@ -1,0 +1,32 @@
+Un almacén de equipos informáticos quiere almacenar su información en XML de acuerdo a estas reglas:
+
+1. El elemento raíz es "listacomponentes".
+2. Dentro de "listacomponentes" puede haber elementos "raton", "teclado" o "monitor". Los elementos pueden repetirse las veces que sean necesarias o incluso no aparecer y además podrían aparecer en cualquier orden
+
+    2.1 Raton tiene siempre dos atributos: "material" y "peso". Raton tiene siempre un elemento descripcion
+    2.2 Monitor tiene siempre dos elementos: tamano y resolucion
+    2.3 Teclado tiene un solo elemento: conexion
+
+<listacomponentes>
+    <raton material="plastico" peso="25g">
+        <descripcion>Raton estandar</descripcion>
+    </raton>
+    <monitor>
+        <tamano>24"</tamano>
+        <resolucion>2048x1960</resolucion>
+    </monitor>
+    <raton material="resina" peso="35g">
+        <descripcion>Raton gaming</descripcion>
+    </raton>
+    <teclado>
+        <conexion>USB</conexion>
+    </teclado>
+    <monitor>
+        <tamano>21"</tamano>
+        <resolucion>1960x1080</resolucion>
+    </monitor>
+    <monitor>
+        <tamano>22"</tamano>
+        <resolucion>2048x1960</resolucion>
+    </monitor>
+</listacomponentes>

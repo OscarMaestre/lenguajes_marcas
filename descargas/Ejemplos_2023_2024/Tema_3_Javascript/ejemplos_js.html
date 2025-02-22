@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ejemplos Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        "use strict"
+        const multiplicando=767;
+        document.write("<table border=1>")
+        document.write("<tbody>")
+        for (let multiplicador=1; multiplicador<=1500;multiplicador++)
+        {
+            document.write("<tr>")
+            let resultado=multiplicando*multiplicador;
+            document.write("<td>"+multiplicando+"</td>");            
+            document.write("<td>x</td>");
+            document.write("<td>"+multiplicador+"</td>");
+            document.write("<td>=</td>");
+            document.write("<td><b>"+resultado+"</b></td>");
+            document.write("</tr>")
+        }
+        document.write("</tbody>")
+        document.write("</table>")
+
+        let nombres_empleados=Array();
+        nombres_empleados[0]="Juan Sánchez";
+        nombres_empleados[1]="Juan Díaz";
+        nombres_empleados[2]="Tomás Sánchez";
+        nombres_empleados[3]="Carmen Rodríguez";
+        nombres_empleados[4]="Andrés Pérez";
+        for (let pos in nombres_empleados){
+            document.write(nombres_empleados[pos])
+            document.write("<br>")
+        }
+        </script>
+    </body>
+</html>
+
+
+
+
+

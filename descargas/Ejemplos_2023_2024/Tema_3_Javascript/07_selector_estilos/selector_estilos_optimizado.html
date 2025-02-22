@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Selector estilos</title>
+        <meta charset="utf-8">
+        <style>
+            .verde{
+                background-color: green;
+            }
+            .rojo{
+                background-color: red;
+            }
+            .azul{
+                background-color: blue;
+            }
+            .rosa{
+                background-color: pink;
+            }
+            .gris{
+                background-color: gray;
+            }
+            .amarillo{
+                background-color: yellow;
+            }
+            .estilosubrayado{
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Estilos</h1>
+            <h3>Elija su color preferido</h3>
+            <input type="radio" name="color" 
+                   id="rojo" onclick="actualizar();"> Rojo <br>
+            <input type="radio" name="color" 
+                   id="verde" onclick="actualizar();"> Verde <br>
+            <input type="radio" name="color" 
+                   id="azul" onclick="actualizar();"> Azul <br>
+            <input type="radio" name="color" 
+                   id="rosa" onclick="actualizar();"> Rosa <br>
+            <input type="radio" name="color" 
+                   id="gris" onclick="actualizar();"> Gris <br>
+            <input type="radio" name="color" 
+                   id="amarillo" onclick="actualizar();"> Amarillo <br>
+        </form>
+        <div id="muestracolor" class="estilosubrayado">Aquí puede ver como queda su color</div>
+        <script>
+            function actualizar(){
+                let divmuestracolor;
+                divmuestracolor=document.getElementById("muestracolor");
+                let array_colores=["rojo", "verde", 
+                        "azul", "gris", "rosa", "amarillo"];
+                /* Recorrer el vector y borrar del divmuestracolor cualquier
+                estilo de color que pudiese haber*/
+                for (let i=0; i<array_colores.length; i++){
+                    let color_actual=array_colores[i];
+                    divmuestracolor.classList.remove(color_actual);
+                }
+                /* Recorrer el vector, si el input asociado está marcada
+                asociarle el color correcto*/
+                for (let i=0; i<array_colores.length; i++){
+                    let color_actual=array_colores[i];
+                    let radioquesea=document.getElementById(color_actual)
+                    if (radioquesea.checked){
+                        divmuestracolor.classList.add(color_actual);
+                    } /* Fin del if*/
+                } /* fin del for*/
+            } /* Fin de la función*/
+        </script>
+    </body>
+</html>

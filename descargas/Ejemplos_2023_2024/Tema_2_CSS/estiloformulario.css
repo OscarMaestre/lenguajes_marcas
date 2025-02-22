@@ -1,0 +1,15 @@
+form{
+    border:solid 1px black;
+    padding:50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 20px;
+    padding-left: 20%;
+}
+input, select{
+    /*Deben mostrarse como un bloque y ocupar
+    su propio espacio*/
+    display: block;
+    margin-bottom: 30px;
+    width:45%;
+}

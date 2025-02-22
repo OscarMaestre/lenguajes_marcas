@@ -1,0 +1,13 @@
+Se pide crear un esquema XML que controle un fichero en el que debe aparecer un pago en euros. El elemento raíz es <pago> y dentro debe haber siempre una cantidad que refleje un pago en euros con valores que deben estar obligatoriamente entre 5.00 y 5999.99
+
+Esto debería validarse
+<pago>30.45</pago> 
+
+Esto también
+<pago>1500</pago>
+
+Pero esto no
+<pago>6500</pago>
+
+Y esto tampoco
+<pago>10000.99</pago>

@@ -1,0 +1,20 @@
+Crear un XML Schema que permita validar un fichero de un solo producto. Dentro del producto hay UNA Y SOLO UNA DE ESTAS TRES OPCIONES
+a) Elemento raton que contiene cadenas.
+b) Element monitor que contiene dentro un entero comprendido entre 11 y 24 para indicar las pulgadas.
+c) Elemento teclado que contiene dentro una de estas tres cadenas "Logitech", "IBM" o "Microsoft"
+
+Ejemplos válidos de fichero:
+
+<producto>
+    <raton>Raton USB</raton>
+</producto>
+
+Otro ejemplo:
+<producto>
+    <monitor>15</monitor>
+</producto>
+
+Otro ejemplo válido:
+<producto>
+    <teclado>IBM</teclado>
+</producto>

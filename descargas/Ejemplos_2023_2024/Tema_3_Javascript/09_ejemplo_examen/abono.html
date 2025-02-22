@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <!--Cabecera-->
+  <head>
+    <title>Página HTML básica</title>
+    <meta charset="utf-8">
+  </head>
+  <!--Cuerpo-->
+  <body>
+    <h1>Abono transportes</h1>
+    <h3>Cálculo modalidad</h3>
+  <form>
+    <h4>Medios</h4>
+    <input type="checkbox" name="opciones" id="bus">Autobús <br>
+    <input type="checkbox" name="opciones" id="metro">Metro<br>
+    <h4>Zonas</h4>
+    <input type="radio" name="zonas" id="zona1">Zona 1<br>
+    <input type="radio" name="zonas" id="zona2">Zona 2<br>
+    <h4>Períodos</h4>
+    <select id="periodos">
+        <option value="verano">Meses de verano</option>
+        <option value="invierno">Septiembre a Junio</option>
+        <option value="siempre">Todo el año</option>
+    </select>
+  </form>
+  <div id="resultados"></div>
+  <div id="errores"></div>
+  </body>
+</html>

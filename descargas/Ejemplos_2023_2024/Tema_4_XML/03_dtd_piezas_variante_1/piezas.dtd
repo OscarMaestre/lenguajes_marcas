@@ -1,0 +1,8 @@
+<!ELEMENT listapiezas   (pieza+)>
+<!--El ? permite hacer un elemento OPCIONAL-->
+<!ELEMENT pieza         (peso?, nombre,fabricante)>
+<!ELEMENT peso          (#PCDATA)>
+<!ELEMENT nombre        (#PCDATA)>
+<!ELEMENT fabricante    (#PCDATA)>
+<!--El #IMPLIED es para hacer un atributo opcional-->
+<!ATTLIST fabricante pais CDATA #IMPLIED>

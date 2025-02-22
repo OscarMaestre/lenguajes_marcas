@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="producto"
+               type="tipoProducto"/>
+  <xsd:complexType name="tipoProducto">
+    <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+            <xsd:choice>
+                <xsd:element 
+                    name="raton"
+                    type="xsd:string"/>
+                <xsd:element
+                    name="monitor"
+                    type="tipoMonitor"/>
+                <xsd:element
+                    name="teclado"
+                    type="tipoTeclado"/>
+            </xsd:choice>            
+        </xsd:restriction>
+    </xsd:complexContent>    
+  </xsd:complexType> 
+  <xsd:simpleType name="tipoMonitor">
+    <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="11"/>
+        <xsd:maxInclusive value="24"/>
+    </xsd:restriction>
+  </xsd:simpleType>      
+  <xsd:simpleType name="tipoTeclado">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="IBM"/>
+        <xsd:enumeration value="Logitech"/>
+        <xsd:enumeration value="Microsoft"/>
+    </xsd:restriction>
+  </xsd:simpleType>     
+</xsd:schema>

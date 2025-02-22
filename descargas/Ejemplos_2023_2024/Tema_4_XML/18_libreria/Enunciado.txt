@@ -1,0 +1,26 @@
+Una librería quiere usar un XML Schema para validar libros sencillos. El elemento raíz se llama "libros" y dentro de él encontramos elementos "libro". Puede haber entre 2 y 5 elementos "libro".
+Un libro tiene:
+-Un título, que es una cadena.
+-Un país de origen, que puede ser "España" o Francia.
+-Una editorial, que tiene un atributo país que también es siempre "Espana" o "Francia".
+-OPTATIVO. un elemento "cantidadpaginas" que está entre 0 y 5000.
+
+Un ejemplo de fichero válido:
+<libros>
+    <libro>
+        <titulo>Don Quijote de la Mancha</titulo>
+        <pais>Espana</pais>
+        <editorial pais="Francia">Editorial Reverge</editorial>
+    </libro>
+    <libro>
+        <titulo>En busca del tiempo perdido</titulo>
+        <pais>Francia</pais>
+        <editorial pais="Francia">Editorial Desanges</editorial>
+        <cantidadpaginas>2400</cantidadpaginas>
+    </libro>
+    <libro>
+        <titulo>El extranjero</titulo>
+        <pais>Francia</pais>
+        <editorial pais="Espana">Editorial Reverge</editorial>
+    </libro>
+</libros>

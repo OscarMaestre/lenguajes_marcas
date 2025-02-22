@@ -1,0 +1,6 @@
+<!ELEMENT listapiezas   (pieza+)>
+<!ELEMENT pieza         (peso, nombre,fabricante)>
+<!ELEMENT peso          (#PCDATA)>
+<!ELEMENT nombre        (#PCDATA)>
+<!ELEMENT fabricante    (#PCDATA)>
+<!ATTLIST fabricante pais CDATA #REQUIRED>

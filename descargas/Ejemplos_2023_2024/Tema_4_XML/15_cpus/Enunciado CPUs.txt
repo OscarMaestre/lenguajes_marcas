@@ -1,0 +1,10 @@
+Se desea crear un esquema XML que controle un fichero como este:
+-Hay un elemento raíz llamado CPU
+-Dentro de CPU hay una cadena.
+-La CPU:
+    -PUEDE tener un atributo marca que siempre vale "Intel" o "AMD"
+    -DEBE llevar siempre un atributo velocidad que es un número con decimales que está entre 2.00 y 199.99
+
+<cpu marca="Intel" velocidad="3.5">Core i5</cpu>
+
+<cpu marca="AMD" velocidad="3.88">Ryzen i5</cpu>

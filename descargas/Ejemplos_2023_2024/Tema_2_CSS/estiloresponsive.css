@@ -1,0 +1,42 @@
+h1,h2{
+    color:blue;
+}
+
+@media screen and (min-width: 900px){
+    body{
+        display:grid;
+        grid-template-rows: 
+           1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-template-columns: 
+           1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+           1fr 1fr 1fr ;
+    }
+    #cabecera{
+        grid-row:    1/3;
+        grid-column: 1/7;
+    }
+    #cuerpo{
+        grid-row:    5/10;
+        grid-column: 5/11;
+    }
+    #pie{
+        grid-row:    1/3;
+        grid-column: 7/13;
+    }
+    
+} /*Aquí termina el diseño para pantallas grandes*/
+
+@media screen and (min-width:650px) and (max-width:900px){
+    body{
+        background-color: blue;
+        
+    }
+
+}
+
+@media screen and (max-width:650px){
+    body{
+        font-size: xx-large;
+    }
+}
+

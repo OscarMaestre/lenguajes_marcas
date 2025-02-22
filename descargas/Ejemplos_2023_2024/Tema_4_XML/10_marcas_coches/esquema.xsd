@@ -1,0 +1,10 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="marca" type="tipoMarca"/>
+    <xsd:simpleType name="tipoMarca">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Ford"/>
+            <xsd:enumeration value="Seat"/>
+            <xsd:enumeration value="Opel"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

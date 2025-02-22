@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Selector de café</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Cafe Latte & Co.</h1>
+        <h2>Elige tu café</h2>
+        <form>
+            <input type="checkbox" id="conleche"
+               onclick="calcular_precio();">Con leche <br>
+            <input type="checkbox" id="conchocolate"
+            onclick="calcular_precio();">
+               Con chocolate <br>
+        </form>
+        <div id="resultados"></div>
+        <script>
+            function calcular_precio(){
+                let precio=1.8;
+                let controlleche;
+                controlleche=document.getElementById("conleche");
+                if (controlleche.checked){
+                    precio=precio+0.6;
+                }
+                let controlchocolate;
+                controlchocolate=document.getElementById(
+                    "conchocolate");
+                if (controlchocolate.checked){
+                    precio=precio+0.85;
+                }
+                /* Escribimos el resultado*/
+                let divresultados;
+                divresultados=document.getElementById("resultados");
+                divresultados.innerHTML="El precio es "+precio;
+            }
+            calcular_precio();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+Se desea almacenar nombres de piezas y para ello se ha llegado a este acuerdo:
+
+1.- El elemento raíz se va a llamar "listapiezas".
+2.- Dentro de "listapiezas" va a haber uno o muchos elementos "pieza"
+3.- Dentro de "pieza" hay tres elementos:
+    3.1 Un elemento llamado "peso" que contiene datos. NO ES OBLIGATORIO QUE ESTÉ
+    3.2 Un elemento llamado "nombre" que contiene datos
+    3.3 Un elemento llamado fabricante que contiene datos. 
+        3.3.1 El fabricante PUEDE LLEVAR un atributo llamado pais que indica el pais. 
+
+Ejemplo de fichero válido
+
+<listapiezas>
+    <pieza>
+        <!--No hay peso, pero no debe importar, debe darse como bueno-->
+        <nombre>Pistón</nombre>
+        <fabricante pais="China"> Asia Electronics</fabricante>
+    </pieza>
+    <pieza>
+        <peso>15</peso>
+        <nombre>Cilindro</nombre>
+        <!--No hay atributo pais, pero no debe pasar nada-->
+        <fabricante>Toyota Motors</fabricante>
+    </pieza>
+</listapiezas>
+
+
+Ejemplo de fichero que debe dar errores
+
+<listapiezas>
+    <pieza>
+        <peso>20</peso>
+        <nombre>Pistón</nombre>
+        <!--Aquí falta el fabricante-->
+    </pieza>
+    <pieza>
+        <peso>15</peso>
+        <!--Aquí falta el nombre-->
+        <fabricante pais="Japón">Toyota Motors</fabricante>
+    </pieza>
+</listapiezas>

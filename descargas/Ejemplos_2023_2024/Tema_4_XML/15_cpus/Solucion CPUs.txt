@@ -1,0 +1,25 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="cpu" type="tipoCPU"/>
+  <xsd:complexType name="tipoCPU">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="velocidad" 
+                            type="tipoVelocidad"
+                            use="required"/>
+            <xsd:attribute name="marca"     type="tipoMarca"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="tipoVelocidad">
+    <xsd:restriction base="xsd:float">
+        <xsd:minInclusive value="2"/>
+        <xsd:maxInclusive value="199.99"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tipoMarca">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Intel"/>
+        <xsd:enumeration value="AMD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

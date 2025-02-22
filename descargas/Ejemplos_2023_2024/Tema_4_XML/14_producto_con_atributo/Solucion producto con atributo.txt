@@ -1,0 +1,18 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="producto" type="tipoProducto"/>
+    <xsd:complexType name="tipoProducto">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute 
+                     name="peso" 
+                     type="tipoPeso"
+                     use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="tipoPeso">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="0.000001"></xsd:minInclusive>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

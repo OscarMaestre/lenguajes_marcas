@@ -1,0 +1,22 @@
+@margen_inicial:10px;
+@diferencia:6px;
+
+@margen_h1:@margen_inicial;
+@margen_h2:@margen_inicial+@diferencia;
+
+@color_base:#d877a0;
+@diferencia_color_1:#170044;
+body{
+    background-color: @color_base;
+}
+h1{
+    background-color: @color_base+@diferencia_color_1;
+    margin-left:@margen_h1;
+}
+h2{
+    margin-left: @margen_h2;
+    background-color: @color_base+@diferencia_color_1;
+}
+body{
+    margin-left:@margen_inicial;
+}

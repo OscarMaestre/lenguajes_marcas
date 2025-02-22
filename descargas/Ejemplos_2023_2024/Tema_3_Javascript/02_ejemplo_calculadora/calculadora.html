@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Calculadora simple</title>
+    </head>
+    <body>
+        <h1>Calculadora simple</h1>
+        <h3>Modifica los números...</h3>
+        <form>
+            <input type="number" id="num1"
+            min="-10000" max="10000"
+            value="100"
+            onchange="calcular();">
+            <input type="number" id="num2"
+            min="-10000" max="10000"
+            value="200"
+            onchange="calcular();">
+        </form>
+        <div id="suma"></div>
+        <div id="resta"></div>
+        <div id="multiplicacion"></div>
+        <div id="division"></div>
+        <script>
+            /*Pon aquí tus funciones*/
+            function getValueEntero(identificador){
+                let control;
+                control=document.getElementById(identificador);
+                let num=parseInt(control.value);
+                return num;
+            }
+            /* Esta función "inyecta" texto dentro un 
+            html cualquiera. La función necesita el 
+            identificador del HTML y el texto que
+            queremos insertar dentro*/
+            function escribir (identificador, texto){
+                let un_div;
+                un_div=document.getElementById(identificador);
+                un_div.innerHTML=texto;
+            }
+            function calcular(){
+                let num1=getValueEntero("num1");
+                let num2=getValueEntero("num2");
+
+                let suma            =num1+num2;
+                let resta           =num1-num2;
+                let multiplicacion  =num1*num2;
+                let division        =num1/num2;
+ 
+                /*Inventad una funcion que nos ahorre
+                el trabajo*/
+                escribir("suma", "La suma es:"+suma);
+                escribir("resta", "La resta es:"+resta);
+                escribir("multiplicacion", "La multi es:"+multiplicacion);
+                escribir("division", "La division es:"+division);
+            }
+        </script>
+    </body>
+</html>

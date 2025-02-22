@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <!--Cabecera-->
+  <head>
+    <title>Nota media</title>
+    <meta charset="utf-8">
+  </head>
+  <!--Cuerpo-->
+  <body>
+  <form>
+    Nota del examen 1:
+    <input type="number" min="0" 
+    max="10" step="0.01" id="nota1"
+    onchange="calcular_media();"> <br>
+    Nota del examen 2:
+    <input type="number" min="0" 
+    max="10" step="0.01" id="nota2"
+    onchange="calcular_media();"> <br>
+  </form>
+  <div id="mensajes"></div>
+  <script>
+    function calcular_media(){
+      let control_nota1=document.getElementById("nota1");
+      let control_nota2=document.getElementById("nota2");
+      /* Necesitamos los valores numéricos*/
+      let nota1=parseFloat(control_nota1.value);
+      let nota2=parseFloat(control_nota2.value);
+      /* Extraemos el div donde se va a escribir*/
+      let div_mensajes=document.getElementById("mensajes");
+
+      if (nota1>=5 && nota2 >=5){
+        let media=(nota1+nota2)/2;
+        div_mensajes.innerHTML="Felicidades, su media es:"+media;
+      } else {
+        /* Si llegamos aquí, es que está suspenso, empecemos por
+        averiguar la nota más baja*/
+        let menor;
+        if (nota1<nota2){
+          menor=nota1;
+        } else {
+          menor=nota2;
+        }
+        /* Ya sabemos la menor, escribamos el mensaje correcto
+        en función de la situación*/
+        if (menor>=3 && menor<=4.99){
+          div_mensajes.innerHTML="Necesita mejorar: su media es:"+menor;
+        } else {
+          div_mensajes.innerHTML="Ponte en contacto con el prof, media:"+menor;
+        }
+      }
+    }
+  </script>
+  </body>
+</html>

@@ -1726,6 +1726,10 @@ Y una posible solución:
     <!ATTLIST analgesico  pvp  CDATA  #REQUIRED>
     <!ATTLIST presentacion dosisrecomendada CDATA #REQUIRED>
 
+
+Nominas (DTD)
+----------------------
+
 Ejercicio
 ===========================================
 

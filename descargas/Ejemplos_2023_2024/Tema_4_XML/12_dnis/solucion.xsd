@@ -1,0 +1,14 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="dni" type="tipoDNI"/>
+    <xsd:simpleType name="tipoDNI">
+        <xsd:restriction base="xsd:string">
+            <!-- Esto se lee así:
+                [A-Z]{0,1} = "0 o 1 letras mayúsculas"
+                [0-9]{7,8} = "7 u 8 cifras"
+                [A-Z]{1}   = "Exactamente una mayúscula"
+            -->
+            <xsd:pattern 
+              value="[A-Z]{0,1}\d{7,8}[A-Z]{1}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

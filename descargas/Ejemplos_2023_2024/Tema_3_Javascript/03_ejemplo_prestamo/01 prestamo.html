@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Préstamos</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Calcula la cuota de tu préstamo</h1>
+        <h3>Modifica los valores</h3>
+        <form>
+            Cantidad pedida (capital):
+            <input type="number" min="1000" max="100000"
+            value="3000" step="100" id="capital"
+            onchange="calcular_cuota();"> <br>
+            Interés (rédito):
+            <input type="number" min="0.01" max="5"
+            value="8" step="0.01" id="redito"
+            onchange="calcular_cuota();"> <br>
+            Meses(tiempo):
+            <input type="number" min="3" max="240"
+            value="60" step="1" id="tiempo"
+            onchange="calcular_cuota();"> <br>            
+        </form>
+        <div id="resultado"></div>
+        <script>
+            function getValueDecimal(identificador){
+                let control;
+                control=document.getElementById(identificador);
+                let num=parseFloat(control.value);
+                return num;
+            }
+            function calcular_cuota(){
+                let capital=getValueDecimal("capital");
+                let redito=getValueDecimal("redito");
+                let meses=getValueDecimal("tiempo");
+                /* Intereses a devolver*/
+                let intereses=(capital*redito*meses)/1200;
+                /* Esto es lo que se paga en total*/
+                let total_a_devolver=capital+intereses;
+                /* Dividimos el total a devolver entre
+                el tiempo y nos sale la cuota del préstamo*/
+                let cuota=total_a_devolver/meses;
+
+                let div_resultado;
+                div_resultado=document.getElementById("resultado");
+                div_resultado.innerHTML="La cuota es:"+cuota;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+Una empresa de repuestos desea almacenar en XML la información de su inventario:
+
+1. El elemento raíz debe ser "repuestos"
+2. Dentro de "repuestos" debe haber uno o más "repuesto".
+3. Dentro de "repuesto" debe haber una de estas dos cosas: "tornillo" o "tuerca"
+    3.1 Tornillo: lleva siempre un atributo "peso". Lleva dentro un elemento llamado "descripcion"
+    3.2 Tuerca: puede llevar un atributo "peso". Lleva dentro siempre un elemento llamado "material"
+
+Ejemplo de fichero válido
+
+<repuestos>
+    <repuesto>
+        <tornillo peso="5g">
+            <descripcion>Tornillo para ensamblajes metálicos</descripcion>
+        </tornillo>
+    </repuesto>
+    <repuesto>
+        <tuerca>
+            <material>Acero</material>
+        </tuerca>
+    </repuesto>
+    <repuesto>
+        <tuerca peso="12 mg">
+            <material>Aleación</material>
+        </tuerca>
+    </repuesto>
+</repuestos>

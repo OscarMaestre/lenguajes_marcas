@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cálculo de impuestos</title>
+    </head>
+    <body>
+        <h1>Indique los datos de su situación personal</h1>
+        <form>
+            <h3>Salario</h3>
+            <!-- El máximo es 10 millones -->
+            <input type="number" id="salarioanual" 
+                    min="0" max="10000000" step="100"
+                    value="30000" onchange="calcularimpuestos();">
+
+            <h3>Desgravaciones</h3>
+            <input type="checkbox" id="hijos" onclick="calcularimpuestos();">
+               Tengo hijos a cargo <br>
+            <input type="checkbox" id="padres" onclick="calcularimpuestos();">
+              Tengo padres a cargo <br>
+            <div id="resultados"></div>
+        </form>
+    </body>
+</html>

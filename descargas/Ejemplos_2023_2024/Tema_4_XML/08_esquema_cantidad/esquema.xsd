@@ -1,0 +1,20 @@
+<!--xsd es para indicar que "schema" pertenece a un "espacio de nombres" que es parecido a un "package" en Java.-->
+<!--El xmlns significa xml NameSpace y es una forma de indicar el "paquete" al que pertenece algo-->
+
+<!--El XSD es por
+    Xml
+    Schema
+    Definition
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--Indicamos el elemento raíz-->
+    <xsd:element name="cantidad" type="tipoCantidad"/>
+    <!--Nuestro tipocantidad, no tiene hijos y no tiene
+    atributos así que tiene que definirse como un tipo simple-->
+    <xsd:simpleType name="tipoCantidad">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="5"/>
+            <xsd:maxInclusive value="160"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

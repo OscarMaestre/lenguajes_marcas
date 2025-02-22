@@ -1,0 +1,8 @@
+<!ELEMENT repuestos   (repuesto+)>
+<!ELEMENT repuesto    (tornillo|tuerca)>
+<!ELEMENT tornillo    (descripcion)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT tuerca      (material)>
+<!ELEMENT material    (#PCDATA)>
+<!ATTLIST tornillo peso      CDATA #REQUIRED>
+<!ATTLIST tuerca   peso      CDATA #IMPLIED>

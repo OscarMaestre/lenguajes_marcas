@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Selector estilos</title>
+        <meta charset="utf-8">
+        <style>
+            .verde{
+                background-color: green;
+            }
+            .rojo{
+                background-color: red;
+            }
+            .azul{
+                background-color: blue;
+            }
+            .rosa{
+                background-color: pink;
+            }
+            .gris{
+                background-color: gray;
+            }
+            .estilosubrayado{
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Estilos</h1>
+            <h3>Elija su color preferido</h3>
+            <input type="radio" name="color" 
+                   id="rojo" onclick="actualizar();"> Rojo <br>
+            <input type="radio" name="color" 
+                   id="verde" onclick="actualizar();"> Verde <br>
+            <input type="radio" name="color" 
+                   id="azul" onclick="actualizar();"> Azul <br>
+            <input type="radio" name="color" 
+                   id="rosa" onclick="actualizar();"> Rosa <br>
+            <input type="radio" name="color" 
+                   id="gris" onclick="actualizar();"> Gris <br>
+        </form>
+        <div id="muestracolor" class="estilosubrayado">Aquí puede ver como queda su color</div>
+        <script>
+            function actualizar(){
+                let divmuestracolor;
+                divmuestracolor=document.getElementById("muestracolor");
+                /*Esto borra los estilos que hayamos podido añadir*/
+                divmuestracolor.classList.remove("rojo");
+                divmuestracolor.classList.remove("azul");
+                divmuestracolor.classList.remove("verde");
+                divmuestracolor.classList.remove("gris");
+                divmuestracolor.classList.remove("rosa");
+                
+                let radiorojo;
+                radiorojo=document.getElementById("rojo");
+                if (radiorojo.checked){
+                    /*Está marcado, así que hay que poner un fondo rojo*/
+                    /* ESto añade al div el class ".rojo"*/
+                    divmuestracolor.classList.add("rojo");
+                }
+
+                let radioverde;
+                radioverde=document.getElementById("verde");
+                if (radioverde.checked){
+                    divmuestracolor.classList.add("verde");
+                }
+
+                let radioazul;
+                radioazul=document.getElementById("azul");
+                if (radioazul.checked){
+                    divmuestracolor.classList.add("azul");
+                }
+
+                let radiorosa;
+                radiorosa=document.getElementById("rosa");
+                if (radiorosa.checked){
+                    divmuestracolor.classList.add("rosa");
+                }
+
+                let radiogris;
+                radiogris=document.getElementById("gris")
+                if (radiogris.checked){
+                    divmuestracolor.classList.add("gris");
+                }
+
+                
+            }
+        </script>
+    </body>
+</html>

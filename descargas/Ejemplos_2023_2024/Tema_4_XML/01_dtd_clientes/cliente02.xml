@@ -1,0 +1,13 @@
+<!--Este fichero DEBE DAR ERRORES-->
+<clientes>
+        <cliente>
+                <!--Primer error, dijimos que sería
+                "nombre" y no "nombreempresa"-->
+                <nombreempresa>Acersa</nombreempresa>
+        </cliente>
+        <cliente>
+                <!--Segundo error, dijimos que el cif 
+                iría con "cliente" no con "nombre"-->
+                <nombre cif="455321">ACME</nombre>
+        </cliente>
+</clientes>

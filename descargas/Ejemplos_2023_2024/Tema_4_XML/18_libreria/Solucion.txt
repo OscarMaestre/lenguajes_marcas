@@ -1,0 +1,17 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="libros" type="tipoLibros"/>
+
+<xsd:simpleType name="tipoPais">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Espana"/>
+        <xsd:enumeration value="Francia"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="tipoEditorial">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="pais" type="tipoPais"/>
+        </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+</xsd:schema>

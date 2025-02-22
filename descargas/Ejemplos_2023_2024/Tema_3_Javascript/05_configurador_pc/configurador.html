@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Configurador PC</title>
+    </head>
+    <body>
+        <h1>Configurador de PC</h1>
+        <h3>Procesador</h3>
+        Precio Base del PC: 420 euros
+        <form>
+        <input type="radio" id="intel"
+          name="procesador" onclick="calcular_precio();">
+          Procesador Intel (+180) <br>
+        <input type="radio" id="AMD"
+        name="procesador" onclick="calcular_precio();">
+        Procesador AMD (+220) <br>
+        <h3>Memoria</h3>
+        <input type="radio" id="pocaram"
+        name="ram" onclick="calcular_precio();">4GB de RAM (+65) <br>
+        <input type="radio" id="mucharam"
+        name="ram" onclick="calcular_precio();">16GB de RAM (+125) <br>
+        </form>
+        <div id="resultados"></div>
+        <div id="errores"></div>
+        <script>
+            /* Ampliación:
+              Por problemas de fabricación NO SE PUEDEN FABRICAR
+              PC con AMD y poca RAM. Si el usuario hace eso NO SE
+              DEBE MOSTRAR EL PRECIO, sino un mensaje de error.
+              Si hace todo bien, se muestra el precio y no se muestra
+              ningún mensaje de error
+              
+              Diseñar una función que se llame estaChecked, y que 
+              reciba un identificador. La función debe comprobar
+              si el elemento está checked y devolver true si es así
+              y false si no está checked
+              function estaChecked(identificador){
+                
+              }
+              */
+            function calcular_precio(){
+              let div_errores=document.getElementById("errores");
+              let divresultados=document.getElementById("resultados");
+              div_errores.innerHTML="";
+              divresultados.innerHTML="";
+              
+              let amd=document.getElementById("AMD");
+              let pocaram=document.getElementById("pocaram");
+              if ( (amd.checked) && (pocaram.checked) ){
+                
+                div_errores.innerHTML=
+                   "No se puede ensamblar un AMD con poca RAM";
+                   return;
+              }
+
+               let precioBase=420;
+               let intel=document.getElementById("intel");
+               if (intel.checked){
+                precioBase+=180;
+               }
+               
+               if (amd.checked){
+                precioBase+=220;
+               }
+               
+               if (pocaram.checked){
+                precioBase+=65;
+               }
+               let mucharam=document.getElementById("mucharam");
+               if (mucharam.checked){
+                precioBase+=125
+               }
+               /* Una vez calculado el precio, lo mostramos
+               en el div pedido*/
+               
+               divresultados.innerHTML="El precio es:"+precioBase;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+Se desea crear un XML Schema que controle el contenido de un fichero en el que se almacena un código de usuario. Este código tiene una estructura muy estricta:
+
+-Primero deben aparecer dos o tres cifras.
+-Despues debe aparecer dos mayúsculas y dos cifras
+-Despues siempre hay una de estas dos cadenas "ES" o "FR"
+-Despues siempre hay un guión
+-Despues siempre hay 3 dígitos.
+
+Valores aceptables
+<codigousuario>22AA44FR-123</codigousuario>
+
+<codigousuario>123AA44FR-123</codigousuario>
+
+<codigousuario>123AA44ES-123</codigousuario>
+
