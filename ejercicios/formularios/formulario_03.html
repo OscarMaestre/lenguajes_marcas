@@ -1,30 +1,45 @@
 <form>
 <fieldset>
-  <legend>Completar</legend>
+  <legend>Indique</legend>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Email<input type='text' name='email'> <br/>
+  Telefono<input type='text' name='telefono'> <br/>
+  <br/>
+  Elija una fecha:<input type="date">  <br/>
+  <input type='checkbox' name='asignatura' value='asignaturalengua'> Lengua   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturamatematicas'> Matemáticas   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturahistoria'> Historia   <br/>
+  <input type='checkbox' name='asignatura' value='asignaturageografia'> Geografía   <br/>
+  <br/>
   Elija un color:<input type="color">  <br/>
-  <textarea rows='5' cols='53'>Por favor, escriba aquí</textarea>  <br/>
-  <select name='lenguaje' >
-    <option value='java'>Java</option>
-    <option value='python'>Python</option>
-    <option value='html'>HTML</option>
-    <option value='visual_basic'>Visual Basic</option>
+  <select name='preferencia' >
+    <option value='ciencias'>Ciencias</option>
+    <option value='letras'>Letras</option>
   </select>
   <br/>
-  <input type='checkbox' name='ciclo' value='cicloasir'> ASIR 
-  <input type='checkbox' name='ciclo' value='ciclodam'> DAM 
-  <input type='checkbox' name='ciclo' value='ciclodaw'> DAW 
+  Elija una hora:<input type="time">  <br/>
+  Elija un fichero:<input type="file">  <br/>
+  <input type='radio' name='lenguaje' value='lenguajejava'> Java 
+  <input type='radio' name='lenguaje' value='lenguajepython'> Python 
+  <input type='radio' name='lenguaje' value='lenguajehtml'> HTML 
+  <input type='radio' name='lenguaje' value='lenguajevisual_basic'> Visual Basic 
   <br/>
 </fieldset>
 <fieldset>
-  <legend>Rellene las opciones siguientes</legend>
-  Elija una fecha:<input type="date">  <br/>
-  Elija un fichero:<input type="file">  <br/>
-  <select name='ciclo' multiple='multiple'>
-    <option value='smir'>SMIR</option>
-    <option value='asir'>ASIR</option>
-    <option value='dam'>DAM</option>
-    <option value='daw'>DAW</option>
+  <legend>Opciones</legend>
+  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
+  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
+  <br/>
+  <select name='formato' >
+    <option value='jpg'>JPG</option>
+    <option value='png'>PNG</option>
   </select>
+  <br/>
+  Elija un color:<input type="color">  <br/>
+  <input type='radio' name='conexion' value='conexionwifi'> Wifi 
+  <input type='radio' name='conexion' value='conexioncable'> Cable 
+  <input type='radio' name='conexion' value='conexionfibra'> Fibra 
   <br/>
 </fieldset>
 </form>

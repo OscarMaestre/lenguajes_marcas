@@ -6,11 +6,11 @@ import bs4
 
 from generador_formularios import *
 
-X_INICIAL=8
-Y_INICIAL=130
+X_INICIAL=0
+Y_INICIAL=200
 
-X_FINAL=480
-Y_FINAL=750
+X_FINAL=750
+Y_FINAL=950
 
 ANCHO=X_FINAL - X_INICIAL
 ALTO =Y_FINAL - Y_INICIAL
@@ -64,12 +64,14 @@ def generar_ejercicio(archivo_html, archivo_png, foto_png):
     recortar_imagen(archivo_png, foto_png)
     
 def recortar_imagen(archivo, archivo_cortado):
-    subprocess.call(["convert", archivo, "-crop", GEOMETRIA, archivo_cortado])
+    comando=["convert", archivo, "-crop", GEOMETRIA, archivo_cortado]
+    print(comando)
+    subprocess.call(comando)
     
 def generar_tablas():
     secciones=""
     g=GeneradorFormularios()
-    for i in range(1, 41):
+    for i in range(1, 4):
         print("Generando "+str(i))
         
         cad_numero=str(i)

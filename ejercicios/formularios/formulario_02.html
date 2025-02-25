@@ -1,37 +1,38 @@
 <form>
 <fieldset>
-  <legend>Indique sus preferencias por favor</legend>
-  Elija una fecha:<input type="date">  <br/>
-  Elija un fichero:<input type="file">  <br/>
-  <input type='radio' name='procesador' value='procesadoramd'> AMD 
-  <input type='radio' name='procesador' value='procesadorintel_i5'> Intel i5 
-  <input type='radio' name='procesador' value='procesadorintel_i7'> Intel i7 
+  <legend>Opciones</legend>
+  <select name='sexo' multiple='multiple'>
+    <option value='mujer'>Mujer</option>
+    <option value='hombre'>Hombre</option>
+  </select>
+  <br/>
+  <textarea rows='6' cols='47'>Escriba aquí, por favor</textarea>  <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Email<input type='text' name='email'> <br/>
+  Telefono<input type='text' name='telefono'> <br/>
   <br/>
 </fieldset>
 <fieldset>
   <legend>Indique sus preferencias por favor</legend>
-  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas 
-  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia 
-  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía 
-  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua 
-  <br/>
+  Instituto<input type='text' name='instituto'> <br/>
+  Estudios elegidos<input type='text' name='estudios'> <br/>
   Nombre<input type='text' name='nombre'> <br/>
   Apellidos<input type='text' name='apellidos'> <br/>
-  Direccion<input type='text' name='direccion'> <br/>
+  Email<input type='text' name='email'> <br/>
   <br/>
-  Elija un color:<input type="color">  <br/>
-  <textarea rows='6' cols='59'>Utilice este cuadro para escribir</textarea>  <br/>
-  Elija una fecha:<input type="date">  <br/>
-  <select name='idioma' >
-    <option value='ingles'>Inglés</option>
-    <option value='aleman'>Alemán</option>
-    <option value='frances'>Francés</option>
+  <select name='navegador' multiple='multiple'>
+    <option value='firefox'>Firefox</option>
+    <option value='chrome'>Chrome</option>
+    <option value='opera'>Opera</option>
+    <option value='ie'>IE</option>
   </select>
   <br/>
-  Elija una hora:<input type="time">  <br/>
-  Elija un fichero:<input type="file">  <br/>
-  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
-  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
+  Elija un color:<input type="color">  <br/>
+  <input type='radio' name='navegador' value='navegadorfirefox'> Firefox   <br/>
+  <input type='radio' name='navegador' value='navegadorchrome'> Chrome   <br/>
+  <input type='radio' name='navegador' value='navegadoropera'> Opera   <br/>
+  <input type='radio' name='navegador' value='navegadorie'> IE   <br/>
   <br/>
 </fieldset>
 </form>

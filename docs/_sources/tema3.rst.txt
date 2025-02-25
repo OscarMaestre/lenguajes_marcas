@@ -1481,13 +1481,6 @@ Alineación vertical con ``baseline``
 
 La línea base del texto se centra en el centro vertical de la caja contenedora.
 
-.. figure:: img/tema3css/flexboxes/17-flexboxes.png
-   :figwidth: 70%
-   :align: center
-
-   Alineación vertical con ``align-content: baseline;``  
-
-
 
 Maquetación avanzada con ``grid-layouts``
 ============================================

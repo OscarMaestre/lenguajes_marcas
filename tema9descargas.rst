@@ -52,31 +52,31 @@ descargas\Ejemplos_2023_2024\Tema_3_Javascript
 * :download:`ejemplos_js.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\ejemplos_js.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\01_ejemplo_eventos_tabla_multiplicar
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`ejemplo_eventos.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\01_ejemplo_eventos_tabla_multiplicar\ejemplo_eventos.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\02_ejemplo_calculadora
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`calculadora.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\02_ejemplo_calculadora\calculadora.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\03_ejemplo_prestamo
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`01 prestamo.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\03_ejemplo_prestamo\01 prestamo.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\04_checkboxes_y_radios
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`checkboxes_y_radios.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\04_checkboxes_y_radios\checkboxes_y_radios.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\05_configurador_pc
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`configurador.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\05_configurador_pc\configurador.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\06_calculoimpuestos
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`calculoimpuestos.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\06_calculoimpuestos\calculoimpuestos.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\07_selector_estilos
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`selector_estilos.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\07_selector_estilos\selector_estilos.html>`.
 * :download:`selector_estilos_optimizado.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\07_selector_estilos\selector_estilos_optimizado.html>`.
 
@@ -92,7 +92,7 @@ descargas\Ejemplos_2023_2024\Tema_3_Javascript\09_ejemplo_examen
 * :download:`abono_resuelto.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\09_ejemplo_examen\abono_resuelto.html>`.
 
 descargas\Ejemplos_2023_2024\Tema_3_Javascript\10_ejercicios_examen
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`Ejercicio1.png <descargas\Ejemplos_2023_2024\Tema_3_Javascript\10_ejercicios_examen\Ejercicio1.png>`.
 * :download:`Ejercicio2.png <descargas\Ejemplos_2023_2024\Tema_3_Javascript\10_ejercicios_examen\Ejercicio2.png>`.
 * :download:`Estilos_resuelto.html <descargas\Ejemplos_2023_2024\Tema_3_Javascript\10_ejercicios_examen\Estilos_resuelto.html>`.
@@ -180,7 +180,7 @@ descargas\Ejemplos_2023_2024\Tema_4_XML\15_cpus
 * :download:`Solucion CPUs.txt <descargas\Ejemplos_2023_2024\Tema_4_XML\15_cpus\Solucion CPUs.txt>`.
 
 descargas\Ejemplos_2023_2024\Tema_4_XML\16_empleado_elemento_complejo
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------
 * :download:`Enunciado empleado elemento complejo.txt <descargas\Ejemplos_2023_2024\Tema_4_XML\16_empleado_elemento_complejo\Enunciado empleado elemento complejo.txt>`.
 * :download:`Solucion empleado element complejo.txt <descargas\Ejemplos_2023_2024\Tema_4_XML\16_empleado_elemento_complejo\Solucion empleado element complejo.txt>`.
 

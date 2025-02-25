@@ -1,30 +1,46 @@
 <form>
 <fieldset>
   <legend>Rellenar</legend>
-  <input type='radio' name='idioma' value='idiomaingles'> Inglés   <br/>
-  <input type='radio' name='idioma' value='idiomaaleman'> Alemán   <br/>
-  <input type='radio' name='idioma' value='idiomafrances'> Francés   <br/>
+  Elija una hora:<input type="time">  <br/>
+  <input type='checkbox' name='lenguaje' value='lenguajepython'> Python 
+  <input type='checkbox' name='lenguaje' value='lenguajehtml'> HTML 
+  <input type='checkbox' name='lenguaje' value='lenguajevisual_basic'> Visual Basic 
+  <input type='checkbox' name='lenguaje' value='lenguajejava'> Java 
   <br/>
-  <select name='conector' >
-    <option value='usb'>USB</option>
-    <option value='paralelo'>Paralelo</option>
-    <option value='ps2'>PS2</option>
-  </select>
+  Elija una fecha:<input type="date">  <br/>
+  <input type='radio' name='lenguaje' value='lenguajepython'> Python   <br/>
+  <input type='radio' name='lenguaje' value='lenguajehtml'> HTML   <br/>
+  <input type='radio' name='lenguaje' value='lenguajevisual_basic'> Visual Basic   <br/>
+  <input type='radio' name='lenguaje' value='lenguajejava'> Java   <br/>
   <br/>
-  Nombre<input type='text' name='nombre'> <br/>
-  Apellidos<input type='text' name='apellidos'> <br/>
+  DNI<input type='text' name='dni'>
+  Nombre<input type='text' name='nombre'>
+  Apellidos<input type='text' name='apellidos'>
+  Email<input type='text' name='email'>
   <br/>
 </fieldset>
 <fieldset>
-  <legend>Indique sus preferencias por favor</legend>
-  <select name='sexo' multiple='multiple'>
-    <option value='hombre'>Hombre</option>
-    <option value='mujer'>Mujer</option>
+  <legend>Completar estas opciones</legend>
+  Instituto<input type='text' name='instituto'>
+  Estudios elegidos<input type='text' name='estudios'>
+  <br/>
+  Elija una hora:<input type="time">  <br/>
+  <select name='lenguaje' >
+    <option value='java'>Java</option>
+    <option value='python'>Python</option>
+    <option value='html'>HTML</option>
+    <option value='visual_basic'>Visual Basic</option>
+    <option value='css'>CSS</option>
   </select>
   <br/>
-  <input type='checkbox' name='sexo' value='sexomujer'> Mujer   <br/>
-  <input type='checkbox' name='sexo' value='sexohombre'> Hombre   <br/>
-  <br/>
   Elija una fecha:<input type="date">  <br/>
+  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua 
+  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas 
+  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia 
+  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía 
+  <br/>
+  <input type='checkbox' name='hardware' value='hardwaremonitor_led'> Monitor LED   <br/>
+  <input type='checkbox' name='hardware' value='hardwaressd'> SSD   <br/>
+  <br/>
 </fieldset>
 </form>

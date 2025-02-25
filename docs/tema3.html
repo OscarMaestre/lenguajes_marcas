@@ -1545,12 +1545,6 @@ el aspecto del texto como estas:</p>
 <section id="alineacion-vertical-con-baseline">
 <h4>Alineación vertical con <code class="docutils literal notranslate"><span class="pre">baseline</span></code><a class="headerlink" href="#alineacion-vertical-con-baseline" title="Link to this heading">¶</a></h4>
 <p>La línea base del texto se centra en el centro vertical de la caja contenedora.</p>
-<figure class="align-center" id="id27" style="width: 70%">
-<img alt="img/tema3css/flexboxes/17-flexboxes.png" src="img/tema3css/flexboxes/17-flexboxes.png" />
-<figcaption>
-<p><span class="caption-text">Alineación vertical con <code class="docutils literal notranslate"><span class="pre">align-content:</span> <span class="pre">baseline;</span></code></span><a class="headerlink" href="#id27" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
 </section>
 </section>
 </section>
@@ -1579,10 +1573,10 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>Si no le hacemos nada se verá lo siguiente:</p>
-<figure class="align-center" id="id28" style="width: 50%">
+<figure class="align-center" id="id27" style="width: 50%">
 <img alt="_images/grid_sin_estilo.png" src="_images/grid_sin_estilo.png" />
 <figcaption>
-<p><span class="caption-text">Grid sin maquetar</span><a class="headerlink" href="#id28" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Grid sin maquetar</span><a class="headerlink" href="#id27" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Vamos a añadir bordes a la celdas para que se vea  mejor el efecto. Usemos el siguiente CSS</p>
@@ -1592,25 +1586,25 @@ el aspecto del texto como estas:</p>
 </pre></div>
 </div>
 <p>El resultado queda así:</p>
-<figure class="align-center" id="id29" style="width: 50%">
+<figure class="align-center" id="id28" style="width: 50%">
 <img alt="_images/celdas_con_borde.png" src="_images/celdas_con_borde.png" />
 <figcaption>
-<p><span class="caption-text">Celdas con borde</span><a class="headerlink" href="#id29" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Celdas con borde</span><a class="headerlink" href="#id28" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Supongamos que queremos que el <code class="docutils literal notranslate"><span class="pre">div</span></code> cuyo class es <code class="docutils literal notranslate"><span class="pre">contenedor</span></code> se porte como una tabla de 5 por 5. ¡Recuérdese que
 solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
-<figure class="align-center" id="id30" style="width: 50%">
+<figure class="align-center" id="id29" style="width: 50%">
 <img alt="_images/tabla_5_por_5.png" src="_images/tabla_5_por_5.png" />
 <figcaption>
-<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id30" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id29" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Y ahora supongamos que dentro de esa tabla queremos repartir los elementos de manera que quede más o menos como lo siguiente:</p>
-<figure class="align-center" id="id31" style="width: 50%">
+<figure class="align-center" id="id30" style="width: 50%">
 <img alt="_images/resultado_5_por_5.png" src="_images/resultado_5_por_5.png" />
 <figcaption>
-<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id31" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Tabla de 5 x 5</span><a class="headerlink" href="#id30" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Analizando lo que se pide se observa que:</p>
@@ -1709,17 +1703,17 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <li><p>Sin embargo, cuando se va a imprimir no hay fondos, el margen es mucho más pequeño y el tipo de letra también.</p></li>
 </ul>
 <p>A continuación se muestra una captura de lo que muestra el navegador:</p>
-<figure class="align-center" id="id32" style="width: 50%">
+<figure class="align-center" id="id31" style="width: 50%">
 <img alt="_images/media_query_screen.png" src="_images/media_query_screen.png" />
 <figcaption>
-<p><span class="caption-text">HTML mostrado en pantalla</span><a class="headerlink" href="#id32" title="Link to this image">¶</a></p>
+<p><span class="caption-text">HTML mostrado en pantalla</span><a class="headerlink" href="#id31" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Y también se muestra una captura de lo que muestra el navegador cuando vamos a imprimir:</p>
-<figure class="align-center" id="id33" style="width: 50%">
+<figure class="align-center" id="id32" style="width: 50%">
 <img alt="_images/media_query_print.png" src="_images/media_query_print.png" />
 <figcaption>
-<p><span class="caption-text">HTML para imprimir</span><a class="headerlink" href="#id33" title="Link to this image">¶</a></p>
+<p><span class="caption-text">HTML para imprimir</span><a class="headerlink" href="#id32" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Uno de los usos más comunes de las <em>media queries</em> es la comprobación de la resolución en la que se está visualizando el HTML y en función de ello mostrar distintas estructuras al usuario. Por ejemplo, supongamos que deseamos mostrar nuestra página anterior de dos formas en pantalla.</p>
@@ -1759,17 +1753,17 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 </pre></div>
 </div>
 <p>El resultado de este CSS en una pantalla grande es:</p>
-<figure class="align-center" id="id34" style="width: 50%">
+<figure class="align-center" id="id33" style="width: 50%">
 <img alt="_images/mq_anchura_grande.png" src="_images/mq_anchura_grande.png" />
 <figcaption>
-<p><span class="caption-text">Página para una resolución grande</span><a class="headerlink" href="#id34" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Página para una resolución grande</span><a class="headerlink" href="#id33" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Sin embargo, en una pantalla pequeña (se puede cambiar el tamaño de la ventana del navegador para simular el ejemplo):</p>
-<figure class="align-center" id="id35" style="width: 50%">
+<figure class="align-center" id="id34" style="width: 50%">
 <img alt="_images/mq_anchura_pequena.png" src="_images/mq_anchura_pequena.png" />
 <figcaption>
-<p><span class="caption-text">Página para una resolución pequeña</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Página para una resolución pequeña</span><a class="headerlink" href="#id34" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Hay diversas cosas que podemos comprobar:</p>
@@ -1852,20 +1846,20 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 </pre></div>
 </div>
 <p>Lo que ocurrirá es que se pondrá un borde solo al párrafo cuyo <code class="docutils literal notranslate"><span class="pre">id</span></code> sea <code class="docutils literal notranslate"><span class="pre">destacado</span></code></p>
-<figure class="align-center" id="id36" style="width: 50%">
+<figure class="align-center" id="id35" style="width: 50%">
 <img alt="_images/selectores1.png" src="_images/selectores1.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id4">
 <h3>Solución <code class="docutils literal notranslate"><span class="pre">p.destacado</span></code><a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
 <p>Los cambios se aplican a todos los párrafos con el <code class="docutils literal notranslate"><span class="pre">class</span></code> <em>destacado</em></p>
-<figure class="align-center" id="id37" style="width: 50%">
+<figure class="align-center" id="id36" style="width: 50%">
 <img alt="_images/selectores2.png" src="_images/selectores2.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id37" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1876,10 +1870,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <p class="admonition-title">Advertencia</p>
 <p>Obsérvese que en el HTML hay <strong>dos elementos con el mismo ID</strong>. No se debe hacer esto, ya que corremos el riesgo de que todo se vea mal.</p>
 </div>
-<figure class="align-center" id="id38" style="width: 50%">
+<figure class="align-center" id="id37" style="width: 50%">
 <img alt="_images/selectores3.png" src="_images/selectores3.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id38" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id37" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1895,10 +1889,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <section id="solucion-destacado-id1">
 <h3>Solución <code class="docutils literal notranslate"><span class="pre">.destacado</span> <span class="pre">&gt;</span> <span class="pre">#id1</span></code><a class="headerlink" href="#solucion-destacado-id1" title="Link to this heading">¶</a></h3>
 <p>Ahora el resultado es este</p>
-<figure class="align-center" id="id39" style="width: 50%">
+<figure class="align-center" id="id38" style="width: 50%">
 <img alt="_images/selectores4.png" src="_images/selectores4.png" />
 <figcaption>
-<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado</span><a class="headerlink" href="#id38" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>¿Por qué ahora sí funciona?</p>
@@ -2121,10 +2115,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id40" style="width: 50%">
+<figure class="align-center" id="id39" style="width: 50%">
 <img alt="_images/bs1.png" src="_images/bs1.png" />
 <figcaption>
-<p><span class="caption-text">Ejemplo del grid</span><a class="headerlink" href="#id40" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Ejemplo del grid</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>En realidad Bootstrap define muchos tipos de columna dependiendo del tipo de dispositivo al que nos hayamos enfocado más:</p>
@@ -2144,10 +2138,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este párrafo es normal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id41" style="width: 50%">
+<figure class="align-center" id="id40" style="width: 50%">
 <img alt="_images/bs2.png" src="_images/bs2.png" />
 <figcaption>
-<p><span class="caption-text">Párrafo destacado</span><a class="headerlink" href="#id41" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Párrafo destacado</span><a class="headerlink" href="#id40" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Se puede destacar texto usando lo siguiente:</p>
@@ -2165,10 +2159,10 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <li><p>El archivo de hoja de estilos se «preprocesa» y el programa <strong>genera un archivo CSS válido</strong></p></li>
 </ul>
 <p>El flujo de trabajo se muestra en la figura siguiente:</p>
-<figure class="align-center" id="id42" style="width: 50%">
+<figure class="align-center" id="id41" style="width: 50%">
 <img alt="_images/diagramaless.png" src="_images/diagramaless.png" />
 <figcaption>
-<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id42" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado final</span><a class="headerlink" href="#id41" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Este sistema de trabajo puede ahorrar muchos problemas y tiempo por lo que se ha extendido su uso en el diseño web.</p>
@@ -2235,22 +2229,22 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <li><p>Si la pantalla tiene 801px o más A, B y C se mostrarán una al lado de la otra. A cubrirá un 20%, B un 20% y C un 58%.</p></li>
 </ul>
 <p>A continuación se muestra el resultado aproximado que se debe conseguir:</p>
-<figure class="align-center" id="id43" style="width: 50%">
+<figure class="align-center" id="id42" style="width: 50%">
 <img alt="_images/responsive1-1.png" src="_images/responsive1-1.png" />
 <figcaption>
-<p><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id43" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado para pantallas pequeñas</span><a class="headerlink" href="#id42" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id43" style="width: 50%">
+<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
+<figcaption>
+<p><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id43" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id44" style="width: 50%">
-<img alt="_images/responsive1-2.png" src="_images/responsive1-2.png" />
-<figcaption>
-<p><span class="caption-text">Resultado para pantallas medianas</span><a class="headerlink" href="#id44" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id45" style="width: 50%">
 <img alt="_images/responsive1-3.png" src="_images/responsive1-3.png" />
 <figcaption>
-<p><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id45" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Resultado para pantallas grandes</span><a class="headerlink" href="#id44" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Un posible HTML que resolviera esto sería el siguiente:</p>
@@ -2337,16 +2331,16 @@ solo tenemos 6 celdas! A pesar de eso, queremos una distribución como esta:</p>
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-1.</p></li>
 <li><p>Si la pantalla tiene menos de 800px se mostrará una distribución como la que se muestra en la figura II-2.</p></li>
 </ul>
-<figure class="align-center" id="id46" style="width: 50%">
+<figure class="align-center" id="id45" style="width: 50%">
 <img alt="_images/responsive2-1.png" src="_images/responsive2-1.png" />
 <figcaption>
-<p><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id46" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Figura II-1. (Para pantallas estrechas)</span><a class="headerlink" href="#id45" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id47" style="width: 50%">
+<figure class="align-center" id="id46" style="width: 50%">
 <img alt="_images/responsive2-2.png" src="_images/responsive2-2.png" />
 <figcaption>
-<p><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id47" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Figura II-2 (Para pantallas anchas)</span><a class="headerlink" href="#id46" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>A continuación se muestra el HTML:</p>
