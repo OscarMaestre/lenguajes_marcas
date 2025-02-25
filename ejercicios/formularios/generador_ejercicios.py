@@ -71,7 +71,7 @@ def recortar_imagen(archivo, archivo_cortado):
 def generar_tablas():
     secciones=""
     g=GeneradorFormularios()
-    for i in range(1, 4):
+    for i in range(1, 41):
         print("Generando "+str(i))
         
         cad_numero=str(i)

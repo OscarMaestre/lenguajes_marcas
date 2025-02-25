@@ -1,45 +1,26 @@
 <form>
 <fieldset>
-  <legend>Indique</legend>
-  Nombre<input type='text' name='nombre'> <br/>
-  Apellidos<input type='text' name='apellidos'> <br/>
-  Email<input type='text' name='email'> <br/>
-  Telefono<input type='text' name='telefono'> <br/>
-  <br/>
+  <legend>Rellenar</legend>
+  <textarea rows='8' cols='52'>Utilice este cuadro para escribir</textarea>  <br/>
   Elija una fecha:<input type="date">  <br/>
-  <input type='checkbox' name='asignatura' value='asignaturalengua'> Lengua   <br/>
-  <input type='checkbox' name='asignatura' value='asignaturamatematicas'> Matemáticas   <br/>
-  <input type='checkbox' name='asignatura' value='asignaturahistoria'> Historia   <br/>
-  <input type='checkbox' name='asignatura' value='asignaturageografia'> Geografía   <br/>
-  <br/>
-  Elija un color:<input type="color">  <br/>
-  <select name='preferencia' >
-    <option value='ciencias'>Ciencias</option>
-    <option value='letras'>Letras</option>
+  <select name='asignatura' multiple='multiple'>
+    <option value='matematicas'>Matemáticas</option>
+    <option value='historia'>Historia</option>
+    <option value='geografia'>Geografía</option>
+    <option value='lengua'>Lengua</option>
   </select>
   <br/>
   Elija una hora:<input type="time">  <br/>
-  Elija un fichero:<input type="file">  <br/>
-  <input type='radio' name='lenguaje' value='lenguajejava'> Java 
-  <input type='radio' name='lenguaje' value='lenguajepython'> Python 
-  <input type='radio' name='lenguaje' value='lenguajehtml'> HTML 
-  <input type='radio' name='lenguaje' value='lenguajevisual_basic'> Visual Basic 
-  <br/>
 </fieldset>
 <fieldset>
-  <legend>Opciones</legend>
-  <input type='checkbox' name='sexo' value='sexomujer'> Mujer 
-  <input type='checkbox' name='sexo' value='sexohombre'> Hombre 
-  <br/>
-  <select name='formato' >
-    <option value='jpg'>JPG</option>
-    <option value='png'>PNG</option>
-  </select>
-  <br/>
+  <legend>Por favor, complete estas opciones</legend>
   Elija un color:<input type="color">  <br/>
-  <input type='radio' name='conexion' value='conexionwifi'> Wifi 
-  <input type='radio' name='conexion' value='conexioncable'> Cable 
-  <input type='radio' name='conexion' value='conexionfibra'> Fibra 
+  DNI<input type='text' name='dni'> <br/>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Telefono<input type='text' name='telefono'> <br/>
   <br/>
+  Elija una hora:<input type="time">  <br/>
+  Elija un fichero:<input type="file">  <br/>
 </fieldset>
 </form>

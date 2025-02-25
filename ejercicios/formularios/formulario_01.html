@@ -1,46 +1,34 @@
 <form>
 <fieldset>
-  <legend>Rellenar</legend>
+  <legend>Opciones</legend>
+  <input type='radio' name='sexo' value='sexohombre'> Hombre 
+  <input type='radio' name='sexo' value='sexomujer'> Mujer 
+  <br/>
   Elija una hora:<input type="time">  <br/>
-  <input type='checkbox' name='lenguaje' value='lenguajepython'> Python 
-  <input type='checkbox' name='lenguaje' value='lenguajehtml'> HTML 
-  <input type='checkbox' name='lenguaje' value='lenguajevisual_basic'> Visual Basic 
-  <input type='checkbox' name='lenguaje' value='lenguajejava'> Java 
+  Elija un fichero:<input type="file">  <br/>
+  <select name='asignatura' >
+    <option value='geografia'>Geografía</option>
+    <option value='lengua'>Lengua</option>
+    <option value='matematicas'>Matemáticas</option>
+    <option value='historia'>Historia</option>
+  </select>
   <br/>
+  Elija un color:<input type="color">  <br/>
   Elija una fecha:<input type="date">  <br/>
-  <input type='radio' name='lenguaje' value='lenguajepython'> Python   <br/>
-  <input type='radio' name='lenguaje' value='lenguajehtml'> HTML   <br/>
-  <input type='radio' name='lenguaje' value='lenguajevisual_basic'> Visual Basic   <br/>
-  <input type='radio' name='lenguaje' value='lenguajejava'> Java   <br/>
+  <textarea rows='7' cols='52'>Inserte aqui el texto</textarea>  <br/>
+  <input type='checkbox' name='editor' value='editornotepad'> Notepad 
+  <input type='checkbox' name='editor' value='editoremacs'> Emacs 
+  <input type='checkbox' name='editor' value='editorotro'> Otro 
   <br/>
-  DNI<input type='text' name='dni'>
-  Nombre<input type='text' name='nombre'>
-  Apellidos<input type='text' name='apellidos'>
-  Email<input type='text' name='email'>
+  Nombre<input type='text' name='nombre'> <br/>
+  Apellidos<input type='text' name='apellidos'> <br/>
+  Direccion<input type='text' name='direccion'> <br/>
   <br/>
 </fieldset>
 <fieldset>
-  <legend>Completar estas opciones</legend>
-  Instituto<input type='text' name='instituto'>
-  Estudios elegidos<input type='text' name='estudios'>
-  <br/>
-  Elija una hora:<input type="time">  <br/>
-  <select name='lenguaje' >
-    <option value='java'>Java</option>
-    <option value='python'>Python</option>
-    <option value='html'>HTML</option>
-    <option value='visual_basic'>Visual Basic</option>
-    <option value='css'>CSS</option>
-  </select>
-  <br/>
+  <legend>Indique sus preferencias por favor</legend>
+  Elija un fichero:<input type="file">  <br/>
   Elija una fecha:<input type="date">  <br/>
-  <input type='radio' name='asignatura' value='asignaturalengua'> Lengua 
-  <input type='radio' name='asignatura' value='asignaturamatematicas'> Matemáticas 
-  <input type='radio' name='asignatura' value='asignaturahistoria'> Historia 
-  <input type='radio' name='asignatura' value='asignaturageografia'> Geografía 
-  <br/>
-  <input type='checkbox' name='hardware' value='hardwaremonitor_led'> Monitor LED   <br/>
-  <input type='checkbox' name='hardware' value='hardwaressd'> SSD   <br/>
-  <br/>
+  Elija un color:<input type="color">  <br/>
 </fieldset>
 </form>
