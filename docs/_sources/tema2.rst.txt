@@ -11,9 +11,9 @@ Etiquetas estructurales
 ========================
 Crean la estructura para el resto de la página:,
 
-* ``doctype``: identifica el estándar.
-* todo documento debe ir entre las marcas ``<html>`` y ``</html>``.
-* Todo html tiene dos partes: ``head`` y ``body``. El primero incluye otros elementos estructurales como ``<title>`` que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.
+* doctype: identifica el estándar.
+* todo documento debe ir entre las marcas <html> y </html>.
+* Todo html tiene dos partes: head y body. El primero incluye otros elementos estructurales como ``<title>`` que indica el título de dicha página. Dentro del body se incluye el contenido real de la página.
 
 * Dentro del body pueden incluirse otras etiquetas que estructuran el contenido de la página:
 
